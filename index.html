@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"></head>
-<body style="margin:0; padding:0; overflow:hidden;">
-    <button id="playBtn" style="width:100vw; height:100vh; background:transparent; border:none; cursor:pointer; outline:none;"></button>
-
-    <audio id="music" loop preload="auto">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; background: transparent; overflow: hidden; }
+        #toggleBtn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        #toggleBtn:active { transform: scale(0.9); }
+    </style>
+</head>
+<body>
+    <button id="toggleBtn">♪</button>
+    <audio id="music" loop>
         <source src="https://static.wfolio.com/file/AqiFFw_TXMM4LDwoI2TPSVX0b6h2oapH/vq2mXQfISYiZTOqIsVfHFyLY8P-5dwPP/gc6Md8kl2_d8v-T3gACFhK6bGsLIh-Jl/ibH_7LLtcU3Qc7-U4Fe1-emlE9PdwpiP/YXrChxKUx1X3Ohu7zejRX8u4av-FoS9_/pgwU637OUQtV4UqDyX4tvGHklIsqrXgX.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         const audio = document.getElementById('music');
-        const btn = document.getElementById('playBtn');
+        const btn = document.getElementById('toggleBtn');
+        let isPlaying = false;
 
         btn.addEventListener('click', () => {
-            audio.play();
-            // Երբ միանա, թաքցնում ենք կոճակը, որ չխանգարի սեղմել կայքի այլ մասերին
-            btn.style.display = 'none';
-        });
-        
-        btn.addEventListener('touchstart', () => {
-            audio.play();
-            btn.style.display = 'none';
+            if (!isPlaying) {
+                audio.play();
+                btn.innerHTML = '⏸'; // Դադարի նշան
+                btn.style.background = '#eee';
+            } else {
+                audio.pause();
+                btn.innerHTML = '♪';
+                btn.style.background = '#fff';
+            }
+            isPlaying = !isPlaying;
         });
     </script>
 </body>
