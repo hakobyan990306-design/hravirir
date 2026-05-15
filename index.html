@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"></head>
-<body>
+<body style="margin:0; padding:0; overflow:hidden;">
+    <button id="playBtn" style="width:100vw; height:100vh; background:transparent; border:none; cursor:pointer; outline:none;"></button>
+
     <audio id="music" loop preload="auto">
         <source src="https://static.wfolio.com/file/AqiFFw_TXMM4LDwoI2TPSVX0b6h2oapH/vq2mXQfISYiZTOqIsVfHFyLY8P-5dwPP/gc6Md8kl2_d8v-T3gACFhK6bGsLIh-Jl/ibH_7LLtcU3Qc7-U4Fe1-emlE9PdwpiP/YXrChxKUx1X3Ohu7zejRX8u4av-FoS9_/pgwU637OUQtV4UqDyX4tvGHklIsqrXgX.mp3" type="audio/mpeg">
     </audio>
+
     <script>
         const audio = document.getElementById('music');
-        function start() {
-            audio.play().then(() => {
-                ['click', 'touchstart', 'scroll'].forEach(e => window.parent.document.removeEventListener(e, start));
-            }).catch(e => console.log("Waiting..."));
-        }
-        window.parent.document.addEventListener('click', start);
-        window.parent.document.addEventListener('touchstart', start);
-        window.parent.document.addEventListener('scroll', start);
+        const btn = document.getElementById('playBtn');
+
+        btn.addEventListener('click', () => {
+            audio.play();
+            // Երբ միանա, թաքցնում ենք կոճակը, որ չխանգարի սեղմել կայքի այլ մասերին
+            btn.style.display = 'none';
+        });
+        
+        btn.addEventListener('touchstart', () => {
+            audio.play();
+            btn.style.display = 'none';
+        });
     </script>
 </body>
 </html>
