@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3a0710">
+<title>Նշանդրեքի հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "red-rose", name: "Կարմիր վարդ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Արթուր", "Մերի"], ru: ["Артур", "Мери"] },
+  date: "2026-11-21T17:00",
+  text: {
+    hy: "Կարմիր վարդերով սկսվեց մեր պատմությունը, և հիմա եկել է ժամանակը, որ մեր ընտանիքները միանան։\nՍիրով հրավիրում ենք Ձեզ կիսելու մեր ուրախությունը մեր նշանդրեքի երեկոյին։",
+    ru: "Наша история началась с красных роз, и теперь пришло время объединить наши семьи.\nС любовью приглашаем вас разделить нашу радость на вечере помолвки."
+  },
+  events: [
+    { time: "17:00", title: { hy: "Նշանի արարողություն", ru: "Обряд помолвки" }, place: { hy: "Հարսնացուի տուն", ru: "Дом невесты" },
+      address: { hy: "Երևան, Արաբկիր, Վաղարշյան փողոց 12", ru: "Ереван, Арабкир, ул. Вагаршяна 12" }, map: "https://maps.google.com/?q=Vagharshyan+12+Yerevan" },
+    { time: "19:30", title: { hy: "Տոնական ընթրիք", ru: "Праздничный ужин" }, place: { hy: "«Շարլ Ազնավուր» ռեստորան", ru: "Ресторан «Шарль Азнавур»" },
+      address: { hy: "Երևան, Կասկադ, Թամանյան փողոց 5", ru: "Ереван, Каскад, ул. Таманяна 5" }, map: "https://maps.google.com/?q=Tamanyan+5+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Երեկոյան զգեստներ՝ սև, բորդո, կարմիր և կաթնագույն", ru: "Вечерние наряды: чёрный, бордо, красный и молочный" },
+    colors: ["#1b0a0d", "#6b0f1f", "#b0182c", "#f4e9e1"] },
+  rsvp: { deadline: "2026-11-14", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

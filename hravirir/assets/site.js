@@ -37,6 +37,7 @@
     { id: "olive-letter", name: "Նամակ", cat: "wedding", colors: ["#6f7e53", "#b9c79a", "#b98a5e", "#fbf7ec"], tag: "Նոր" },
     { id: "classic-green", name: "Classic", cat: "wedding", colors: ["#f9f7f3", "#e9e1d3", "#8f9a8c", "#34473a"], tag: "Նոր" },
     { id: "gold-gate", name: "Ոսկե դարպաս", cat: "wedding", colors: ["#2a2721", "#fbf8f2", "#e6d3ab", "#b08d57"], tag: "Նոր" },
+    { id: "red-rose", name: "Կարմիր վարդ", cat: "engagement", colors: ["#3a0710", "#b0182c", "#f6ede6", "#c9a063"], tag: "Նոր" },
     { id: "gold-letter", name: "Ոսկե կնիք", cat: "engagement", colors: ["#f3dcd4", "#fffdf9", "#e7d2a6", "#b8904f"], tag: "Նոր" },
     { id: "ring-velvet", name: "Մատանի", cat: "engagement", colors: ["#0f3b33", "#1a5247", "#d6b77a", "#f7f2e8"], tag: "Նոր" },
     { id: "boho-arch", name: "Կամար", cat: "engagement", colors: ["#f4e9dc", "#e7c9ab", "#b8643f", "#9aa487"], tag: "Նոր" },
