@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5ecdd">
+<title>Արամ & Անի — Հարսանյաց հրավեր</title>
+<meta property="og:title" content="Արամ & Անի — Հարսանյաց հրավեր">
+<meta property="og:description" content="Սիրով հրավիրում ենք մեր հարսանիքին">
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../fonts/GHEAMariamReg.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../engine/invite.css">
+</head>
+<body data-theme="ivory-gold">
+<div id="invite"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "classic-gold" },               // իրական հրավերում ջնջեք այս տողը
+  to: "Պետրոսյանների ընտանիք",                // ցուցադրության համար. իրականում՝ հղման ?to=... պարամետրով
+  langs: ["hy", "ru", "en"],
+  monogram: "Ա&Ա",
+  label: { hy: "Հարսանյաց հրավեր", ru: "Свадебное приглашение", en: "Wedding invitation" },
+  names: { hy: ["Արամ", "Անի"], ru: ["Арам", "Ани"], en: ["Aram", "Ani"] },
+  date: "2026-12-19T15:00",
+  photo: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=720&h=960&fit=crop&q=80&auto=format",
+  greeting: { hy: "Սիրելի՛ հյուրեր", ru: "Дорогие гости", en: "Dear guests" },
+  text: {
+    hy: "Մենք ամուսնանում ենք։\nԵվ այս ուրախությունը լիարժեք չի լինի\nառանց մեզ համար թանկ մարդկանց։\nՍիրով սպասում ենք Ձեզ մեր հարսանիքին։",
+    ru: "В нашей жизни наступает важный день,\nкогда два сердца становятся одним.\nС любовью приглашаем вас\nразделить с нами эту радость.",
+    en: "A special day is coming\nwhen two hearts become one.\nWe would be honoured\nto celebrate it with you."
+  },
+  parents: {
+    groom: { hy: "Պողոս և Անահիտ Մելքոնյաններ", ru: "Погос и Анаит Мелконян", en: "Poghos & Anahit Melkonyan" },
+    bride: { hy: "Սարգիս և Լուսինե Ավետիսյաններ", ru: "Саргис и Лусине Аветисян", en: "Sargis & Lusine Avetisyan" }
+  },
+  events: [
+    { time: "11:30", icon: "home",
+      title: { hy: "Փեսայի տուն", ru: "Дом жениха", en: "Groom's home" },
+      place: { hy: "Մելքոնյանների օջախ", ru: "Дом семьи Мелконян", en: "Melkonyan family home" },
+      address: { hy: "Երևան, Շենգավիթ, Բագրատունյաց 18", ru: "Ереван, Шенгавит, ул. Багратуняц 18", en: "18 Bagratunyats St, Yerevan" },
+      map: "https://maps.google.com/?q=Bagratunyats+Street+Yerevan" },
+    { time: "13:00", icon: "home",
+      title: { hy: "Հարսի տուն", ru: "Дом невесты", en: "Bride's home" },
+      place: { hy: "Ավետիսյանների օջախ", ru: "Дом семьи Аветисян", en: "Avetisyan family home" },
+      address: { hy: "Երևան, Արաբկիր, Վաղարշյան 12", ru: "Ереван, Арабкир, ул. Вагаршяна 12", en: "12 Vagharshyan St, Yerevan" },
+      map: "https://maps.google.com/?q=Vagharshyan+Street+Yerevan" },
+    { time: "15:00", icon: "church",
+      title: { hy: "Պսակադրություն", ru: "Венчание", en: "Wedding ceremony" },
+      place: { hy: "Սուրբ Հռիփսիմե վանք", ru: "Монастырь Святой Рипсиме", en: "Saint Hripsime Church" },
+      address: { hy: "Վաղարշապատ", ru: "Вагаршапат", en: "Vagharshapat" },
+      map: "https://maps.google.com/?q=Saint+Hripsime+Church" },
+    { time: "18:00", icon: "glass",
+      title: { hy: "Հարսանյաց հանդես", ru: "Банкет", en: "Reception" },
+      place: { hy: "«Այգի» ռեստորանային համալիր", ru: "Ресторан «Айги»", en: "Aygi Restaurant" },
+      address: { hy: "Երևան, Իսակովի պողոտա 24", ru: "Ереван, пр. Исакова 24", en: "24 Isakov Ave, Yerevan" },
+      map: "https://maps.google.com/?q=Isakov+Avenue+Yerevan" }
+  ],
+  dresscode: {
+    text: { hy: "Կուրախանանք, եթե Ձեր հագուստում լինեն այս երանգները", ru: "Будем рады, если в ваших нарядах будут эти оттенки", en: "We'd love to see these shades in your outfits" },
+    colors: ["#efe6d6", "#d8c3a0", "#b08d57", "#8a7560", "#3a3129"]
+  },
+  gallery: [
+    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=640&h=860&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=640&h=860&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=640&h=860&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=640&h=860&fit=crop&q=80&auto=format"
+  ],
+  tables: [
+    { table: 1, guests: ["Պետրոս Պետրոսյան", "Մարիամ Պետրոսյան", "Petros Petrosyan"] },
+    { table: 2, guests: ["Կարեն Սարգսյան", "Լիլիթ Սարգսյան", "Karen Sargsyan"] },
+    { table: 3, guests: ["Գոռ Հակոբյան", "Անահիտ Հակոբյան", "Gor Hakobyan"] }
+  ],
+  rsvp: {
+    deadline: "2026-12-05",
+    sides: { hy: ["Փեսայի", "Հարսի"], ru: ["Жениха", "Невесты"], en: ["Groom", "Bride"] },
+    endpoint: "",                              // Google Sheets-ի հղում (տես README)
+    whatsapp: "37499741574"
+  },
+  music: true                                  // կամ "song.mp3"
+};
+</script>
+<script src="../engine/invite.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#606e47">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../fonts/GHEAMariamReg.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "olive-letter" },                 // իրական հրավերում ջնջեք
+  to: "Պետրոսյանների ընտանիք",                  // կամ հղման վերջում՝ ?to=...
+  langs: ["hy", "ru"],
+  names: { hy: ["Արման", "Մարիամ"], ru: ["Арман", "Мариам"] },
+  date: "2026-12-05T15:00",
+  photo: "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&h=1600&fit=crop&q=80&auto=format",
+  heroVideo: "",                                 // եթե կա տեսանյութ՝ "video.mp4"
+  envelopeText: { hy: "Այս նամակը Ձեզ համար է։\nՇատ ենք ուզում, որ մեր կյանքի ամենակարևոր օրը Դուք մեր կողքին լինեք։", ru: "Это письмо — для вас.\nОчень хотим, чтобы в самый важный день нашей жизни вы были рядом." },
+  greeting: { hy: "Սիրելի՛ հյուրեր", ru: "Дорогие гости" },
+  text: {
+    hy: "Մենք որոշել ենք մեր կյանքը շարունակել միասին։\nԱյս օրը լիարժեք չի լինի առանց մեզ համար թանկ մարդկանց, ուստի սրտանց հրավիրում ենք Ձեզ մեր հարսանիքին։",
+    ru: "Мы решили продолжить жизнь вместе.\nЭтот день не будет полным без дорогих нам людей, поэтому от всего сердца приглашаем вас на нашу свадьбу."
+  },
+  venue: {
+    title: { hy: "Մեր դեկտեմբերյան երեկոն", ru: "Наш декабрьский вечер" },
+    place: { hy: "«Այգեստան» հանդիսությունների սրահ", ru: "Зал торжеств «Айгестан»" },
+    address: { hy: "Երևան, Ծովակալ Իսակովի պողոտա 50/2", ru: "Ереван, пр. Адмирала Исакова 50/2" },
+    map: "https://maps.google.com/?q=Isakov+Avenue+Yerevan"
+  },
+  timing: [
+    { time: "11:30", icon: "glasses", text: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Երևան, Դավիթաշեն, 4-րդ թաղամաս, շ. 12", ru: "Ереван, Давташен, 4-й квартал, д. 12" }, map: "https://maps.google.com/?q=Davtashen+Yerevan" },
+    { time: "13:00", icon: "dance", text: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Երևան, Արաբկիր, Կոմիտասի պողոտա 48", ru: "Ереван, Арабкир, пр. Комитаса 48" }, map: "https://maps.google.com/?q=Komitas+Avenue+48+Yerevan" },
+    { time: "15:00", icon: "rings", text: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Գայանե վանք, Վաղարշապատ", ru: "Монастырь Святой Гаяне, Вагаршапат" }, map: "https://maps.google.com/?q=Saint+Gayane+Church+Vagharshapat" },
+    { time: "18:00", icon: "plate", text: { hy: "Հարսանյաց հանդես", ru: "Банкет" }, place: { hy: "«Այգեստան» հանդիսությունների սրահ", ru: "Зал торжеств «Айгестан»" } },
+    { time: "22:30", icon: "cake", text: { hy: "Հարսանյաց տորթ", ru: "Свадебный торт" } }
+  ],
+  dresscode: {
+    text: { hy: "Կուրախանանք, եթե Ձեր հագուստով աջակցեք մեր հարսանիքի գունային գամմային", ru: "Будем рады, если вы поддержите цветовую гамму нашей свадьбы" },
+    colors: ["#5b6b43", "#9aa77b", "#d9c8b4", "#e8b8b0", "#f3ece0"],
+    photos: []
+  },
+  rsvp: { deadline: "2026-11-20", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

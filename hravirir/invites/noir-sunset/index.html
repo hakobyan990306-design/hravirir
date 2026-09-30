@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141312">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/GHEAMariamReg.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "noir-sunset" },                  // իրական հրավերում ջնջեք
+  to: "Պետրոսյանների ընտանիք",                  // կամ հղման վերջում՝ ?to=...
+  langs: ["hy", "ru", "en"],
+  label: { hy: "Հարսանյաց հրավեր", ru: "Свадебное приглашение", en: "Wedding invitation" },
+  names: { hy: ["Ռուբեն", "Լիլիթ"], ru: ["Рубен", "Лилит"], en: ["Ruben", "Lilit"] },
+  date: "2026-11-14T16:00",
+  // տեսանյութ (Pixabay, անվճար լիցենզիա) + նկար, որը երևում է, մինչ տեսանյութը բեռնվում է
+  heroVideo: "https://cdn.pixabay.com/video/2020/09/30/51237-463795692_large.mp4",
+  photo: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=900&h=1600&fit=crop&q=70&auto=format",
+  timing: [
+    { time: "11:00", icon: "glass", title: { hy: "Փեսայի տուն", ru: "Дом жениха", en: "Groom's home" }, text: { hy: "Երևան, Աջափնյակ, Մարգարյան 25", ru: "Ереван, Ачапняк, ул. Маргаряна 25", en: "25 Margaryan St, Ajapnyak, Yerevan" }, map: "https://maps.google.com/?q=Margaryan+Street+Yerevan" },
+    { time: "12:30", icon: "camera", title: { hy: "Հարսի տուն", ru: "Дом невесты", en: "Bride's home" }, text: { hy: "Երևան, Կենտրոն, Թումանյան 14", ru: "Ереван, Кентрон, ул. Туманяна 14", en: "14 Tumanyan St, Yerevan" }, map: "https://maps.google.com/?q=Tumanyan+Street+14+Yerevan" },
+    { time: "16:00", icon: "rings", title: { hy: "Պսակադրություն", ru: "Венчание", en: "Wedding ceremony" }, text: { hy: "Սուրբ Սարգիս եկեղեցի, Սևանավանք", ru: "Монастырь Севанаванк", en: "Sevanavank Monastery, Lake Sevan" }, map: "https://maps.google.com/?q=Sevanavank" },
+    { time: "18:30", icon: "dinner", title: { hy: "Հարսանյաց հանդես", ru: "Банкет", en: "Reception" }, text: { hy: "«Ափ» ռեստորան, Սևան, ծովափ", ru: "Ресторан «Ап», Севан, берег", en: "Ap Restaurant, Sevan shore" } },
+    { time: "21:00", icon: "party", title: { hy: "Առաջին պար", ru: "Первый танец", en: "First dance" }, text: { hy: "Եվ պար մինչև ուշ գիշեր", ru: "И танцы до поздней ночи", en: "And dancing till late" } }
+  ],
+  programPhoto: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=900&h=1400&fit=crop&q=60&auto=format",
+  dresscode: {
+    text: { hy: "Էլեգանտ երեկոյան զգեստներ՝ բեժ, սև և ոսկեգույն երանգներով", ru: "Элегантные вечерние наряды в бежевых, чёрных и золотых тонах", en: "Elegant evening attire in beige, black and gold" },
+    colors: ["#1d1b19", "#6f675e", "#c9a96b", "#e6dfd4", "#ffffff"]
+  },
+  details: [
+    { title: { hy: "Տրանսպորտ", ru: "Трансфер", en: "Transportation" }, text: { hy: "Ժամը 14:30-ին Երևանից ավտոբուս կմեկնի դեպի միջոցառման վայր և կվերադառնա երեկոյան։", ru: "В 14:30 из Еревана отправится автобус к месту праздника и вернётся вечером.", en: "A shuttle bus leaves Yerevan at 14:30 and returns in the evening." } },
+    { title: { hy: "Կացարան", ru: "Проживание", en: "Accommodation" }, text: { hy: "Հեռվից եկող հյուրերի համար հյուրանոցում սենյակներ ենք ամրագրել։ Գրեք մեզ՝ մանրամասների համար։", ru: "Для гостей издалека мы забронировали номера в отеле. Напишите нам за подробностями.", en: "Rooms are reserved at a nearby hotel for out-of-town guests. Contact us for details." } }
+  ],
+  rsvp: { deadline: "2026-11-01", whatsapp: "37499741574" },
+  rsvpPhoto: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=900&h=1200&fit=crop&q=60&auto=format",
+  finalPhoto: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=900&h=1600&fit=crop&q=75&auto=format",
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

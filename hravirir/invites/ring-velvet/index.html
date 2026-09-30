@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f3b33">
+<title>Նշանդրեքի հրավեր</title>
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "ring-velvet", name: "Մատանի" },   // իրական հրավերում ջնջեք
+  to: "Հովհաննիսյանների ընտանիք",                 // կամ հղման վերջում՝ ?to=...
+  langs: ["hy", "ru"],
+  names: { hy: ["Տիգրան", "Անի"], ru: ["Тигран", "Ани"] },
+  date: "2026-11-07T18:00",
+  photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=700&h=930&fit=crop&q=80&auto=format",
+  greeting: { hy: "Նա ասաց՝ այո", ru: "Она сказала «да»" },
+  text: {
+    hy: "Ծանոթացանք երեք տարի առաջ՝ ընկերների ծննդյան օրը, և այդ երեկոյից ի վեր չենք բաժանվել։\nՀիմա ժամանակն է, որ մեր ընտանիքները միանան։ Սիրով սպասում ենք Ձեզ մեր նշանդրեքին։",
+    ru: "Мы познакомились три года назад на дне рождения друзей и с того вечера не расставались.\nТеперь пришло время объединить наши семьи. С любовью ждём вас на нашей помолвке."
+  },
+  events: [
+    { time: "17:00", title: { hy: "Նշանի արարողություն", ru: "Обряд помолвки" }, place: { hy: "Հարսնացուի տուն", ru: "Дом невесты" },
+      address: { hy: "Երևան, Վարդանանց փողոց 18", ru: "Ереван, ул. Вардананц 18" }, map: "https://maps.google.com/?q=Vardanants+18+Yerevan" },
+    { time: "19:00", title: { hy: "Տոնական ընթրիք", ru: "Праздничный ужин" }, place: { hy: "«Ալեքսանդրապոլ» ռեստորան", ru: "Ресторан «Александрополь»" },
+      address: { hy: "Երևան, Իսահակյան փողոց 28", ru: "Ереван, ул. Исаакяна 28" }, map: "https://maps.google.com/?q=Isahakyan+28+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Երեկոյան զգեստներ՝ զմրուխտե, շամպայն և կաթնագույն երանգներով", ru: "Вечерние наряды в изумрудных, шампанских и молочных оттенках" }, colors: ["#0f3b33", "#d6b77a", "#f1dfb3", "#f7f2e8"] },
+  rsvp: { deadline: "2026-10-31", whatsapp: "37499741574" },
+  finalText: { hy: "Սիրով՝", ru: "С любовью," },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

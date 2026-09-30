@@ -1,0 +1,208 @@
+/* «Վարդագույն այգի» — խակի ծրար 4 ծալքով, պատռված թղթի եզրեր, ոլորուն ծրագիր
+   Տառատեսակներ՝ 2. SHK Dzeragir (ձեռագիր) + Noto Sans Armenian */
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+
+:root {
+  --blush: #ecccc5; --blush-d: #e2b9b1; --ink: #3b2923; --soft: #6e5a53; --olive: #6f6a3e; --khaki: #8a8357; --khaki-l: #9b9467; --khaki-d: #6f6942;
+  --hand: "Dzeragir", "Marck Script", cursive; --sans: "Noto Sans Armenian", "Montserrat", system-ui, sans-serif;
+  --k-bg: #ecccc5; --k-ink: #3b2923; --k-accent: #6f6a3e; --k-font: "Noto Sans Armenian", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--blush); color: var(--ink); font-family: var(--sans); font-weight: 300; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 460px; margin: 0 auto; padding: 0 26px; }
+section { position: relative; padding: 70px 0; text-align: center; }
+.hand { font-family: var(--hand); font-weight: 400; line-height: 1.3; }
+.h { font-family: var(--hand); font-weight: 400; font-size: clamp(46px, 14vw, 64px); line-height: 1.3; margin-bottom: 20px; padding: 0 .1em; }
+.p { font-size: 16.5px; line-height: 1.7; white-space: pre-line; }
+.torn { position: absolute; left: 0; width: 100%; height: 34px; z-index: 2; display: block; pointer-events: none; }
+.torn.b { bottom: -1px; } .torn.t { top: -1px; transform: scaleY(-1); }
+.torn path { fill: var(--blush); }
+
+/* ---------- Ծրար ----------
+   Բացում. 1) կնիքը անհետանում է, 2) կողքի ծալքերը մեղմ թափանցիկ են դառնում,
+   3) վերևի և ներքևի եռանկյունիները դանդաղ սահում են վերև/ներքև, 4) հայտնվում են անունները */
+.env { position: fixed; inset: 0; z-index: 60; background: var(--khaki-d); overflow: hidden; }
+.env.open { background: transparent; pointer-events: none; }
+.ef { position: absolute; inset: 0; will-change: transform, opacity; }
+.ef svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ef.t { z-index: 4; transition: transform 1.9s cubic-bezier(.65,0,.3,1) .75s; }
+.ef.b { z-index: 3; transition: transform 1.9s cubic-bezier(.65,0,.3,1) .75s; }
+.ef.l, .ef.r { z-index: 2; transition: opacity 1.1s ease .15s; }
+.env.open .ef.l, .env.open .ef.r { opacity: 0; }
+.env.open .ef.t { transform: translateY(-104%); }
+.env.open .ef.b { transform: translateY(104%); }
+.env-title { position: absolute; left: 0; right: 0; top: calc(9svh + env(safe-area-inset-top, 0px)); z-index: 6; color: #fff; text-align: center; transition: opacity .5s; text-shadow: 0 2px 10px rgba(0,0,0,.15); }
+.env-title .a { font-family: var(--hand); font-size: clamp(50px, 15vw, 70px); line-height: 1.2; transform: rotate(-4deg); }
+.env-title .b { font-family: var(--hand); font-size: clamp(34px, 10vw, 46px); line-height: 1.2; margin-top: -4px; }
+.env-to { position: absolute; left: 0; right: 0; bottom: calc(9svh + env(safe-area-inset-bottom, 0px)); z-index: 6; color: #fff; text-align: center; font-size: 15px; transition: opacity .5s; padding: 0 20px; }
+.env-to b { display: block; font-family: var(--hand); font-weight: 400; font-size: clamp(26px, 8vw, 36px); line-height: 1.3; }
+.env-hint { margin-top: 14px; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; opacity: .85; animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+.env.open .env-title, .env.open .env-to { opacity: 0; }
+.seal { position: absolute; left: 50%; top: 50%; z-index: 7; width: 104px; height: 104px; margin: -52px 0 0 -52px; border: 0; padding: 0; background: none; cursor: pointer;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,.35)); transition: transform .5s, opacity .4s; animation: pulse 2.6s ease-in-out infinite; }
+.seal svg { width: 100%; height: 100%; display: block; }
+.env.open .seal { transform: scale(.3) rotate(-20deg); opacity: 0; animation: none; }
+@keyframes pulse { 50% { transform: scale(1.05); } }
+html.preview .seal { animation: none; }
+
+/* ---------- Hero ---------- */
+.hero .bg { position: absolute; inset: 0; background: center / cover no-repeat; transform: scale(1.14); transition: transform 3.6s cubic-bezier(.2,.6,.2,1); }
+.hero.go .bg { transform: scale(1); }
+.hero .nm, .hero .dt { clip-path: inset(-40% 100% -40% -12%); transition: clip-path 1.6s cubic-bezier(.6,.1,.3,1); }
+.hero.go .nm { clip-path: inset(-40% -12% -40% -12%); transition-delay: 1.9s; }
+.hero.go .dt { clip-path: inset(-40% -12% -40% -12%); transition-delay: 2.7s; }
+html.preview .hero .nm, html.preview .hero .dt { clip-path: none; }
+.hero { height: 100svh; min-height: 540px; padding: 0; background: #6d6450 center / cover no-repeat; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.08) 40%, rgba(0,0,0,.2)); }
+.hero-in { position: relative; z-index: 2; text-shadow: 0 2px 14px rgba(0,0,0,.35); }
+.hero .nm { font-family: var(--hand); font-size: clamp(58px, 17vw, 88px); line-height: 1.15; transform: rotate(-5deg); }
+.hero .nm i { font-style: normal; display: inline-block; margin: 0 .12em; }
+.hero .dt { font-family: var(--hand); font-size: clamp(70px, 22vw, 110px); line-height: 1.1; transform: rotate(-5deg); margin-top: 4px; }
+.mbtn { position: absolute; z-index: 3; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom, 0px)); width: 96px; height: 96px; margin-left: -48px; border: 0; background: none; padding: 0; cursor: pointer; color: var(--ink); }
+.mbtn svg { width: 100%; height: 100%; display: block; }
+.mbtn .ring { animation: spin 14s linear infinite; transform-origin: 50% 50%; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Օրեր ---------- */
+.days3 { display: grid; grid-template-columns: 1fr 1.2fr 1fr; margin: 44px auto 0; max-width: 360px; align-items: center; }
+.dcol { position: relative; padding: 10px 2px; }
+.dcol + .dcol::before { content: ""; position: absolute; left: 0; top: 18%; bottom: 18%; width: 1px; background: rgba(59,41,35,.35); }
+.dcol .wd { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; line-height: 1.2; color: var(--soft); white-space: nowrap; }
+.dcol .mo { font-size: 11px; color: var(--soft); }
+.dcol b { display: block; font-weight: 300; font-size: 44px; line-height: 1.1; }
+.dcol.on b { font-size: 60px; color: var(--ink); }
+.dcol.on .wd, .dcol.on .mo { color: var(--ink); }
+.pencil { position: absolute; left: -6%; top: -6%; width: 112%; height: 112%; pointer-events: none; overflow: visible; }
+.pencil path { fill: none; stroke: #4a3a2e; stroke-width: 1.2; stroke-linecap: round; opacity: .8; stroke-dasharray: 330; stroke-dashoffset: 330; transition: stroke-dashoffset 1.4s ease .5s; }
+.pencil .p2 { stroke-width: .8; opacity: .4; transition-delay: 1.1s; }
+.days3.in .pencil path, html.preview .pencil path { stroke-dashoffset: 0; }
+
+/* ---------- Ծրագիր՝ ոլորուն գիծ ----------
+   Գիծը հաշվարկվում է JS-ով ըստ տեքստերի դիրքի (անցնում է կողքով), սրտիկը իջնում է թերթելիս */
+.tl { position: relative; padding: 10px 0 60px; }
+.tl-line { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+.tl-line .ghost { fill: none; stroke: var(--ink); stroke-width: 1; opacity: .14; }
+.tl-line .draw { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; }
+.tl-heart { position: absolute; left: 0; top: 0; z-index: 3; width: 46px; height: 43px; margin: -22px 0 0 -23px; pointer-events: none; will-change: transform; filter: drop-shadow(0 4px 6px rgba(0,0,0,.2)); }
+.tl-start { height: 40px; }
+.tli { position: relative; z-index: 1; padding: 58px 0; }
+.tli > div { display: inline-block; max-width: 82%; }
+.tli.l { text-align: left; } .tli.r { text-align: right; }
+.tli .hand { font-size: clamp(30px, 8.6vw, 46px); line-height: 1.3; white-space: nowrap; }
+.tli .tm { font-size: 30px; letter-spacing: .04em; font-weight: 300; margin-top: 2px; }
+.tl-end { height: 50px; }
+.tli .pl { font-size: 14px; line-height: 1.45; color: var(--soft); margin-top: 4px; white-space: normal; max-width: 230px; display: inline-block; }
+.tli .mp { display: block; font-size: 13px; letter-spacing: .08em; color: var(--olive); text-decoration: none; margin-top: 6px; font-weight: 400; }
+/* ---------- Վայր ---------- */
+.venue-photo { position: relative; height: 62vw; max-height: 380px; min-height: 240px; background: #b8a38f center / cover no-repeat; margin-top: 30px; }
+.round { display: inline-grid; place-items: center; width: 132px; height: 132px; border-radius: 50%; background: var(--olive); color: #f7ebe6; text-decoration: none; font-size: 15px; line-height: 1.3; margin-top: 26px;
+  box-shadow: 0 14px 28px -14px rgba(0,0,0,.5); transition: transform .25s; }
+.round:active { transform: scale(.95); }
+.addr { font-size: 17px; line-height: 1.5; }
+
+/* ---------- Դրեսկոդ ---------- */
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
+.dots i { width: 42px; height: 42px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(59,41,35,.3), 0 8px 14px -8px rgba(0,0,0,.4); }
+
+/* ---------- Details ---------- */
+.details { padding: 110px 0; color: #fff; background: #6b5d55 center / cover no-repeat; }
+.details::before { content: ""; position: absolute; inset: 0; background: rgba(40,26,22,.62); }
+.details .p { text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+.details .wrap { position: relative; z-index: 1; }
+.details .h { color: #fff; }
+
+/* ---------- Հետհաշվարկ ---------- */
+.cdn { display: flex; justify-content: center; align-items: flex-start; gap: 2px; margin: 8px auto 0; max-width: 340px; }
+.cdn div { flex: 1 1 0; min-width: 0; }
+.cdn div:first-child { flex-grow: 1.4; }
+.cdn i { font-style: normal; font-weight: 300; font-size: clamp(28px, 9vw, 40px); line-height: 1.1; color: var(--soft); }
+.cdn b { display: block; font-weight: 300; font-size: clamp(32px, 11vw, 46px); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.cdn span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); }
+
+/* ---------- RSVP ---------- */
+.rs { text-align: left; margin-top: 22px; }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; flex: none; border: 1.4px solid var(--ink); border-radius: 50%; margin: 0; display: grid; place-items: center; cursor: pointer; }
+.radio input::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--olive); transform: scale(0); transition: .2s; }
+.radio input:checked::after { transform: scale(1); }
+.fl { margin-top: 24px; }
+.fl label { display: block; font-size: 15px; color: var(--soft); }
+.fl input, .fl select { width: 100%; border: 0; border-bottom: 1px solid var(--ink); background: transparent; color: var(--ink); font: 300 17px var(--sans); padding: 10px 2px; border-radius: 0; -webkit-appearance: none; appearance: none; }
+.fl input:focus, .fl select:focus { outline: 0; border-bottom-width: 2px; }
+.rs .round { display: grid; width: 110px; height: 110px; margin: 34px auto 0; border: 0; cursor: pointer; font-family: var(--sans); }
+.thanks { text-align: center; margin-top: 20px; }
+.thanks-t { font-family: var(--hand); font-size: 58px; line-height: 1.3; }
+
+.fin .nm { font-family: var(--hand); font-size: clamp(50px, 15vw, 70px); line-height: 1.2; transform: rotate(-4deg); margin-top: 8px; }
+.fin .nm .amp { display: block; font-size: .55em; line-height: 1.2; }
+.made { text-align: center; font-size: 11px; letter-spacing: .24em; padding: 20px 16px calc(90px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
+.made a { text-decoration: none; }
+@media (max-width: 350px) { .wrap { padding: 0 18px; } .dcol b { font-size: 40px; } .dcol.on b { font-size: 48px; } }
+
+/* ---------- Hero-ի անիմացիա՝ լույս, թերթիկներ, փայլփլուններ ---------- */
+.hero .bg { filter: saturate(1.08) sepia(.12); }
+.rays { position: absolute; inset: -20%; z-index: 1; pointer-events: none; mix-blend-mode: screen; opacity: .55;
+  background: repeating-linear-gradient(115deg, rgba(255,236,200,0) 0 40px, rgba(255,236,200,.28) 60px, rgba(255,236,200,0) 90px 140px);
+  -webkit-mask-image: radial-gradient(120% 70% at 85% 0%, #000 0%, transparent 70%); mask-image: radial-gradient(120% 70% at 85% 0%, #000 0%, transparent 70%);
+  animation: rays 9s ease-in-out infinite alternate; }
+@keyframes rays { from { transform: translateX(-4%) rotate(0deg); opacity: .35; } to { transform: translateX(4%) rotate(2deg); opacity: .7; } }
+.petals { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.petals i { position: absolute; top: -8%; width: var(--s); height: calc(var(--s) * .7); border-radius: 70% 0 70% 0; opacity: 0;
+  background: linear-gradient(135deg, #fbd3cf, #e99d9b); box-shadow: 0 1px 2px rgba(0,0,0,.12);
+  animation: petal var(--d) linear var(--dl) infinite; }
+@keyframes petal {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  10% { opacity: .95; }
+  50% { transform: translate(var(--x), 55vh) rotate(200deg); }
+  90% { opacity: .9; }
+  100% { opacity: 0; transform: translate(calc(var(--x) * -.4), 112vh) rotate(420deg); }
+}
+.glints { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.glints i { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #fff7e2; box-shadow: 0 0 8px 2px rgba(255,240,200,.8); opacity: 0;
+  animation: glint var(--d) ease-in-out var(--dl) infinite; }
+@keyframes glint { 0%, 100% { opacity: 0; transform: scale(.4); } 50% { opacity: .9; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .rays, .petals i, .glints i { animation: none; opacity: 0; } }
+/* ---------- Անիմացիոն տեսարան (INVITE.scene) ----------
+   Նկարը 9:16 է, տարրերը դրվում են նկարի տոկոսներով, որ ցանկացած էկրանում ճիշտ տեղում լինեն */
+.hero.art { justify-content: flex-start; padding-top: calc(max(12svh, 104px) + env(safe-area-inset-top, 0px)); }
+.hero.art::before { background: linear-gradient(180deg, rgba(120,60,50,.30) 0%, rgba(120,60,50,.08) 30%, transparent 45%); }
+.hero.art .rays { display: none; }   /* տեսարանում շողերը արևից են գալիս */
+.hero.art .bg { filter: none; transform: scale(1.22) translateY(12%); transition: transform 5s cubic-bezier(.25,.6,.2,1); }
+.hero.art.go .bg { transform: none; }
+.hero.art .nm, .hero.art .dt { text-shadow: 0 2px 16px rgba(110,50,40,.55), 0 0 2px rgba(110,50,40,.3); }
+.scene { position: absolute; left: 50%; top: 50%; width: max(100%, calc(max(100svh, 540px) * .5622)); aspect-ratio: 940 / 1672; transform: translate(-50%, -50%); }
+.scene img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.scene > div, .scene > i { position: absolute; pointer-events: none; }
+.sun { width: 26%; aspect-ratio: 1; transform: translate(-50%, -50%); mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(255,252,230,.95) 0 9%, rgba(255,226,160,.55) 24%, rgba(255,200,140,.18) 42%, transparent 66%);
+  animation: sunpulse 4.5s ease-in-out infinite alternate; }
+@keyframes sunpulse { from { opacity: .7; transform: translate(-50%, -50%) scale(.92); } to { opacity: 1; transform: translate(-50%, -50%) scale(1.08); } }
+.sunrays { width: 150%; aspect-ratio: 1; transform: translate(-50%, -50%); mix-blend-mode: screen; opacity: .6;
+  background: repeating-conic-gradient(from 0deg, rgba(255,236,190,.28) 0 3deg, transparent 3deg 13deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0 8%, rgba(0,0,0,.5) 25%, transparent 55%); mask-image: radial-gradient(circle, #000 0 8%, rgba(0,0,0,.5) 25%, transparent 55%);
+  animation: rayspin 80s linear infinite; }
+@keyframes rayspin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.lamp { width: 7%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(255,230,160,.9) 0 12%, rgba(255,190,110,.35) 35%, transparent 70%); animation: flicker 2.8s ease-in-out infinite; }
+@keyframes flicker { 0%, 100% { opacity: .75; } 40% { opacity: 1; } 55% { opacity: .6; } 70% { opacity: .95; } }
+.fount { width: 0; height: 0; }
+.fount i { position: absolute; left: 0; top: 0; width: 3px; height: 3px; margin: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 5px 1px rgba(255,255,255,.9); opacity: 0;
+  animation: drop var(--d) cubic-bezier(.3,.1,.7,1) var(--dl) infinite; }
+@keyframes drop {
+  0% { opacity: 0; transform: rotate(var(--a)) translateX(0) translateY(0); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(var(--a)) translateX(16px) translateY(22px); }
+}
+.birds { position: absolute; left: 0; top: 16%; width: 30%; height: auto; animation: fly 28s linear infinite; }
+.birds .bd { transform-box: fill-box; transform-origin: center; animation: flap .6s ease-in-out infinite alternate; }
+.birds .b2 { animation-delay: -.3s; } .birds .b3 { animation-delay: -.15s; }
+@keyframes fly { from { transform: translate(-40%, 10%); } to { transform: translate(360%, -30%); } }
+@keyframes flap { to { transform: scaleY(-.6); } }
+@media (prefers-reduced-motion: reduce) { .sun, .sunrays, .lamp, .fount i, .birds, .birds .bd { animation: none; } .hero.art .bg { transition: none; transform: none; } }
+/* տեսարանում երաժշտության կոճակը վերևի աջ անկյունում է, որ չծածկի զույգին */
+.hero.art .mbtn { left: auto; right: 12px; top: calc(12px + env(safe-area-inset-top, 0px)); bottom: auto; margin: 0; width: 66px; height: 66px; }

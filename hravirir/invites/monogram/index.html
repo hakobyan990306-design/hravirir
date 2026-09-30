@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#454545">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Noto+Sans+Armenian:wght@100;200;300;400;500;600&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "monogram", name: "Մոնոգրամ" },    // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Հայկ", "Սոնա"], ru: ["Айк", "Сона"] },   // մոնոգրամը վերցվում է հայերեն անունների առաջին տառերից
+  date: "2026-10-17T11:00",
+  photo: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1000&q=80&auto=format&fit=crop",
+  gallery: [
+    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&q=80&auto=format&fit=crop"
+  ],
+  text: {
+    hy: "Ուրախ ենք հրավիրել Ձեզ մեր առաջին ընտանեկան տոնին՝<br><b>մեր հարսանիքին։</b><br>Խնդրում ենք չմոռանալ լրացնել հրավերի վերջում գտնվող հարցաթերթիկը։",
+    ru: "Рады пригласить вас на наш первый семейный праздник —<br><b>нашу свадьбу.</b><br>Пожалуйста, не забудьте заполнить анкету в конце приглашения."
+  },
+  events: [
+    { title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, time: "11:00", sketch: "house",
+      place: { hy: "Պետրոսյանների օջախ", ru: "Дом семьи Петросян" }, address: { hy: "Երևան, Դավթաշեն, 3-րդ թաղամաս, 12 շենք", ru: "Ереван, Давташен, 3-й квартал, дом 12" },
+      map: "https://maps.google.com/?q=Davtashen+Yerevan" },
+    { title: { hy: "Հարսի տուն", ru: "Дом невесты" }, time: "12:30", sketch: "house2",
+      place: { hy: "Գրիգորյանների օջախ", ru: "Дом семьи Григорян" }, address: { hy: "Երևան, Նոր Նորք, Գայի պողոտա 18", ru: "Ереван, Нор Норк, пр. Гая 18" },
+      map: "https://maps.google.com/?q=Gai+Avenue+18+Yerevan" },
+    { title: { hy: "Պսակադրություն", ru: "Венчание" }, time: "15:00", sketch: "church",
+      place: { hy: "Սուրբ Սարգիս եկեղեցի", ru: "Церковь Сурб Саркис" }, address: { hy: "Երևան, Իսրայելյան փողոց 21", ru: "Ереван, ул. Исраеляна 21" },
+      map: "https://maps.google.com/?q=Saint+Sargis+Church+Yerevan" },
+    { title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, time: "17:30", sketch: "hall",
+      place: { hy: "«Արևիկ» ռեստորանային համալիր", ru: "Ресторанный комплекс «Аревик»" }, address: { hy: "Երևան, Սեբաստիա փողոց 110", ru: "Ереван, ул. Себастия 110" },
+      map: "https://maps.google.com/?q=Sebastia+Street+Yerevan" }
+  ],
+  timing: [
+    { time: "11:00", icon: "house", text: { hy: "Փեսայի տուն", ru: "Дом жениха" } },
+    { time: "12:30", icon: "home2", text: { hy: "Հարսի տուն", ru: "Дом невесты" } },
+    { time: "15:00", icon: "rings", text: { hy: "Պսակադրության արարողություն", ru: "Церемония венчания" } },
+    { time: "17:30", icon: "glasses", text: { hy: "Դիմավորում ռեստորանում", ru: "Встреча в ресторане" } },
+    { time: "22:00", icon: "cake", text: { hy: "Տորթի կտրման արարողություն", ru: "Свадебный торт" } },
+    { time: "23:30", icon: "fire", text: { hy: "Ավարտ", ru: "Завершение" } }
+  ],
+  details: {
+    hy: "Մեզ համար ամենամեծ նվերը Ձեր ներկայությունն է։ Եթե ցանկանում եք ծաղիկներ նվիրել, փոխարենը բերեք Ձեր սիրելի գինին՝ այն կբացենք մեր առաջին տարեդարձին։",
+    ru: "Лучший подарок для нас — ваше присутствие. Если хотите подарить цветы, принесите вместо них любимое вино — мы откроем его в нашу первую годовщину."
+  },
+  dresscode: { text: { hy: "Ուրախ կլինենք, եթե հետևեք մեր հարսանիքի գունային երանգներին", ru: "Будем рады, если вы поддержите цветовую гамму нашей свадьбы" },
+    colors: ["#1f1f1f", "#4a4a4a", "#8c8c8c", "#d8d2c6", "#ffffff"] },
+  photoGroup: "",   // Telegram խմբի հղումը, օր.՝ https://t.me/+xxxx (դատարկ՝ օրինակում)
+  photoText: { hy: "Հարմարության համար Telegram-ում բացել ենք խումբ, որտեղ կարող եք ուղարկել հարսանիքի օրվա լուսանկարներն ու տեսանյութերը։",
+    ru: "Для удобства мы создали группу в Telegram, куда можно отправлять фото и видео со свадьбы." },
+  rsvp: { deadline: "2026-10-10", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/sketch.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

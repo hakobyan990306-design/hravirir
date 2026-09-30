@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#bcd6ee">
+<title>Կնունքի հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../fonts/GHEAMariamReg.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "baptism-silver", name: "Կնունք. կապույտ-արծաթ" },   // իրական հրավերում ջնջեք
+  to: "Սարգսյանների ընտանիք",                   // կամ հղման վերջում՝ ?to=...
+  langs: ["hy", "ru"],
+  kind: "boy",                                   // boy (որդի) · girl (դուստր) · kids (երեխաներ)
+  names: { hy: ["Դավիթ"], ru: ["Давид"] },
+  date: "2026-11-22T12:00",
+  photo: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=600&h=750&fit=crop&q=80&auto=format",
+  events: [
+    { time: "12:00", title: { hy: "Մկրտություն", ru: "Крещение" },
+      place: { hy: "Սուրբ Աննա եկեղեցի", ru: "Церковь Святой Анны" },
+      address: { hy: "Երևան, Աբովյան փողոց 22", ru: "Ереван, ул. Абовяна 22" },
+      map: "https://maps.google.com/?q=Saint+Anna+Church+Yerevan" },
+    { time: "15:00", title: { hy: "Տոնական սեղան", ru: "Праздничный стол" },
+      place: { hy: "«Ամպիկ» ռեստորան", ru: "Ресторан «Ампик»" },
+      address: { hy: "Երևան, Կասկադ, Թամանյան 5", ru: "Ереван, Каскад, ул. Таманяна 5" },
+      map: "https://maps.google.com/?q=Tamanyan+Street+Yerevan" }
+  ],
+  rsvp: { deadline: "2026-11-15", whatsapp: "37499741574" },
+  finalText: { hy: "Սիրով սպասում ենք, Դավիթի ծնողներ", ru: "С любовью ждём, родители Давида" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

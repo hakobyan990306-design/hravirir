@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf6f1">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "chandelier", name: "Ջահ" },          // իրական հրավերում ջնջեք
+  to: "Սարգսյանների ընտանիք",                        // կամ հղման վերջում՝ ?to=...
+  langs: ["hy", "ru"],
+  names: { hy: ["Էդգար", "Լուսինե"], ru: ["Эдгар", "Лусине"] },
+  date: "2026-11-21T11:00",
+  photo: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80&auto=format&fit=crop",
+  heroBg: "https://images.unsplash.com/photo-1724614632495-d4073dff071f?w=900&q=80&auto=format",   // սրահի լուսանկար՝ դառնում է ջրաներկ
+  text: {
+    hy: "Մեր կյանքի ամենագեղեցիկ օրը մոտենում է, և մենք ուզում ենք, որ այն անցկացնենք մեզ ամենահարազատ մարդկանց հետ։",
+    ru: "Самый красивый день нашей жизни приближается, и мы хотим провести его с самыми близкими людьми."
+  },
+  text2: {
+    hy: "Ուրախ կլինենք տեսնել Ձեզ մեր հարսանյաց արարողությանը և տոնական խնջույքին։",
+    ru: "Будем счастливы видеть вас на нашей свадебной церемонии и праздничном банкете."
+  },
+  events: [
+    { time: "11:00", img: "https://images.unsplash.com/photo-1566908829550-e6551b00979b?w=900&q=80&auto=format", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Մանուկյանների օջախ", ru: "Дом семьи Манукян" },
+      address: { hy: "Երևան, Աջափնյակ, Մարգարյան փողոց 12", ru: "Ереван, Ачапняк, ул. Маргаряна 12" }, map: "https://maps.google.com/?q=Margaryan+12+Yerevan" },
+    { time: "12:30", img: "https://images.unsplash.com/photo-1622328331602-663066fcecc2?w=900&q=80&auto=format", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Հովսեփյանների օջախ", ru: "Дом семьи Овсепян" },
+      address: { hy: "Երևան, Նոր Նորք, Միքոյան փողոց 8", ru: "Ереван, Нор Норк, ул. Микояна 8" }, map: "https://maps.google.com/?q=Mikoyan+8+Yerevan" },
+    { time: "15:00", img: "https://images.unsplash.com/photo-1624357485940-241bdaad73b3?w=900&q=80&auto=format", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Հռիփսիմե վանք", ru: "Монастырь Святой Рипсиме" },
+      address: { hy: "Էջմիածին, Մաշտոցի փողոց", ru: "Эчмиадзин, ул. Маштоца" }, map: "https://maps.google.com/?q=Saint+Hripsime+Church+Etchmiadzin" },
+    { time: "17:30", img: "https://images.unsplash.com/photo-1763228354340-8b7405f6abf8?w=900&q=80&auto=format", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Վիլլա Լուչե» հանդիսությունների սրահ", ru: "Банкетный зал «Вилла Луче»" },
+      address: { hy: "Երևան, Դավիթաշեն, Ա. Միկոյան փողոց 45", ru: "Ереван, Давташен, ул. А. Микояна 45" }, map: "https://maps.google.com/?q=Davtashen+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Կխնդրենք հագնել փափուկ, պաստելային երանգներ՝ փոշեվարդագույն, շամպայն, սաթ և կաթնագույն", ru: "Просим выбрать мягкие пастельные оттенки: пудрово-розовый, шампань, янтарь и молочный" },
+    colors: ["#ead3c8", "#e6cf9c", "#c9a877", "#f7efe6", "#b9a79a"] },
+  rsvp: { deadline: "2026-11-10", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/sketch.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="art.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

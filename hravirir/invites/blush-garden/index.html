@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6f6942">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "blush-garden" },                 // իրական հրավերում ջնջեք
+  to: "Պետրոսյանների ընտանիք",                  // կամ հղման վերջում՝ ?to=...
+  langs: ["hy", "ru"],
+  names: { hy: ["Դավիթ", "Աննա"], ru: ["Давид", "Анна"] },
+  date: "2026-10-24T15:30",
+  scene: {                                      // անիմացիոն նկար. դիրքերը՝ նկարի %-ով
+    src: "castle.webp",
+    sun: [29.8, 66.7],                           // արև
+    fountain: [12.5, 73.2],                      // շատրվանի գագաթ
+    lamps: [[36, 74.6], [91.6, 74.6], [86.2, 76.4], [75, 61.4]]   // լապտերներ, դուռ, պատուհան
+  },
+  heroFx: true,                                 // անիմացիա՝ լույսի շողեր, թերթիկներ, փայլփլուններ
+  greeting: { hy: "Սիրելի՛ հյուրեր", ru: "Дорогие гости!" },
+  text: {
+    hy: "Մի քանի տարի առաջ մեր ճանապարհները հատվեցին, և այսօր ուզում ենք դրանք միացնել ընդմիշտ։ Սիրով հրավիրում ենք Ձեզ լինել մեր կողքին այս օրը։",
+    ru: "Несколько лет назад наши пути пересеклись, и теперь мы хотим соединить их навсегда. С любовью приглашаем вас быть рядом с нами в этот день."
+  },
+  timing: [
+    { time: "11:00", text: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Երևան, Նոր Նորք, Գայի պողոտա 16/3", ru: "Ереван, Нор Норк, пр. Гая 16/3" }, map: "https://maps.google.com/?q=Gai+Avenue+Yerevan" },
+    { time: "12:30", text: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Երևան, Կենտրոն, Սայաթ-Նովայի պողոտա 21", ru: "Ереван, Кентрон, пр. Саят-Новы 21" }, map: "https://maps.google.com/?q=Sayat-Nova+Avenue+Yerevan" },
+    { time: "15:30", text: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Հովհաննես եկեղեցի, Բյուրական", ru: "Церковь Святого Ованнеса, Бюракан" }, map: "https://maps.google.com/?q=Saint+Hovhannes+Church+Byurakan" },
+    { time: "18:00", text: { hy: "Հարսանյաց հանդես", ru: "Банкет" }, place: { hy: "«Այգեկ» ռեստորանային համալիր", ru: "Ресторанный комплекс «Айгек»" } },
+    { time: "22:30", text: { hy: "Հարսանյաց տորթ", ru: "Свадебный торт" } }
+  ],
+  venue: {
+    place: { hy: "«Այգեկ» ռեստորանային համալիր", ru: "Ресторанный комплекс «Айгек»" },
+    address: { hy: "Երևան, Ավան, Հովհաննես Հովհաննիսյանի փողոց 20", ru: "Ереван, Аван, ул. Ованеса Ованесяна 20" },
+    map: "https://maps.google.com/?q=Avan+Yerevan",
+    photo: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&h=700&fit=crop&q=80&auto=format"
+  },
+  dresscode: {
+    text: { hy: "Կուրախանանք, եթե ընտրեք նուրբ, պաստելային երանգներ", ru: "Будем рады нежным пастельным оттенкам в ваших нарядах" },
+    colors: ["#ecccc5", "#d9a9a0", "#8a8357", "#6f6a3e", "#f6ede6"]
+  },
+  details: {
+    hy: ["Ծաղիկների փոխարեն կուրախանանք, եթե մեզ նվիրեք մի շիշ գինի, որը միասին կբացենք մեր ընտանիքի առաջին տարեդարձին։",
+         "Մեր ամենալավ նվերը Ձեր ներկայությունն է, իսկ եթե ուզում եք նվեր անել՝ կնախընտրենք ծրար։"],
+    ru: ["Вместо цветов мы будем счастливы получить бутылочку вина, которую вместе разопьём на первую годовщину.",
+         "Лучший подарок — ваше присутствие, а если захотите нас порадовать — будем рады конверту."]
+  },
+  detailsPhoto: "https://images.unsplash.com/photo-1515715709530-858f7bfa1b10?w=900&h=1200&fit=crop&q=80&auto=format",
+  rsvp: { deadline: "2026-10-12", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

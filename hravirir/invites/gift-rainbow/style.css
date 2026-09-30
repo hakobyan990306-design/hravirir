@@ -1,0 +1,109 @@
+/* «Նվեր» — մանկական ծնունդ. նվերի տուփ, բոհո ծիածան, փուչիկներ
+   Տառատեսակներ՝ 2. Armmatura (ուրախ, գլխավոր) + GHEA Mariam */
+@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+
+:root {
+  --cream: #fbf5ec; --sand: #f2e6d5; --ink: #4a3b33; --soft: #8a7568; --terra: #d98b6a; --mustard: #e8b85a; --sage: #9db39a; --blush: #f0b9ad; --sky: #a9cbe0;
+  --fun: "Armmatura", "GHEA Mariam", sans-serif; --serif: "GHEA Mariam", Georgia, serif;
+  --k-bg: #fbf5ec; --k-ink: #4a3b33; --k-accent: #d98b6a; --k-font: "GHEA Mariam", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: var(--serif); font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; padding: 0 24px; }
+section { position: relative; text-align: center; padding: 64px 0; overflow: hidden; }
+.fun { font-family: var(--fun); font-weight: 400; line-height: 1.2; }
+.h2 { font-family: var(--fun); font-size: clamp(30px, 8.6vw, 40px); line-height: 1.25; margin-bottom: 16px; color: var(--terra); }
+
+/* ---------- Բացման էկրան՝ նվերի տուփ ---------- */
+.env { position: fixed; inset: 0; z-index: 60; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  background: radial-gradient(120% 80% at 50% 40%, #fdf7ef, #f1e2cf); transition: opacity .8s ease 1.8s, visibility .8s 1.8s; padding: 20px; }
+.env.open { opacity: 0; visibility: hidden; }
+.env-top { text-align: center; }
+.env-top .a { font-family: var(--fun); font-size: clamp(26px, 7.4vw, 34px); color: var(--terra); line-height: 1.25; }
+.env-top .b { font-size: 15px; color: var(--soft); margin-top: 4px; }
+.gift { position: relative; width: min(64vw, 250px); aspect-ratio: 1 / 1.05; cursor: pointer; border: 0; background: none; padding: 0; animation: wiggle 2.8s ease-in-out infinite; }
+@keyframes wiggle { 0%, 70%, 100% { transform: rotate(0); } 76% { transform: rotate(-4deg); } 82% { transform: rotate(4deg); } 88% { transform: rotate(-2deg); } }
+.gift svg { position: absolute; left: 0; width: 100%; display: block; overflow: visible; }
+.gift .box { bottom: 0; height: 72%; }
+.gift .lid { top: 0; height: 40%; z-index: 2; transform-origin: 30% 100%; transition: transform 1s cubic-bezier(.3,1.4,.5,1); }
+.env.open .gift { animation: none; }
+.env.open .gift .lid { transform: translate(-40%, -160%) rotate(-38deg); }
+.env-to { text-align: center; font-size: 15px; color: var(--soft); }
+.env-to b { display: block; font-family: var(--fun); font-weight: 400; font-size: clamp(22px, 6.6vw, 30px); color: var(--ink); line-height: 1.3; }
+.env-hint { margin-top: 10px; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--terra); animation: hint 2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+html.preview .gift, html.preview .env-hint { animation: none; }
+/* փուչիկներ և կոնֆետի տուփից */
+.pop { position: absolute; left: 50%; top: 55%; z-index: 5; pointer-events: none; }
+.pop i { position: absolute; left: 0; top: 0; opacity: 0; }
+.pop i.bl { width: 44px; height: 54px; margin: -27px 0 0 -22px; border-radius: 50% 50% 48% 52% / 58% 58% 42% 42%; box-shadow: inset -6px -8px 0 rgba(0,0,0,.08), inset 6px 6px 0 rgba(255,255,255,.35); }
+.pop i.bl::after { content: ""; position: absolute; left: 50%; top: 100%; width: 1px; height: 46px; background: rgba(74,59,51,.4); }
+.pop i.cf { width: 8px; height: 13px; border-radius: 2px; }
+.env.open .pop i.bl { animation: rise 2.6s cubic-bezier(.3,.6,.4,1) var(--dl) forwards; }
+.env.open .pop i.cf { animation: burst 1.6s cubic-bezier(.2,.7,.3,1) var(--dl) forwards; }
+@keyframes rise { 0% { opacity: 1; transform: translate(0, 0) scale(.4); } 100% { opacity: 1; transform: translate(var(--x), -120vh) scale(1) rotate(var(--r)); } }
+@keyframes burst { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--r)); } }
+
+/* ---------- Hero՝ ծիածան ---------- */
+.hero { padding: 40px 0 30px; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
+.rainbow { width: min(92vw, 400px); margin: 0 auto; position: relative; }
+.rainbow svg { width: 100%; display: block; overflow: visible; }
+.cloud { animation: float 6s ease-in-out infinite alternate; }
+.cloud.c2 { animation-duration: 8s; animation-delay: -3s; }
+@keyframes float { from { transform: translateX(-8px); } to { transform: translateX(10px); } }
+.age { position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%); font-family: var(--fun); font-size: clamp(110px, 34vw, 160px); line-height: 1; color: var(--ink);
+  text-shadow: 4px 4px 0 var(--blush); }
+.photo { width: min(46vw, 190px); aspect-ratio: 1; border-radius: 50%; margin: 18px auto 0; background: var(--sand) center / cover no-repeat; border: 6px solid #fff; box-shadow: 0 0 0 3px var(--mustard), 0 16px 30px -14px rgba(74,59,51,.45); }
+.hero .nm { font-family: var(--fun); font-size: clamp(46px, 14vw, 66px); color: var(--terra); margin-top: 14px; }
+.hero .sub { font-size: 18px; color: var(--soft); }
+.chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.chips span { padding: 8px 16px; border-radius: 999px; color: #fff; font-family: var(--fun); font-size: 17px; }
+.chips span:nth-child(1) { background: var(--terra); } .chips span:nth-child(2) { background: var(--mustard); } .chips span:nth-child(3) { background: var(--sage); } .chips span:nth-child(4) { background: var(--sky); }
+
+/* ---------- Բալոններ ֆոնին ---------- */
+section > .wrap { position: relative; z-index: 1; }
+.floaty { position: absolute; z-index: 0; width: 30px; height: 37px; border-radius: 50% 50% 48% 52% / 58% 58% 42% 42%; opacity: .85; animation: bob 5s ease-in-out infinite; pointer-events: none;
+  box-shadow: inset -5px -7px 0 rgba(0,0,0,.08), inset 5px 5px 0 rgba(255,255,255,.35); }
+.floaty::after { content: ""; position: absolute; left: 50%; top: 100%; width: 1px; height: 40px; background: rgba(74,59,51,.3); }
+@keyframes bob { 50% { transform: translateY(-14px) rotate(4deg); } }
+
+/* ---------- Հրավեր, ծրագիր ---------- */
+.letter { background: var(--sand); }
+.letter .p { font-size: 18px; line-height: 1.7; white-space: pre-line; }
+.acts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+.act { background: #fff; border-radius: 22px; padding: 18px 10px; box-shadow: 0 12px 24px -18px rgba(74,59,51,.5); }
+.act svg { width: 46px; height: 46px; display: block; margin: 0 auto 8px; }
+.act b { display: block; font-family: var(--fun); font-weight: 400; font-size: 19px; color: var(--ink); }
+.act span { font-size: 14px; color: var(--soft); }
+.where { background: #fff; border-radius: 26px; padding: 26px 18px; margin-top: 8px; box-shadow: 0 14px 28px -20px rgba(74,59,51,.5); }
+.where .t { font-family: var(--fun); font-size: 30px; color: var(--terra); }
+.where .n { font-size: 19px; margin-top: 4px; }
+.where .a { color: var(--soft); font-size: 15px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 14px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--terra); color: #fff;
+  text-decoration: none; font: 16px var(--fun); cursor: pointer; box-shadow: 0 8px 0 #b86c4f; transition: transform .15s, box-shadow .15s; }
+.btn:active { transform: translateY(4px); box-shadow: 0 4px 0 #b86c4f; }
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
+.dots i { width: 40px; height: 40px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 6px 12px -6px rgba(0,0,0,.35); }
+
+/* ---------- Հետհաշվարկ, RSVP ---------- */
+.cdn { display: flex; justify-content: center; gap: 8px; }
+.cdn div { flex: 1 1 0; max-width: 80px; background: #fff; border-radius: 18px; padding: 10px 4px; box-shadow: 0 10px 20px -16px rgba(74,59,51,.6); }
+.cdn b { display: block; font-family: var(--fun); font-weight: 400; font-size: clamp(28px, 8vw, 36px); line-height: 1.1; color: var(--terra); font-variant-numeric: tabular-nums; }
+.cdn span { font-size: 12px; color: var(--soft); }
+.rs { text-align: left; background: #fff; border-radius: 26px; padding: 22px 18px; margin-top: 10px; box-shadow: 0 14px 28px -20px rgba(74,59,51,.5); }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 22px; height: 22px; accent-color: var(--terra); margin: 0; flex: none; }
+.fl { margin-top: 16px; }
+.fl label { display: block; font-size: 14px; color: var(--soft); margin-bottom: 4px; }
+.fl input, .fl select { width: 100%; border: 2px solid var(--sand); border-radius: 14px; background: var(--cream); color: var(--ink); font: 17px var(--serif); padding: 11px 12px; }
+.fl input:focus, .fl select:focus { outline: 0; border-color: var(--mustard); }
+.rs .btn { width: 100%; margin-top: 20px; }
+.thanks { text-align: center; } .thanks-t { font-family: var(--fun); font-size: 40px; color: var(--terra); }
+.fin .nm { font-family: var(--fun); font-size: clamp(40px, 12vw, 56px); color: var(--terra); }
+.made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
+.made a { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .gift, .cloud, .floaty, .env-hint { animation: none !important; } }
