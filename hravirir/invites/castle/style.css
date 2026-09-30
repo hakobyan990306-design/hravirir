@@ -1,0 +1,102 @@
+/* «Արքայադուստր» (աղջկա ծնունդ) — վարդագույն դղյակ ամպերի մեջ. կամուրջն իջնում է, դարպասից լույս ու փայլեր, «մտնում ենք» ներս
+   Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+
+:root {
+  --paper: #fff9fb; --pink: #f4b6cf; --pink-d: #d9709c; --lilac: #b89ad8; --lil-l: #f3ecfb; --gold: #f2c96b; --ink: #4a3656; --soft: #9a86a6;
+  --script: "Coronet", "Marck Script", serif; --serif: "GHEA Mariam", Georgia, serif;
+  --k-bg: #fff9fb; --k-ink: #4a3656; --k-accent: #d9709c; --k-font: "GHEA Mariam", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 16.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; padding: 0 26px; position: relative; }
+section { position: relative; text-align: center; padding: 64px 0; overflow: hidden; }
+.caps { font-size: 12.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); text-wrap: balance; }
+.h2 { font-family: var(--script); font-weight: 400; font-size: clamp(42px, 12vw, 54px); line-height: 1.25; color: var(--pink-d); margin-bottom: 12px; padding: 0 .1em .18em; }
+.lil { background: var(--lil-l); }
+svg { display: block; width: 100%; }
+.cl { position: absolute; width: 160px; height: 52px; border-radius: 50px; background: #fff; opacity: .9; pointer-events: none; animation: drift 18s linear infinite; }
+.cl::before, .cl::after { content: ""; position: absolute; border-radius: 50%; background: #fff; }
+.cl::before { width: 70px; height: 70px; left: 24px; top: -34px; } .cl::after { width: 54px; height: 54px; right: 26px; top: -24px; }
+.c1 { left: -20px; top: 16%; } .c2 { right: -40px; top: 34%; transform: scale(.8); animation-duration: 24s; animation-direction: reverse; } .c3 { left: 30%; top: 6%; transform: scale(.6); animation-duration: 30s; }
+@keyframes drift { 50% { translate: 26px 0; } }
+.cs .flag { transform-box: fill-box; transform-origin: 0 50%; animation: wave 1.4s ease-in-out infinite alternate; }
+@keyframes wave { to { transform: scaleX(.75) skewY(8deg); } }
+
+/* ---------- Բացում ---------- */
+.env { position: fixed; inset: 0; z-index: 60; overflow: hidden; cursor: pointer; background: linear-gradient(180deg, #d9ecfb 0%, #f6e6f0 55%, #fdf2f6 100%); }
+.env .top { position: absolute; left: 0; right: 0; top: calc(30px + env(safe-area-inset-top, 0px)); text-align: center; z-index: 3; transition: opacity .4s; }
+.env .top .caps { color: var(--pink-d); }
+.env .top .nm { font-family: var(--script); font-size: clamp(50px, 15vw, 66px); line-height: 1.2; color: var(--pink-d); padding-bottom: .15em; }
+.env .stage { position: absolute; left: 50%; bottom: 8%; width: min(92vw, 380px); aspect-ratio: 1; transform: translateX(-50%); transform-origin: 50% 82%; perspective: 700px; z-index: 2; transition: transform 1.4s cubic-bezier(.6,0,.3,1), opacity .8s .5s; }
+.env .bridge { position: absolute; left: 40.67%; top: 64.67%; width: 18.67%; height: 28.67%; transform-origin: 50% 100%; border-radius: 40px 40px 0 0 / 30px 30px 0 0; z-index: 2;
+  background: repeating-linear-gradient(90deg, #b9824f 0 9px, #9a6538 9px 11px); box-shadow: inset 0 0 0 3px #7a4e2a; transition: transform 1.2s cubic-bezier(.5,0,.4,1.2); }
+.env .bridge::before, .env .bridge::after { content: ""; position: absolute; top: 12%; width: 3px; height: 88%; background: repeating-linear-gradient(180deg, #8a8a8a 0 4px, #555 4px 6px); }
+.env .bridge::before { left: 6px; } .env .bridge::after { right: 6px; }
+.env .bridge i { position: absolute; left: 50%; top: 40%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 2px #c99a36; }
+.env .gl { position: absolute; left: 50%; top: 82%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; background: radial-gradient(circle, #fffbe8, rgba(255,230,160,.7) 40%, transparent 70%); transform: scale(0); transition: transform 1.2s cubic-bezier(.2,.8,.2,1); z-index: 1; }
+.env .spk { position: absolute; left: 50%; top: 80%; z-index: 3; }
+.env .spk i { position: absolute; width: 7px; height: 7px; border-radius: 50%; opacity: 0; }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 3; text-align: center; font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--pink-d); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+html.preview .env .hint, html.preview .cl, html.preview .cs .flag { animation: none; }
+/* փուլեր */
+.env.s1 .hint { opacity: 0; animation: none; transition: opacity .3s; }
+.env.s1 .bridge { transform: rotateX(-78deg); }
+.env.s2 .gl { transform: scale(4); }
+.env.s2 .spk i { animation: spk 1.2s ease-out var(--dl) forwards; }
+@keyframes spk { 0% { opacity: 1; transform: translate(0, 0) scale(.5); } 100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(1.2); } }
+.env.s2 .top { opacity: 0; }
+.env.s3 .stage { transform: translateX(-50%) scale(6); opacity: 0; }
+.env.s3 { background: #fff9fb; transition: background 1s; }
+
+/* ---------- Hero ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 0; background: linear-gradient(180deg, #d9ecfb 0%, #f6e6f0 60%, var(--paper)); }
+.cr { width: 84px; margin: 0 auto 12px; }
+.hero .nm { font-family: var(--script); font-weight: 400; font-size: clamp(66px, 20vw, 88px); line-height: 1.1; color: var(--pink-d); margin-top: 8px; padding: 0 .1em .15em; }
+.age { display: inline-flex; align-items: center; gap: 10px; }
+.age b { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #fff; font-size: 30px; font-weight: 400; box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--pink); }
+.age span { font-size: 18px; color: var(--ink); }
+.dt { margin-top: 12px; font-size: 18px; letter-spacing: .04em; }
+.mc { width: min(78vw, 300px); margin: 16px auto -4px; }
+.p { white-space: pre-line; font-size: 17px; text-wrap: pretty; }
+
+/* ---------- Հետհաշվարկ ---------- */
+.cdn { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.cdn div { flex: 1 1 0; max-width: 76px; padding: 12px 2px 8px; background: #fff; border-radius: 20px; box-shadow: 0 0 0 2px var(--pink), 0 12px 20px -14px rgba(217,112,156,.8); }
+.cdn b { display: block; font-weight: 400; font-size: clamp(28px, 8vw, 34px); line-height: 1.1; color: var(--pink-d); font-variant-numeric: tabular-nums; }
+.cdn span { font-size: 11.5px; color: var(--soft); }
+
+/* ---------- Ծրագիր ---------- */
+.ev { margin-top: 24px; padding: 24px 18px; background: #fff; border-radius: 26px; box-shadow: 0 16px 28px -22px rgba(74,54,86,.6); }
+.ev .pic.ico { width: 70px !important; max-width: 70px; }
+.ev .tm { font-size: 32px; line-height: 1.1; color: var(--pink-d); }
+.ev .t { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin-top: 6px; }
+.ev .n { font-family: var(--script); font-size: clamp(26px, 7.8vw, 32px); line-height: 1.3; margin-top: 2px; padding-bottom: .15em; text-wrap: balance; }
+.ev .a { font-size: 15px; color: var(--soft); text-wrap: balance; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 12px; padding: 0 26px; border: 2px solid var(--pink); border-radius: 999px; background: transparent; color: var(--pink-d);
+  text-decoration: none; font: 13px var(--serif); letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.btn.fill { background: var(--pink-d); border-color: var(--pink-d); color: #fff; }
+.dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.dots i { width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--lilac); }
+
+/* ---------- RSVP ---------- */
+.rs { text-align: left; background: #fff; border-radius: 22px; padding: 24px 20px; margin-top: 10px; box-shadow: 0 16px 28px -22px rgba(74,54,86,.6); }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 20px; height: 20px; accent-color: var(--pink-d); margin: 0; flex: none; }
+.fl { margin-top: 14px; }
+.fl label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px; }
+.fl input, .fl select { width: 100%; border: 2px solid #f5dbe7; background: #fffafc; color: var(--ink); font: 17px var(--serif); padding: 9px 12px; border-radius: 12px; }
+.fl input:focus, .fl select:focus { outline: 0; border-color: var(--pink-d); }
+.rs .btn { width: 100%; margin-top: 20px; }
+.thanks { text-align: center; } .thanks-t { font-family: var(--script); font-size: 44px; color: var(--pink-d); padding-bottom: .15em; }
+.fin { background: linear-gradient(180deg, var(--paper), #f6e6f0); }
+.fin .nm { font-family: var(--script); font-size: clamp(50px, 15vw, 66px); color: var(--pink-d); line-height: 1.25; padding: 0 .1em .18em; }
+.made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); background: #f6e6f0; }
+.made a { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .env .hint, .cl, .cs .flag { animation: none !important; } }

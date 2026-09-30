@@ -46,6 +46,7 @@
     { id: "baptism-silver", name: "Կապույտ-արծաթ", cat: "baptism", colors: ["#fdfeff", "#bcd6ee", "#8fb4dc", "#9aa6b6"], tag: "Նոր" },
     { id: "angel-wings", name: "Հրեշտակ", cat: "baptism", colors: ["#fdfaf8", "#f7e4e4", "#d99aa3", "#b8707c"], tag: "Նոր" },
     { id: "white-ribbon", name: "Ժապավեն", cat: "baptism", colors: ["#fbfcfd", "#cddcea", "#9dbad6", "#5f86ae"], tag: "Նոր" },
+    { id: "castle", name: "Արքայադուստր", cat: "birthday", colors: ["#f6e6f0", "#f4b6cf", "#b89ad8", "#f2c96b"], tag: "Նոր" },
     { id: "pocket-watch", name: "Ժամացույց", cat: "birthday", colors: ["#1f1510", "#8a5a33", "#c79a4e", "#efe4cf"], tag: "Նոր" },
     { id: "gift-rainbow", name: "Նվեր", cat: "birthday", colors: ["#fbf5ec", "#d98b6a", "#e8b85a", "#9db39a"], tag: "Նոր" },
     { id: "champagne", name: "Շամպայն", cat: "birthday", colors: ["#141b2d", "#1d2740", "#cfaa62", "#efe6d2"], tag: "Նոր" },

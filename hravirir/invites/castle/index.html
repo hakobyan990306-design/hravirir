@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6e6f0">
+<title>Ծննդյան հրավեր</title>
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "castle", name: "Արքայադուստր" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Եվա"], ru: ["Ева"] },
+  age: "5",
+  date: "2026-11-22T14:00",
+  text: {
+    hy: "Մեր փոքրիկ արքայադուստրը դառնում է 5 տարեկան։\nՍիրով հրավիրում ենք Ձեզ նրա հեքիաթային տոնին՝ խաղերով, կախարդանքով, տորթով ու շատ ծիծաղով։",
+    ru: "Нашей маленькой принцессе исполняется 5 лет.\nС любовью приглашаем вас на её сказочный праздник — с играми, волшебством, тортом и морем смеха."
+  },
+  events: [
+    { time: "14:00", title: { hy: "Հեքիաթային շոու և խաղեր", ru: "Сказочное шоу и игры" }, place: { hy: "«Հեքիաթների երկիր» մանկական կենտրոն", ru: "Детский центр «Страна сказок»" },
+      address: { hy: "Երևան, Վ. Սարգսյան փողոց 26/1", ru: "Ереван, ул. В. Саргсяна 26/1" }, map: "https://maps.google.com/?q=Vazgen+Sargsyan+26+Yerevan" },
+    { time: "16:00", title: { hy: "Տորթ և հյուրասիրություն", ru: "Торт и угощения" }, place: { hy: "«Հեքիաթների երկիր» մանկական կենտրոն", ru: "Детский центр «Страна сказок»" },
+      address: { hy: "Երևան, Վ. Սարգսյան փողոց 26/1", ru: "Ереван, ул. В. Саргсяна 26/1" }, map: "https://maps.google.com/?q=Vazgen+Sargsyan+26+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Արքայադուստրերի և ասպետների զգեստներ, կամ պարզապես վարդագույն ու լավանդա", ru: "Костюмы принцесс и рыцарей — или просто розовый и лавандовый" },
+    colors: ["#f4b6cf", "#c9b3e6", "#fff4d6", "#f6d58e"] },
+  rsvp: { deadline: "2026-11-15", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
