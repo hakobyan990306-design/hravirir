@@ -19,6 +19,8 @@
   ];
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
   var DESIGNS = [
+    { id: "doves", name: "Աղավնիներ", cat: "wedding", colors: ["#e6edf4", "#fbfcfd", "#6f8fb3", "#c9d1da"], tag: "Նոր" },
+    { id: "vinyl", name: "Սիրո մեղեդի", cat: "wedding", colors: ["#f1e8d6", "#5f6b3a", "#d9a441", "#1a1916"], tag: "Նոր" },
     { id: "taraz", name: "Տարազ", cat: "wedding", colors: ["#8c1c24", "#5e0f18", "#c9a04e", "#f5ead6"], tag: "Նոր" },
     { id: "stained-glass", name: "Վիտրաժ", cat: "wedding", colors: ["#f8f3ea", "#2458a6", "#9e2436", "#b8904f"], tag: "Նոր" },
     { id: "lavender", name: "Լավանդա", cat: "wedding", colors: ["#f7d9c4", "#b9a6d8", "#8f7bb8", "#8e9b7a"], tag: "Նոր" },

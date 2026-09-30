@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#dde6ef">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400&family=Noto+Serif:wght@300;400&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "doves", name: "Աղավնիներ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Էդգար", "Նաիրա"], ru: ["Эдгар", "Наира"] },
+  date: "2027-02-13T12:00",
+  text: {
+    hy: "Սերը համբերատար է, քաղցրաբարո է, սերը չի նախանձում…\nԱյս խոսքերով ենք սկսում մեր ընտանիքը և սրտանց կուզենանք, որ մեր ուրախության օրը Դուք լինեք մեզ հետ։",
+    ru: "Любовь долготерпит, милосердствует, любовь не завидует…\nС этими словами мы создаём нашу семью и от всего сердца хотим, чтобы в день нашей радости вы были рядом."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Մանուկյանների օջախ", ru: "Дом семьи Манукян" },
+      address: { hy: "Երևան, Արաբկիր, Բաղրամյան պողոտա 60", ru: "Ереван, Арабкир, пр. Баграмяна 60" }, map: "https://maps.google.com/?q=Baghramyan+60+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Հարությունյանների օջախ", ru: "Дом семьи Арутюнян" },
+      address: { hy: "Երևան, Շենգավիթ, Բագրատունյաց պողոտա 21", ru: "Ереван, Шенгавит, пр. Багратуняц 21" }, map: "https://maps.google.com/?q=Bagratunyats+21+Yerevan" },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Գրիգոր Լուսավորիչ մայր տաճար", ru: "Кафедральный собор Святого Григория Просветителя" },
+      address: { hy: "Երևան, Տիգրան Մեծի պողոտա", ru: "Ереван, пр. Тиграна Меца" }, map: "https://maps.google.com/?q=Saint+Gregory+the+Illuminator+Cathedral+Yerevan" },
+    { time: "19:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Կոնգրես» հյուրանոցի դահլիճ", ru: "Зал отеля «Конгресс»" },
+      address: { hy: "Երևան, Իտալիայի փողոց 1", ru: "Ереван, ул. Италии 1" }, map: "https://maps.google.com/?q=Congress+Hotel+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Սառը, նուրբ երանգներ՝ փոշեկապույտ, արծաթագույն, մոխրագույն և սպիտակ", ru: "Холодные нежные оттенки: пыльно-голубой, серебристый, серый и белый" },
+    colors: ["#6f8fb3", "#a9bfd6", "#c9d1da", "#8a9098", "#ffffff"] },
+  rsvp: { deadline: "2027-02-01", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

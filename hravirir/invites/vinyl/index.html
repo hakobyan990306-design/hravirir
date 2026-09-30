@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f1e8d6">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&display=swap">
+<link rel="preload" href="../../fonts/Noyemi.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "vinyl", name: "Սիրո մեղեդի" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Գոռ", "Լիլիթ"], ru: ["Гор", "Лилит"] },
+  date: "2026-11-28T12:00",
+  text: {
+    hy: "Մեր պատմությունը սկսվեց մի երգով, որ երկուսս էլ սիրում էինք։ Հիմա ուզում ենք, որ մեր կյանքի ամենագեղեցիկ մեղեդին հնչի Ձեզ հետ։\nՍիրով սպասում ենք Ձեզ մեր հարսանիքին։",
+    ru: "Наша история началась с песни, которую любили мы оба. Теперь мы хотим, чтобы самая красивая мелодия нашей жизни прозвучала вместе с вами.\nС любовью ждём вас на нашей свадьбе."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Պետրոսյանների օջախ", ru: "Дом семьи Петросян" },
+      address: { hy: "Երևան, Դավթաշեն, 3-րդ թաղամաս, 12", ru: "Ереван, Давташен, 3-й квартал, 12" }, map: "https://maps.google.com/?q=Davtashen+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Ավետիսյանների օջախ", ru: "Дом семьи Аветисян" },
+      address: { hy: "Երևան, Կոմիտասի պողոտա 38", ru: "Ереван, пр. Комитаса 38" }, map: "https://maps.google.com/?q=Komitas+38+Yerevan" },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Աննա եկեղեցի", ru: "Церковь Святой Анны" },
+      address: { hy: "Երևան, Աբովյան փողոց 2", ru: "Ереван, ул. Абовяна 2" }, map: "https://maps.google.com/?q=Saint+Anna+Church+Yerevan" },
+    { time: "18:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Վերնատուն» ռեստորան", ru: "Ресторан «Вернатун»" },
+      address: { hy: "Երևան, Սայաթ-Նովայի պողոտա 5", ru: "Ереван, пр. Саят-Новы 5" }, map: "https://maps.google.com/?q=Sayat-Nova+5+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Ռետրո երանգներ՝ ձիթապտղի կանաչ, մանանեխի դեղին, կաթնագույն և շագանակագույն", ru: "Ретро-оттенки: оливковый, горчичный, молочный и шоколадный" },
+    colors: ["#5f6b3a", "#d9a441", "#f1e8d6", "#6b4a33", "#161512"] },
+  rsvp: { deadline: "2026-11-18", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
