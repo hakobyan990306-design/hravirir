@@ -1,0 +1,109 @@
+/* «Ատամհատիկ» — ավանդական ափսե առարկաներով. հյուրն ընտրում է, թե ով կդառնա փոքրիկը, վրան հատիկ ու կոնֆետ է թափվում
+   Տառատեսակներ՝ 2. Armmatura (վերնագրեր, ռուսերենը՝ Nunito) + Noto Sans Armenian / Nunito */
+@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; unicode-range: U+0530-058F, U+0030-0039, U+0026; }
+
+:root {
+  --cream: #fff6ea; --ink: #5a4034; --soft: #9b8577; --peach: #f3a883; --peach-l: #fde3d6; --mint: #8fcfb8; --mint-l: #e3f4ed; --butter: #f5cf6a; --sky: #9cc9e8;
+  --disp: "Armmatura", "Nunito", sans-serif; --sans: "Noto Sans Armenian", "Nunito", sans-serif;
+  --k-bg: #fff6ea; --k-ink: #5a4034; --k-accent: #f3a883; --k-font: "Noto Sans Armenian", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; font-synthesis: none; }
+body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; padding: 0 24px; position: relative; }
+section { position: relative; text-align: center; padding: 60px 0; overflow: hidden; }
+.caps { font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); text-wrap: balance; font-weight: 600; }
+.h2 { font-family: var(--disp); font-weight: 800; font-size: clamp(32px, 9.6vw, 42px); line-height: 1.2; color: var(--peach); margin-bottom: 14px; padding-bottom: .08em; }
+.mint { background: var(--mint-l); } .peach { background: var(--peach-l); }
+.mint .h2 { color: #4f9f84; }
+svg { display: block; width: 100%; }
+
+/* ---------- Բացում՝ ատամհատիկի ափսե ---------- */
+.env { position: fixed; inset: 0; z-index: 60; overflow: hidden; background: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+.env .dotsbg { position: absolute; inset: 0; background: radial-gradient(circle, rgba(243,168,131,.22) 3px, transparent 4px) 0 0 / 34px 34px, radial-gradient(circle, rgba(143,207,184,.25) 3px, transparent 4px) 17px 17px / 34px 34px; }
+.env .top { position: relative; text-align: center; z-index: 2; transition: opacity .4s; }
+.env .ttl { font-family: var(--disp); font-weight: 800; font-size: clamp(44px, 13vw, 58px); line-height: 1.1; color: var(--peach); }
+.env .q { font-weight: 600; font-size: 17px; color: var(--ink); }
+.env .tray { position: relative; width: min(84vw, 340px); aspect-ratio: 1; z-index: 2; }
+.env .plate { position: absolute; inset: 4%; border-radius: 50%; background: radial-gradient(circle, #fffdf8 0 52%, #f1e4cf 53% 58%, #fbf3e6 59% 66%, #e0cdb0 67% 70%, #f4e8d4 71%);
+  box-shadow: 0 24px 40px -20px rgba(90,64,52,.45), inset 0 -6px 12px rgba(160,120,80,.15); }
+.env .it { position: absolute; width: 25%; aspect-ratio: 1; transform: translate(-50%, -50%); border: 0; border-radius: 50%; background: #fff; padding: 5.5%; cursor: pointer;
+  box-shadow: 0 8px 16px -8px rgba(90,64,52,.45); transition: left .9s cubic-bezier(.3,.7,.2,1), top .9s cubic-bezier(.3,.7,.2,1), transform .9s cubic-bezier(.3,.7,.2,1), opacity .5s; animation: wig 2.8s ease-in-out infinite; }
+.env .it:nth-child(3) { animation-delay: -.5s; } .env .it:nth-child(4) { animation-delay: -1s; } .env .it:nth-child(5) { animation-delay: -1.5s; } .env .it:nth-child(6) { animation-delay: -2s; } .env .it:nth-child(7) { animation-delay: -2.4s; }
+@keyframes wig { 0%, 70%, 100% { transform: translate(-50%, -50%); } 78% { transform: translate(-50%, -58%) rotate(-6deg); } 86% { transform: translate(-50%, -50%) rotate(4deg); } }
+.env .mid { position: absolute; left: 50%; top: 50%; width: 27%; transform: translate(-50%, -50%); transition: opacity .4s; }
+.env .res { position: relative; z-index: 3; min-height: 64px; text-align: center; font-size: 18px; line-height: 1.35; opacity: 0; transform: translateY(10px); transition: opacity .7s, transform .7s; }
+.env .res b { font-weight: 600; }
+.env .res em { font-family: var(--disp); font-style: normal; font-weight: 800; font-size: 34px; color: var(--peach); }
+.env .rain { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.env .rain i { position: absolute; top: -24px; opacity: 0; }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); text-align: center; font-size: 12px; letter-spacing: .14em; font-weight: 600; text-transform: uppercase; color: var(--peach); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+html.preview .env .hint, html.preview .env .it { animation: none; }
+/* փուլեր */
+.env.s1 .hint { opacity: 0; animation: none; transition: opacity .3s; }
+.env.s1 .it { animation: none; }
+.env.s1 .it:not(.chosen) { opacity: 0; transform: translate(-50%, -50%) scale(.5); }
+.env.s1 .it.chosen { left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) scale(1.9); z-index: 3; box-shadow: 0 0 0 8px rgba(245,207,106,.5), 0 18px 30px -10px rgba(90,64,52,.5); }
+.env.s1 .mid { opacity: 0; }
+.env.s2 .rain i { animation: fall var(--d) cubic-bezier(.4,0,.8,.6) var(--dl) forwards; }
+@keyframes fall { 0% { opacity: 1; transform: translateY(0) rotate(0); } 100% { opacity: 1; transform: translateY(112svh) rotate(var(--r)); } }
+.env.s2 .res { opacity: 1; transform: none; }
+.env.s3 { opacity: 0; transition: opacity .7s; }
+
+/* ---------- Hero ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 56px 0 48px;
+  background: radial-gradient(circle, rgba(243,168,131,.18) 3px, transparent 4px) 0 0 / 34px 34px, radial-gradient(circle, rgba(143,207,184,.2) 3px, transparent 4px) 17px 17px / 34px 34px, var(--cream); }
+.ttl2 { font-family: var(--disp); font-weight: 800; font-size: clamp(40px, 12vw, 52px); line-height: 1.15; color: var(--peach); margin-top: 4px; }
+.photo { width: min(62vw, 240px); aspect-ratio: 1; margin: 18px auto 6px; padding: 8px; border-radius: 50%; background: conic-gradient(var(--peach) 0 25%, var(--mint) 0 50%, var(--butter) 0 75%, var(--sky) 0); }
+.photo div { width: 100%; height: 100%; border-radius: 50%; background: #eee 72% 45% / cover no-repeat; box-shadow: 0 0 0 6px var(--cream); }
+.hero .nm { font-family: var(--disp); font-weight: 800; font-size: clamp(48px, 15vw, 64px); line-height: 1.15; color: var(--ink); margin-top: 8px; }
+.age { font-size: 18px; font-weight: 600; color: var(--soft); }
+.age b { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--butter); color: var(--ink); font-size: 22px; vertical-align: middle; margin-right: 4px; }
+.dt { margin-top: 12px; display: inline-block; padding: 8px 20px; border-radius: 999px; background: var(--mint); color: #fff; font-weight: 600; font-size: 16px; letter-spacing: .04em; }
+.guess { display: flex; align-items: center; gap: 12px; max-width: 300px; margin: 22px auto 0; padding: 12px 16px; background: #fff; border-radius: 16px; box-shadow: 0 10px 22px -16px rgba(90,64,52,.6); text-align: left; flex-wrap: wrap; }
+.guess small { flex-basis: 100%; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); font-weight: 600; }
+.guess svg { width: 42px; flex: none; }
+.guess span { flex: 1; font-weight: 600; font-size: 16px; line-height: 1.35; }
+.p { white-space: pre-line; font-size: 16.5px; text-wrap: pretty; }
+
+/* ---------- Հետհաշվարկ ---------- */
+.cdn { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.cdn div { flex: 1 1 0; max-width: 76px; padding: 12px 2px 6px; border-radius: 18px; color: #fff; }
+.cdn .c0 { background: var(--peach); } .cdn .c1 { background: var(--mint); } .cdn .c2 { background: var(--butter); color: var(--ink); } .cdn .c3 { background: var(--sky); }
+.cdn b { display: block; font-weight: 800; font-family: "Nunito", var(--sans); font-size: clamp(28px, 8vw, 34px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.cdn span { font-size: 11.5px; font-weight: 600; }
+
+/* ---------- Ծրագիր ---------- */
+.ev { margin-top: 22px; padding: 24px 18px; background: #fff; border-radius: 24px; box-shadow: 0 14px 26px -20px rgba(90,64,52,.6); }
+.ev .pic.ico { width: 72px !important; max-width: 72px; }
+.ev .tm { font-family: "Nunito", var(--sans); font-weight: 800; font-size: 32px; line-height: 1.1; color: var(--peach); }
+.ev .t { font-weight: 600; font-size: 15px; margin-top: 4px; }
+.ev .n { font-size: 17px; line-height: 1.4; margin-top: 4px; }
+.ev .a { font-size: 14.5px; color: var(--soft); text-wrap: balance; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 12px; padding: 0 26px; border: 2px solid var(--peach); border-radius: 999px; background: transparent; color: var(--peach);
+  text-decoration: none; font: 600 14px var(--sans); letter-spacing: .06em; cursor: pointer; }
+.btn.fill { background: var(--peach); color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
+.grid div { background: #fff; border-radius: 18px; padding: 14px 8px 10px; box-shadow: 0 10px 20px -16px rgba(90,64,52,.6); }
+.grid svg { width: 46px; margin: 0 auto 6px; }
+.grid span { font-weight: 600; font-size: 13.5px; }
+
+/* ---------- RSVP ---------- */
+.rs { text-align: left; background: #fff; border-radius: 22px; padding: 24px 20px; margin-top: 10px; box-shadow: 0 14px 26px -20px rgba(90,64,52,.6); }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 20px; height: 20px; accent-color: var(--peach); margin: 0; flex: none; }
+.fl { margin-top: 14px; }
+.fl label { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px; font-weight: 600; }
+.fl input, .fl select { width: 100%; border: 2px solid #f1e2d6; background: #fffaf4; color: var(--ink); font: 16.5px var(--sans); padding: 10px 12px; border-radius: 12px; }
+.fl input:focus, .fl select:focus { outline: 0; border-color: var(--peach); }
+.rs .btn { width: 100%; margin-top: 20px; }
+.thanks { text-align: center; } .thanks-t { font-family: var(--disp); font-weight: 800; font-size: 36px; color: var(--peach); }
+.fin .ft { width: 80px; margin: 0 auto 10px; animation: wig2 2.6s ease-in-out infinite; }
+@keyframes wig2 { 50% { transform: rotate(-8deg) translateY(-4px); } }
+.fin .nm { font-family: var(--disp); font-weight: 800; font-size: clamp(40px, 12vw, 52px); color: var(--peach); line-height: 1.2; }
+.made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
+.made a { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .env .hint, .env .it, .fin .ft { animation: none !important; } }

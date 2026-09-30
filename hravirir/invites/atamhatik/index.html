@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff6ea">
+<title>Ատամհատիկի հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600&family=Nunito:wght@400;700;800&display=swap">
+<link rel="preload" href="../../fonts/ArmmaturaU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "atamhatik", name: "Ատամհատիկ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Դավիթ"], ru: ["Давид"] },
+  age: "1",
+  date: "2026-11-15T15:00",
+  photo: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Մեր փոքրիկը մեծանում է, և նրա առաջին ատամիկն արդեն երևում է։\nՍիրով հրավիրում ենք Ձեզ միասին նշելու նրա ատամհատիկը, տեսնելու, թե ինչ կընտրի ափսեից, և օրհնելու նրա առաջին քայլերը։",
+    ru: "Наш малыш растёт, и у него уже показался первый зубик.\nС любовью приглашаем вас вместе отметить атамгатик, посмотреть, что он выберет с подноса, и благословить его первые шаги."
+  },
+  events: [
+    { time: "15:00", title: { hy: "Ատամհատիկի արարողություն", ru: "Обряд атамгатик" }, place: { hy: "«Կարուսել» մանկական սրահ", ru: "Детский зал «Карусель»" },
+      address: { hy: "Երևան, Կոմիտասի պողոտա 5", ru: "Ереван, пр. Комитаса 5" }, map: "https://maps.google.com/?q=Komitas+5+Yerevan" },
+    { time: "16:30", title: { hy: "Տոնական սեղան և տորթ", ru: "Праздничный стол и торт" }, place: { hy: "«Կարուսել» մանկական սրահ", ru: "Детский зал «Карусель»" },
+      address: { hy: "Երևան, Կոմիտասի պողոտա 5", ru: "Ереван, пр. Комитаса 5" }, map: "https://maps.google.com/?q=Komitas+5+Yerevan" }
+  ],
+  rsvp: { deadline: "2026-11-08", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
