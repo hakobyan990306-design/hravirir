@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#dfeaf5">
+<title>Կնունքի հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "white-ribbon", name: "Ժապավեն" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  kind: "boy",                                       // boy | girl
+  names: { hy: ["Ռաֆայել"], ru: ["Рафаэль"] },
+  date: "2026-11-29T12:00",
+  photo: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Մեր փոքրիկ Ռաֆայելը պատրաստվում է ստանալ Սուրբ Մկրտություն։\nԱյս լուսավոր օրը մենք ուզում ենք կիսել Ձեզ՝ մեր ամենահարազատ մարդկանց հետ։",
+    ru: "Наш маленький Рафаэль готовится принять Святое Крещение.\nЭтот светлый день мы хотим разделить с вами — самыми родными людьми."
+  },
+  godparents: { hy: "Արման և Լիլիթ Սահակյաններ", ru: "Арман и Лилит Саакян" },
+  events: [
+    { time: "12:00", title: { hy: "Մկրտության արարողություն", ru: "Таинство крещения" }, place: { hy: "Սուրբ Սարգիս եկեղեցի", ru: "Церковь Сурб Саркис" },
+      address: { hy: "Երևան, Իսրայելյան փողոց 21", ru: "Ереван, ул. Исраеляна 21" }, map: "https://maps.google.com/?q=Saint+Sargis+Church+Yerevan" },
+    { time: "15:00", title: { hy: "Տոնական ճաշ", ru: "Праздничный обед" }, place: { hy: "«Այգի» ռեստորան", ru: "Ресторан «Айги»" },
+      address: { hy: "Երևան, Նորք, Ռուբինյանց փողոց 5", ru: "Ереван, Норк, ул. Рубинянц 5" }, map: "https://maps.google.com/?q=Nork+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Սպիտակ, երկնագույն և բաց մոխրագույն երանգներ", ru: "Белые, небесно-голубые и светло-серые оттенки" }, colors: ["#ffffff", "#cddcea", "#9dbad6", "#dfe3e8"] },
+  rsvp: { deadline: "2026-11-22", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="art.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

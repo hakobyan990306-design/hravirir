@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141b2d">
+<title>Հոբելյանի հրավեր</title>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "champagne", name: "Շամպայն" },       // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Կարինե Մարտիրոսյան"], ru: ["Карине Мартиросян"] },
+  age: "50",
+  date: "2026-11-20T19:00",
+  photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=500&fit=crop&q=80&auto=format",
+  text: {
+    hy: "Կես դար լի սիրով, ընտանիքով ու ընկերներով։\nԱյս գեղեցիկ թիվը ուզում եմ նշել Ձեզ հետ՝ երաժշտությամբ, պարով և շամպայնի բաժակներով։",
+    ru: "Полвека любви, семьи и дружбы.\nЭту красивую дату хочу отметить вместе с вами — с музыкой, танцами и бокалом шампанского."
+  },
+  timing: [
+    { time: "19:00", text: { hy: "Դիմավորում և ֆուրշետ", ru: "Встреча гостей и фуршет" } },
+    { time: "20:00", text: { hy: "Տոնական ընթրիք", ru: "Праздничный ужин" } },
+    { time: "21:30", text: { hy: "Կենդանի երաժշտություն և պար", ru: "Живая музыка и танцы" } },
+    { time: "23:00", text: { hy: "Տորթ և հրավառություն", ru: "Торт и фейерверк" } }
+  ],
+  venue: {
+    place: { hy: "«Բելլա Վիստա» ռեստորան", ru: "Ресторан «Белла Виста»" },
+    address: { hy: "Երևան, Կասկադ, Թամանյան փողոց 10", ru: "Ереван, Каскад, ул. Таманяна 10" },
+    map: "https://maps.google.com/?q=Tamanyan+10+Yerevan"
+  },
+  dresscode: { text: { hy: "Black tie՝ երեկոյան զգեստներ, մուգ կապույտ, սև և ոսկեգույն", ru: "Black tie: вечерние наряды, тёмно-синий, чёрный и золото" }, colors: ["#141b2d", "#000000", "#cfaa62", "#efe6d2"] },
+  rsvp: { deadline: "2026-11-12", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

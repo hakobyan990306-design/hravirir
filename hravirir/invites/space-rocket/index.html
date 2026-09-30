@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#151a3a">
+<title>Ծննդյան հրավեր</title>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "space-rocket", name: "Տիեզերք" },    // իրական հրավերում ջնջեք
+  dear: { hy: "Սիրելի՛", ru: "Дорогой" },
+  langs: ["hy", "ru"],
+  names: { hy: ["Ալեքս"], ru: ["Алекс"] },
+  age: "5",
+  date: "2026-11-15T15:00",
+  photo: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=500&fit=crop&q=80&auto=format",
+  greeting: { hy: "Թռչում ենք տիեզերք", ru: "Летим в космос" },
+  text: {
+    hy: "Ես դառնում եմ հինգ տարեկան և պատրաստվում եմ իմ առաջին տիեզերական թռիչքին։\nՄիացիր իմ անձնակազմին՝ խաղերի, գիտական փորձերի և տորթի համար։",
+    ru: "Мне исполняется пять, и я готовлюсь к своему первому космическому полёту.\nПрисоединяйся к моему экипажу — игры, научные опыты и торт!"
+  },
+  activities: [
+    { time: "15:00", text: { hy: "Անձնակազմի հավաք", ru: "Сбор экипажа" } },
+    { time: "15:30", text: { hy: "Տիեզերական քվեստ", ru: "Космический квест" } },
+    { time: "16:30", text: { hy: "Գիտական շոու", ru: "Научное шоу" } },
+    { time: "17:30", text: { hy: "Տորթ և մոմեր", ru: "Торт и свечи" } }
+  ],
+  venue: {
+    place: { hy: "«Կոսմոս» մանկական կենտրոն", ru: "Детский центр «Космос»" },
+    address: { hy: "Երևան, Կոմիտաս 60", ru: "Ереван, пр. Комитаса 60" },
+    map: "https://maps.google.com/?q=Komitas+60+Yerevan"
+  },
+  dresscode: { text: { hy: "Արի աստղագնացի, մոլորակի կամ այլմոլորակայինի կերպարով", ru: "Приходи в образе космонавта, планеты или инопланетянина" }, colors: ["#ff9f5a", "#ffd66b", "#6fd3d0", "#ff8fb1", "#f4f1ff"] },
+  rsvp: { deadline: "2026-11-08", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

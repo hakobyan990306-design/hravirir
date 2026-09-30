@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2a2721">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "gold-gate", name: "Ոսկե դարպաս" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru", "en"],
+  names: { hy: ["Արամ", "Անի"], ru: ["Арам", "Ани"], en: ["Aram", "Ani"] },
+  date: "2026-12-19T11:00",
+  heroBg: "https://images.unsplash.com/photo-1759822809866-e998425e9051?w=900&q=80&auto=format",   // պալատի լուսանկար՝ դառնում է ջրաներկ
+  text: {
+    hy: "Մեր կյանքի ամենակարևոր օրը մենք ուզում ենք անցկացնել Ձեզ՝ մեր ամենամտերիմ մարդկանց հետ։\nՍիրով սպասում ենք Ձեզ մեր հարսանյաց արարողությանը և տոնական խնջույքին։",
+    ru: "Самый важный день нашей жизни мы хотим провести с вами — самыми близкими людьми.\nС любовью ждём вас на нашей свадебной церемонии и праздничном банкете.",
+    en: "We want to spend the most important day of our lives with you, our dearest people.\nWe look forward to seeing you at our wedding ceremony and celebration."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха", en: "Groom's home" }, place: { hy: "Պետրոսյանների օջախ", ru: "Дом семьи Петросян", en: "Petrosyan family home" },
+      address: { hy: "Երևան, Արաբկիր, Կոմիտասի պողոտա 22", ru: "Ереван, Арабкир, пр. Комитаса 22", en: "22 Komitas Ave, Yerevan" }, map: "https://maps.google.com/?q=Komitas+22+Yerevan",
+      img: "https://images.unsplash.com/photo-1566908829550-e6551b00979b?w=900&q=80&auto=format" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты", en: "Bride's home" }, place: { hy: "Սարգսյանների օջախ", ru: "Дом семьи Саргсян", en: "Sargsyan family home" },
+      address: { hy: "Երևան, Նոր Նորք, Գայի պողոտա 7", ru: "Ереван, Нор Норк, пр. Гая 7", en: "7 Gai Ave, Yerevan" }, map: "https://maps.google.com/?q=Gai+7+Yerevan",
+      img: "https://images.unsplash.com/photo-1620832715801-7edf80479963?w=900&q=80&auto=format" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание", en: "Wedding ceremony" }, place: { hy: "Սուրբ Գրիգոր Լուսավորիչ մայր տաճար", ru: "Собор Святого Григория Просветителя", en: "St. Gregory the Illuminator Cathedral" },
+      address: { hy: "Երևան, Տիգրան Մեծի պողոտա", ru: "Ереван, пр. Тиграна Меца", en: "Tigran Mets Ave, Yerevan" }, map: "https://maps.google.com/?q=Saint+Gregory+Cathedral+Yerevan",
+      img: "https://images.unsplash.com/photo-1624357485940-241bdaad73b3?w=900&q=80&auto=format" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет", en: "Reception" }, place: { hy: "«Ռոյալ Պալաս» հանդիսությունների սրահ", ru: "Банкетный зал «Роял Палас»", en: "Royal Palace hall" },
+      address: { hy: "Երևան, Աջափնյակ, Մարգարյան փողոց 30", ru: "Ереван, Ачапняк, ул. Маргаряна 30", en: "30 Margaryan St, Yerevan" }, map: "https://maps.google.com/?q=Margaryan+30+Yerevan",
+      img: "https://images.unsplash.com/photo-1759822809866-e998425e9051?w=900&q=80&auto=format" }
+  ],
+  dresscode: { text: { hy: "Երեկոյան զգեստներ՝ շամպայն, ոսկեգույն, փղոսկր և սև", ru: "Вечерние наряды: шампань, золото, айвори и чёрный", en: "Evening wear: champagne, gold, ivory and black" },
+    colors: ["#efdcc0", "#c9a15a", "#fbf8f2", "#2a2721"] },
+  rsvp: { deadline: "2026-12-10", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

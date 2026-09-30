@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f1ece3">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "white-seal", name: "Սպիտակ ծրար" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Նարեկ", "Սոֆի"], ru: ["Нарек", "Софи"] },
+  date: "2026-12-12T11:00",
+  photo: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Ամեն ինչ սկսվեց մի պատահական հանդիպումից Գյումրիում, իսկ հիմա մենք պատրաստվում ենք մեր կյանքի ամենակարևոր օրվան։\nՇատ կուզենանք, որ այդ օրը Դուք լինեք մեզ հետ։",
+    ru: "Всё началось со случайной встречи в Гюмри, а теперь мы готовимся к самому важному дню нашей жизни.\nОчень хотим, чтобы в этот день вы были рядом."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Ղազարյանների օջախ", ru: "Дом семьи Казарян" },
+      address: { hy: "Երևան, Մալաթիա, Սեբաստիա փողոց 44", ru: "Ереван, Малатия, ул. Себастия 44" }, map: "https://maps.google.com/?q=Sebastia+44+Yerevan" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Աբրահամյանների օջախ", ru: "Дом семьи Абрамян" },
+      address: { hy: "Երևան, Արաբկիր, Հր. Քոչարի փողոց 21", ru: "Ереван, Арабкир, ул. Кочара 21" }, map: "https://maps.google.com/?q=Kochar+21+Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սևանավանք", ru: "Монастырь Севанаванк" },
+      address: { hy: "Սևանի թերակղզի", ru: "Полуостров Севан" }, map: "https://maps.google.com/?q=Sevanavank" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Օլիվա» հանդիսությունների սրահ", ru: "Банкетный зал «Олива»" },
+      address: { hy: "Երևան, Ավան, Ալեք Մանուկյան փողոց 9", ru: "Ереван, Аван, ул. Алека Манукяна 9" }, map: "https://maps.google.com/?q=Avan+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Բնական, մեղմ երանգներ՝ նշենու կանաչ, կաթնագույն, բեժ և փոշեվարդագույն", ru: "Природные мягкие оттенки: шалфей, молочный, беж и пудровый" },
+    colors: ["#9aa88a", "#f3eee4", "#d8c9ae", "#e7cfc6", "#6f7a5f"] },
+  rsvp: { deadline: "2026-12-01", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="art.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

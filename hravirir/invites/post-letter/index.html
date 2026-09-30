@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e9e7e3">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "post-letter", name: "Փոստ" },        // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Դավիթ", "Էլեն"], ru: ["Давид", "Элен"] },
+  date: "2026-10-24T11:00",
+  photo: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Մեր պատմությունը սկսվեց մի նամակով, որը գրեցինք միմյանց տասը տարի առաջ։\nՀիմա գրում ենք ամենակարևորը՝ հրավեր մեր հարսանիքին։ Սիրով սպասում ենք Ձեզ։",
+    ru: "Наша история началась с письма, которое мы написали друг другу десять лет назад.\nТеперь пишем самое важное — приглашение на нашу свадьбу. С любовью ждём вас."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Հարությունյանների օջախ", ru: "Дом семьи Арутюнян" },
+      address: { hy: "Երևան, Արաբկիր, Վաղարշյան փողոց 12", ru: "Ереван, Арабкир, ул. Вагаршяна 12" }, map: "https://maps.google.com/?q=Vagharshyan+12+Yerevan" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Միքայելյանների օջախ", ru: "Дом семьи Микаелян" },
+      address: { hy: "Երևան, Քանաքեռ, Հ. Հովսեփյան փողոց 40", ru: "Ереван, Канакер, ул. Овсепяна 40" }, map: "https://maps.google.com/?q=Kanaker+Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սաղմոսավանք", ru: "Монастырь Сагмосаванк" },
+      address: { hy: "Արագածոտնի մարզ, Սաղմոսավան", ru: "Арагацотнская область, Сагмосаван" }, map: "https://maps.google.com/?q=Saghmosavank" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Մոնոխրոմ» հանդիսությունների սրահ", ru: "Банкетный зал «Монохром»" },
+      address: { hy: "Երևան, Շենգավիթ, Արշակունյաց պողոտա 64", ru: "Ереван, Шенгавит, пр. Аршакуняц 64" }, map: "https://maps.google.com/?q=Arshakunyats+64+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Black & White՝ սև, սպիտակ և մոխրագույնի երանգներ", ru: "Black & White: чёрный, белый и оттенки серого" }, colors: ["#1d1d1d", "#ffffff", "#9a9792", "#d9d6d0"] },
+  rsvp: { deadline: "2026-10-15", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

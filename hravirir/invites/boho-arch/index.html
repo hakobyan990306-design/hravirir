@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ecd9c5">
+<title>Նշանդրեքի հրավեր</title>
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "boho-arch", name: "Կամար" },          // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Արթուր", "Նարե"], ru: ["Артур", "Нарэ"] },
+  date: "2026-10-31T18:00",
+  photo: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Մենք ծանոթացանք Գառնիի տաճարի մոտ՝ մայրամուտին, և այդ օրվանից մեր բոլոր լավագույն պահերը անցել են միասին։\nՈւրախ կլինենք, եթե մեր նշանդրեքի երեկոն անցկացնեք մեզ հետ։",
+    ru: "Мы познакомились у храма Гарни на закате, и с того дня все лучшие моменты мы проводим вместе.\nБудем рады, если вечер нашей помолвки вы проведёте с нами."
+  },
+  events: [
+    { time: "17:00", title: { hy: "Նշանի արարողություն", ru: "Обряд помолвки" }, place: { hy: "Հարսնացուի տուն", ru: "Дом невесты" },
+      address: { hy: "Գառնի, Չարենցի փողոց 14", ru: "Гарни, ул. Чаренца 14" }, map: "https://maps.google.com/?q=Garni+Armenia" },
+    { time: "19:00", title: { hy: "Ընթրիք բացօթյա", ru: "Ужин под открытым небом" }, place: { hy: "«Գառնի Ռեզորտ» այգի", ru: "Сад «Гарни Резорт»" },
+      address: { hy: "Գառնի, Ազատ գետի կիրճ", ru: "Гарни, ущелье реки Азат" }, map: "https://maps.google.com/?q=Garni+Gorge" }
+  ],
+  dresscode: { text: { hy: "Բոհո և բնական երանգներ՝ տերակոտա, ավազ, կաթնագույն, նշենու կանաչ", ru: "Бохо и природные оттенки: терракота, песок, молочный, шалфей" },
+    colors: ["#b8643f", "#e7c9ab", "#fbf6ef", "#9aa487", "#8c4a2f"] },
+  rsvp: { deadline: "2026-10-24", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -32,3 +32,6 @@ html.preview { scrollbar-width: none; } html.preview::-webkit-scrollbar { displa
 .draw .h { stroke: var(--sk-soft, #8f8f8f); stroke-width: .55; transition-delay: .9s; transition-duration: 2s; }
 .draw.in path, .draw.in rect, .draw.in circle, .draw.in line, html.preview .draw * { stroke-dashoffset: 0; }
 .draw.rv { opacity: 1; transform: none; }
+/* թեմատիկ զարդ՝ ծրագրի/վայրի կետերի վերևում (երբ լուսանկար չկա) */
+.pic.ico, .ico { width: 92px !important; max-width: 92px; margin: 0 auto 8px !important; }
+.pic.ico svg, .ico svg { width: 100%; height: auto; display: block; overflow: visible; }

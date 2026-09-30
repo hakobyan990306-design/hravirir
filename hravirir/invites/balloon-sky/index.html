@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#cfe4f2">
+<title>Ծննդյան հրավեր</title>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "balloon-sky", name: "Օդապարիկ" },   // իրական հրավերում ջնջեք
+  dear: { hy: "Սիրելի՛", ru: "Дорогой" },
+  langs: ["hy", "ru"],
+  names: { hy: ["Միքայել"], ru: ["Микаэль"] },
+  age: "1",
+  date: "2026-11-08T16:00",
+  photo: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=500&h=500&fit=crop&q=80&auto=format",
+  greeting: { hy: "Թռչում ենք տոնի", ru: "Летим на праздник" },
+  text: {
+    hy: "Ուղիղ մեկ տարի առաջ ես առաջին անգամ բացեցի աչքերս, իսկ հիմա պատրաստվում եմ իմ առաջին մեծ տոնին։\nՀրավիրում եմ քեզ միասին թռչելու օդապարիկով՝ խաղերով, տորթով և շատ ծիծաղով։",
+    ru: "Ровно год назад я впервые открыл глаза, а теперь готовлюсь к своему первому большому празднику.\nПриглашаю тебя полетать вместе на воздушном шаре — с играми, тортом и смехом."
+  },
+  activities: [
+    { time: "16:00", text: { hy: "Հանդիպում և ֆոտոգոտի", ru: "Встреча и фотозона" } },
+    { time: "16:30", text: { hy: "Խաղեր և անիմատոր", ru: "Игры и аниматор" } },
+    { time: "17:30", text: { hy: "Հրաշքների շոու", ru: "Шоу чудес" } },
+    { time: "18:30", text: { hy: "Տորթ և մոմիկ", ru: "Торт и свечка" } }
+  ],
+  venue: {
+    place: { hy: "«Թռիչք» մանկական ակումբ", ru: "Детский клуб «Полёт»" },
+    address: { hy: "Երևան, Արաբկիր, Բաղրամյան պողոտա 58", ru: "Ереван, Арабкир, пр. Баграмяна 58" },
+    map: "https://maps.google.com/?q=Baghramyan+58+Yerevan"
+  },
+  dresscode: { text: { hy: "Պաստելային, քաղցր երանգներ՝ դեղձ, անանուխ, կիտրոն, յասաման", ru: "Пастельные оттенки: персик, мята, лимон, сирень" }, colors: ["#f0a88e", "#9fcfbf", "#f3d27a", "#b9a9d9", "#86b6d8"] },
+  rsvp: { deadline: "2026-11-01", whatsapp: "37499741574" },
+  finalText: { hy: "Սպասում եմ քեզ", ru: "Жду тебя" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -19,19 +19,26 @@
   ];
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
   var DESIGNS = [
+    { id: "lavender", name: "Լավանդա", cat: "wedding", colors: ["#f7d9c4", "#b9a6d8", "#8f7bb8", "#8e9b7a"], tag: "Նոր" },
+    { id: "post-letter", name: "Փոստ", cat: "wedding", colors: ["#ffffff", "#e9e7e3", "#9a9792", "#1d1d1d"], tag: "Նոր" },
+    { id: "white-seal", name: "Սպիտակ ծրար", cat: "wedding", colors: ["#fbf8f2", "#e9e3d8", "#9aa88a", "#7f8f6e"], tag: "Նոր" },
     { id: "chandelier", name: "Ջահ", cat: "wedding", colors: ["#fbf6f1", "#ead3c8", "#e6cf9c", "#b48a47"], tag: "Նոր" },
     { id: "monogram", name: "Մոնոգրամ", cat: "wedding", colors: ["#454545", "#7d7d7d", "#d9d9d6", "#fbfbfa"], tag: "Նոր" },
     { id: "noir-sunset", name: "Սև-ոսկի մայրամուտ", cat: "wedding", colors: ["#141312", "#c9a96b", "#f1ece4", "#6f675e"], tag: "Նոր" },
     { id: "blush-garden", name: "Վարդագույն այգի", cat: "wedding", colors: ["#ecccc5", "#8a8357", "#6f6a3e", "#3b2923"], tag: "Նոր" },
     { id: "olive-letter", name: "Նամակ", cat: "wedding", colors: ["#6f7e53", "#b9c79a", "#b98a5e", "#fbf7ec"], tag: "Նոր" },
     { id: "classic-green", name: "Classic", cat: "wedding", colors: ["#f9f7f3", "#e9e1d3", "#8f9a8c", "#34473a"], tag: "Նոր" },
-    { id: "classic-gold", name: "Դասական ոսկի", cat: "wedding", colors: ["#fbf8f2", "#e3d2b0", "#b08d57", "#3a3129"] },
+    { id: "gold-gate", name: "Ոսկե դարպաս", cat: "wedding", colors: ["#2a2721", "#fbf8f2", "#e6d3ab", "#b08d57"], tag: "Նոր" },
+    { id: "gold-letter", name: "Ոսկե կնիք", cat: "engagement", colors: ["#f3dcd4", "#fffdf9", "#e7d2a6", "#b8904f"], tag: "Նոր" },
     { id: "ring-velvet", name: "Մատանի", cat: "engagement", colors: ["#0f3b33", "#1a5247", "#d6b77a", "#f7f2e8"], tag: "Նոր" },
-    { id: "boho-engagement", name: "Բոհո տերակոտա", cat: "engagement", colors: ["#f8f0e7", "#e8b996", "#c0673f", "#4b2e22"] },
+    { id: "boho-arch", name: "Կամար", cat: "engagement", colors: ["#f4e9dc", "#e7c9ab", "#b8643f", "#9aa487"], tag: "Նոր" },
     { id: "baptism-silver", name: "Կապույտ-արծաթ", cat: "baptism", colors: ["#fdfeff", "#bcd6ee", "#8fb4dc", "#9aa6b6"], tag: "Նոր" },
-    { id: "baptism-sky", name: "Երկնային", cat: "baptism", colors: ["#f4f8fc", "#cfe0f2", "#6f98c6", "#28384d"] },
+    { id: "angel-wings", name: "Հրեշտակ", cat: "baptism", colors: ["#fdfaf8", "#f7e4e4", "#d99aa3", "#b8707c"], tag: "Նոր" },
+    { id: "white-ribbon", name: "Ժապավեն", cat: "baptism", colors: ["#fbfcfd", "#cddcea", "#9dbad6", "#5f86ae"], tag: "Նոր" },
     { id: "gift-rainbow", name: "Նվեր", cat: "birthday", colors: ["#fbf5ec", "#d98b6a", "#e8b85a", "#9db39a"], tag: "Նոր" },
-    { id: "kids-party", name: "Փուչիկներ", cat: "birthday", colors: ["#fff8ef", "#ffd36e", "#ff7a59", "#3d2c55"] }
+    { id: "champagne", name: "Շամպայն", cat: "birthday", colors: ["#141b2d", "#1d2740", "#cfaa62", "#efe6d2"], tag: "Նոր" },
+    { id: "space-rocket", name: "Տիեզերք", cat: "birthday", colors: ["#151a3a", "#ff9f5a", "#ffd66b", "#6fd3d0"], tag: "Նոր" },
+    { id: "balloon-sky", name: "Օդապարիկ", cat: "birthday", colors: ["#cfe4f2", "#f0a88e", "#9fcfbf", "#f3d27a"], tag: "Նոր" }
     // blush-floral, minimal-noir, sage-greenery, navy-night, burgundy-royal, lavender-jubilee —
     // հին նույնատիպ դասավորությամբ են, կատալոգից հանված են, մինչև նոր ձևով վերասարքվեն
   ];

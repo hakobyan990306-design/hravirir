@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7d9c4">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "lavender", name: "Լավանդա" },        // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Գոռ", "Լիլի"], ru: ["Гор", "Лили"] },
+  date: "2027-05-22T11:00",
+  photo: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Լավանդան մեր պատմության բույրն է․ մենք հանդիպեցինք ծաղկող դաշտում, և այդ օրվանից ամեն գարուն մեզ համար տոն է։\nՍիրով հրավիրում ենք Ձեզ մեր հարսանիքին։",
+    ru: "Лаванда — аромат нашей истории: мы встретились в цветущем поле, и с тех пор каждая весна для нас праздник.\nС любовью приглашаем вас на нашу свадьбу."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Բաղդասարյանների օջախ", ru: "Дом семьи Багдасарян" },
+      address: { hy: "Երևան, Նորք-Մարաշ, Արմենակյան փողոց 15", ru: "Ереван, Норк-Мараш, ул. Арменакяна 15" }, map: "https://maps.google.com/?q=Armenakyan+15+Yerevan" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Ասատրյանների օջախ", ru: "Дом семьи Асатрян" },
+      address: { hy: "Երևան, Էրեբունի, Խաղաղ Դոնի փողոց 9", ru: "Ереван, Эребуни, ул. Хахах Дона 9" }, map: "https://maps.google.com/?q=Erebuni+Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Հավուծ Թառ վանք", ru: "Монастырь Авуц Тар" },
+      address: { hy: "Կոտայքի մարզ, Գառնու կիրճ", ru: "Котайкская область, ущелье Гарни" }, map: "https://maps.google.com/?q=Havuts+Tar" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Պրովանս» այգի-ռեստորան", ru: "Сад-ресторан «Прованс»" },
+      address: { hy: "Կոտայքի մարզ, Ձորաղբյուր", ru: "Котайкская область, Дзорахбюр" }, map: "https://maps.google.com/?q=Dzoraghbyur" }
+  ],
+  dresscode: { text: { hy: "Լավանդայի, յասամանի, նշենու կանաչի և կաթնագույն երանգներ", ru: "Оттенки лаванды, сирени, шалфея и молочного" }, colors: ["#8f7bb8", "#c9b8e3", "#8e9b7a", "#fcfaf7"] },
+  rsvp: { deadline: "2027-05-10", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

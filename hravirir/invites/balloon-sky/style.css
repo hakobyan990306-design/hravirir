@@ -1,0 +1,90 @@
+/* «Օդապարիկ» — մանկական ծնունդ. պաստելային երկինք, օդապարիկ զամբյուղով, ամպեր
+   Տառատեսակներ՝ 2. Noyemi (հայերեն գլխագրեր, միայն հայերեն տառերի համար) + GHEA Mariam */
+@font-face { font-family: "Noyemi"; src: url("../../fonts/Noyemi.otf") format("opentype"); font-display: swap; unicode-range: U+0530-058F; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+
+:root {
+  --sky1: #cfe4f2; --sky2: #f7e3dc; --paper: #fffaf5; --ink: #4d4a5c; --soft: #8a8698; --peach: #f0a88e; --mint: #9fcfbf; --lemon: #f3d27a; --lilac: #b9a9d9; --blue: #86b6d8;
+  --fun: "Noyemi", "GHEA Mariam", serif; --serif: "GHEA Mariam", Georgia, serif;
+  --k-bg: #fffaf5; --k-ink: #4d4a5c; --k-accent: #f0a88e; --k-font: "GHEA Mariam", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 16.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; padding: 0 24px; }
+section { position: relative; text-align: center; padding: 62px 0; overflow: hidden; }
+.caps { font-size: 12.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); text-wrap: balance; }
+.h2 { font-family: var(--fun); font-weight: 400; font-size: clamp(32px, 9.4vw, 42px); line-height: 1.3; color: var(--peach); margin-bottom: 14px; }
+.sky { background: linear-gradient(180deg, var(--sky1), #e9eef6 45%, var(--sky2)); }
+.cloud { position: absolute; pointer-events: none; }
+.cloud svg { width: 100%; display: block; }
+.cloud.a { animation: drift 16s ease-in-out infinite alternate; } .cloud.b { animation: drift 22s ease-in-out infinite alternate-reverse; }
+@keyframes drift { to { transform: translateX(26px); } }
+
+/* ---------- Բացում ---------- */
+.env { position: fixed; inset: 0; z-index: 60; overflow: hidden; cursor: pointer; transition: opacity 1s ease 1.6s, visibility 1s 1.6s; }
+.env.open { opacity: 0; visibility: hidden; }
+.env .top { position: absolute; left: 0; right: 0; top: calc(34px + env(safe-area-inset-top, 0px)); text-align: center; z-index: 3; }
+.env .top b { display: block; font-family: var(--fun); font-weight: 400; font-size: clamp(26px, 7.6vw, 34px); color: var(--ink); line-height: 1.3; margin-top: 4px; }
+.env .bal { position: absolute; left: 50%; top: 50%; width: min(64vw, 270px); transform: translate(-50%, -54%); z-index: 2; animation: float 4s ease-in-out infinite; }
+.env .bal svg { width: 100%; display: block; overflow: visible; filter: drop-shadow(0 18px 20px rgba(90,80,110,.2)); }
+@keyframes float { 50% { transform: translate(-50%, -57%) rotate(1.5deg); } }
+.env .mini { position: absolute; z-index: 1; width: 12%; animation: float2 6s ease-in-out infinite; }
+.env .mini svg { width: 100%; display: block; }
+@keyframes float2 { 50% { transform: translateY(-14px); } }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(30px + env(safe-area-inset-bottom, 0px)); text-align: center; z-index: 3; font-size: 11.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+html.preview .env .bal, html.preview .env .mini, html.preview .env .hint { animation: none; }
+.env.open .bal { animation: none; transition: transform 2.4s cubic-bezier(.5,0,.6,1); transform: translate(-50%, -190%) scale(.8); }
+.env.open .mini { animation: none; transition: transform 2.4s cubic-bezier(.5,0,.6,1); transform: translateY(-120vh); }
+.env.open .cloud.l { transition: transform 1.8s cubic-bezier(.5,0,.3,1) .5s; transform: translateX(-80%); }
+.env.open .cloud.r { transition: transform 1.8s cubic-bezier(.5,0,.3,1) .5s; transform: translateX(80%); }
+.env.open .top, .env.open .hint { opacity: 0; transition: opacity .4s; animation: none; }
+
+/* ---------- Hero ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 70px 0 50px; }
+.hero .age { font-family: var(--serif); font-size: clamp(110px, 34vw, 150px); line-height: 1; color: #fff; text-shadow: 0 6px 0 var(--peach), 0 14px 26px rgba(240,168,142,.45); margin: 4px 0; }
+.hero .nm { font-family: var(--fun); font-weight: 400; font-size: clamp(48px, 15vw, 66px); line-height: 1.2; color: var(--ink); }
+.hero .sub { font-size: 17px; color: var(--ink); margin-top: 6px; }
+.chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chips span { padding: 7px 16px; border-radius: 999px; background: #fff; font-size: 15px; box-shadow: 0 8px 16px -12px rgba(90,80,110,.6); }
+.chips span:nth-child(1) { color: var(--peach); } .chips span:nth-child(2) { color: #5f9c89; } .chips span:nth-child(3) { color: #7d6bb0; }
+.hbal { position: absolute; width: 22%; pointer-events: none; animation: float2 5s ease-in-out infinite; }
+.hbal svg { width: 100%; display: block; }
+.photo { width: min(52vw, 210px); aspect-ratio: 1; margin: 26px auto 0; border-radius: 50%; background: #eee center / cover no-repeat; border: 6px solid #fff; box-shadow: 0 16px 30px -16px rgba(90,80,110,.55); }
+
+/* ---------- Բաժիններ ---------- */
+.p { white-space: pre-line; font-size: 17px; text-wrap: pretty; }
+.acts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px; }
+.act { background: #fff; border-radius: 24px; padding: 18px 10px 14px; box-shadow: 0 12px 24px -18px rgba(90,80,110,.55); }
+.act .em { width: 46px; height: 46px; border-radius: 50%; margin: 0 auto 8px; display: grid; place-items: center; font-size: 13px; color: #fff; }
+.act b { display: block; font-weight: 400; font-size: 22px; line-height: 1.2; }
+.act span { font-size: 14px; color: var(--soft); }
+.place { background: #fff; border-radius: 28px; padding: 20px 18px 24px; box-shadow: 0 14px 28px -20px rgba(90,80,110,.55); }
+.place img { width: 100%; display: block; opacity: 0; transition: opacity 1.4s; } .place img.wc-on { opacity: 1; }
+.place .n { font-family: var(--fun); font-size: 26px; line-height: 1.3; margin-top: 6px; }
+.place .a { color: var(--soft); font-size: 15px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 14px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--peach); color: #fff;
+  text-decoration: none; font: 15px var(--serif); cursor: pointer; box-shadow: 0 7px 0 #d98a70; }
+.btn:active { transform: translateY(3px); box-shadow: 0 4px 0 #d98a70; }
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
+.dots i { width: 42px; height: 42px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 6px 12px -6px rgba(0,0,0,.3); }
+.cdn { display: flex; justify-content: center; gap: 8px; }
+.cdn div { flex: 1 1 0; max-width: 78px; background: #fff; border-radius: 18px; padding: 10px 4px; box-shadow: 0 10px 20px -16px rgba(90,80,110,.6); }
+.cdn b { display: block; font-weight: 400; font-size: clamp(28px, 8vw, 34px); line-height: 1.1; color: var(--peach); font-variant-numeric: tabular-nums; }
+.cdn span { font-size: 11.5px; color: var(--soft); }
+.rs { text-align: left; background: #fff; border-radius: 26px; padding: 22px 18px; margin-top: 10px; box-shadow: 0 14px 28px -20px rgba(90,80,110,.5); }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 22px; height: 22px; accent-color: var(--peach); margin: 0; flex: none; }
+.fl { margin-top: 14px; }
+.fl label { display: block; font-size: 14px; color: var(--soft); margin-bottom: 4px; }
+.fl input, .fl select { width: 100%; border: 2px solid #f1e8e2; border-radius: 14px; background: var(--paper); color: var(--ink); font: 17px var(--serif); padding: 11px 12px; }
+.fl input:focus, .fl select:focus { outline: 0; border-color: var(--peach); }
+.rs .btn { width: 100%; margin-top: 20px; }
+.thanks { text-align: center; } .thanks-t { font-family: var(--fun); font-size: 36px; color: var(--peach); }
+.fin .nm { font-family: var(--fun); font-size: clamp(40px, 12vw, 54px); line-height: 1.3; }
+.made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
+.made a { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .env .bal, .env .mini, .cloud, .hbal, .env .hint { animation: none !important; } }

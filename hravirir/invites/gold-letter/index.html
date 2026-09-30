@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3dcd4">
+<title>Նշանդրեքի հրավեր</title>
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "gold-letter", name: "Ոսկե կնիք" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Վահե", "Մարի"], ru: ["Ваэ", "Мари"] },
+  date: "2026-11-14T18:00",
+  photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=700&q=80&auto=format&fit=crop",
+  text: {
+    hy: "Առաջարկը եղավ Դիլիջանի անտառում՝ ճիշտ այնտեղ, որտեղ մենք առաջին անգամ միասին թափառել ենք։\nՀիմա ուզում ենք այդ ուրախությունը կիսել մեզ ամենամոտ մարդկանց հետ։",
+    ru: "Предложение прозвучало в лесу Дилижана — там, где мы впервые гуляли вместе.\nТеперь хотим разделить эту радость с самыми близкими."
+  },
+  events: [
+    { time: "17:00", title: { hy: "Նշանի արարողություն", ru: "Обряд помолвки" }, place: { hy: "Հարսնացուի տուն", ru: "Дом невесты" },
+      address: { hy: "Երևան, Կենտրոն, Թումանյան փողոց 31", ru: "Ереван, Кентрон, ул. Туманяна 31" }, map: "https://maps.google.com/?q=Tumanyan+31+Yerevan" },
+    { time: "19:00", title: { hy: "Տոնական ընթրիք", ru: "Праздничный ужин" }, place: { hy: "«Ռոզա» ռեստորան", ru: "Ресторан «Роза»" },
+      address: { hy: "Երևան, Հյուսիսային պողոտա 8", ru: "Ереван, Северный проспект 8" }, map: "https://maps.google.com/?q=Northern+Avenue+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Փոշեվարդագույն, շամպայն, կաթնագույն և ոսկեգույն երանգներ", ru: "Пудровый, шампань, молочный и золотистые оттенки" }, colors: ["#e7c1b8", "#efdcc0", "#fbf6ee", "#c9a15a"] },
+  rsvp: { deadline: "2026-11-07", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../core/watercolor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
