@@ -247,4 +247,18 @@ footer { padding: 60px 0 40px; border-top: 1px solid var(--line); margin-top: 90
   .panel, .extras { padding: 22px 18px; }
   .base { padding: 30px 22px; }
   .stats { gap: 22px; }
+  /* հեռախոսում՝ երկու դիզայն մեկ շարքում, որ հաճախորդը շատ օրինակ տեսնի միանգամից */
+  .filters { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; margin: 0 -16px 20px; padding: 0 16px 4px; scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
+  .chip { flex: none; padding: 8px 16px; }
+  .designs { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .design:hover { transform: none; }
+  .design .badge { top: 8px; left: 8px; padding: 3px 9px; font-size: 10.5px; }
+  .design .body { padding: 10px 10px 12px; gap: 2px; }
+  .design h3 { font-size: 17px; line-height: 1.2; }
+  .design .meta { font-size: 11.5px; }
+  .design .dots { margin: 5px 0 9px; gap: 4px; }
+  .design .dots i { width: 12px; height: 12px; }
+  .design .actions { flex-direction: column; gap: 6px; }
+  .design .actions .btn { padding: 8px 6px; font-size: 12.5px; }
 }
