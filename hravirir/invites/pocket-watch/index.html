@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f1510">
+<title>Հոբելյանի հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;500&family=Noto+Serif:wght@300;500&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "pocket-watch", name: "Ժամացույց" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Վաչագան Հովսեփյան"], ru: ["Вачаган Овсепян"] },
+  age: "60",
+  date: "2026-12-12T19:00",
+  text: {
+    hy: "Վաթսուն տարի՝ աշխատանքով, ընտանիքով, ընկերներով և հիշարժան պահերով լի։\nԱյս արժեքավոր թիվը ցանկանում եմ նշել ինձ համար ամենաթանկ մարդկանց հետ՝ լավ գինու, երաժշտության և ջերմ խոսքերի ներքո։",
+    ru: "Шестьдесят лет, наполненных трудом, семьёй, друзьями и памятными моментами.\nЭту ценную дату хочу отметить с самыми дорогими людьми — под хорошее вино, музыку и тёплые слова."
+  },
+  events: [
+    { time: "19:00", title: { hy: "Հյուրերի դիմավորում", ru: "Встреча гостей" }, place: { hy: "«Արարատ» հյուրանոցի տերասա", ru: "Терраса отеля «Арарат»" },
+      address: { hy: "Երևան, Գրիգոր Լուսավորչի փողոց 7", ru: "Ереван, ул. Григора Лусаворича 7" }, map: "https://maps.google.com/?q=Grigor+Lusavorich+7+Yerevan" },
+    { time: "20:00", title: { hy: "Հանդիսավոր ընթրիք", ru: "Торжественный ужин" }, place: { hy: "«Արարատ» հյուրանոցի դահլիճ", ru: "Зал отеля «Арарат»" },
+      address: { hy: "Երևան, Գրիգոր Լուսավորչի փողոց 7", ru: "Ереван, ул. Григора Лусаворича 7" }, map: "https://maps.google.com/?q=Grigor+Lusavorich+7+Yerevan" },
+    { time: "22:30", title: { hy: "Տորթ և կենդանի երաժշտություն", ru: "Торт и живая музыка" }, place: { hy: "«Արարատ» հյուրանոցի դահլիճ", ru: "Зал отеля «Арарат»" },
+      address: { hy: "Երևան, Գրիգոր Լուսավորչի փողոց 7", ru: "Ереван, ул. Григора Лусаворича 7" }, map: "https://maps.google.com/?q=Grigor+Lusavorich+7+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Դասական երեկոյան՝ կոստյում, մուգ երանգներ, կոնյակագույն և ոսկեգույն աքսեսուարներ", ru: "Классика: костюм, тёмные тона, коньячные и золотые аксессуары" },
+    colors: ["#1f1510", "#5a3a24", "#8a5a33", "#c79a4e", "#efe4cf"] },
+  rsvp: { deadline: "2026-12-05", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
