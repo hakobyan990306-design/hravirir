@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fdfbf5">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "tuscany", name: "Տոսկանա" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Տիգրան", "Լուսինե"], ru: ["Тигран", "Лусине"] },
+  date: "2027-06-19T12:00",
+  text: {
+    hy: "Արևոտ ամառ, կիտրոնի բույր, ծովի քամի և մեր սիրելի մարդիկ։ Այսպես ենք պատկերացրել մեր հարսանիքը։\nՍիրով հրավիրում ենք Ձեզ դառնալու այս գեղեցիկ օրվա մի մասը։",
+    ru: "Солнечное лето, аромат лимонов, морской бриз и наши любимые люди — такой мы представляли нашу свадьбу.\nС любовью приглашаем вас стать частью этого прекрасного дня."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Մարտիրոսյանների օջախ", ru: "Дом семьи Мартиросян" },
+      address: { hy: "Երևան, Աջափնյակ, Հալաբյան փողոց 40", ru: "Ереван, Аджапняк, ул. Алабяна 40" }, map: "https://maps.google.com/?q=Halabyan+40+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Ղուկասյանների օջախ", ru: "Дом семьи Гукасян" },
+      address: { hy: "Երևան, Քանաքեռ, Ազատության պողոտա 70", ru: "Ереван, Канакер, пр. Азатутян 70" }, map: "https://maps.google.com/?q=Azatutyan+70+Yerevan" },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սևանավանք", ru: "Монастырь Севанаванк" },
+      address: { hy: "Սևանի թերակղզի", ru: "Полуостров Севан" }, map: "https://maps.google.com/?q=Sevanavank" },
+    { time: "18:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Բլու Լագուն» լողափնյա համալիր", ru: "Пляжный комплекс «Блю Лагун»" },
+      address: { hy: "Սևան, Կարմիր ավազներ", ru: "Севан, Красные пески" }, map: "https://maps.google.com/?q=Sevan+beach" }
+  ],
+  dresscode: { text: { hy: "Ամառային միջերկրածովյան՝ սպիտակ, կիտրոնի դեղին, կոբալտ կապույտ և ձիթապտղի կանաչ", ru: "Летнее средиземноморье: белый, лимонный, кобальтовый и оливковый" },
+    colors: ["#fdfbf5", "#f2cf3a", "#1f4e9c", "#5f8a3a", "#dbe8f7"] },
+  rsvp: { deadline: "2027-06-05", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
