@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1712">
+<title>Կնունքի հրավեր</title>
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "candle", name: "Մոմ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Միքայել"], ru: ["Микаел"] },
+  date: "2026-11-29T12:00",
+  photo: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=700&q=80&auto=format&fit=crop",
+  godparents: { hy: "Կնքահայր՝ Արսեն Մկրտչյան", ru: "Крёстный отец — Арсен Мкртчян" },
+  text: {
+    hy: "Մեր որդին ստանում է սուրբ մկրտություն, և նրա կյանքում վառվում է առաջին մոմը։\nՍիրով հրավիրում ենք Ձեզ աղոթելու նրա համար և կիսելու մեզ հետ այս լուսավոր օրը։",
+    ru: "Наш сын принимает святое крещение, и в его жизни зажигается первая свеча.\nС любовью приглашаем вас помолиться за него и разделить с нами этот светлый день."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Մկրտության խորհուրդ", ru: "Таинство крещения" }, place: { hy: "Սուրբ Հռիփսիմե տաճար", ru: "Храм Святой Рипсиме" },
+      address: { hy: "Էջմիածին, Մաշտոցի փողոց", ru: "Эчмиадзин, ул. Маштоца" }, map: "https://maps.google.com/?q=Saint+Hripsime+Church" },
+    { time: "15:00", title: { hy: "Կնունքի սեղան", ru: "Праздничный стол" }, place: { hy: "«Ալեքսանդր» ռեստորան", ru: "Ресторан «Александр»" },
+      address: { hy: "Էջմիածին, Մեսրոպ Մաշտոցի փողոց 45", ru: "Эчмиадзин, ул. Месропа Маштоца 45" }, map: "https://maps.google.com/?q=Etchmiadzin+restaurant" }
+  ],
+  rsvp: { deadline: "2026-11-20", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
