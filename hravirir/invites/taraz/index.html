@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5e0f18">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "taraz", name: "Տարազ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Դավիթ", "Անահիտ"], ru: ["Давид", "Анаит"] },
+  date: "2026-12-19T11:00",
+  text: {
+    hy: "Մեր պապերի ավանդույթով՝ հացով, աղով ու գինով, երկու ընտանիք դառնում են մեկ։\nՍիրով հրավիրում ենք Ձեզ կիսելու մեր ուրախությունը և օրհնելու մեր նոր օջախը։",
+    ru: "По традиции наших предков — с хлебом, солью и вином — две семьи становятся одной.\nС любовью приглашаем вас разделить нашу радость и благословить наш новый очаг."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Հովհաննիսյանների օջախ", ru: "Дом семьи Оганесян" },
+      address: { hy: "Աշտարակ, Սուրբ Մարիանե փողոց 7", ru: "Аштарак, ул. Св. Марианэ 7" }, map: "https://maps.google.com/?q=Ashtarak+Armenia" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Գրիգորյանների օջախ", ru: "Дом семьи Григорян" },
+      address: { hy: "Երևան, Աջափնյակ, Մարգարյան փողոց 15", ru: "Ереван, Аджапняк, ул. Маргаряна 15" }, map: "https://maps.google.com/?q=Margaryan+15+Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սաղմոսավանք", ru: "Монастырь Сагмосаванк" },
+      address: { hy: "Արագածոտնի մարզ, Սաղմոսավան գյուղ", ru: "Арагацотнская обл., с. Сагмосаван" }, map: "https://maps.google.com/?q=Saghmosavank" },
+    { time: "18:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Օշական» ռեստորանային համալիր", ru: "Ресторанный комплекс «Ошакан»" },
+      address: { hy: "Օշական, Մեսրոպ Մաշտոցի փողոց 2", ru: "Ошакан, ул. Месропа Маштоца 2" }, map: "https://maps.google.com/?q=Oshakan+Armenia" }
+  ],
+  dresscode: { text: { hy: "Ազգային շնչով երանգներ՝ նռնագույն, ոսկեգույն, կաթնագույն և մուգ կարմիր", ru: "Национальные мотивы: гранатовый, золотой, молочный и тёмно-красный" },
+    colors: ["#8c1c24", "#5e0f18", "#c9a04e", "#f5ead6", "#2e4a3a"] },
+  rsvp: { deadline: "2026-12-08", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

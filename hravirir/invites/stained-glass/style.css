@@ -1,0 +1,124 @@
+/* «Վիտրաժ» — եկեղեցու մութ ներսում գոթական վիտրաժ-պատուհան. սեղմելիս փեղկերը բացվում են, և լույսը լցնում է էկրանը
+   Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+
+:root {
+  --paper: #f8f3ea; --band: #efe7d8; --ink: #2d2a35; --soft: #7b7383; --saph: #2458a6; --ruby: #9e2436; --gold: #b8904f; --gold-l: #e6cf9c;
+  --foil: linear-gradient(100deg, #6f4c1c 0%, #a57a36 25%, #d6b46c 45%, #8f6528 65%, #b8904f 85%, #6f4c1c 100%);
+  --script: "Coronet", "Marck Script", serif; --serif: "GHEA Mariam", Georgia, serif;
+  --k-bg: #f8f3ea; --k-ink: #2d2a35; --k-accent: #2458a6; --k-font: "GHEA Mariam", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 16.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; padding: 0 26px; position: relative; }
+section { position: relative; text-align: center; padding: 64px 0; overflow: hidden; }
+.caps { font-size: 12.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--soft); text-wrap: balance; }
+.h2 { font-family: var(--script); font-weight: 400; font-size: clamp(40px, 12vw, 52px); line-height: 1.3; color: var(--saph); margin-bottom: 12px; padding: 0 .1em .18em; }
+.band { background: var(--band); }
+
+/* ---------- Բացում՝ վիտրաժ ---------- */
+.env { position: fixed; inset: 0; z-index: 60; overflow: hidden; cursor: pointer; background: #14111a; }
+.env .stone { position: absolute; inset: 0; background:
+  radial-gradient(60% 45% at 50% 50%, rgba(226,169,59,.18), transparent 70%),
+  repeating-linear-gradient(0deg, rgba(0,0,0,.35) 0 1px, transparent 1px 46px),
+  linear-gradient(180deg, #221c24, #17131b 60%, #0f0c12); }
+.env .top { position: absolute; left: 0; right: 0; top: calc(26px + env(safe-area-inset-top, 0px)); text-align: center; z-index: 3; }
+.env .top .caps { color: var(--gold-l); }
+.env .win { position: absolute; left: 50%; top: 50%; width: min(78vw, 38svh, 330px); aspect-ratio: 216 / 416; transform: translate(-50%, -48%); perspective: 1300px; z-index: 2; }
+.env .leaf { position: absolute; top: 0; bottom: 0; width: 50%; z-index: 2; transform-style: preserve-3d; filter: drop-shadow(0 0 22px rgba(226,169,59,.28)); }
+.env .leaf svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.env .leaf.l { left: 0; transform-origin: 0 50%; }
+.env .leaf.r { right: 0; transform-origin: 100% 50%; }
+.env .leaf svg { animation: glass 3.2s ease-in-out infinite alternate; }
+@keyframes glass { to { filter: brightness(1.12) saturate(1.1); } }
+/* լույսը փեղկերի հետևում */
+.env .light { position: absolute; inset: 3.7% 3.7% 0; border-radius: 50% 50% 0 0 / 38% 38% 0 0; background: radial-gradient(70% 55% at 50% 45%, #fffdf6, #fbeccb 55%, #e9c98a); z-index: 1;
+  display: flex; align-items: center; justify-content: center; }
+.env .light .in { text-align: center; opacity: 0; transform: scale(.9); transition: opacity 1s .9s, transform 1.6s cubic-bezier(.2,.8,.2,1) .9s; }
+.env .light .nm { font-family: var(--script); font-size: clamp(34px, 10.5vw, 46px); line-height: 1.25; padding: 0 .1em .2em; background: var(--foil); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.env .light .amp { font-family: var(--script); font-size: 26px; line-height: 1; color: var(--gold); }
+.env .rays { position: absolute; inset: 0; z-index: 4; pointer-events: none; opacity: 0;
+  background: radial-gradient(40% 30% at 50% 48%, #fffaf0, rgba(255,246,220,.6) 45%, rgba(255,240,200,0) 100%); }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 3; text-align: center; font-size: 11.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-l); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+html.preview .env .hint, html.preview .env .leaf svg { animation: none; }
+/* փուլեր */
+.env.s1 .hint, .env.s1 .top { opacity: 0; transition: opacity .4s; animation: none; }
+.env.s1 .leaf svg { animation: none; filter: brightness(1.35) saturate(1.2); transition: filter .5s; }
+.env.s2 .leaf.l { transition: transform 1.9s cubic-bezier(.55,0,.25,1); transform: rotateY(-112deg); }
+.env.s2 .leaf.r { transition: transform 1.9s cubic-bezier(.55,0,.25,1); transform: rotateY(112deg); }
+.env.s2 .light .in { opacity: 1; transform: none; }
+.env.s3 .rays { opacity: 1; transform: scale(3); transition: opacity .9s, transform 1.4s ease-in; }
+.env.s3 { background: #fffaf0; transition: background 1s .3s; }
+.env.s3 .stone, .env.s3 .win { opacity: 0; transition: opacity .9s .2s; }
+.env.s3 .rays { transition: opacity .5s, transform 1.4s ease-in; }
+.env.s3.env { opacity: 1; }
+.env.gone { opacity: 0; }
+
+/* ---------- Hero ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 56px 0 50px; }
+.glow { position: absolute; inset: 0; pointer-events: none; opacity: .5; filter: blur(30px);
+  background: radial-gradient(22% 16% at 22% 78%, rgba(36,88,166,.35), transparent 70%), radial-gradient(20% 14% at 80% 70%, rgba(158,36,54,.3), transparent 70%),
+  radial-gradient(18% 12% at 55% 92%, rgba(226,169,59,.4), transparent 70%), radial-gradient(16% 12% at 30% 18%, rgba(47,125,87,.22), transparent 70%); }
+.arch { position: relative; margin: 0 auto; max-width: 340px; padding: 0 22px 34px; border: 1px solid var(--gold); border-radius: 170px 170px 4px 4px / 150px 150px 4px 4px;
+  box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px rgba(184,144,79,.5); background: rgba(255,255,255,.5); }
+.arch .rw { width: 118px; margin: -20px auto 14px; background: var(--paper); border-radius: 50%; padding: 6px; }
+.rw svg { width: 100%; display: block; }
+.arch .caps { font-size: 11.5px; line-height: 1.8; }
+.hero .nm { font-family: var(--script); font-weight: 400; font-size: clamp(50px, 15vw, 66px); line-height: 1.1; margin: 14px 0 4px; }
+.hero .nm span { display: block; padding: 0 .1em .16em; background: var(--foil); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .nm span.amp { font-size: .5em; padding-bottom: .1em; }
+.dt { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 10px; font-size: 26px; letter-spacing: .08em; color: var(--saph); }
+.dt i { width: 6px; height: 6px; transform: rotate(45deg); background: var(--ruby); }
+.wd { margin-top: 6px; font-size: 12.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); }
+.p { white-space: pre-line; font-size: 17px; text-wrap: pretty; }
+
+/* ---------- Օրացույց ---------- */
+.cal { max-width: 320px; margin: 30px auto 0; }
+.cal-h { font-family: var(--script); font-size: 34px; color: var(--ruby); line-height: 1.3; padding-bottom: .12em; }
+.cal-g { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 4px; margin-top: 8px; }
+.cal-g .cw { font-size: 11.5px; color: var(--soft); text-transform: uppercase; padding-bottom: 4px; }
+.cal-g .cd { position: relative; height: 36px; display: grid; place-items: center; font-size: 15px; }
+.cal-g .cd.on { color: #fff; }
+.cal-g .cd.on::before { content: ""; position: absolute; width: 30px; height: 36px; border-radius: 15px 15px 3px 3px; background: var(--saph); box-shadow: 0 0 0 3px var(--band), 0 0 0 4px var(--gold); }
+.cal-g .cd span { position: relative; }
+
+/* ---------- Հետհաշվարկ ---------- */
+.cdn { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.cdn div { flex: 1 1 0; max-width: 76px; padding: 14px 2px 8px; border: 1px solid var(--gold); border-radius: 38px 38px 4px 4px; background: #fff; }
+.cdn b { display: block; font-weight: 400; font-size: clamp(28px, 8vw, 34px); line-height: 1.1; color: var(--saph); font-variant-numeric: tabular-nums; }
+.cdn span { font-size: 11.5px; color: var(--soft); }
+
+/* ---------- Ծրագիր ---------- */
+.ev { margin-top: 30px; padding: 30px 20px 26px; background: #fff; border: 1px solid rgba(184,144,79,.6); border-radius: 150px 150px 6px 6px / 110px 110px 6px 6px; }
+.ev .pic.ico { width: 84px !important; max-width: 84px; }
+.ev .tm { font-size: 34px; line-height: 1.1; color: var(--saph); margin-top: 4px; }
+.ev .t { font-size: 13px; letter-spacing: .22em; text-transform: uppercase; margin-top: 6px; color: var(--ruby); }
+.ev .n { font-family: var(--script); font-size: clamp(26px, 7.6vw, 32px); line-height: 1.3; color: var(--ink); margin-top: 4px; padding-bottom: .15em; text-wrap: balance; }
+.ev .a { font-size: 15px; color: var(--soft); text-wrap: balance; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 12px; padding: 0 26px; border: 1px solid var(--saph); border-radius: 999px; background: transparent; color: var(--saph);
+  text-decoration: none; font: 13px var(--serif); letter-spacing: .16em; text-transform: uppercase; cursor: pointer; }
+.btn.fill { background: var(--saph); color: #fff; }
+.dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.dots i { width: 40px; height: 48px; border-radius: 20px 20px 3px 3px; box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--gold); }
+
+/* ---------- RSVP ---------- */
+.rs { text-align: left; background: #fff; border: 1px solid rgba(184,144,79,.6); border-radius: 6px; padding: 24px 20px; margin-top: 10px; }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 20px; height: 20px; accent-color: var(--saph); margin: 0; flex: none; }
+.fl { margin-top: 14px; }
+.fl label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px; }
+.fl input, .fl select { width: 100%; border: 0; border-bottom: 1px solid rgba(184,144,79,.6); background: transparent; color: var(--ink); font: 17px var(--serif); padding: 9px 2px; border-radius: 0; }
+.fl input:focus, .fl select:focus { outline: 0; border-color: var(--saph); }
+.rs .btn { width: 100%; margin-top: 20px; }
+.thanks { text-align: center; } .thanks-t { font-family: var(--script); font-size: 44px; color: var(--saph); padding-bottom: .15em; }
+.fin .rw { width: 110px; margin: 0 auto 16px; }
+.fin .nm { font-family: var(--script); font-size: clamp(42px, 12.5vw, 56px); line-height: 1.25; padding: 0 .1em .2em; background: var(--foil); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
+.made a { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .env .hint, .env .leaf svg { animation: none !important; } }

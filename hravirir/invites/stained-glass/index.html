@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14111a">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "stained-glass", name: "Վիտրաժ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Արամ", "Մարիամ"], ru: ["Арам", "Мариам"] },
+  date: "2027-01-23T11:00",
+  text: {
+    hy: "Մենք որոշել ենք մեր կյանքը միասին շարունակել և մեր միությունը օրհնել եկեղեցում՝ Աստծո և մեր սիրելի մարդկանց առջև։\nՇատ ուրախ կլինենք, եթե այդ լուսավոր օրը Դուք լինեք մեր կողքին։",
+    ru: "Мы решили идти по жизни вместе и освятить наш союз в церкви — перед Богом и самыми близкими людьми.\nБудем очень рады, если в этот светлый день вы будете рядом с нами."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Մելիքյանների օջախ", ru: "Дом семьи Меликян" },
+      address: { hy: "Երևան, Նոր Նորք, Գայի պողոտա 12", ru: "Ереван, Нор Норк, пр. Гая 12" }, map: "https://maps.google.com/?q=Gai+Avenue+12+Yerevan" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Սարգսյանների օջախ", ru: "Дом семьи Саргсян" },
+      address: { hy: "Երևան, Կենտրոն, Պուշկինի փողոց 40", ru: "Ереван, Центр, ул. Пушкина 40" }, map: "https://maps.google.com/?q=Pushkin+40+Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Գայանե վանք", ru: "Монастырь Святой Гаяне" },
+      address: { hy: "Էջմիածին, Մայր Աթոռ Սուրբ Էջմիածին", ru: "Эчмиадзин, Первопрестольный Святой Эчмиадзин" }, map: "https://maps.google.com/?q=Saint+Gayane+Church+Etchmiadzin" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Արարատ Հոլլ» հանդիսությունների սրահ", ru: "Банкетный зал «Арарат Холл»" },
+      address: { hy: "Երևան, Արշակունյաց պողոտա 54", ru: "Ереван, пр. Аршакуняц 54" }, map: "https://maps.google.com/?q=Arshakunyats+54+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Ազնիվ, խորը երանգներ՝ սափիրե կապույտ, նռնագույն, զմրուխտ և ոսկեգույն", ru: "Благородные глубокие оттенки: сапфировый, гранатовый, изумрудный и золотой" },
+    colors: ["#1f4e8c", "#8e2331", "#2f6b4f", "#d9a441", "#f7f1e6"] },
+  rsvp: { deadline: "2027-01-10", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
