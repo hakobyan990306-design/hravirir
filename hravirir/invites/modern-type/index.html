@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ec">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;400;700&family=Noto+Sans:wght@200;400;700&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "modern-type", name: "Մինիմալ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Վահե", "Արփի"], ru: ["Ваге", "Арпи"] },
+  date: "2027-03-13T12:00",
+  text: {
+    hy: "Առանց ավելորդ խոսքերի՝ մենք ամուսնանում ենք։\nԵվ կուզենանք, որ այդ օրը Դուք լինեք մեզ հետ։",
+    ru: "Без лишних слов — мы женимся.\nИ очень хотим, чтобы в этот день вы были с нами."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Ալեքսանյանների օջախ", ru: "Дом семьи Алексанян" },
+      address: { hy: "Երևան, Արաբկիր, Ազատության պողոտա 17", ru: "Ереван, Арабкир, пр. Азатутян 17" }, map: "https://maps.google.com/?q=Azatutyan+17+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Հակոբյանների օջախ", ru: "Дом семьи Акопян" },
+      address: { hy: "Երևան, Կենտրոն, Սարյան փողոց 22", ru: "Ереван, Центр, ул. Сарьяна 22" }, map: "https://maps.google.com/?q=Saryan+22+Yerevan" },
+    { time: "15:30", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Կաթողիկե եկեղեցի", ru: "Церковь Катогике" },
+      address: { hy: "Երևան, Աբովյան փողոց 7ա", ru: "Ереван, ул. Абовяна 7а" }, map: "https://maps.google.com/?q=Katoghike+Church+Yerevan" },
+    { time: "18:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Լոֆթ» հանդիսությունների տարածք", ru: "Пространство «Лофт»" },
+      address: { hy: "Երևան, Արամի փողոց 64", ru: "Ереван, ул. Арами 64" }, map: "https://maps.google.com/?q=Arami+64+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Մոնոխրոմ՝ սև, սպիտակ, մոխրագույն և ժանգագույն շեշտեր", ru: "Монохром: чёрный, белый, серый и ржаво-терракотовые акценты" },
+    colors: ["#111111", "#ffffff", "#9a968f", "#b5552f"] },
+  rsvp: { deadline: "2027-03-01", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
