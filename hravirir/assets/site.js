@@ -19,6 +19,8 @@
   ];
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
   var DESIGNS = [
+    { id: "peony", name: "Պիոն", cat: "wedding", colors: ["#fffaf6", "#f8ebe6", "#c9737a", "#a8b79c"], tag: "Նոր" },
+    { id: "night-magic", name: "Կախարդանք", cat: "wedding", colors: ["#0d1628", "#23406b", "#b7a6d9", "#e8cf8e"], tag: "Նոր" },
     { id: "cinema", name: "Կինո", cat: "wedding", colors: ["#0e0d0c", "#efe7da", "#a3262a", "#c8a45c"], tag: "Նոր" },
     { id: "atamhatik", name: "Ատամհատիկ", cat: "birthday", colors: ["#fff6ea", "#f3a883", "#8fcfb8", "#f5cf6a"], tag: "Նոր" },
     { id: "doves", name: "Աղավնիներ", cat: "wedding", colors: ["#e6edf4", "#fbfcfd", "#6f8fb3", "#c9d1da"], tag: "Նոր" },

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7e7e2">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400&family=Cormorant+Garamond:wght@400;500&display=swap">
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "peony", name: "Պիոն" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Սամվել", "Էլեն"], ru: ["Самвел", "Элен"] },
+  date: "2027-04-24T11:30",
+  text: {
+    hy: "Գարնանը, երբ պիոններն են ծաղկում, մենք կասենք մեր «այո»-ն։\nՍիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ այդ քնքուշ ու լուսավոր օրը։",
+    ru: "Весной, когда цветут пионы, мы скажем друг другу «да».\nС любовью приглашаем вас разделить с нами этот нежный и светлый день."
+  },
+  events: [
+    { time: "11:30", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Գևորգյանների օջախ", ru: "Дом семьи Геворгян" },
+      address: { hy: "Երևան, Նոր Նորք, Մոլդովական փողոց 22", ru: "Ереван, Нор Норк, ул. Молдовакан 22" }, map: "https://maps.google.com/?q=Moldovakan+22+Yerevan" },
+    { time: "13:00", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Կարապետյանների օջախ", ru: "Дом семьи Карапетян" },
+      address: { hy: "Երևան, Արաբկիր, Կոմիտասի պողոտա 54", ru: "Ереван, Арабкир, пр. Комитаса 54" }, map: "https://maps.google.com/?q=Komitas+54+Yerevan" },
+    { time: "15:30", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Հավուց Թառ վանք", ru: "Монастырь Авуц Тар" },
+      address: { hy: "Կոտայքի մարզ, Գառնիի մոտ", ru: "Котайкская обл., близ Гарни" }, map: "https://maps.google.com/?q=Havuts+Tar" },
+    { time: "18:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Ռոյալ Գարդեն» այգի-ռեստորան", ru: "Сад-ресторан «Роял Гарден»" },
+      address: { hy: "Երևան, Ավան, Հովհաննես Հովհաննիսյան փողոց 3", ru: "Ереван, Аван, ул. Ов. Ованнисяна 3" }, map: "https://maps.google.com/?q=Avan+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Գարնանային պաստելային երանգներ՝ փոշեվարդագույն, դեղձագույն, նշենու կանաչ և կաթնագույն", ru: "Весенние пастельные оттенки: пудрово-розовый, персиковый, шалфей и молочный" },
+    colors: ["#d99b98", "#f2c9b5", "#a8b79c", "#fbf3ec", "#c3a06a"] },
+  rsvp: { deadline: "2027-04-10", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

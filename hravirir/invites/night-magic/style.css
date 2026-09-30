@@ -1,0 +1,112 @@
+/* «Կախարդանք» — ձմեռային գիշերային երկինք. լուսին, ընկնող աստղ, աստղերից գծվող սրտաձև համաստեղություն սկզբնատառերով
+   Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Cormorant Garamond Italic) + Noto Serif Armenian */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+
+:root {
+  --night: #0d1628; --deep: #122240; --ink: #e9e6f2; --soft: #a3a9c2; --gold: #e8cf8e; --gold-l: #fff1c9; --lilac: #b7a6d9;
+  --script: "Coronet", "Cormorant Garamond", serif; --serif: "Noto Serif Armenian", "Cormorant Garamond", Georgia, serif;
+  --k-bg: #0d1628; --k-ink: #e9e6f2; --k-accent: #e8cf8e; --k-font: "Noto Serif Armenian", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--night); color: var(--ink); font-family: var(--serif); font-weight: 300; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; padding: 0 26px; position: relative; z-index: 1; }
+section { position: relative; text-align: center; padding: 64px 0; overflow: hidden; }
+.caps { font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: var(--soft); text-wrap: balance; font-weight: 400; }
+.h2 { font-family: var(--script); font-weight: 400; font-size: clamp(38px, 11vw, 50px); line-height: 1.25; color: var(--gold); margin-bottom: 12px; padding: 0 .1em .18em; text-shadow: 0 0 22px rgba(232,207,142,.35); }
+.deep { background: linear-gradient(180deg, var(--deep), #0f1c36); }
+svg { display: block; width: 100%; }
+.stars { position: absolute; inset: 0; pointer-events: none; }
+.stars i { position: absolute; border-radius: 50%; background: #fff8e1; box-shadow: 0 0 6px rgba(255,248,225,.8); animation: tw 3s ease-in-out infinite alternate; }
+@keyframes tw { from { opacity: .25; } to { opacity: 1; } }
+
+/* ---------- Բացում ---------- */
+.env { position: fixed; inset: 0; z-index: 60; overflow: hidden; cursor: pointer; background: radial-gradient(90% 60% at 50% 30%, #1d3257, var(--night) 70%); }
+.env .top { position: absolute; left: 0; right: 0; top: calc(34px + env(safe-area-inset-top, 0px)); text-align: center; z-index: 3; transition: opacity .4s; }
+.env .top .caps { color: var(--gold); letter-spacing: .34em; }
+.env .moon { position: absolute; left: 50%; top: 44%; width: min(52vw, 230px); transform: translate(-50%, -50%); z-index: 2; filter: drop-shadow(0 0 30px rgba(240,220,166,.45)); transition: transform 1.3s cubic-bezier(.5,0,.2,1); }
+.env .moon svg { animation: glow 3s ease-in-out infinite alternate; }
+@keyframes glow { to { transform: scale(1.04); } }
+.env .shoot { position: absolute; left: 8%; top: 18%; width: 140px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, rgba(255,248,225,0), #fff8e1); transform: rotate(24deg); opacity: 0; z-index: 3; }
+.env .cwrap { position: absolute; left: 50%; top: 50%; width: min(80vw, 330px); transform: translate(-50%, -50%); z-index: 3; }
+.env .cons path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease-in-out .4s; }
+.env .cons circle { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.env .ini { position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: 6%; font-family: var(--script); font-size: clamp(40px, 12vw, 54px); color: var(--gold-l); opacity: 0; transform: scale(.85); transition: opacity 1s 1.6s, transform 1.4s 1.6s; text-shadow: 0 0 24px rgba(232,207,142,.6); }
+.env .wish { position: absolute; left: 0; right: 0; top: calc(50% + min(40vw, 165px)); text-align: center; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--lilac); opacity: 0; transition: opacity 1s 2s; }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(26px + env(safe-area-inset-bottom, 0px)); text-align: center; font-size: 11.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+html.preview .env .hint, html.preview .stars i, html.preview .env .moon svg { animation: none; }
+/* փուլեր */
+.env.s1 .hint, .env.s1 .top { opacity: 0; animation: none; transition: opacity .4s; }
+.env.s1 .moon { transform: translate(calc(-50% + 26vw), calc(-50% - 30svh)) scale(.42); }
+.env.s1 .shoot { animation: shoot .9s ease-in .2s forwards; }
+@keyframes shoot { 0% { opacity: 0; transform: translate(0, 0) rotate(24deg); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(70vw, 32svh) rotate(24deg); } }
+.env.s2 .cons path { stroke-dashoffset: 0; }
+.env.s2 .cons circle { animation: pop .5s cubic-bezier(.3,1.6,.5,1) forwards; }
+@keyframes pop { 0% { opacity: 0; transform: scale(0); } 100% { opacity: 1; transform: scale(1); } }
+.env.s2 .ini { opacity: 1; transform: none; }
+.env.s2 .wish { opacity: 1; }
+.env.s3 { opacity: 0; transform: scale(1.08); transition: opacity .8s, transform 1.2s; }
+
+/* ---------- Hero ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 50px; background: radial-gradient(80% 50% at 50% 25%, #1d3257, var(--night) 70%); }
+.hm { width: 110px; margin: 0 auto 16px; filter: drop-shadow(0 0 24px rgba(240,220,166,.45)); }
+.hero .nm { font-family: var(--script); font-weight: 400; font-size: clamp(54px, 16vw, 72px); line-height: 1.1; color: var(--gold-l); margin: 14px 0 12px; text-shadow: 0 0 30px rgba(232,207,142,.4); }
+.hero .nm span { display: block; padding: 0 .1em .12em; }
+.hero .amp { font-size: .5em; color: var(--lilac); }
+.dt { font-size: 20px; letter-spacing: .06em; color: var(--ink); }
+.tm0 { display: inline-block; margin-top: 8px; padding: 4px 18px; border: 1px solid rgba(232,207,142,.5); border-radius: 999px; font-size: 14px; letter-spacing: .2em; color: var(--gold); }
+.p { white-space: pre-line; font-size: 16.5px; text-wrap: pretty; color: #d9d6e6; }
+
+/* ---------- Օրացույց ---------- */
+.cal { max-width: 320px; margin: 30px auto 0; }
+.cal-h { font-family: var(--script); font-size: 32px; color: var(--gold); line-height: 1.3; padding-bottom: .15em; }
+.cal-g { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 4px; margin-top: 8px; }
+.cal-g .cw { font-size: 11.5px; color: var(--soft); text-transform: uppercase; padding-bottom: 4px; font-weight: 400; }
+.cal-g .cd { position: relative; height: 36px; display: grid; place-items: center; font-size: 15px; }
+.cal-g .cd.on { color: var(--night); font-weight: 400; }
+.cal-g .cd.on::before { content: ""; position: absolute; width: 36px; height: 36px; background: var(--gold); box-shadow: 0 0 18px rgba(232,207,142,.7);
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+.cal-g .cd span { position: relative; }
+
+/* ---------- Հետհաշվարկ ---------- */
+.cdn { display: flex; justify-content: center; margin-top: 14px; }
+.cdn div { flex: 1 1 0; max-width: 80px; }
+.cdn div + div { border-left: 1px solid rgba(232,207,142,.3); }
+.cdn b { display: block; font-weight: 300; font-size: clamp(32px, 9.5vw, 40px); line-height: 1.15; color: var(--gold-l); font-variant-numeric: tabular-nums; text-shadow: 0 0 16px rgba(232,207,142,.35); }
+.cdn span { font-size: 11.5px; color: var(--soft); }
+
+/* ---------- Ծրագիր՝ լուսնի փուլերով ---------- */
+.line { position: relative; }
+.line::before { content: ""; position: absolute; left: 50%; top: 40px; bottom: 40px; width: 1px; background: linear-gradient(180deg, transparent, rgba(232,207,142,.35), transparent); }
+.ev { position: relative; margin-top: 30px; padding: 22px 18px; background: rgba(13,22,40,.7); border: 1px solid rgba(232,207,142,.22); border-radius: 18px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.ev .pic.ico { width: 70px !important; max-width: 70px; filter: drop-shadow(0 0 14px rgba(240,220,166,.4)); }
+.ev .tm { font-size: 32px; line-height: 1.1; color: var(--gold-l); }
+.ev .t { font-size: 12.5px; letter-spacing: .22em; text-transform: uppercase; margin-top: 6px; color: var(--lilac); font-weight: 400; }
+.ev .n { font-family: var(--script); font-size: clamp(26px, 7.8vw, 32px); line-height: 1.3; color: var(--ink); margin-top: 2px; padding-bottom: .15em; text-wrap: balance; }
+.ev .a { font-size: 14.5px; color: var(--soft); text-wrap: balance; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 12px; padding: 0 26px; border: 1px solid var(--gold); border-radius: 999px; background: transparent; color: var(--gold);
+  text-decoration: none; font: 400 12.5px var(--serif); letter-spacing: .16em; text-transform: uppercase; cursor: pointer; }
+.btn.fill { background: var(--gold); color: var(--night); }
+.dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.dots i { width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 3px var(--night), 0 0 0 4px rgba(232,207,142,.5); }
+
+/* ---------- RSVP ---------- */
+.rs { text-align: left; background: rgba(13,22,40,.7); border: 1px solid rgba(232,207,142,.3); border-radius: 16px; padding: 24px 20px; margin-top: 10px; }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 20px; height: 20px; accent-color: var(--gold); margin: 0; flex: none; }
+.fl { margin-top: 14px; }
+.fl label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px; font-weight: 400; }
+.fl input, .fl select { width: 100%; border: 0; border-bottom: 1px solid rgba(232,207,142,.35); background: transparent; color: var(--ink); font: 300 17px var(--serif); padding: 9px 2px; border-radius: 0; }
+.fl select option { color: #222; }
+.fl input:focus, .fl select:focus { outline: 0; border-color: var(--gold); }
+.rs .btn { width: 100%; margin-top: 20px; }
+.thanks { text-align: center; } .thanks-t { font-family: var(--script); font-size: 42px; color: var(--gold); padding-bottom: .15em; }
+.fin .fc { width: 150px; margin: 0 auto 8px; }
+.fin .fc path { stroke-dasharray: none; }
+.fin .nm { font-family: var(--script); font-size: clamp(40px, 12vw, 54px); color: var(--gold-l); line-height: 1.25; padding: 0 .1em .2em; text-shadow: 0 0 24px rgba(232,207,142,.4); }
+.made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
+.made a { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .env .hint, .stars i, .env .moon svg { animation: none !important; } }

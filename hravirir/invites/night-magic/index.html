@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1628">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "night-magic", name: "Կախարդանք" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Հայկ", "Սոնա"], ru: ["Айк", "Сона"] },
+  date: "2026-12-26T12:00",
+  text: {
+    hy: "Մի ձմեռային գիշեր, աստղերի տակ, նա հարցրեց, և նա պատասխանեց՝ այո։\nՀիմա ուզում ենք, որ մեր կյանքի ամենակախարդական օրը Դուք լինեք մեզ հետ՝ ամանորյա լույսերի ու երաժշտության մեջ։",
+    ru: "Однажды зимней ночью под звёздами он спросил, и она ответила «да».\nТеперь мы хотим, чтобы в самый волшебный день нашей жизни вы были рядом — среди новогодних огней и музыки."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Աբրահամյանների օջախ", ru: "Дом семьи Абраамян" },
+      address: { hy: "Երևան, Էրեբունի, Սասունցի Դավթի փողոց 34", ru: "Ереван, Эребуни, ул. Сасунци Давида 34" }, map: "https://maps.google.com/?q=Erebuni+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Վարդանյանների օջախ", ru: "Дом семьи Варданян" },
+      address: { hy: "Երևան, Կենտրոն, Տերյան փողոց 62", ru: "Ереван, Центр, ул. Теряна 62" }, map: "https://maps.google.com/?q=Teryan+62+Yerevan" },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Սարգիս եկեղեցի", ru: "Церковь Святого Саркиса" },
+      address: { hy: "Երևան, Իսրայելյան փողոց 21", ru: "Ереван, ул. Исраеляна 21" }, map: "https://maps.google.com/?q=Saint+Sarkis+Cathedral+Yerevan" },
+    { time: "19:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Լա Լունա» հանդիսությունների սրահ", ru: "Банкетный зал «Ла Луна»" },
+      address: { hy: "Երևան, Ազատության պողոտա 26", ru: "Ереван, пр. Азатутян 26" }, map: "https://maps.google.com/?q=Azatutyan+26+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Գիշերային երանգներ՝ մուգ կապույտ, արծաթագույն, լավանդա և ոսկեգույն", ru: "Ночные оттенки: тёмно-синий, серебро, лаванда и золото" },
+    colors: ["#0d1628", "#23406b", "#b7a6d9", "#c9ced8", "#e8cf8e"] },
+  rsvp: { deadline: "2026-12-15", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
