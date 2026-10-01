@@ -20,7 +20,7 @@
     ".nsh-bar{position:fixed;left:8px;right:8px;top:calc(8px + env(safe-area-inset-top,0px));z-index:2147483000;display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px;border-radius:14px;background:#1d1d1f;color:#fff;font:600 13px/1.2 Arial,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.35)}" +
     ".nsh-bar b{flex:0 0 auto;font-weight:600;white-space:nowrap}.nsh-bar button{flex:1 1 auto;border:0;border-radius:10px;padding:9px 6px;font:700 12.5px Arial,sans-serif;cursor:pointer;background:#3a3a3c;color:#fff;white-space:nowrap}" +
     ".nsh-bar button.on{background:#e01b24}.nsh-bar .cnt{background:#e01b24;border-radius:999px;padding:2px 7px;margin-left:4px}" +
-    ".nsh-ov{position:fixed;inset:0;z-index:2147482998;display:none;cursor:pointer;background:rgba(224,27,36,.05);-webkit-tap-highlight-color:transparent;touch-action:pan-x pan-y}html.nsh-on .nsh-ov{display:block}" +
+    ".nsh-ov{position:fixed;inset:0;z-index:2147482998;display:none;cursor:pointer;background:rgba(224,27,36,.04);box-shadow:inset 0 0 0 4px rgba(224,27,36,.85);-webkit-tap-highlight-color:transparent;touch-action:pan-x pan-y}html.nsh-on .nsh-ov{display:block}" +
     ".nsh-pin{position:absolute;z-index:2147482999;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#e01b24;color:#fff;font:700 13px/26px Arial,sans-serif;text-align:center;box-shadow:0 0 0 3px #fff,0 4px 10px rgba(0,0,0,.4);cursor:pointer}" +
     ".nsh-pin.fx{position:fixed}" +
     ".nsh-modal{position:fixed;inset:0;z-index:2147483001;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;padding:12px}" +
@@ -98,14 +98,27 @@
   var ov = document.createElement("div");
   ov.className = "nsh-ov";
   document.body.appendChild(ov);
-  ov.onclick = function (ev) {
-    if (document.querySelector(".nsh-modal")) return;
-    ov.style.display = "none";
-    var el = document.elementFromPoint(ev.clientX, ev.clientY);
-    ov.style.display = "";
-    if (!el || inUI(el)) return;
-    note(el, ev.clientX, ev.clientY);
-  };
+  var last = 0, t0 = null;
+  function tapAt(x, y) {
+    if (Date.now() - last < 600 || document.querySelector(".nsh-modal")) return;
+    last = Date.now();
+    try {
+      ov.style.display = "none";
+      var el = document.elementFromPoint(x, y);
+      ov.style.display = "";
+      if (!el || inUI(el)) return;
+      note(el, x, y);
+    } catch (e) { ov.style.display = ""; alert("Նշման սխալ. " + (e && e.message)); }
+  }
+  // iPhone՝ touchstart/touchend (կարճ հպում, ոչ թերթում), մյուսները՝ pointerup/click
+  ov.addEventListener("touchstart", function (ev) { var p = ev.touches[0]; t0 = { x: p.clientX, y: p.clientY, t: Date.now() }; }, { passive: true });
+  ov.addEventListener("touchend", function (ev) {
+    var p = ev.changedTouches[0]; if (!t0 || !p) return;
+    var moved = Math.abs(p.clientX - t0.x) > 12 || Math.abs(p.clientY - t0.y) > 12 || Date.now() - t0.t > 900; t0 = null;
+    if (!moved) { ev.preventDefault(); tapAt(p.clientX, p.clientY); }
+  }, { passive: false });
+  ov.addEventListener("pointerup", function (ev) { if (ev.pointerType !== "touch") tapAt(ev.clientX, ev.clientY); });
+  ov.addEventListener("click", function (ev) { tapAt(ev.clientX, ev.clientY); });
 
   function allText() {
     var out = [], keys = [];
