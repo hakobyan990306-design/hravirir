@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#dbe8f3">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;500;700&family=Noto+Sans:wght@300;500;700&display=swap">
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "boarding", name: "Ավիատոմս" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Կարեն", "Մարի"], ru: ["Карен", "Мари"] },
+  date: "2027-07-10T12:00",
+  flight: "HY 1007",
+  text: {
+    hy: "Մենք միասին շատ ճանապարհներ ենք անցել, և հիմա պատրաստվում ենք մեր կյանքի ամենակարևոր թռիչքին։\nՍիրով հրավիրում ենք Ձեզ միանալու մեզ այս ճանապարհորդությանը՝ մեր հարսանիքին։",
+    ru: "Мы прошли вместе много дорог, а теперь готовимся к самому важному полёту в жизни.\nС любовью приглашаем вас присоединиться к этому путешествию — на нашу свадьбу."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Բաղդասարյանների օջախ", ru: "Дом семьи Багдасарян" },
+      address: { hy: "Երևան, Զեյթուն, Անանիա Շիրակացու փողոց 8", ru: "Ереван, Зейтун, ул. Анании Ширакаци 8" }, map: "https://maps.google.com/?q=Anania+Shirakatsi+8+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Մանասյանների օջախ", ru: "Дом семьи Манасян" },
+      address: { hy: "Երևան, Արաբկիր, Կոմիտասի պողոտա 12", ru: "Ереван, Арабкир, пр. Комитаса 12" }, map: "https://maps.google.com/?q=Komitas+12+Yerevan" },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Աստվածածին եկեղեցի, Ծաղկաձոր", ru: "Церковь Святой Богородицы, Цахкадзор" },
+      address: { hy: "Ծաղկաձոր, Կեչառիսի վանական համալիր", ru: "Цахкадзор, монастырь Кечарис" }, map: "https://maps.google.com/?q=Kecharis+Monastery" },
+    { time: "19:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Մարիոթ Ծաղկաձոր» հյուրանոց", ru: "Отель «Марриотт Цахкадзор»" },
+      address: { hy: "Ծաղկաձոր, Օրբելի եղբայրների փողոց 2", ru: "Цахкадзор, ул. Братьев Орбели 2" }, map: "https://maps.google.com/?q=Tsaghkadzor+Marriott" }
+  ],
+  dresscode: { text: { hy: "Ամառային թեթև երանգներ՝ սպիտակ, երկնագույն, մուգ կապույտ և մարջանագույն", ru: "Лёгкие летние оттенки: белый, небесно-голубой, тёмно-синий и коралловый" },
+    colors: ["#ffffff", "#9ec5e4", "#1d2b4f", "#e8735a"] },
+  rsvp: { deadline: "2027-06-25", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
