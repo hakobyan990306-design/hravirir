@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Կոտրեք ափսեն՝ բախտի համար", luck: "Բախտի համար", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր սովորույթը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է",
+    hy: { hint: "Կոտրեք ափսեն՝ բախտի համար", luck: "Բախտի համար", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր սովորույթը", cap: "Լավաշը՝ առատության, մեղրը՝ քաղցր կյանքի համար",program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է",
       rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Разбейте тарелку на счастье", luck: "На счастье", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наш обычай", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
+    ru: { hint: "Разбейте тарелку на счастье", luck: "На счастье", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наш обычай", cap: "Лаваш — к достатку, мёд — к сладкой жизни",program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
       rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Break the plate for luck", luck: "For luck", inv: "We joyfully invite you to our wedding", our: "Our tradition", program: "Schedule", dress: "Dress code", left: "Counting down",
+    en: { hint: "Break the plate for luck", luck: "For luck", inv: "We joyfully invite you to our wedding", our: "Our tradition", cap: "Lavash for abundance, honey for a sweet life",program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -98,8 +98,44 @@
       '<div class="dt3 rv d2"><div class="s">' + esc(x("wdl")[d.getDay()]) + '</div><div class="d">' + d.getDate() + '</div><div class="s">' + esc(u("monthsGen")[d.getMonth()]) + "</div></div>" +
       '<div class="yr rv d2">' + d.getFullYear() + "</div>" + (C.photo ? K.photo() : '<div class="pl rv d3">' + plate() + "</div>") + "</div></section>";
   }
+  // Շեմի տեսարան՝ լավաշը վերևից իջնում է հարս ու փեսայի ուսերին, մեղրը կաթում է գդալից
+  function scene() {
+    var sp = "", s0 = 11; function r() { s0 = (s0 * 16807) % 2147483647; return s0 / 2147483647; }
+    for (var i = 0; i < 26; i++) sp += '<ellipse cx="' + f(88 + r() * 128) + '" cy="' + f(122 + r() * 76) + '" rx="' + f(1.2 + r() * 2.6) + '" ry="' + f(.8 + r() * 1.6) + '" fill="' + (r() > .4 ? "#c08a4c" : "#8a5428") + '" opacity="' + f(.35 + r() * .4) + '"/>';
+    var gl = ""; [[96, 112], [206, 108], [150, 100], [120, 206], [186, 214]].forEach(function (p, k) { gl += '<path class="gl" style="--d:' + (2.1 + k * .18) + 's" d="M' + p[0] + " " + (p[1] - 6) + "L" + (p[0] + 1.6) + " " + (p[1] - 1.6) + "L" + (p[0] + 6) + " " + p[1] + "L" + (p[0] + 1.6) + " " + (p[1] + 1.6) + "L" + p[0] + " " + (p[1] + 6) + "L" + (p[0] - 1.6) + " " + (p[1] + 1.6) + "L" + (p[0] - 6) + " " + p[1] + "L" + (p[0] - 1.6) + " " + (p[1] - 1.6) + 'Z" fill="' + GD + '"/>'; });
+    return '<div class="tr rv"><svg viewBox="0 0 300 330" aria-hidden="true"><defs><clipPath id="lvc"><path d="M84 134Q90 116 112 118Q150 126 188 120Q210 116 216 134L220 200Q213 209 205 201L199 152Q150 164 103 152L97 203Q89 210 80 200Z"/></clipPath>' +
+      '<linearGradient id="hn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7c548"/><stop offset="1" stop-color="#d98a12"/></linearGradient></defs>' +
+      // դուռ-կամար
+      '<path d="M40 330V120A110 104 0 0 1 260 120V330" fill="#f6ead2" stroke="' + BL + '" stroke-width="5"/><path d="M52 330V122A98 92 0 0 1 248 122V330" fill="none" stroke="' + RD + '" stroke-width="1.5" stroke-dasharray="6 4"/>' +
+      star8(150, 34, 9, BL) + '<circle cx="150" cy="34" r="3.4" fill="' + GD + '"/>' + flower(70, 78, 12, RD, BL) + flower(230, 78, 12, RD, BL) +
+      '<rect x="30" y="312" width="240" height="18" rx="3" fill="#b98a5a"/><rect x="30" y="312" width="240" height="4" fill="#d9b07e"/>' +
+      // փեսա
+      '<path d="M100 300L104 316H118L119 300ZM122 300L123 316H137L138 300Z" fill="#17161c"/>' +
+      '<path d="M96 132Q118 122 140 132L144 232L138 304H100L94 232Z" fill="#23222b"/><path d="M110 128L118 160L126 128Z" fill="#fff"/><path d="M113 132L118 136L123 132L118 129Z" fill="#17161c"/><path d="M118 160L106 232M118 160L130 232" stroke="#3a3946" stroke-width="1"/>' +
+      '<circle cx="134" cy="150" r="3.4" fill="' + RD + '"/>' +
+      '<rect x="113" y="110" width="10" height="14" fill="#e9bc95"/><circle cx="118" cy="98" r="16" fill="#f1c9a5"/><path d="M102 96Q102 78 118 79Q134 78 134 94Q128 86 118 88Q108 88 102 96Z" fill="#2a1c14"/>' +
+      '<circle cx="112.5" cy="99" r="1.4" fill="#2a1c14"/><circle cx="123.5" cy="99" r="1.4" fill="#2a1c14"/><path d="M114 106Q118 109 122 106" stroke="#a05a44" stroke-width="1.3" fill="none" stroke-linecap="round"/>' +
+      // հարս
+      '<path d="M170 92Q196 92 204 150L214 300L198 300L192 160Z" fill="#fff" opacity=".7"/>' +
+      '<path d="M168 130Q182 124 196 130L194 172L222 306H142L170 172Z" fill="#fffdf8" stroke="#e7dccb" stroke-width="1"/><path d="M170 172H194" stroke="' + GD + '" stroke-width="2.4"/>' +
+      '<path d="M152 290Q182 282 214 290" stroke="#e7dccb" stroke-width="1" fill="none"/><path d="M160 250Q182 244 206 250" stroke="#efe6d8" stroke-width="1" fill="none"/>' +
+      '<rect x="177" y="112" width="9" height="13" fill="#eebf98"/><circle cx="182" cy="100" r="15" fill="#f3cdaa"/><path d="M166 100Q164 82 182 82Q200 82 198 100Q192 90 182 90Q172 90 166 100Z" fill="#4a2c1c"/><circle cx="194" cy="86" r="7" fill="#4a2c1c"/>' +
+      '<path d="M170 86Q182 78 196 84" stroke="' + GD + '" stroke-width="2.2" fill="none"/>' +
+      '<circle cx="176.5" cy="101" r="1.3" fill="#2a1c14"/><circle cx="187.5" cy="101" r="1.3" fill="#2a1c14"/><path d="M178.5 107Q182 110 185.5 107" stroke="#c0564a" stroke-width="1.3" fill="none" stroke-linecap="round"/>' +
+      // ձեռքեր և ծաղկեփունջ
+      '<path d="M140 140Q150 176 158 190" stroke="#23222b" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M170 140Q164 170 160 188" stroke="#fffdf8" stroke-width="8" fill="none" stroke-linecap="round"/>' +
+      '<circle cx="160" cy="194" r="11" fill="#5f8a3a"/><circle cx="155" cy="190" r="6" fill="' + RD + '"/><circle cx="165" cy="191" r="5.5" fill="#fff"/><circle cx="160" cy="198" r="5.5" fill="#e88a8a"/>' +
+      // լավաշ
+      '<g class="lv"><path d="M84 134Q90 116 112 118Q150 126 188 120Q210 116 216 134L220 200Q213 209 205 201L199 152Q150 164 103 152L97 203Q89 210 80 200Z" fill="#efd7a6" stroke="#c99a5c" stroke-width="1.2"/>' +
+      '<g clip-path="url(#lvc)">' + sp + '<path d="M90 140Q150 150 210 138" stroke="#fbeccb" stroke-width="6" fill="none" opacity=".7"/></g></g>' + gl +
+      // մեղրի կճուճ և գդալ
+      '<g class="hy"><path d="M40 270Q40 250 52 248H80Q92 250 92 270Q92 304 66 304Q40 304 40 270Z" fill="' + BL + '"/><path d="M44 266H88" stroke="#fff" stroke-width="2" stroke-dasharray="3 3"/><ellipse cx="66" cy="248" rx="16" ry="4" fill="url(#hn)"/>' +
+      '<g class="dip"><path d="M70 186L82 240" stroke="#9a6a3a" stroke-width="3" stroke-linecap="round"/><ellipse cx="68" cy="182" rx="7" ry="9" fill="url(#hn)" stroke="#b9741a" stroke-width="1"/></g>' +
+      '<ellipse class="drop" cx="68" cy="194" rx="2.6" ry="3.6" fill="#e9a226"/></g>' +
+      "</svg></div>" + '<div class="caps tr-c rv">' + esc(x("cap")) + "</div>";
+  }
   function story() {
-    return '<section class="cream"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
+    return '<section class="cream"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + "</h2>" + scene() + '<p class="p rv">' + esc(t(C.text)) + "</p>" +
       '<div class="cal rv"><div class="cal-h">' + esc(u("months")[K.date.getMonth()]) + " " + K.date.getFullYear() + '</div><div class="cal-g">' + K.calendarCells() + "</div></div></div></section>";
   }
   function countdown() {
