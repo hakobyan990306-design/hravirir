@@ -1,12 +1,12 @@
 /* «Նուար» — hravirir.am-ի լուսանկարային ոճը (saro-diana). սպիտակ ֆոն, գեղագիր տեքստեր և մեծ սև-սպիտակ նկարներ հերթով,
    ծրագիր «Ինչպես հասնել» կոճակներով, հետհաշվարկ, «Սիրով՝ … և …»
-   Տառատեսակներ՝ 2. ArmAllegro (գեղագիր, ռուսերենը՝ Marck Script) + Noto Sans Armenian */
-@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+   Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Marck Script) + Noto Sans Armenian */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --ink: #111; --soft: #6d6d6d; --colw: 560px;
-  --script: "ArmAllegro", "Marck Script", serif; --sans: "Noto Sans Armenian", "Noto Sans", Arial, sans-serif;
+  --script: "Coronet", "Marck Script", serif; --sans: "Noto Sans Armenian", "Noto Sans", Arial, sans-serif;
   --k-bg: #ffffff; --k-ink: #111; --k-accent: #111; --k-font: "Noto Sans Armenian", sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +38,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; filter: gray
 .tx { padding: 64px 26px; }
 .h2 { font-family: var(--script); font-weight: 400; font-size: clamp(36px, 10.5vw, 48px); line-height: 1.3; padding-bottom: .15em; }
 .h2.sig { margin-top: 70px; }
-.s { font-family: var(--script); font-size: clamp(19px, 5.4vw, 24px); line-height: 1.5; margin-top: 18px; text-wrap: balance; }
+.s { font-family: var(--script); font-size: clamp(21px, 6vw, 27px); line-height: 1.5; margin-top: 18px; text-wrap: balance; }
 .date { font-family: var(--script); font-size: clamp(36px, 10vw, 46px); line-height: 1.2; letter-spacing: .02em; }
 .ph { aspect-ratio: 2 / 3; }
 

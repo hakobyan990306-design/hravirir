@@ -18,7 +18,9 @@
   function page() {
     var n = K.names(), d = K.date; pi = 0;
     return '<div class="col"><div class="topbar"><button class="play" type="button" data-music aria-label="music"><i></i></button></div>' +
-      '<section class="hero"><img src="' + esc(C.photo) + '" alt=""><div class="sh"></div><h1 class="nm"><span>' + esc(n[0] || "") + "</span><span>" + esc(n[1] || "") + '</span></h1><i class="chev"></i></section>' +
+      '<section class="hero"><img src="' + esc(C.photo) + '" alt="' + esc(n.join(" " + x("and") + " ")) + '">' +
+      // heroBaked՝ եթե անուններն արդեն գրված են նկարի վրա
+      (C.heroBaked ? "" : '<div class="sh"></div><h1 class="nm"><span>' + esc(n[0] || "") + "</span><span>" + esc(n[1] || "") + "</span></h1>") + '<i class="chev"></i></section>' +
       '<section class="tx"><h2 class="h2 rv">' + esc(x("inv")) + '</h2><p class="s rv">' + esc(t(C.invite)) + "</p></section>" + photo() +
       '<section class="tx"><div class="date rv">' + pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear() + esc(x("y")) + '</div><p class="s rv">' + esc(t(C.text)) + "</p></section>" + photo() +
       '<section class="tx"><h2 class="h2 rv">' + esc(x("plan")) + "</h2>" + (C.events || []).map(function (e) {
