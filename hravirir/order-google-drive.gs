@@ -50,3 +50,8 @@ function getFolder_(name, parent) {
   var it = parent.getFoldersByName(name);
   return it.hasNext() ? it.next() : parent.createFolder(name);
 }
+
+// Ստուգում. հղումը բրաուզերում բացելիս պետք է գրի «HRAVIRIR պատվերները աշխատում են ✓»
+function doGet() {
+  return ContentService.createTextOutput("HRAVIRIR պատվերները աշխատում են ✓");
+}

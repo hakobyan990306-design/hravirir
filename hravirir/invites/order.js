@@ -20,7 +20,7 @@
       main: "Գլխավոր նկար", mainBtn: "+ Ընտրել գլխավոր նկարը", more: "Մնացած նկարները (մինչև 10)", moreBtn: "+ Ավելացնել նկարներ",
       wish: "Բարեմաղթանք (տեքստ հրավերի համար)", wishPh: "Եթե ունեք Ձեր տեքստը, գրեք այստեղ, եթե ոչ՝ կառաջարկենք մենք", notes: "Լրացուցիչ նշումներ",
       phone: "Հեռախոսահամար", langs: "Հրավերի լեզուները", extras: "Լրացուցիչ ծառայություններ", total: "Ընդհանուր արժեք",
-      tg: "Ուղարկել Telegram-ով", pay: "Վճարումը՝ պատվերը հաստատելուց հետո", req: "Լրացրեք պարտադիր դաշտերը (*)",
+      send: "Ուղարկել պատվերը", tg: "Ուղարկել Telegram-ով", pay: "Վճարումը՝ պատվերը հաստատելուց հետո", req: "Լրացրեք պարտադիր դաշտերը (*)",
       date: "Միջոցառման օր", day: "Օր", month: "Ամիս", year: "Տարի", time: "Ժամ", at: ", ժամը ",
       months: ["Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"],
       types: { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ", corporate: "Կորպորատիվ", other: "Այլ" },
@@ -43,7 +43,7 @@
       main: "Главное фото", mainBtn: "+ Выбрать главное фото", more: "Остальные фото (до 10)", moreBtn: "+ Добавить фото",
       wish: "Пожелание (текст для приглашения)", wishPh: "Если у вас есть свой текст, напишите здесь; если нет — мы предложим", notes: "Дополнительные пожелания",
       phone: "Номер телефона", langs: "Языки приглашения", extras: "Дополнительные услуги", total: "Итого",
-      tg: "Отправить в Telegram", pay: "Оплата — после подтверждения заказа", req: "Заполните обязательные поля (*)",
+      send: "Отправить заказ", tg: "Отправить в Telegram", pay: "Оплата — после подтверждения заказа", req: "Заполните обязательные поля (*)",
       date: "Дата мероприятия", day: "День", month: "Месяц", year: "Год", time: "Время", at: ", в ",
       months: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
       types: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения", corporate: "Корпоратив", other: "Другое" },
@@ -66,7 +66,7 @@
       main: "Main photo", mainBtn: "+ Choose the main photo", more: "Other photos (up to 10)", moreBtn: "+ Add photos",
       wish: "Wishes (text for the invitation)", wishPh: "If you have your own text, write it here; if not, we'll suggest one", notes: "Additional notes",
       phone: "Phone number", langs: "Invitation languages", extras: "Extra services", total: "Total",
-      tg: "Send via Telegram", pay: "Payment after the order is confirmed", req: "Please fill in the required fields (*)",
+      send: "Send order", tg: "Send via Telegram", pay: "Payment after the order is confirmed", req: "Please fill in the required fields (*)",
       date: "Date of the event", day: "Day", month: "Month", year: "Year", time: "Time", at: ", at ",
       months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       types: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday", corporate: "Corporate", other: "Other" },
@@ -160,7 +160,7 @@
         '<label class="lbl">' + L.langs + "</label>" + LANG_PRICES.map(function (p, i) { return '<label class="ck"><input type="radio" name="hoLang" value="' + i + '"' + (i ? "" : " checked") + ">" + L.langNames[i] + (p ? "<em>+" + money(p) + "</em>" : "") + "</label>"; }).join("") +
         '<label class="lbl">' + L.extras + "</label>" + EXTRA_PRICES.map(function (p, i) { return '<label class="ck"><input type="checkbox" name="hoEx" value="' + i + '">' + L.extraNames[i] + "<em>+" + money(p) + "</em></label>"; }).join("") +
         '<div class="tot"><span>' + L.total + '</span><b class="sum">' + money(BASE) + "</b></div>" +
-        '<button type="button" class="bt tg">' + L.tg + '</button><div class="two"><button type="button" class="bt wa">WhatsApp</button><button type="button" class="bt vb">Viber</button></div>' +
+        '<button type="button" class="bt tg">' + (ORDER_ENDPOINT ? L.send : L.tg) + '</button><div class="two"><button type="button" class="bt wa">WhatsApp</button><button type="button" class="bt vb">Viber</button></div>' +
         '<div class="err" hidden></div><div class="nt">' + L.pay + "</div>";
       renderDyn(); drawThumbs(); calc();
     }
