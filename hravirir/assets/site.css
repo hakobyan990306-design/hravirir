@@ -268,3 +268,8 @@ footer { padding: 60px 0 40px; border-top: 1px solid var(--line); margin-top: 90
 .langs button { border: 0; background: none; border-radius: 999px; min-width: 40px; min-height: 30px; padding: 0 8px; font: 600 11.5px/1 "Noto Sans Armenian", system-ui, sans-serif; letter-spacing: .06em; color: var(--ink); opacity: .65; cursor: pointer; }
 .langs button.on { background: #7a2437; color: #fff; opacity: 1; }
 @media (max-width: 640px) { .langs { margin-right: 6px; } .langs button { min-width: 34px; padding: 0 5px; font-size: 11px; } }
+
+/* մենյուն միշտ մեկ տողում (լեզուների կոճակներից հետո տեղը քիչ է) */
+.menu a { white-space: nowrap; }
+@media (max-width: 1500px) { .menu { gap: 18px; font-size: 13.5px; } .nav-phone { display: none; } }
+@media (max-width: 1150px) { .menu { gap: 14px; font-size: 13px; } }
