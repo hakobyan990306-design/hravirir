@@ -37,7 +37,7 @@
     return '<svg class="torn ' + pos + '" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="' + d + '" fill="#d6d3cd"/><path d="' + d2 + '" fill="var(--bg)"/></svg>';
   }
   function photo(src, cls, seed) { return src ? '<div class="tp ' + (cls || "") + '"><div class="im" style="background-image:url(\'' + esc(src) + '\')"></div>' + torn("top", seed) + torn("bot", seed + 7) + "</div>" : ""; }
-  function env() { var n = K.names(); return P.wenv({ letter: (n[0] || "").charAt(0), hint: P.x("hint"), top: esc(n.join(" & ")) }); }
+  function env() { var n = K.names(); return P.wenv({ letters: [(n[0] || "").charAt(0), (n[1] || "").charAt(0)], hint: P.x("hint"), top: esc(n.join(" & ")) }); }
   function main() {
     var n = K.names(), d = K.date, g = C.gallery || [];
     var dateRow = '<div class="drow rv"><span>' + esc(P.x("wdl")[d.getDay()]) + "</span><b>" + d.getDate() + "</b><span>" + esc(u("monthsGen")[d.getMonth()]) + "</span></div>";

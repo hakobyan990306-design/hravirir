@@ -75,7 +75,7 @@
         '<button class="btn fill" type="submit">' + esc(u("send")) + "</button></form>";
     },
     // ===== Սպիտակ դաջված ծրար՝ ոսկե կնիքով (հարսանյաց դիզայնների բացում) =====
-    // o.letter — կնիքի տառը, o.hint — հուշում, o.top — վերևի գրություն
+    // o.letters — զույգի սկզբնատառերը ["Լ","Մ"] (կամ o.letter՝ մեկ տառ), o.hint — հուշում, o.top — վերևի գրություն
     wenv: function (o) {
       o = o || {};
       function fl(x, y, s, r) {
@@ -95,7 +95,9 @@
         '<radialGradient id="weI" cx=".6" cy=".65" r=".75"><stop offset="0" stop-color="#b8873f"/><stop offset="1" stop-color="#e8c47e"/></radialGradient></defs>' +
         '<path d="M60 6C72 9 80 4 90 14C101 21 112 30 111 46C116 58 112 72 106 82C102 95 90 104 77 109C64 115 50 114 38 110C24 106 14 96 9 82C3 69 5 54 9 42C13 28 22 16 36 10C44 6 52 5 60 6Z" fill="url(#weG)" filter="drop-shadow(0 5px 6px rgba(90,60,20,.45))"/>' +
         '<circle cx="60" cy="60" r="38" fill="url(#weI)"/><circle cx="60" cy="60" r="38" fill="none" stroke="#7d5622" stroke-opacity=".45"/><circle cx="60" cy="60" r="33" fill="none" stroke="#7d5622" stroke-opacity=".5" stroke-dasharray="1 2.4"/>' +
-        '<text x="60" y="73" text-anchor="middle" font-size="40" fill="#6e4a1c" fill-opacity=".85" style="font-family:var(--seal-font, serif)">' + esc(o.letter || "") + "</text></svg>";
+        (o.letters && o.letters.length > 1
+          ? '<text x="60" y="70" text-anchor="middle" font-size="31" fill="#6e4a1c" fill-opacity=".88" style="font-family:var(--seal-font, serif)">' + esc(o.letters[0]) + '<tspan font-size="17" dx="1" dy="-3">&amp;</tspan><tspan dx="1" dy="3">' + esc(o.letters[1]) + "</tspan></text></svg>"
+          : '<text x="60" y="73" text-anchor="middle" font-size="40" fill="#6e4a1c" fill-opacity=".85" style="font-family:var(--seal-font, serif)">' + esc(o.letter || "") + "</text></svg>");
       var flap = function (k) { return '<div class="we-f we-' + k + '">' + svg + "</div>"; };
       return '<div class="env wenv" id="env" role="button" aria-label="' + esc(o.hint || "") + '">' + flap("l") + flap("r") + flap("b") + flap("t") +
         '<svg class="we-x" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L50 50L100 0M0 100L50 50L100 100" fill="none" stroke="#d9cdb9" stroke-width=".25" vector-effect="non-scaling-stroke"/></svg>' +

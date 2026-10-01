@@ -11,7 +11,7 @@
       until: "Until the wedding", untilT: "there is very little", untilS: "time left", where: "Where?", at: "at", open: "Open map" }
   });
   function oval(src, cls) { return src ? '<div class="ov ' + (cls || "") + ' rv"><img src="' + esc(src) + '" alt="" loading="lazy"></div>' : ""; }
-  function env() { var n = K.names(); return P.wenv({ letter: (n[0] || "").charAt(0), hint: P.x("hint"), top: esc(n.join(" & ")) }); }
+  function env() { var n = K.names(); return P.wenv({ letters: [(n[0] || "").charAt(0), (n[1] || "").charAt(0)], hint: P.x("hint"), top: esc(n.join(" & ")) }); }
   function main() {
     var n = K.names(), d = K.date, g = C.gallery || [];
     var yy = String(d.getFullYear()).slice(2);
