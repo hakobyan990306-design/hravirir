@@ -45,6 +45,8 @@ function toTelegram_(data) {
 }
 
 function doPost(e) {
+  // հյուրերի պատասխան (հրավերի հարցաթերթիկից)
+  if (e.parameter && e.parameter.kind === "rsvp") return ContentService.createTextOutput(rsvp_(e.parameter));
   var data = JSON.parse(e.postData.contents);
   var root = getFolder_("HRAVIRIR պատվերներ", DriveApp.getRootFolder());
   var stamp = Utilities.formatDate(new Date(), "Asia/Yerevan", "yyyy-MM-dd HH-mm");
@@ -69,4 +71,37 @@ function getFolder_(name, parent) {
 // Ստուգում. հղումը բրաուզերում բացելիս պետք է գրի «HRAVIRIR պատվերները աշխատում են ✓»
 function doGet() {
   return ContentService.createTextOutput("HRAVIRIR պատվերները աշխատում են ✓");
+}
+
+
+/* ===================== ՀՅՈՒՐԵՐԻ ՊԱՏԱՍԽԱՆՆԵՐ =====================
+   Յուրաքանչյուր հրավեր (զույգ) ունի իր աղյուսակը Drive-ի «HRAVIRIR հյուրեր» թղթապանակում։
+   Եթե հրավերում նշված է զույգի Gmail-ը (INVITE.rsvp.email), աղյուսակը ինքնաշխատ կիսվում է նրանց հետ (միայն դիտելու)։ */
+function rsvp_(p) {
+  var lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    var key = String(p.key || "invite").replace(/[^\w-]/g, "").slice(0, 60) || "invite";
+    var props = PropertiesService.getScriptProperties(), id = props.getProperty("RSVP_" + key), ss = null;
+    if (id) { try { ss = SpreadsheetApp.openById(id); } catch (err) { ss = null; } }
+    if (!ss) {
+      ss = SpreadsheetApp.create("Հյուրեր — " + (p.invite || key));
+      DriveApp.getFileById(ss.getId()).moveTo(getFolder_("HRAVIRIR հյուրեր", DriveApp.getRootFolder()));
+      var s0 = ss.getSheets()[0];
+      s0.setName("Պատասխաններ");
+      s0.getRange("A1:F1").setValues([["Ժամանակ", "Անուն, ազգանուն", "Կգա՞", "Քանի հոգի", "Ում կողմից", "Նշում"]]).setFontWeight("bold").setBackground("#f3e9dc");
+      s0.setFrozenRows(1); s0.setColumnWidth(2, 220); s0.setColumnWidth(6, 260);
+      s0.getRange("H1:H5").setValues([["Ընդամենը կգան (հոգի)"], [""], [""], ["Չեն գա (պատասխան)"], [""]]).setFontWeight("bold");
+      s0.getRange("H2").setFormula('=SUMIF(C2:C,"Կգա",D2:D)'); s0.getRange("H5").setFormula('=COUNTIF(C2:C,"Չի գա")');
+      s0.getRange("H2").setFontSize(18); s0.setColumnWidth(8, 200);
+      props.setProperty("RSVP_" + key, ss.getId());
+      if (p.email) { try { ss.addViewer(String(p.email).trim()); } catch (err) {} }
+      var msg = "Նոր հյուրերի աղյուսակ — " + (p.invite || key) + "\n" + ss.getUrl() + (p.email ? "\nԿիսված է՝ " + p.email : "");
+      try { toTelegram_({ text: msg }); } catch (err) {}
+      try { MailApp.sendEmail(NOTIFY_EMAIL, "Հյուրերի աղյուսակ — " + (p.invite || key), msg); } catch (err) {}
+    }
+    if (p.setup) return ss.getUrl();   // միայն աղյուսակը ստեղծելու համար (առանց պատասխանի)
+    var att = p.attend === "yes" ? "Կգա" : p.attend === "maybe" ? "Կտեղեկացնի" : "Չի գա";
+    ss.getSheets()[0].appendRow([new Date(), p.name || "", att, p.attend === "yes" ? (Number(p.guests) || 1) : 0, p.side || "", p.note || ""]);
+    return "ok";
+  } finally { lock.releaseLock(); }
 }

@@ -90,6 +90,8 @@
     },
     // Հրավերի ներքևի «HRAVIRIR.AM» հղումը՝ լոգոյով և կայքի հասցեով (հասցեն փոխելու համար փոխեք միայն SITE-ը)
     SITE: "https://hravirir.pages.dev/",
+    // հյուրերի պատասխանները գնում են Google Apps Script → ամեն զույգի համար առանձին աղյուսակ
+    RSVP_URL: "https://script.google.com/macros/s/AKfycbxwpQ4fQYogsMWe6JtavVDFtuv2jrBSEHksYU3XxNaxAaEufzuWk8xQHzP2aJhLrFKM/exec",
     LOGO: '<svg class="k-logo" viewBox="370 370 540 540" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M395 585A251 251 0 0 1 883 585M395 695A251 251 0 0 0 883 695" stroke="#FFC000" stroke-width="22"/><path d="M703 480C700 530 650 620 605 660C590 674 575 684 566 674C548 652 512 610 512 594C514 586 524 590 545 606C600 650 680 720 735 775C748 787 760 800 769 791" stroke="currentColor" stroke-width="18"/></svg>',
     brand: function () {
       document.querySelectorAll('a[href*="hravirir.am"], a[href*="hravirir.pages.dev"]').forEach(function (a) {
@@ -146,7 +148,12 @@
         var btn = form.querySelector("button"); if (btn) btn.disabled = true;
         var done = function () { form.outerHTML = thanksHTML || '<div class="thanks"><div class="thanks-t">' + K.esc(K.u("thanks")) + "</div><p>" + K.esc(K.u("thanksText")) + "</p></div>"; };
         var r = C.rsvp || {};
-        if (r.endpoint) fetch(r.endpoint, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) }).then(done, done);
+        var ep = r.endpoint || (C.demo || r.mode === "whatsapp" ? "" : K.RSVP_URL);
+        if (ep) {
+          data.kind = "rsvp"; data.lang = lang; data.email = r.email || "";
+          data.key = r.key || (location.pathname.match(/invites\/([\w-]+)/) || [])[1] || "invite";
+          fetch(ep, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) }).then(done, done);
+        }
         else if (r.whatsapp && !C.demo) {
           var msg = data.invite + "\n" + data.name + " — " + (data.attend === "yes" ? K.u("yes") : data.attend === "maybe" ? K.u("maybe") : K.u("no")) + (data.guests ? "\n" + K.u("guests") + ": " + data.guests : "") +
             (data.side ? "\n" + data.side : "") + (data.note ? "\n" + data.note : "");
