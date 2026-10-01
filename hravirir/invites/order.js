@@ -33,7 +33,7 @@
       },
       m: { hello: "Բարև Ձեզ, պատվեր HRAVIRIR.AM-ից", event: "Միջոցառում", photos: "Նկարներ", pcs: "հատ", drive: " (ուղարկված են Google Drive)", design: "Դիզայն", wish: "Բարեմաղթանք",
         notes: "Նշումներ", lang: "Լեզու", extra: "Լրացուցիչ", phone: "Հեռախոս", total: "Ընդհանուր արժեք", form: "Ձևի լեզուն" },
-      sending: "Պատվերն ուղարկվում է…", sent: "Պատվերը և նկարները ստացվել են ✓ Շուտով կկապվենք Ձեզ հետ", fail: "Չստացվեց. խնդրում ենք ուղարկել Telegram-ով",
+      sending: "Պատվերն ուղարկվում է…", sent: "Պատվերը և նկարները ստացվել են ✓ Շուտով կկապվենք Ձեզ հետ", sentT: "Պատվերը ստացվել է", sentP: "Շնորհակալություն։ Ձեր պատվերը և նկարները մեզ մոտ են, շուտով կկապվենք Ձեզ հետ։", fail: "Չստացվեց. խնդրում ենք ուղարկել Telegram-ով",
       pickTg: "Ընտրեք Telegram և " + TG_NAME + " չաթը", pickChat: "Ընտրեք " + TG_NAME + " չաթը", photosToo: ", իսկ նկարները ուղարկեք նույն չաթում",
       copied: "Հաղորդագրությունը պատճենված է. տեղադրեք այն Viber-ում", order: "Պատվեր", close: "Փակել"
     },
@@ -56,7 +56,7 @@
       },
       m: { hello: "Здравствуйте, заказ с HRAVIRIR.AM", event: "Мероприятие", photos: "Фото", pcs: "шт.", drive: " (отправлены в Google Drive)", design: "Дизайн", wish: "Пожелание",
         notes: "Примечания", lang: "Языки", extra: "Дополнительно", phone: "Телефон", total: "Итого", form: "Язык формы" },
-      sending: "Отправляем заказ…", sent: "Заказ и фото получены ✓ Скоро свяжемся с вами", fail: "Не получилось. Пожалуйста, отправьте через Telegram",
+      sending: "Отправляем заказ…", sent: "Заказ и фото получены ✓ Скоро свяжемся с вами", sentT: "Заказ получен", sentP: "Спасибо! Ваш заказ и фото у нас, скоро мы с вами свяжемся.", fail: "Не получилось. Пожалуйста, отправьте через Telegram",
       pickTg: "Выберите Telegram и чат " + TG_NAME, pickChat: "Выберите чат " + TG_NAME, photosToo: ", а фото отправьте в тот же чат",
       copied: "Сообщение скопировано — вставьте его в Viber", order: "Заказ", close: "Закрыть"
     },
@@ -79,7 +79,7 @@
       },
       m: { hello: "Hello, an order from HRAVIRIR.AM", event: "Event", photos: "Photos", pcs: "pcs", drive: " (sent to Google Drive)", design: "Design", wish: "Wishes",
         notes: "Notes", lang: "Languages", extra: "Extras", phone: "Phone", total: "Total", form: "Form language" },
-      sending: "Sending your order…", sent: "Order and photos received ✓ We'll contact you soon", fail: "Something went wrong. Please send it via Telegram",
+      sending: "Sending your order…", sent: "Order and photos received ✓ We'll contact you soon", sentT: "Order received", sentP: "Thank you! We have your order and photos and will contact you soon.", fail: "Something went wrong. Please send it via Telegram",
       pickTg: "Choose Telegram and the " + TG_NAME + " chat", pickChat: "Choose the " + TG_NAME + " chat", photosToo: ", and send the photos to the same chat",
       copied: "The message is copied — paste it in Viber", order: "Order", close: "Close"
     }
@@ -107,7 +107,7 @@
     '.hof .lbl{display:block;font-size:12.5px;font-weight:600;margin:14px 0 5px}.hof .lbl i{color:#b23a48;font-style:normal}' +
     '.hof input,.hof select,.hof textarea{width:100%;padding:11px 12px;border:1px solid #dcd2c6;border-radius:10px;background:#fff;font:16px "Noto Sans Armenian",sans-serif;color:#2b2622;box-sizing:border-box}' +
     '.hof textarea{min-height:74px;resize:vertical}.hof input:focus,.hof select:focus,.hof textarea:focus{outline:2px solid #e8d5b0;border-color:#b8904f}' +
-    '.hof .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hof .row.t{grid-template-columns:1fr 110px}' +
+    '.hof .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}.hof .row.t{grid-template-columns:1fr 110px}' +
     '.hof .types{display:flex;flex-wrap:wrap;gap:6px}.hof .types label{position:relative}.hof .types input{position:absolute;opacity:0;pointer-events:none}' +
     '.hof .types span{display:inline-block;padding:9px 14px;border:1px solid #dcd2c6;border-radius:999px;background:#fff;font-size:14px;cursor:pointer}' +
     '.hof .types input:checked+span{background:#7a2437;border-color:#7a2437;color:#fff}.hof .types input:focus-visible+span{outline:2px solid #b8904f}' +
@@ -117,6 +117,8 @@
     '.hof .bt{display:flex;align-items:center;justify-content:center;width:100%;min-height:50px;border:0;border-radius:999px;margin-top:8px;font:600 15px "Noto Sans Armenian",sans-serif;color:#fff;cursor:pointer}' +
     '.hof .wa{background:#25d366}.hof .vb{background:#7360f2}.hof .tg{background:#2aabee}.hof .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
     '.hof .nt{font-size:12px;color:#7a6f66;text-align:center;margin-top:8px}.hof .err{color:#b23a48;font-size:13px;margin-top:8px;text-align:center}.hof .bad{border-color:#b23a48}' +
+    '.hof .okbox{margin-top:14px;padding:26px 18px;border-radius:16px;background:#eaf7ee;border:1.5px solid #3fae63;text-align:center;color:#1f5c34}.hof .okbox b{display:block;font-size:22px;margin-top:8px}.hof .okbox p{margin:6px 0 0;font-size:15px;color:#2f6b45}' +
+    '.hof .okic{width:56px;height:56px;margin:0 auto;border-radius:50%;background:#3fae63;color:#fff;font-size:30px;line-height:56px;font-weight:700}.hof .bt:disabled{opacity:.7;cursor:wait}' +
     '.hof .row3{display:grid;grid-template-columns:82px 1fr 90px;gap:8px}' +
     '.hof .up{display:block;position:relative;border:1.5px dashed #c9b28a;border-radius:12px;background:#fff;text-align:center;padding:16px 10px;cursor:pointer;color:#7a2437;font-weight:600;font-size:14px}' +
     '.hof .up.main{padding:22px 10px}.hof .up input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}' +
@@ -160,7 +162,7 @@
         '<label class="lbl">' + L.langs + "</label>" + LANG_PRICES.map(function (p, i) { return '<label class="ck"><input type="radio" name="hoLang" value="' + i + '"' + (i ? "" : " checked") + ">" + L.langNames[i] + (p ? "<em>+" + money(p) + "</em>" : "") + "</label>"; }).join("") +
         '<label class="lbl">' + L.extras + "</label>" + EXTRA_PRICES.map(function (p, i) { return '<label class="ck"><input type="checkbox" name="hoEx" value="' + i + '">' + L.extraNames[i] + "<em>+" + money(p) + "</em></label>"; }).join("") +
         '<div class="tot"><span>' + L.total + '</span><b class="sum">' + money(BASE) + "</b></div>" +
-        '<button type="button" class="bt tg">' + (ORDER_ENDPOINT ? L.send : L.tg) + '</button><div class="two"><button type="button" class="bt wa">WhatsApp</button><button type="button" class="bt vb">Viber</button></div>' +
+        '<button type="button" class="bt tg">' + (ORDER_ENDPOINT ? L.send : L.tg) + '</button>' +
         '<div class="err" hidden></div><div class="nt">' + L.pay + "</div>";
       renderDyn(); drawThumbs(); calc();
     }
@@ -225,7 +227,7 @@
     var YEAR = new Date().getFullYear(), YEARS = [YEAR, YEAR + 1, YEAR + 2];
     function field(k) {
       var v = saved[k] || "";
-      if (TIME_F[k]) return '<div><label class="lbl">' + L.f[k] + '</label><select name="' + k + '">' + opts(TIMES, v, L.time) + "</select></div>";
+      if (TIME_F[k]) return '<div><label class="lbl">' + L.time + '</label><select name="' + k + '">' + opts(TIMES, v, L.time) + "</select></div>";
       return '<div><label class="lbl">' + L.f[k] + '</label><input name="' + k + '" value="' + esc(v) + '"></div>';
     }
     function dateRow() {
@@ -294,8 +296,12 @@
       var text = msg(), list = allPhotos(), note = q(".nt");
       copy();
       if (ORDER_ENDPOINT) {
-        note.textContent = L.sending;
-        toDrive(text).then(function () { note.textContent = L.sent; }, function () { note.textContent = L.fail; window.open(tgShare(text), "_blank"); });
+        var btn = q(".tg"); btn.disabled = true; btn.textContent = L.sending; note.textContent = "";
+        toDrive(text).then(function () {
+          var ok = document.createElement("div"); ok.className = "okbox";
+          ok.innerHTML = '<div class="okic">✓</div><b>' + esc(L.sentT) + "</b><p>" + esc(L.sentP) + "</p>";
+          btn.replaceWith(ok); ok.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, function () { btn.disabled = false; btn.textContent = L.send; note.textContent = L.fail; window.open(tgShare(text), "_blank"); });
         return;
       }
       // հեռախոսում՝ «Կիսվել» ընտրացանկով տեքստը և նկարները միասին
