@@ -273,3 +273,10 @@ footer { padding: 60px 0 40px; border-top: 1px solid var(--line); margin-top: 90
 .menu a { white-space: nowrap; }
 @media (max-width: 1500px) { .menu { gap: 18px; font-size: 13.5px; } .nav-phone { display: none; } }
 @media (max-width: 1150px) { .menu { gap: 14px; font-size: 13px; } }
+
+/* ---------- լոգո՝ դեղին կիսաշրջաններ և ձեռագիր «Հ», որը «գրվում» է էջը բացելիս ---------- */
+.logo-mark { width: 42px; height: 42px; color: #111; flex: none; }
+.logo-mark .lg-h { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lg-draw 1.6s cubic-bezier(.6,.1,.3,1) .3s forwards; }
+@keyframes lg-draw { to { stroke-dashoffset: 0; } }
+footer .logo-mark { color: #111; }
+@media (prefers-reduced-motion: reduce) { .logo-mark .lg-h { animation: none; stroke-dashoffset: 0; } }
