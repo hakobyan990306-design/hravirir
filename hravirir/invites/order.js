@@ -192,15 +192,16 @@
       build(); restore(s);
     }
 
-    // նկարը փոքրացնում ենք մինչև 1600px, որ արագ ուղարկվի
+    // մինչև 2.5 ՄԲ նկարները ուղարկվում են բնօրինակով (որակը չի փոխվում), ավելի մեծերը՝ մինչև 2560px, բարձր որակով
     function shrink(file) {
       return new Promise(function (res) {
+        if (file.size <= 2.5 * 1024 * 1024 && /^image\/(jpeg|png|webp|heic|heif)$/.test(file.type)) { res({ name: file.name, blob: file, type: file.type, url: URL.createObjectURL(file) }); return; }
         var img = new Image(), url = URL.createObjectURL(file);
         img.onload = function () {
-          var k = Math.min(1, 1600 / Math.max(img.width, img.height)), c = document.createElement("canvas");
+          var k = Math.min(1, 2560 / Math.max(img.width, img.height)), c = document.createElement("canvas");
           c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
           c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
-          c.toBlob(function (b) { URL.revokeObjectURL(url); res({ name: file.name.replace(/\.\w+$/, "") + ".jpg", blob: b, url: URL.createObjectURL(b) }); }, "image/jpeg", .85);
+          c.toBlob(function (b) { URL.revokeObjectURL(url); res({ name: file.name.replace(/\.\w+$/, "") + ".jpg", blob: b, type: "image/jpeg", url: URL.createObjectURL(b) }); }, "image/jpeg", .92);
         };
         img.onerror = function () { res(null); };
         img.src = url;
@@ -286,7 +287,7 @@
       var list = allPhotos();
       return Promise.all(list.map(function (p) { return b64(p.blob); })).then(function (data) {
         return fetch(ORDER_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify({ text: text, insta: val("insta"), phone: val("phone"), photos: list.map(function (p, i) { return { name: (i === 0 && photos.main ? "01-glkhavor-" : "") + p.name, data: data[i] }; }) }) });
+          body: JSON.stringify({ text: text, insta: val("insta"), phone: val("phone"), photos: list.map(function (p, i) { return { name: (i === 0 && photos.main ? "01-glkhavor-" : "") + p.name, type: p.type || "image/jpeg", data: data[i] }; }) }) });
       });
     }
     // ԳԼԽԱՎՈՐԸ՝ Telegram. բացվում է պատրաստի տեքստով, հաճախորդն ընտրում է HRAVIRIR.AM-ի չաթը
