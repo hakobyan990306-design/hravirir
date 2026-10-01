@@ -138,3 +138,7 @@ html.preview .env .hint, html.preview .env .med svg, html.preview .coins .cn { a
 @font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmCoronet", "NmMarck", serif !important; }
+/* ազգային տարազով զույգ */
+.env .inside .orn.cp { width: min(58vw, 240px); margin-bottom: 4px; }
+.cpl { display: block; width: 100%; height: auto; }
+.cpl-h { width: min(72vw, 290px); margin: 34px auto 0; }

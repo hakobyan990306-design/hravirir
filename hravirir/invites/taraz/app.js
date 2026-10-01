@@ -53,9 +53,52 @@
     return s + "</svg>";
   }
 
+  // Ազգային տարազով զույգ. փեսան՝ չուխա գազիրներով, արծաթե գոտի, փափախ, երկարաճիտ կոշիկներ,
+  // հարսը՝ կարմիր թավշե զգեստ ոսկե ասեղնագործությամբ, ոսկե գոտի, ճակատնոց մետաղադրամներով, սպիտակ քող, հյուսեր
+  function couple() {
+    var SK = "#e9bc95", SKd = "#d29e78", HAIR = "#2b1a14", CH = "#262230", CHl = "#3a3448", SIL = "#d9dde2", s = "";
+    s += '<svg class="cpl" viewBox="0 0 260 330" aria-hidden="true"><defs>' +
+      '<linearGradient id="dr" x1="0" x2="1"><stop offset="0" stop-color="#7e121c"/><stop offset=".45" stop-color="#b3212d"/><stop offset="1" stop-color="#6e0f18"/></linearGradient>' +
+      '<linearGradient id="ch" x1="0" x2="1"><stop offset="0" stop-color="#1c1924"/><stop offset=".5" stop-color="' + CHl + '"/><stop offset="1" stop-color="#1a1722"/></linearGradient>' +
+      '<linearGradient id="gd" x1="0" x2="1"><stop offset="0" stop-color="#a87a2c"/><stop offset=".5" stop-color="#f1d58a"/><stop offset="1" stop-color="#a87a2c"/></linearGradient></defs>' +
+      '<ellipse cx="130" cy="318" rx="110" ry="8" fill="rgba(0,0,0,.18)"/>';
+    // ——— Փեսա ———
+    s += '<path d="M65 232L63 274H81L84 232ZM86 232L89 274H107L105 232Z" fill="#1d1a24"/><path d="M66 268L64 312H80L82 268ZM88 268L90 312H106L104 268Z" fill="#141217"/><path d="M62 306H82V314H60ZM88 306H108V314H90Z" fill="#0b0a0d"/>' + // կոշիկներ
+      '<path d="M60 92Q85 84 110 92L118 240Q85 252 52 240Z" fill="url(#ch)"/>' + // չուխա
+      '<path d="M85 96L78 160L85 240L92 160Z" fill="#141217" opacity=".55"/>' +
+      '<path d="M76 88L85 132L94 88Z" fill="#8c1c24"/><path d="M76 88L85 132L94 88" fill="none" stroke="url(#gd)" stroke-width="1.6"/>' + // ներքնաշապիկ
+      '<path d="M60 92L48 192Q50 198 56 196L68 112Z" fill="url(#ch)"/><circle cx="52" cy="198" r="6" fill="' + SK + '"/>' + // ձախ ձեռք
+      '<path d="M108 94Q122 120 128 178L120 182Q112 140 102 112Z" fill="url(#ch)"/>'; // աջ ձեռք դեպի հարսը
+    for (var g = 0; g < 6; g++) s += '<rect x="' + (64) + '" y="' + (100 + g * 7) + '" width="9" height="4.4" rx="1.6" fill="' + SIL + '"/><rect x="' + (97) + '" y="' + (100 + g * 7) + '" width="9" height="4.4" rx="1.6" fill="' + SIL + '"/>';
+    s += '<path d="M62 152H108V160H62Z" fill="' + SIL + '"/><path d="M62 152H108" stroke="#9aa0a8" stroke-width=".8"/><rect x="80" y="150" width="10" height="12" rx="2" fill="#f1d58a" stroke="#a87a2c"/>' + // արծաթե գոտի
+      '<path d="M90 162L94 200L91 204L87 166Z" fill="' + SIL + '" stroke="#8a9098" stroke-width=".8"/>' + // դաշույն
+      '<rect x="80" y="74" width="10" height="12" fill="' + SKd + '"/><ellipse cx="85" cy="62" rx="13" ry="15" fill="' + SK + '"/>' +
+      '<path d="M76 70Q85 76 94 70Q90 74 85 74Q80 74 76 70Z" fill="' + HAIR + '"/><circle cx="80" cy="60" r="1.3" fill="#2b1a14"/><circle cx="90" cy="60" r="1.3" fill="#2b1a14"/>' +
+      '<path d="M70 52Q70 26 85 24Q100 26 100 52Z" fill="#1e1a1c"/>'; // փափախ
+    for (var p = 0; p < 18; p++) s += '<circle cx="' + (72 + (p % 6) * 5.2) + '" cy="' + (30 + Math.floor(p / 6) * 7) + '" r="2.4" fill="#3a3436"/>';
+    // ——— Հարս ———
+    s += '<path d="M196 70Q232 120 226 236L204 240Q210 150 188 80Z" fill="#fff" opacity=".5"/>' + // քող
+      '<path d="M158 92Q175 86 192 92L190 150H160Z" fill="url(#dr)"/>' + // իրան
+      '<path d="M160 150H190L222 306Q175 318 128 306Z" fill="url(#dr)"/>' + // փեշ
+      '<path d="M170 156L175 306L180 156Z" fill="#f6ead6"/>' + // ներքնազգեստ
+      '<path d="M175 92V150M170 156L156 306M180 156L194 306" stroke="url(#gd)" stroke-width="2"/>' +
+      '<path d="M131 300Q175 312 219 300" stroke="url(#gd)" stroke-width="5" fill="none"/>' +
+      '<path d="M134 294Q175 305 216 294" stroke="#f1d58a" stroke-width="1" stroke-dasharray="3 3" fill="none"/>' +
+      '<path d="M158 146H192V160H158Z" fill="url(#gd)"/><circle cx="175" cy="153" r="5" fill="' + SIL + '" stroke="#a87a2c"/>' + // գոտի
+      '<path d="M160 94Q146 130 130 176L138 182Q156 140 168 108Z" fill="url(#dr)"/><path d="M126 174Q133 168 141 174L142 186Q133 181 124 186Z" fill="#f6ead6"/><circle cx="127" cy="182" r="5.5" fill="' + SK + '"/>' + // ձեռքը փեսային
+      '<path d="M190 94Q200 130 204 168L196 170Q192 140 184 110Z" fill="url(#dr)"/><path d="M193 164Q201 158 209 164L211 177Q201 172 191 177Z" fill="#f6ead6"/><circle cx="201" cy="182" r="5.2" fill="' + SK + '"/>' + // աջ թև
+      '<rect x="170" y="76" width="10" height="12" fill="' + SKd + '"/><ellipse cx="175" cy="64" rx="12" ry="14" fill="' + SK + '"/>' +
+      '<path d="M163 60Q163 44 175 44Q187 44 187 60Q183 52 175 52Q167 52 163 60Z" fill="' + HAIR + '"/>' +
+      '<path d="M165 66Q160 100 164 140" stroke="' + HAIR + '" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M185 66Q190 100 186 140" stroke="' + HAIR + '" stroke-width="5" fill="none" stroke-linecap="round"/>' + // հյուսեր
+      '<circle cx="170" cy="63" r="1.2" fill="#2b1a14"/><circle cx="180" cy="63" r="1.2" fill="#2b1a14"/><path d="M172 70Q175 72 178 70" stroke="#b5544c" stroke-width="1.2" fill="none"/>' +
+      '<path d="M160 50Q175 38 190 50L188 56Q175 46 162 56Z" fill="#8c1c24" stroke="url(#gd)" stroke-width="1.2"/>'; // ճակատնոց
+    for (var c = 0; c < 7; c++) s += '<circle cx="' + (163 + c * 4) + '" cy="' + (57 + Math.abs(c - 3) * -.6 + 0) + '" r="1.9" fill="#f1d58a" stroke="#a87a2c" stroke-width=".4"/>';
+    for (var nk = 0; nk < 7; nk++) s += '<circle cx="' + (166 + nk * 3) + '" cy="' + (92 + Math.sin(nk / 6 * Math.PI) * 5) + '" r="1.7" fill="#f1d58a"/>'; // վզնոց
+    return s + "</svg>";
+  }
   function envelope() {
     var n = K.names();
-    return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="inside"><div class="orn">' + icon(1) + '</div><div class="nm">' + esc(n[0] || "") +
+    return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="inside"><div class="orn cp">' + couple() + '</div><div class="nm">' + esc(n[0] || "") +
       '</div><div class="amp">&amp;</div><div class="nm">' + esc(n[1] || "") + "</div></div>" +
       '<div class="door l"><div class="frame"></div></div><div class="door r"><div class="frame"></div></div>' +
       '<div class="top"><div class="caps">' + esc(x("envTop")) + '</div></div><div class="med" id="med">' + medallion() + "</div>" +
@@ -66,7 +109,7 @@
     return '<section class="hero">' + '<div class="wrap"><div class="card rv"><div class="med s">' + medallion() + '</div><div class="caps">' + esc(x("inv")) + "</div>" +
       '<h1 class="nm"><span>' + esc(n[0] || "") + '</span><span class="amp">&amp;</span><span>' + esc(n[1] || "") + "</span></h1>" +
       '<div class="dt3"><div class="s">' + esc(x("wdl")[d.getDay()]) + '</div><div class="d">' + d.getDate() + '</div><div class="s">' + esc(u("monthsGen")[d.getMonth()]) + "</div></div>" +
-      '<div class="yr">' + d.getFullYear() + "</div></div>" + K.photo() + "</div></section>";
+      '<div class="yr">' + d.getFullYear() + "</div></div>" + '<div class="cpl-h rv d2">' + couple() + "</div>" + K.photo() + "</div></section>";
   }
   function story() {
     return '<div class="strip"></div><section class="cream"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + '</h2><div class="orn-s rv">' + icon(0) + '</div><p class="p rv">' + esc(t(C.text)) + "</p>" +
