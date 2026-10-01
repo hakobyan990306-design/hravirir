@@ -7,7 +7,7 @@
 <title>Հարսանյաց հրավեր</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@100;200;300;500;600&family=Noto+Sans:wght@100;200;300;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;500;700&family=Noto+Sans:wght@300;500;700&display=swap">
 <link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="../core/core.css">
 <link rel="stylesheet" href="style.css">
@@ -15,34 +15,29 @@
 <body>
 <div id="app"></div>
 <script>
-/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ========
+   photo՝ գլխավոր նկար (անուններով), photos՝ տեքստերի միջև դրվող մեծ նկարները (հերթով) */
 window.INVITE = {
   demo: { id: "bw-script", name: "Նուար" },   // իրական հրավերում ջնջեք
   langs: ["hy", "ru"],
   names: { hy: ["Գևորգ", "Լիանա"], ru: ["Геворг", "Лиана"] },
-  date: "2027-05-15T12:00",
-  photo: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=900&q=80&auto=format&fit=crop",
-  gallery: [
-    "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=600&q=80&auto=format&fit=crop"
+  date: "2027-05-15T09:00",
+  photo: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=1000&q=80&auto=format&fit=crop",
+  photos: [
+    "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1000&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1000&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1000&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1509927083803-4bd519298ac4?w=1000&q=80&auto=format&fit=crop"
   ],
-  photo2: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=900&q=80&auto=format&fit=crop",
-  text: {
-    hy: "Սիրելի՛ հարազատներ և ընկերներ, սիրով հրավիրում ենք Ձեզ մեր հարսանիքին։ Մեզ համար մեծ պատիվ և ուրախություն կլինի Ձեր ներկայությունը։",
-    ru: "Дорогие родные и друзья, с любовью приглашаем вас на нашу свадьбу. Ваше присутствие станет для нас большой честью и радостью."
-  },
+  invite: { hy: "Մեր հարսանիքին և ուրախ կլինենք, եթե այս երջանիկ օրը անցկացնենք Ձեզ հետ։", ru: "на нашу свадьбу и будем счастливы провести этот радостный день вместе с вами." },
+  text: { hy: "Նախապես շնորհակալ ենք, Ձեր ներկայությունը կլրացնի մեր երեկոյի բարձր տրամադրությունը։", ru: "Заранее благодарим — ваше присутствие украсит наш праздник." },
   events: [
-    { time: "12:00", icon: "home", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Գրիգորյանների օջախ", ru: "Дом семьи Григорян" },
-      address: { hy: "Երևան, Շենգավիթ, Արշակունյաց պողոտա 44", ru: "Ереван, Шенгавит, пр. Аршакуняц 44" }, map: "https://maps.google.com/?q=Arshakunyats+44+Yerevan" },
-    { time: "13:30", icon: "heart", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Ավագյանների օջախ", ru: "Дом семьи Авагян" },
-      address: { hy: "Երևան, Արաբկիր, Մամիկոնյանց փողոց 31", ru: "Ереван, Арабкир, ул. Мамиконянц 31" }, map: "https://maps.google.com/?q=Mamikonyants+31+Yerevan" },
-    { time: "15:00", icon: "rings", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Հովհաննես Մկրտիչ եկեղեցի", ru: "Церковь Святого Ованнеса Мкртича" },
-      address: { hy: "Երևան, Կոնդ, Պարոնյան փողոց", ru: "Ереван, Конд, ул. Пароняна" }, map: "https://maps.google.com/?q=Saint+Hovhannes+Church+Kond+Yerevan" },
-    { time: "17:00", icon: "glasses", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Հատիս Հոլլ» հանդիսությունների սրահ", ru: "Банкетный зал «Монте Карло»" },
-      address: { hy: "Երևան, Արշակունյաց պողոտա 2", ru: "Ереван, пр. Аршакуняц 2" }, map: "https://maps.google.com/?q=Arshakunyats+2+Yerevan" }
+    { time: "09:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, map: "https://yandex.ru/maps/?text=Yerevan" },
+    { time: "13:00", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, map: "https://yandex.ru/maps/?text=Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրության արարողություն", ru: "Обряд венчания" }, place: { hy: "Սուրբ Սարգիս եկեղեցի", ru: "Церковь Святого Саркиса" }, map: "https://yandex.ru/maps/?text=Saint+Sarkis+Cathedral+Yerevan" },
+    { time: "17:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Արաքս» ռեստորանային համալիր", ru: "Ресторанный комплекс «Аракс»" }, map: "https://yandex.ru/maps/?text=Yerevan+restaurant" }
   ],
-  rsvp: { deadline: "2026-12-10", whatsapp: "37499741574" },
+  rsvp: { deadline: "2027-05-01", whatsapp: "37499741574" },
   music: true
 };
 </script>
