@@ -106,3 +106,8 @@ html.preview .env .hint { animation: none; }
 .made a { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint { animation: none !important; } }
 .ev .tm { font-size: 32px; font-weight: 300; line-height: 1.1; color: var(--rose-d); margin-top: 4px; }
+
+/* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
+@font-face { font-family: "NmDzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+.nm, .nm span:not(.amp) { font-family: "NmDzeragir", "NmMarck", serif !important; }

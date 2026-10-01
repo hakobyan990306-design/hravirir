@@ -162,3 +162,8 @@ html.preview .env .bow { animation: none; }
 .gy.l { left: -40px; top: -10px; transform: rotate(-12deg); }
 .gp { font-family: var(--script); font-size: 30px; color: var(--sage); line-height: 1.3; }
 .fin .bowf { width: 120px; margin: 0 auto 10px; } .fin .bowf svg { width: 100%; display: block; }
+
+/* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
+@font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+.nm, .nm span:not(.amp) { font-family: "NmCoronet", "NmMarck", serif !important; }
