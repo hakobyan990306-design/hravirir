@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք՝ մոմը վառելու համար", top: "Սուրբ մկրտություն", inv: "Սիրով հրավիրում ենք Ձեզ մեր որդու կնունքին", our: "Լույսի օրը", program: "Օրվա ծրագիր", left: "Մինչև կնունքը մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", verse: "«Դուք եք աշխարհի լույսը»", ref: "Մատթ. 5:14" },
+    hy: { hint: "Սեղմեք՝ մոմը վառելու համար", top: "Սուրբ մկրտություն", inv: "Սիրով հրավիրում ենք Ձեզ մեր որդու կնունքին", our: "Լույսի օրը", program: "Օրվա ծրագիր", left: "Կնունքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", verse: "«Դուք եք աշխարհի լույսը»", ref: "Մատթ. 5:14" },
     ru: { hint: "Нажмите, чтобы зажечь свечу", top: "Святое крещение", inv: "С любовью приглашаем вас на крестины нашего сына", our: "День света", program: "Программа дня", left: "До крестин осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", verse: "«Вы — свет мира»", ref: "Мф. 5:14" },
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", verse: "«Вы — свет мира»", ref: "Мф. 5:14" },
     en: { hint: "Tap to light the candle", top: "Holy baptism", inv: "You are invited to our son's baptism", our: "A day of light", program: "Schedule", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", verse: "“You are the light of the world”", ref: "Matt. 5:14" }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love", verse: "“You are the light of the world”", ref: "Matt. 5:14" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
 

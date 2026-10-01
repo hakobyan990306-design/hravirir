@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u;
   var TXT = {
-    hy: { and: "և", plan: "Օրվա ծրագիր", where: "Ստորև տեղադրված քարտեզները Ձեզ կօգնեն ավելի արագ գտնել մեր միջոցառման վայրերը և միանալ մեզ։", how: "Ինչպես հասնել",
-      rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով կսպասենք Ձեզ", share: "Կիսվել հղումով", made: "Կայքը պատրաստվել է", wd: ["Եկ", "Եք", "Չո", "Հի", "Ու", "Շա", "Կի"] },
-    ru: { and: "и", plan: "Программа дня", where: "Карты ниже помогут вам быстрее найти места нашего праздника и присоединиться к нам.", how: "Как добраться",
-      rsvp: "Вы будете с нами?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", share: "Поделиться ссылкой", made: "Сайт создан", wd: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"] },
-    en: { and: "&", plan: "Schedule", where: "The maps below will help you find our venues.", how: "Directions",
-      rsvp: "Will you join us?", rsvpLead: "Kindly reply by", fin: "With love, we await you", share: "Share the link", made: "Made by", wd: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"] }
+    hy: { and: "և", left: "Հարսանիքին մնացել է", plan: "Օրվա ծրագիր", where: "Ստորև տեղադրված քարտեզները Ձեզ կօգնեն ավելի արագ գտնել մեր միջոցառման վայրերը և միանալ մեզ։", how: "Ինչպես հասնել",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով կսպասենք Ձեզ", share: "Կիսվել հղումով", made: "Կայքը պատրաստվել է", wd: ["Եկ", "Եք", "Չո", "Հի", "Ու", "Շա", "Կի"] },
+    ru: { and: "и", left: "До свадьбы осталось", plan: "Программа дня", where: "Карты ниже помогут вам быстрее найти места нашего праздника и присоединиться к нам.", how: "Как добраться",
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", share: "Поделиться ссылкой", made: "Сайт создан", wd: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"] },
+    en: { and: "&", left: "Counting down", plan: "Schedule", where: "The maps below will help you find our venues.", how: "Directions",
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love, we await you", share: "Share the link", made: "Made by", wd: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   var ICON = {
@@ -36,7 +36,7 @@
     return '<div class="col">' + bar() +
       '<section class="hero"><div class="ph"><img src="' + esc(C.photo) + '" alt=""><i class="chev"></i></div></section>' +
       '<section><div class="wrap"><h1 class="nm rv">' + esc(n[0] || "") + " " + esc(x("and")) + " " + esc(n[1] || "") + '</h1><div class="hl"></div><p class="p rv">' + esc(t(C.text)) + "</p>" + cal() + "</div></section>" +
-      '<section class="cds"><div class="wrap"><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) { return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>" +
+      '<section class="cds"><div class="wrap"><h2 class="h2 rv" style="margin-bottom:24px">' + esc(x("left")) + '</h2><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) { return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>" +
       (C.gallery && C.gallery.length ? '<section class="gal"><div class="strip">' + C.gallery.map(function (g) { return '<div class="gi"><img src="' + esc(g) + '" alt="" loading="lazy"></div>'; }).join("") + '</div><div class="wrap"><div class="hl long"></div></div></section>' : "") +
       '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="hl"></div>' + ev.map(function (e) {
         return '<div class="pl rv"><div class="tm">' + esc(e.time) + '</div><div class="ic">' + icon(e.icon) + '</div><div class="tx"><div class="t">' + esc(t(e.title)) + '</div><div class="n">' + esc(t(e.place)) + "</div></div></div>";

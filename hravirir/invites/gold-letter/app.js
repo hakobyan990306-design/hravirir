@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք կնիքին", inv: "Հրավեր նշանդրեքի", lead: "Սիրով հրավիրում ենք Ձեզ մեր նշանդրեքին", story: "Նա ասաց՝ այո", plan: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մնաց",
-      rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
-    ru: { hint: "Нажмите на печать", inv: "Приглашение на помолвку", lead: "С любовью приглашаем вас на нашу помолвку", story: "Она сказала «да»", plan: "Программа дня", dress: "Дресс-код", left: "Осталось",
-      rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
-    en: { hint: "Tap the seal", inv: "Engagement invitation", lead: "With love we invite you to our engagement", story: "She said yes", plan: "Schedule", dress: "Dress code", left: "Time left",
-      rsvp: "Will you join us?", rsvpLead: "Kindly reply by", fin: "With love" }
+    hy: { hint: "Սեղմեք կնիքին", inv: "Հրավեր նշանդրեքի", lead: "Սիրով հրավիրում ենք Ձեզ մեր նշանդրեքին", story: "Նա ասաց՝ այո", plan: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Նշանդրեքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
+    ru: { hint: "Нажмите на печать", inv: "Приглашение на помолвку", lead: "С любовью приглашаем вас на нашу помолвку", story: "Она сказала «да»", plan: "Программа дня", dress: "Дресс-код", left: "До помолвки осталось",
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
+    en: { hint: "Tap the seal", inv: "Engagement invitation", lead: "With love we invite you to our engagement", story: "She said yes", plan: "Schedule", dress: "Dress code", left: "Counting down",
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function ini() { var n = K.list(C.names && (C.names.hy || C.names)); return (n[0] || "").charAt(0) + (n[1] || "").charAt(0); }

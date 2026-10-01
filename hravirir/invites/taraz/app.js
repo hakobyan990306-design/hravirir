@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք զարդին", envTop: "Հարսանյաց հրավեր", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Օրհնյալ օջախ", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև հարսանիք մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
+    hy: { hint: "Սեղմեք զարդին", envTop: "Հարսանյաց հրավեր", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Օրհնյալ օջախ", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Нажмите на узор", envTop: "Свадебное приглашение", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Благословенный очаг", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Tap the ornament", envTop: "Wedding invitation", inv: "We joyfully invite you to our wedding", our: "A blessed home", program: "Schedule", dress: "Dress code", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }

@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { a: "Քեզ համար նվեր կա", b: "բացիր այն", hint: "Սեղմեք նվերին", years: "տարեկան", what: "Օրվա ծրագիր", where: "Որտեղ", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց", rsvp: "Կգա՞ս", rsvpLead: "Խնդրում ենք պատասխանել մինչև", waiting: "Սպասում եմ քեզ",
+    hy: { a: "Քեզ համար նվեր կա", b: "բացիր այն", hint: "Սեղմեք նվերին", years: "տարեկան", what: "Օրվա ծրագիր", where: "Որտեղ", dress: "Դրեսկոդ", left: "Ծնունդին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", waiting: "Սպասում եմ քեզ",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { a: "Для тебя есть подарок", b: "открой его", hint: "Нажмите на подарок", years: "год", what: "Программа дня", where: "Где", dress: "Дресс-код", left: "До праздника", rsvp: "Придёшь?", rsvpLead: "Пожалуйста, ответьте до", waiting: "Жду тебя",
+    ru: { a: "Для тебя есть подарок", b: "открой его", hint: "Нажмите на подарок", years: "год", what: "Программа дня", where: "Где", dress: "Дресс-код", left: "До дня рождения осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", waiting: "Жду тебя",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { a: "There's a gift for you", b: "open it", hint: "Tap the gift", years: "years", what: "Schedule", where: "Where", dress: "Dress code", left: "Party starts in", rsvp: "Will you come?", rsvpLead: "Kindly reply by", waiting: "See you there",
+    en: { a: "There's a gift for you", b: "open it", hint: "Tap the gift", years: "years", what: "Schedule", where: "Where", dress: "Dress code", left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly reply by", waiting: "See you there",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

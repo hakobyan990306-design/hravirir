@@ -5,13 +5,13 @@
 
   var TXT = {
     hy: { t1: "Հրավեր", t2: "մեր հարսանիքին", hint: "Սեղմեք կնիքին", program: "Օրվա ծրագիր", musicRing: "ՍԵՂՄԵՔ • ԵՐԱԺՇՏՈՒԹՅԱՆ ՀԱՄԱՐ • ", where: "Որտեղ", route: "Ճանապարհը", dress: "Դրեսկոդ", details: "Մանրամասներ",
-      left: "Մինչև մեր օրը", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև", waiting: "Սիրով սպասում ենք",
+      left: "Հարսանիքին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև", waiting: "Սիրով սպասում ենք",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { t1: "Приглашение", t2: "на свадьбу", hint: "Нажмите на печать", program: "Программа дня", musicRing: "НАЖМИТЕ • ЧТОБЫ ВКЛЮЧИТЬ МУЗЫКУ • ", where: "Где", route: "Построить маршрут", dress: "Дресс-код", details: "Детали",
-      left: "До нашего дня", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, подтвердите присутствие до", waiting: "С любовью ждём",
+      left: "До свадьбы осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, подтвердите присутствие до", waiting: "С любовью ждём",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { t1: "Invitation", t2: "to our wedding", hint: "Tap the seal", program: "Schedule", musicRing: "TAP • TO PLAY THE MUSIC • ", where: "Where", route: "Get directions", dress: "Dress code", details: "Details",
-      left: "Until our day", rsvp: "Will you come?", rsvpLead: "Kindly confirm by", waiting: "With love, we're waiting",
+      left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly confirm by", waiting: "With love, we're waiting",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

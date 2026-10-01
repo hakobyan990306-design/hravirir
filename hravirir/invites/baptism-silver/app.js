@@ -5,13 +5,13 @@
 
   var TXT = {
     hy: { top: "Կնունքի հրավեր", hint: "Սեղմեք ժապավենին", lead1: "Սիրով հրավիրում ենք Ձեզ", lead2: { boy: "մեր որդու", girl: "մեր դստեր", kids: "մեր երեխաների" }, bap: "կնունքին",
-      at: "Ժամը", church: "Մկրտություն", feast: "Տոնական սեղան", left: "Մինչև օրհնված օրը", rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", waiting: "Սիրով սպասում ենք Ձեզ",
+      at: "Ժամը", church: "Մկրտություն", feast: "Տոնական սեղան", left: "Կնունքին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", waiting: "Սիրով սպասում ենք Ձեզ",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { top: "Приглашение на крестины", hint: "Нажмите на ленту", lead1: "С любовью приглашаем вас", lead2: { boy: "на крещение нашего сына", girl: "на крещение нашей дочери", kids: "на крещение наших детей" }, bap: "крестины",
-      at: "В", church: "Крещение", feast: "Праздничный стол", left: "До светлого дня", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", waiting: "С любовью ждём вас",
+      at: "В", church: "Крещение", feast: "Праздничный стол", left: "До крестин осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", waiting: "С любовью ждём вас",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { top: "Baptism invitation", hint: "Tap the ribbon", lead1: "Please join us for the", lead2: { boy: "of our son", girl: "of our daughter", kids: "of our children" }, bap: "baptism",
-      at: "At", church: "Baptism", feast: "Reception", left: "Counting down", rsvp: "Will you join us?", rsvpLead: "Kindly reply by", waiting: "We look forward to seeing you",
+      at: "At", church: "Baptism", feast: "Reception", left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly reply by", waiting: "We look forward to seeing you",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

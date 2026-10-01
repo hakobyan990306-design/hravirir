@@ -4,13 +4,13 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u;
   var TXT = {
     hy: { hint: "Սեղմեք թևերին", top: "Հրավեր կնունքի", holy: "Սուրբ Մկրտություն", lead: "Սիրով հրավիրում ենք Ձեզ մեր դստեր կնունքին", godp: "Կնքահայր և կնքամայր",
-      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ",
+      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Կնունքին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Нажмите на крылья", top: "Приглашение на крестины", holy: "Святое Крещение", lead: "С любовью приглашаем вас на крестины нашей дочери", godp: "Крёстные",
-      program: "Программа дня", dress: "Дресс-код", left: "До праздника", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас",
+      program: "Программа дня", dress: "Дресс-код", left: "До крестин осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Tap the wings", top: "Baptism invitation", holy: "Holy Baptism", lead: "With love we invite you to our daughter's baptism", godp: "Godparents",
-      program: "Schedule", dress: "Dress code", left: "Counting down", rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love",
+      program: "Schedule", dress: "Dress code", left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

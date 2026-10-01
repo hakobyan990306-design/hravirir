@@ -4,11 +4,11 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
     hy: { hint: "Սեղմեք օդապարիկին", top: "Ծննդյան հրավեր", sub: "Ես արդեն", years: "տարեկան եմ", plan: "Օրվա ծրագիր", where: "Որտեղ", dress: "Դրեսկոդ", left: "Ծնունդին մնացել է",
-      rsvp: "Կգա՞ս", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սպասում եմ քեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Нажмите на шар", top: "Приглашение на день рождения", sub: "Мне уже", years: "", plan: "Программа дня", where: "Где", dress: "Дресс-код", left: "До праздника",
-      rsvp: "Придёшь?", rsvpLead: "Пожалуйста, ответьте до", fin: "Жду тебя", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the balloon", top: "Birthday invitation", sub: "I'm turning", years: "", plan: "Schedule", where: "Where", dress: "Dress code", left: "Party starts in",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "See you there", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սպասում եմ քեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
+    ru: { hint: "Нажмите на шар", top: "Приглашение на день рождения", sub: "Мне уже", years: "", plan: "Программа дня", where: "Где", dress: "Дресс-код", left: "До дня рождения осталось",
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "Жду тебя", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
+    en: { hint: "Tap the balloon", top: "Birthday invitation", sub: "I'm turning", years: "", plan: "Schedule", where: "Where", dress: "Dress code", left: "Counting down",
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "See you there", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }

@@ -5,11 +5,11 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
     hy: { inv: "Սիրով հրավիրում ենք Ձեզ՝", plan: "Օրվա ծրագիր", how: "Ինչպես հասնել", left: "Հարսանիքին մնացել է", love: "Սիրով՝", and: "և", y: "թ.",
-      rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", share: "Կիսվել հղումով", made: "Հրավիրատոմսը ստեղծվել է", by: "-ի կողմից" },
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", share: "Կիսվել հղումով", made: "Հրավիրատոմսը ստեղծվել է", by: "-ի կողմից" },
     ru: { inv: "С любовью приглашаем вас", plan: "Программа дня", how: "Как добраться", left: "До свадьбы осталось", love: "С любовью,", and: "и", y: "г.",
-      rsvp: "Вы будете с нами?", rsvpLead: "Пожалуйста, ответьте до", share: "Поделиться ссылкой", made: "Приглашение создано", by: "" },
-    en: { inv: "We invite you", plan: "Schedule", how: "Directions", left: "The wedding is in", love: "With love,", and: "&", y: "",
-      rsvp: "Will you join us?", rsvpLead: "Kindly reply by", share: "Share the link", made: "Made by", by: "" }
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", share: "Поделиться ссылкой", made: "Приглашение создано", by: "" },
+    en: { inv: "We invite you", plan: "Schedule", how: "Directions", left: "Counting down", love: "With love,", and: "&", y: "",
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", share: "Share the link", made: "Made by", by: "" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function logo() { return '<svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="#fff" stroke="#f2c230" stroke-width="2.4"/><path d="M18 40C22 28 26 18 30 14C27 26 26 34 28 42M28 30C33 26 38 26 40 30C36 31 33 33 31 38" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/></svg>'; }

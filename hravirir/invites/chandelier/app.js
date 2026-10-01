@@ -3,14 +3,14 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad, A = window.ChArt;
   var TXT = {
-    hy: { hint: "Սեղմեք բանալուն", invite: "Հարսանյաց հրավեր", dear: "Սիրելի՛ հարազատներ և ընկերներ", lead: "Սիրով հրավիրում ենք Ձեզ", left: "Մինչև հարսանիք մնացել է",
-      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև", note: "Մաղթանք կամ նշում", love: "Սիրով՝",
+    hy: { hint: "Սեղմեք բանալուն", invite: "Հարսանյաց հրավեր", dear: "Սիրելի՛ հարազատներ և ընկերներ", lead: "Սիրով հրավիրում ենք Ձեզ", left: "Հարսանիքին մնացել է",
+      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև", note: "Մաղթանք կամ նշում", love: "Սիրով՝",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Нажмите на ключ", invite: "Приглашение на свадьбу", dear: "Дорогие родные и друзья", lead: "С любовью приглашаем вас", left: "До свадьбы осталось",
-      program: "Программа дня", dress: "Дресс-код", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, подтвердите участие до", note: "Пожелание или комментарий", love: "С любовью,",
+      program: "Программа дня", dress: "Дресс-код", rsvp: "Анкета", rsvpLead: "Пожалуйста, подтвердите участие до", note: "Пожелание или комментарий", love: "С любовью,",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Tap the key", invite: "Wedding invitation", dear: "Dear family and friends", lead: "With love we invite you", left: "Counting down",
-      program: "Schedule", dress: "Dress code", rsvp: "Will you join us?", rsvpLead: "Kindly reply by", note: "Wishes or notes", love: "With love,",
+      program: "Schedule", dress: "Dress code", rsvp: "RSVP", rsvpLead: "Kindly reply by", note: "Wishes or notes", love: "With love,",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

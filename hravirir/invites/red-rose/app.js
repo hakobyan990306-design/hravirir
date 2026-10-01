@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք վարդին", top: "Նշանդրեք", inv: "Սիրով հրավիրում ենք Ձեզ մեր նշանդրեքին", said: "Նա ասաց՝ այո", our: "Մեր պատմությունը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև նշանդրեք մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
+    hy: { hint: "Սեղմեք վարդին", top: "Նշանդրեք", inv: "Սիրով հրավիրում ենք Ձեզ մեր նշանդրեքին", said: "Նա ասաց՝ այո", our: "Մեր պատմությունը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Նշանդրեքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
     ru: { hint: "Нажмите на розу", top: "Помолвка", inv: "С любовью приглашаем вас на нашу помолвку", said: "Она сказала «да»", our: "Наша история", program: "Программа дня", dress: "Дресс-код", left: "До помолвки осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
     en: { hint: "Tap the rose", top: "Engagement", inv: "We joyfully invite you to our engagement", said: "She said yes", our: "Our story", program: "Schedule", dress: "Dress code", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love" }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }

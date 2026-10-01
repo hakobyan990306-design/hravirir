@@ -7,7 +7,7 @@
 :root {
   --cream: #fbf5ea; --wheat: #e3c27f; --brown: #6b4a2a; --ink: #3d2b1c; --soft: #8c7660; --red: #b8322a; --blue: #2c4f8c;
   --script: "Dzeragir", "Marck Script", serif; --serif: "GHEA Mariam", Georgia, serif;
-  --lavash: #efd7a8; /* app.js-ը փոխարինում է բշտիկներով հյուսվածքով */
+  --lavash: radial-gradient(circle at 50% 40%, #fffdf8, #f7efe0 70%, #efe3cc); /* լավաշի նկարը հանված է՝ մաքուր փղոսկրե թուղթ */
   --k-bg: #fbf5ea; --k-ink: #3d2b1c; --k-accent: #b8322a; --k-font: "GHEA Mariam", serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,9 +30,9 @@ svg { display: block; width: 100%; }
 .env { position: fixed; inset: 0; z-index: 60; overflow: hidden; cursor: pointer;
   background: repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 90px), repeating-linear-gradient(0deg, rgba(0,0,0,.06) 0 1px, transparent 1px 60px), radial-gradient(80% 60% at 50% 45%, #a9a198, #6f675e); }
 .env .lav { position: absolute; inset: 0; opacity: 0; transition: opacity .8s .2s;
-  background: repeating-linear-gradient(92deg, rgba(0,0,0,.06) 0 2px, transparent 2px 9px), linear-gradient(180deg, #6b4a30, #4f3522); }
-.env .lav .sheet { position: absolute; inset: 10% 6%; background: var(--lavash); border-radius: 18px 30px 22px 34px / 30px 18px 34px 22px; box-shadow: 0 24px 40px rgba(0,0,0,.45), inset 0 0 30px rgba(170,120,60,.25);
-  transform: rotate(-2.5deg); display: flex; align-items: center; justify-content: center; }
+  background: radial-gradient(circle, rgba(255,255,255,.18) 1.5px, transparent 2.5px) 0 0 / 26px 26px, radial-gradient(90% 70% at 50% 45%, #2c5aa0, #1f3f7a 60%, #142a55); }
+.env .lav .sheet { position: absolute; inset: 10% 6%; background: var(--lavash); border-radius: 6px; box-shadow: 0 24px 40px rgba(0,0,0,.45), inset 0 0 0 12px #fbf6ec, inset 0 0 0 14px #b8322a, inset 0 0 0 19px #fbf6ec, inset 0 0 0 20px #2c4f8c;
+  transform: none; display: flex; align-items: center; justify-content: center; }
 .env .lav .in { text-align: center; transform: scale(.9); opacity: 0; transition: transform 1.4s cubic-bezier(.2,.8,.2,1) .6s, opacity 1s .6s; }
 .env .lav .caps { color: var(--brown); }
 .env .lav .nm { font-family: var(--script); font-size: clamp(48px, 15vw, 66px); line-height: 1.2; color: var(--red); padding: 0 .1em .15em; text-shadow: 0 1px 0 rgba(255,240,210,.7); }

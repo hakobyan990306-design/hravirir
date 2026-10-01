@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք դղյակին", top: "Հեքիաթային տոն", years: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մի անգամ լինում է…", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
-    ru: { hint: "Нажмите на замок", top: "Сказочный праздник", years: "лет", inv: "С любовью приглашаем вас", our: "Жила-была…", program: "Программа дня", dress: "Дресс-код", left: "До праздника осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
+    hy: { hint: "Սեղմեք դղյակին", top: "Հեքիաթային տոն", years: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մի անգամ լինում է…", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Ծնունդին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
+    ru: { hint: "Нажмите на замок", top: "Сказочный праздник", years: "лет", inv: "С любовью приглашаем вас", our: "Жила-была…", program: "Программа дня", dress: "Дресс-код", left: "До дня рождения осталось",
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
     en: { hint: "Tap the castle", top: "A fairytale party", years: "years old", inv: "You are invited", our: "Once upon a time…", program: "Schedule", dress: "Dress code", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "See you there" }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "See you there" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }

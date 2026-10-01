@@ -4,11 +4,11 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
     hy: { hint: "Ընտրեք մի առարկա ափսեից", top: "Ատամհատիկ", q: "Ի՞նչ կընտրի", will: "կդառնա", age: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մեր փոքրիկը", program: "Օրվա ծրագիր",
-      game: "Ի՞նչ կընտրի ափսեից", left: "Մինչև տոնը մնաց", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", yours: "Ձեր գուշակությունը" },
+      game: "Ի՞նչ կընտրի ափսեից", left: "Ատամհատիկին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", yours: "Ձեր գուշակությունը" },
     ru: { hint: "Выберите предмет с подноса", top: "Атамгатик", q: "Что выберет", will: "станет", age: "годик", inv: "С любовью приглашаем вас", our: "Наш малыш", program: "Программа дня",
-      game: "Что выберет с подноса?", left: "До праздника осталось", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", yours: "Ваше предсказание" },
+      game: "Что выберет с подноса?", left: "До атамгатика осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", yours: "Ваше предсказание" },
     en: { hint: "Pick an item from the tray", top: "First tooth", q: "What will", will: "will become", age: "year old", inv: "You are invited", our: "Our little one", program: "Schedule",
-      game: "What will be picked?", left: "Counting down", rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "See you there", yours: "Your guess" }
+      game: "What will be picked?", left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "See you there", yours: "Your guess" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   // հայերենում՝ որոշիչ հոդ (Դավիթը, Մանեն)

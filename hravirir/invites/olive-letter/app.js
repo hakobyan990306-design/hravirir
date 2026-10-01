@@ -5,13 +5,13 @@
 
   var TXT = {
     hy: { invited: "Դուք հրավիրված եք", wedding: "մեր հարսանիքին", tap: "ՍԵՂՄԵՔ", scroll: "ներքև", announce: "Շտապում ենք հայտնել ուրախ լուրը՝ մենք ամուսնանում ենք",
-      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մենք «այո» կասենք", leftSub: "ընդամենը", rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև",
+      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է", leftSub: "", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև",
       attend: "Ձեր ներկայությունը տոնին", waiting: "Սիրով սպասում ենք Ձեզ" },
     ru: { invited: "Вы приглашены", wedding: "на свадьбу", tap: "НАЖМИТЕ", scroll: "вниз", announce: "Спешим сообщить радостную новость — мы женимся",
-      program: "Программа дня", dress: "Дресс-код", left: "Мы скажем «да»", leftSub: "через", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, подтвердите своё присутствие до",
+      program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось", leftSub: "", rsvp: "Анкета", rsvpLead: "Пожалуйста, подтвердите своё присутствие до",
       attend: "Ваше присутствие на торжестве", waiting: "С любовью ждём вас" },
     en: { invited: "You are invited", wedding: "to our wedding", tap: "TAP", scroll: "scroll", announce: "We are delighted to share our happy news — we are getting married",
-      program: "Schedule", dress: "Dress code", left: "We say “yes”", leftSub: "in", rsvp: "Will you join us?", rsvpLead: "Kindly confirm your attendance by",
+      program: "Schedule", dress: "Dress code", left: "Counting down", leftSub: "", rsvp: "RSVP", rsvpLead: "Kindly confirm your attendance by",
       attend: "Will you attend?", waiting: "We look forward to seeing you" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

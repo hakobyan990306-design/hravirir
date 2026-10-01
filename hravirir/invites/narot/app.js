@@ -4,14 +4,14 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
     hy: { top: "Սուրբ մկրտություն", q: "Ովքե՞ր են կնքահայրն ու կնքամայրը", hint: "Սեղմեք՝ նարոտը հյուսելու համար", gf: "Կնքահայր", gm: "Կնքամայր", go: "Բացել հրավերը",
-      inv: "Սիրով հրավիրում ենք Ձեզ մեր որդու կնունքին", our: "Նարոտի խորհուրդը", gp: "Կնքահայր և կնքամայր", program: "Օրվա ծրագիր", left: "Մինչև կնունքը մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
+      inv: "Սիրով հրավիրում ենք Ձեզ մեր որդու կնունքին", our: "Նարոտի խորհուրդը", gp: "Կնքահայր և կնքամայր", program: "Օրվա ծրագիր", left: "Կնունքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
     ru: { top: "Святое крещение", q: "Кто станет крёстными?", hint: "Нажмите, чтобы сплести нарот", gf: "Крёстный отец", gm: "Крёстная мать", go: "Открыть приглашение",
       inv: "С любовью приглашаем вас на крестины нашего сына", our: "Смысл нарота", gp: "Крёстные", program: "Программа дня", left: "До крестин осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
     en: { top: "Holy baptism", q: "Who are the godparents?", hint: "Tap to braid the narot", gf: "Godfather", gm: "Godmother", go: "Open the invitation",
       inv: "You are invited to our son's baptism", our: "The meaning of the narot", gp: "Godparents", program: "Schedule", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love" }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   var uid = 0;

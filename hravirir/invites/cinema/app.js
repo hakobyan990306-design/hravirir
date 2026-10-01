@@ -5,13 +5,13 @@
   var TXT = {
     hy: { hint: "Սեղմեք տոմսին", hall: "Կինոդահլիճ «Սեր»", ticket: "Հրավիրատոմս", premiere: "Պրեմիերա", row: "Շարք 1 · Տեղ ♥", admit: "Մուտք երկուսի համար",
       story: "Սիրո պատմություն", starring: "Գլխավոր դերերում", director: "Ռեժիսոր", fate: "Ճակատագիր", musicBy: "Երաժշտություն", hearts: "Մեր սրտերը",
-      plot: "Սյուժե", left: "Մինչև պրեմիերան մնաց", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", rsvp: "Ամրագրեք Ձեր տեղը", rsvpLead: "Խնդրում ենք պատասխանել մինչև", end: "Վերջ", fin: "Սա միայն սկիզբն է" },
+      plot: "Սյուժե", left: "Հարսանիքին մնացել է", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", end: "Վերջ", fin: "Սա միայն սկիզբն է" },
     ru: { hint: "Нажмите на билет", hall: "Кинозал «Любовь»", ticket: "Пригласительный билет", premiere: "Премьера", row: "Ряд 1 · Место ♥", admit: "Вход для двоих",
       story: "История любви", starring: "В главных ролях", director: "Режиссёр", fate: "Судьба", musicBy: "Музыка", hearts: "Наши сердца",
-      plot: "Сюжет", left: "До премьеры осталось", program: "Программа дня", dress: "Дресс-код", rsvp: "Забронируйте место", rsvpLead: "Пожалуйста, ответьте до", end: "Конец", fin: "Это только начало" },
+      plot: "Сюжет", left: "До свадьбы осталось", program: "Программа дня", dress: "Дресс-код", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", end: "Конец", fin: "Это только начало" },
     en: { hint: "Tap the ticket", hall: "Cinema «Love»", ticket: "Invitation ticket", premiere: "Premiere", row: "Row 1 · Seat ♥", admit: "Admit two",
       story: "A love story", starring: "Starring", director: "Directed by", fate: "Fate", musicBy: "Music by", hearts: "Our hearts",
-      plot: "The plot", left: "Premiere in", program: "Schedule", dress: "Dress code", rsvp: "Reserve your seat", rsvpLead: "Kindly reply by", end: "The end", fin: "It's only the beginning" }
+      plot: "The plot", left: "Counting down", program: "Schedule", dress: "Dress code", rsvp: "RSVP", rsvpLead: "Kindly reply by", end: "The end", fin: "It's only the beginning" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function dd() { var d = K.date; return pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear(); }

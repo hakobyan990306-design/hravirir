@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք ժամացույցին", top: "Հոբելյան", years: "տարի", inv: "Սիրով հրավիրում եմ Ձեզ իմ հոբելյանին", our: "Ժամանակի մասին", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
-      rsvp: "Կմիանա՞ք", rsvpLead: "Խնդրում եմ պատասխանել մինչև", fin: "Սիրով սպասում եմ Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Нажмите на часы", top: "Юбилей", years: "лет", inv: "С радостью приглашаю вас на мой юбилей", our: "О времени", program: "Программа дня", dress: "Дресс-код", left: "До праздника осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С радостью жду вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
+    hy: { hint: "Սեղմեք ժամացույցին", top: "Հոբելյան", years: "տարի", inv: "Սիրով հրավիրում եմ Ձեզ իմ հոբելյանին", our: "Ժամանակի մասին", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հոբելյանին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում եմ պատասխանել մինչև", fin: "Սիրով սպասում եմ Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
+    ru: { hint: "Нажмите на часы", top: "Юбилей", years: "лет", inv: "С радостью приглашаю вас на мой юбилей", our: "О времени", program: "Программа дня", dress: "Дресс-код", left: "До юбилея осталось",
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С радостью жду вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Tap the watch", top: "Anniversary", years: "years", inv: "You are invited to my anniversary", our: "About time", program: "Schedule", dress: "Dress code", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "Looking forward to seeing you", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "Looking forward to seeing you", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }

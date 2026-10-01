@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք լուսնին", top: "Աստղերը գրել են", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր աստղային պատմությունը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև հարսանիք մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wish: "Ցանկություն պահեք" },
+    hy: { hint: "Սեղմեք լուսնին", top: "Աստղերը գրել են", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր աստղային պատմությունը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wish: "Ցանկություն պահեք" },
     ru: { hint: "Нажмите на луну", top: "Так решили звёзды", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наша звёздная история", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wish: "Загадайте желание" },
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wish: "Загадайте желание" },
     en: { hint: "Tap the moon", top: "Written in the stars", inv: "We joyfully invite you to our wedding", our: "Our starry story", program: "Schedule", dress: "Dress code", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", wish: "Make a wish" }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love", wish: "Make a wish" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }

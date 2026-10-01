@@ -88,6 +88,13 @@
     // RSVP ձև՝ պատասխանը Google Sheets կամ WhatsApp
     rsvp: function (form, thanksHTML) {
       if (!form) return;
+      // հարսանիքում՝ «Ում կողմից եք հրավիրված» (հարսի / փեսայի)
+      if (K.isWedding() && !form.querySelector('[name="side"]')) {
+        var SD = { hy: ["Ում կողմից եք հրավիրված", "Հարսի", "Փեսայի", "Հարսի կողմից", "Փեսայի կողմից"], ru: ["С чьей стороны вы приглашены", "Невесты", "Жениха", "Со стороны невесты", "Со стороны жениха"], en: ["Invited by", "The bride", "The groom", "Bride's side", "Groom's side"] }[lang] || [];
+        var box = document.createElement("div"); box.className = "k-side";
+        box.innerHTML = '<div class="fl"><label>' + K.esc(SD[0]) + '</label></div><label class="radio"><input type="radio" name="side" value="' + K.esc(SD[3]) + '" required>' + K.esc(SD[1]) + '</label><label class="radio"><input type="radio" name="side" value="' + K.esc(SD[4]) + '">' + K.esc(SD[2]) + "</label>";
+        var first = form.querySelector(".fl"); if (first) form.insertBefore(box, first); else form.appendChild(box);
+      }
       form.onsubmit = function (ev) {
         ev.preventDefault();
         var fd = new FormData(form), data = {};
@@ -137,6 +144,12 @@
           self.loop = setTimeout(bar, notes.length * 340);
         })();
       }
+    },
+    // հարսանիք է, եթե ծրագրում կա պսակադրություն կամ փեսայի/հարսի տուն (կամ INVITE.type = "wedding")
+    isWedding: function () {
+      if (C.type) return C.type === "wedding";
+      var s = JSON.stringify(C.events || C.timing || []);
+      return /Պսակադր|Փեսայի տուն|Հարսի տուն|Венчание|Дом жениха|Дом невесты/.test(s);
     },
     // Ծրագրի կետի պատկերակը՝ ըստ վայրի տեսակի. տուն / եկեղեցի / սրահ (գույնը՝ currentColor)
     evIcon: function (e) {

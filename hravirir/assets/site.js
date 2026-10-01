@@ -20,7 +20,7 @@
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
   var DESIGNS = [
     { id: "doll-car", name: "Տիկնիկ", cat: "wedding", colors: ["#fbeee9", "#f2b8c0", "#c9707c", "#ead7b5"], tag: "Նոր" },
-    { id: "lavash", name: "Ափսե և լավաշ", cat: "wedding", colors: ["#efd7a8", "#b8322a", "#2c4f8c", "#fbf5ea"], tag: "Նոր" },
+    { id: "lavash", name: "Բախտի ափսե", cat: "wedding", colors: ["#efd7a8", "#b8322a", "#2c4f8c", "#fbf5ea"], tag: "Նոր" },
     { id: "boarding", name: "Ավիատոմս", cat: "wedding", colors: ["#dbe8f3", "#1d2b4f", "#e8735a", "#ffc94a"], tag: "Նոր" },
     { id: "scratch", name: "Քերվող քարտ", cat: "wedding", colors: ["#fffaf7", "#e5b3ae", "#d7b46a", "#9c6b67"], tag: "Նոր" },
     { id: "bw-classic", name: "Սև-սպիտակ", cat: "wedding", colors: ["#ffffff", "#d6d6d6", "#111111", "#e01b24"], tag: "Նոր" },

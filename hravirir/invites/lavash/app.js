@@ -3,12 +3,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Կոտրեք ափսեն՝ բախտի համար", luck: "Բախտի համար", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր սովորույթը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև հարսանիք մնաց",
-      rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
+    hy: { hint: "Կոտրեք ափսեն՝ բախտի համար", luck: "Բախտի համար", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր սովորույթը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Разбейте тарелку на счастье", luck: "На счастье", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наш обычай", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
-      rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Break the plate for luck", luck: "For luck", inv: "We joyfully invite you to our wedding", our: "Our tradition", program: "Schedule", dress: "Dress code", left: "Counting down",
-      rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }
@@ -85,7 +85,7 @@
     }
     for (var d = 0; d < 120; d++) s += "<circle cx='" + f(r() * 400) + "' cy='" + f(r() * 700) + "' r='" + f(.5 + r() * .9) + "' fill='#6b3f1c' opacity='" + f(.25 + r() * .4) + "'/>";
     s += "</svg>";
-    document.documentElement.style.setProperty("--lavash", 'url("data:image/svg+xml,' + encodeURIComponent(s) + '") center / cover no-repeat, #efd7a8');
+    if (0) document.documentElement.style.setProperty("--lavash", 'url("data:image/svg+xml,' + encodeURIComponent(s) + '") center / cover no-repeat, #efd7a8');
   })();
   function envelope() {
     var n = K.names();

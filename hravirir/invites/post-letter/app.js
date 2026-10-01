@@ -4,12 +4,12 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք ծրարին", inv: "Հարսանյաց հրավեր", lead: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", story: "Սիրելի՛ հյուրեր", plan: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մնաց",
-      rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով՝", to: "Ում", pm: "ԵՐԵՎԱՆ", all: "Մեր սիրելի հյուրերին" },
-    ru: { hint: "Нажмите на конверт", inv: "Приглашение на свадьбу", lead: "С любовью приглашаем вас на нашу свадьбу", story: "Дорогие гости", plan: "Программа дня", dress: "Дресс-код", left: "Осталось",
-      rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью,", to: "Кому", pm: "ЕРЕВАН", all: "Нашим дорогим гостям" },
-    en: { hint: "Tap the envelope", inv: "Wedding invitation", lead: "With love we invite you to our wedding", story: "Dear guests", plan: "Schedule", dress: "Dress code", left: "Time left",
-      rsvp: "Will you join us?", rsvpLead: "Kindly reply by", fin: "With love,", to: "To", pm: "YEREVAN", all: "Our dear guests" }
+    hy: { hint: "Սեղմեք ծրարին", inv: "Հարսանյաց հրավեր", lead: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", story: "Սիրելի՛ հյուրեր", plan: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է",
+      rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով՝", to: "Ում", pm: "ԵՐԵՎԱՆ", all: "Մեր սիրելի հյուրերին" },
+    ru: { hint: "Нажмите на конверт", inv: "Приглашение на свадьбу", lead: "С любовью приглашаем вас на нашу свадьбу", story: "Дорогие гости", plan: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
+      rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью,", to: "Кому", pm: "ЕРЕВАН", all: "Нашим дорогим гостям" },
+    en: { hint: "Tap the envelope", inv: "Wedding invitation", lead: "With love we invite you to our wedding", story: "Dear guests", plan: "Schedule", dress: "Dress code", left: "Counting down",
+      rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love,", to: "To", pm: "YEREVAN", all: "Our dear guests" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function ini() { var n = K.list(C.names && (C.names.hy || C.names)); return (n[0] || "").charAt(0) + (n[1] || "").charAt(0); }
