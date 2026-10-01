@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7ede8">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<link rel="preload" href="../../fonts/ArmAllegroU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "scratch", name: "Քերվող քարտ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Արման", "Նարե"], ru: ["Арман", "Нарэ"] },
+  date: "2027-05-29T12:00",
+  text: {
+    hy: "Դուք հենց նոր բացահայտեցիք մեր ամենամեծ գաղտնիքը՝ մենք ամուսնանում ենք։\nՆշեք այս օրը Ձեր օրացույցում և եկեք կիսելու մեր ուրախությունը։",
+    ru: "Вы только что раскрыли наш главный секрет — мы женимся!\nОтметьте этот день в календаре и приходите разделить нашу радость."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Սիմոնյանների օջախ", ru: "Дом семьи Симонян" },
+      address: { hy: "Երևան, Ավան, Թումանյան թաղամաս 9", ru: "Ереван, Аван, квартал Туманяна 9" }, map: "https://maps.google.com/?q=Avan+Yerevan" },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Եղիազարյանների օջախ", ru: "Дом семьи Егиазарян" },
+      address: { hy: "Երևան, Մալաթիա, Անդրանիկի փողոց 60", ru: "Ереван, Малатия, ул. Андраника 60" }, map: "https://maps.google.com/?q=Andranik+60+Yerevan" },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Աստվածածին եկեղեցի (Գառնի)", ru: "Церковь Святой Богородицы (Гарни)" },
+      address: { hy: "Կոտայքի մարզ, Գառնի", ru: "Котайкская обл., Гарни" }, map: "https://maps.google.com/?q=Garni+church" },
+    { time: "18:30", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Գառնի Վիլլա» համալիր", ru: "Комплекс «Гарни Вилла»" },
+      address: { hy: "Կոտայքի մարզ, Գառնի, Չարենցի փողոց 18", ru: "Котайкская обл., Гарни, ул. Чаренца 18" }, map: "https://maps.google.com/?q=Garni+Armenia" }
+  ],
+  dresscode: { text: { hy: "Նուրբ գարնանային երանգներ՝ փոշեվարդագույն, կաթնագույն, ոսկեգույն", ru: "Нежные весенние оттенки: пудровый, молочный, золотой" },
+    colors: ["#e5b3ae", "#f7ede8", "#d7b46a", "#9c6b67"] },
+  rsvp: { deadline: "2027-05-15", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

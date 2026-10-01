@@ -19,6 +19,7 @@
   ];
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
   var DESIGNS = [
+    { id: "scratch", name: "Քերվող քարտ", cat: "wedding", colors: ["#fffaf7", "#e5b3ae", "#d7b46a", "#9c6b67"], tag: "Նոր" },
     { id: "bw-classic", name: "Սև-սպիտակ", cat: "wedding", colors: ["#ffffff", "#d6d6d6", "#111111", "#e01b24"], tag: "Նոր" },
     { id: "bw-script", name: "Նուար", cat: "wedding", colors: ["#111111", "#6d6d6d", "#ffffff", "#cfcfcf"], tag: "Նոր" },
     { id: "tuscany", name: "Տոսկանա", cat: "wedding", colors: ["#fdfbf5", "#1f4e9c", "#f2cf3a", "#5f8a3a"], tag: "Նոր" },
