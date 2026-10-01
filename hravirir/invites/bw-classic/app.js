@@ -22,7 +22,7 @@
   function heart() { return '<svg class="hrt" viewBox="0 0 60 56" aria-hidden="true"><path d="M30 52C12 40 3 30 5 18C7 6 22 3 30 16C36 3 54 4 56 17C58 30 46 40 31 51C27 54 20 50 14 47" fill="none" stroke="#e01b24" stroke-width="2.6" stroke-linecap="round"/></svg>'; }
   function logo() { return '<svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="#fff" stroke="#f2c230" stroke-width="2.4"/><path d="M18 40C22 28 26 18 30 14C27 26 26 34 28 42M28 30C33 26 38 26 40 30C36 31 33 33 31 38" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/></svg>'; }
   function bar() {
-    return '<div class="topbar"><a class="lg" href="https://hravirir.am" target="_blank" rel="noopener" aria-label="hravirir.am">' + logo() + '</a><button class="play" type="button" data-music aria-label="music"><i></i></button></div>';
+    return '<div class="topbar"><button class="play" type="button" data-music aria-label="music"><i></i></button></div>';
   }
   function cal() {
     var d0 = K.date, y = d0.getFullYear(), m = d0.getMonth(), first = (new Date(y, m, 1).getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate(), h = "";
@@ -53,7 +53,7 @@
         '<div class="fl"><label for="rg">' + esc(u("guests")) + '</label><select id="rg" name="guests">' + [1, 2, 3, 4, 5, 6].map(function (i) { return "<option>" + i + "</option>"; }).join("") + "</select></div>" +
         '<button class="pill fill" type="submit">' + esc(u("send")) + "</button></form></div></section>" : "") +
       '<section class="fin"><div class="wrap"><div class="hl"></div><h2 class="h2 rv">' + esc(x("fin")) + "</h2></div>" + img(C.finalPhoto || C.photo, "fp") + "</section>" +
-      '<footer class="ft"><button class="share" type="button">↗ ' + esc(x("share")) + '</button><div class="mk">' + logo() + "</div><div>" + esc(x("made")) + ' <a href="https://hravirir.am" target="_blank" rel="noopener">www.hravirir.am</a></div></footer></div>';
+      '<footer class="ft"><button class="share" type="button">↗ ' + esc(x("share")) + '</button><div>' + esc(x("made")) + ' <a href="https://hravirir.am" target="_blank" rel="noopener">www.hravirir.am</a></div></footer></div>';
   }
 
   function render() {
