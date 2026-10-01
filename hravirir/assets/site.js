@@ -117,7 +117,7 @@
     return '<article class="design reveal" data-cat="' + d.cat + '">' +
       '<a class="shot" href="invites/' + d.id + '/index.html" target="_blank" rel="noopener" aria-label="' + esc(d.name) + '">' +
       (d.tag ? '<span class="badge" data-tag>' + esc(d.tag) + "</span>" : "") +
-      '<iframe loading="lazy" tabindex="-1" title="' + esc(d.name) + '" data-src="invites/' + d.id + '/index.html?preview"></iframe></a>' +
+      '<img loading="lazy" decoding="async" alt="' + esc(d.name) + '" src="assets/thumbs/' + d.id + '.webp"></a>' +
       '<div class="body"><div class="meta" data-cat-l="' + d.cat + '">' + CATS[d.cat] + '</div><h3 data-dn="' + d.id + '">' + esc(d.name) + "</h3>" +
       '<div class="dots">' + d.colors.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + "</div>" +
       '<div class="actions"><a class="btn btn-ghost" data-view href="invites/' + d.id + '/index.html" target="_blank" rel="noopener">Դիտել</a>' +

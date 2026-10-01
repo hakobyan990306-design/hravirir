@@ -24,6 +24,7 @@
       date: "Միջոցառման օր", day: "Օր", month: "Ամիս", year: "Տարի", time: "Ժամ", at: ", ժամը ",
       months: ["Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"],
       types: { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ", corporate: "Կորպորատիվ", other: "Այլ" },
+      musName: "Երգի անունը (կատարող — երգ) կամ հղումը", musPh: "օր.՝ Սարո Թովմասյան — Սերը կտանի", langWhich: "Որ լեզուներով", langPh: ["", "օր.՝ հայերեն և ռուսերեն", "օր.՝ հայերեն, ռուսերեն, անգլերեն"], song: "երգ",
       extraNames: ["Պատրաստել 24 ժամում", "Դրեսկոդ", "Մասնակցության հաստատում", "Հյուրերի ցուցակը ըստ սեղանների", "Նախընտրած երաժշտություն"],
       langNames: ["Միայն հայերեն", "Երկլեզու", "Եռալեզու"],
       f: {
@@ -47,6 +48,7 @@
       date: "Дата мероприятия", day: "День", month: "Месяц", year: "Год", time: "Время", at: ", в ",
       months: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
       types: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения", corporate: "Корпоратив", other: "Другое" },
+      musName: "Название песни (исполнитель — песня) или ссылка", musPh: "напр.: Саро Товмасян — Сере ктани", langWhich: "На каких языках", langPh: ["", "напр.: армянский и русский", "напр.: армянский, русский, английский"], song: "песня",
       extraNames: ["Готовность за 24 часа", "Дресс-код", "Подтверждение присутствия", "Список гостей по столам", "Своя музыка"],
       langNames: ["Только армянский", "Два языка", "Три языка"],
       f: {
@@ -70,6 +72,7 @@
       date: "Date of the event", day: "Day", month: "Month", year: "Year", time: "Time", at: ", at ",
       months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       types: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday", corporate: "Corporate", other: "Other" },
+      musName: "Song name (artist — title) or link", musPh: "e.g. Saro Tovmasyan — Sere Ktani", langWhich: "Which languages", langPh: ["", "e.g. Armenian and Russian", "e.g. Armenian, Russian, English"], song: "song",
       extraNames: ["Ready in 24 hours", "Dress code", "RSVP", "Seating list", "Your own music"],
       langNames: ["Armenian only", "Two languages", "Three languages"],
       f: {
@@ -162,7 +165,9 @@
         '<label class="lbl">' + L.notes + '</label><textarea name="notes"></textarea>' +
         '<div class="row"><div><label class="lbl">Instagram <i>*</i></label><input name="insta" placeholder="@anun"></div><div><label class="lbl">' + L.phone + ' <i>*</i></label><input name="phone" type="tel" placeholder="+374 ..."></div></div>' +
         '<label class="lbl">' + L.langs + "</label>" + LANG_PRICES.map(function (p, i) { return '<label class="ck"><input type="radio" name="hoLang" value="' + i + '"' + (i ? "" : " checked") + ">" + L.langNames[i] + (p ? "<em>+" + money(p) + "</em>" : "") + "</label>"; }).join("") +
+        '<div class="xlang" hidden><label class="lbl">' + L.langWhich + ' <i>*</i></label><input name="langWhich"></div>' +
         '<label class="lbl">' + L.extras + "</label>" + EXTRA_PRICES.map(function (p, i) { return '<label class="ck"><input type="checkbox" name="hoEx" value="' + i + '">' + L.extraNames[i] + "<em>+" + money(p) + "</em></label>"; }).join("") +
+        '<div class="xmus" hidden><label class="lbl">' + L.musName + ' <i>*</i></label><input name="musicName" placeholder="' + esc(L.musPh) + '"></div>' +
         '<div class="tot"><span>' + L.total + '</span><b class="sum">' + money(BASE) + "</b></div>" +
         '<button type="button" class="bt tg">' + (ORDER_ENDPOINT ? L.send : L.tg) + '</button>' +
         '<div class="err" hidden></div><div class="nt">' + L.pay + "</div>";
@@ -255,11 +260,15 @@
       var ex = qa('input[name="hoEx"]:checked').map(function (c) { return +c.value; });
       var total = BASE + LANG_PRICES[li] + ex.reduce(function (s, i) { return s + EXTRA_PRICES[i]; }, 0);
       q(".sum").textContent = money(total);
-      return { l: L.langNames[li], ex: ex.map(function (i) { return L.extraNames[i]; }), total: total };
+      var xl = q(".xlang"), xm = q(".xmus");
+      if (xl) { xl.hidden = !li; q('[name="langWhich"]').placeholder = L.langPh[li] || ""; }
+      if (xm) xm.hidden = ex.indexOf(4) < 0;
+      return { l: L.langNames[li] + (li && val("langWhich") ? " (" + val("langWhich") + ")" : ""), ex: ex.map(function (i) { return L.extraNames[i] + (i === 4 && val("musicName") ? " (" + L.song + ": " + val("musicName") + ")" : ""); }), total: total };
     }
     function val(n) { var e = q('[name="' + n + '"]'); return e ? e.value.trim() : ""; }
     function check() {
-      var bad = ["insta", "phone", "design"].filter(function (n) { return !val(n); });
+      var need = ["insta", "phone", "design"]; if (!q(".xlang").hidden) need.push("langWhich"); if (!q(".xmus").hidden) need.push("musicName");
+      var bad = need.filter(function (n) { return !val(n); });
       qa(".bad").forEach(function (e) { e.classList.remove("bad"); });
       bad.forEach(function (n) { var e = q('[name="' + n + '"]'); if (e) e.classList.add("bad"); });
       var er = q(".err"); er.hidden = !bad.length; er.textContent = L.req;

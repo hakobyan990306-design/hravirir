@@ -282,3 +282,6 @@ footer .logo-mark { color: #111; }
 @media (prefers-reduced-motion: reduce) { .logo-mark .lg-h { animation: none; stroke-dashoffset: 0; } }
 /* «HRAVIRIR» և «.AM» առանց բացատի */
 .logo { gap: 0; } .logo .logo-mark { margin-right: 10px; }
+/* կատալոգի քարտերը՝ պատրաստի թեթև նկարներով (կենդանի հրավերը բացվում է սեղմելիս) */
+.design .shot img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .5s ease; }
+.design .shot:hover img { transform: scale(1.03); }
