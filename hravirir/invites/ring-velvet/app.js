@@ -61,7 +61,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + plan() + last() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + plan() + last() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; } else K.reveal();
     K.countdown(true); K.rsvp(document.getElementById("rf"), '<div class="thanks rs"><div class="thanks-t">' + esc(u("thanks")) + "</div><p>" + esc(u("thanksText")) + "</p></div>"); K.bindChrome(render);

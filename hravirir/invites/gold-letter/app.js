@@ -100,7 +100,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + plan() + rsvp() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + plan() + rsvp() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { drawEnv(); var e = document.getElementById("env"); if (e && !K.PREVIEW) e.onclick = open; } else K.reveal();
     if (window.Watercolor) window.Watercolor.apply();

@@ -38,3 +38,12 @@ html.preview { scrollbar-width: none; } html.preview::-webkit-scrollbar { displa
 /* ծրագրի կետի պատկերակ (տուն / եկեղեցի / սրահ)՝ K.evIcon */
 .evi { display: block; width: 64px !important; height: 64px; margin: 0 auto; color: var(--k-accent, #333); }
 .pic.ico:has(.evi), .ico:has(.evi) { width: 70px !important; max-width: 70px; }
+/* զույգի գլխավոր լուսանկար և լուսանկարների բաժին (K.photo / K.gallery) */
+.k-photo { width: min(68vw, 280px); aspect-ratio: 3 / 4; margin: 26px auto 0; border-radius: 150px 150px 10px 10px; overflow: hidden;
+  box-shadow: 0 0 0 6px var(--k-bg, #fff), 0 0 0 7px color-mix(in srgb, var(--k-accent, #333) 55%, transparent), 0 26px 40px -24px rgba(0,0,0,.45); }
+.k-photo img, .k-gal-s img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.k-gal { text-align: center; padding: 56px 0 !important; overflow: hidden; }
+.k-gal-s { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 24px 8px; scrollbar-width: none; }
+.k-gal-s::-webkit-scrollbar { display: none; }
+.k-gal-s div { flex: 0 0 64%; max-width: 300px; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; scroll-snap-align: center; box-shadow: 0 16px 28px -20px rgba(0,0,0,.5); }
+@media (min-width: 700px) { .k-gal-s { justify-content: center; } .k-gal-s div { flex-basis: 240px; } }

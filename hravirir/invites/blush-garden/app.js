@@ -203,7 +203,7 @@
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ") + " — " + x("t1");
     document.getElementById("app").innerHTML = (opened ? "" : envelope()) +
-      "<main>" + hero() + greeting() + timeline() + venue() + dress() + details() + countdown() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+      "<main>" + hero() + greeting() + K.gallery() + timeline() + venue() + dress() + details() + countdown() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { shape(); var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; }
     K.countdown(true); K.rsvp(document.getElementById("rf")); K.bindChrome(render);

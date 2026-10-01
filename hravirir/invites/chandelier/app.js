@@ -72,7 +72,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + invite() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + invite() + K.gallery() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; if (K.PREVIEW) document.querySelector(".hero").classList.add("go"); }
     else { document.querySelector(".hero").classList.add("go"); K.reveal(); }

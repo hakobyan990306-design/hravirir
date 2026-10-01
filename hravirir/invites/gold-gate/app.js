@@ -55,7 +55,7 @@
     var n = K.names(), d = K.date;
     return '<section class="hero">' + (C.heroBg ? '<div class="bg"><img alt="" data-wc="' + esc(C.heroBg) + '"></div>' : "") + '<div class="wrap"><div class="card rv"><div class="caps">' + esc(x("inv")) + "</div>" +
       '<h1 class="nm foil"><span>' + esc(n[0]) + '</span><span class="amp">&amp;</span><span>' + esc(n[1] || "") + "</span></h1>" + orn() +
-      '<div class="dt3"><div class="s">' + esc(x("wdl")[d.getDay()]) + '</div><div class="d">' + d.getDate() + '</div><div class="s">' + esc(u("monthsGen")[d.getMonth()]) + '</div></div><div class="yr">' + d.getFullYear() + "</div></div></div></section>";
+      '<div class="dt3"><div class="s">' + esc(x("wdl")[d.getDay()]) + '</div><div class="d">' + d.getDate() + '</div><div class="s">' + esc(u("monthsGen")[d.getMonth()]) + '</div></div><div class="yr">' + d.getFullYear() + "</div></div>" + K.photo() + "</div></section>";
   }
   function body() {
     var s = '<section class="cream"><div class="wrap"><h2 class="h2 foil rv">' + esc(x("dear")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
@@ -82,7 +82,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + body() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + K.gallery() + body() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { drawGate(); var e = document.getElementById("env"); if (e && !K.PREVIEW) e.onclick = open; } else K.reveal();
     if (window.Watercolor) window.Watercolor.apply();

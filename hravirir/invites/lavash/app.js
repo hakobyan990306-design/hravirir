@@ -96,7 +96,7 @@
     var n = K.names(), d = K.date;
     return '<section class="hero lavbg"><div class="wrap"><div class="caps rv">' + esc(x("inv")) + '</div><h1 class="nm rv d1"><span>' + esc(n[0] || "") + '</span><span class="amp">&amp;</span><span>' + esc(n[1] || "") + "</span></h1>" +
       '<div class="dt3 rv d2"><div class="s">' + esc(x("wdl")[d.getDay()]) + '</div><div class="d">' + d.getDate() + '</div><div class="s">' + esc(u("monthsGen")[d.getMonth()]) + "</div></div>" +
-      '<div class="yr rv d2">' + d.getFullYear() + '</div><div class="pl rv d3">' + plate() + "</div></div></section>";
+      '<div class="yr rv d2">' + d.getFullYear() + "</div>" + (C.photo ? K.photo() : '<div class="pl rv d3">' + plate() + "</div>") + "</div></section>";
   }
   function story() {
     return '<section class="cream"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
@@ -138,7 +138,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { var e = document.getElementById("env"); if (e && !K.PREVIEW) e.onclick = open; } else K.reveal();
     K.countdown(true); K.rsvp(document.getElementById("rf")); K.bindChrome(render);

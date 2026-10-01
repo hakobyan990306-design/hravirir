@@ -115,7 +115,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + program() + details() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + K.gallery() + program() + details() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { shape(); var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; }
     else { document.getElementById("hero").classList.add("go"); playVideo(); K.reveal(); }

@@ -139,7 +139,7 @@
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ") + " — " + x("invited");
     document.getElementById("app").innerHTML = (opened ? "" : envelope()) +
-      "<main>" + hero() + namesBlock() + letter() + venue() + timeline() + dress() + countdown() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+      "<main>" + hero() + namesBlock() + letter() + K.gallery() + venue() + timeline() + dress() + countdown() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { shapeFlaps(); var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; }
     K.countdown(false); K.rsvp(document.getElementById("rf")); K.bindChrome(render);

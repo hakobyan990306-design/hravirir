@@ -63,7 +63,7 @@
     var n = K.names(), d = K.date;
     return '<section class="hero"><div class="wrap"><div class="caps rv">' + esc(x("inv")) + '</div><h1 class="nm rv d1"><span>' + esc(n[0] || "") + '</span><span class="amp">&amp;</span><span>' + esc(n[1] || "") + "</span></h1>" +
       '<div class="mini rv d2">' + [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].map(function (v) { return '<div class="ht">' + HEART + "<b>" + v + "</b></div>"; }).join("") + "</div>" +
-      '<div class="wd rv d2">' + esc(x("wdl")[d.getDay()]) + " · " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + "</div></div></section>";
+      '<div class="wd rv d2">' + esc(x("wdl")[d.getDay()]) + " · " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + "</div>" + K.photo() + "</div></section>";
   }
   function story() {
     return '<section class="blush"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
@@ -103,7 +103,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { var e = document.getElementById("env"); if (e && !K.PREVIEW) bindScratch(e); else if (e) e.querySelectorAll("canvas").forEach(paint); } else K.reveal();
     K.countdown(true); K.rsvp(document.getElementById("rf")); K.bindChrome(render);

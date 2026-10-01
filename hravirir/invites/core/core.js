@@ -145,6 +145,17 @@
         })();
       }
     },
+    // զույգի գլխավոր լուսանկարը (INVITE.photo)՝ կամարաձև շրջանակով
+    photo: function (cls) {
+      return C.photo ? '<div class="k-photo rv d3 ' + (cls || "") + '"><img src="' + K.esc(C.photo) + '" alt="" loading="lazy"></div>' : "";
+    },
+    // զույգի լուսանկարների բաժին (INVITE.gallery = [նկարներ])՝ սահող շարք
+    gallery: function (h2cls, secCls) {
+      if (!C.gallery || !C.gallery.length) return "";
+      var T = { hy: "Մեր պահերը", ru: "Наши моменты", en: "Our moments" }[lang] || "";
+      return '<section class="k-gal ' + (secCls || "") + '"><div class="wrap"><h2 class="' + (h2cls || "h2") + ' rv">' + K.esc(T) + '</h2></div><div class="k-gal-s rv">' +
+        C.gallery.map(function (g) { return '<div><img src="' + K.esc(g) + '" alt="" loading="lazy"></div>'; }).join("") + "</div></section>";
+    },
     // հարսանիք է, եթե ծրագրում կա պսակադրություն կամ փեսայի/հարսի տուն (կամ INVITE.type = "wedding")
     isWedding: function () {
       if (C.type) return C.type === "wedding";
