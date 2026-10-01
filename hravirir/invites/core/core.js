@@ -169,4 +169,6 @@
   window.K = K;
   // օրինակ-էջերում պատվերի պատուհանը բացվում է հենց այստեղ
   if (C.demo && !K.EMBED) { var os = document.createElement("script"); os.src = "../order.js"; document.head.appendChild(os); }
+  // «Նշումների ռեժիմ»՝ հղման վերջում ?nshum
+  if (/nshum/.test(location.search + location.hash) && !PREVIEW) { var rs = document.createElement("script"); rs.src = "../core/review.js"; document.head.appendChild(rs); }
 })();

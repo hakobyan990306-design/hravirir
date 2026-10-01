@@ -698,3 +698,6 @@
 
   render();
 })();
+
+/* «Նշումների ռեժիմ»՝ հղման վերջում ?nshum */
+(function () { if (/nshum/.test(location.search + location.hash) && !/preview/.test(location.search)) { var s = document.createElement("script"); s.src = "../core/review.js"; document.head.appendChild(s); } })();

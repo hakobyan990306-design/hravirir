@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Նշումներ · HRAVIRIR.AM</title>
+<style>
+  :root { --red: #e01b24; --ink: #1d1d1f; --soft: #6e6e73; --line: #e5e5ea; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f5f5f7; color: var(--ink); font: 15px/1.5 Arial, "GHEA Mariam", sans-serif; padding: 16px 16px 60px; }
+  .wrap { max-width: 620px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 6px 0 6px; }
+  p.lead { color: var(--soft); margin-bottom: 14px; }
+  ol.how { background: #fff; border-radius: 14px; padding: 14px 14px 14px 34px; margin-bottom: 14px; }
+  ol.how li { margin: 4px 0; }
+  .bar { position: sticky; top: 0; display: flex; gap: 8px; padding: 10px 0; background: #f5f5f7; z-index: 2; }
+  .bar button { flex: 1; border: 0; border-radius: 12px; padding: 13px; font: 700 15px Arial, sans-serif; cursor: pointer; background: var(--red); color: #fff; }
+  .bar button.g { background: #3a3a3c; flex: 0 0 auto; }
+  h2 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); margin: 18px 0 8px; }
+  .list { display: grid; gap: 8px; }
+  .list a { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: #fff; border-radius: 12px; padding: 13px 14px; text-decoration: none; color: inherit; border: 1px solid var(--line); }
+  .list a small { color: var(--soft); font-size: 12px; }
+  .list a i { font-style: normal; background: var(--red); color: #fff; border-radius: 999px; padding: 2px 9px; font-weight: 700; font-size: 13px; }
+  textarea { width: 100%; min-height: 160px; margin-top: 10px; border-radius: 12px; border: 1px solid var(--line); padding: 10px; font: 13px/1.45 monospace; display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>✎ Նշումների ռեժիմ</h1>
+  <p class="lead">Նշեք, թե ինչ փոխել հրավերներում, և ուղարկեք Claude-ին մեկ անգամով։</p>
+  <ol class="how">
+    <li>Բացեք դիզայնը ստորև ցանկից։</li>
+    <li>Վերևում սեղմեք <b>«✎ Նշել»</b>, հետո սեղմեք էջի այն տեղը, որ պետք է փոխել, և գրեք՝ ինչ փոխել։</li>
+    <li>Ծրարը կամ անիմացիան բացելու համար նախ անջատեք «Նշել»-ը, բացեք, հետո նորից միացրեք։</li>
+    <li>Վերջում սեղմեք <b>«Պատճենել բոլորը»</b> և տեղադրեք Claude-ի հետ զրույցում։</li>
+  </ol>
+  <div class="bar"><button id="copy">Պատճենել բոլորը</button><button class="g" id="clear">Ջնջել բոլորը</button></div>
+  <textarea id="out" readonly></textarea>
+  <div id="lists"></div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var PFX = "nshum:", CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
+  function load(k) { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } }
+  function keys() { var a = []; try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k.indexOf(PFX) === 0) a.push(k); } } catch (e) {} return a.sort(); }
+  function allText() {
+    var out = [];
+    keys().forEach(function (k) {
+      var arr = load(k); if (!arr.length) return;
+      out.push("[" + k.slice(PFX.length) + "]");
+      arr.forEach(function (n, i) { out.push((i + 1) + ". " + n.where + " · «" + n.txt + "» (" + n.el + ", scroll " + n.sy + "px, էկրան " + n.vw + "px) — " + n.note); });
+      out.push("");
+    });
+    return out.join("\n").trim();
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  // դիզայնների ցանկը վերցնում ենք կայքի կատալոգից (assets/site.js)
+  fetch("assets/site.js").then(function (r) { return r.text(); }).then(function (src) {
+    var re = /\{ id: "([^"]+)", name: "([^"]+)", cat: "([^"]+)"/g, m, by = {};
+    while ((m = re.exec(src))) (by[m[3]] = by[m[3]] || []).push({ id: m[1], name: m[2] });
+    var extra = [{ id: "saro-diana", name: "Սարո և Դիանա (հաճախորդ)" }];
+    var h = "";
+    Object.keys(CATS).forEach(function (c) { if (by[c]) h += group(CATS[c], by[c]); });
+    h += group("Հաճախորդների հրավերներ", extra);
+    document.getElementById("lists").innerHTML = h;
+  });
+  function group(title, arr) {
+    return "<h2>" + esc(title) + '</h2><div class="list">' + arr.map(function (d) {
+      var n = load(PFX + d.id).length;
+      return '<a href="invites/' + esc(d.id) + '/index.html?nshum"><span>' + esc(d.name) + " <small>" + esc(d.id) + "</small></span>" + (n ? "<i>" + n + "</i>" : "") + "</a>";
+    }).join("") + "</div>";
+  }
+  document.getElementById("copy").onclick = function () {
+    var txt = allText(), out = document.getElementById("out");
+    if (!txt) { alert("Դեռ նշումներ չկան"); return; }
+    out.value = txt; out.style.display = "block";
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function () { alert("Պատճենված է։ Տեղադրեք Claude-ի հետ զրույցում։"); }, function () { out.select(); });
+    else out.select();
+  };
+  document.getElementById("clear").onclick = function () {
+    if (!confirm("Ջնջե՞լ բոլոր դիզայնների նշումները")) return;
+    keys().forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} }); location.reload();
+  };
+  window.addEventListener("pageshow", function (e) { if (e.persisted) location.reload(); });
+})();
+</script>
+</body>
+</html>
