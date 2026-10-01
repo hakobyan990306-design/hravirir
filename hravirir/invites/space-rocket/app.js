@@ -49,7 +49,7 @@
     var v = C.venue, s = '<section class="band">' + stars(20) + '<div class="wrap" style="position:relative"><h2 class="h2 rv">' + esc(t(C.greeting)) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p></div></section>";
     if (C.activities) s += '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="acts">' + C.activities.map(function (a) {
       return '<div class="act rv"><b>' + esc(a.time) + "</b><span>" + esc(t(a.text)) + "</span></div>"; }).join("") + "</div></div></section>";
-    if (v) s += '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v) + "</div>") +
+    if (v) s += '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v, "line-c") + "</div>") +
       '<div class="n">' + esc(t(v.place)) + '</div><div class="a">' + esc(t(v.address)) + "</div>" + (v.map ? '<a class="btn" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>" +
       (C.dresscode ? '<h2 class="h2 rv" style="margin-top:48px">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
         (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</div></section>";

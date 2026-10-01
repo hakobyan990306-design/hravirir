@@ -60,7 +60,7 @@
     if (C.activities) s += '<section class="sky" style="background:linear-gradient(180deg,#eef4f9,#fdf1ec)"><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="acts">' + C.activities.map(function (a, i) {
       return '<div class="act rv"><div class="em" style="background:' + COLS[i % COLS.length] + '">' + esc(a.time) + "</div><b>" + esc(t(a.text)) + "</b></div>"; }).join("") + "</div></div></section>";
     var v = C.venue;
-    if (v) s += '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v) + "</div>") +
+    if (v) s += '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v, "bold-c") + "</div>") +
       '<div class="n">' + esc(t(v.place)) + '</div><div class="a">' + esc(t(v.address)) + "</div>" + (v.map ? '<a class="btn" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>" +
       (C.dresscode ? '<h2 class="h2 rv" style="margin-top:48px">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
         (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</div></section>";

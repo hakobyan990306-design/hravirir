@@ -54,7 +54,7 @@
         return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>";
     if (C.timing) s += '<section class="band"><div class="wrap"><h2 class="h2 foil rv">' + esc(x("plan")) + '</h2><div class="plan rv">' + C.timing.map(function (it) {
       return "<div><b>" + esc(it.time) + "</b><span>" + esc(t(it.text)) + "</span></div>"; }).join("") + "</div></div></section>";
-    if (v) s += '<section><div class="wrap"><h2 class="h2 foil rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v) + "</div>") +
+    if (v) s += '<section><div class="wrap"><h2 class="h2 foil rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v, "glow-c") + "</div>") +
       '<div class="n">' + esc(t(v.place)) + '</div><div class="a">' + esc(t(v.address)) + "</div>" + (v.map ? '<a class="btn" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>" +
       (C.dresscode ? '<h2 class="h2 foil rv" style="margin-top:56px">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
         (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</div></section>";

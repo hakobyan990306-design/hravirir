@@ -158,12 +158,35 @@
       var HOUSE = /տուն|օջախ|дом|home|house/i, CHURCH = /եկեղեց|պսակ|մկրտ|վանք|տաճար|կնունք|венч|церк|храм|крещ|монаст|собор|church|cathedral|baptism|wedding ceremony/i;
       var HALL = /հանդես|ընթրիք|սեղան|տորթ|խնջույք|ռեստորան|սրահ|банкет|ужин|стол|торт|ресторан|зал|reception|dinner|party|restaurant|hall/i;
       var kind = HOUSE.test(title) ? "home" : HALL.test(title) ? "hall" : CHURCH.test(all) ? "church" : HOUSE.test(place) ? "home" : "hall";
-      var P = {
-        home: '<path d="M10 30L32 11L54 30"/><path d="M16 25V54H48V25"/><path d="M27 54V40H37V54"/><path d="M40 18V11H46V23"/><rect x="20" y="31" width="7" height="6"/><rect x="37" y="31" width="7" height="6"/>',
-        church: '<path d="M32 4V14M27 8H37"/><path d="M22 28C22 20 26 15 32 14C38 15 42 20 42 28Z"/><path d="M20 28H44V34H20Z"/><path d="M14 54V36L20 34M50 54V36L44 34"/><path d="M14 54H50"/><path d="M20 34V54M44 34V54"/><path d="M28 54V45C28 42 30 40 32 40C34 40 36 42 36 45V54"/><path d="M24 30V32M32 30V32M40 30V32"/>',
-        hall: '<path d="M8 22L32 10L56 22Z"/><path d="M8 22H56"/><path d="M12 26V50M22 26V50M42 26V50M52 26V50"/><path d="M28 50V38C28 35 30 33 32 33C34 33 36 35 36 38V50"/><path d="M6 54H58M9 50H55"/><circle cx="32" cy="18" r="2"/>'
+      // style = «ձև-տարբերակ», օր.՝ "thin-b". ձևեր՝ line, thin, bold, arch, stamp, diamond, sketch, glow, double. տարբերակներ (նկարներ)՝ a, b, c
+      var st = String(arguments[1] || C.iconStyle || "line-a").split("-"), look = st[0], v = st[1] || "a";
+      var D = {
+        a: {
+          home: '<path d="M10 30L32 11L54 30"/><path d="M16 25V54H48V25"/><path d="M27 54V40H37V54"/><path d="M40 18V11H46V23"/><rect x="20" y="31" width="7" height="6"/><rect x="37" y="31" width="7" height="6"/>',
+          church: '<path d="M32 4V14M27 8H37"/><path d="M22 28C22 20 26 15 32 14C38 15 42 20 42 28Z"/><path d="M20 28H44V34H20Z"/><path d="M14 54V36L20 34M50 54V36L44 34"/><path d="M14 54H50"/><path d="M20 34V54M44 34V54"/><path d="M28 54V45C28 42 30 40 32 40C34 40 36 42 36 45V54"/><path d="M24 30V32M32 30V32M40 30V32"/>',
+          hall: '<path d="M8 22L32 10L56 22Z"/><path d="M8 22H56"/><path d="M12 26V50M22 26V50M42 26V50M52 26V50"/><path d="M28 50V38C28 35 30 33 32 33C34 33 36 35 36 38V50"/><path d="M6 54H58M9 50H55"/><circle cx="32" cy="18" r="2"/>'
+        },
+        b: { // տնակ սրտով, հայկական եկեղեցի կոնաձև գմբեթով, տոնական սեղան ջահով
+          home: '<path d="M6 31L32 9L58 31"/><path d="M12 27V54H52V27"/><path d="M27 54V44C27 41 29 39 32 39C35 39 37 41 37 44V54"/><path d="M32 33C30 31 27 31 27 34C27 36 32 38 32 38C32 38 37 36 37 34C37 31 34 31 32 33Z"/><path d="M4 54H60"/><path d="M6 48V54M10 48V54M54 48V54M58 48V54M4 50H12M52 50H60"/>',
+          church: '<path d="M32 3V9M29 5.5H35"/><path d="M24 22L32 9L40 22Z"/><path d="M25 22H39V34H25Z"/><path d="M29 26V30M35 26V30"/><path d="M12 54V38L25 34M52 54V38L39 34"/><path d="M12 38H52"/><path d="M10 54H54"/><path d="M28 54V47C28 44.5 30 43 32 43C34 43 36 44.5 36 47V54"/><path d="M17 44V48M47 44V48"/>',
+          hall: '<path d="M32 4V10"/><path d="M20 12C24 18 40 18 44 12"/><path d="M20 12V16M32 13V18M44 12V16"/><path d="M8 38H56"/><path d="M10 38C10 44 12 46 14 46M54 38C54 44 52 46 50 46"/><path d="M14 46V56M50 46V56"/><path d="M22 26H28L27 33C26.5 35 23.5 35 23 33Z"/><path d="M25 35V38"/><path d="M36 26H42L41 33C40.5 35 37.5 35 37 33Z"/><path d="M39 35V38"/>'
+        },
+        c: { // երկհարկանի տուն, զանգակատնով մատուռ, ռեստորանի կափարիչ-ափսե
+          home: '<path d="M14 24L32 10L50 24"/><path d="M18 21V54H46V21"/><path d="M18 36H46"/><path d="M14 36H50V39H14Z"/><path d="M28 54V45H36V54"/><rect x="23" y="25" width="6" height="7"/><rect x="35" y="25" width="6" height="7"/><path d="M42 15V9H46V18"/><path d="M44 6C42 4 46 3 44 1"/>',
+          church: '<path d="M46 2V8M43 4.5H49"/><path d="M41 18L46 8L51 18Z"/><path d="M41 18H51V54H41Z"/><path d="M44 22H48V27H44Z"/><path d="M10 54V32L26 20L41 32"/><path d="M10 54H41"/><path d="M21 54V45C21 42.5 23 41 25.5 41C28 41 30 42.5 30 45V54"/><path d="M26 27V33M23 30H29"/>',
+          hall: '<path d="M10 44C10 30 20 21 32 21C44 21 54 30 54 44"/><path d="M6 44H58"/><path d="M8 48H56"/><path d="M32 21V17"/><circle cx="32" cy="15" r="2.5"/><path d="M18 36C20 31 24 28 28 27"/><path d="M14 54H50"/>'
+        }
       };
-      return '<svg class="evi evi-' + kind + '" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + P[kind] + "</svg>";
+      var art = (D[v] || D.a)[kind], sw = look === "thin" ? 1.4 : look === "bold" ? 3.4 : 2.2, frame = "", inner = art;
+      if (look === "arch") { frame = '<path d="M4 62V30C4 14 16 2 32 2C48 2 60 14 60 30V62Z" stroke-width="1.6"/>'; inner = '<g transform="translate(9 12) scale(.72)">' + art + "</g>"; }
+      else if (look === "stamp") { frame = '<rect x="3" y="3" width="58" height="58" rx="2" stroke-width="1.4" stroke-dasharray="3 3"/><rect x="8" y="8" width="48" height="48" stroke-width="1"/>'; inner = '<g transform="translate(12 12) scale(.62)">' + art + "</g>"; }
+      else if (look === "diamond") { frame = '<path d="M32 1L63 32L32 63L1 32Z" stroke-width="1.6"/><path d="M32 6L58 32L32 58L6 32Z" stroke-width=".8" stroke-dasharray="1 3"/><circle cx="32" cy="1" r="1.5"/><circle cx="63" cy="32" r="1.5"/><circle cx="32" cy="63" r="1.5"/><circle cx="1" cy="32" r="1.5"/>'; inner = '<g transform="translate(17 17) scale(.47)">' + art + "</g>"; }
+      else if (look === "sketch") inner = '<g opacity=".45" transform="translate(1.2 .8) rotate(1.2 32 32)">' + art + "</g>" + art;
+      else if (look === "double") inner = '<g stroke-width="4.6">' + art + '</g><g stroke="var(--k-bg, #fff)" stroke-width="1.6">' + art + "</g>";
+      var defs = "";
+      if (look === "glow") { defs = '<defs><linearGradient id="evg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a8"/><stop offset=".5" stop-color="#c9a24f"/><stop offset="1" stop-color="#f1d58e"/></linearGradient></defs>'; }
+      return '<svg class="evi evi-' + kind + " evi-" + look + '" viewBox="0 0 64 64" fill="none" stroke="' + (look === "glow" ? "url(#evg)" : "currentColor") + '" stroke-width="' + sw + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"' +
+        (look === "glow" ? ' style="filter:drop-shadow(0 0 6px rgba(240,210,140,.55))"' : "") + ">" + defs + frame + inner + "</svg>";
     },
     // Լողացող կոճակներ (լեզու, երաժշտություն) և «Օրինակ» կոճակ
     chrome: function () {

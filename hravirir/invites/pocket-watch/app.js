@@ -65,7 +65,7 @@
   }
   function program() {
     return '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e) {
-      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="info"><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e, "stamp-a") + '</div><div class="info"><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div></div>";
     }).join("") + "</div></section>";
   }
