@@ -20,7 +20,7 @@
     ".nsh-bar{position:fixed;left:8px;right:8px;top:calc(8px + env(safe-area-inset-top,0px));z-index:2147483000;display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px;border-radius:14px;background:#1d1d1f;color:#fff;font:600 13px/1.2 Arial,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.35)}" +
     ".nsh-bar b{flex:0 0 auto;font-weight:600;white-space:nowrap}.nsh-bar button{flex:1 1 auto;border:0;border-radius:10px;padding:9px 6px;font:700 12.5px Arial,sans-serif;cursor:pointer;background:#3a3a3c;color:#fff;white-space:nowrap}" +
     ".nsh-bar button.on{background:#e01b24}.nsh-bar .cnt{background:#e01b24;border-radius:999px;padding:2px 7px;margin-left:4px}" +
-    "html.nsh-on,html.nsh-on *{cursor:crosshair!important}" +
+    ".nsh-ov{position:fixed;inset:0;z-index:2147482998;display:none;cursor:pointer;background:rgba(224,27,36,.05);-webkit-tap-highlight-color:transparent;touch-action:pan-x pan-y}html.nsh-on .nsh-ov{display:block}" +
     ".nsh-pin{position:absolute;z-index:2147482999;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#e01b24;color:#fff;font:700 13px/26px Arial,sans-serif;text-align:center;box-shadow:0 0 0 3px #fff,0 4px 10px rgba(0,0,0,.4);cursor:pointer}" +
     ".nsh-pin.fx{position:fixed}" +
     ".nsh-modal{position:fixed;inset:0;z-index:2147483001;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;padding:12px}" +
@@ -88,24 +88,24 @@
   }
   // iPhone-ում «click»-ը սովորական տարրերի վրա չի գալիս, ուստի նշումը բացում ենք մատը բարձրացնելիս (pointerup),
   // միայն եթե դա կարճ հպում էր, ոչ թե թերթում։ Էջի սեփական սեղմումները արգելափակվում են։
-  var start = null;
   function note(target, cx, cy) {
     var d = describe(target), fx = !!target.closest("#env,.topbar,.k-fabs,.k-demo");
     var n = { x: fx ? cx : cx + window.scrollX, y: fx ? cy : cy + window.scrollY, fx: fx, txt: d.txt, where: d.where, el: d.el, sy: Math.round(window.scrollY), vw: window.innerWidth };
     modal(d.where + " · «" + d.txt + "»", "", function (v) { n.note = v; notes.push(n); save(); draw(); });
   }
-  function block(ev) {
-    if (!on || inUI(ev.target)) return;
-    if (document.querySelector(".nsh-modal")) { ev.stopPropagation(); ev.stopImmediatePropagation(); if (ev.type === "click") ev.preventDefault(); return; }
-    ev.stopPropagation(); ev.stopImmediatePropagation();
-    if (ev.type === "click" || ev.type === "mousedown") ev.preventDefault();
-    if (ev.type === "pointerdown") start = { x: ev.clientX, y: ev.clientY, t: Date.now(), el: ev.target };
-    if (ev.type === "pointerup" && start) {
-      var tap = Math.abs(ev.clientX - start.x) < 12 && Math.abs(ev.clientY - start.y) < 12 && Date.now() - start.t < 800, el = start.el; start = null;
-      if (tap) { ev.preventDefault(); note(el, ev.clientX, ev.clientY); }
-    }
-  }
-  ["pointerdown", "pointerup", "mousedown", "touchstart", "touchend", "click"].forEach(function (t) { document.addEventListener(t, block, { capture: true, passive: false }); });
+  // «Նշել» ռեժիմում էջի վրա դրվում է թափանցիկ շերտ. iPhone-ում էլ «click»-ը նրա վրա միշտ գալիս է։
+  // Հպման տեղում շերտը մի պահ թաքցնում ենք և գտնում, թե ինչ կա տակը։ Թերթելը շարունակում է աշխատել։
+  var ov = document.createElement("div");
+  ov.className = "nsh-ov";
+  document.body.appendChild(ov);
+  ov.onclick = function (ev) {
+    if (document.querySelector(".nsh-modal")) return;
+    ov.style.display = "none";
+    var el = document.elementFromPoint(ev.clientX, ev.clientY);
+    ov.style.display = "";
+    if (!el || inUI(el)) return;
+    note(el, ev.clientX, ev.clientY);
+  };
 
   function allText() {
     var out = [], keys = [];
