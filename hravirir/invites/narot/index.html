@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf7f2">
+<title>Կնունքի հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<link rel="preload" href="../../fonts/ArmCoronetU.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "narot", name: "Նարոտ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Լևոն"], ru: ["Левон"] },
+  date: "2026-12-13T12:00",
+  godfather: { hy: "Արամ Պետրոսյան", ru: "Арам Петросян" },
+  godmother: { hy: "Լիլիթ Պետրոսյան", ru: "Лилит Петросян" },
+  text: {
+    hy: "Նարոտի կարմիրը Քրիստոսի արյունն է, սպիտակը՝ մաքրությունը։\nՄեր որդին ստանում է սուրբ մկրտություն, և մենք սիրով հրավիրում ենք Ձեզ աղոթելու նրա համար և կիսելու մեզ հետ այս լուսավոր օրը։",
+    ru: "Красная нить нарота — кровь Христа, белая — чистота.\nНаш сын принимает святое крещение, и мы с любовью приглашаем вас помолиться за него и разделить с нами этот светлый день."
+  },
+  events: [
+    { time: "12:00", title: { hy: "Մկրտության խորհուրդ", ru: "Таинство крещения" }, place: { hy: "Սուրբ Սարգիս Մայր եկեղեցի", ru: "Церковь Святого Саркиса" },
+      address: { hy: "Երևան, Իսրայելյան փողոց 21", ru: "Ереван, ул. Исраеляна 21" }, map: "https://maps.google.com/?q=Saint+Sarkis+Cathedral+Yerevan" },
+    { time: "14:30", title: { hy: "Կնունքի սեղան", ru: "Праздничный стол" }, place: { hy: "«Դոլմամա» ռեստորան", ru: "Ресторан «Долмама»" },
+      address: { hy: "Երևան, Պուշկինի փողոց 10", ru: "Ереван, ул. Пушкина 10" }, map: "https://maps.google.com/?q=Pushkin+10+Yerevan" }
+  ],
+  rsvp: { deadline: "2026-12-05", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

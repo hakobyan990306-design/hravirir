@@ -47,6 +47,7 @@
     { id: "gold-letter", name: "Ոսկե կնիք", cat: "engagement", colors: ["#f3dcd4", "#fffdf9", "#e7d2a6", "#b8904f"], tag: "Նոր" },
     { id: "ring-velvet", name: "Մատանի", cat: "engagement", colors: ["#0f3b33", "#1a5247", "#d6b77a", "#f7f2e8"], tag: "Նոր" },
     { id: "boho-arch", name: "Կամար", cat: "engagement", colors: ["#f4e9dc", "#e7c9ab", "#b8643f", "#9aa487"], tag: "Նոր" },
+    { id: "narot", name: "Նարոտ", cat: "baptism", colors: ["#fbf7f2", "#c4182a", "#ffffff", "#b8893d"], tag: "Նոր" },
     { id: "candle", name: "Մոմ", cat: "baptism", colors: ["#1c1712", "#fbf6ec", "#c9a45f", "#f4ead8"], tag: "Նոր" },
     { id: "baptism-silver", name: "Կապույտ-արծաթ", cat: "baptism", colors: ["#fdfeff", "#bcd6ee", "#8fb4dc", "#9aa6b6"], tag: "Նոր" },
     { id: "angel-wings", name: "Հրեշտակ", cat: "baptism", colors: ["#fdfaf8", "#f7e4e4", "#d99aa3", "#b8707c"], tag: "Նոր" },
