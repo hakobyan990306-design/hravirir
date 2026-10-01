@@ -37,7 +37,7 @@
       t88: "Как долго работает ссылка?", t89: "Приглашение доступно до мероприятия и ещё несколько месяцев после, чтобы гости могли пересмотреть его.",
       t90: "Как оплатить?", t91: "После подтверждения заказа мы отправим реквизиты для оплаты (перевод на карту, Idram или наличными).",
       t92: "Начнём", t93: "Ваш праздник заслуживает красивого приглашения", t94: "Не знаете, какой дизайн выбрать? Напишите нам, расскажите о своём празднике — и мы предложим то, что подойдёт именно вам.",
-      t95: "Написать в Telegram", t96: "Онлайн-приглашения на свадьбу, помолвку, крестины и день рождения.", t97: "Контакты", t98: "Соцсети", t99: "Дизайны", t100: "Цены",
+      t101: "Гендер-пати", t95: "Написать в Telegram", t96: "Онлайн-приглашения на свадьбу, помолвку, крестины и день рождения.", t97: "Контакты", t98: "Соцсети", t99: "Дизайны", t100: "Цены",
       copy: "Все права защищены", title: "HRAVIRIR.AM — Онлайн-приглашения", desc: "Красивые онлайн-приглашения на свадьбу, помолвку, крестины и день рождения. От 8.000 ֏, готовность за 24 часа."
     },
     en: {
@@ -74,7 +74,7 @@
       t88: "How long is the link active?", t89: "The invitation is available until the event and for several months after, so guests can look at it again.",
       t90: "How do I pay?", t91: "After the order is confirmed we send the payment details (card transfer, Idram or cash).",
       t92: "Let's start", t93: "Your celebration deserves a beautiful invitation", t94: "Not sure which design to choose? Write to us, tell us about your celebration and we'll suggest the one that suits you best.",
-      t95: "Message us on Telegram", t96: "Web invitations for weddings, engagements, baptisms and birthdays.", t97: "Contact", t98: "Social", t99: "Designs", t100: "Pricing",
+      t101: "Gender reveal", t95: "Message us on Telegram", t96: "Web invitations for weddings, engagements, baptisms and birthdays.", t97: "Contact", t98: "Social", t99: "Designs", t100: "Pricing",
       copy: "All rights reserved", title: "HRAVIRIR.AM — Web invitations", desc: "Beautiful web invitations for weddings, engagements, baptisms and birthdays. From 8.000 ֏, ready in 24 hours."
     }
   };

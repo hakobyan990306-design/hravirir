@@ -17,8 +17,11 @@
     { id: "2", name: "Երկլեզու", desc: "օր.՝ հայերեն + ռուսերեն", price: 5000 },
     { id: "3", name: "Եռալեզու", desc: "հայերեն + ռուսերեն + անգլերեն", price: 9000 }
   ];
-  var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
+  var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում" };
   var DESIGNS = [
+    { id: "memories", name: "Հուշեր", cat: "wedding", colors: ["#f7f5f1", "#d6d3cd", "#6e6c68", "#111111"], tag: "Նոր" },
+    { id: "elegance", name: "Էլեգանս", cat: "wedding", colors: ["#ffffff", "#d9d7d3", "#8a8885", "#2b2b2b"], tag: "Նոր" },
+    { id: "teddy", name: "Արջուկ", cat: "baby", colors: ["#fbf6ef", "#e7d2b6", "#c9a882", "#6b4b33"], tag: "Նոր" },
     { id: "silk-bow", name: "Մետաքսե ժապավեն", cat: "wedding", colors: ["#fbf7f1", "#fffdf9", "#8a1c2b", "#8c7b74"], tag: "Նոր" },
     { id: "olive-seal", name: "Ձիթենու կնիք", cat: "wedding", colors: ["#efe9e1", "#f8f4ee", "#c9a15a", "#8f6f43"], tag: "Նոր" },
     { id: "noir-rings", name: "Սև և ոսկի", cat: "wedding", colors: ["#0f0d0c", "#3a0f14", "#d6b574", "#f2e9d8"], tag: "Նոր" },
@@ -79,25 +82,25 @@
       "post-letter": "Почта", "white-seal": "Белый конверт", "chandelier": "Люстра", "monogram": "Монограмма", "noir-sunset": "Чёрно-золотой закат", "blush-garden": "Розовый сад", "olive-letter": "Письмо",
       "classic-green": "Classic", "gold-gate": "Золотые ворота", "red-rose": "Красная роза", "gold-letter": "Золотая печать", "ring-velvet": "Кольцо", "boho-arch": "Арка", "narot": "Нарот", "candle": "Свеча",
       "baptism-silver": "Голубое серебро", "angel-wings": "Ангел", "white-ribbon": "Лента", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
-      "space-rocket": "Космос", "balloon-sky": "Воздушный шар" },
+      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "teddy": "Мишутка" },
     en: { "silk-bow": "Silk Ribbon", "olive-seal": "Olive Seal", "noir-rings": "Black & Gold", "polaroid": "Polaroid", "mono-walk": "Monochrome Walk", "editorial": "Editorial", "nur": "Pomegranate", "terra": "Terra",
       "doll-car": "The Doll", "lavash": "Plate for Luck", "boarding": "Boarding Pass", "scratch": "Scratch Card", "bw-classic": "Black & White", "bw-script": "Noir", "tuscany": "Tuscany", "peony": "Peony",
       "night-magic": "Night Magic", "cinema": "Cinema", "atamhatik": "First Tooth", "doves": "Doves", "vinyl": "Love Melody", "taraz": "Taraz", "stained-glass": "Stained Glass", "lavender": "Lavender",
       "post-letter": "Post Letter", "white-seal": "White Envelope", "chandelier": "Chandelier", "monogram": "Monogram", "noir-sunset": "Noir Sunset", "blush-garden": "Blush Garden", "olive-letter": "The Letter",
       "classic-green": "Classic", "gold-gate": "Golden Gate", "red-rose": "Red Rose", "gold-letter": "Gold Seal", "ring-velvet": "The Ring", "boho-arch": "Boho Arch", "narot": "Narot", "candle": "Candle",
       "baptism-silver": "Blue Silver", "angel-wings": "Angel", "white-ribbon": "Ribbon", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
-      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon" }
+      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "teddy": "Teddy" }
   };
   var UI = {
     hy: { view: "Դիտել", pick: "Ընտրել", tag: "Նոր", cats: CATS_HY(), ex: null },
-    ru: { view: "Смотреть", pick: "Выбрать", tag: "Новинка", cats: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения" },
+    ru: { view: "Смотреть", pick: "Выбрать", tag: "Новинка", cats: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения", baby: "Гендер-пати" },
       ex: [["Готовность за 24 часа", "Приглашение будет готово за один день"], ["Дресс-код", "Палитра цветов и описание"], ["Подтверждение присутствия", "Гости отвечают прямо на сайте"],
         ["Список гостей по столам", "Гость вводит имя и находит свой стол"], ["Своя музыка", "Выбранная вами песня на фоне приглашения"], ["Два языка", "напр.: армянский + русский"], ["Три языка", "армянский + русский + английский"]] },
-    en: { view: "View", pick: "Choose", tag: "New", cats: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday" },
+    en: { view: "View", pick: "Choose", tag: "New", cats: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday", baby: "Gender reveal" },
       ex: [["Ready in 24 hours", "Your invitation is ready in one day"], ["Dress code", "Color palette and description"], ["RSVP", "Guests reply right on the website"],
         ["Seating list", "The guest types a name and finds their table"], ["Your own music", "The song of your choice in the background"], ["Two languages", "e.g. Armenian + Russian"], ["Three languages", "Armenian + Russian + English"]] }
   };
-  function CATS_HY() { return { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" }; }
+  function CATS_HY() { return { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում" }; }
   function lang() { return window.SiteLang ? window.SiteLang.get() : "hy"; }
   function dname(d) { var l = lang(); return (NAMES[l] && NAMES[l][d.id]) || d.name; }
   function $(s, r) { return (r || document).querySelector(s); }
@@ -152,7 +155,7 @@
   }).join("");
 
   /* ---------- Պատվեր՝ invites/order.js-ի «խելացի» ձևով (դաշտերը փոխվում են ըստ միջոցառման տեսակի) ---------- */
-  var TYPE_BY_CAT = { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ" };
+  var TYPE_BY_CAT = { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ", baby: "Այլ" };
   var orderForm = window.HravirirOrder.mount($("#orderMount"), {
     title: false, designs: DESIGNS, lang: lang(), design: new URLSearchParams(location.search).get("design") || ""
   });

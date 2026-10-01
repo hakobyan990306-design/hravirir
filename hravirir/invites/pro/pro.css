@@ -89,3 +89,26 @@ svg { display: block; }
 @keyframes p-hint { 50% { opacity: .35; } }
 html.preview .env .hint { animation: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint { animation: none; } }
+
+/* ---------- սպիտակ դաջված ծրար (P.wenv) ---------- */
+.wenv { background: #efe8dc; }
+.we-f { position: absolute; inset: 0; background: linear-gradient(160deg, #faf6ef, #f1eadf); transition: transform 1.1s cubic-bezier(.6,0,.25,1); }
+.we-f .we-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+.we-l { clip-path: polygon(0 0, 50% 50%, 0 100%); }
+.we-r { clip-path: polygon(100% 0, 50% 50%, 100% 100%); background: linear-gradient(200deg, #f8f3eb, #eee6d9); }
+.we-t { clip-path: polygon(0 0, 100% 0, 50% 50%); background: linear-gradient(180deg, #fbf8f2, #f3ece1); filter: drop-shadow(0 3px 4px rgba(90,70,40,.18)); }
+.we-b { clip-path: polygon(0 100%, 100% 100%, 50% 50%); background: linear-gradient(0deg, #f7f2ea, #efe7da); }
+.we-x { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; transition: opacity .4s; }
+.we-top { position: absolute; left: 0; right: 0; top: calc(9% + env(safe-area-inset-top, 0px)); text-align: center; z-index: 3; font: 400 12px var(--caps, var(--serif)); letter-spacing: .3em; text-transform: uppercase; color: #9b8667; transition: opacity .4s; }
+.we-sw { position: absolute; left: 50%; top: 50%; width: min(34vw, 140px); transform: translate(-50%, -50%); z-index: 4; transition: transform .7s cubic-bezier(.5,-.4,.4,1), opacity .5s .15s; }
+.we-seal { width: 100%; height: auto; display: block; }
+.wenv .hint { color: #9b8667; z-index: 5; }
+.wenv.s1 .we-sw { transform: translate(-50%, -75%) scale(1.25) rotate(-14deg); opacity: 0; }
+.wenv.s1 .hint, .wenv.s1 .we-top { opacity: 0; animation: none; }
+.wenv.s2 .we-x { opacity: 0; }
+.wenv.s2 .we-t { transform: translateY(-102%); }
+.wenv.s2 .we-b { transform: translateY(102%); }
+.wenv.s2 .we-l { transform: translateX(-102%); }
+.wenv.s2 .we-r { transform: translateX(102%); }
+.wenv.s2 { background: transparent; transition: background .5s .4s; }
+.wenv.s3 { opacity: 0; transition: opacity .5s; }

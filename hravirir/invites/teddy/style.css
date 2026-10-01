@@ -1,0 +1,99 @@
+/* «Արջուկ» — բեժ, կաթնագույն և շագանակագույն, ջրաներկ արջուկներ, վանդակավոր նախշ
+   Տառատեսակներ՝ Coronet (գեղագիր), GHEA Mariam (մեծատառեր և տեքստ), Cinzel (BABY) */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.woff2") format("woff2"); font-display: swap; }
+:root {
+  --bg: #fbf6ef; --bg2: #f3e8da; --card: #fffdf9; --ink: #6b4b33; --soft: #a3866b; --acc: #9b6f4a; --line: rgba(155,111,74,.25);
+  --serif: "GHEA Mariam", Georgia, serif; --script: "Coronet", "Marck", serif; --desk: #efe3d3; --rad: 18px;
+  --gingham: linear-gradient(90deg, rgba(201,168,130,.28) 50%, transparent 50%) 0 0 / 20px 20px, linear-gradient(rgba(201,168,130,.28) 50%, transparent 50%) 0 0 / 20px 20px, #fbf4ea;
+  --k-bg: #fbf6ef; --k-ink: #6b4b33; --k-accent: #9b6f4a; --k-font: "GHEA Mariam", serif;
+}
+.bear { width: 120px; height: auto; display: block; }
+.bunt { position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 46px; }
+.cl { position: absolute; width: 110px; opacity: .95; filter: drop-shadow(0 4px 6px rgba(160,120,80,.12)); }
+.st { position: absolute; width: 14px; }
+.hab { width: 54px; }
+.scr { font: 400 clamp(30px, 9vw, 40px)/1.2 var(--script); color: var(--acc); }
+
+/* ---------- ծրար ---------- */
+.env { background: var(--gingham); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .6s; }
+.env .cl.e1 { left: -20px; top: 16%; } .env .cl.e2 { right: -26px; top: 64%; width: 130px; }
+.env .hab.e { position: absolute; right: 12%; top: 14%; animation: fly 6s ease-in-out infinite; }
+@keyframes fly { 50% { transform: translateY(-12px); } }
+.ebox { position: relative; width: min(80vw, 330px); aspect-ratio: 1.45; perspective: 900px; }
+.efront { position: absolute; inset: 0; border-radius: 6px; background: linear-gradient(160deg, #f1e3cd, #e3cba9); clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%); z-index: 3; box-shadow: 0 24px 34px -22px rgba(110,75,45,.6); }
+.ecard { position: absolute; left: 6%; right: 6%; top: 8%; bottom: 6%; background: #fffdf8; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 4px; z-index: 2; transition: transform 1s cubic-bezier(.3,1.2,.5,1); }
+.ecard b { font: 500 34px var(--cinzel, "Cinzel", serif); color: var(--ink); letter-spacing: .06em; }
+.ecard .bear { width: 70px; }
+.eflap { position: absolute; left: 0; top: 0; width: 100%; height: 62%; z-index: 4; transform-origin: top; transition: transform .8s cubic-bezier(.5,0,.3,1), z-index 0s .4s; filter: drop-shadow(0 3px 3px rgba(110,75,45,.25)); }
+.estk { position: absolute; left: 50%; top: 55%; width: 66px; transform: translate(-50%, -50%); z-index: 5; background: #fffaf2; border-radius: 50%; padding: 6px; box-shadow: 0 4px 10px rgba(110,75,45,.25); transition: transform .5s cubic-bezier(.5,-.4,.4,1), opacity .4s .1s; }
+.estk .bear { width: 100%; }
+.ett { margin-top: 26px; font: 400 clamp(30px, 9vw, 40px) var(--script); color: var(--acc); }
+.env .hint { color: var(--acc); }
+.env.s1 .estk { transform: translate(-50%, -110%) scale(1.3) rotate(-20deg); opacity: 0; }
+.env.s1 .hint { opacity: 0; animation: none; }
+.env.s2 .eflap { transform: rotateX(180deg); z-index: 1; }
+.env.s2 .ecard { transform: translateY(-46%); z-index: 3; }
+.env.s3 { opacity: 0; }
+
+/* ---------- գլխավոր ---------- */
+.hero { min-height: 100svh; padding: 70px 0 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(70% 50% at 50% 45%, #fffdf9, var(--bg)); }
+.hero .cl.c1 { left: -24px; top: 18%; } .hero .cl.c2 { right: -30px; top: 58%; width: 130px; }
+.st.s1 { left: 18%; top: 30%; } .st.s2 { right: 16%; top: 24%; width: 10px; } .st.s3 { left: 12%; top: 66%; width: 11px; }
+.ttl { display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+.ttl b { font: 500 clamp(54px, 17vw, 76px)/1 "Cinzel", serif; color: var(--ink); letter-spacing: .04em; padding-bottom: 14px; }
+.ttl .bear { width: clamp(110px, 34vw, 150px); }
+.sub { margin-top: 6px; font: 400 clamp(32px, 9.6vw, 44px)/1.2 var(--script); color: var(--acc); }
+.lead { max-width: 300px; margin: 12px auto 0; color: var(--ink); }
+.down { margin-top: 26px; font-size: 13px; color: var(--soft); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.down i { width: 30px; height: 30px; border-radius: 50%; background: var(--acc); position: relative; }
+.down i::after { content: ""; position: absolute; left: 10px; top: 12px; width: 8px; height: 8px; border-left: 2px solid #fff; border-top: 2px solid #fff; transform: rotate(45deg); }
+.letter { overflow: hidden; }
+.letter .hab { position: absolute; right: 8%; top: 10px; width: 50px; animation: fly 6s ease-in-out infinite; }
+.letter .cl.c3 { left: -30px; top: 40px; width: 100px; }
+.letter .p { font-style: italic; position: relative; }
+.bear.sm { width: 96px; margin: 18px auto 0; }
+.par .caps { color: var(--acc); }
+.pn { margin-top: 10px; font: 400 clamp(28px, 8.4vw, 36px)/1.25 var(--serif); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+.pn span { display: block; font: 400 .9em var(--script); text-transform: none; color: var(--acc); }
+.par .p { margin-top: 10px; }
+
+/* միջոցառման քարտ */
+.evs { background: var(--gingham); padding: 64px 0; }
+.arch { position: relative; width: min(78vw, 320px); margin: 0 auto; padding: 46px 20px 30px; background: #fffdf8; border-radius: 999px 999px 18px 18px; box-shadow: 0 0 0 6px #fffdf8, 0 0 0 7.5px #cfae86, 0 24px 40px -26px rgba(110,75,45,.6); }
+.arch .peek { position: absolute; right: -26px; top: -30px; width: 90px; transform: rotate(10deg); }
+.arch .wd { margin-top: 10px; font-size: 14px; letter-spacing: .26em; text-transform: uppercase; color: var(--soft); }
+.arch .dd { font: 400 76px/1 var(--serif); color: var(--ink); }
+.arch .mo { font-size: 18px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
+.arch .tm { margin-top: 8px; font-size: 20px; color: var(--acc); }
+.loc { width: min(84vw, 340px); margin: 26px auto 0; padding: 22px 18px; background: #fffdf8; border-radius: 18px; border: 1.5px solid #e7d4ba; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.loc .pin { width: 26px; height: 26px; color: var(--acc); }
+.loc b { font-size: 18px; } .loc span { font-size: 14.5px; color: var(--soft); }
+.btn { border-radius: 999px; border-color: var(--acc); color: var(--acc); }
+.btn.fill { background: var(--acc); color: #fff; }
+.cds .cdn b { color: var(--acc); }
+.two .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ib { background: #fffdf8; border-radius: 18px; padding: 20px 12px; border: 1.5px solid #ecdcc6; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.ib svg { width: 40px; height: 40px; color: var(--acc); }
+.ib b { font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+.ib span { font-size: 14px; color: var(--soft); }
+/* գուշակություն */
+.gs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+.gc { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.gc .bear { width: 100%; max-width: 130px; }
+.gc b { font: 400 22px var(--script); color: var(--ink); }
+.gb { min-height: 42px; padding: 0 18px; border-radius: 999px; border: 1.5px solid; background: #fff; font: 600 14px var(--serif); cursor: pointer; transition: transform .2s; }
+.gb.g { border-color: #e9a6b4; color: #c76f82; } .gb.b { border-color: #9dbddc; color: #5d88b3; }
+.gb.g.on { background: #e9a6b4; color: #fff; transform: scale(1.06); } .gb.b.on { background: #9dbddc; color: #fff; transform: scale(1.06); }
+.gsv { margin-top: 14px; font-size: 14px; color: var(--acc); }
+.rsv .rs { border: 1.5px solid #ecdcc6; box-shadow: none; }
+.fin .scr { margin-top: 10px; }
+.fnm { font: 400 clamp(22px, 6.6vw, 28px) var(--serif); letter-spacing: .1em; text-transform: uppercase; margin-top: 6px; }
+@media (prefers-reduced-motion: reduce) { .hab { animation: none !important; } }
+/* ուղղումներ. սլաքը դեպի ներքև, օդապարիկը տեքստից վերև */
+.down i::after { top: 8px; transform: rotate(225deg); }
+.letter { padding-top: 104px; }
+.letter .hab { top: 22px; }
+.letter .cl.c3 { top: 30px; }

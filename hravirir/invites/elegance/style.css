@@ -1,0 +1,52 @@
+/* «Էլեգանս» — սպիտակ, օվալաձև սև-սպիտակ լուսանկարներ, բարակ սերիֆ մեծատառեր, մոխրագույն գեղագիր շեշտեր
+   Տառատեսակներ՝ Noto Serif Armenian 200 (անուններ, թվեր, վերնագրեր), Coronet (մոխրագույն գեղագիր), GHEA Mariam (տեքստ) */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@200;300;400&display=swap");
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
+:root {
+  --bg: #ffffff; --bg2: #f4f3f1; --card: #fff; --ink: #2b2b2b; --soft: #8a8885; --acc: #2b2b2b; --line: rgba(0,0,0,.14);
+  --serif: "GHEA Mariam", Georgia, serif; --thin: "Noto Serif Armenian", Georgia, serif; --script: "Coronet", "Marck", serif; --seal-font: "Coronet", serif; --desk: #e9e7e3;
+  --k-bg: #ffffff; --k-ink: #2b2b2b; --k-accent: #2b2b2b; --k-font: "GHEA Mariam", serif;
+}
+.scr { font: 400 clamp(26px, 7.6vw, 34px)/1.2 var(--script); color: #a9a7a3; margin-top: 2px; }
+.cap { font: 200 clamp(30px, 9vw, 40px)/1.15 var(--thin); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
+.ov { width: min(86vw, 380px); aspect-ratio: 4 / 4.6; margin: 0 auto; border-radius: 48% 48% 48% 48% / 40% 40% 40% 40%; overflow: hidden; }
+.ov.big { aspect-ratio: 4 / 4.4; border-radius: 26px 26px 50% 50% / 26px 26px 42% 42%; }
+.ov img, .circ img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1); }
+
+/* գլխավոր */
+.hero { padding: 26px 0 56px; }
+.hero .nm { position: relative; margin: 34px 0 10px; font: 200 clamp(54px, 16vw, 78px)/1 var(--thin); letter-spacing: .02em; text-transform: uppercase; color: var(--ink); }
+.hero .nm .n1 { padding-right: 8%; }
+.hero .nm .n2 { padding-left: 14%; }
+.hero .nm .amp { position: absolute; left: 6%; top: 46%; font: 400 1.25em/1 var(--script); color: rgba(150,148,144,.55); text-transform: none; }
+.inv { margin-top: 26px; font-size: 16px; }
+.bigd { display: flex; flex-direction: column; align-items: center; margin-top: 18px; font: 200 clamp(96px, 30vw, 140px)/.92 var(--thin); color: var(--ink); }
+.bigd b { font-weight: 200; }
+.happy .p { margin-top: 12px; }
+.o2 { padding: 10px 0 0; }
+.o2 .ov { aspect-ratio: 4 / 4.8; }
+
+/* հետհաշվարկ */
+.until .sub { margin-top: 10px; font-size: 15px; }
+.tcd { display: flex; justify-content: center; align-items: flex-start; margin-top: 14px; font: 200 clamp(42px, 12.5vw, 58px)/1 var(--thin); color: var(--ink); }
+.tcd span { display: flex; flex-direction: column; align-items: center; min-width: 1.55em; }
+.tcd b { font-weight: 200; font-variant-numeric: tabular-nums; }
+.tcd i { font: 400 10.5px var(--serif); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); margin-top: 6px; }
+.tcd em { font-style: normal; color: #b9b7b3; }
+.tcd .sec b { color: #b9b7b3; }
+.cal-g .cd.on { color: #fff; } .cal-g .cd.on::before { background: var(--ink); }
+
+/* վայրեր */
+.pl { margin-top: 30px; }
+.pl + .pl { padding-top: 34px; border-top: 1px solid var(--line); }
+.circ { width: min(70vw, 300px); aspect-ratio: 1; margin: 0 auto 18px; border-radius: 50%; overflow: hidden; }
+.plt { font: 300 15px var(--thin); letter-spacing: .2em; text-transform: uppercase; }
+.pln { margin-top: 6px; font-size: 15px; }
+.pill { display: inline-flex; align-items: center; min-height: 40px; margin-top: 12px; padding: 0 24px; border-radius: 999px; background: #333; color: #fff; text-decoration: none; font: 400 13px var(--serif); }
+.k-gal-s img { filter: grayscale(1); }
+.btn { border-radius: 999px; }
+.btn.fill { background: #333; border-color: #333; color: #fff; }
+.rsv .rs { border: 1px solid var(--line); box-shadow: none; }
+.fnm { font: 200 clamp(32px, 9.4vw, 42px)/1.2 var(--thin); letter-spacing: .06em; text-transform: uppercase; margin-top: 8px; }
