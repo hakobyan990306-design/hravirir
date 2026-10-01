@@ -7,7 +7,7 @@
       rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Нажмите на конверт", envTop: "Приглашение", inv: "С любовью приглашаем вас на нашу свадьбу", our: "О любви", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the envelope", envTop: "Invitation", inv: "We joyfully invite you to our wedding", our: "About love", program: "The day", dress: "Dress code", left: "Counting down",
+    en: { hint: "Tap the envelope", envTop: "Invitation", inv: "We joyfully invite you to our wedding", our: "About love", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -63,7 +63,7 @@
   }
   function program() {
     return '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e, i) {
-      return '<div class="ev rv"><div class="pic ico">' + dove(i % 2 === 1, i === 3) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }

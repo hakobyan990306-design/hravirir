@@ -7,7 +7,7 @@
       rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Разбейте тарелку на счастье", luck: "На счастье", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наш обычай", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Break the plate for luck", luck: "For luck", inv: "We joyfully invite you to our wedding", our: "Our tradition", program: "The day", dress: "Dress code", left: "Counting down",
+    en: { hint: "Break the plate for luck", luck: "For luck", inv: "We joyfully invite you to our wedding", our: "Our tradition", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -21,14 +21,35 @@
     for (var i = 0; i < 8; i++) s += '<ellipse cx="' + cx + '" cy="' + f(cy - r * .55) + '" rx="' + f(r * .22) + '" ry="' + f(r * .45) + '" transform="rotate(' + i * 45 + " " + cx + " " + cy + ')" fill="' + (i % 2 ? c2 : c1) + '"/>';
     return s + '<circle cx="' + cx + '" cy="' + cy + '" r="' + f(r * .24) + '" fill="' + GD + '"/>';
   }
+  // նուռ (կտրած՝ հատիկներով կամ ամբողջական)
+  function pomegranate(cx, cy, r, cut) {
+    var s = '<g transform="translate(' + cx + " " + cy + ')"><path d="M' + f(-r * .22) + " " + f(-r * .92) + "L" + f(-r * .3) + " " + f(-r * 1.22) + "L" + f(-r * .08) + " " + f(-r * 1.04) + "L0 " + f(-r * 1.28) + "L" + f(r * .08) + " " + f(-r * 1.04) + "L" + f(r * .3) + " " + f(-r * 1.22) + "L" + f(r * .22) + " " + f(-r * .92) + 'Z" fill="#9c2a22"/>' +
+      '<circle r="' + r + '" fill="#b8322a"/><path d="M' + f(-r * .55) + " " + f(-r * .5) + "A" + f(r * .8) + " " + f(r * .8) + " 0 0 1 " + f(r * .2) + " " + f(-r * .8) + '" fill="none" stroke="#e36a5c" stroke-width="' + f(r * .14) + '" stroke-linecap="round" opacity=".7"/>';
+    if (cut) {
+      s += '<circle r="' + f(r * .78) + '" fill="#f6dfc4"/><path d="M0 ' + f(-r * .78) + "V" + f(r * .78) + "M" + f(-r * .78) + " 0H" + f(r * .78) + '" stroke="#f6dfc4" stroke-width="' + f(r * .12) + '"/>';
+      for (var i = 0; i < 26; i++) { var a = i * 2.4, d = r * (.18 + (i % 5) * .12); s += '<ellipse cx="' + f(Math.cos(a) * d) + '" cy="' + f(Math.sin(a) * d) + '" rx="' + f(r * .1) + '" ry="' + f(r * .13) + '" transform="rotate(' + f(a * 57) + " " + f(Math.cos(a) * d) + " " + f(Math.sin(a) * d) + ')" fill="#c8202f" stroke="#7e1018" stroke-width=".4"/>'; }
+    }
+    return s + "</g>";
+  }
+  function star8(cx, cy, r, col) {
+    var a = r * .7;
+    return '<g transform="translate(' + cx + " " + cy + ')" fill="' + col + '"><rect x="' + f(-a) + '" y="' + f(-a) + '" width="' + f(a * 2) + '" height="' + f(a * 2) + '"/><rect x="' + f(-a) + '" y="' + f(-a) + '" width="' + f(a * 2) + '" height="' + f(a * 2) + '" transform="rotate(45)"/></g>';
+  }
+  // ձեռքով նկարված հայկական կերամիկական ափսե՝ կոբալտ եզր, նռներ և աստղեր, մեջտեղում կտրած նուռ
   function plate(txt) {
-    var s = '<svg viewBox="0 0 200 200" aria-hidden="true"><defs><radialGradient id="pg" cx=".45" cy=".4"><stop offset="0" stop-color="#ffffff"/><stop offset=".8" stop-color="#f4efe6"/><stop offset="1" stop-color="#ddd3c3"/></radialGradient></defs>' +
-      '<circle cx="100" cy="100" r="98" fill="url(#pg)"/><circle cx="100" cy="100" r="92" fill="none" stroke="' + BL + '" stroke-width="3"/><circle cx="100" cy="100" r="86" fill="none" stroke="' + BL + '" stroke-width="1" stroke-dasharray="3 4"/>';
-    for (var i = 0; i < 12; i++) { var a = i * Math.PI / 6; s += flower(f(100 + Math.cos(a) * 74), f(100 + Math.sin(a) * 74), 10, i % 2 ? RD : BL, i % 2 ? "#e0685c" : "#5d7fbd"); }
-    s += '<circle cx="100" cy="100" r="58" fill="none" stroke="' + RD + '" stroke-width="1.5"/><circle cx="100" cy="100" r="54" fill="#fbf7ef"/>' + flower(100, 100, 36, BL, RD) +
-      '<circle cx="100" cy="100" r="15" fill="#fbf7ef" stroke="' + GD + '" stroke-width="1.5"/>';
-    if (txt) s += '<text x="100" y="105" text-anchor="middle" font-family="Dzeragir, serif" font-size="13" fill="' + RD + '">' + txt + "</text>";
-    return s + "</svg>";
+    var s = '<svg viewBox="0 0 200 200" aria-hidden="true"><defs><radialGradient id="pg" cx=".42" cy=".36" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".75" stop-color="#f6f1e8"/><stop offset="1" stop-color="#e2d8c6"/></radialGradient>' +
+      '<radialGradient id="pw" cx=".5" cy=".55" r=".55"><stop offset=".7" stop-color="#fbf8f2"/><stop offset="1" stop-color="#ebe3d4"/></radialGradient>' +
+      '<linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>' +
+      '<circle cx="100" cy="102" r="98" fill="rgba(0,0,0,.18)"/><circle cx="100" cy="100" r="98" fill="url(#pg)"/>' +
+      '<circle cx="100" cy="100" r="95" fill="none" stroke="#1f3f7a" stroke-width="4"/><circle cx="100" cy="100" r="90.5" fill="none" stroke="#1f3f7a" stroke-width="1.2"/>';
+    for (var k = 0; k < 36; k++) { var q = k * Math.PI / 18; s += '<path d="M' + f(100 + Math.cos(q - .06) * 90) + " " + f(100 + Math.sin(q - .06) * 90) + "L" + f(100 + Math.cos(q) * 85) + " " + f(100 + Math.sin(q) * 85) + "L" + f(100 + Math.cos(q + .06) * 90) + " " + f(100 + Math.sin(q + .06) * 90) + 'Z" fill="#1f3f7a"/>'; }
+    for (var i = 0; i < 8; i++) {
+      var a = i * Math.PI / 4, x0 = f(100 + Math.cos(a) * 70), y0 = f(100 + Math.sin(a) * 70);
+      s += i % 2 ? star8(x0, y0, 8.5, "#2c5aa0") + '<circle cx="' + x0 + '" cy="' + y0 + '" r="3.2" fill="' + GD + '"/>' : '<g transform="rotate(' + f(a * 57.3 + 90) + " " + x0 + " " + y0 + ')">' + pomegranate(x0, y0, 9) + '<path d="M' + f(x0 - 12) + " " + f(+y0 + 4) + "q-6 -6 -2 -12q6 2 2 12z" + '" fill="#4f7a3a"/><path d="M' + f(+x0 + 12) + " " + f(+y0 + 4) + "q6 -6 2 -12q-6 2 -2 12z" + '" fill="#4f7a3a"/></g>';
+    }
+    s += '<circle cx="100" cy="100" r="52" fill="url(#pw)" stroke="#b8322a" stroke-width="1.4"/><circle cx="100" cy="100" r="48" fill="none" stroke="#1f3f7a" stroke-width=".8" stroke-dasharray="2 3"/>' + pomegranate(100, 106, 26, true);
+    if (txt) s += '<circle cx="100" cy="106" r="11" fill="#fbf8f2" stroke="' + GD + '" stroke-width="1.2"/><text x="100" y="110" text-anchor="middle" font-family="Dzeragir, serif" font-size="10" fill="#9c2a22">' + txt + "</text>";
+    return s + '<path d="M38 52A80 80 0 0 1 120 22" fill="none" stroke="url(#gl)" stroke-width="10" stroke-linecap="round" opacity=".7"/></svg>';
   }
   // ափսեի բեկորներ՝ նույն նկարը տարբեր սեպերով կտրված
   function shards() {
@@ -47,19 +68,28 @@
   // լավաշի հյուսվածք՝ նոսր, պատահական թխված բշտիկներով (մեկ անգամ, որպես --lavash)
   (function lavashTexture() {
     var s0 = 29; function r() { s0 = (s0 * 16807) % 2147483647; return s0 / 2147483647; }
-    var s = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700' preserveAspectRatio='none'><defs><filter id='b' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='1.6'/></filter><filter id='w' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='14'/></filter>" +
-      "<radialGradient id='g' cx='.5' cy='.45' r='.75'><stop offset='0' stop-color='#f6e3bb'/><stop offset='1' stop-color='#e2bf7f'/></radialGradient></defs><rect width='400' height='700' fill='url(#g)'/>";
-    for (var i = 0; i < 14; i++) s += "<ellipse cx='" + f(r() * 400) + "' cy='" + f(r() * 700) + "' rx='" + f(30 + r() * 60) + "' ry='" + f(20 + r() * 40) + "' fill='#fff6df' opacity='.45' filter='url(#w)'/>";
-    for (var j = 0; j < 90; j++) {
-      var rx = 2 + r() * 7, big = r() > .8;
-      s += "<ellipse cx='" + f(r() * 400) + "' cy='" + f(r() * 700) + "' rx='" + f(big ? rx * 1.8 : rx) + "' ry='" + f((big ? rx * 1.8 : rx) * (.6 + r() * .5)) + "' fill='" + (r() > .5 ? "#a8743a" : "#8e5c2a") + "' opacity='" + f(.18 + r() * .3) + "' filter='url(#b)'/>";
+    // բաց կաթնագույն թերթ, մեղմ ծալքեր և անկանոն ոսկեշագանակագույն թխված բշտիկներ (փոքր խմբերով, ոչ կլոր բծեր)
+    var s = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700' preserveAspectRatio='xMidYMid slice'><defs><filter id='b' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='.7'/></filter>" +
+      "<filter id='w' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='18'/></filter>" +
+      "<linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f4e6c8'/><stop offset='.5' stop-color='#efdcb6'/><stop offset='1' stop-color='#ead3a6'/></linearGradient></defs><rect width='400' height='700' fill='url(#g)'/>";
+    // ծալքեր
+    for (var k = 0; k < 5; k++) { var y0 = 60 + k * 140 + r() * 40; s += "<path d='M-20 " + f(y0) + "C120 " + f(y0 - 30 - r() * 30) + " 260 " + f(y0 + 30 + r() * 30) + " 420 " + f(y0 - 10) + "' stroke='#c9a46a' stroke-width='" + f(10 + r() * 14) + "' fill='none' opacity='.16' filter='url(#w)'/>"; }
+    for (var i = 0; i < 10; i++) s += "<ellipse cx='" + f(r() * 400) + "' cy='" + f(r() * 700) + "' rx='" + f(40 + r() * 70) + "' ry='" + f(25 + r() * 40) + "' fill='#fbf2df' opacity='.55' filter='url(#w)'/>";
+    // բշտիկների խմբեր
+    for (var j = 0; j < 34; j++) {
+      var cx = r() * 400, cy = r() * 700, n = 2 + Math.floor(r() * 5);
+      for (var m = 0; m < n; m++) {
+        var rx = 1.5 + r() * 5, px = cx + (r() - .5) * 18, py = cy + (r() - .5) * 12;
+        s += "<path d='M" + f(px - rx) + " " + f(py) + "Q" + f(px - rx * .6) + " " + f(py - rx * (.6 + r() * .6)) + " " + f(px + rx * .3) + " " + f(py - rx * .5) + "Q" + f(px + rx * 1.2) + " " + f(py) + " " + f(px + rx * .4) + " " + f(py + rx * .6) + "Q" + f(px - rx * .5) + " " + f(py + rx * .8) + " " + f(px - rx) + " " + f(py) + "Z' fill='" + (r() > .35 ? "#b98144" : "#7a4a22") + "' opacity='" + f(.35 + r() * .45) + "' filter='url(#b)'/>";
+      }
     }
+    for (var d = 0; d < 120; d++) s += "<circle cx='" + f(r() * 400) + "' cy='" + f(r() * 700) + "' r='" + f(.5 + r() * .9) + "' fill='#6b3f1c' opacity='" + f(.25 + r() * .4) + "'/>";
     s += "</svg>";
     document.documentElement.style.setProperty("--lavash", 'url("data:image/svg+xml,' + encodeURIComponent(s) + '") center / cover no-repeat, #efd7a8');
   })();
   function envelope() {
     var n = K.names();
-    return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="lav"><div class="in"><div class="caps">' + esc(x("luck")) + '</div><div class="nm">' + esc(n[0] || "") + '<span>&amp;</span>' + esc(n[1] || "") + "</div></div></div>" +
+    return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="lav"><div class="sheet"><div class="in"><div class="caps">' + esc(x("luck")) + '</div><div class="nm">' + esc(n[0] || "") + '<span>&amp;</span>' + esc(n[1] || "") + "</div></div></div></div>" +
       '<div class="stage"><div class="whole">' + plate(esc(ini())) + cracks() + "</div>" + shards() + "</div>" + (K.PREVIEW ? "" : '<div class="hint">' + esc(x("hint")) + "</div>") + "</div>";
   }
   function hero() {
@@ -73,7 +103,7 @@
       '<div class="cal rv"><div class="cal-h">' + esc(u("months")[K.date.getMonth()]) + " " + K.date.getFullYear() + '</div><div class="cal-g">' + K.calendarCells() + "</div></div></div></section>";
   }
   function countdown() {
-    return '<section class="lavbg"><div class="wrap"><div class="caps rv">' + esc(x("left")) + '</div><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
+    return '<section class="warm"><div class="wrap"><div class="caps rv">' + esc(x("left")) + '</div><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
       return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>";
     }).join("") + "</div></div></section>";
   }
@@ -81,13 +111,13 @@
     var cols = [[BL, RD], [RD, BL], [BL, GD], [RD, GD]];
     return '<section class="cream"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e, i) {
       var c = cols[i % 4];
-      return '<div class="ev rv"><div class="pic ico"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="28" fill="#fbf7ef" stroke="' + c[0] + '" stroke-width="2"/>' + flower(30, 30, 20, c[0], c[1]) + '</svg></div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }
   function dress() {
     if (!C.dresscode) return "";
-    return '<section class="lavbg"><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
+    return '<section class="warm"><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
       (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div></div></section>";
   }
   function rsvp() {
@@ -100,7 +130,7 @@
       '<button class="btn fill" type="submit">' + esc(u("send")) + "</button></form></div></section>";
   }
   function fin() {
-    return '<section class="fin lavbg"><div class="wrap"><div class="caps rv">' + esc(x("fin")) + '</div><div class="nm rv">' + esc(K.names().join(" & ")) + "</div></div></section>" +
+    return '<section class="fin warm"><div class="wrap"><div class="caps rv">' + esc(x("fin")) + '</div><div class="nm rv">' + esc(K.names().join(" & ")) + "</div></div></section>" +
       '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
   }
 

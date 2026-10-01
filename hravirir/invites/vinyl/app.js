@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք ձայնապնակին", side: "Կողմ Ա", title: "Սիրո մեղեդի", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր երգը", program: "Օրվա երգացանկ", dress: "Դրեսկոդ", left: "Մինչև հարսանիք մնաց",
+    hy: { hint: "Սեղմեք ձայնապնակին", side: "Կողմ Ա", title: "Սիրո մեղեդի", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր երգը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև հարսանիք մնաց",
       now: "Հիմա հնչում է", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
-    ru: { hint: "Нажмите на пластинку", side: "Сторона А", title: "Мелодия любви", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наша песня", program: "Плейлист дня", dress: "Дресс-код", left: "До свадьбы осталось",
+    ru: { hint: "Нажмите на пластинку", side: "Сторона А", title: "Мелодия любви", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наша песня", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
       now: "Сейчас играет", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
-    en: { hint: "Tap the record", side: "Side A", title: "Love melody", inv: "We joyfully invite you to our wedding", our: "Our song", program: "Playlist of the day", dress: "Dress code", left: "Counting down",
+    en: { hint: "Tap the record", side: "Side A", title: "Love melody", inv: "We joyfully invite you to our wedding", our: "Our song", program: "Schedule", dress: "Dress code", left: "Counting down",
       now: "Now playing", rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

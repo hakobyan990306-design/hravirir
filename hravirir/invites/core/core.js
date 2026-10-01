@@ -138,6 +138,20 @@
         })();
       }
     },
+    // Ծրագրի կետի պատկերակը՝ ըստ վայրի տեսակի. տուն / եկեղեցի / սրահ (գույնը՝ currentColor)
+    evIcon: function (e) {
+      function s(v) { if (!v) return ""; if (typeof v === "string") return v; return Object.keys(v).map(function (k) { return v[k]; }).join(" "); }
+      var title = s(e && (e.title || e.text)), place = s(e && (e.place || e.address)), all = title + " " + place;
+      var HOUSE = /տուն|օջախ|дом|home|house/i, CHURCH = /եկեղեց|պսակ|մկրտ|վանք|տաճար|կնունք|венч|церк|храм|крещ|монаст|собор|church|cathedral|baptism|wedding ceremony/i;
+      var HALL = /հանդես|ընթրիք|սեղան|տորթ|խնջույք|ռեստորան|սրահ|банкет|ужин|стол|торт|ресторан|зал|reception|dinner|party|restaurant|hall/i;
+      var kind = HOUSE.test(title) ? "home" : HALL.test(title) ? "hall" : CHURCH.test(all) ? "church" : HOUSE.test(place) ? "home" : "hall";
+      var P = {
+        home: '<path d="M10 30L32 11L54 30"/><path d="M16 25V54H48V25"/><path d="M27 54V40H37V54"/><path d="M40 18V11H46V23"/><rect x="20" y="31" width="7" height="6"/><rect x="37" y="31" width="7" height="6"/>',
+        church: '<path d="M32 4V14M27 8H37"/><path d="M22 28C22 20 26 15 32 14C38 15 42 20 42 28Z"/><path d="M20 28H44V34H20Z"/><path d="M14 54V36L20 34M50 54V36L44 34"/><path d="M14 54H50"/><path d="M20 34V54M44 34V54"/><path d="M28 54V45C28 42 30 40 32 40C34 40 36 42 36 45V54"/><path d="M24 30V32M32 30V32M40 30V32"/>',
+        hall: '<path d="M8 22L32 10L56 22Z"/><path d="M8 22H56"/><path d="M12 26V50M22 26V50M42 26V50M52 26V50"/><path d="M28 50V38C28 35 30 33 32 33C34 33 36 35 36 38V50"/><path d="M6 54H58M9 50H55"/><circle cx="32" cy="18" r="2"/>'
+      };
+      return '<svg class="evi evi-' + kind + '" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + P[kind] + "</svg>";
+    },
     // Լողացող կոճակներ (լեզու, երաժշտություն) և «Օրինակ» կոճակ
     chrome: function () {
       var h = "";

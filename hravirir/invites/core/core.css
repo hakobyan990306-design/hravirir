@@ -35,3 +35,6 @@ html.preview { scrollbar-width: none; } html.preview::-webkit-scrollbar { displa
 /* թեմատիկ զարդ՝ ծրագրի/վայրի կետերի վերևում (երբ լուսանկար չկա) */
 .pic.ico, .ico { width: 92px !important; max-width: 92px; margin: 0 auto 8px !important; }
 .pic.ico svg, .ico svg { width: 100%; height: auto; display: block; overflow: visible; }
+/* ծրագրի կետի պատկերակ (տուն / եկեղեցի / սրահ)՝ K.evIcon */
+.evi { display: block; width: 64px !important; height: 64px; margin: 0 auto; color: var(--k-accent, #333); }
+.pic.ico:has(.evi), .ico:has(.evi) { width: 70px !important; max-width: 70px; }

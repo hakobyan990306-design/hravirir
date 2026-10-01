@@ -5,13 +5,13 @@
 
   var TXT = {
     hy: { together: "Մեր ընտանիքների հետ միասին", and: "և", request: "սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", at: "Ժամը", hint: "Սեղմեք կնիքին",
-      the: "Մեր", program: "Ծրագիրը", details: "Մանրամասներ", please: "Խնդրում ենք", by: "Մինչև", thx: "Շնորհակալություն",
+      the: "Մեր", program: "Օրվա ծրագիր", details: "Մանրամասներ", please: "Խնդրում ենք", by: "Մինչև", thx: "Շնորհակալություն",
       dear: "Հարգելի՛", attend: "Ձեր պատասխանը", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"], dress: "Դրեսկոդ" },
     ru: { together: "Вместе с нашими семьями", and: "и", request: "приглашаем вас на нашу свадьбу", at: "В", hint: "Нажмите на печать",
-      the: "The", program: "Программа", details: "Детали", please: "please", by: "До", thx: "спасибо",
+      the: "The", program: "Программа дня", details: "Детали", please: "please", by: "До", thx: "спасибо",
       dear: "Дорогие", attend: "Ваш ответ", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"], dress: "Дресс-код" },
     en: { together: "Together with their families", and: "and", request: "request the pleasure of your company", at: "At", hint: "Tap the seal",
-      the: "The", program: "Program", details: "Details", please: "please", by: "By", thx: "thank you",
+      the: "The", program: "Schedule", details: "Details", please: "please", by: "By", thx: "thank you",
       dear: "Dear", attend: "Your reply", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], dress: "Dress code" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

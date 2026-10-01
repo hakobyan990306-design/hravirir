@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք օդապարիկին", top: "Հրավեր ծննդյան", sub: "Ինձ արդեն", years: "տարեկան է", plan: "Ինչ է լինելու", where: "Որտեղ", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
+    hy: { hint: "Սեղմեք օդապարիկին", top: "Ծննդյան հրավեր", sub: "Ես արդեն", years: "տարեկան եմ", plan: "Օրվա ծրագիր", where: "Որտեղ", dress: "Դրեսկոդ", left: "Ծնունդին մնացել է",
       rsvp: "Կգա՞ս", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սպասում եմ քեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Нажмите на шар", top: "Приглашение на день рождения", sub: "Мне уже", years: "", plan: "Что будет", where: "Где", dress: "Дресс-код", left: "До праздника",
+    ru: { hint: "Нажмите на шар", top: "Приглашение на день рождения", sub: "Мне уже", years: "", plan: "Программа дня", where: "Где", dress: "Дресс-код", left: "До праздника",
       rsvp: "Придёшь?", rsvpLead: "Пожалуйста, ответьте до", fin: "Жду тебя", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the balloon", top: "Birthday invitation", sub: "I'm turning", years: "", plan: "What's planned", where: "Where", dress: "Dress code", left: "Party starts in",
+    en: { hint: "Tap the balloon", top: "Birthday invitation", sub: "I'm turning", years: "", plan: "Schedule", where: "Where", dress: "Dress code", left: "Party starts in",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "See you there", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -60,7 +60,7 @@
     if (C.activities) s += '<section class="sky" style="background:linear-gradient(180deg,#eef4f9,#fdf1ec)"><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="acts">' + C.activities.map(function (a, i) {
       return '<div class="act rv"><div class="em" style="background:' + COLS[i % COLS.length] + '">' + esc(a.time) + "</div><b>" + esc(t(a.text)) + "</b></div>"; }).join("") + "</div></div></section>";
     var v = C.venue;
-    if (v) s += '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + balloon("", ["#f0a88e", "#fff"]) + "</div>") +
+    if (v) s += '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v) + "</div>") +
       '<div class="n">' + esc(t(v.place)) + '</div><div class="a">' + esc(t(v.address)) + "</div>" + (v.map ? '<a class="btn" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>" +
       (C.dresscode ? '<h2 class="h2 rv" style="margin-top:48px">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
         (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</div></section>";

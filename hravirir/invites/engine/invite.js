@@ -54,7 +54,7 @@
     en: {
       tap: "Tap the seal", dear: "Dear", scroll: "scroll",
       save: "Save the date", left: "Counting down", days: "days", hours: "hours", minutes: "min", seconds: "sec",
-      program: "The day", map: "Directions", dress: "Dress code", gallery: "Our moments", swipe: "swipe",
+      program: "Schedule", map: "Directions", dress: "Dress code", gallery: "Our moments", swipe: "swipe",
       rsvp: "Will you join us?", rsvpLead: "Kindly reply by",
       name: "Full name", yes: "Joyfully accept", no: "Regretfully decline", guests: "Number of guests",
       side: "Guest of", note: "Your wishes", send: "Send", thanks: "Thank you",

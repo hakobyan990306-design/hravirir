@@ -7,7 +7,7 @@
       rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով՝", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Нажмите на ворота", top: "Приглашение на свадьбу", inv: "С любовью приглашаем вас на нашу свадьбу", dear: "Дорогие родные", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
       rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью,", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the gate", top: "Wedding invitation", inv: "With love we invite you to our wedding", dear: "Dear family", program: "The day", dress: "Dress code", left: "Counting down",
+    en: { hint: "Tap the gate", top: "Wedding invitation", inv: "With love we invite you to our wedding", dear: "Dear family", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "Will you join us?", rsvpLead: "Kindly reply by", fin: "With love,", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

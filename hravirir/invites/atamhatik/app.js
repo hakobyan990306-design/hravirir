@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Ընտրեք մի առարկա ափսեից", top: "Ատամհատիկ", q: "Ի՞նչ կընտրի", will: "կդառնա", age: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մեր փոքրիկը", program: "Տոնի ծրագիր",
+    hy: { hint: "Ընտրեք մի առարկա ափսեից", top: "Ատամհատիկ", q: "Ի՞նչ կընտրի", will: "կդառնա", age: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մեր փոքրիկը", program: "Օրվա ծրագիր",
       game: "Ի՞նչ կընտրի ափսեից", left: "Մինչև տոնը մնաց", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", yours: "Ձեր գուշակությունը" },
-    ru: { hint: "Выберите предмет с подноса", top: "Атамгатик", q: "Что выберет", will: "станет", age: "годик", inv: "С любовью приглашаем вас", our: "Наш малыш", program: "Программа праздника",
+    ru: { hint: "Выберите предмет с подноса", top: "Атамгатик", q: "Что выберет", will: "станет", age: "годик", inv: "С любовью приглашаем вас", our: "Наш малыш", program: "Программа дня",
       game: "Что выберет с подноса?", left: "До праздника осталось", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", yours: "Ваше предсказание" },
-    en: { hint: "Pick an item from the tray", top: "First tooth", q: "What will", will: "will become", age: "year old", inv: "You are invited", our: "Our little one", program: "The party",
+    en: { hint: "Pick an item from the tray", top: "First tooth", q: "What will", will: "will become", age: "year old", inv: "You are invited", our: "Our little one", program: "Schedule",
       game: "What will be picked?", left: "Counting down", rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "See you there", yours: "Your guess" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -70,7 +70,7 @@
   }
   function program() {
     return '<section class="peach"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e, i) {
-      return '<div class="ev rv"><div class="pic ico">' + (i % 2 ? cake() : tooth()) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }

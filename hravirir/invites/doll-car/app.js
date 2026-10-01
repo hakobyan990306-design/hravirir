@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք մեքենային", top: "Շարասյունը պատրաստ է", beep: "Բի՜պ-բի՜պ", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Ճանապարհ դեպի նոր կյանք", program: "Շարասյան երթուղին",
+    hy: { hint: "Սեղմեք մեքենային", top: "Շարասյունը պատրաստ է", beep: "Բի՜պ-բի՜պ", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Ճանապարհ դեպի նոր կյանք", program: "Օրվա ծրագիր",
       dress: "Դրեսկոդ", left: "Մինչև հարսանիք մնաց", rsvp: "Կմիանա՞ք շարասյանը", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Нажмите на машину", top: "Кортеж готов", beep: "Би-бип!", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Дорога в новую жизнь", program: "Маршрут кортежа",
+    ru: { hint: "Нажмите на машину", top: "Кортеж готов", beep: "Би-бип!", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Дорога в новую жизнь", program: "Программа дня",
       dress: "Дресс-код", left: "До свадьбы осталось", rsvp: "Присоединитесь к кортежу?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the car", top: "The convoy is ready", beep: "Beep beep!", inv: "We joyfully invite you to our wedding", our: "The road to a new life", program: "Convoy route",
+    en: { hint: "Tap the car", top: "The convoy is ready", beep: "Beep beep!", inv: "We joyfully invite you to our wedding", our: "The road to a new life", program: "Schedule",
       dress: "Dress code", left: "Counting down", rsvp: "Will you join the convoy?", rsvpLead: "Kindly reply by", fin: "With love", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

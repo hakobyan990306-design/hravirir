@@ -7,7 +7,7 @@
       rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", wish: "Ցանկություն պահեք" },
     ru: { hint: "Нажмите на луну", top: "Так решили звёзды", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наша звёздная история", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", wish: "Загадайте желание" },
-    en: { hint: "Tap the moon", top: "Written in the stars", inv: "We joyfully invite you to our wedding", our: "Our starry story", program: "The day", dress: "Dress code", left: "Counting down",
+    en: { hint: "Tap the moon", top: "Written in the stars", inv: "We joyfully invite you to our wedding", our: "Our starry story", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", wish: "Make a wish" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -57,7 +57,7 @@
   }
   function program() {
     return '<section class="deep">' + stars(40, 23) + '<div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + '</h2><div class="line">' + (C.events || []).map(function (e, i) {
-      return '<div class="ev rv"><div class="pic ico">' + moon(Math.min(i, 3)) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></div></section>";
   }

@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք ժամացույցին", top: "Հոբելյան", years: "տարի", inv: "Սիրով հրավիրում եմ Ձեզ իմ հոբելյանին", our: "Ժամանակի մասին", program: "Երեկոյի ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
+    hy: { hint: "Սեղմեք ժամացույցին", top: "Հոբելյան", years: "տարի", inv: "Սիրով հրավիրում եմ Ձեզ իմ հոբելյանին", our: "Ժամանակի մասին", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
       rsvp: "Կմիանա՞ք", rsvpLead: "Խնդրում եմ պատասխանել մինչև", fin: "Սիրով սպասում եմ Ձեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Нажмите на часы", top: "Юбилей", years: "лет", inv: "С радостью приглашаю вас на мой юбилей", our: "О времени", program: "Программа вечера", dress: "Дресс-код", left: "До праздника осталось",
+    ru: { hint: "Нажмите на часы", top: "Юбилей", years: "лет", inv: "С радостью приглашаю вас на мой юбилей", our: "О времени", program: "Программа дня", dress: "Дресс-код", left: "До праздника осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С радостью жду вас", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the watch", top: "Anniversary", years: "years", inv: "You are invited to my anniversary", our: "About time", program: "The evening", dress: "Dress code", left: "Counting down",
+    en: { hint: "Tap the watch", top: "Anniversary", years: "years", inv: "You are invited to my anniversary", our: "About time", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "Looking forward to seeing you", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -65,7 +65,7 @@
   }
   function program() {
     return '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e) {
-      return '<div class="ev rv"><div class="pic ico">' + dial(e.time, false) + '</div><div class="info"><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="info"><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div></div>";
     }).join("") + "</div></section>";
   }

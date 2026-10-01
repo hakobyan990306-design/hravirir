@@ -8,7 +8,7 @@
       rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով՝", to: "Ում", pm: "ԵՐԵՎԱՆ", all: "Մեր սիրելի հյուրերին" },
     ru: { hint: "Нажмите на конверт", inv: "Приглашение на свадьбу", lead: "С любовью приглашаем вас на нашу свадьбу", story: "Дорогие гости", plan: "Программа дня", dress: "Дресс-код", left: "Осталось",
       rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью,", to: "Кому", pm: "ЕРЕВАН", all: "Нашим дорогим гостям" },
-    en: { hint: "Tap the envelope", inv: "Wedding invitation", lead: "With love we invite you to our wedding", story: "Dear guests", plan: "The day", dress: "Dress code", left: "Time left",
+    en: { hint: "Tap the envelope", inv: "Wedding invitation", lead: "With love we invite you to our wedding", story: "Dear guests", plan: "Schedule", dress: "Dress code", left: "Time left",
       rsvp: "Will you join us?", rsvpLead: "Kindly reply by", fin: "With love,", to: "To", pm: "YEREVAN", all: "Our dear guests" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -69,7 +69,7 @@
       '<section style="padding:44px 0"><div class="wrap"><div class="caps rv">' + esc(x("left")) + '</div><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
         return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>" +
       '<section class="grey"><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + "</h2>" + (C.events || []).map(function (e) {
-        return '<div class="ev rv">' + (e.img ? '<div class="pic"><img alt="" data-wc="' + esc(e.img) + '"></div>' : '<div class="pic ico">' + seal() + "</div>") + '<div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+        return '<div class="ev rv">' + (e.img ? '<div class="pic"><img alt="" data-wc="' + esc(e.img) + '"></div>' : '<div class="pic ico">' + K.evIcon(e) + "</div>") + '<div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
           '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
       }).join("") + (C.dresscode ? '<h2 class="h2 rv" style="margin-top:56px">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
         (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</div></section>";

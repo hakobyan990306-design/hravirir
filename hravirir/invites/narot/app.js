@@ -10,7 +10,7 @@
       inv: "С любовью приглашаем вас на крестины нашего сына", our: "Смысл нарота", gp: "Крёстные", program: "Программа дня", left: "До крестин осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
     en: { top: "Holy baptism", q: "Who are the godparents?", hint: "Tap to braid the narot", gf: "Godfather", gm: "Godmother", go: "Open the invitation",
-      inv: "You are invited to our son's baptism", our: "The meaning of the narot", gp: "Godparents", program: "The day", left: "Counting down",
+      inv: "You are invited to our son's baptism", our: "The meaning of the narot", gp: "Godparents", program: "Schedule", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

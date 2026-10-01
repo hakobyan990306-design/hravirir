@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք հրթիռին", top: "Հրավեր ծննդյան", sub: "Ինձ արդեն", years: "տարեկան է", plan: "Թռիչքի պլան", where: "Վայրէջքի վայրը", dress: "Տիեզերական դրեսկոդ", left: "Մինչև մեկնարկ",
+    hy: { hint: "Սեղմեք հրթիռին", top: "Ծննդյան հրավեր", sub: "Ես արդեն", years: "տարեկան եմ", plan: "Օրվա ծրագիր", where: "Վայրէջքի վայրը", dress: "Տիեզերական դրեսկոդ", left: "Մինչև մեկնարկ",
       rsvp: "Կթռչե՞ս ինձ հետ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սպասում եմ քեզ", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { hint: "Нажмите на ракету", top: "Приглашение на день рождения", sub: "Мне уже", years: "", plan: "План полёта", where: "Место посадки", dress: "Космический дресс-код", left: "До старта",
+    ru: { hint: "Нажмите на ракету", top: "Приглашение на день рождения", sub: "Мне уже", years: "", plan: "Программа дня", where: "Место посадки", dress: "Космический дресс-код", left: "До старта",
       rsvp: "Полетишь со мной?", rsvpLead: "Пожалуйста, ответьте до", fin: "Жду тебя", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { hint: "Tap the rocket", top: "Birthday invitation", sub: "I'm turning", years: "", plan: "Flight plan", where: "Landing site", dress: "Space dress code", left: "Launch in",
+    en: { hint: "Tap the rocket", top: "Birthday invitation", sub: "I'm turning", years: "", plan: "Schedule", where: "Landing site", dress: "Space dress code", left: "Launch in",
       rsvp: "Will you fly with me?", rsvpLead: "Kindly reply by", fin: "See you there", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -49,7 +49,7 @@
     var v = C.venue, s = '<section class="band">' + stars(20) + '<div class="wrap" style="position:relative"><h2 class="h2 rv">' + esc(t(C.greeting)) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p></div></section>";
     if (C.activities) s += '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="acts">' + C.activities.map(function (a) {
       return '<div class="act rv"><b>' + esc(a.time) + "</b><span>" + esc(t(a.text)) + "</span></div>"; }).join("") + "</div></div></section>";
-    if (v) s += '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + rocket() + "</div>") +
+    if (v) s += '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("where")) + '</h2><div class="place rv">' + (v.img ? '<img alt="" data-wc="' + esc(v.img) + '">' : '<div class="ico">' + K.evIcon(v) + "</div>") +
       '<div class="n">' + esc(t(v.place)) + '</div><div class="a">' + esc(t(v.address)) + "</div>" + (v.map ? '<a class="btn" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>" +
       (C.dresscode ? '<h2 class="h2 rv" style="margin-top:48px">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
         (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</div></section>";

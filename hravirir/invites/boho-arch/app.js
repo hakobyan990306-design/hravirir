@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք կամարին", top: "Հրավեր նշանդրեքի", story: "Մեր պատմությունը", plan: "Երեկոյի ծրագիր", dress: "Դրեսկոդ", left: "Մնաց",
+    hy: { hint: "Սեղմեք կամարին", top: "Հրավեր նշանդրեքի", story: "Մեր պատմությունը", plan: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մնաց",
       rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
-    ru: { hint: "Нажмите на арку", top: "Приглашение на помолвку", story: "Наша история", plan: "Программа вечера", dress: "Дресс-код", left: "Осталось",
+    ru: { hint: "Нажмите на арку", top: "Приглашение на помолвку", story: "Наша история", plan: "Программа дня", dress: "Дресс-код", left: "Осталось",
       rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
-    en: { hint: "Tap the arch", top: "Engagement invitation", story: "Our story", plan: "The evening", dress: "Dress code", left: "Time left",
+    en: { hint: "Tap the arch", top: "Engagement invitation", story: "Our story", plan: "Schedule", dress: "Dress code", left: "Time left",
       rsvp: "Will you join us?", rsvpLead: "Kindly reply by", fin: "With love" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -51,7 +51,7 @@
       '<section style="padding:44px 0 10px"><div class="wrap"><div class="caps rv">' + esc(x("left")) + '</div><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
         return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>" +
       '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + "</h2>" + (C.events || []).map(function (e) {
-        return '<div class="ev rv">' + (e.img ? '<div class="pic"><img alt="" data-wc="' + esc(e.img) + '"></div>' : '<div class="pic ico">' + pampas() + "</div>") + '<div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+        return '<div class="ev rv">' + (e.img ? '<div class="pic"><img alt="" data-wc="' + esc(e.img) + '"></div>' : '<div class="pic ico">' + K.evIcon(e) + "</div>") + '<div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
           '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
       }).join("") + "</div></section>";
     if (C.dresscode) s += '<section class="sandbg"><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +

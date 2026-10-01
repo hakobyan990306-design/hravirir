@@ -60,7 +60,7 @@ html.preview .env .bal, html.preview .env .mini, html.preview .env .hint { anima
 .acts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px; }
 .act { background: #fff; border-radius: 24px; padding: 18px 10px 14px; box-shadow: 0 12px 24px -18px rgba(90,80,110,.55); }
 .act .em { width: 46px; height: 46px; border-radius: 50%; margin: 0 auto 8px; display: grid; place-items: center; font-size: 13px; color: #fff; }
-.act b { display: block; font-weight: 400; font-size: 22px; line-height: 1.2; }
+.act b { display: block; font-weight: 400; font-size: clamp(15px, 4.6vw, 20px); line-height: 1.25; overflow-wrap: anywhere; text-wrap: balance; }
 .act span { font-size: 14px; color: var(--soft); }
 .place { background: #fff; border-radius: 28px; padding: 20px 18px 24px; box-shadow: 0 14px 28px -20px rgba(90,80,110,.55); }
 .place img { width: 100%; display: block; opacity: 0; transition: opacity 1.4s; } .place img.wc-on { opacity: 1; }

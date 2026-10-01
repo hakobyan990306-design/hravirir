@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { invite: "Հրավեր նշանդրեքի", hint: "Բացեք տուփը", lead: "Մենք որոշել ենք միասին լինել ամբողջ կյանքում և ուզում ենք այդ օրը կիսել Ձեզ հետ", plan: "Երեկոյի ծրագիր", dress: "Դրեսկոդ", left: "Մնաց", rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", ours: "Մեր պատմությունը",
+    hy: { invite: "Հրավեր նշանդրեքի", hint: "Բացեք տուփը", lead: "Մենք որոշել ենք միասին լինել ամբողջ կյանքում և ուզում ենք այդ օրը կիսել Ձեզ հետ", plan: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մնաց", rsvp: "Կմիանա՞ք մեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", ours: "Մեր պատմությունը",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
-    ru: { invite: "Приглашение на помолвку", hint: "Откройте шкатулку", lead: "Мы решили быть вместе всю жизнь и хотим разделить этот день с вами", plan: "Программа вечера", dress: "Дресс-код", left: "Осталось", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", ours: "Наша история",
+    ru: { invite: "Приглашение на помолвку", hint: "Откройте шкатулку", lead: "Мы решили быть вместе всю жизнь и хотим разделить этот день с вами", plan: "Программа дня", dress: "Дресс-код", left: "Осталось", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, ответьте до", ours: "Наша история",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
-    en: { invite: "Engagement invitation", hint: "Open the box", lead: "We decided to spend our lives together and would love to share this day with you", plan: "Evening plan", dress: "Dress code", left: "Time left", rsvp: "Will you join us?", rsvpLead: "Kindly reply by", ours: "Our story",
+    en: { invite: "Engagement invitation", hint: "Open the box", lead: "We decided to spend our lives together and would love to share this day with you", plan: "Schedule", dress: "Dress code", left: "Time left", rsvp: "Will you join us?", rsvpLead: "Kindly reply by", ours: "Our story",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

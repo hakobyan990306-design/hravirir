@@ -11,7 +11,7 @@
       program: "Программа дня", dress: "Дресс-код", left: "Мы скажем «да»", leftSub: "через", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, подтвердите своё присутствие до",
       attend: "Ваше присутствие на торжестве", waiting: "С любовью ждём вас" },
     en: { invited: "You are invited", wedding: "to our wedding", tap: "TAP", scroll: "scroll", announce: "We are delighted to share our happy news — we are getting married",
-      program: "The day", dress: "Dress code", left: "We say “yes”", leftSub: "in", rsvp: "Will you join us?", rsvpLead: "Kindly confirm your attendance by",
+      program: "Schedule", dress: "Dress code", left: "We say “yes”", leftSub: "in", rsvp: "Will you join us?", rsvpLead: "Kindly confirm your attendance by",
       attend: "Will you attend?", waiting: "We look forward to seeing you" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

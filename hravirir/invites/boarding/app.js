@@ -4,13 +4,13 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
     hy: { hint: "Սեղմեք տոմսին", bp: "Ավիատոմս", air: "Սիրո ավիաուղիներ", from: "Մեկնում", to: "Ժամանում", fromV: "ՆՇԱՆԱԾ", toV: "ԱՄՈՒՍՆԱՑԱԾ", pax: "Ուղևորներ", date: "Ամսաթիվ", board: "Նստեցում",
-      flight: "Չվերթ", seat: "Տեղ", gate: "Դարպաս", stamp: "Նստեցված", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր ճանապարհը", program: "Չվերթների ցուցատախտակ", left: "Մինչև թռիչքը մնաց",
+      flight: "Չվերթ", seat: "Տեղ", gate: "Դարպաս", stamp: "Նստեցված", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին", our: "Մեր ճանապարհը", program: "Օրվա ծրագիր", left: "Մինչև թռիչքը մնաց",
       dress: "Դրեսկոդ", rsvp: "Ամրագրեք Ձեր տեղը", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Բարի թռիչք և սիրով սպասում ենք Ձեզ", st: "Ժամանակին" },
     ru: { hint: "Нажмите на билет", bp: "Посадочный талон", air: "Авиалинии любви", from: "Вылет", to: "Прилёт", fromV: "ПОМОЛВЛЕНЫ", toV: "ЖЕНАТЫ", pax: "Пассажиры", date: "Дата", board: "Посадка",
-      flight: "Рейс", seat: "Место", gate: "Выход", stamp: "Посадка завершена", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наш путь", program: "Табло вылетов", left: "До вылета осталось",
+      flight: "Рейс", seat: "Место", gate: "Выход", stamp: "Посадка завершена", inv: "С любовью приглашаем вас на нашу свадьбу", our: "Наш путь", program: "Программа дня", left: "До вылета осталось",
       dress: "Дресс-код", rsvp: "Забронируйте место", rsvpLead: "Пожалуйста, ответьте до", fin: "Приятного полёта — ждём вас с любовью", st: "По расписанию" },
     en: { hint: "Tap the ticket", bp: "Boarding pass", air: "Love Airlines", from: "From", to: "To", fromV: "ENGAGED", toV: "MARRIED", pax: "Passengers", date: "Date", board: "Boarding",
-      flight: "Flight", seat: "Seat", gate: "Gate", stamp: "Boarded", inv: "We joyfully invite you to our wedding", our: "Our journey", program: "Departures", left: "Departure in",
+      flight: "Flight", seat: "Seat", gate: "Gate", stamp: "Boarded", inv: "We joyfully invite you to our wedding", our: "Our journey", program: "Schedule", left: "Departure in",
       dress: "Dress code", rsvp: "Reserve your seat", rsvpLead: "Kindly reply by", fin: "Have a nice flight — see you there", st: "On time" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

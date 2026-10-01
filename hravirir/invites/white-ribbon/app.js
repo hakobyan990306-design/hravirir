@@ -4,10 +4,10 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, A = window.WRArt;
   var TXT = {
     hy: { hint: "Քանդեք ժապավենը", envTop: "Հրավեր կնունքի", holy: "Սուրբ Մկրտություն", lead: { boy: "Սիրով հրավիրում ենք Ձեզ մեր որդու կնունքին", girl: "Սիրով հրավիրում ենք Ձեզ մեր դստեր կնունքին" },
-      program: "Ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ",
+      program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց", rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ",
       godp: "Կնքահայր և կնքամայր", wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { hint: "Развяжите ленту", envTop: "Приглашение на крестины", holy: "Святое Крещение", lead: { boy: "С любовью приглашаем вас на крестины нашего сына", girl: "С любовью приглашаем вас на крестины нашей дочери" },
-      program: "Программа", dress: "Дресс-код", left: "До праздника", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас",
+      program: "Программа дня", dress: "Дресс-код", left: "До праздника", rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас",
       godp: "Крёстные", wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Untie the ribbon", envTop: "Baptism invitation", holy: "Holy Baptism", lead: { boy: "With love we invite you to our son's baptism", girl: "With love we invite you to our daughter's baptism" },
       program: "Schedule", dress: "Dress code", left: "Counting down", rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love",
@@ -54,7 +54,7 @@
   }
   function program() {
     return '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e) {
-      return '<div class="ev rv">' + (e.img ? '<div class="pic"><img alt="" data-wc="' + esc(e.img) + '"></div>' : '<div class="pic ico">' + A.bow() + "</div>") + '<div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv">' + (e.img ? '<div class="pic"><img alt="" data-wc="' + esc(e.img) + '"></div>' : '<div class="pic ico">' + K.evIcon(e) + "</div>") + '<div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>" +
       (C.dresscode ? '<section class="soft"><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +

@@ -7,7 +7,7 @@
       rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ", verse: "«Դուք եք աշխարհի լույսը»", ref: "Մատթ. 5:14" },
     ru: { hint: "Нажмите, чтобы зажечь свечу", top: "Святое крещение", inv: "С любовью приглашаем вас на крестины нашего сына", our: "День света", program: "Программа дня", left: "До крестин осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас", verse: "«Вы — свет мира»", ref: "Мф. 5:14" },
-    en: { hint: "Tap to light the candle", top: "Holy baptism", inv: "You are invited to our son's baptism", our: "A day of light", program: "The day", left: "Counting down",
+    en: { hint: "Tap to light the candle", top: "Holy baptism", inv: "You are invited to our son's baptism", our: "A day of light", program: "Schedule", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "With love", verse: "“You are the light of the world”", ref: "Matt. 5:14" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -42,7 +42,7 @@
   }
   function program() {
     return '<section class="warm"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e, i) {
-      return '<div class="ev rv"><div class="pic ico">' + (i % 2 ? '<div class="mini">' + candle(true) + "</div>" : cross()) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }

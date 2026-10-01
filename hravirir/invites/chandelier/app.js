@@ -10,7 +10,7 @@
       program: "Программа дня", dress: "Дресс-код", rsvp: "Вы с нами?", rsvpLead: "Пожалуйста, подтвердите участие до", note: "Пожелание или комментарий", love: "С любовью,",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { hint: "Tap the key", invite: "Wedding invitation", dear: "Dear family and friends", lead: "With love we invite you", left: "Counting down",
-      program: "The day", dress: "Dress code", rsvp: "Will you join us?", rsvpLead: "Kindly reply by", note: "Wishes or notes", love: "With love,",
+      program: "Schedule", dress: "Dress code", rsvp: "Will you join us?", rsvpLead: "Kindly reply by", note: "Wishes or notes", love: "With love,",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }

@@ -3,11 +3,11 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { hint: "Սեղմեք դղյակին", top: "Հեքիաթային տոն", years: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մի անգամ լինում է…", program: "Տոնի ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
+    hy: { hint: "Սեղմեք դղյակին", top: "Հեքիաթային տոն", years: "տարեկան", inv: "Սիրով հրավիրում ենք Ձեզ", our: "Մի անգամ լինում է…", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Մինչև տոնը մնաց",
       rsvp: "Կգա՞ք", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ" },
-    ru: { hint: "Нажмите на замок", top: "Сказочный праздник", years: "лет", inv: "С любовью приглашаем вас", our: "Жила-была…", program: "Программа праздника", dress: "Дресс-код", left: "До праздника осталось",
+    ru: { hint: "Нажмите на замок", top: "Сказочный праздник", years: "лет", inv: "С любовью приглашаем вас", our: "Жила-была…", program: "Программа дня", dress: "Дресс-код", left: "До праздника осталось",
       rsvp: "Вы придёте?", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас" },
-    en: { hint: "Tap the castle", top: "A fairytale party", years: "years old", inv: "You are invited", our: "Once upon a time…", program: "The party", dress: "Dress code", left: "Counting down",
+    en: { hint: "Tap the castle", top: "A fairytale party", years: "years old", inv: "You are invited", our: "Once upon a time…", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "Will you come?", rsvpLead: "Kindly reply by", fin: "See you there" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -77,7 +77,7 @@
   }
   function program() {
     return '<section class="lil"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e, i) {
-      return '<div class="ev rv"><div class="pic ico">' + (i % 2 ? cake() : wand()) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
+      return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e) + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }
