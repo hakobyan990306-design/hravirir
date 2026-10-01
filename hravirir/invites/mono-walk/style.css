@@ -1,0 +1,58 @@
+/* «Մոնոխրոմ քայլ» — սև-սպիտակ ֆիքսված լուսանկար, սպիտակ բարակ մեծատառեր, կինոկադրի բացում
+   Տառատեսակներ՝ Noto Sans Armenian 200/300 (անուններ և տեքստ), ArmAllegro (վերնագրեր) */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400&display=swap");
+@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+:root {
+  --bg: #111; --bg2: #000; --card: rgba(255,255,255,.08); --ink: #fafafa; --soft: rgba(250,250,250,.7); --acc: #ffffff; --line: rgba(255,255,255,.3);
+  --serif: "Noto Sans Armenian", "Helvetica Neue", sans-serif; --script: "Allegro", "Marck", serif; --desk: #000;
+  --shadow: none; --rad: 2px;
+  --k-bg: #161616; --k-ink: #fafafa; --k-accent: #ffffff; --k-font: "Noto Sans Armenian", sans-serif;
+}
+body { font-weight: 300; }
+main { background: transparent; }
+.bgfix { position: fixed; top: 0; bottom: 0; left: 50%; width: min(100%, 480px); transform: translateX(-50%); background: #333 center / cover no-repeat; filter: grayscale(1) contrast(1.05); z-index: 0; }
+.bgfix::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.5) 40%, rgba(0,0,0,.72)); }
+main > section, main > .made { position: relative; z-index: 1; }
+.caps { color: var(--soft); font-weight: 400; }
+
+/* ---------- կինոկադր ---------- */
+.env { background: transparent; }
+.bar { position: absolute; left: 0; right: 0; height: 50.5%; background: #000; transition: transform 1.2s cubic-bezier(.7,0,.2,1); z-index: 1; }
+.bar.t { top: 0; } .bar.b { bottom: 0; }
+.env .mid { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; z-index: 2; transition: opacity .5s; }
+.env .ln { display: block; width: 0; height: 1px; margin: 18px auto; background: #fff; animation: grow 1.6s cubic-bezier(.5,0,.2,1) .3s forwards; }
+@keyframes grow { to { width: 70%; } }
+html.preview .env .ln { animation: none; width: 70%; }
+.env .en { font: 200 clamp(26px, 8vw, 34px) var(--serif); letter-spacing: .24em; text-transform: uppercase; color: #fff; }
+.env .hint { color: rgba(255,255,255,.6); z-index: 3; }
+.env.s1 .mid, .env.s1 .hint { opacity: 0; animation: none; }
+.env.s2 .bar.t { transform: translateY(-100%); }
+.env.s2 .bar.b { transform: translateY(100%); }
+.env.s3 { opacity: 0; transition: opacity .5s; }
+
+/* ---------- գլխավոր ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.nmw { position: relative; margin: 30px 0 6px; }
+.ghost { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%); font: 200 210px/1 var(--serif); color: rgba(255,255,255,.13); pointer-events: none; }
+.hero .nm { position: relative; font: 200 clamp(40px, 12.5vw, 56px)/1.25 var(--serif); letter-spacing: .14em; text-transform: uppercase; color: #fff; padding-left: .14em; }
+.hero .amp { visibility: hidden; height: 20px; }
+.hl { display: block; width: 54px; height: 1px; background: #fff; margin: 26px auto 14px; opacity: .8; }
+.dt { font: 300 22px var(--serif); letter-spacing: .2em; }
+.h2 { color: #fff; font-size: clamp(34px, 10vw, 44px); }
+.p { font-weight: 300; }
+.cal-g .cd.on { color: #111; }
+.prg .tm { font: 200 46px var(--serif); color: #fff; }
+.prg .t { color: var(--soft); }
+.prg .n { font-family: var(--serif); font-weight: 400; font-size: 21px; }
+.prg .ev + .ev { padding-top: 34px; border-top: 1px solid var(--line); }
+.bw img { filter: grayscale(1); }
+.k-gal-s div { border-radius: 0; }
+.rs { background: rgba(255,255,255,.06); border: 1px solid var(--line); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.fl input, .fl select { color: #fff; } .fl select option { color: #222; }
+.btn.fill { color: #111; }
+.cds .cdn { margin-top: 0; }
+.cds .cdn b { font-weight: 200; font-size: clamp(40px, 12vw, 52px); color: #fff; }
+.cds .caps { margin-top: 14px; }
+.fnm { font: 200 clamp(28px, 8.4vw, 36px) var(--serif); letter-spacing: .18em; text-transform: uppercase; margin-top: 12px; }
+.made { color: var(--soft); }

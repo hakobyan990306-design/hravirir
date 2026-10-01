@@ -19,6 +19,14 @@
   ];
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" };
   var DESIGNS = [
+    { id: "silk-bow", name: "Մետաքսե ժապավեն", cat: "wedding", colors: ["#fbf7f1", "#fffdf9", "#8a1c2b", "#8c7b74"], tag: "Նոր" },
+    { id: "olive-seal", name: "Ձիթենու կնիք", cat: "wedding", colors: ["#efe9e1", "#f8f4ee", "#c9a15a", "#8f6f43"], tag: "Նոր" },
+    { id: "noir-rings", name: "Սև և ոսկի", cat: "wedding", colors: ["#0f0d0c", "#3a0f14", "#d6b574", "#f2e9d8"], tag: "Նոր" },
+    { id: "polaroid", name: "Պոլարոիդ", cat: "wedding", colors: ["#ffffff", "#f6f1ea", "#c8ab85", "#b0805f"], tag: "Նոր" },
+    { id: "mono-walk", name: "Մոնոխրոմ քայլ", cat: "wedding", colors: ["#000000", "#4a4a4a", "#bdbdbd", "#ffffff"], tag: "Նոր" },
+    { id: "editorial", name: "Էդիտորիալ", cat: "engagement", colors: ["#ffffff", "#f3f3f1", "#6b6b6b", "#111111"], tag: "Նոր" },
+    { id: "nur", name: "Նուռ", cat: "wedding", colors: ["#3a0a0e", "#8e1b25", "#c9a04e", "#f6efe2"], tag: "Նոր" },
+    { id: "terra", name: "Տերրա", cat: "wedding", colors: ["#3d2a21", "#6e4a33", "#efe4d4", "#faf5ee"], tag: "Նոր" },
     { id: "doll-car", name: "Տիկնիկ", cat: "wedding", colors: ["#fbeee9", "#f2b8c0", "#c9707c", "#ead7b5"], tag: "Նոր" },
     { id: "lavash", name: "Բախտի ափսե", cat: "wedding", colors: ["#efd7a8", "#b8322a", "#2c4f8c", "#fbf5ea"], tag: "Նոր" },
     { id: "boarding", name: "Ավիատոմս", cat: "wedding", colors: ["#dbe8f3", "#1d2b4f", "#e8735a", "#ffc94a"], tag: "Նոր" },

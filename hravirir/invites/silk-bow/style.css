@@ -1,0 +1,62 @@
+/* «Մետաքսե ժապավեն» — փղոսկր, բորդո մետաքս, մոնոգրամ
+   Տառատեսակներ՝ Kurland (անուններ), Coronet (վերնագրեր), GHEA Mariam (տեքստ) */
+@font-face { font-family: "Kurland"; src: url("../../fonts/Kurland.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+:root {
+  --bg: #fbf7f1; --bg2: #f3ebe0; --card: #fffdf9; --ink: #3a2a28; --soft: #8c7b74; --acc: #8a1c2b; --line: rgba(138,28,43,.2);
+  --serif: "GHEA Mariam", Georgia, serif; --script: "Coronet", "Marck", serif; --name: "Kurland", "Marck", serif;
+  --k-bg: #fbf7f1; --k-ink: #3a2a28; --k-accent: #8a1c2b; --k-font: "GHEA Mariam", serif;
+}
+.soft { background: var(--bg2); }
+
+/* ---------- բացում ---------- */
+.env { background: radial-gradient(90% 70% at 50% 40%, #fbf6ef, #ece2d4); display: grid; place-items: center; transition: opacity .7s; }
+.ecard { position: relative; width: min(78vw, 330px); height: min(68svh, 520px); border-radius: 999px 999px 18px 18px; background: var(--card);
+  box-shadow: 0 30px 60px -30px rgba(80,40,30,.45), inset 0 0 0 1px rgba(138,28,43,.12), inset 0 0 0 9px var(--card), inset 0 0 0 10px rgba(138,28,43,.18); transition: transform 1s cubic-bezier(.5,0,.2,1), opacity .8s; }
+.ecard .in { position: absolute; left: 0; right: 0; top: 16%; text-align: center; padding: 0 24px; color: var(--acc); }
+.ecard .caps { margin-top: 14px; color: var(--acc); }
+.enm { font-family: var(--name); font-size: clamp(30px, 9vw, 40px); line-height: 1.2; margin-top: 10px; color: var(--acc); }
+.band { position: absolute; left: -14px; right: -14px; top: 66%; height: 30px; }
+.band i { position: absolute; top: 0; height: 100%; width: 50%; background: linear-gradient(180deg, #a52a3a, #7c1825 55%, #5e0f1a); box-shadow: 0 6px 12px -6px rgba(60,10,20,.6);
+  transition: transform 1s cubic-bezier(.6,0,.3,1) .25s, opacity .6s .6s; }
+.band .bl { left: 0; border-radius: 2px 0 0 2px; } .band .br { right: 0; border-radius: 0 2px 2px 0; }
+.band i::after { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 3px; background: rgba(255,255,255,.18); }
+.bw { position: absolute; left: 50%; top: calc(66% + 15px); width: 150px; transform: translate(-50%, -48%); transition: transform .9s cubic-bezier(.5,-.3,.3,1), opacity .6s .3s; }
+.bow { width: 100%; height: auto; filter: drop-shadow(0 8px 10px rgba(60,10,20,.35)); }
+.env .hint { color: var(--acc); }
+.env.s1 .hint { opacity: 0; animation: none; }
+.env.s1 .bw { transform: translate(-50%, -150%) rotate(-12deg) scale(1.15); opacity: 0; }
+.env.s1 .bl { transform: translateX(-115%) rotate(-4deg); opacity: 0; }
+.env.s1 .br { transform: translateX(115%) rotate(4deg); opacity: 0; }
+.env.s2 .ecard { transform: scale(1.12); opacity: 0; }
+.env.s2 { opacity: 0; }
+
+/* ---------- գլխավոր ---------- */
+.hero { padding: 40px 0 56px; }
+.arch { width: min(86vw, 380px); margin: 0 auto; padding: 46px 26px 40px; border-radius: 999px 999px 16px 16px; background: var(--card); color: var(--acc);
+  box-shadow: 0 30px 60px -36px rgba(80,40,30,.5), inset 0 0 0 9px var(--card), inset 0 0 0 10px var(--line); }
+.mono { position: relative; width: 92px; height: 92px; margin: 0 auto; color: var(--acc); }
+.mono svg { width: 100%; height: 100%; }
+.mono b, .mono i { position: absolute; font: 400 44px/1 var(--name); font-style: normal; }
+.mono b { left: 24px; top: 16px; } .mono i { right: 22px; bottom: 16px; opacity: .8; }
+.arch .caps { margin-top: 18px; color: var(--soft); }
+.hero .nm { font-family: var(--name); font-size: clamp(42px, 12.5vw, 56px); line-height: 1.15; color: var(--acc); margin: 12px 0 4px; }
+.hero .amp { font-family: var(--script); font-size: .55em; color: var(--soft); }
+.ribbon { position: relative; margin: 8px -26px 0; height: 96px; }
+.ribbon > i { position: absolute; left: 0; right: 0; top: 38px; height: 20px; background: linear-gradient(180deg, #a52a3a, #7c1825 55%, #5e0f1a); }
+.ribbon .bow { position: absolute; left: 50%; top: 0; width: 120px; transform: translateX(-50%); }
+.dstack { display: flex; flex-direction: column; align-items: center; margin-top: 18px; font-size: 44px; line-height: 1.02; color: var(--acc); font-variant-numeric: lining-nums; }
+.dstack b { font-weight: 400; } .dstack b:last-child { font-size: .5em; letter-spacing: .3em; padding-left: .3em; color: var(--soft); margin-top: 6px; }
+.wd { margin-top: 8px; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--soft); }
+.k-photo.silk { border-radius: 14px; aspect-ratio: 4 / 5; box-shadow: 0 0 0 8px var(--card), 0 0 0 9px var(--line), 0 26px 40px -24px rgba(0,0,0,.4); margin-top: 40px; }
+.txt .p.big { font-size: 17.5px; margin-top: 14px; }
+.cal .cal-g .cd.on::before { background: var(--acc); }
+.prg .pic.ico { color: var(--acc); }
+.fin .mono { margin-bottom: 18px; }
+.fnm { font-family: var(--name); font-size: clamp(36px, 10vw, 46px); line-height: 1.25; color: var(--acc); margin-top: 6px; }
+.rs { --card: #fffdf9; }
+.bw { width: 190px; }
+.edt { position: absolute; left: 0; right: 0; bottom: 9%; text-align: center; font-size: 15px; letter-spacing: .24em; color: var(--acc); }
+.env.s1 .edt { opacity: 0; transition: opacity .4s; }

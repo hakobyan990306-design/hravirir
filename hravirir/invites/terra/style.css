@@ -1,0 +1,65 @@
+/* «Տերրա» — շոկոլադ, ավազ և կաթնագույն, կարված կաշվե քարտ, պամպաս, թել
+   Տառատեսակներ՝ Vrdznagir (անուններ), ArmAllegro (վերնագրեր), GHEA Mariam (տեքստ) */
+@font-face { font-family: "Vrdz"; src: url("../../fonts/Vrdznagir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+:root {
+  --bg: #faf5ee; --bg2: #efe4d4; --card: #fffaf3; --ink: #3d2a21; --soft: #8c7461; --acc: #6e4a33; --line: rgba(110,74,51,.24);
+  --serif: "GHEA Mariam", Georgia, serif; --script: "Allegro", "Marck", serif; --name: "Vrdz", "Marck", serif; --desk: #3d2a21;
+  --rad: 14px;
+  --k-bg: #faf5ee; --k-ink: #3d2a21; --k-accent: #6e4a33; --k-font: "GHEA Mariam", serif;
+  --leather: radial-gradient(rgba(0,0,0,.12) 1px, transparent 1.5px) 0 0 / 4px 4px, radial-gradient(120% 90% at 30% 20%, #6b4733, #3d2a21);
+}
+.sand { background: var(--bg2); }
+.choc { background: var(--leather); color: #f2e6d4; --soft: rgba(242,230,212,.72); --acc: #e3c9a0; --line: rgba(227,201,160,.3); }
+
+/* ---------- կարված քարտ ---------- */
+.env { background: radial-gradient(90% 70% at 50% 40%, #efe3d2, #d9c6ad); perspective: 1400px; display: grid; place-items: center; }
+.flip { position: relative; width: min(80vw, 330px); height: min(66svh, 500px); transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(.5,0,.2,1); }
+.fr, .bk { position: absolute; inset: 0; border-radius: 16px; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.fr { background: var(--leather); color: #f2e6d4; text-align: center; box-shadow: 0 34px 50px -28px rgba(40,25,15,.75); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; }
+.fr .st { position: absolute; inset: 12px; border: 1.5px dashed rgba(231,214,182,.55); border-radius: 10px; }
+.fr .caps { color: rgba(242,230,212,.75); }
+.en { font: 400 clamp(36px, 11vw, 46px)/1.15 var(--name); color: #f2e6d4; margin-top: 12px; }
+.en i { display: block; font: 400 .5em var(--script); color: #e3c9a0; font-style: normal; }
+.ed { margin-top: 12px; letter-spacing: .24em; font-size: 14px; color: #e3c9a0; }
+.tw { position: absolute; background: repeating-linear-gradient(45deg, #e7d6b6 0 3px, #c9b18a 3px 6px); transition: transform .8s cubic-bezier(.6,0,.3,1), opacity .5s .3s; }
+.tw.v { left: 32%; top: -6px; bottom: -6px; width: 4px; }
+.tw.h { left: -6px; right: -6px; top: 72%; height: 4px; }
+.knot { position: absolute; left: calc(32% - 38px); top: calc(72% - 23px); width: 80px; transition: transform .7s, opacity .4s; }
+.pw { position: absolute; left: calc(32% - 46px); top: calc(72% - 118px); transform: rotate(-24deg); transition: transform .9s cubic-bezier(.5,-.3,.3,1), opacity .5s .3s; }
+.bk { background: #3d2a21 center / cover no-repeat; transform: rotateY(180deg); box-shadow: 0 34px 50px -28px rgba(40,25,15,.75); }
+.env .hint { color: var(--acc); }
+.env.s1 .hint { opacity: 0; animation: none; }
+.env.s1 .knot { transform: scale(1.4); opacity: 0; }
+.env.s1 .tw.v { transform: translateY(-110%); opacity: 0; }
+.env.s1 .tw.h { transform: translateX(110%); opacity: 0; }
+.env.s1 .pw { transform: translate(-60px, -160px) rotate(-70deg); opacity: 0; }
+.env.s2 .flip { transform: rotateY(180deg) scale(1.06); }
+.env.s3 { opacity: 0; transition: opacity .6s; }
+
+/* ---------- գլխավոր ---------- */
+.hero { min-height: 100svh; padding: 0; background: #3d2a21 var(--ph) center / cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; }
+.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,25,15,.1), rgba(40,25,15,.25) 45%, rgba(40,25,15,.78)); }
+.hc { position: relative; padding: 0 24px 90px; }
+.hero .nm { font-family: var(--name); font-size: clamp(50px, 15vw, 70px); line-height: 1.02; text-shadow: 0 4px 18px rgba(0,0,0,.35); }
+.hero .n1 { text-align: left; } .hero .n2 { text-align: right; }
+.hero .amp { font: 400 .55em var(--script); color: #e3c9a0; margin: -6px 0; }
+.hero .dt { margin-top: 14px; font-size: 20px; letter-spacing: .3em; color: #f2e6d4; }
+.dn { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); }
+.dn i { display: block; width: 14px; height: 14px; border-right: 1.5px solid #fff; border-bottom: 1.5px solid #fff; transform: rotate(45deg); animation: bob 2s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(6px) rotate(45deg); } }
+.pmw { width: 54px; margin: 0 auto 6px; }
+.calc { background: var(--card); border-radius: 18px; padding: 24px 16px 18px; margin-top: 30px; box-shadow: 0 20px 34px -26px rgba(60,40,25,.6); }
+.calc .cal { margin-top: 0; }
+.prg-line .tm { font: 400 26px var(--serif); }
+.prg-line .n { font-family: var(--serif); font-size: 19px; }
+.prg-line .dot { background: var(--acc); box-shadow: 0 0 0 4px var(--bg); }
+.tiles { gap: 8px; } .tiles .cs { display: none; }
+.tiles div { background: rgba(255,255,255,.07); border: 1px solid var(--line); border-radius: 12px; padding: 12px 2px 8px; }
+.choc .cdn b { color: #f2e6d4; }
+.btn { border-radius: 12px; }
+.fin { padding: 70px 0 30px; }
+.fnm { font: 400 clamp(46px, 14vw, 62px)/1.15 var(--name); color: #f2e6d4; margin-bottom: 8px; }
+.fin + .made { background: #3d2a21; color: rgba(242,230,212,.6); }

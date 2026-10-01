@@ -1,0 +1,68 @@
+/* «Սև և ոսկի» — մուգ ֆիքսված լուսանկար, թավշյա վարագույր, ոսկե մատանիներ
+   Տառատեսակներ՝ Coronet (գեղագիր), GHEA Mariam (տեքստ և մեծատառեր) */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+:root {
+  --bg: #0f0d0c; --bg2: #171310; --card: rgba(24,20,17,.82); --ink: #f2e9d8; --soft: rgba(242,233,216,.66); --acc: #d6b574; --line: rgba(214,181,116,.3);
+  --serif: "GHEA Mariam", Georgia, serif; --script: "Coronet", "Marck", serif; --desk: #0a0908;
+  --shadow: 0 20px 40px -24px #000;
+  --k-bg: #14110f; --k-ink: #f2e9d8; --k-accent: #d6b574; --k-font: "GHEA Mariam", serif;
+}
+main { background: transparent; }
+.bgfix { position: fixed; top: 0; bottom: 0; left: 50%; width: min(100%, 480px); transform: translateX(-50%); background: #1a1512 center / cover no-repeat; z-index: 0; }
+.bgfix::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,8,7,.35), rgba(10,8,7,.62) 45%, rgba(10,8,7,.86)); }
+main > section, main > .made { position: relative; z-index: 1; }
+.glass .wrap { background: var(--card); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid var(--line); border-radius: 4px; padding: 40px 22px; max-width: 400px; width: calc(100% - 36px); }
+section.glass { padding: 26px 0; }
+
+/* ---------- վարագույր ---------- */
+.env { background: #0b0908; }
+.cur { position: absolute; top: 0; bottom: 0; width: 51%; transition: transform 1.6s cubic-bezier(.6,0,.25,1); z-index: 2;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,.42) 0 6px, rgba(255,255,255,.04) 10px, rgba(0,0,0,.3) 16px, rgba(0,0,0,.5) 22px), linear-gradient(180deg, #3a0f14, #26080c); }
+.cur.l { left: 0; box-shadow: inset -12px 0 18px -8px rgba(0,0,0,.6); }
+.cur.r { right: 0; box-shadow: inset 12px 0 18px -8px rgba(0,0,0,.6); }
+.cur::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: linear-gradient(90deg, #8d6a2e, #e8cf94, #8d6a2e); opacity: .7; }
+.ec { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: opacity .6s; }
+.ec .caps { color: var(--acc); }
+.en1 { font: 400 clamp(34px, 10vw, 44px) var(--serif); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); margin-top: 18px; }
+.en2 { font: 400 clamp(46px, 14vw, 62px)/1.1 var(--script); color: var(--acc); margin-top: -4px; padding-bottom: .1em; }
+.rings { width: 150px; height: auto; margin: 16px auto 0; }
+.rings circle, .rings path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.rings.h, .rings.f { width: 120px; }
+.rings.rv circle, .rings.rv path { stroke-dashoffset: 1; }
+.rings.rv.in circle, .rings.rv.in path, html.preview .rings path, html.preview .rings circle { stroke-dashoffset: 0; transition: stroke-dashoffset 2.2s ease .3s; }
+.rings.rv { opacity: 1; transform: none; }
+.pl { width: 54px; height: 54px; margin-top: 26px; border-radius: 50%; border: 1px solid var(--acc); display: grid; place-items: center; }
+.pl i { width: 0; height: 0; border-left: 14px solid var(--acc); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.env .hint { color: var(--soft); z-index: 4; }
+.env.s1 .ec, .env.s1 .hint { opacity: 0; animation: none; }
+.env.s1 .cur.l { transform: translateX(-100%) skewX(-4deg); }
+.env.s1 .cur.r { transform: translateX(100%) skewX(4deg); }
+.env.s1 { background: transparent; transition: background .6s .8s; }
+.env.s2 { opacity: 0; transition: opacity .5s; }
+
+/* ---------- գլխավոր ---------- */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--ink); }
+.hero .caps { color: var(--acc); }
+.nmw { position: relative; margin: 26px 0 10px; }
+.nmw .big { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -52%); font: 400 220px/1 var(--script); color: rgba(214,181,116,.14); pointer-events: none; }
+.hero .nm { position: relative; }
+.hero .n1 { font: 400 clamp(38px, 11vw, 52px) var(--serif); letter-spacing: .14em; text-transform: uppercase; }
+.hero .n2 { font: 400 clamp(54px, 16vw, 76px)/1.05 var(--script); color: var(--acc); padding-bottom: .1em; }
+.hero .amp { display: none !important; }
+.dt { font-size: clamp(26px, 8vw, 34px); letter-spacing: .12em; color: var(--ink); }
+.scroll { margin-top: 40px; width: 22px; height: 36px; border: 1px solid var(--soft); border-radius: 12px; position: relative; }
+.scroll i { position: absolute; left: 50%; top: 7px; width: 2px; height: 7px; margin-left: -1px; background: var(--acc); border-radius: 2px; animation: wheel 1.8s infinite; }
+@keyframes wheel { 60% { transform: translateY(10px); opacity: 0; } }
+.glass .h2 { color: var(--acc); }
+.prg .pic.ico { color: var(--acc); }
+.prg .tm { color: var(--acc); }
+.cal-g .cd.on { color: #14110f; }
+.k-gal .wrap { background: none; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; padding-top: 0; padding-bottom: 0; }
+.btn { border-color: var(--acc); color: var(--acc); }
+.btn.fill { color: #14110f; }
+.fl input, .fl select { color: var(--ink); } .fl select option { color: #222; }
+.fin { padding-bottom: 30px; }
+.fnm { font: 400 clamp(40px, 12vw, 54px)/1.2 var(--script); color: var(--acc); margin-top: 8px; }
+.made { color: var(--soft); }

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf7f1">
+<title>Հարսանյաց հրավեր</title>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="../pro/pro.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "silk-bow", name: "Մետաքսե ժապավեն" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Դավիթ", "Նարե"], ru: ["Давид", "Нарэ"] },
+  date: "2026-12-12T14:30",
+  photo: "https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?w=900&q=80&auto=format&fit=crop",
+  gallery: [
+    "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1567051181435-c9c9647c9cd4?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1606216836537-eea72a939072?w=700&q=80&auto=format&fit=crop"
+  ],
+  text: {
+    hy: "Մեր կյանքի ամենակարևոր օրը մոտենում է, և մենք ուզում ենք այն անցկացնել մեզ համար ամենաթանկ մարդկանց հետ։\nՍիրով սպասում ենք Ձեզ մեր հարսանիքին։",
+    ru: "Самый важный день нашей жизни приближается, и мы хотим провести его с самыми дорогими нам людьми.\nС любовью ждём вас на нашей свадьбе."
+  },
+  events: [
+    { time: "14:30", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Աստվածածին եկեղեցի", ru: "Церковь Св. Богородицы" },
+      address: { hy: "Երևան, Աբովյան փողոց 26", ru: "Ереван, ул. Абовяна 26" }, map: "https://maps.google.com/?q=Abovyan+26+Yerevan" },
+    { time: "17:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Պալազո» հանդիսությունների սրահ", ru: "Зал торжеств «Палаццо»" },
+      address: { hy: "Երևան, Ազատության պողոտա 51", ru: "Ереван, пр. Азатутян 51" }, map: "https://maps.google.com/?q=Azatutyan+51+Yerevan" }
+  ],
+  dresscode: { text: { hy: "Կուրախանանք, եթե ընտրեք փղոսկրի, բորդոյի և կաթնագույն երանգներ", ru: "Будем рады оттенкам слоновой кости, бордо и молочного" },
+    colors: ["#fbf3e6", "#e9d8c4", "#b88a7a", "#8a1c2b", "#4a1018"] },
+  rsvp: { deadline: "2026-11-30", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../pro/pro.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* «Նուռ» — նռնագույն, փղոսկր և ոսկի, կամարաձև փեղկեր, ազգային զարդագիծ նռնով
+   Տառատեսակներ՝ ArmMatura (անուններ), GHEA Mariam Italic (վերնագրեր), GHEA Mariam (տեքստ) */
+@font-face { font-family: "Matura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "MariamIt"; src: url("../../fonts/GHEAMariamRIt.otf") format("opentype"); font-display: swap; }
+:root {
+  --bg: #f6efe2; --bg2: #3a0a0e; --card: #fffaf0; --ink: #3a1d1a; --soft: #8a6f62; --acc: #8e1b25; --gold: #c9a04e; --line: rgba(142,27,37,.22);
+  --serif: "GHEA Mariam", Georgia, serif; --script: "MariamIt", "Marck", serif; --name: "Matura", "Marck", serif; --desk: #2a0709;
+  --k-bg: #f6efe2; --k-ink: #3a1d1a; --k-accent: #8e1b25; --k-font: "GHEA Mariam", serif;
+  --dam: radial-gradient(circle at 50% 50%, rgba(201,160,78,.09) 0 2px, transparent 2.5px) 0 0 / 22px 22px;
+}
+.mar { background: var(--dam), linear-gradient(180deg, #4a0c12, #3a0a0e); color: #f6efe2; --soft: rgba(246,239,226,.72); --acc: #e2c27e; --line: rgba(226,194,126,.3); --card: rgba(255,250,240,.06); }
+.mar .rs { border: 1px solid var(--line); box-shadow: none; }
+.mar .fl input, .mar .fl select { color: #f6efe2; } .mar .fl select option { color: #222; }
+.mar .btn.fill { color: #3a0a0e; }
+
+/* ---------- փեղկեր ---------- */
+.env { background: #2a0709; }
+.pt, .pb { position: absolute; left: 0; right: 0; height: 56%; background: var(--dam), linear-gradient(180deg, #5c0d14, #3a0a0e); transition: transform 1.2s cubic-bezier(.65,0,.25,1); }
+.pt { top: 0; -webkit-mask: radial-gradient(60% 22% at 50% 100%, transparent 98%, #000 100%); mask: radial-gradient(60% 22% at 50% 100%, transparent 98%, #000 100%); z-index: 2; box-shadow: inset 0 -2px 0 var(--gold); }
+.pb { bottom: 0; background: var(--dam), linear-gradient(0deg, #5c0d14, #45090f); z-index: 1; }
+.pt::after { content: ""; position: absolute; left: 6%; right: 6%; top: 5%; bottom: 0; border: 1px solid rgba(201,160,78,.45); border-bottom: 0; border-radius: 4px 4px 0 0; }
+.tt { position: absolute; left: 0; right: 0; top: 16%; text-align: center; padding: 0 30px; font: 400 clamp(24px, 7vw, 30px)/1.35 var(--script); color: #f3dfb2; }
+.tb { position: absolute; left: 0; right: 0; bottom: 12%; text-align: center; padding: 0 34px; font: 400 14.5px/1.6 var(--script); color: rgba(246,239,226,.82); }
+.seal { position: absolute; left: 50%; top: 50%; width: 112px; height: 112px; transform: translate(-50%, -50%); z-index: 3; filter: drop-shadow(0 8px 10px rgba(0,0,0,.45)); }
+.sh { position: absolute; inset: 0; transition: transform .8s cubic-bezier(.5,0,.3,1), opacity .6s .3s; }
+.sh svg { width: 100%; height: 100%; }
+.sh.l { clip-path: polygon(0 0, 52% 0, 46% 30%, 54% 55%, 47% 78%, 52% 100%, 0 100%); }
+.sh.r { clip-path: polygon(52% 0, 100% 0, 100% 100%, 52% 100%, 47% 78%, 54% 55%, 46% 30%); }
+.env .hint { color: #e2c27e; z-index: 4; }
+.env.s1 .hint { opacity: 0; animation: none; }
+.env.s1 .sh.l { transform: translate(-40px, 30px) rotate(-24deg); opacity: 0; }
+.env.s1 .sh.r { transform: translate(40px, 30px) rotate(24deg); opacity: 0; }
+.env.s2 .pt { transform: translateY(-102%); }
+.env.s2 .pb { transform: translateY(102%); }
+.env.s3 { opacity: 0; transition: opacity .5s; }
+
+/* ---------- գլխավոր ---------- */
+.hero { min-height: 100svh; padding: 0; display: grid; background: #3a0a0e var(--ph) center / cover no-repeat; color: #f6efe2; }
+.hero .tint { grid-area: 1 / 1; background: linear-gradient(180deg, rgba(58,10,14,.55), rgba(58,10,14,.72) 50%, rgba(42,7,9,.92)); }
+.hc { grid-area: 1 / 1; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 24px; }
+.hero .caps { color: #e2c27e; }
+.hero .nm { font-family: var(--name); font-size: clamp(50px, 15vw, 70px); line-height: 1.12; color: #f3dfb2; margin: 18px 0 6px; text-shadow: 0 2px 0 rgba(0,0,0,.25); }
+.hero .amp { font-family: var(--script); font-size: .5em; color: #e2c27e; }
+.orn { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 14px 0; }
+.orn span { width: 110px; } .orn span svg { width: 100%; height: auto; } .orn .fl svg { transform: scaleX(-1); }
+.hero .dt { font: 400 clamp(28px, 8.4vw, 36px) var(--serif); letter-spacing: .14em; color: #f3dfb2; }
+.iv .p { font-size: 17px; }
+.h2 { font-size: clamp(36px, 10.4vw, 46px); }
+.prg .pic.ico { color: var(--acc); }
+.prg .ev + .ev { padding-top: 34px; background: radial-gradient(circle, var(--gold) 1.6px, transparent 2px) center top / 14px 4px repeat-x; }
+.roll b { display: block; }
+.roll b.go { animation: roll .45s cubic-bezier(.3,1.4,.5,1); }
+@keyframes roll { from { transform: translateY(-60%); opacity: 0; } to { transform: none; opacity: 1; } }
+.mar .cdn b { color: #f3dfb2; }
+.fin .pom { margin: 0 auto 14px; }
+.fnm { font: 400 clamp(38px, 11vw, 50px)/1.2 var(--name); color: var(--acc); margin-top: 8px; }

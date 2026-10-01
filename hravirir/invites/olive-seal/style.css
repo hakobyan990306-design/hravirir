@@ -1,0 +1,67 @@
+/* «Ձիթենու կնիք» — կտավե բեժ, ոսկե կնիք ձիթենու ճյուղով, «Save the Date» լուսանկար, կլոր օրացույց
+   Տառատեսակներ՝ Arm Hmk's Script (գեղագիր), GHEA Mariam (տեքստ), Cinzel (լատինատառ մեծատառեր) */
+@font-face { font-family: "Hmk"; src: url("../../fonts/ArmHmkScript.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-024F; }
+:root {
+  --bg: #efe9e1; --bg2: #e6ded3; --card: #f8f4ee; --ink: #2c2824; --soft: #857a70; --acc: #8f6f43; --line: rgba(110,85,50,.22);
+  --serif: "GHEA Mariam", Georgia, serif; --script: "Hmk", "Marck", serif; --caps: "Cinzel", "GHEA Mariam", serif;
+  --k-bg: #efe9e1; --k-ink: #2c2824; --k-accent: #8f6f43; --k-font: "GHEA Mariam", serif;
+  --linen: repeating-linear-gradient(0deg, rgba(120,100,70,.035) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(120,100,70,.03) 0 1px, transparent 1px 4px);
+}
+body, main { background: var(--linen), var(--bg); }
+
+/* ---------- ծրար ---------- */
+.env { background: var(--linen), #e9e1d5; perspective: 1400px; transition: opacity .8s, transform .9s cubic-bezier(.5,0,.2,1); }
+.env .back { position: absolute; inset: 0; background: var(--linen), #ddd2c3; }
+.env .card { position: absolute; left: 8%; right: 8%; top: 10%; bottom: 14%; background: var(--card); border-radius: 4px; box-shadow: 0 10px 30px -14px rgba(60,40,20,.4); transition: transform 1s cubic-bezier(.4,0,.2,1); }
+.env .pocket { position: absolute; inset: 0; background: var(--linen), #ebe3d8; clip-path: polygon(0 34%, 50% 66%, 100% 34%, 100% 100%, 0 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.5); }
+.env .pocket::before { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, transparent 49.7%, rgba(90,70,40,.12) 50%, transparent 50.6%), linear-gradient(20deg, transparent 49.7%, rgba(90,70,40,.12) 50%, transparent 50.6%); }
+.env .flap { position: absolute; left: 0; right: 0; top: 0; height: 64%; background: var(--linen), #f0e9df; clip-path: polygon(0 0, 100% 0, 100% 52%, 50% 100%, 0 52%); transform-origin: top; transition: transform 1s cubic-bezier(.5,0,.3,1), background .3s .5s; z-index: 2;
+  filter: drop-shadow(0 6px 8px rgba(70,50,25,.25)); }
+.enm { position: absolute; left: 0; right: 0; top: 13%; text-align: center; z-index: 3; color: var(--ink); transition: opacity .5s; }
+.enm .a { display: block; font: 400 clamp(26px, 8vw, 34px) var(--caps); letter-spacing: .14em; text-transform: uppercase; }
+.enm .b { display: block; font: 400 clamp(48px, 15vw, 66px)/1.1 var(--script); color: var(--acc); margin-top: -4px; }
+.sealw { position: absolute; left: 50%; top: 64%; width: 120px; transform: translate(-50%, -50%); z-index: 4; transition: transform .7s cubic-bezier(.5,-.4,.4,1), opacity .5s .15s; }
+.seal { width: 100%; height: auto; }
+.env .hint { color: var(--acc); z-index: 5; }
+.env.s1 .hint, .env.s1 .enm { opacity: 0; animation: none; }
+.env.s1 .sealw { transform: translate(-50%, -80%) scale(1.25) rotate(-18deg); opacity: 0; }
+.env.s2 .flap { transform: rotateX(178deg); z-index: 0; }
+.env.s2 .card { transform: translateY(-14%); }
+.env.s3 { opacity: 0; transform: translateY(-4%); }
+
+/* ---------- Save the Date ---------- */
+.hero { padding: 0 0 46px; }
+.hero .ph { height: 74svh; max-height: 640px; background: center / cover no-repeat; -webkit-mask: linear-gradient(#000 62%, transparent); mask: linear-gradient(#000 62%, transparent); }
+.sv { font: 400 clamp(52px, 16vw, 72px)/1 var(--script); color: var(--acc); margin-top: -96px; position: relative; }
+.hero .nm { font-size: 0; margin-top: 18px; }
+.hero .nm span { display: inline; }
+.hero .nm .n1, .hero .nm .n2 { font: 400 22px var(--caps); letter-spacing: .2em; text-transform: uppercase; }
+.hero .nm .amp { font: 400 26px var(--script); color: var(--acc); padding: 0 .5em; }
+.dl { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 20px; font: 400 40px var(--serif); color: var(--ink); }
+.dl b { font-weight: 400; } .dl i { width: 1px; height: 46px; background: var(--acc); opacity: .6; transform: rotate(18deg); }
+.fl2 { display: flex; justify-content: center; gap: 4px; margin-top: 20px; color: var(--acc); }
+.olv { height: auto; }
+.txt .p.big { font-size: 17.5px; margin-top: 12px; }
+/* կլոր օրացույց՝ ձեռքով գծված շրջանակով */
+.round { width: min(88vw, 360px); aspect-ratio: 1; margin: 34px auto 0; border-radius: 50%; background: var(--card); display: grid; place-items: center; box-shadow: 0 24px 50px -30px rgba(70,50,25,.5); }
+.round .cal { margin: 0; width: 76%; }
+.round .cal-h { font-size: 32px; } .round .cal-g .cd { height: 31px; font-size: 14px; }
+.cal-g .cd.on { color: var(--acc); font-weight: 700; }
+.cal-g .cd.on::before { display: none; }
+.hand { position: absolute; width: 46px; height: 40px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-8deg); color: var(--acc); }
+.hand path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.round.in .hand path, html.preview .hand path { stroke-dashoffset: 0; transition: stroke-dashoffset 1.4s ease .6s; }
+/* ծրագիր՝ ֆոնին մեծ ուրվագծային բառ */
+.prog { overflow: hidden; }
+.ghost { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); white-space: nowrap; font: 400 76px var(--caps); letter-spacing: .04em; color: transparent; -webkit-text-stroke: 1px rgba(143,111,67,.28); pointer-events: none; }
+.prog .h2 { position: relative; }
+.prg-list .tm { color: var(--acc); }
+.prg-list .tm::after { content: " ♥"; font-size: 12px; vertical-align: middle; }
+.prg-list .btn { border-color: var(--line); color: var(--ink); }
+.cdsec { background: var(--bg2); }
+.rsv .rs { background: var(--card); }
+.sealf { width: 96px; margin: 0 auto 16px; }
+.fnm { font: 400 clamp(40px, 12vw, 54px)/1.2 var(--script); color: var(--acc); margin-top: 6px; }
