@@ -12,16 +12,29 @@
 
 var NOTIFY_EMAIL = Session.getEffectiveUser().getEmail();   // կամ գրեք Ձեր email-ը
 
-/* TELEGRAM (ըստ ցանկության). պատվերն ու նկարները կգան անմիջապես Ձեր Telegram-ին
-   1. Telegram-ում գրեք @BotFather-ին → /newbot → ստացեք TOKEN-ը
-   2. Գրեք Ձեր նոր բոտին ցանկացած հաղորդագրություն, հետո բացեք
-      https://api.telegram.org/bot<TOKEN>/getUpdates և գտեք "chat":{"id": … } թիվը
-   3. Լրացրեք ներքևի երկու տողը և նորից Deploy արեք (Manage deployments → Edit → New version) */
+/* TELEGRAM. պատվերն ու նկարները կգան անմիջապես Ձեր Telegram-ին
+   1. @BotFather → /newbot → ստացեք TOKEN-ը և դրեք ներքևի TG_TOKEN տողում (չակերտների մեջ)
+   2. Ձեր բոտին գրեք /start
+   3. Վերևում ընտրեք setupTelegram ֆունկցիան և սեղմեք «Выполнить» (Run). բոտը կգրի «Միացված է ✓»
+   4. Начать развертывание → Управление развертываниями → ✏️ → Версия: Новая версия → Начать развертывание */
 var TG_TOKEN = "";
-var TG_CHAT = "";
+var TG_CHAT = "";   // պետք չէ լրացնել. setupTelegram-ը ինքը կգտնի և կպահի
+
+function tgChat_() { return TG_CHAT || PropertiesService.getScriptProperties().getProperty("TG_CHAT") || ""; }
+
+// մեկ անգամ գործարկեք խմբագրիչից. գտնում է Ձեր չաթը (բոտին /start գրելուց հետո) և ուղարկում ստուգման հաղորդագրություն
+function setupTelegram() {
+  if (!TG_TOKEN) throw new Error("Նախ դրեք TG_TOKEN-ը");
+  var res = JSON.parse(UrlFetchApp.fetch("https://api.telegram.org/bot" + TG_TOKEN + "/getUpdates").getContentText());
+  var ups = (res.result || []).filter(function (u) { return u.message && u.message.chat; });
+  if (!ups.length) throw new Error("Բոտը հաղորդագրություն չի ստացել. գրեք նրան /start և նորից գործարկեք");
+  var chat = String(ups[ups.length - 1].message.chat.id);
+  PropertiesService.getScriptProperties().setProperty("TG_CHAT", chat);
+  UrlFetchApp.fetch("https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage", { method: "post", payload: { chat_id: chat, text: "HRAVIRIR պատվերները միացված են ✓" } });
+}
 
 function toTelegram_(data) {
-  if (!TG_TOKEN || !TG_CHAT) return;
+  var TG_CHAT = tgChat_(); if (!TG_TOKEN || !TG_CHAT) return;
   var api = "https://api.telegram.org/bot" + TG_TOKEN;
   UrlFetchApp.fetch(api + "/sendMessage", { method: "post", payload: { chat_id: TG_CHAT, text: (data.text || "").slice(0, 4000) } });
   (data.photos || []).forEach(function (p) {
