@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#efe0c2">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preload" href="../../fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ ======== */
+window.INVITE = {
+  demo: { id: "lavash", name: "Ափսե և լավաշ" },   // իրական հրավերում ջնջեք
+  langs: ["hy", "ru"],
+  names: { hy: ["Սերգեյ", "Անուշ"], ru: ["Сергей", "Ануш"] },
+  date: "2026-12-05T11:00",
+  text: {
+    hy: "Մեր պապերից եկած սովորույթով նոր հարսն ու փեսան ափսե են կոտրում շեմին՝ բախտի համար, իսկ մայրը լավաշ է դնում նրանց ուսերին, որ օջախը միշտ լիքը լինի։\nՍիրով հրավիրում ենք Ձեզ դառնալու մեր նոր օջախի առաջին հյուրերը։",
+    ru: "По обычаю наших предков молодые разбивают тарелку на пороге — на счастье, а мама кладёт им на плечи лаваш, чтобы в доме всегда был достаток.\nС любовью приглашаем вас стать первыми гостями нашего нового очага."
+  },
+  events: [
+    { time: "11:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, place: { hy: "Ասատրյանների օջախ", ru: "Дом семьи Асатрян" },
+      address: { hy: "Աբովյան, Բարեկամության փողոց 14", ru: "Абовян, ул. Барекамутян 14" }, map: "https://maps.google.com/?q=Abovyan+Armenia" },
+    { time: "12:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, place: { hy: "Մելքոնյանների օջախ", ru: "Дом семьи Мелконян" },
+      address: { hy: "Երևան, Նորք-Մարաշ, Արմենակյան փողոց 102", ru: "Ереван, Норк-Мараш, ул. Арменакяна 102" }, map: "https://maps.google.com/?q=Armenakyan+102+Yerevan" },
+    { time: "15:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Գեղարդավանք", ru: "Монастырь Гегард" },
+      address: { hy: "Կոտայքի մարզ, Գողթ", ru: "Котайкская обл., Гохт" }, map: "https://maps.google.com/?q=Geghard+Monastery" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Թոնրատուն» ազգային ռեստորան", ru: "Национальный ресторан «Тонратун»" },
+      address: { hy: "Գառնի, Աշոտ Երկաթի փողոց 3", ru: "Гарни, ул. Ашота Ерката 3" }, map: "https://maps.google.com/?q=Garni+Armenia" }
+  ],
+  dresscode: { text: { hy: "Ջերմ, բնական երանգներ՝ ցորենի ոսկեգույն, կաթնագույն, նռնագույն և լազուր", ru: "Тёплые природные оттенки: пшеничный, молочный, гранатовый и лазурный" },
+    colors: ["#e3c27f", "#f6ecd8", "#b8322a", "#2c4f8c"] },
+  rsvp: { deadline: "2026-11-25", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
