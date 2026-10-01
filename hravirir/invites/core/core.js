@@ -34,7 +34,12 @@
       monthsGen: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] }
   };
 
-  var K = {
+  // Օրինակներում (INVITE.demo) ամսաթիվը միշտ մոտ է՝ այսօրվանից 37 օր հետո, որ հետհաշվարկը փոքր թվեր ցույց տա
+  if (C.demo && C.date && !C._shifted) {
+    var _d0 = new Date(C.date), _d1 = new Date(); _d1.setHours(_d0.getHours(), _d0.getMinutes(), 0, 0); _d1.setDate(_d1.getDate() + 37);
+    var _dt = _d1 - _d0; C.date = _d1; C._shifted = true;
+    if (C.rsvp && C.rsvp.deadline) C.rsvp.deadline = new Date(+new Date(C.rsvp.deadline) + _dt);
+  }  var K = {
     C: C, Q: Q, PREVIEW: PREVIEW, EMBED: Q.has("embed") || PREVIEW,
     get lang() { return lang; }, LANGS: LANGS,
     date: new Date(C.date),
@@ -77,13 +82,29 @@
       }
       clearInterval(K._cd); tick(); K._cd = setInterval(tick, 1000);
     },
-    // Հայտնվելու անիմացիա՝ .rv → .rv.in
+    // Ներքևի անունները (օր.՝ «Դավիթ & Նարե»)՝ միշտ մեկ տողում. եթե չեն տեղավորվում, տառաչափը փոքրանում է
+    fitNames: function () {
+      var n = K.names(), main = document.querySelector("main"); if (n.length < 2 || !main) return;
+      var first = main.querySelector("section");
+      main.querySelectorAll("*").forEach(function (el) {
+        if ([].some.call(el.children, function (c) { return !/amp/.test(c.className); }) || (first && first.contains(el))) return;
+        [].forEach.call(el.children, function (c) { c.style.display = "inline"; });
+        var tx = el.textContent; if (tx.indexOf(n[0]) < 0 || tx.indexOf(n[1]) < 0 || tx.length > n[0].length + n[1].length + 14) return;
+        el.style.whiteSpace = "nowrap"; el.style.fontSize = "";
+        var box = getComputedStyle(el).display === "inline" ? el.parentElement : el, cs = getComputedStyle(box);
+        var avail = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (!avail) return;
+        var r = document.createRange(); r.selectNodeContents(el);
+        var fs = parseFloat(getComputedStyle(el).fontSize), i = 0;
+        while (r.getBoundingClientRect().width > avail && fs > 14 && i++ < 80) { fs -= 1; el.style.fontSize = fs + "px"; }
+      });
+    },    // Հայտնվելու անիմացիա՝ .rv → .rv.in
     reveal: function () {
       if (K._io) K._io.disconnect();
       var els = document.querySelectorAll(".rv");
-      if (!("IntersectionObserver" in window) || PREVIEW) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+      if (!("IntersectionObserver" in window) || PREVIEW) { els.forEach(function (e) { e.classList.add("in"); }); K.fitNames(); return; }
       K._io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); K._io.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
       els.forEach(function (e) { K._io.observe(e); });
+      K.fitNames(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(K.fitNames);
     },
     // RSVP ձև՝ պատասխանը Google Sheets կամ WhatsApp
     rsvp: function (form, thanksHTML) {

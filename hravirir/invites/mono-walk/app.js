@@ -9,7 +9,7 @@
   });
   function env() {
     var n = K.names();
-    return '<div class="env" id="env" role="button" aria-label="' + esc(P.x("hint")) + '"><div class="bar t"></div><div class="bar b"></div>' +
+    return '<div class="env" id="env" role="button" aria-label="' + esc(P.x("hint")) + '">' + (C.photo ? '<div class="eph" style="background-image:url(\'' + esc(C.photo) + '\')"></div>' : "") + '<div class="bar t"></div><div class="bar b"></div>' +
       '<div class="mid"><div class="caps">' + esc(P.x("invite")) + '</div><i class="ln"></i><div class="en">' + esc(n[0] || "") + " · " + esc(n[1] || "") + "</div></div>" +
       (K.PREVIEW ? "" : '<div class="hint">' + esc(P.x("hint")) + "</div>") + "</div>";
   }

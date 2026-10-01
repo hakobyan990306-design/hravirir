@@ -63,3 +63,9 @@
 .fin { padding: 70px 0 30px; }
 .fnm { font: 400 clamp(46px, 14vw, 62px)/1.15 var(--name); color: #f2e6d4; margin-bottom: 8px; }
 .fin + .made { background: #3d2a21; color: rgba(242,230,212,.6); }
+/* թելը՝ անկյունում, որ չծածկի անուններն ու ամսաթիվը */
+.tw.v { left: 13%; }
+.tw.h { top: 86%; }
+.knot { left: calc(13% - 38px); top: calc(86% - 23px); }
+.pw { left: calc(13% - 22px); top: calc(86% - 140px); transform: rotate(-8deg); }
+.fr { padding: 30px 30px 70px 46px; }

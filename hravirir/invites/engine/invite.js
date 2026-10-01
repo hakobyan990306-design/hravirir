@@ -78,7 +78,12 @@
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function list(v) { v = t(v); return v == null || v === "" ? [] : Array.isArray(v) ? v : [v]; }
 
-  var date = new Date(C.date);
+  // Օրինակներում (INVITE.demo) ամսաթիվը միշտ մոտ է՝ այսօրվանից 37 օր հետո, որ հետհաշվարկը փոքր թվեր ցույց տա
+  if (C.demo && C.date && !C._shifted) {
+    var _d0 = new Date(C.date), _d1 = new Date(); _d1.setHours(_d0.getHours(), _d0.getMinutes(), 0, 0); _d1.setDate(_d1.getDate() + 37);
+    var _dt = _d1 - _d0; C.date = _d1; C._shifted = true;
+    if (C.rsvp && C.rsvp.deadline) C.rsvp.deadline = new Date(+new Date(C.rsvp.deadline) + _dt);
+  }  var date = new Date(C.date);
 
   /* ---------- SVG ---------- */
   function orn(cls) {
@@ -576,7 +581,16 @@
     el.querySelectorAll("b").forEach(function (b) { b.textContent = ED ? pad(v[b.dataset.k]) : v[b.dataset.k]; });
   }
   var io;
-  function reveal() {
+  // ներքևի անունները՝ մեկ տողում
+  function fitNames() {
+    document.querySelectorAll(".final .names, .e-fn").forEach(function (el) {
+      el.style.whiteSpace = "nowrap"; el.style.fontSize = "";
+      var cs = getComputedStyle(el), avail = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (!avail) return;
+      var r = document.createRange(); r.selectNodeContents(el); var fs = parseFloat(cs.fontSize), i = 0;
+      while (r.getBoundingClientRect().width > avail && fs > 14 && i++ < 80) { fs -= 1; el.style.fontSize = fs + "px"; }
+    });
+  }  function reveal() {
+    fitNames(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNames);
     if (io) io.disconnect();
     var els = document.querySelectorAll(".rv");
     if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }

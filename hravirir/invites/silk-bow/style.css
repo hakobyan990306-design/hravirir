@@ -1,6 +1,6 @@
 /* «Մետաքսե ժապավեն» — փղոսկր, բորդո մետաքս, մոնոգրամ
    Տառատեսակներ՝ Kurland (անուններ), Coronet (վերնագրեր), GHEA Mariam (տեքստ) */
-@font-face { font-family: "Kurland"; src: url("../../fonts/Kurland.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Kurland"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 @font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
@@ -60,3 +60,10 @@
 .bw { width: 190px; }
 .edt { position: absolute; left: 0; right: 0; bottom: 9%; text-align: center; font-size: 15px; letter-spacing: .24em; color: var(--acc); }
 .env.s1 .edt { opacity: 0; transition: opacity .4s; }
+/* իրական բանտ՝ նոր չափեր և ատլասե ժապավեն */
+.band i { background: linear-gradient(180deg, #4e0b15, #8a1c2b 22%, #c44a5c 44%, #a1283a 58%, #6a1220 82%, #4e0b15); }
+.bw { width: 210px; transform: translate(-50%, -41%); }
+.env.s1 .bw { transform: translate(-50%, -150%) rotate(-12deg) scale(1.15); }
+.ribbon > i { background: linear-gradient(180deg, #4e0b15, #8a1c2b 22%, #c44a5c 44%, #a1283a 58%, #6a1220 82%, #4e0b15); }
+.ribbon .bow { width: 150px; top: -14px; }
+.ribbon { height: 116px; }

@@ -1,6 +1,6 @@
 /* «Նուռ» — նռնագույն, փղոսկր և ոսկի, կամարաձև փեղկեր, ազգային զարդագիծ նռնով
    Տառատեսակներ՝ ArmMatura (անուններ), GHEA Mariam Italic (վերնագրեր), GHEA Mariam (տեքստ) */
-@font-face { font-family: "Matura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Matura"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 @font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
 @font-face { font-family: "MariamIt"; src: url("../../fonts/GHEAMariamRIt.otf") format("opentype"); font-display: swap; }
