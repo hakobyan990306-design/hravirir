@@ -7,7 +7,7 @@
   var TG_USER = "champagne_wall";  // Ձեր Telegram username-ը
   var TG_NAME = "@" + TG_USER;     // հաճախորդին ասում ենք՝ որ չաթն ընտրել
   // Google Apps Script-ի հղումը (տես order-google-drive.gs). երբ դրված է, պատվերն ու նկարները պահվում են Google Drive-ում
-  var ORDER_ENDPOINT = "";
+  var ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbxwpQ4fQYogsMWe6JtavVDFtuv2jrBSEHksYU3XxNaxAaEufzuWk8xQHzP2aJhLrFKM/exec";
   var BASE = 8000;
   var EXTRA_PRICES = [2000, 2000, 3000, 5000, 2000];
   var LANG_PRICES = [0, 5000, 9000];
