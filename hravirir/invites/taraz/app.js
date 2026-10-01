@@ -57,13 +57,13 @@
     var n = K.names();
     return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="inside"><div class="orn">' + icon(1) + '</div><div class="nm">' + esc(n[0] || "") +
       '</div><div class="amp">&amp;</div><div class="nm">' + esc(n[1] || "") + "</div></div>" +
-      '<div class="door l"><div class="frame"></div></div><div class="door r"><div class="frame"></div></div>' + coins(18) +
+      '<div class="door l"><div class="frame"></div></div><div class="door r"><div class="frame"></div></div>' +
       '<div class="top"><div class="caps">' + esc(x("envTop")) + '</div></div><div class="med" id="med">' + medallion() + "</div>" +
       (K.PREVIEW ? "" : '<div class="hint">' + esc(x("hint")) + "</div>") + "</div>";
   }
   function hero() {
     var n = K.names(), d = K.date;
-    return '<section class="hero">' + coins(18) + '<div class="wrap"><div class="card rv"><div class="med s">' + medallion() + '</div><div class="caps">' + esc(x("inv")) + "</div>" +
+    return '<section class="hero">' + '<div class="wrap"><div class="card rv"><div class="med s">' + medallion() + '</div><div class="caps">' + esc(x("inv")) + "</div>" +
       '<h1 class="nm"><span>' + esc(n[0] || "") + '</span><span class="amp">&amp;</span><span>' + esc(n[1] || "") + "</span></h1>" +
       '<div class="dt3"><div class="s">' + esc(x("wdl")[d.getDay()]) + '</div><div class="d">' + d.getDate() + '</div><div class="s">' + esc(u("monthsGen")[d.getMonth()]) + "</div></div>" +
       '<div class="yr">' + d.getFullYear() + "</div></div>" + K.photo() + "</div></section>";
