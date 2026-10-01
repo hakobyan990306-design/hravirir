@@ -99,7 +99,7 @@
     }
     var art = !!S;
     return '<section class="hero' + (art ? " art" : "") + (K.PREVIEW ? " go" : "") + '" id="hero"><div class="bg"' + (!art && C.photo ? ' style="background-image:url(\'' + esc(C.photo) + '\')"' : "") + ">" + scene + "</div>" + fx + '<div class="hero-in"><div class="nm">' +
-      (n.length === 2 ? esc(n[0]) + "<i>&amp;</i>" + esc(n[1]) : esc(n.join(" "))) + '</div><div class="dt">' + pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + "</div></div>" +
+      (n.length === 2 ? '<span class="n1">' + esc(n[0]) + '</span><i>&amp;</i><span class="n2">' + esc(n[1]) + "</span>" : esc(n.join(" "))) + '</div><div class="dt">' + pad(d.getDate()) + " · " + pad(d.getMonth() + 1) + " · " + d.getFullYear() + "</div></div>" +
       musicBtn() + torn("b", 11) + "</section>";
   }
   function greeting() {

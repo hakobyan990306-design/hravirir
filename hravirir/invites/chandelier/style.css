@@ -1,8 +1,8 @@
 /* «Ջահ» — ոսկե կողպեք և բանալի, բյուրեղյա ջահ, վարդագույն-փղոսկր, ջրաներկ
    Տառատեսակներ՝ 2. ArmAllegro (գեղագիր) + GHEA Mariam. ռուսերենի գեղագիրը՝ Marck Script */
-@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --paper: #fbf6f1; --blush: #f4e7df; --rose: #ead3c8; --ink: #5e4c41; --soft: #97826f; --gold: #b48a47; --gold-d: #8a6630; --gold-l: #e6cf9c;
@@ -143,6 +143,6 @@ html.preview .chand, html.preview .hero .txt { opacity: 1; transform: none; tran
 @media (prefers-reduced-motion: reduce) { .key, .sway, .fla, .tw, .foil, .env-hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmKurland"; src: url("../../fonts/Kurland.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmKurland"; src: url("../../fonts/Kurland.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmKurland", "NmMarck", serif !important; }

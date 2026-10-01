@@ -1,7 +1,7 @@
 /* «Վարդագույն այգի» — խակի ծրար 4 ծալքով, պատռված թղթի եզրեր, ոլորուն ծրագիր
    Տառատեսակներ՝ 2. SHK Dzeragir (ձեռագիր) + Noto Sans Armenian */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --blush: #ecccc5; --blush-d: #e2b9b1; --ink: #3b2923; --soft: #6e5a53; --olive: #6f6a3e; --khaki: #8a8357; --khaki-l: #9b9467; --khaki-d: #6f6942;
@@ -206,3 +206,9 @@ html.preview .hero .nm, html.preview .hero .dt { clip-path: none; }
 @media (prefers-reduced-motion: reduce) { .sun, .sunrays, .lamp, .fount i, .birds, .birds .bd { animation: none; } .hero.art .bg { transition: none; transform: none; } }
 /* տեսարանում երաժշտության կոճակը վերևի աջ անկյունում է, որ չծածկի զույգին */
 .hero.art .mbtn { left: auto; right: 12px; top: calc(12px + env(safe-area-inset-top, 0px)); bottom: auto; margin: 0; width: 66px; height: 66px; }
+
+/* գլխավոր էկրան. անունները կոկիկ իրար տակ, ամսաթիվը փոքր՝ մեկ տողում տարվա հետ */
+.hero .nm { font-size: clamp(50px, 14.5vw, 82px); line-height: 1.05; }
+.hero .nm span { display: block; }
+.hero .nm i { display: block; font-size: .5em; line-height: 1.1; margin: 2px 0; }
+.hero .dt { font-size: clamp(22px, 6.4vw, 30px); letter-spacing: .14em; margin-top: 18px; transform: rotate(-5deg); white-space: nowrap; }

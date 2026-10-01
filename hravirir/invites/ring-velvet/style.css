@@ -1,7 +1,7 @@
 /* «Մատանի» — նշանդրեք. զմրուխտե թավշյա տուփ, շամպայն-ոսկի
    Տառատեսակներ՝ 2. Arm Coronet (վերնագրեր) + GHEA Mariam */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --em: #0f3b33; --em2: #1a5247; --em3: #082822; --gold: #d6b77a; --gold2: #f1dfb3; --ivory: #f7f2e8; --ink: #22302c; --soft: #6f7a74;

@@ -13,6 +13,12 @@
   var PREVIEW = Q.has("preview");
   if (PREVIEW) { document.documentElement.classList.add("preview"); lang = LANGS[0]; LANGS = [lang]; }
 
+  // Կատալոգի փոքր նախադիտումներում (?preview) լուսանկարները բեռնվում են փոքր չափով՝ էջը արագ է աշխատում
+  if (PREVIEW) (function small(o) {
+    for (var k in o) { var v = o[k];
+      if (typeof v === "string" && /images\.unsplash\.com/.test(v)) o[k] = v.replace(/([?&])w=\d+/, "$1w=420").replace(/([?&])q=\d+/, "$1q=60");
+      else if (v && typeof v === "object") small(v); }
+  })(C);
   var UI = {
     hy: { days: "օր", hours: "ժամ", minutes: "րոպե", seconds: "վրկ", map: "Քարտեզ", send: "Ուղարկել", thanks: "Շնորհակալություն", thanksText: "Ձեր պատասխանն ստացվել է",
       name: "Անուն, ազգանուն", yes: "Այո, սիրով կգամ", no: "Ցավոք, չեմ կարող գալ", maybe: "Կտեղեկացնեմ ավելի ուշ", guests: "Հյուրերի քանակ", note: "Եթե գալու եք զույգով, գրեք բոլորի անունները",
@@ -82,6 +88,15 @@
       }
       clearInterval(K._cd); tick(); K._cd = setInterval(tick, 1000);
     },
+    // Հրավերի ներքևի «HRAVIRIR.AM» հղումը՝ լոգոյով և կայքի հասցեով (հասցեն փոխելու համար փոխեք միայն SITE-ը)
+    SITE: "https://hravirir.pages.dev/",
+    LOGO: '<svg class="k-logo" viewBox="370 370 540 540" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M395 585A251 251 0 0 1 883 585M395 695A251 251 0 0 0 883 695" stroke="#FFC000" stroke-width="22"/><path d="M703 480C700 530 650 620 605 660C590 674 575 684 566 674C548 652 512 610 512 594C514 586 524 590 545 606C600 650 680 720 735 775C748 787 760 800 769 791" stroke="currentColor" stroke-width="18"/></svg>',
+    brand: function () {
+      document.querySelectorAll('a[href*="hravirir.am"], a[href*="hravirir.pages.dev"]').forEach(function (a) {
+        a.href = K.SITE; a.target = "_blank"; a.rel = "noopener";
+        if (!a.querySelector(".k-logo")) { a.classList.add("k-brand"); a.insertAdjacentHTML("afterbegin", K.LOGO); }
+      });
+    },
     // Ներքևի անունները (օր.՝ «Դավիթ & Նարե»)՝ միշտ մեկ տողում. եթե չեն տեղավորվում, տառաչափը փոքրանում է
     fitNames: function () {
       var n = K.names(), main = document.querySelector("main"); if (n.length < 2 || !main) return;
@@ -101,10 +116,10 @@
     reveal: function () {
       if (K._io) K._io.disconnect();
       var els = document.querySelectorAll(".rv");
-      if (!("IntersectionObserver" in window) || PREVIEW) { els.forEach(function (e) { e.classList.add("in"); }); K.fitNames(); return; }
+      if (!("IntersectionObserver" in window) || PREVIEW) { els.forEach(function (e) { e.classList.add("in"); }); K.fitNames(); K.brand(); return; }
       K._io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); K._io.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
       els.forEach(function (e) { K._io.observe(e); });
-      K.fitNames(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(K.fitNames);
+      K.fitNames(); K.brand(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(K.fitNames);
     },
     // RSVP ձև՝ պատասխանը Google Sheets կամ WhatsApp
     rsvp: function (form, thanksHTML) {
@@ -116,6 +131,13 @@
         box.innerHTML = '<div class="fl"><label>' + K.esc(SD[0]) + '</label></div><label class="radio"><input type="radio" name="side" value="' + K.esc(SD[3]) + '" required>' + K.esc(SD[1]) + '</label><label class="radio"><input type="radio" name="side" value="' + K.esc(SD[4]) + '">' + K.esc(SD[2]) + "</label>";
         var first = form.querySelector(".fl"); if (first) form.insertBefore(box, first); else form.appendChild(box);
       }
+      // սխալի հաղորդագրությունները՝ հրավերի լեզվով (ոչ թե բրաուզերի)
+      var VM = { hy: ["Խնդրում ենք լրացնել այս դաշտը", "Խնդրում ենք ընտրել տարբերակներից մեկը"], ru: ["Пожалуйста, заполните это поле", "Пожалуйста, выберите один из вариантов"], en: ["Please fill in this field", "Please choose one of the options"] }[lang] || [];
+      form.querySelectorAll("input, select, textarea").forEach(function (i) {
+        i.addEventListener("invalid", function () { i.setCustomValidity(i.type === "radio" || i.type === "checkbox" ? VM[1] : VM[0]); });
+        var clr = function () { form.querySelectorAll('[name="' + i.name + '"]').forEach(function (j) { j.setCustomValidity(""); }); };
+        i.addEventListener("input", clr); i.addEventListener("change", clr);
+      });
       form.onsubmit = function (ev) {
         ev.preventDefault();
         var fd = new FormData(form), data = {};

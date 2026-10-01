@@ -1,9 +1,9 @@
 /* «Մետաքսե ժապավեն» — փղոսկր, բորդո մետաքս, մոնոգրամ
    Տառատեսակներ՝ Kurland (անուններ), Coronet (վերնագրեր), GHEA Mariam (տեքստ) */
-@font-face { font-family: "Kurland"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Kurland"; src: url("../../fonts/ArmHmkLight.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
 :root {
   --bg: #fbf7f1; --bg2: #f3ebe0; --card: #fffdf9; --ink: #3a2a28; --soft: #8c7b74; --acc: #8a1c2b; --line: rgba(138,28,43,.2);
   --serif: "GHEA Mariam", Georgia, serif; --script: "Coronet", "Marck", serif; --name: "Kurland", "Marck", serif;

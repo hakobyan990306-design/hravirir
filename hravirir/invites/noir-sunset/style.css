@@ -1,8 +1,8 @@
 /* «Սև-ոսկի մայրամուտ» — սև ծրար ոսկե ժապավենով, տեսանյութ, մինիմալ editorial ոճ
    Տառատեսակներ՝ 2. GHEA Mariam (գլխատառեր, տեքստ) + ArmAllegro (գեղագիր) */
-@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --ivory: #f1ece4; --ivory-d: #e6dfd4; --ink: #2b2825; --soft: #6f675e; --gold: #c9a96b; --gold-l: #ead7ad; --cream: #f7efe2;
@@ -129,6 +129,6 @@ html.preview .hero .ani { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .ep, .seal, .hero .ani { transition-duration: .01s !important; } .seal, .env-hint { animation: none; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmPoqrik", "NmMarck", serif !important; }

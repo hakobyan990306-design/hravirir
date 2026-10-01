@@ -1,8 +1,8 @@
 /* «Արքայադուստր» (աղջկա ծնունդ) — վարդագույն դղյակ ամպերի մեջ. կամուրջն իջնում է, դարպասից լույս ու փայլեր, «մտնում ենք» ներս
    Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --paper: #fff9fb; --pink: #f4b6cf; --pink-d: #d9709c; --lilac: #b89ad8; --lil-l: #f3ecfb; --gold: #f2c96b; --ink: #4a3656; --soft: #9a86a6;
@@ -102,6 +102,6 @@ html.preview .env .hint, html.preview .cl, html.preview .cs .flag { animation: n
 @media (prefers-reduced-motion: reduce) { .env .hint, .cl, .cs .flag { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAdamathuz"; src: url("../../fonts/Adamathuz-Bold.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmAdamathuz"; src: url("../../fonts/Adamathuz-Bold.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmAdamathuz", "NmMarck", serif !important; }

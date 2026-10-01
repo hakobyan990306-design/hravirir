@@ -1,8 +1,8 @@
 /* «Պոլարոիդ» — սպիտակ էջ, թեքված լուսանկար-քարտեր, կրաֆտ ծրար, միայն այդ շաբաթվա օրացույց
    Տառատեսակներ՝ Poqrik Dzeragir (ձեռագիր), GHEA Mariam (տեքստ) */
-@font-face { font-family: "Poqrik"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Poqrik"; src: url("../../fonts/ArmHmkLight.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
 :root {
   --bg: #ffffff; --bg2: #f6f1ea; --card: #fff; --ink: #3b3430; --soft: #9a8f86; --acc: #b0805f; --line: rgba(176,128,95,.28);
   --serif: "GHEA Mariam", Georgia, serif; --script: "Poqrik", "Marck", serif; --desk: #efe8df;

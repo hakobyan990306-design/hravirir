@@ -1,8 +1,8 @@
 /* «Մոնոխրոմ քայլ» — սև-սպիտակ ֆիքսված լուսանկար, սպիտակ բարակ մեծատառեր, կինոկադրի բացում
    Տառատեսակներ՝ Noto Sans Armenian 200/300 (անուններ և տեքստ), ArmAllegro (վերնագրեր) */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400&display=swap");
-@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 :root {
   --bg: #111; --bg2: #000; --card: rgba(255,255,255,.08); --ink: #fafafa; --soft: rgba(250,250,250,.7); --acc: #ffffff; --line: rgba(255,255,255,.3);
   --serif: "Noto Sans Armenian", "Helvetica Neue", sans-serif; --script: "Allegro", "Marck", serif; --desk: #000;

@@ -1,6 +1,6 @@
 /* «Պիոն» — եռածալ բացիկ պիոններով, կիսաթափանցիկ ժապավեն մոնոգրամով. փեղկերը բացվում են երկու կողմ
    Տառատեսակներ՝ 2. ArmAllegro (գեղագիր) + Noto Serif Armenian. ռուսերենը՝ Cormorant Garamond */
-@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 
 :root {
   --paper: #fffaf6; --blush: #f8ebe6; --ink: #4d3b3a; --soft: #9a8580; --rose: #c9737a; --rose-d: #a9505f; --sage: #a8b79c; --gold: #c3a06a;
@@ -114,6 +114,6 @@ html.preview .env .hint { animation: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmCoronet", "NmMarck", serif !important; }

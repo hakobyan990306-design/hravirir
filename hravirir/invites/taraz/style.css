@@ -1,8 +1,8 @@
 /* «Տարազ» — հայկական ազգային տարազի ոճով. նռնագույն թավիշ, ոսկե ասեղնագործ զարդանախշեր, արևախաչ, մետաղադրամներով ճակատնոց
    Տառատեսակներ՝ 2. Dzeragir (ձեռագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --red: #8c1c24; --dark: #5e0f18; --gold: #c9a04e; --gold-l: #ecd49a; --cream: #f5ead6; --paper: #fbf5ea; --ink: #3a1f1d; --soft: #8a6f62;
@@ -135,6 +135,6 @@ html.preview .env .hint, html.preview .env .med svg, html.preview .coins .cn { a
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .med svg, .coins .cn { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmVrdznagir"; src: url("../../fonts/Vrdznagir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmVrdznagir"; src: url("../../fonts/Vrdznagir.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmVrdznagir", "NmMarck", serif !important; }

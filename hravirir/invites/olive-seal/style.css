@@ -1,9 +1,9 @@
 /* «Ձիթենու կնիք» — կտավե բեժ, ոսկե կնիք ձիթենու ճյուղով, «Save the Date» լուսանկար, կլոր օրացույց
    Տառատեսակներ՝ Arm Hmk's Script (գեղագիր), GHEA Mariam (տեքստ), Cinzel (լատինատառ մեծատառեր) */
-@font-face { font-family: "Hmk"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
-@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-024F; }
+@font-face { font-family: "Hmk"; src: url("../../fonts/ArmHmkLight.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-024F; }
 :root {
   --bg: #efe9e1; --bg2: #e6ded3; --card: #f8f4ee; --ink: #2c2824; --soft: #857a70; --acc: #8f6f43; --line: rgba(110,85,50,.22);
   --serif: "GHEA Mariam", Georgia, serif; --script: "Hmk", "Marck", serif; --caps: "Cinzel", "GHEA Mariam", serif;

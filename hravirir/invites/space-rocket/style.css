@@ -1,7 +1,7 @@
 /* «Տիեզերք» — տղայի ծնունդ. հրթիռի մեկնարկ 3-2-1, ծուխ, աստղեր, մոլորակներ
    Տառատեսակներ՝ 2. Armmatura (ուրախ գլխագրեր) + GHEA Mariam */
-@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --deep: #151a3a; --deep2: #232a5c; --ink: #f4f1ff; --soft: #b9b7d9; --orange: #ff9f5a; --yellow: #ffd66b; --teal: #6fd3d0; --pink: #ff8fb1; --paper: #fbf9ff;
@@ -90,6 +90,6 @@ html.preview .env .hint { animation: none; }
 @media (prefers-reduced-motion: reduce) { .stars i, .env .hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAdamathuz"; src: url("../../fonts/Adamathuz-Bold.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmAdamathuz"; src: url("../../fonts/Adamathuz-Bold.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmAdamathuz", "NmMarck", serif !important; }

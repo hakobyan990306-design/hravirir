@@ -47,3 +47,7 @@ html.preview { scrollbar-width: none; } html.preview::-webkit-scrollbar { displa
 .k-gal-s::-webkit-scrollbar { display: none; }
 .k-gal-s div { flex: 0 0 64%; max-width: 300px; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; scroll-snap-align: center; box-shadow: 0 16px 28px -20px rgba(0,0,0,.5); }
 @media (min-width: 700px) { .k-gal-s { justify-content: center; } .k-gal-s div { flex-basis: 240px; } }
+
+/* հրավերի ներքևի հղում՝ HRAVIRIR լոգոյով */
+.k-brand { display: inline-flex; align-items: center; gap: .45em; text-decoration: none; }
+.k-logo { width: 2.1em; height: 2.1em; flex: none; }

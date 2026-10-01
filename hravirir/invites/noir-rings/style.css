@@ -1,8 +1,8 @@
 /* «Սև և ոսկի» — մուգ ֆիքսված լուսանկար, թավշյա վարագույր, ոսկե մատանիներ
    Տառատեսակներ՝ Coronet (գեղագիր), GHEA Mariam (տեքստ և մեծատառեր) */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
 :root {
   --bg: #0f0d0c; --bg2: #171310; --card: rgba(24,20,17,.82); --ink: #f2e9d8; --soft: rgba(242,233,216,.66); --acc: #d6b574; --line: rgba(214,181,116,.3);
   --serif: "GHEA Mariam", Georgia, serif; --script: "Coronet", "Marck", serif; --desk: #0a0908;

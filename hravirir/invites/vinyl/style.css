@@ -1,7 +1,7 @@
 /* «Սիրո մեղեդի» — ռետրո ձայնապնակ. ձիթապտղի կանաչ շապիկ, մանանեխի դեղին պիտակ, պտտվող վինիլ, ասեղ
    Տառատեսակներ՝ 2. Noyemi (ռետրո գլխատառեր, ռուսերենը՝ Forum) + GHEA Mariam */
-@font-face { font-family: "Noyemi"; src: url("../../fonts/Noyemi.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Noyemi"; src: url("../../fonts/Noyemi.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --cream: #f1e8d6; --cream2: #e8dbc0; --olive: #5f6b3a; --olive-d: #3b4225; --mustard: #d9a441; --terra: #b8643f; --ink: #2b2a26; --soft: #7a7462;

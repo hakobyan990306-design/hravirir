@@ -1,7 +1,7 @@
 /* «Շամպայն» — հոբելյան. մուգ կապույտ և ոսկի, շամպայնի շիշ, խցանը թռչում է, ոսկե կոնֆետի
    Տառատեսակներ՝ 2. Cinzel (լատիներեն/թվեր, գլխագրեր) + GHEA Mariam. անունները՝ GHEA Mariam-ով, ոսկե փայլով */
-@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --navy: #141b2d; --navy2: #1d2740; --ink: #efe6d2; --soft: #b7ab93; --gold: #cfaa62; --gold-l: #f0dcaa;

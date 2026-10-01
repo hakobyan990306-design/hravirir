@@ -1,8 +1,8 @@
 /* «Նամակ» — ձիթապտղագույն, կրեմագույն գծանկարներ, բացվող ծրար (վերև/ներքև)
    Տառատեսակներ՝ 2. ArmAllegro (գեղագիր) + GHEA Mariam */
-@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --olive: #6f7e53; --olive-d: #606e47; --olive-l: #7f8e62; --cream: #fbf7ec; --cream-d: #e9e2cd; --leaf: #b9c79a; --bronze: #b98a5e;
@@ -141,6 +141,6 @@ html.preview .seal { animation: none; }
 @media (max-width: 350px) { .wrap { padding: 0 18px; } .cdn div { min-width: 54px; } .rose { width: 96px; height: 96px; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmPoqrik", "NmMarck", serif !important; }

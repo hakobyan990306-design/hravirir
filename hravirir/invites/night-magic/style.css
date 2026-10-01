@@ -1,6 +1,6 @@
 /* «Կախարդանք» — ձմեռային գիշերային երկինք. լուսին, ընկնող աստղ, աստղերից գծվող սրտաձև համաստեղություն սկզբնատառերով
    Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Cormorant Garamond Italic) + Noto Serif Armenian */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 
 :root {
   --night: #0d1628; --deep: #122240; --ink: #e9e6f2; --soft: #a3a9c2; --gold: #e8cf8e; --gold-l: #fff1c9; --lilac: #b7a6d9;
@@ -112,6 +112,6 @@ html.preview .env .hint, html.preview .stars i, html.preview .env .moon svg { an
 @media (prefers-reduced-motion: reduce) { .env .hint, .stars i, .env .moon svg { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmAllegro", "NmMarck", serif !important; }

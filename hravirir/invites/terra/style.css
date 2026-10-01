@@ -1,9 +1,9 @@
 /* «Տերրա» — շոկոլադ, ավազ և կաթնագույն, կարված կաշվե քարտ, պամպաս, թել
    Տառատեսակներ՝ Vrdznagir (անուններ), ArmAllegro (վերնագրեր), GHEA Mariam (տեքստ) */
-@font-face { font-family: "Vrdz"; src: url("../../fonts/Vrdznagir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Vrdz"; src: url("../../fonts/Vrdznagir.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
 :root {
   --bg: #faf5ee; --bg2: #efe4d4; --card: #fffaf3; --ink: #3d2a21; --soft: #8c7461; --acc: #6e4a33; --line: rgba(110,74,51,.24);
   --serif: "GHEA Mariam", Georgia, serif; --script: "Allegro", "Marck", serif; --name: "Vrdz", "Marck", serif; --desk: #3d2a21;

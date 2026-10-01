@@ -1,7 +1,7 @@
 /* «Օդապարիկ» — մանկական ծնունդ. պաստելային երկինք, օդապարիկ զամբյուղով, ամպեր
    Տառատեսակներ՝ 2. Noyemi (հայերեն գլխագրեր, միայն հայերեն տառերի համար) + GHEA Mariam */
-@font-face { font-family: "Noyemi"; src: url("../../fonts/Noyemi.otf") format("opentype"); font-display: swap; unicode-range: U+0530-058F; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Noyemi"; src: url("../../fonts/Noyemi.woff2") format("woff2"); font-display: swap; unicode-range: U+0530-058F; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
 :root {
   --sky1: #cfe4f2; --sky2: #f7e3dc; --paper: #fffaf5; --ink: #4d4a5c; --soft: #8a8698; --peach: #f0a88e; --mint: #9fcfbf; --lemon: #f3d27a; --lilac: #b9a9d9; --blue: #86b6d8;
@@ -90,6 +90,6 @@ html.preview .env .bal, html.preview .env .mini, html.preview .env .hint { anima
 @media (prefers-reduced-motion: reduce) { .env .bal, .env .mini, .cloud, .hbal, .env .hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmHanddrawn"; src: url("../../fonts/Dzeragir-Handdrawn.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmHanddrawn"; src: url("../../fonts/Dzeragir-Handdrawn.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmHanddrawn", "NmMarck", serif !important; }

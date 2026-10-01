@@ -1,6 +1,6 @@
 /* «Աղավնիներ» — սպիտակ ծրար փոշեկապույտ մոմե կնիքով, վրան նստած երկու սպիտակ աղավնի. սեղմելիս թռչում են, ծրարը բացվում է
    Տառատեսակներ՝ 2. GHEA Mariam Italic (անուններ) + Noto Serif Armenian / Noto Serif (տեքստ) */
-@font-face { font-family: "Mariam It"; src: url("../../fonts/GHEAMariamRIt.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Mariam It"; src: url("../../fonts/GHEAMariamRIt.woff2") format("woff2"); font-display: swap; }
 
 :root {
   --sky: #e6edf4; --band: #eef3f8; --paper: #fbfcfd; --ink: #2f3b4a; --soft: #7b8796; --blue: #6f8fb3; --blue-d: #4c6a8d; --silver: #c9d1da;
@@ -126,6 +126,6 @@ html.preview .env .hint, html.preview .env .dove { animation: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .dove { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmAllegro", "NmMarck", serif !important; }

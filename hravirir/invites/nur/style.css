@@ -1,9 +1,9 @@
 /* «Նուռ» — նռնագույն, փղոսկր և ոսկի, կամարաձև փեղկեր, ազգային զարդագիծ նռնով
    Տառատեսակներ՝ ArmMatura (անուններ), GHEA Mariam Italic (վերնագրեր), GHEA Mariam (տեքստ) */
-@font-face { font-family: "Matura"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; }
-@font-face { font-family: "MariamIt"; src: url("../../fonts/GHEAMariamRIt.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Matura"; src: url("../../fonts/ArmHmkLight.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "MariamIt"; src: url("../../fonts/GHEAMariamRIt.woff2") format("woff2"); font-display: swap; }
 :root {
   --bg: #f6efe2; --bg2: #3a0a0e; --card: #fffaf0; --ink: #3a1d1a; --soft: #8a6f62; --acc: #8e1b25; --gold: #c9a04e; --line: rgba(142,27,37,.22);
   --serif: "GHEA Mariam", Georgia, serif; --script: "MariamIt", "Marck", serif; --name: "Matura", "Marck", serif; --desk: #2a0709;

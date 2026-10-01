@@ -7,13 +7,13 @@
    Յուրաքանչյուր հրավեր՝ ընդամենը 2 տառատեսակ.
    1) գեղագիր (--f-script)  2) GHEA Mariam (--f-serif, բոլոր մնացած տեքստերը)
    Marck Script-ը միանում է միայն ռուսերեն տարբերակում, որովհետև հայկական գեղագրերը կիրիլիցա չունեն։ */
-@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "ArmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-weight: 400; font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
-@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamRIt.otf") format("opentype"); font-style: italic; font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "ArmAllegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "ArmCoronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-weight: 400; font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamRIt.woff2") format("woff2"); font-style: italic; font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --bg: #f8f3ea; --bg2: #f1e8d8; --paper: #fffcf6; --ink: #2f2618; --muted: #8c7b62;

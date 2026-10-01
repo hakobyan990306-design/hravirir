@@ -1,6 +1,6 @@
 /* «Նարոտ» (կնունք) — կարմիր-սպիտակ թելերը հյուսվում են նարոտի, կախվում է խաչը, բացահայտվում են կնքահայրն ու կնքամայրը
    Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Cormorant Garamond Italic) + Noto Serif Armenian */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 
 :root {
   --paper: #fbf7f2; --soft-bg: #f4ece4; --ink: #3a2a26; --soft: #8f7d76; --red: #c4182a; --red-d: #8e1220; --gold: #b8893d;
@@ -99,6 +99,6 @@ html.preview .env .hint, html.preview .nar .pend { animation: none !important; }
 @media (prefers-reduced-motion: reduce) { .env .hint, .nar .pend { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmPoqrik", "NmMarck", serif !important; }

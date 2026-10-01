@@ -18,7 +18,7 @@
       title: "Հրավիրատոմսի պատրաստման ինֆորմացիա", sub: "Լրացրեք այն ինֆորմացիան, որը կցանկանաք տեսնել հրավիրատոմսում",
       type: "Միջոցառման տեսակը", design: "Հավանած դիզայնը", choose: "— Ընտրեք —",
       main: "Գլխավոր նկար", mainBtn: "+ Ընտրել գլխավոր նկարը", more: "Մնացած նկարները (մինչև 10)", moreBtn: "+ Ավելացնել նկարներ",
-      wish: "Բարեմաղթանք (տեքստ հրավերի համար)", wishPh: "Եթե ունեք Ձեր տեքստը, գրեք այստեղ, եթե ոչ՝ կառաջարկենք մենք", notes: "Լրացուցիչ նշումներ",
+      wish: "Բարեմաղթանք (տեքստ հրավերի համար, կարող եք փոխել)", wishPh: "Գրեք Ձեր տեքստը", notes: "Լրացուցիչ նշումներ",
       phone: "Հեռախոսահամար", langs: "Հրավերի լեզուները", extras: "Լրացուցիչ ծառայություններ", total: "Ընդհանուր արժեք",
       send: "Ուղարկել պատվերը", tg: "Ուղարկել Telegram-ով", pay: "Վճարումը՝ պատվերը հաստատելուց հետո", req: "Լրացրեք պարտադիր դաշտերը (*)",
       date: "Միջոցառման օր", day: "Օր", month: "Ամիս", year: "Տարի", time: "Ժամ", at: ", ժամը ",
@@ -41,7 +41,7 @@
       title: "Информация для приглашения", sub: "Заполните то, что хотите видеть в приглашении",
       type: "Тип мероприятия", design: "Понравившийся дизайн", choose: "— Выберите —",
       main: "Главное фото", mainBtn: "+ Выбрать главное фото", more: "Остальные фото (до 10)", moreBtn: "+ Добавить фото",
-      wish: "Пожелание (текст для приглашения)", wishPh: "Если у вас есть свой текст, напишите здесь; если нет — мы предложим", notes: "Дополнительные пожелания",
+      wish: "Пожелание (текст для приглашения, можно изменить)", wishPh: "Если у вас есть свой текст, напишите здесь; если нет — мы предложим", notes: "Дополнительные пожелания",
       phone: "Номер телефона", langs: "Языки приглашения", extras: "Дополнительные услуги", total: "Итого",
       send: "Отправить заказ", tg: "Отправить в Telegram", pay: "Оплата — после подтверждения заказа", req: "Заполните обязательные поля (*)",
       date: "Дата мероприятия", day: "День", month: "Месяц", year: "Год", time: "Время", at: ", в ",
@@ -64,7 +64,7 @@
       title: "Invitation details", sub: "Fill in what you'd like to see in your invitation",
       type: "Type of event", design: "Chosen design", choose: "— Choose —",
       main: "Main photo", mainBtn: "+ Choose the main photo", more: "Other photos (up to 10)", moreBtn: "+ Add photos",
-      wish: "Wishes (text for the invitation)", wishPh: "If you have your own text, write it here; if not, we'll suggest one", notes: "Additional notes",
+      wish: "Wishes (text for the invitation, you can change it)", wishPh: "If you have your own text, write it here; if not, we'll suggest one", notes: "Additional notes",
       phone: "Phone number", langs: "Invitation languages", extras: "Extra services", total: "Total",
       send: "Send order", tg: "Send via Telegram", pay: "Payment after the order is confirmed", req: "Please fill in the required fields (*)",
       date: "Date of the event", day: "Day", month: "Month", year: "Year", time: "Time", at: ", at ",
@@ -83,7 +83,9 @@
       pickTg: "Choose Telegram and the " + TG_NAME + " chat", pickChat: "Choose the " + TG_NAME + " chat", photosToo: ", and send the photos to the same chat",
       copied: "The message is copied — paste it in Viber", order: "Order", close: "Close"
     }
-  };  // Հին կանչերը տեսակը փոխանցում են հայերեն անունով
+  };  // ստանդարտ բարեմաղթանք՝ ըստ տեսակի և լեզվի (հաճախորդը կարող է փոխել կամ թողնել այնպես)
+  var WISH = {"hy":{"wedding":"Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր կյանքի ամենակարևոր և հիշարժան օրը՝ մեր հարսանիքը։ Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։","engagement":"Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր ուրախությունը՝ մեր նշանադրության օրը։ Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։","baptism":"Սիրով հրավիրում ենք Ձեզ մեր փոքրիկի Սուրբ Մկրտության արարողությանը՝ կիսելու մեզ հետ այդ օրհնված և լուսավոր օրը։","birthday":"Սիրով հրավիրում ենք Ձեզ մեր տոնին։ Կուրախանանք, եթե այդ օրը անցկացնեք մեզ հետ՝ ժպիտով և լավ տրամադրությամբ։","corporate":"Սիրով հրավիրում ենք Ձեզ մեր միջոցառմանը։ Ձեր ներկայությունը մեզ համար մեծ պատիվ կլինի։","other":"Սիրով հրավիրում ենք Ձեզ մեր միջոցառմանը։ Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։"},"ru":{"wedding":"С любовью приглашаем вас разделить с нами самый важный и памятный день нашей жизни — нашу свадьбу. Ваше присутствие станет для нас большой радостью.","engagement":"С любовью приглашаем вас разделить с нами нашу радость — день нашей помолвки. Ваше присутствие станет для нас большой радостью.","baptism":"С любовью приглашаем вас на таинство Святого Крещения нашего малыша, чтобы разделить с нами этот благословенный и светлый день.","birthday":"С любовью приглашаем вас на наш праздник. Будем рады провести этот день вместе с вами — с улыбками и хорошим настроением.","corporate":"С удовольствием приглашаем вас на наше мероприятие. Ваше присутствие будет для нас большой честью.","other":"С любовью приглашаем вас на наше мероприятие. Ваше присутствие станет для нас большой радостью."},"en":{"wedding":"We joyfully invite you to share with us the most important and memorable day of our lives — our wedding. Your presence would mean so much to us.","engagement":"We joyfully invite you to share our happiness on the day of our engagement. Your presence would mean so much to us.","baptism":"We lovingly invite you to the Holy Baptism of our little one, to share with us this blessed and bright day.","birthday":"We warmly invite you to our celebration. We'd be delighted to spend this day with you — with smiles and good spirits.","corporate":"We are pleased to invite you to our event. Your presence would be a great honor for us.","other":"We warmly invite you to our event. Your presence would mean so much to us."}};
+  // Հին կանչերը տեսակը փոխանցում են հայերեն անունով
   var TYPE_ALIAS = { "Հարսանիք": "wedding", "Նշանադրություն": "engagement", "Նշանդրեք": "engagement", "Մկրտություն": "baptism", "Կնունք": "baptism", "Ծնունդ": "birthday", "Կորպորատիվ": "corporate", "Այլ": "other" };
   var TIME_F = { groomHomeT: 1, brideHomeT: 1, zagsT: 1, churchT: 1, restT: 1 };
   var TYPES = {
@@ -156,7 +158,7 @@
           : '<input name="design" value="' + esc(opt.designName || opt.design || "") + '">') +
         '<label class="lbl">' + L.main + '</label><label class="up main"><input type="file" name="mainPhoto" accept="image/*"><span>' + L.mainBtn + '</span></label><div class="thumbs tm"></div>' +
         '<label class="lbl">' + L.more + '</label><label class="up"><input type="file" name="morePhotos" accept="image/*" multiple><span>' + L.moreBtn + '</span></label><div class="thumbs tx"></div>' +
-        '<label class="lbl">' + L.wish + '</label><textarea name="wish" placeholder="' + esc(L.wishPh) + '"></textarea>' +
+        '<label class="lbl">' + L.wish + '</label><textarea name="wish" rows="4" placeholder="' + esc(L.wishPh) + '">' + esc(WISH[lang][curType] || "") + "</textarea>" +
         '<label class="lbl">' + L.notes + '</label><textarea name="notes"></textarea>' +
         '<div class="row"><div><label class="lbl">Instagram <i>*</i></label><input name="insta" placeholder="@anun"></div><div><label class="lbl">' + L.phone + ' <i>*</i></label><input name="phone" type="tel" placeholder="+374 ..."></div></div>' +
         '<label class="lbl">' + L.langs + "</label>" + LANG_PRICES.map(function (p, i) { return '<label class="ck"><input type="radio" name="hoLang" value="' + i + '"' + (i ? "" : " checked") + ">" + L.langNames[i] + (p ? "<em>+" + money(p) + "</em>" : "") + "</label>"; }).join("") +
@@ -189,7 +191,9 @@
       if (l === lang || !T[l]) return;
       var s = snapshot(); lang = l; L = T[l];
       try { localStorage.setItem("ho-lang", l); } catch (e) {}
+      var def = Object.keys(WISH).some(function (k) { return Object.keys(WISH[k]).some(function (t) { return WISH[k][t] === s.wish; }); });
       build(); restore(s);
+      if (def || !s.wish) { var w = q('[name="wish"]'); if (w) w.value = WISH[l][type()] || ""; }
     }
 
     // մինչև 2.5 ՄԲ նկարները ուղարկվում են բնօրինակով (որակը չի փոխվում), ավելի մեծերը՝ մինչև 2560px, բարձր որակով
@@ -237,7 +241,9 @@
     }
     function renderDyn() {
       qa(".dyn input, .dyn select").forEach(function (i) { saved[i.name] = i.value; });
+      var w = q('[name="wish"]'), wasDef = w && Object.keys(WISH).some(function (l) { return Object.keys(WISH[l]).some(function (k) { return WISH[l][k] === w.value; }); }) || (w && !w.value);
       curType = type();
+      if (w && wasDef) w.value = WISH[lang][curType] || "";
       q(".dyn").innerHTML = TYPES[curType].map(function (it) {
         if (it === "DATE") return dateRow();
         if (Array.isArray(it)) return '<div class="row' + (TIME_F[it[1]] ? " t" : "") + '">' + field(it[0]) + field(it[1]) + "</div>";

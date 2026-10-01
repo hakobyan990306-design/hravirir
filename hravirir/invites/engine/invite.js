@@ -404,7 +404,7 @@
     return '<section class="final alt"><div class="wrap"><div class="crest rv" style="width:84px;height:84px;margin:0 auto 14px;color:var(--accent)">' + crest(mono) + "</div>" +
       '<div class="kicker rv d1">' + esc(t(C.finalText) || u("waiting")) + "</div>" +
       '<div class="names foil rv d2">' + esc(namesPlain()) + "</div>" + orn("rv d3") + "</div></section>" +
-      '<div class="made">' + (C.footer ? esc(t(C.footer)) + " · " : "") + '<a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
+      '<div class="made">' + (C.footer ? esc(t(C.footer)) + " · " : "") + '<a href="https://hravirir.pages.dev/" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
   }
 
   function sFabs() {
@@ -552,7 +552,7 @@
   }
   function eFinal() {
     return '<section class="e-final"><div class="wrap"><div class="kicker rv">' + esc(t(C.finalText) || u("waiting")) + '</div><div class="e-fn rv d1">' + esc(namesPlain()) + "</div></div></section>" +
-      '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
+      '<div class="made"><a href="https://hravirir.pages.dev/" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
   }
   if (ED) document.body.setAttribute("data-layout", "editorial");
 
@@ -581,6 +581,13 @@
     el.querySelectorAll("b").forEach(function (b) { b.textContent = ED ? pad(v[b.dataset.k]) : v[b.dataset.k]; });
   }
   var io;
+  // սխալի հաղորդագրությունները՝ հրավերի լեզվով
+  document.addEventListener("invalid", function (ev) {
+    var i = ev.target, VM = { hy: ["Խնդրում ենք լրացնել այս դաշտը", "Խնդրում ենք ընտրել տարբերակներից մեկը"], ru: ["Пожалуйста, заполните это поле", "Пожалуйста, выберите один из вариантов"], en: ["Please fill in this field", "Please choose one of the options"] }[lang] || [];
+    if (i.setCustomValidity && VM.length) i.setCustomValidity(i.type === "radio" || i.type === "checkbox" ? VM[1] : VM[0]);
+  }, true);
+  document.addEventListener("input", function (ev) { if (ev.target.setCustomValidity) ev.target.setCustomValidity(""); }, true);
+  document.addEventListener("change", function (ev) { var f = ev.target.form; if (f) [].forEach.call(f.elements, function (j) { if (j.name === ev.target.name && j.setCustomValidity) j.setCustomValidity(""); }); }, true);
   // ներքևի անունները՝ մեկ տողում
   function fitNames() {
     document.querySelectorAll(".final .names, .e-fn").forEach(function (el) {
@@ -590,6 +597,7 @@
       while (r.getBoundingClientRect().width > avail && fs > 14 && i++ < 80) { fs -= 1; el.style.fontSize = fs + "px"; }
     });
   }  function reveal() {
+    document.querySelectorAll('a[href*="hravirir.pages.dev"]').forEach(function (l) { if (!l.querySelector('.k-logo')) l.insertAdjacentHTML('afterbegin', '<svg class="k-logo" viewBox="370 370 540 540" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:2.1em;height:2.1em;vertical-align:middle;margin-right:.4em"><path d="M395 585A251 251 0 0 1 883 585M395 695A251 251 0 0 0 883 695" stroke="#FFC000" stroke-width="22"/><path d="M703 480C700 530 650 620 605 660C590 674 575 684 566 674C548 652 512 610 512 594C514 586 524 590 545 606C600 650 680 720 735 775C748 787 760 800 769 791" stroke="currentColor" stroke-width="18"/></svg>'); });
     fitNames(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNames);
     if (io) io.disconnect();
     var els = document.querySelectorAll(".rv");

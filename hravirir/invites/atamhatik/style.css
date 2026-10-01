@@ -1,6 +1,6 @@
 /* «Ատամհատիկ» — ավանդական ափսե առարկաներով. հյուրն ընտրում է, թե ով կդառնա փոքրիկը, վրան հատիկ ու կոնֆետ է թափվում
    Տառատեսակներ՝ 2. Armmatura (վերնագրեր, ռուսերենը՝ Nunito) + Noto Sans Armenian / Nunito */
-@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; unicode-range: U+0530-058F, U+0030-0039, U+0026; }
+@font-face { font-family: "Armmatura"; src: url("../../fonts/ArmmaturaU.woff2") format("woff2"); font-display: swap; unicode-range: U+0530-058F, U+0030-0039, U+0026; }
 
 :root {
   --cream: #fff6ea; --ink: #5a4034; --soft: #9b8577; --peach: #f3a883; --peach-l: #fde3d6; --mint: #8fcfb8; --mint-l: #e3f4ed; --butter: #f5cf6a; --sky: #9cc9e8;

@@ -1,8 +1,8 @@
 /* «Նուար» — hravirir.am-ի լուսանկարային ոճը (saro-diana). սպիտակ ֆոն, գեղագիր տեքստեր և մեծ սև-սպիտակ նկարներ հերթով,
    ծրագիր «Ինչպես հասնել» կոճակներով, հետհաշվարկ, «Սիրով՝ … և …»
    Տառատեսակներ՝ 2. Coronet (գեղագիր, ռուսերենը՝ Marck Script) + Noto Sans Armenian */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --ink: #111; --soft: #6d6d6d; --colw: 560px;

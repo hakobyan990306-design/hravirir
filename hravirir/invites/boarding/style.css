@@ -1,7 +1,7 @@
 /* «Ավիատոմս» — հրավերը՝ ավիատոմսի տեսքով. «ՆՇԱՆԱԾ → ԱՄՈՒՍՆԱՑԱԾ», կնիք, ինքնաթիռ, ծրագիրը՝ չվերթների ցուցատախտակ
    Տառատեսակներ՝ 2. Coronet (անուններ, ռուսերենը՝ Marck Script) + Noto Sans Armenian / Noto Sans */
-@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {
   --sky: #dbe8f3; --sky2: #eef5fb; --navy: #1d2b4f; --coral: #e8735a; --ink: #1d2b4f; --soft: #7a879e; --board: #15181f; --amber: #ffc94a;
@@ -130,6 +130,6 @@ html.preview .env .hint, html.preview .env .pass, html.preview .cl { animation: 
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .pass, .cl, .board.in .row .tm i { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmHmk"; src: url("../../fonts/ArmHmkLight.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
-@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "NmHmk"; src: url("../../fonts/ArmHmkLight.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
 .nm, .nm span:not(.amp) { font-family: "NmHmk", "NmMarck", serif !important; }
