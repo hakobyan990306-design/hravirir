@@ -70,8 +70,9 @@
     m.innerHTML = '<div class="nsh-box"><small>' + esc(head) + '</small><textarea placeholder="Ի՞նչ փոխել այստեղ">' + esc(val || "") + '</textarea><div class="row">' +
       (extra ? '<button data-a="x">' + esc(extra) + "</button>" : "") + '<button data-a="c">Չեղարկել</button><button class="p" data-a="ok">' + esc(okLabel || "Պահել") + "</button></div></div>";
     document.body.appendChild(m);
-    var ta = m.querySelector("textarea"); setTimeout(function () { ta.focus(); }, 50);
+    var ta = m.querySelector("textarea"), born = Date.now(); setTimeout(function () { ta.focus(); }, 50);
     m.onclick = function (ev) {
+      if (ev.target === m && Date.now() - born < 600) return; // մատը բարձրացնելու «click»-ը չփակի պատուհանը
       var a = ev.target.getAttribute && ev.target.getAttribute("data-a");
       if (a === "ok") { var v = ta.value.trim(); m.remove(); if (v) onOk(v); else if (extra) onOk(""); }
       else if (a === "c" || ev.target === m) m.remove();
@@ -85,15 +86,26 @@
       save(); draw();
     }, "Պահել", "Ջնջել");
   }
-  function block(ev) {
-    if (!on || inUI(ev.target)) return;
-    ev.preventDefault(); ev.stopPropagation(); ev.stopImmediatePropagation();
-    if (ev.type !== "click") return;
-    var d = describe(ev.target), fx = !!ev.target.closest("#env,.topbar,.k-fabs,.k-demo");
-    var n = { x: fx ? ev.clientX : ev.pageX, y: fx ? ev.clientY : ev.pageY, fx: fx, txt: d.txt, where: d.where, el: d.el, sy: Math.round(window.scrollY), vw: window.innerWidth };
+  // iPhone-ում «click»-ը սովորական տարրերի վրա չի գալիս, ուստի նշումը բացում ենք մատը բարձրացնելիս (pointerup),
+  // միայն եթե դա կարճ հպում էր, ոչ թե թերթում։ Էջի սեփական սեղմումները արգելափակվում են։
+  var start = null;
+  function note(target, cx, cy) {
+    var d = describe(target), fx = !!target.closest("#env,.topbar,.k-fabs,.k-demo");
+    var n = { x: fx ? cx : cx + window.scrollX, y: fx ? cy : cy + window.scrollY, fx: fx, txt: d.txt, where: d.where, el: d.el, sy: Math.round(window.scrollY), vw: window.innerWidth };
     modal(d.where + " · «" + d.txt + "»", "", function (v) { n.note = v; notes.push(n); save(); draw(); });
   }
-  ["pointerdown", "mousedown", "touchstart", "click"].forEach(function (t) { document.addEventListener(t, block, { capture: true, passive: false }); });
+  function block(ev) {
+    if (!on || inUI(ev.target)) return;
+    if (document.querySelector(".nsh-modal")) { ev.stopPropagation(); ev.stopImmediatePropagation(); if (ev.type === "click") ev.preventDefault(); return; }
+    ev.stopPropagation(); ev.stopImmediatePropagation();
+    if (ev.type === "click" || ev.type === "mousedown") ev.preventDefault();
+    if (ev.type === "pointerdown") start = { x: ev.clientX, y: ev.clientY, t: Date.now(), el: ev.target };
+    if (ev.type === "pointerup" && start) {
+      var tap = Math.abs(ev.clientX - start.x) < 12 && Math.abs(ev.clientY - start.y) < 12 && Date.now() - start.t < 800, el = start.el; start = null;
+      if (tap) { ev.preventDefault(); note(el, ev.clientX, ev.clientY); }
+    }
+  }
+  ["pointerdown", "pointerup", "mousedown", "touchstart", "touchend", "click"].forEach(function (t) { document.addEventListener(t, block, { capture: true, passive: false }); });
 
   function allText() {
     var out = [], keys = [];
