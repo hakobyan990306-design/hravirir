@@ -91,7 +91,7 @@ function rsvp_(p) {
       s0.getRange("A1:F1").setValues([["Ժամանակ", "Անուն, ազգանուն", "Կգա՞", "Քանի հոգի", "Ում կողմից", "Նշում"]]).setFontWeight("bold").setBackground("#f3e9dc");
       s0.setFrozenRows(1); s0.setColumnWidth(2, 220); s0.setColumnWidth(6, 260);
       s0.getRange("H1:H5").setValues([["Ընդամենը կգան (հոգի)"], [""], [""], ["Չեն գա (պատասխան)"], [""]]).setFontWeight("bold");
-      s0.getRange("H2").setFormula('=SUMIF(C2:C,"Կգա",D2:D)'); s0.getRange("H5").setFormula('=COUNTIF(C2:C,"Չի գա")');
+      s0.getRange("H2").setValue(0); s0.getRange("H5").setValue(0);
       s0.getRange("H2").setFontSize(18); s0.setColumnWidth(8, 200);
       props.setProperty("RSVP_" + key, ss.getId());
       if (p.email) { try { ss.addViewer(String(p.email).trim()); } catch (err) {} }
@@ -101,7 +101,16 @@ function rsvp_(p) {
     }
     if (p.setup) return ss.getUrl();   // միայն աղյուսակը ստեղծելու համար (առանց պատասխանի)
     var att = p.attend === "yes" ? "Կգա" : p.attend === "maybe" ? "Կտեղեկացնի" : "Չի գա";
-    ss.getSheets()[0].appendRow([new Date(), p.name || "", att, p.attend === "yes" ? (Number(p.guests) || 1) : 0, p.side || "", p.note || ""]);
+    var sh = ss.getSheets()[0];
+    // հաջորդ դատարկ տողը՝ ըստ A սյունակի (աջի «Ընդամենը» գրությունները հաշվի չեն առնվում)
+    var colA = sh.getRange(1, 1, Math.max(sh.getLastRow(), 1), 1).getValues(), r = colA.length;
+    while (r > 1 && colA[r - 1][0] === "") r--;
+    r++;
+    sh.getRange(r, 1, 1, 6).setValues([[new Date(), p.name || "", att, p.attend === "yes" ? (Number(p.guests) || 1) : 0, p.side || "", p.note || ""]]);
+    // ընդհանուր թվերը (առանց բանաձևերի, որ աշխատի ցանկացած լեզվով Google-ում)
+    var rows = sh.getRange(2, 3, r - 1, 2).getValues(), yes = 0, no = 0;
+    rows.forEach(function (x) { if (x[0] === "Կգա") yes += Number(x[1]) || 0; else if (x[0] === "Չի գա") no++; });
+    sh.getRange("H2").setValue(yes); sh.getRange("H5").setValue(no);
     return "ok";
   } finally { lock.releaseLock(); }
 }
