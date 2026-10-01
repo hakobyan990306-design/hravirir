@@ -1,0 +1,8 @@
+# Cloudflare Pages-ի վերահղումներ. hravirir.am-ի հին (wfolio) հղումները՝ դեպի նոր կայքի պատճենները
+# Ամեն տող՝ «հին հասցե  նոր հասցե  301»։ Նոր հաճախորդ ավելացնելիս ավելացրեք մեկ տող։
+/hrant-diana      /invites/hrant-diana/      301
+/hrant-diana/     /invites/hrant-diana/      301
+/saro-diana       /invites/saro-diana/       301
+/saro-diana/      /invites/saro-diana/       301
+/eduard-elmira    /invites/bw-classic/       301
+/eduard-elmira/   /invites/bw-classic/       301

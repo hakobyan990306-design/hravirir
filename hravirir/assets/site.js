@@ -71,6 +71,35 @@
     // հին նույնատիպ դասավորությամբ են, կատալոգից հանված են, մինչև նոր ձևով վերասարքվեն
   ];
 
+  /* ===== Թարգմանություններ (ռուսերեն, անգլերեն) ===== */
+  var NAMES = {
+    ru: { "silk-bow": "Шёлковая лента", "olive-seal": "Оливковая печать", "noir-rings": "Чёрное и золото", "polaroid": "Полароид", "mono-walk": "Монохром", "editorial": "Эдиториал", "nur": "Гранат", "terra": "Терра",
+      "doll-car": "Кукла", "lavash": "Тарелка на счастье", "boarding": "Авиабилет", "scratch": "Скретч-карта", "bw-classic": "Чёрно-белый", "bw-script": "Нуар", "tuscany": "Тоскана", "peony": "Пион",
+      "night-magic": "Волшебство", "cinema": "Кино", "atamhatik": "Атамгатик", "doves": "Голуби", "vinyl": "Мелодия любви", "taraz": "Тараз", "stained-glass": "Витраж", "lavender": "Лаванда",
+      "post-letter": "Почта", "white-seal": "Белый конверт", "chandelier": "Люстра", "monogram": "Монограмма", "noir-sunset": "Чёрно-золотой закат", "blush-garden": "Розовый сад", "olive-letter": "Письмо",
+      "classic-green": "Classic", "gold-gate": "Золотые ворота", "red-rose": "Красная роза", "gold-letter": "Золотая печать", "ring-velvet": "Кольцо", "boho-arch": "Арка", "narot": "Нарот", "candle": "Свеча",
+      "baptism-silver": "Голубое серебро", "angel-wings": "Ангел", "white-ribbon": "Лента", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
+      "space-rocket": "Космос", "balloon-sky": "Воздушный шар" },
+    en: { "silk-bow": "Silk Ribbon", "olive-seal": "Olive Seal", "noir-rings": "Black & Gold", "polaroid": "Polaroid", "mono-walk": "Monochrome Walk", "editorial": "Editorial", "nur": "Pomegranate", "terra": "Terra",
+      "doll-car": "The Doll", "lavash": "Plate for Luck", "boarding": "Boarding Pass", "scratch": "Scratch Card", "bw-classic": "Black & White", "bw-script": "Noir", "tuscany": "Tuscany", "peony": "Peony",
+      "night-magic": "Night Magic", "cinema": "Cinema", "atamhatik": "First Tooth", "doves": "Doves", "vinyl": "Love Melody", "taraz": "Taraz", "stained-glass": "Stained Glass", "lavender": "Lavender",
+      "post-letter": "Post Letter", "white-seal": "White Envelope", "chandelier": "Chandelier", "monogram": "Monogram", "noir-sunset": "Noir Sunset", "blush-garden": "Blush Garden", "olive-letter": "The Letter",
+      "classic-green": "Classic", "gold-gate": "Golden Gate", "red-rose": "Red Rose", "gold-letter": "Gold Seal", "ring-velvet": "The Ring", "boho-arch": "Boho Arch", "narot": "Narot", "candle": "Candle",
+      "baptism-silver": "Blue Silver", "angel-wings": "Angel", "white-ribbon": "Ribbon", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
+      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon" }
+  };
+  var UI = {
+    hy: { view: "Դիտել", pick: "Ընտրել", tag: "Նոր", cats: CATS_HY(), ex: null },
+    ru: { view: "Смотреть", pick: "Выбрать", tag: "Новинка", cats: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения" },
+      ex: [["Готовность за 24 часа", "Приглашение будет готово за один день"], ["Дресс-код", "Палитра цветов и описание"], ["Подтверждение присутствия", "Гости отвечают прямо на сайте"],
+        ["Список гостей по столам", "Гость вводит имя и находит свой стол"], ["Своя музыка", "Выбранная вами песня на фоне приглашения"], ["Два языка", "напр.: армянский + русский"], ["Три языка", "армянский + русский + английский"]] },
+    en: { view: "View", pick: "Choose", tag: "New", cats: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday" },
+      ex: [["Ready in 24 hours", "Your invitation is ready in one day"], ["Dress code", "Color palette and description"], ["RSVP", "Guests reply right on the website"],
+        ["Seating list", "The guest types a name and finds their table"], ["Your own music", "The song of your choice in the background"], ["Two languages", "e.g. Armenian + Russian"], ["Three languages", "Armenian + Russian + English"]] }
+  };
+  function CATS_HY() { return { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ" }; }
+  function lang() { return window.SiteLang ? window.SiteLang.get() : "hy"; }
+  function dname(d) { var l = lang(); return (NAMES[l] && NAMES[l][d.id]) || d.name; }
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
   function money(n) { return n.toLocaleString("en-US").replace(/,/g, ".") + " ֏"; }
@@ -87,11 +116,11 @@
   grid.innerHTML = DESIGNS.map(function (d) {
     return '<article class="design reveal" data-cat="' + d.cat + '">' +
       '<a class="shot" href="invites/' + d.id + '/index.html" target="_blank" rel="noopener" aria-label="' + esc(d.name) + '">' +
-      (d.tag ? '<span class="badge">' + esc(d.tag) + "</span>" : "") +
+      (d.tag ? '<span class="badge" data-tag>' + esc(d.tag) + "</span>" : "") +
       '<iframe loading="lazy" tabindex="-1" title="' + esc(d.name) + '" data-src="invites/' + d.id + '/index.html?preview"></iframe></a>' +
-      '<div class="body"><div class="meta">' + CATS[d.cat] + "</div><h3>" + esc(d.name) + "</h3>" +
+      '<div class="body"><div class="meta" data-cat-l="' + d.cat + '">' + CATS[d.cat] + '</div><h3 data-dn="' + d.id + '">' + esc(d.name) + "</h3>" +
       '<div class="dots">' + d.colors.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + "</div>" +
-      '<div class="actions"><a class="btn btn-ghost" href="invites/' + d.id + '/index.html" target="_blank" rel="noopener">Դիտել</a>' +
+      '<div class="actions"><a class="btn btn-ghost" data-view href="invites/' + d.id + '/index.html" target="_blank" rel="noopener">Դիտել</a>' +
       '<button class="btn btn-primary" data-pick="' + d.id + '">Ընտրել</button></div></div></article>';
   }).join("");
 
@@ -119,21 +148,34 @@
   /* ---------- Գներ ---------- */
   $("#basePrice").textContent = money(BASE_PRICE).replace(" ֏", "");
   $("#extrasList").innerHTML = EXTRAS.concat(LANG_OPTS.slice(1)).map(function (x) {
-    return '<div class="extra"><div><b>' + esc(x.name) + "</b><span>" + esc(x.desc || "") + '</span></div><div class="p">+' + money(x.price) + "</div></div>";
+    return '<div class="extra"><div><b data-ex="' + x.id + '">' + esc(x.name) + "</b><span>" + esc(x.desc || "") + '</span></div><div class="p">+' + money(x.price) + "</div></div>";
   }).join("");
 
   /* ---------- Պատվեր՝ invites/order.js-ի «խելացի» ձևով (դաշտերը փոխվում են ըստ միջոցառման տեսակի) ---------- */
   var TYPE_BY_CAT = { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ" };
   var orderForm = window.HravirirOrder.mount($("#orderMount"), {
-    title: false, designs: DESIGNS, design: new URLSearchParams(location.search).get("design") || ""
+    title: false, designs: DESIGNS, lang: lang(), design: new URLSearchParams(location.search).get("design") || ""
   });
   // «Ընտրել» կոճակը բացում է ձևը հենց այդ դիզայնով և միջոցառման տեսակով
   $$("[data-pick]").forEach(function (b) {
     b.addEventListener("click", function () {
       var d = DESIGNS.filter(function (x) { return x.id === b.dataset.pick; })[0];
-      window.HravirirOrder.open(d.id, d.name, TYPE_BY_CAT[d.cat]);
+      window.HravirirOrder.open(d.id, dname(d), TYPE_BY_CAT[d.cat]);
     });
   });
+
+  /* ---------- Լեզվի փոխում ---------- */
+  function relabel(l) {
+    var U = UI[l] || UI.hy, cats = U.cats, ex = EXTRAS.concat(LANG_OPTS.slice(1));
+    $$("[data-dn]").forEach(function (h) { var d = DESIGNS.filter(function (x) { return x.id === h.dataset.dn; })[0]; h.textContent = dname(d); });
+    $$("[data-cat-l]").forEach(function (m) { m.textContent = cats[m.dataset.catL]; });
+    $$("[data-tag]").forEach(function (b) { b.textContent = U.tag; });
+    $$("[data-view]").forEach(function (a) { a.textContent = U.view; });
+    $$("[data-pick]").forEach(function (b) { b.textContent = U.pick; });
+    $$("[data-ex]").forEach(function (b, i) { var x = ex[i]; b.textContent = U.ex ? U.ex[i][0] : x.name; b.nextSibling.textContent = U.ex ? U.ex[i][1] : (x.desc || ""); });
+    if (orderForm && orderForm.setLang) orderForm.setLang(l);
+  }
+  if (window.SiteLang) { window.SiteLang.on(relabel); relabel(lang()); }
 
   /* ---------- Անիմացիա ---------- */
   var io = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {

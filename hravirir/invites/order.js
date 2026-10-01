@@ -59,9 +59,31 @@
       sending: "Отправляем заказ…", sent: "Заказ и фото получены ✓ Скоро свяжемся с вами", fail: "Не получилось. Пожалуйста, отправьте через Telegram",
       pickTg: "Выберите Telegram и чат " + TG_NAME, pickChat: "Выберите чат " + TG_NAME, photosToo: ", а фото отправьте в тот же чат",
       copied: "Сообщение скопировано — вставьте его в Viber", order: "Заказ", close: "Закрыть"
+    },
+    en: {
+      title: "Invitation details", sub: "Fill in what you'd like to see in your invitation",
+      type: "Type of event", design: "Chosen design", choose: "— Choose —",
+      main: "Main photo", mainBtn: "+ Choose the main photo", more: "Other photos (up to 10)", moreBtn: "+ Add photos",
+      wish: "Wishes (text for the invitation)", wishPh: "If you have your own text, write it here; if not, we'll suggest one", notes: "Additional notes",
+      phone: "Phone number", langs: "Invitation languages", extras: "Extra services", total: "Total",
+      tg: "Send via Telegram", pay: "Payment after the order is confirmed", req: "Please fill in the required fields (*)",
+      date: "Date of the event", day: "Day", month: "Month", year: "Year", time: "Time", at: ", at ",
+      months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      types: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday", corporate: "Corporate", other: "Other" },
+      extraNames: ["Ready in 24 hours", "Dress code", "RSVP", "Seating list", "Your own music"],
+      langNames: ["Armenian only", "Two languages", "Three languages"],
+      f: {
+        groom: "Groom's name", bride: "Bride's name", groomHome: "Groom's home address", groomHomeT: "Time", brideHome: "Bride's home address", brideHomeT: "Time",
+        zags: "Civil registration venue", zagsT: "Time", church: "Church", churchT: "Time", rest: "Restaurant", restT: "Time",
+        child: "Child's name", hero: "Celebrant's name", title: "Event title"
+      },
+      m: { hello: "Hello, an order from HRAVIRIR.AM", event: "Event", photos: "Photos", pcs: "pcs", drive: " (sent to Google Drive)", design: "Design", wish: "Wishes",
+        notes: "Notes", lang: "Languages", extra: "Extras", phone: "Phone", total: "Total", form: "Form language" },
+      sending: "Sending your order…", sent: "Order and photos received ✓ We'll contact you soon", fail: "Something went wrong. Please send it via Telegram",
+      pickTg: "Choose Telegram and the " + TG_NAME + " chat", pickChat: "Choose the " + TG_NAME + " chat", photosToo: ", and send the photos to the same chat",
+      copied: "The message is copied — paste it in Viber", order: "Order", close: "Close"
     }
-  };
-  // Հին կանչերը տեսակը փոխանցում են հայերեն անունով
+  };  // Հին կանչերը տեսակը փոխանցում են հայերեն անունով
   var TYPE_ALIAS = { "Հարսանիք": "wedding", "Նշանադրություն": "engagement", "Նշանդրեք": "engagement", "Մկրտություն": "baptism", "Կնունք": "baptism", "Ծնունդ": "birthday", "Կորպորատիվ": "corporate", "Այլ": "other" };
   var TIME_F = { groomHomeT: 1, brideHomeT: 1, zagsT: 1, churchT: 1, restT: 1 };
   var TYPES = {
@@ -76,8 +98,8 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function startLang(opt) {
     if (opt.lang && T[opt.lang]) return opt.lang;
-    try { var s = localStorage.getItem("ho-lang"); if (T[s]) return s; } catch (e) {}
-    return document.documentElement.lang === "ru" ? "ru" : "hy";
+    try { var s = localStorage.getItem("ho-lang") || localStorage.getItem("site-lang"); if (T[s]) return s; } catch (e) {}
+    return T[document.documentElement.lang] ? document.documentElement.lang : "hy";
   }
 
   var CSS = '.hof{font:15px/1.5 "Noto Sans Armenian",system-ui,sans-serif;color:#2b2622;text-align:left}' +
@@ -121,7 +143,7 @@
     var q = function (s) { return root.querySelector(s); }, qa = function (s) { return [].slice.call(root.querySelectorAll(s)); };
 
     function build() {
-      root.innerHTML = '<div class="lg" role="group" aria-label="Language"><button type="button" data-lg="hy"' + (lang === "hy" ? ' class="on"' : "") + '>ՀԱՅ</button><button type="button" data-lg="ru"' + (lang === "ru" ? ' class="on"' : "") + ">РУС</button></div>" +
+      root.innerHTML = '<div class="lg" role="group" aria-label="Language"><button type="button" data-lg="hy"' + (lang === "hy" ? ' class="on"' : "") + '>ՀԱՅ</button><button type="button" data-lg="ru"' + (lang === "ru" ? ' class="on"' : "") + ">РУС</button><button type=\"button\" data-lg=\"en\"" + (lang === "en" ? ' class=\"on\"' : "") + ">ENG</button></div>" +
         (opt.title === false ? "" : "<h3>" + L.title + '</h3><div class="sub">' + L.sub + "</div>") +
         '<label class="lbl">' + L.type + '</label><div class="types">' + Object.keys(TYPES).map(function (k) {
           return '<label><input type="radio" name="hoType" value="' + k + '"' + (k === curType ? " checked" : "") + "><span>" + L.types[k] + "</span></label>";
