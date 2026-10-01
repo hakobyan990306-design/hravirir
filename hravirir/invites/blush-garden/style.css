@@ -1,6 +1,6 @@
 /* «Վարդագույն այգի» — խակի ծրար 4 ծալքով, պատռված թղթի եզրեր, ոլորուն ծրագիր
    Տառատեսակներ՝ 2. SHK Dzeragir (ձեռագիր) + Noto Sans Armenian */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; }
 @font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 
 :root {

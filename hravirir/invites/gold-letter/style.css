@@ -1,6 +1,6 @@
 /* «Ոսկե կնիք» — նշանդրեք. սպիտակ հորիզոնական ծրար վարդագույն մետաքսի վրա, ոսկե մոմե կնիք, վարդի թերթիկներ, նամակը բացվում է գրքի պես
    Տառատեսակներ՝ 2. SHK Dzeragir (գեղագիր) + GHEA Mariam. ռուսերենի գեղագիրը՝ Marck Script */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0530-058F, U+FB13-FB17, U+0020-0040; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0530-058F, U+FB13-FB17, U+0020-0040; }
 @font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 @font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 

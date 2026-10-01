@@ -114,6 +114,6 @@ html.preview .env .hint, html.preview .car .rb, html.preview .car .doll { animat
 @media (prefers-reduced-motion: reduce) { .env .hint, .car .rb, .car .doll { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmDzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmVrdznagir"; src: url("../../fonts/Vrdznagir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmDzeragir", "NmMarck", serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmVrdznagir", "NmMarck", serif !important; }

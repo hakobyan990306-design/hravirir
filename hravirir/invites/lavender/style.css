@@ -87,6 +87,6 @@ html.preview .env .stem, html.preview .env .hint { animation: none; }
 @media (prefers-reduced-motion: reduce) { .env .stem, .env .hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmHmk"; src: url("../../fonts/ArmHmkScript.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmCoronet", "NmMarck", serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmHmk", "NmMarck", serif !important; }

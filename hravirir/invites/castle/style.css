@@ -102,6 +102,6 @@ html.preview .env .hint, html.preview .cl, html.preview .cs .flag { animation: n
 @media (prefers-reduced-motion: reduce) { .env .hint, .cl, .cs .flag { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmArmmatura"; src: url("../../fonts/ArmmaturaU.ttf") format("truetype"); font-display: swap; unicode-range: U+0530-058F, U+0030-0039, U+0026; }
+@font-face { font-family: "NmAdamathuz"; src: url("../../fonts/Adamathuz-Bold.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmArmmatura", "Nunito", sans-serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmAdamathuz", "NmMarck", serif !important; }

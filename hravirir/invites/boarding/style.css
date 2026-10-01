@@ -130,6 +130,6 @@ html.preview .env .hint, html.preview .env .pass, html.preview .cl { animation: 
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .pass, .cl, .board.in .row .tm i { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmHmk"; src: url("../../fonts/ArmHmkScript.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmAllegro", "NmMarck", serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmHmk", "NmMarck", serif !important; }

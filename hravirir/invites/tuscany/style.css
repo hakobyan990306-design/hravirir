@@ -1,6 +1,6 @@
 /* «Տոսկանա» — միջերկրածովյան ամառ. կապույտ-սպիտակ մայոլիկա սալիկներ կիտրոններով, սալիկները շրջվում են ալիքով
    Տառատեսակներ՝ 2. Dzeragir (ձեռագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 @font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
@@ -104,6 +104,6 @@ html.preview .env .hint { animation: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmHmk"; src: url("../../fonts/ArmHmkScript.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmAllegro", "NmMarck", serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmHmk", "NmMarck", serif !important; }

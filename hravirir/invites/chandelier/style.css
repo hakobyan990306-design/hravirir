@@ -143,6 +143,6 @@ html.preview .chand, html.preview .hero .txt { opacity: 1; transform: none; tran
 @media (prefers-reduced-motion: reduce) { .key, .sway, .fla, .tw, .foil, .env-hint { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmKurland"; src: url("../../fonts/Kurland.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmCoronet", "NmMarck", serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmKurland", "NmMarck", serif !important; }

@@ -1,6 +1,6 @@
 /* «Տարազ» — հայկական ազգային տարազի ոճով. նռնագույն թավիշ, ոսկե ասեղնագործ զարդանախշեր, արևախաչ, մետաղադրամներով ճակատնոց
    Տառատեսակներ՝ 2. Dzeragir (ձեռագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 @font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
@@ -135,10 +135,6 @@ html.preview .env .hint, html.preview .env .med svg, html.preview .coins .cn { a
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .med svg, .coins .cn { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmCoronet"; src: url("../../fonts/ArmCoronetU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmVrdznagir"; src: url("../../fonts/Vrdznagir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmCoronet", "NmMarck", serif !important; }
-/* ազգային տարազով զույգ */
-.env .inside .orn.cp { width: min(58vw, 240px); margin-bottom: 4px; }
-.cpl { display: block; width: 100%; height: auto; }
-.cpl-h { width: min(72vw, 290px); margin: 34px auto 0; }
+.nm, .nm span:not(.amp) { font-family: "NmVrdznagir", "NmMarck", serif !important; }

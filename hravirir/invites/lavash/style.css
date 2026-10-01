@@ -1,6 +1,6 @@
 /* «Ափսե և լավաշ» — հայկական ավանդույթ. շեմին ափսե են կոտրում բախտի համար, տակից՝ լավաշ անուններով
    Տառատեսակներ՝ 2. Dzeragir (ձեռագիր, ռուսերենը՝ Marck Script) + GHEA Mariam */
-@font-face { font-family: "Dzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Dzeragir"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "Marck Script"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
 @font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.otf") format("opentype"); font-display: swap; unicode-range: U+0000-058E, U+0590-FFFF; }
 
@@ -115,22 +115,6 @@ html.preview .env .hint, html.preview .env .whole { animation: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .whole { animation: none !important; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmAllegro"; src: url("../../fonts/ArmAllegroU.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmVrdznagir"; src: url("../../fonts/Vrdznagir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmAllegro", "NmMarck", serif !important; }
-
-/* Շեմի տեսարան՝ լավաշն իջնում է ուսերին, մեղրը կաթում է */
-.tr { width: min(82vw, 330px); margin: 6px auto 4px; }
-.tr .lv { transform-box: view-box; transform-origin: 150px 140px; transform: translateY(-190px) rotate(-8deg) scaleY(.6); opacity: 0; }
-.tr.in .lv, html.preview .tr .lv { transform: none; opacity: 1; transition: transform 1.5s cubic-bezier(.3,1.25,.5,1) .5s, opacity .5s .5s; }
-.tr .gl { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(0); }
-.tr.in .gl { animation: tw 2.6s ease-in-out var(--d) infinite; }
-@keyframes tw { 0%, 100% { opacity: 0; transform: scale(0) rotate(0); } 35% { opacity: 1; transform: scale(1) rotate(45deg); } 70% { opacity: 0; transform: scale(.2) rotate(90deg); } }
-.tr .dip { transform-box: view-box; transform-origin: 80px 240px; }
-.tr.in .dip { animation: dip 3.2s ease-in-out 1.8s infinite; }
-@keyframes dip { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-7deg); } }
-.tr .drop { transform-box: fill-box; transform-origin: center top; opacity: 0; }
-.tr.in .drop { animation: drop 1.6s cubic-bezier(.5,0,.9,.5) 2s infinite; }
-@keyframes drop { 0% { opacity: 0; transform: translateY(0) scale(.3); } 25% { opacity: 1; transform: translateY(2px) scale(1, 1.3); } 85% { opacity: 1; transform: translateY(52px) scale(.8, 1.2); } 100% { opacity: 0; transform: translateY(54px) scale(1.4, .3); } }
-.tr-c { margin: 2px 0 18px; }
-@media (prefers-reduced-motion: reduce) { .tr .lv { transform: none !important; opacity: 1 !important; } .tr .gl, .tr .dip, .tr .drop { animation: none !important; } }
+.nm, .nm span:not(.amp) { font-family: "NmVrdznagir", "NmMarck", serif !important; }

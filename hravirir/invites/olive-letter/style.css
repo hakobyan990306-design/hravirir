@@ -141,6 +141,6 @@ html.preview .seal { animation: none; }
 @media (max-width: 350px) { .wrap { padding: 0 18px; } .cdn div { min-width: 54px; } .rose { width: 96px; height: 96px; } }
 
 /* Անունների տառատեսակը՝ վերնագրերից տարբեր (ամեն դիզայնում իրենը) */
-@font-face { font-family: "NmDzeragir"; src: url("../../fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "NmPoqrik"; src: url("../../fonts/PoqrikDzeragir.ttf") format("truetype"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
 @font-face { font-family: "NmMarck"; src: url("../../fonts/MarckScript-Regular.ttf") format("truetype"); font-display: swap; unicode-range: U+0400-04FF; }
-.nm, .nm span:not(.amp) { font-family: "NmDzeragir", "NmMarck", serif !important; }
+.nm, .nm span:not(.amp) { font-family: "NmPoqrik", "NmMarck", serif !important; }
