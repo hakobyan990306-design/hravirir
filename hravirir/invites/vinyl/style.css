@@ -134,3 +134,18 @@ html.preview .env .hint, html.preview .env .rec.r1 { animation: none; }
 .made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }
 .made a { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .env .hint, .env .rec.r1, .rec .label, .eq i, .player .bar i { animation: none !important; } }
+
+/* նվագարկչի կոճակներ՝ SVG պատկերակներով (Play-ը իսկապես միացնում/անջատում է երաժշտությունը) */
+.player .tms { display: flex; justify-content: space-between; margin-top: 6px; font-size: 11px; color: var(--soft); font-variant-numeric: tabular-nums; }
+.player .ctl { display: flex; justify-content: space-between; align-items: center; gap: 0; margin-top: 8px; padding: 0 2px; color: var(--ink); }
+.player .cb { width: 34px; height: 34px; display: grid; place-items: center; border: 0; background: none; padding: 0; color: var(--ink); }
+.player .cb svg { width: 24px; height: 24px; }
+.player .cb.sm svg { width: 20px; height: 20px; opacity: .55; }
+.player .cb.hrt { color: #c0503a; } .player .cb.hrt svg { opacity: 1; }
+.player .cb.pp { width: 54px; height: 54px; border-radius: 50%; background: var(--olive); color: var(--cream); cursor: pointer; box-shadow: 0 8px 16px -8px rgba(60,70,30,.7); transition: transform .2s; }
+.player .cb.pp:active { transform: scale(.94); }
+.player .cb.pp svg { width: 26px; height: 26px; }
+.player .cb.pp .i-pause { display: none; }
+.player .cb.pp.on .i-play { display: none; } .player .cb.pp.on .i-pause { display: block; }
+.player .bar i { animation-play-state: paused; }
+.player:has(.pp.on) .bar i { animation-play-state: running; }
