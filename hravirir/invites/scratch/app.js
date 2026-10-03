@@ -4,13 +4,13 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
     hy: { top: "Մենք ունենք գաղտնիք", hint: "Քերեք սրտերը մատով", skip: "Ցույց տալ առանց քերելու", lab: ["օր", "ամիս", "տարի"], yes: "Մենք ամուսնանում ենք", inv: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին",
-      our: "Մեր գաղտնիքը", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ",
+      our: "Հարգելի հյուրեր", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", left: "Հարսանիքին մնացել է", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", fin: "Սիրով սպասում ենք Ձեզ",
       wdl: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"] },
     ru: { top: "У нас есть секрет", hint: "Сотрите сердечки пальцем", skip: "Показать без стирания", lab: ["день", "месяц", "год"], yes: "Мы женимся", inv: "С любовью приглашаем вас на нашу свадьбу",
-      our: "Наш секрет", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас",
+      our: "Дорогие гости", program: "Программа дня", dress: "Дресс-код", left: "До свадьбы осталось", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", fin: "С любовью ждём вас",
       wdl: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] },
     en: { top: "We have a secret", hint: "Scratch the hearts", skip: "Reveal without scratching", lab: ["day", "month", "year"], yes: "We're getting married", inv: "We joyfully invite you to our wedding",
-      our: "Our secret", program: "Schedule", dress: "Dress code", left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love",
+      our: "Dear guests", program: "Schedule", dress: "Dress code", left: "Counting down", rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "With love",
       wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
@@ -63,7 +63,7 @@
     var n = K.names(), d = K.date;
     return '<section class="hero"><div class="wrap"><div class="caps rv">' + esc(x("inv")) + '</div><h1 class="nm rv d1"><span>' + esc(n[0] || "") + '</span><span class="amp">&amp;</span><span>' + esc(n[1] || "") + "</span></h1>" +
       '<div class="mini rv d2">' + [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].map(function (v) { return '<div class="ht">' + HEART + "<b>" + v + "</b></div>"; }).join("") + "</div>" +
-      '<div class="wd rv d2">' + esc(x("wdl")[d.getDay()]) + " · " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + "</div>" + K.photo() + "</div></section>";
+      '<div class="wd rv d2">' + esc(x("wdl")[d.getDay()]) + "</div>" + K.photo() + "</div></section>";
   }
   function story() {
     return '<section class="blush"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
@@ -77,7 +77,9 @@
   function program() {
     return '<section class="blush"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e) {
       return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e, "double-c") + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
-        '</div><div class="n">' + esc(t(e.place)) + '</div><div class="a">' + esc(t(e.address)) + "</div>" + (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
+        "</div>" + (t(e.place) ? '<div class="n">' + esc(t(e.place)) + "</div>" : "") + (t(e.address) ? '<div class="a">' + esc(t(e.address)) + "</div>" : "") +
+        (e.nav ? '<a class="btn" data-nav="' + esc(e.nav) + '" href="' + esc(K.navHref(e.nav)) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" :
+          e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }
   function dress() {
@@ -99,6 +101,8 @@
       '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
   }
 
+  // այս դիզայնում պատկերասրահը առանց «Մեր պահերը» վերնագրի
+  if (C.galleryTitle === undefined) C.galleryTitle = false;
   var opened = false;
   function render() {
     document.documentElement.lang = K.lang;

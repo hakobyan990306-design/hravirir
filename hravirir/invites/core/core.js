@@ -203,7 +203,7 @@
     gallery: function (h2cls, secCls) {
       if (!C.gallery || !C.gallery.length) return "";
       var T = { hy: "Մեր պահերը", ru: "Наши моменты", en: "Our moments" }[lang] || "";
-      return '<section class="k-gal ' + (secCls || "") + '"><div class="wrap"><h2 class="' + (h2cls || "h2") + ' rv">' + K.esc(T) + '</h2></div><div class="k-gal-s rv">' +
+      return '<section class="k-gal ' + (secCls || "") + '">' + (C.galleryTitle === false ? "" : '<div class="wrap"><h2 class="' + (h2cls || "h2") + ' rv">' + K.esc(T) + "</h2></div>") + '<div class="k-gal-s rv">' +
         C.gallery.map(function (g) { return '<div><img src="' + K.esc(g) + '" alt="" loading="lazy"></div>'; }).join("") + "</div></section>";
     },
     // հարսանիք է, եթե ծրագրում կա պսակադրություն կամ փեսայի/հարսի տուն (կամ INVITE.type = "wedding")
@@ -278,6 +278,19 @@
     }
   };
   window.K = K;
+  // Yandex Navigator. <a data-nav="lat,lon" href="վեբ-քարտեզ"> → հեռախոսում բացվում է հավելվածը (Android՝ intent, iPhone՝ yandexnavi://), չլինելու դեպքում՝ Yandex Maps վեբ
+  K.navHref = function (ll) { return "https://yandex.com/maps/?rtext=~" + ll + "&rtt=auto"; };
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("a[data-nav]"); if (!a) return;
+    var ll = a.dataset.nav.split(","), web = K.navHref(a.dataset.nav), q = "build_route_on_map?lat_to=" + ll[0] + "&lon_to=" + ll[1], ua = navigator.userAgent;
+    if (/Android/i.test(ua)) { ev.preventDefault(); location.href = "intent://" + q + "#Intent;scheme=yandexnavi;package=ru.yandex.yandexnavi;S.browser_fallback_url=" + encodeURIComponent(web) + ";end"; }
+    else if (/iPhone|iPad|iPod/i.test(ua)) {
+      ev.preventDefault(); var t0 = Date.now();
+      var tm = setTimeout(function () { if (!document.hidden && Date.now() - t0 < 3000) location.href = web; }, 1500);
+      document.addEventListener("visibilitychange", function h() { if (document.hidden) { clearTimeout(tm); document.removeEventListener("visibilitychange", h); } });
+      location.href = "yandexnavi://" + q;
+    }
+  });
   // օրինակ-էջերում պատվերի պատուհանը բացվում է հենց այստեղ
   if (C.demo && !K.EMBED) { var os = document.createElement("script"); os.src = "../order.js"; document.head.appendChild(os); }
   // «Նշումների ռեժիմ»՝ հղման վերջում ?nshum
