@@ -293,9 +293,21 @@
     var ll = a.dataset.nav.split(","), web = K.navHref(a.dataset.nav), q = "build_route_on_map?lat_to=" + ll[0] + "&lon_to=" + ll[1], ua = navigator.userAgent;
     if (/Android/i.test(ua)) { ev.preventDefault(); location.href = "intent://" + q + "#Intent;scheme=yandexnavi;package=ru.yandex.yandexnavi;S.browser_fallback_url=" + encodeURIComponent(web) + ";end"; }
     else if (/iPhone|iPad|iPod/i.test(ua)) {
-      ev.preventDefault(); var t0 = Date.now();
-      var tm = setTimeout(function () { if (!document.hidden && Date.now() - t0 < 3000) location.href = web; }, 1500);
-      document.addEventListener("visibilitychange", function h() { if (document.hidden) { clearTimeout(tm); document.removeEventListener("visibilitychange", h); } });
+      // հրավիրատոմսի էջը ՉԻ փոխվում՝ հավելվածից վերադառնալիս հյուրը նորից տեսնում է հրավիրատոմսը.
+      // եթե Navigator-ը չկա, մի քանի վայրկյան հետո ներքևում հայտնվում է «Բացել Yandex քարտեզում» կոճակ (նոր ներդիրում)
+      ev.preventDefault(); var left = false;
+      function away() { left = true; }
+      window.addEventListener("blur", away, { once: true }); window.addEventListener("pagehide", away, { once: true });
+      document.addEventListener("visibilitychange", function h() { if (document.hidden) { away(); document.removeEventListener("visibilitychange", h); } });
+      setTimeout(function () {
+        if (left || document.hidden) return;
+        var old = document.getElementById("k-navtip"); if (old) old.remove();
+        var tip = document.createElement("a"); tip.id = "k-navtip"; tip.href = web; tip.target = "_blank"; tip.rel = "noopener";
+        tip.textContent = { hy: "Բացել Yandex քարտեզում", ru: "Открыть в Яндекс Картах", en: "Open in Yandex Maps" }[lang] || "Yandex Maps";
+        tip.style.cssText = "position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:99;background:#222;color:#fff;padding:12px 20px;border-radius:999px;font:500 15px system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.3);white-space:nowrap";
+        tip.onclick = function () { setTimeout(function () { tip.remove(); }, 300); };
+        document.body.appendChild(tip); setTimeout(function () { tip.remove(); }, 8000);
+      }, 2500);
       location.href = "yandexnavi://" + q;
     }
   });
