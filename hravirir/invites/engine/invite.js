@@ -1,7 +1,7 @@
 /* զննարկչի ներդիրի լոգո (favicon)՝ բոլոր հրավիրատոմսերում */
 (function () {
   var s = document.currentScript; if (!s || document.querySelector('link[rel~="icon"][data-k]')) return;
-  [["icon", "favicon.svg", "image/svg+xml"], ["icon", "favicon-48.png", "image/png"], ["apple-touch-icon", "favicon-180.png", ""]].forEach(function (f) {
+  [["icon", "favicon-48.png", "image/png"], ["icon", "favicon.svg?v=2", "image/svg+xml"], ["apple-touch-icon", "favicon-180.png", ""]].forEach(function (f) {
     var l = document.createElement("link"); l.rel = f[0]; l.href = new URL("../../assets/" + f[1], s.src).href; if (f[2]) l.type = f[2]; l.setAttribute("data-k", ""); document.head.appendChild(l);
   });
   document.querySelectorAll('link[rel~="icon"]:not([data-k])').forEach(function (l) { l.remove(); });
