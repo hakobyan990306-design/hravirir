@@ -55,7 +55,7 @@ html.preview .env .hint { animation: none; }
 .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 50px; background: radial-gradient(90% 55% at 50% 35%, #fff, var(--paper) 70%); }
 .hero .nm { font-family: var(--script); font-weight: 400; font-size: clamp(56px, 17vw, 76px); line-height: 1.08; color: var(--rose-d); margin: 12px 0 18px; }
 .hero .nm span { display: block; padding: 0 .1em .12em; }
-.hero .amp { font-size: .5em; color: var(--gold); }
+.hero .amp { font-size: .5em; color: var(--gold); line-height: 1; padding: 0 !important; margin: .32em 0 .12em; }
 .mini { display: flex; justify-content: center; gap: 10px; }
 .mini .ht { width: 74px; } .mini .ht b { font-size: 22px; } .mini .ht:last-child b { font-size: 17px; }
 .wd { margin-top: 12px; font-size: 12.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); font-weight: 400; }
