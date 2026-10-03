@@ -78,8 +78,9 @@
     return '<section class="blush"><div class="wrap"><h2 class="h2 rv">' + esc(x("program")) + "</h2>" + (C.events || []).map(function (e) {
       return '<div class="ev rv"><div class="pic ico">' + K.evIcon(e, "double-c") + '</div><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) +
         "</div>" + (t(e.place) ? '<div class="n">' + esc(t(e.place)) + "</div>" : "") + (t(e.address) ? '<div class="a">' + esc(t(e.address)) + "</div>" : "") +
-        (e.nav ? '<a class="btn" data-nav="' + esc(e.nav) + '" href="' + esc(K.navHref(e.nav)) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" :
-          e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
+        // e.map (հավելվածից պատճենված https հղում) ունի առաջնահերթություն. iPhone/Android-ը այն բացում է հավելվածում, իսկ «հետ»-ով վերադառնում ենք հրավիրատոմսին
+        (e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" :
+          e.nav ? '<a class="btn" data-nav="' + esc(e.nav) + '" href="' + esc(K.navHref(e.nav)) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div>";
     }).join("") + "</div></section>";
   }
   function dress() {
