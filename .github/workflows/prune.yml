@@ -1,0 +1,24 @@
+name: Ջնջել ժամկետանց հրավիրատոմսերը
+on:
+  schedule:
+    - cron: "0 3 * * *"   # ամեն օր 07:00 (Երևան)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/prune.mjs hravirir
+      - run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "hravirir-bot"
+            git config user.email "hravirir-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "Ջնջվեցին ժամկետանց հրավիրատոմսերը"
+            git push
+          fi
