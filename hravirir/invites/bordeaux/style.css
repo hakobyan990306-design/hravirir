@@ -99,7 +99,7 @@ main { background: var(--paper); }
 .k-brand, .k-brand a { color: rgba(239,230,218,.75) !important; }
 
 /* ---------- բացում՝ ամբողջ էկրանով բորդո ծրար դաջված ծաղիկներով. 4 կողերը դուրս են ծալվում դեպի եզրերը, կնիքը գնում է ձախ կողի հետ ---------- */
-.bxe { background: #f4ece2; perspective: 900px; perspective-origin: 50% 50%; transition: opacity .8s, background-color .8s; overflow: hidden; }
+.bxe { background: transparent; perspective: 900px; perspective-origin: 50% 50%; transition: opacity .8s, background-color .8s; overflow: hidden; }
 .fw { position: absolute; inset: 0; transition: transform 1.2s cubic-bezier(.55,.05,.25,1); will-change: transform; backface-visibility: hidden; transform: translateZ(0); }
 .fw-l, .fw-s { transform-origin: 0 50%; }
 .fw-r { transform-origin: 100% 50%; }
