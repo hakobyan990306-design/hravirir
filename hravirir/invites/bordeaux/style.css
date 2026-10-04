@@ -171,3 +171,10 @@ main { background: var(--paper); }
 .fw-t::before { content: ""; position: absolute; inset: 0; clip-path: polygon(100% 0, 100% 1.5%, 50% 54.5%, 50% 52%); background: rgba(20,0,5,.35); }
 .fw-b::after { content: ""; position: absolute; inset: 0; clip-path: polygon(0 100%, 50% 48%, 50% 46.5%, 0 98.5%); background: rgba(20,0,5,.28); }
 .fw-b::before { content: ""; position: absolute; inset: 0; clip-path: polygon(100% 100%, 50% 48%, 50% 46.5%, 100% 98.5%); background: rgba(20,0,5,.28); }
+/* վայրերի բաժնի բաժանարար՝ գիծ + փոքր կնիք մեջտեղում (սիմետրիկ) */
+.orn { display: flex; align-items: center; justify-content: center; gap: 14px; margin: -14px auto 30px; max-width: 300px; }
+.orn i { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(92,13,26,.5)); }
+.orn i:last-child { background: linear-gradient(270deg, transparent, rgba(92,13,26,.5)); }
+.orn .bx-seal { width: 46px; height: 46px; flex: none; }
+/* ծրագրում՝ տների համար «Ինչպես հասնել» կոճակ */
+.tl-b { display: inline-flex; align-items: center; min-height: 32px; margin-top: 8px; padding: 0 16px; border: 1px solid rgba(239,230,218,.55); border-radius: 999px; color: var(--cream); text-decoration: none; font: 400 12px var(--title); letter-spacing: .06em; }

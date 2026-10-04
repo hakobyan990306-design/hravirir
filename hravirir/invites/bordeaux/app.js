@@ -5,11 +5,11 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, P = window.P;
   P.texts({
     hy: { hint: "Սեղմեք կնիքին", day: "Հարսանեկան օր", dear: "Սիրելի՛ հարազատներ և ընկերներ", date: "Ամուսնության օրը", plan: "Ծրագիր", where: "Վայրը",
-      paper: "Հարսանեկան լրագիր", issue: "Հատուկ համար", news: "Մեծ նորություն", big: "Ամուսնանում ենք", newsT: "Այս օրը երկու սիրող սրտեր միանում են։ Հյուրերին խնդրում ենք գալ ժամանակին, բերել լավ տրամադրություն և պարելու պատրաստ կոշիկներ։", left: "Մնացել է", fin: "Սիրով սպասում ենք Ձեզ" },
+      paper: "Թարմ նորություն", issue: "Հատուկ համար", news: "Մեծ նորություն", big: "Ամուսնանում ենք", newsT: "Այս օրը երկու սիրող սրտեր միանում են։ Հյուրերին խնդրում ենք գալ ժամանակին, բերել լավ տրամադրություն և պարելու պատրաստ կոշիկներ։", left: "Հարսանիքին մնացել է", fin: "Սիրով սպասում ենք Ձեզ" },
     ru: { hint: "Нажмите на печать", day: "Свадебный день", dear: "Дорогие родные и друзья", date: "Дата бракосочетания", plan: "Программа", where: "Место",
-      paper: "Свадебная газета", issue: "Специальный выпуск", news: "Главная новость", big: "Мы женимся", newsT: "В этот день два любящих сердца соединяются. Гостей просим прийти вовремя, взять хорошее настроение и туфли для танцев.", left: "Осталось", fin: "С любовью ждём вас" },
+      paper: "Свежие новости", issue: "Специальный выпуск", news: "Главная новость", big: "Мы женимся", newsT: "В этот день два любящих сердца соединяются. Гостей просим прийти вовремя, взять хорошее настроение и туфли для танцев.", left: "До свадьбы осталось", fin: "С любовью ждём вас" },
     en: { hint: "Tap the seal", day: "Wedding day", dear: "Dear family and friends", date: "Our wedding date", plan: "Timing", where: "Location",
-      paper: "The Wedding Gazette", issue: "Special edition", news: "Big news", big: "We are getting married", newsT: "Two loving hearts become one. Guests are kindly asked to arrive on time, bring a good mood and shoes ready for dancing.", left: "Counting down", fin: "With love" }
+      paper: "Breaking news", issue: "Special edition", news: "Big news", big: "We are getting married", newsT: "Two loving hearts become one. Guests are kindly asked to arrive on time, bring a good mood and shoes ready for dancing.", left: "Until the wedding", fin: "With love" }
   });
   function ini() { var n = K.names(); return [(n[0] || "").charAt(0), (n[1] || "").charAt(0)]; }
   // կարմիր մոմե կնիք՝ անհարթ եզրերով և երկու սկզբնատառով
@@ -77,7 +77,7 @@
   function main() {
     var n = K.names(), d = K.date;
     var plan = (C.plan || C.events || []).map(function (e) {
-      return '<div class="tl-r rv"><div class="tl-t">' + esc(e.time) + '</div><div class="tl-x"><b>' + esc(t(e.title)) + "</b>" + (e.text ? "<span>" + esc(t(e.text)) + "</span>" : "") + "</div></div>";
+      return '<div class="tl-r rv"><div class="tl-t">' + esc(e.time) + '</div><div class="tl-x"><b>' + esc(t(e.title)) + "</b>" + (e.text ? "<span>" + esc(t(e.text)) + "</span>" : "") + (e.map ? '<a class="tl-b" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(P.x("how")) + "</a>" : "") + "</div></div>";
     }).join("");
     var places = (C.events || []).map(function (e) {
       var nav = e.map ? '<a class="pill rv" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(P.x("how")) + "</a>" : "";
@@ -85,13 +85,13 @@
         '<div class="pl-t rv">' + esc(e.time) + " · " + esc(t(e.title)) + '</div><div class="pl-n rv">' + esc(t(e.place) || "") + '</div><div class="pl-a rv">' + esc(t(e.address) || "") + "</div>" + nav + "</div>";
     }).join("");
     return '<section class="hero"><div class="bar"><span>' + esc(n[0] || "") + '</span><i>&#9829;</i><span>' + esc(n[1] || "") + "</span></div>" +
-      '<div class="ph"' + (C.photo ? ' style="background-image:url(\'' + esc(C.photo) + '\')"' : "") + '><h1 class="ttl rv">' + esc(P.x("day")).replace(" ", "<br>") + "</h1></div>" +
+      '<div class="ph"' + (C.photo ? ' style="background-image:url(\'' + esc(C.photo) + '\')"' : "") + '></div>' +
       '<svg class="drape" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H400V12C330 12 260 70 200 70C140 70 70 12 0 12Z"/></svg>' +
       '<div class="hseal rv">' + seal() + "</div></section>" +
       P.sec("wine dear", '<h2 class="cap rv">' + esc(P.x("dear")) + '</h2><p class="p rv">' + P.text() + "</p>" + paper()) +
       P.sec("white cal-s", '<h2 class="cap2 rv">' + esc(P.x("date")) + "</h2>" + P.month("", CIRC)) +
       P.sec("wine tl", '<h2 class="big rv">' + esc(P.x("plan")) + '</h2><div class="tl">' + plan + "</div>" + glass()) +
-      P.sec("white where", '<h2 class="big ink rv">' + esc(P.x("where")) + "</h2>" + places) +
+      P.sec("white where", '<div class="orn rv" aria-hidden="true"><i></i>' + seal("mini") + "<i></i></div>" + places) +
       P.sec("wine cd-s", '<div class="caps rv">' + esc(P.x("left")) + "</div>" + P.cd("")) +
       K.gallery("cap2", "white") +
       (C.dresscode ? P.sec("white", P.dress("cap2")) : "") +
