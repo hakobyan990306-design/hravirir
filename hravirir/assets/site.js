@@ -20,6 +20,7 @@
   var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում" };
   var DESIGNS = [
     { id: "memories", name: "Հուշեր", cat: "wedding", colors: ["#f7f5f1", "#d6d3cd", "#6e6c68", "#111111"], tag: "Նոր" },
+    { id: "bordeaux", name: "Բորդո", cat: "wedding", colors: ["#5c0d1a", "#9e1424", "#111111", "#efe6da"], tag: "Նոր" },
     { id: "elegance", name: "Էլեգանս", cat: "wedding", colors: ["#ffffff", "#d9d7d3", "#8a8885", "#2b2b2b"], tag: "Նոր" },
     { id: "teddy", name: "Արջուկ", cat: "baby", colors: ["#fbf6ef", "#e7d2b6", "#c9a882", "#6b4b33"], tag: "Նոր" },
     { id: "silk-bow", name: "Մետաքսե ժապավեն", cat: "wedding", colors: ["#fbf7f1", "#fffdf9", "#8a1c2b", "#8c7b74"], tag: "Նոր" },
@@ -82,14 +83,14 @@
       "post-letter": "Почта", "white-seal": "Белый конверт", "chandelier": "Люстра", "monogram": "Монограмма", "noir-sunset": "Чёрно-золотой закат", "blush-garden": "Розовый сад", "olive-letter": "Письмо",
       "classic-green": "Classic", "gold-gate": "Золотые ворота", "red-rose": "Красная роза", "gold-letter": "Золотая печать", "ring-velvet": "Кольцо", "boho-arch": "Арка", "narot": "Нарот", "candle": "Свеча",
       "baptism-silver": "Голубое серебро", "angel-wings": "Ангел", "white-ribbon": "Лента", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
-      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "teddy": "Мишутка" },
+      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "bordeaux": "Бордо", "teddy": "Мишутка" },
     en: { "silk-bow": "Silk Ribbon", "olive-seal": "Olive Seal", "noir-rings": "Black & Gold", "polaroid": "Polaroid", "mono-walk": "Monochrome Walk", "editorial": "Editorial", "nur": "Pomegranate", "terra": "Terra",
       "doll-car": "The Doll", "lavash": "Plate for Luck", "boarding": "Boarding Pass", "scratch": "Scratch Card", "bw-classic": "Black & White", "bw-script": "Noir", "tuscany": "Tuscany", "peony": "Peony",
       "night-magic": "Night Magic", "cinema": "Cinema", "atamhatik": "First Tooth", "doves": "Doves", "vinyl": "Love Melody", "taraz": "Taraz", "stained-glass": "Stained Glass", "lavender": "Lavender",
       "post-letter": "Post Letter", "white-seal": "White Envelope", "chandelier": "Chandelier", "monogram": "Monogram", "noir-sunset": "Noir Sunset", "blush-garden": "Blush Garden", "olive-letter": "The Letter",
       "classic-green": "Classic", "gold-gate": "Golden Gate", "red-rose": "Red Rose", "gold-letter": "Gold Seal", "ring-velvet": "The Ring", "boho-arch": "Boho Arch", "narot": "Narot", "candle": "Candle",
       "baptism-silver": "Blue Silver", "angel-wings": "Angel", "white-ribbon": "Ribbon", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
-      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "teddy": "Teddy" }
+      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "bordeaux": "Bordeaux", "teddy": "Teddy" }
   };
   var UI = {
     hy: { view: "Դիտել", pick: "Ընտրել", tag: "Նոր", cats: CATS_HY(), ex: null },
