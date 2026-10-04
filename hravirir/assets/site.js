@@ -144,7 +144,21 @@
     $$(".chip").forEach(function (c) { c.classList.toggle("on", c.dataset.f === cat); });
     $$(".design").forEach(function (d) { d.style.display = cat === "all" || d.dataset.cat === cat ? "" : "none"; });
   }
-  $$(".chip").forEach(function (c) { c.addEventListener("click", function () { filter(c.dataset.f); }); });
+  $$(".chip").forEach(function (c) { c.addEventListener("click", function () {
+    filter(c.dataset.f);
+    try { history.replaceState(null, "", c.dataset.f === "all" ? "#designs" : "#" + c.dataset.f); } catch (e) {}
+  }); });
+  // առանձին հղում ամեն բաժնի համար. hravirir.pages.dev/#wedding, #engagement, #baptism, #birthday, #baby, #designs (բոլորը)
+  function fromHash() {
+    var h = location.hash.slice(1); if (!h) return;
+    var ok = $$(".chip").some(function (c) { return c.dataset.f === h; });
+    if (h === "designs") h = "all", ok = true;
+    if (!ok) return;
+    filter(h);
+    setTimeout(function () { var s = $("#designs"); if (s) s.scrollIntoView(); }, 60);
+  }
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
   $$(".cat").forEach(function (c) {
     c.addEventListener("click", function () { filter(c.dataset.f); $("#designs").scrollIntoView(); });
   });

@@ -22,8 +22,9 @@
       '<path d="M61 4C70 6 77 3 85 10C95 13 104 20 107 31C114 39 117 50 114 61C118 72 113 84 106 92C102 103 91 110 79 113C69 118 56 117 45 114C33 113 21 106 15 95C7 87 3 75 6 63C2 52 6 40 13 31C17 20 27 12 39 9C46 5 53 3 61 4Z" fill="url(#' + g + ')" filter="drop-shadow(0 6px 7px rgba(40,0,6,.5))"/>' +
       '<circle cx="60" cy="60" r="39" fill="url(#' + h + ')"/><circle cx="60" cy="60" r="39" fill="none" stroke="#e66" stroke-opacity=".28"/><circle cx="60" cy="60" r="33.5" fill="none" stroke="#3d0309" stroke-opacity=".35" stroke-dasharray="1 2.2"/>' +
       '<path d="M30 44C38 30 52 25 64 26" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="3" stroke-linecap="round"/>' +
-      '<text x="60" y="70" text-anchor="middle" font-size="31" fill="#4a040c" fill-opacity=".85" style="font-family:var(--script)">' + esc(L[0]) +
-      '<tspan font-size="16" dx="1" dy="-4">&amp;</tspan><tspan dx="1" dy="4">' + esc(L[1]) + "</tspan></text></svg>";
+      // սկզբնատառերը և «&»-ը՝ առանձին, հավասար հեռավորությամբ (սիմետրիկ)
+      '<g fill="#4a040c" fill-opacity=".85" text-anchor="middle" style="font-family:var(--script)"><text x="36" y="71" font-size="29">' + esc(L[0]) + '</text>' +
+      '<text x="61" y="67" font-size="14">&amp;</text><text x="85" y="71" font-size="29">' + esc(L[1]) + "</text></g></svg>";
   }
   // դաջված ծաղկային նախշ (բաց ու մուգ շերտ՝ իրար նկատմամբ 1px տեղաշարժով)
   function emb() {
