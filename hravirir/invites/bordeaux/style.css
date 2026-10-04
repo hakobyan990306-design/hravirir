@@ -178,3 +178,4 @@ main { background: var(--paper); }
 .orn .bx-seal { width: 46px; height: 46px; flex: none; }
 /* ծրագրում՝ տների համար «Ինչպես հասնել» կոճակ */
 .tl-b { display: inline-flex; align-items: center; min-height: 32px; margin-top: 8px; padding: 0 16px; border: 1px solid rgba(239,230,218,.55); border-radius: 999px; color: var(--cream); text-decoration: none; font: 400 12px var(--title); letter-spacing: .06em; }
+.orn .bx-seal path { filter: drop-shadow(0 1px 1.5px rgba(92,13,26,.15)); }
