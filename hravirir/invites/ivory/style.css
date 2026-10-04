@@ -1,0 +1,102 @@
+/* «Լույս» — սպիտակ/կաթնագույն/ոսկեգույն. Coronet (անուններ), Noto Serif Armenian (վերնագրեր), GHEA Mariam (տեքստ) */
+@font-face { font-family: "Coronet"; src: url("../../fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+@font-face { font-family: "GHEA Mariam"; src: url("../../fonts/GHEAMariamReg.woff2") format("woff2"); font-display: swap; }
+:root {
+  --bg: #fbf8f3; --bg2: #f4eee4; --ink: #3d352c; --soft: #8f8373; --gold: #b8955a; --gold2: #d8c09a; --acc: #a8844a; --line: rgba(184,149,90,.35);
+  --serif: "GHEA Mariam", Georgia, serif; --title: "Noto Serif Armenian", "Cormorant Garamond", Georgia, serif; --script: "Coronet", "Marck", serif; --caps: "Noto Serif Armenian", serif;
+  --k-bg: #fbf8f3; --k-ink: #3d352c; --k-accent: #a8844a; --k-font: "GHEA Mariam", serif;
+}
+.caps { color: var(--soft); }
+.h2 { font: 400 clamp(40px, 11.6vw, 52px)/1.25 var(--script); color: var(--gold); padding-bottom: .1em; }
+
+/* կամարաձև ոսկեգույն շրջանակ */
+.arch { position: relative; margin: 0 auto; border-radius: 999px 999px 10px 10px; padding: 8px; border: 1px solid var(--gold2); }
+.arch::after { content: ""; position: absolute; inset: -7px; border-radius: 999px 999px 14px 14px; border: 1px solid var(--line); pointer-events: none; }
+.arch img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 999px 999px 4px 4px; }
+.arch.big { width: min(78vw, 330px); aspect-ratio: 3 / 4.1; margin-bottom: 34px; }
+.arch.ph { width: min(74vw, 300px); aspect-ratio: 4 / 4.6; margin-bottom: 20px; }
+.arch.frame { width: min(86vw, 370px); padding: 70px 26px 34px; background: #fff; box-shadow: 0 20px 40px -30px rgba(120,90,40,.4); }
+
+/* գլխավոր */
+.hero { padding: 54px 0 46px; text-align: center; }
+.hero .nm { margin: 14px 0 18px; font: 400 clamp(54px, 16vw, 74px)/1.05 var(--script); color: var(--gold); }
+.hero .nm span { display: block; padding: 0 .1em .08em; }
+.hero .nm .amp { font-size: .46em; line-height: 1; color: var(--gold2); margin: .26em 0 .06em; padding: 0; }
+
+/* ամսաթիվ՝ երեք քարտ */
+.dcards { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+.dcards div { width: 88px; padding: 16px 0 12px; background: linear-gradient(180deg, #fff, #f6efe3); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 12px 24px -18px rgba(120,90,40,.45); }
+.dcards b { display: block; font: 400 34px/1.1 var(--title); color: var(--ink); font-variant-numeric: tabular-nums; }
+.dcards span { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); }
+.dcards div:last-child b { font-size: 26px; line-height: 1.5; }
+.wd { margin-top: 14px; font: 400 13px var(--title); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+
+.txt-in .p { font-size: 16px; }
+.fnm { font: 400 clamp(38px, 11vw, 50px)/1.25 var(--script); color: var(--gold); margin-top: 10px; padding-bottom: .1em; }
+.fnm.sm { font-size: clamp(30px, 8.6vw, 38px); }
+
+.cd .cdn b { color: var(--gold); font-family: var(--title); font-weight: 300; }
+
+/* ծրագիր՝ կենտրոնական ուղղահայաց գիծ (սիմետրիկ) */
+.tl { position: relative; max-width: 360px; margin: 10px auto 0; }
+.tl::before { content: ""; position: absolute; left: 50%; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+.tl-r { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; padding: 14px 0 20px; }
+.tl-t { text-align: right; font: 300 30px/1.1 var(--title); color: var(--gold); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.tl-d { position: absolute; left: 50%; top: 24px; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 1px var(--gold); }
+.tl-x { text-align: left; }
+.tl-x b { display: block; font: 500 14.5px/1.35 var(--title); color: var(--ink); }
+.tl-x span { display: block; font-size: 13.5px; line-height: 1.45; color: var(--soft); margin-top: 2px; }
+.tl-b, .pill { display: inline-flex; align-items: center; min-height: 34px; margin-top: 8px; padding: 0 16px; border: 1px solid var(--gold); border-radius: 999px; color: var(--acc); text-decoration: none; font: 400 12px var(--title); letter-spacing: .06em; }
+.pill { min-height: 42px; padding: 0 26px; background: var(--gold); color: #fff; margin-top: 14px; }
+
+/* վայրեր */
+.pl + .pl { margin-top: 44px; }
+.pl-t { font: 500 12.5px var(--title); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.pl-n { font: 400 clamp(26px, 7.6vw, 32px)/1.25 var(--script); color: var(--ink); margin-top: 6px; padding-bottom: .1em; }
+.pl-a { font-size: 14.5px; color: var(--soft); }
+.rsv .btn.fill { background: var(--gold); border-color: var(--gold); }
+.fseal { width: 96px; margin: 0 auto 14px; }
+.fseal svg { width: 100%; height: auto; display: block; }
+
+/* ---------- բացում՝ սպիտակ դաջված ծրար, լույսի շողեր ---------- */
+.lve { background: transparent; perspective: 820px; perspective-origin: 50% 20%; overflow: hidden; transition: opacity .7s; }
+.lv-in { position: absolute; inset: 0; background: radial-gradient(70% 45% at 50% 62%, #fff8ea, #e6d5ba 45%, #b99e78); opacity: 0; transition: opacity .6s; }
+.lv-rays { position: absolute; left: 50%; top: 66%; width: 220vmax; height: 220vmax; transform: translate(-50%, -50%) scale(.6); opacity: 0;
+  background: repeating-conic-gradient(from 0deg, rgba(255,250,235,.55) 0deg 3deg, rgba(255,250,235,0) 3deg 11deg);
+  -webkit-mask: radial-gradient(closest-side, #000 8%, transparent 62%); mask: radial-gradient(closest-side, #000 8%, transparent 62%); transition: transform 1.6s ease-out, opacity .8s; }
+.lv-glow { position: absolute; left: 50%; top: 66%; width: 70vw; height: 70vw; transform: translate(-50%, -50%) scale(.4); border-radius: 50%; background: radial-gradient(circle, #fff 0, rgba(255,250,235,.9) 30%, rgba(255,240,210,0) 70%); opacity: 0; transition: transform 1.4s ease-out, opacity .8s; }
+.lv-f { position: absolute; inset: 0; background: linear-gradient(170deg, #fdfcfa, #f1eee9); }
+.lv-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lv-art .eD { fill: rgba(140,122,95,.34); stroke: none; }
+.lv-art .eL { fill: rgba(255,255,255,.95); }
+.lv-art .eM { fill: #f3f0eb; }
+.lv-art .st { fill: none; stroke-width: 1.4; stroke-linecap: round; }
+.lv-art .eD .st { stroke: rgba(140,122,95,.36); } .lv-art .eL .st { stroke: #fff; } .lv-art .eM .st { stroke: #ece8e1; }
+.lv-l { clip-path: polygon(0 0, 50% 57%, 0 100%); background: linear-gradient(95deg, #fbfaf7, #efebe5); }
+.lv-r { clip-path: polygon(100% 0, 50% 57%, 100% 100%); background: linear-gradient(265deg, #fbfaf7, #ece8e2); }
+.lv-b { clip-path: polygon(0 100%, 50% 57%, 100% 100%); background: linear-gradient(0deg, #f6f3ef, #fdfcfa); }
+.lv-b::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(120,100,70,.12), transparent 12%); clip-path: inherit; }
+.lv-tw { position: absolute; left: 0; right: 0; top: 0; height: 60%; transform-origin: 50% 0; transition: transform 1.25s cubic-bezier(.45,.05,.25,1); will-change: transform; z-index: 3; }
+.lv-tw::before { content: ""; position: absolute; inset: 0 0 -6px; clip-path: polygon(0 0, 100% 0, 50% 100%); background: rgba(110,90,60,.16); transform: translateY(5px); }
+.lv-t { clip-path: polygon(0 0, 100% 0, 50% 95%); background: linear-gradient(180deg, #fefdfb, #f2efea); }
+.lv-sw { position: absolute; left: 50%; top: 95%; width: min(30vw, 124px); transform: translate(-50%, -50%); }
+.lv-seal { width: 100%; height: auto; display: block; }
+.lv-shine { position: absolute; inset: 0; z-index: 4; pointer-events: none; opacity: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.95) 45%, rgba(255,246,220,.5) 50%, transparent 62%); background-size: 260% 260%; background-position: 120% 0; mix-blend-mode: screen; }
+.lv-bloom { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0; background: radial-gradient(60% 45% at 50% 62%, #fff, rgba(255,252,244,.95) 50%, rgba(255,250,240,.85)); transition: opacity .55s; }
+.lve .hint { color: #a39478; z-index: 6; }
+/* 1. ծաղիկները փայլում են */
+.lve.s1 .lv-shine { animation: lvShine .9s ease-in-out forwards; }
+.lve.s1 .hint { opacity: 0; animation: none; }
+@keyframes lvShine { 0% { opacity: 1; background-position: 120% 0; } 100% { opacity: 1; background-position: -40% 0; } }
+/* 2. կափարիչը բարձրանում է, լույսը դուրս է գալիս */
+.lve.s2 .lv-tw { transform: rotateX(78deg); }
+.lve.s2 .lv-in { opacity: 1; }
+.lve.s2 .lv-rays { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(8deg); }
+.lve.s2 .lv-glow { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+/* 3. լույսը լցնում է էկրանը, 4. երևում է հրավիրատոմսը */
+.lve.s3 .lv-bloom { opacity: 1; }
+.lve.s4 { opacity: 0; }
+.hero .caps { letter-spacing: .18em; padding: 0 16px; text-wrap: balance; }
+.hero .nm .amp { position: relative; top: .25em; left: .14em; }
