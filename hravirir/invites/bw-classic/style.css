@@ -103,3 +103,4 @@ section { position: relative; text-align: center; padding: 34px 0; overflow: hid
 .vn .cr { font-size: 10px; color: #9a9a9a; margin-top: 4px; }
 .vn .vi img { filter: grayscale(1); }
 .greet { font-weight: 300; font-size: clamp(22px, 6.4vw, 28px); margin-bottom: 10px; }
+.fin.nofp { padding-top: 6px; }
