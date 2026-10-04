@@ -19,7 +19,7 @@
     for (var i = 0; i < 26; i++) { var a = i / 26 * Math.PI * 2, r = 46 + (i % 3 ? 2.5 : -1.5) + (i % 5 ? 0 : 2); b += (i ? "L" : "M") + (60 + Math.cos(a) * r).toFixed(1) + " " + (60 + Math.sin(a) * r).toFixed(1); }
     return '<svg class="seal" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="sg" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#f3d79a"/><stop offset=".45" stop-color="#c9a15a"/><stop offset="1" stop-color="#8a6630"/></radialGradient>' +
       '<radialGradient id="si" cx=".6" cy=".65" r=".7"><stop offset="0" stop-color="#b48a45"/><stop offset="1" stop-color="#e4c584"/></radialGradient></defs>' +
-      '<path d="' + b + 'Z" fill="url(#sg)" filter="drop-shadow(0 4px 5px rgba(80,55,20,.45))"/><circle cx="60" cy="60" r="34" fill="url(#si)"/><circle cx="60" cy="60" r="34" fill="none" stroke="#7d5a26" stroke-opacity=".45"/>' +
+      '<path d="' + b + 'Z" fill="url(#sg)" filter="drop-shadow(0 1px 2px rgba(0,0,0,.12))"/><circle cx="60" cy="60" r="34" fill="url(#si)"/><circle cx="60" cy="60" r="34" fill="none" stroke="#7d5a26" stroke-opacity=".45"/>' +
       '<g transform="translate(60 60) rotate(-58) scale(.42) translate(-80 -30)" style="color:#7a5523">' + olive(160).replace(/<\/?svg[^>]*>/g, "") + "</g></svg>";
   }
   function env() {

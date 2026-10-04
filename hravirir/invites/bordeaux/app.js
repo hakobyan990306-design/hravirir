@@ -19,7 +19,7 @@
     return '<svg class="bx-seal ' + (cls || "") + '" viewBox="0 0 120 120" aria-hidden="true"><defs>' +
       '<radialGradient id="' + g + '" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#d4333f"/><stop offset=".45" stop-color="#9e1424"/><stop offset="1" stop-color="#5a0711"/></radialGradient>' +
       '<radialGradient id="' + h + '" cx=".62" cy=".66" r=".7"><stop offset="0" stop-color="#7d0c19"/><stop offset="1" stop-color="#b52231"/></radialGradient></defs>' +
-      '<path d="M61 4C70 6 77 3 85 10C95 13 104 20 107 31C114 39 117 50 114 61C118 72 113 84 106 92C102 103 91 110 79 113C69 118 56 117 45 114C33 113 21 106 15 95C7 87 3 75 6 63C2 52 6 40 13 31C17 20 27 12 39 9C46 5 53 3 61 4Z" fill="url(#' + g + ')" filter="drop-shadow(0 6px 7px rgba(40,0,6,.5))"/>' +
+      '<path d="M61 4C70 6 77 3 85 10C95 13 104 20 107 31C114 39 117 50 114 61C118 72 113 84 106 92C102 103 91 110 79 113C69 118 56 117 45 114C33 113 21 106 15 95C7 87 3 75 6 63C2 52 6 40 13 31C17 20 27 12 39 9C46 5 53 3 61 4Z" fill="url(#' + g + ')" filter="drop-shadow(0 1px 2px rgba(0,0,0,.12))"/>' +
       '<circle cx="60" cy="60" r="39" fill="url(#' + h + ')"/><circle cx="60" cy="60" r="39" fill="none" stroke="#e66" stroke-opacity=".28"/><circle cx="60" cy="60" r="33.5" fill="none" stroke="#3d0309" stroke-opacity=".35" stroke-dasharray="1 2.2"/>' +
       '<path d="M30 44C38 30 52 25 64 26" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="3" stroke-linecap="round"/>' +
       // սկզբնատառերը և «&»-ը՝ առանձին, հավասար հեռավորությամբ (սիմետրիկ)

@@ -37,7 +37,7 @@ section { position: relative; text-align: center; padding: 64px 0; overflow: hid
 .env .flap svg { width: 100%; height: 100%; display: block; }
 .env .sprw { position: absolute; width: 52%; left: 40%; top: 36%; z-index: 4; transform: rotate(-10deg); transition: opacity .4s; }
 .env .sprw svg { width: 100%; display: block; }
-.env .seal { position: absolute; left: 50%; top: 59%; width: 23%; transform: translate(-50%, -50%); z-index: 5; filter: drop-shadow(0 5px 6px rgba(47,59,74,.35)); }
+.env .seal { position: absolute; left: 50%; top: 59%; width: 23%; transform: translate(-50%, -50%); z-index: 5; filter: drop-shadow(0 1px 2px rgba(0,0,0,.12)); }
 .env .seal svg { width: 100%; display: block; }
 .env .d1, .env .d2 { position: absolute; bottom: 94%; width: 38%; z-index: 6; }
 .env .d1 { left: 3%; } .env .d2 { right: 4%; width: 34%; }
@@ -118,7 +118,7 @@ html.preview .env .hint, html.preview .env .dove { animation: none; }
 .fl input:focus, .fl select:focus { outline: 0; border-color: var(--blue); }
 .rs .btn { width: 100%; margin-top: 20px; }
 .thanks { text-align: center; } .thanks-t { font-family: var(--it); font-size: 40px; color: var(--blue-d); }
-.fin .sealf { width: 86px; margin: 0 auto 14px; filter: drop-shadow(0 5px 6px rgba(47,59,74,.3)); }
+.fin .sealf { width: 86px; margin: 0 auto 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.12)); }
 .fin .sealf svg { width: 100%; display: block; }
 .fin .nm { font-family: var(--it); font-size: clamp(40px, 12vw, 52px); color: var(--blue-d); line-height: 1.25; }
 .made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 12px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); }

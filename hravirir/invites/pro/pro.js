@@ -93,7 +93,7 @@
         '<g filter="url(#weEmb)" fill="#f6f1e8" stroke="#e9e0d1" stroke-width=".25">' + art + "</g></svg>";
       var seal = '<svg class="we-seal" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="weG" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#f6dc9c"/><stop offset=".5" stop-color="#c99b52"/><stop offset="1" stop-color="#8a6128"/></radialGradient>' +
         '<radialGradient id="weI" cx=".6" cy=".65" r=".75"><stop offset="0" stop-color="#b8873f"/><stop offset="1" stop-color="#e8c47e"/></radialGradient></defs>' +
-        '<path d="M60 6C72 9 80 4 90 14C101 21 112 30 111 46C116 58 112 72 106 82C102 95 90 104 77 109C64 115 50 114 38 110C24 106 14 96 9 82C3 69 5 54 9 42C13 28 22 16 36 10C44 6 52 5 60 6Z" fill="url(#weG)" filter="drop-shadow(0 5px 6px rgba(90,60,20,.45))"/>' +
+        '<path d="M60 6C72 9 80 4 90 14C101 21 112 30 111 46C116 58 112 72 106 82C102 95 90 104 77 109C64 115 50 114 38 110C24 106 14 96 9 82C3 69 5 54 9 42C13 28 22 16 36 10C44 6 52 5 60 6Z" fill="url(#weG)" filter="drop-shadow(0 1px 2px rgba(0,0,0,.12))"/>' +
         '<circle cx="60" cy="60" r="38" fill="url(#weI)"/><circle cx="60" cy="60" r="38" fill="none" stroke="#7d5622" stroke-opacity=".45"/><circle cx="60" cy="60" r="33" fill="none" stroke="#7d5622" stroke-opacity=".5" stroke-dasharray="1 2.4"/>' +
         (o.letters && o.letters.length > 1
           ? '<text x="60" y="70" text-anchor="middle" font-size="31" fill="#6e4a1c" fill-opacity=".88" style="font-family:var(--seal-font, serif)">' + esc(o.letters[0]) + '<tspan font-size="17" dx="1" dy="-3">&amp;</tspan><tspan dx="1" dy="3">' + esc(o.letters[1]) + "</tspan></text></svg>"

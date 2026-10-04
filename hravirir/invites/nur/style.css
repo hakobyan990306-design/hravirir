@@ -23,7 +23,7 @@
 .pt::after { content: ""; position: absolute; left: 6%; right: 6%; top: 5%; bottom: 0; border: 1px solid rgba(201,160,78,.45); border-bottom: 0; border-radius: 4px 4px 0 0; }
 .tt { position: absolute; left: 0; right: 0; top: 16%; text-align: center; padding: 0 30px; font: 400 clamp(24px, 7vw, 30px)/1.35 var(--script); color: #f3dfb2; }
 .tb { position: absolute; left: 0; right: 0; bottom: 12%; text-align: center; padding: 0 34px; font: 400 14.5px/1.6 var(--script); color: rgba(246,239,226,.82); }
-.seal { position: absolute; left: 50%; top: 50%; width: 112px; height: 112px; transform: translate(-50%, -50%); z-index: 3; filter: drop-shadow(0 8px 10px rgba(0,0,0,.45)); }
+.seal { position: absolute; left: 50%; top: 50%; width: 112px; height: 112px; transform: translate(-50%, -50%); z-index: 3; filter: drop-shadow(0 1px 2px rgba(0,0,0,.12)); }
 .sh { position: absolute; inset: 0; transition: transform .8s cubic-bezier(.5,0,.3,1), opacity .6s .3s; }
 .sh svg { width: 100%; height: 100%; }
 .sh.l { clip-path: polygon(0 0, 52% 0, 46% 30%, 54% 55%, 47% 78%, 52% 100%, 0 100%); }
