@@ -100,3 +100,5 @@ section { position: relative; text-align: center; padding: 34px 0; overflow: hid
 .ft .share { border: 0; background: none; font: 500 16px var(--sans); color: #444; cursor: pointer; min-height: 44px; }
 .ft .mk { width: 64px; margin: 14px auto 8px; }
 @media (prefers-reduced-motion: reduce) { .chev { animation: none !important; } }
+.vn .cr { font-size: 10px; color: #9a9a9a; margin-top: 4px; }
+.vn .vi img { filter: grayscale(1); }

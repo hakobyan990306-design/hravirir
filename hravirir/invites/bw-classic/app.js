@@ -41,10 +41,10 @@
       (C.gallery && C.gallery.length ? '<section class="gal"><div class="strip">' + C.gallery.map(function (g) { return '<div class="gi"><img src="' + esc(g) + '" alt="" loading="lazy"></div>'; }).join("") + '</div><div class="wrap"><div class="hl long"></div></div></section>' : "") +
       '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="hl"></div>' + ev.map(function (e) {
         return '<div class="pl rv"><div class="tm">' + esc(e.time) + '</div><div class="ic">' + icon(e.icon) + '</div><div class="tx"><div class="t">' + esc(t(e.title)) + '</div><div class="n">' + esc(t(e.place)) + "</div></div></div>";
-      }).join("") + '<div class="hl"></div></div></section>' +
+      }).join("") + (C.duo ? '<div class="hl"></div>' : "") + "</div></section>" +
       (C.duo ? '<section class="duo-s"><div class="duo rv">' + img(C.duo[0], "a") + img(C.duo[1], "b") + "</div></section>" : "") +
       '<section><div class="wrap"><div class="hl"></div><p class="p sm rv">' + esc(x("where")) + '</p><div class="hl"></div></div>' + ev.map(function (e) {
-        return '<div class="vn rv"><div class="wrap"><h3 class="vp">' + esc(t(e.place)) + "</h3>" + (e.address ? '<div class="va">' + esc(t(e.address)) + "</div>" : "") + "</div>" + img(e.img, "vi") +
+        return '<div class="vn rv"><div class="wrap"><h3 class="vp">' + esc(t(e.place)) + "</h3>" + (e.address ? '<div class="va">' + esc(t(e.address)) + "</div>" : "") + "</div>" + img(e.img, "vi") + (e.credit ? '<div class="cr">' + esc(e.credit) + "</div>" : "") +
           '<div class="wrap">' + (e.map ? '<a class="pill" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(x("how")) + "</a>" : "") + '<div class="hl"></div></div></div>';
       }).join("") + "</section>" +
       (C.rsvp ? '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("rsvp")) + '</h2><p class="p sm rv">' + esc(x("rsvpLead")) + " " + esc(K.deadline()) + "</p>" +
@@ -53,7 +53,7 @@
         '<div class="fl"><label for="rn">' + esc(u("name")) + '</label><input id="rn" name="name" required autocomplete="name"></div>' +
         '<div class="fl"><label for="rg">' + esc(u("guests")) + '</label><select id="rg" name="guests">' + [1, 2, 3, 4, 5, 6].map(function (i) { return "<option>" + i + "</option>"; }).join("") + "</select></div>" +
         '<button class="pill fill" type="submit">' + esc(u("send")) + "</button></form></div></section>" : "") +
-      '<section class="fin"><div class="wrap"><div class="hl"></div><h2 class="h2 rv">' + esc(x("fin")) + "</h2></div>" + img(C.finalPhoto || C.photo, "fp") + "</section>" +
+      '<section class="fin"><div class="wrap"><div class="hl"></div><h2 class="h2 rv">' + esc(x("fin")) + "</h2></div>" + (C.finalPhoto === false ? "" : img(C.finalPhoto || C.photo, "fp")) + "</section>" +
       '<footer class="ft"><button class="share" type="button">↗ ' + esc(x("share")) + '</button><div>' + esc(x("made")) + ' <a href="https://hravirir.am" target="_blank" rel="noopener">www.hravirir.am</a></div></footer></div>';
   }
 
