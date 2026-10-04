@@ -70,7 +70,8 @@
   -webkit-mask: radial-gradient(closest-side, #000 5%, rgba(0,0,0,.6) 25%, transparent 55%); mask: radial-gradient(closest-side, #000 5%, rgba(0,0,0,.6) 25%, transparent 55%); transition: transform 2s ease-out, opacity .9s; }
 .lv-f { position: absolute; inset: 0; background: linear-gradient(170deg, #fdfcfa, #f1eee9); }
 .lv-art, .lv-hl { position: absolute; inset: 0; background: center / cover no-repeat; }
-.lv-hl { opacity: 0; }
+.lv-hl { opacity: .001; will-change: opacity; }
+.lv-rays, .lv-glow, .lv-spill, .lv-in { will-change: opacity, transform; }
 .lv-l { clip-path: polygon(0 0, 50% 56%, 0 100%); background: linear-gradient(95deg, #fbfaf7, #eeeae4); }
 .lv-r { clip-path: polygon(100% 0, 50% 56%, 100% 100%); background: linear-gradient(265deg, #fbfaf7, #ebe7e1); }
 .lv-b { clip-path: polygon(0 100%, 50% 56%, 100% 100%); background: linear-gradient(0deg, #f7f4f0, #fdfcfa); }
@@ -93,7 +94,7 @@
 .lve.s1 .lv-hl { animation: lvHl 1.4s ease-out forwards; }
 .lve.s1 .lv-sp i { animation: lvSp 1.1s ease-in-out; }
 .lve.s1 .hint { opacity: 0; animation: none; }
-@keyframes lvHl { 0% { opacity: 0; } 55% { opacity: 1; } 100% { opacity: .75; } }
+@keyframes lvHl { 0% { opacity: .001; } 55% { opacity: 1; } 100% { opacity: .75; } }
 @keyframes lvSp { 0%, 100% { opacity: 0; transform: scale(.3) rotate(0); } 50% { opacity: 1; transform: scale(1) rotate(45deg); } }
 /* 2. կափարիչը բարձրանում է դեպի դիտողը, ներսից լույս */
 .lve.s2 .lv-tw { transform: rotateX(-46deg); }
