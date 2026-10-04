@@ -98,33 +98,69 @@ main { background: var(--paper); }
 .made { background: var(--wine); color: rgba(239,230,218,.6); }
 .k-brand, .k-brand a { color: rgba(239,230,218,.75) !important; }
 
-/* ---------- բացում՝ ամբողջ էկրանով բորդո ծրար. կնիքը կոտրվում է, վերևի կափարիչը բացվում, կողերը բաժանվում ---------- */
-.bxe { background: #23030a; perspective: 1600px; transition: opacity .7s, background-color .6s; }
-.bxe.s3 { background-color: transparent; }
-.fe { position: absolute; inset: 0; transition: transform 1.1s cubic-bezier(.6,0,.25,1); will-change: transform;
-  background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1.2px), radial-gradient(rgba(0,0,0,.06) 1px, transparent 1.2px);
-  background-size: 100% 100%; }
-.fe-l { clip-path: polygon(0 0, 52% 50%, 0 100%); background-color: #6b1020; background-image: linear-gradient(90deg, #5e0d1b, #7c1526); }
-.fe-r { clip-path: polygon(100% 0, 48% 50%, 100% 100%); background-color: #6b1020; background-image: linear-gradient(270deg, #5e0d1b, #7c1526); }
-.fe-b { clip-path: polygon(0 100%, 50% 46%, 100% 100%); background-image: linear-gradient(0deg, #66101f, #861a2b); }
-.fe-tw { position: absolute; left: 0; right: 0; top: 0; height: 58%; transform-origin: top; transition: transform 1s cubic-bezier(.5,0,.3,1), opacity .4s .55s; filter: drop-shadow(0 6px 8px rgba(20,0,4,.55)); z-index: 2; }
-.fe-t { position: absolute; inset: 0; clip-path: polygon(0 0, 100% 0, 50% 100%); background: linear-gradient(180deg, #8f1b2e, #6d1121); }
-.fe-t::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(255,255,255,.08), transparent 45%); }
-.bx-nm { position: absolute; left: 0; right: 0; top: 17%; z-index: 3; text-align: center; font: 400 clamp(34px, 10vw, 46px)/1.2 var(--script); color: var(--cream); padding: 0 16px .1em; text-shadow: 0 2px 10px rgba(0,0,0,.35); transition: opacity .4s; }
+/* ---------- բացում՝ ամբողջ էկրանով բորդո ծրար դաջված ծաղիկներով. 4 կողերը դուրս են ծալվում դեպի եզրերը, կնիքը գնում է ձախ կողի հետ ---------- */
+.bxe { background: #f4ece2; perspective: 900px; perspective-origin: 50% 50%; transition: opacity .8s, background-color .8s; overflow: hidden; }
+.fw { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 1.5s cubic-bezier(.55,.05,.25,1); will-change: transform; }
+.fw-l, .fw-s { transform-origin: 0 50%; }
+.fw-r { transform-origin: 100% 50%; }
+.fw-t { transform-origin: 50% 0; }
+.fw-b { transform-origin: 50% 100%; }
+.fe { position: absolute; inset: 0; backface-visibility: visible; background-color: #6d1121;
+  background-image: var(--emb), linear-gradient(var(--dir, 180deg), var(--c1, #7e1728), var(--c2, #5e0c1b)); background-size: 380px 380px, 100% 100%; }
+.fw-l .fe { --dir: 90deg; --c1: #5a0b19; --c2: #6e1222; clip-path: polygon(0 0, 53% 50%, 0 100%); }
+.fw-r .fe { --dir: 270deg; --c1: #5a0b19; --c2: #6e1222; clip-path: polygon(100% 0, 47% 50%, 100% 100%); }
+.fw-t .fe { --dir: 180deg; --c1: #8d1d30; --c2: #74132a; clip-path: polygon(0 0, 100% 0, 50% 52%); }
+.fw-b .fe { --dir: 0deg; --c1: #6c1222; --c2: #82192b; clip-path: polygon(0 100%, 50% 48%, 100% 100%); }
+.fsh { position: absolute; inset: 0; pointer-events: none; }
+.fw-t .fsh { clip-path: polygon(0 0, 100% 0, 50% 52%); background: linear-gradient(180deg, transparent 70%, rgba(20,0,5,.28)); }
+.fw-b .fsh { clip-path: polygon(0 100%, 50% 48%, 100% 100%); background: linear-gradient(0deg, transparent 70%, rgba(20,0,5,.22)); }
+.fw-r .fsh { clip-path: polygon(100% 0, 47% 50%, 100% 100%); background: linear-gradient(270deg, transparent 70%, rgba(20,0,5,.25)); }
+.fw-l { z-index: 1; } .fw-r { z-index: 2; } .fw-b { z-index: 3; filter: drop-shadow(0 -3px 5px rgba(20,0,5,.45)); } .fw-t { z-index: 4; filter: drop-shadow(0 4px 6px rgba(20,0,5,.55)); } .fw-s { z-index: 6; }
+.bx-sw { position: absolute; left: 50%; top: 50%; width: 104px; height: 104px; transform: translate(-50%, -50%); }
+.bx-sw svg { width: 100%; height: 100%; }
+.bx-nm { position: absolute; left: 0; right: 0; top: 14%; z-index: 5; text-align: center; font: 400 clamp(34px, 10vw, 46px)/1.2 var(--script); color: var(--cream); padding: 0 16px .1em; text-shadow: 0 2px 10px rgba(0,0,0,.35); transition: opacity .4s; }
 .bx-nm i { font-style: normal; color: #e0aab2; }
 .bx-dt { display: block; margin-top: 8px; font: 400 13px var(--title); letter-spacing: .34em; color: rgba(239,230,218,.75); }
-.bx-sw { position: absolute; left: 50%; top: 58%; width: 112px; height: 112px; transform: translate(-50%, -50%); z-index: 4; }
-.bx-half { position: absolute; inset: 0; transition: transform .8s cubic-bezier(.4,-.3,.4,1), opacity .6s .2s; }
-.bx-half svg { width: 100%; height: 100%; }
-.bx-half.l { clip-path: polygon(0 0, 54% 0, 46% 35%, 56% 62%, 47% 100%, 0 100%); }
-.bx-half.r { clip-path: polygon(54% 0, 100% 0, 100% 100%, 47% 100%, 56% 62%, 46% 35%); }
-.bxe .hint { color: rgba(239,230,218,.8); z-index: 5; }
-.bxe.s1 .bx-half.l { transform: translate(-40px, 50px) rotate(-30deg); opacity: 0; }
-.bxe.s1 .bx-half.r { transform: translate(40px, 56px) rotate(26deg); opacity: 0; }
-.bxe.s1 .hint, .bxe.s1 .bx-nm { opacity: 0; animation: none; }
-.bxe.s2 .fe-tw { transform: rotateX(165deg); opacity: 0; }
-.bxe.s3 .fe-l { transform: translateX(-102%); }
-.bxe.s3 .fe-r { transform: translateX(102%); }
-.bxe.s3 .fe-b { transform: translateY(102%); }
-.bxe.s4 { opacity: 0; }
+.bxe .hint { color: rgba(239,230,218,.85); z-index: 7; }
+.bxe.s1 .bx-nm, .bxe.s1 .hint { opacity: 0; animation: none; }
+.bxe.s1 .fw-l, .bxe.s1 .fw-s { transform: rotateY(84deg); }
+.bxe.s1 .fw-s { opacity: 0; transition: transform 1.5s cubic-bezier(.55,.05,.25,1), opacity .5s .9s; }
+.bxe.s1 .fw-r { transform: rotateY(-84deg); transition-delay: .08s; }
+.bxe.s1 .fw-t { transform: rotateX(-82deg); transition-delay: .16s; }
+.bxe.s1 .fw-b { transform: rotateX(82deg); transition-delay: .16s; }
+.bxe.s2 { background-color: transparent; }
+.bxe.s2 .fw { opacity: 0; transition: transform 1.5s, opacity .6s; }
+.bxe.s3 { opacity: 0; }
 .wine .gz p.gz-c { color: #2e2627; }
+
+/* ---------- լրագիր, տարբերակ B՝ «WEDDING DAY», թեքված, եզրից դուրս ---------- */
+@font-face { font-family: "CinzelL"; src: url("../../fonts/Cinzel-VariableFont_wght.woff2") format("woff2"); font-display: swap; }
+.gzb-w { position: relative; height: 430px; margin: 30px -26px -64px; overflow: hidden; }
+.gzb { position: absolute; left: 12%; top: 26px; width: 330px; padding: 16px 18px 20px; rotate: -9deg; color: #1d1819; text-align: left;
+  background: #ece5d8 linear-gradient(100deg, rgba(255,255,255,.35), rgba(0,0,0,0) 40%, rgba(0,0,0,.08) 49%, rgba(255,255,255,.22) 51%, rgba(0,0,0,0) 60%, rgba(0,0,0,.1));
+  box-shadow: -10px 26px 40px -10px rgba(0,0,0,.6); }
+.gzb::before { content: ""; position: absolute; inset: 0; opacity: .55; pointer-events: none; background-image: radial-gradient(rgba(60,40,30,.09) 1px, transparent 1.3px); background-size: 4px 4px; }
+.gzb-m { font: 700 37px/1 "CinzelL", "Cormorant Garamond", serif; letter-spacing: .01em; border-bottom: 2px solid #1d1819; padding-bottom: 6px; white-space: nowrap; }
+.gzb-r { display: flex; justify-content: space-between; font: 500 9.5px var(--title); letter-spacing: .14em; text-transform: uppercase; border-bottom: 1px solid #1d1819; padding: 4px 0; color: #4a4042; }
+.gzb-n { font: 500 25px/1.15 var(--title); margin: 10px 0 8px; }
+.gzb-b { display: grid; grid-template-columns: 1fr 112px; gap: 12px; }
+.gzb-c b { display: block; font: 600 10.5px var(--title); letter-spacing: .16em; text-transform: uppercase; }
+.wine .gzb .gzb-c p { color: #2e2627; font-size: 11px; line-height: 1.4; margin: 3px 0 0; text-align: justify; }
+.gzb-l { display: grid; gap: 5px; margin-top: 8px; } .gzb-l i { display: block; height: 3px; border-radius: 2px; background: rgba(29,24,25,.2); }
+.gzb-l2 { grid-template-columns: 1fr 1fr; column-gap: 12px; }
+.gzb-d { text-align: center; border-left: 1px solid #1d1819; }
+.gzb-d b { display: block; font: 600 86px/.85 "CinzelL", var(--title); color: #1d1819; }
+.gzb-d span { display: block; font: 700 30px/1.1 "CinzelL", var(--title); letter-spacing: .04em; color: var(--red); }
+
+/* ---------- լրագիր, տարբերակ C՝ ծալված թերթ. վերևում լուսանկար, ներքևում մեծ վերնագիր ---------- */
+.gzc { margin: 34px auto 0; max-width: 340px; color: #1d1819; text-align: left; rotate: 3deg; box-shadow: 0 30px 46px -16px rgba(0,0,0,.65); }
+.gzc-t { background: #efe8dc; padding: 14px 14px 12px; }
+.gzc-m { font: 600 26px/1.05 var(--title); text-align: center; text-transform: uppercase; border-top: 3px solid #1d1819; border-bottom: 1px solid #1d1819; padding: 6px 0; }
+.gzc-r { display: flex; justify-content: space-between; font: 500 10px var(--title); letter-spacing: .14em; padding: 4px 0 8px; color: #4a4042; }
+.gzc-t img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; filter: grayscale(1) contrast(1.15); }
+.gzc-bt { background: #e6ddcf linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,0) 22%); padding: 14px 14px 18px; transform-origin: top; transform: perspective(700px) rotateX(10deg); }
+.gzc-h { font: 700 clamp(28px, 8.6vw, 36px)/1 var(--title); text-transform: uppercase; text-align: center; }
+.gzc-n { font: 400 clamp(26px, 8vw, 34px)/1.2 var(--script); text-align: center; color: var(--wine); margin: 6px 0 4px; padding-bottom: .1em; }
+.gzc-d { display: flex; align-items: center; justify-content: center; gap: 12px; border-top: 1px solid #1d1819; padding-top: 10px; }
+.gzc-d b { font: 400 58px/.9 var(--title); color: var(--red); }
+.gzc-d span { font: 500 13px/1.3 var(--title); letter-spacing: .14em; text-transform: uppercase; }

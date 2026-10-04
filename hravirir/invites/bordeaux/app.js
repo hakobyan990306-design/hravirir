@@ -5,11 +5,11 @@
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, P = window.P;
   P.texts({
     hy: { hint: "Սեղմեք կնիքին", day: "Հարսանեկան օր", dear: "Սիրելի՛ հարազատներ և ընկերներ", date: "Ամուսնության օրը", plan: "Ծրագիր", where: "Վայրը",
-      paper: "Հարսանեկան լրագիր", issue: "Հատուկ համար", news: "Մեծ նորություն", newsT: "Այս օրը երկու սիրող սրտեր միանում են։ Հյուրերին խնդրում ենք գալ ժամանակին, բերել լավ տրամադրություն և պարելու պատրաստ կոշիկներ։", left: "Մնացել է", fin: "Սիրով սպասում ենք Ձեզ" },
+      paper: "Հարսանեկան լրագիր", issue: "Հատուկ համար", news: "Մեծ նորություն", big: "Ամուսնանում ենք", newsT: "Այս օրը երկու սիրող սրտեր միանում են։ Հյուրերին խնդրում ենք գալ ժամանակին, բերել լավ տրամադրություն և պարելու պատրաստ կոշիկներ։", left: "Մնացել է", fin: "Սիրով սպասում ենք Ձեզ" },
     ru: { hint: "Нажмите на печать", day: "Свадебный день", dear: "Дорогие родные и друзья", date: "Дата бракосочетания", plan: "Программа", where: "Место",
-      paper: "Свадебная газета", issue: "Специальный выпуск", news: "Главная новость", newsT: "В этот день два любящих сердца соединяются. Гостей просим прийти вовремя, взять хорошее настроение и туфли для танцев.", left: "Осталось", fin: "С любовью ждём вас" },
+      paper: "Свадебная газета", issue: "Специальный выпуск", news: "Главная новость", big: "Мы женимся", newsT: "В этот день два любящих сердца соединяются. Гостей просим прийти вовремя, взять хорошее настроение и туфли для танцев.", left: "Осталось", fin: "С любовью ждём вас" },
     en: { hint: "Tap the seal", day: "Wedding day", dear: "Dear family and friends", date: "Our wedding date", plan: "Timing", where: "Location",
-      paper: "The Wedding Gazette", issue: "Special edition", news: "Big news", newsT: "Two loving hearts become one. Guests are kindly asked to arrive on time, bring a good mood and shoes ready for dancing.", left: "Counting down", fin: "With love" }
+      paper: "The Wedding Gazette", issue: "Special edition", news: "Big news", big: "We are getting married", newsT: "Two loving hearts become one. Guests are kindly asked to arrive on time, bring a good mood and shoes ready for dancing.", left: "Counting down", fin: "With love" }
   });
   function ini() { var n = K.names(); return [(n[0] || "").charAt(0), (n[1] || "").charAt(0)]; }
   // կարմիր մոմե կնիք՝ անհարթ եզրերով և երկու սկզբնատառով
@@ -25,18 +25,40 @@
       '<text x="60" y="70" text-anchor="middle" font-size="31" fill="#4a040c" fill-opacity=".85" style="font-family:var(--script)">' + esc(L[0]) +
       '<tspan font-size="16" dx="1" dy="-4">&amp;</tspan><tspan dx="1" dy="4">' + esc(L[1]) + "</tspan></text></svg>";
   }
+  // դաջված ծաղկային նախշ (բաց ու մուգ շերտ՝ իրար նկատմամբ 1px տեղաշարժով)
+  function emb() {
+    var d = "M20 240C40 200 30 160 60 130S120 110 130 70M60 130C40 120 30 100 35 80M95 108C110 120 130 118 140 105M130 70C120 50 125 30 140 20M200 250C190 210 210 180 240 170M220 175C230 150 225 130 245 115" +
+      "M30 180c8-6 18-6 22 2c-8 6-18 6-22-2zM45 95c8-6 18-6 22 2c-8 6-18 6-22-2zM112 92c8-6 18-6 22 2c-8 6-18 6-22-2zM150 45c8-6 18-6 22 2c-8 6-18 6-22-2zM228 140c8-6 18-6 22 2c-8 6-18 6-22-2z";
+    var fl = function (x, y) { var p = ""; for (var i = 0; i < 5; i++) p += '<ellipse cx="' + x + '" cy="' + (y - 7) + '" rx="4" ry="7" transform="rotate(' + i * 72 + " " + x + " " + y + ')"/>'; return p + '<circle cx="' + x + '" cy="' + y + '" r="2.5"/>'; };
+    var flowers = fl(132, 66) + fl(60, 128) + fl(240, 168) + fl(140, 18) + fl(20, 238);
+    var lay = function (col, dx) { return '<g transform="translate(' + dx + " " + dx + ')" fill="none" stroke="' + col + '" stroke-width="1.6" stroke-linecap="round">' + '<path d="' + d + '"/>' + '<g fill="' + col + '" stroke="none">' + flowers + "</g></g>"; };
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">' + lay("rgba(25,0,6,.22)", 1.2) + lay("rgba(255,215,220,.09)", -.6) + "</svg>";
+    return 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
+  }
   function env() {
-    var n = K.names();
-    return '<div class="env bxe" id="env" role="button" aria-label="' + esc(P.x("hint")) + '">' +
-      '<div class="fe fe-l"></div><div class="fe fe-r"></div><div class="fe fe-b"></div><div class="fe-tw"><div class="fe fe-t"></div></div>' +
+    var n = K.names(), f = function (k) { return '<div class="fw fw-' + k + '"><div class="fe"></div><div class="fsh"></div></div>'; };
+    return '<div class="env bxe" id="env" role="button" aria-label="' + esc(P.x("hint")) + '" style="--emb:' + emb().replace(/"/g, "'") + '">' +
+      f("l") + f("r") + f("b") + f("t") +
+      '<div class="fw fw-s"><div class="bx-sw">' + seal() + "</div></div>" +
       '<div class="bx-nm">' + esc(n[0] || "") + " <i>&amp;</i> " + esc(n[1] || "") + '<span class="bx-dt">' + P.dots(" · ") + "</span></div>" +
-      '<div class="bx-sw"><div class="bx-half l">' + seal() + '</div><div class="bx-half r">' + seal() + "</div></div>" +
       (K.PREVIEW ? "" : '<div class="hint">' + esc(P.x("hint")) + "</div>") + "</div>";
   }
   // «Հարսանեկան լրագիր»՝ իսկական թերթի պես. վերնագիր, սև-սպիտակ լուսանկար, մեծ ամսաթիվ, երկու սյունակ հոդված
+  // «Հարսանեկան լրագիր». 3 տարբերակ՝ INVITE.paper = "a" | "b" | "c" (կամ հղման մեջ ?paper=b)
+  var EN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   function paper() {
+    var v = ((location.search.match(/paper=([abc])/) || [])[1]) || C.paper || "b";
     var n = K.names(), d = K.date, mon = u("months")[d.getMonth()].slice(0, 3).toUpperCase(), g = (C.gallery || [])[0] || C.photo;
     var art = esc(t(C.paperText || P.x("newsT")));
+    var cols = function (k) { var h = ""; for (var i = 0; i < k; i++) h += "<i style=\"width:" + (70 + (i * 29) % 30) + '%"></i>'; return h; };
+    if (v === "b") return '<div class="gzb-w rv"><div class="gzb"><div class="gzb-m">WEDDING DAY</div><div class="gzb-r"><span>' + esc(P.x("issue")) + "</span><span>" + P.dots(".") + "</span></div>" +
+      '<div class="gzb-n">' + esc(n[0] || "") + " + " + esc(n[1] || "") + "</div>" +
+      '<div class="gzb-b"><div class="gzb-c"><b>' + esc(P.x("news")) + "</b><p>" + art + '</p><div class="gzb-l">' + cols(6) + "</div></div>" +
+      '<div class="gzb-d"><b>' + d.getDate() + "</b><span>" + EN[d.getMonth()] + "</span></div></div>" +
+      '<div class="gzb-l gzb-l2">' + cols(5) + "</div></div></div>";
+    if (v === "c") return '<div class="gzc rv"><div class="gzc-t"><div class="gzc-m">' + esc(P.x("paper")) + '</div><div class="gzc-r"><span>№ 1</span><span>' + P.dots(".") + "</span></div>" +
+      (g ? '<img src="' + esc(g) + '" alt="" loading="lazy">' : "") + "</div>" +
+      '<div class="gzc-bt"><div class="gzc-h">' + esc(P.x("big")) + '</div><div class="gzc-n">' + esc(n.join(" & ")) + '</div><div class="gzc-d"><b>' + d.getDate() + "</b><span>" + esc(u("months")[d.getMonth()]) + "<br>" + d.getFullYear() + "</span></div></div></div>";
     return '<div class="gz rv"><div class="gz-top"><span>' + esc(P.x("issue")) + "</span><span>№ 1</span><span>" + P.dots(".") + "</span></div>" +
       '<div class="gz-m">' + esc(P.x("paper")) + "</div>" +
       '<div class="gz-r"><span>' + esc(P.x("wdl")[d.getDay()]) + "</span><span>" + esc(u("months")[d.getMonth()]) + " " + d.getFullYear() + "</span></div>" +
@@ -75,5 +97,5 @@
       (C.rsvp ? P.sec("wine rsv", P.rsvp("cap")) : "") +
       P.sec("fin wine", '<div class="fseal rv">' + seal() + '</div><div class="caps rv">' + esc(P.x("fin")) + '</div><div class="fnm rv">' + esc(n.join(" & ")) + "</div>") + P.made();
   }
-  P.run({ env: env, main: main, steps: [[0, "s1"], [600, "s2"], [1400, "s3"], [2400, "s4"]], done: 2500 });
+  P.run({ env: env, main: main, steps: [[0, "s1"], [1300, "s2"], [2000, "s3"]], done: 2100 });
 })();
