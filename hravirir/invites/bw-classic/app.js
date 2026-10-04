@@ -36,7 +36,7 @@
     var n = K.names(), ev = C.events || [];
     return '<div class="col">' + bar() +
       '<section class="hero"><div class="ph"><img src="' + esc(C.photo) + '" alt=""><i class="chev"></i></div></section>' +
-      '<section><div class="wrap"><h1 class="nm rv">' + esc(n[0] || "") + " " + esc(x("and")) + " " + esc(n[1] || "") + '</h1><div class="hl"></div><p class="p rv">' + esc(t(C.text)) + "</p>" + cal() + "</div></section>" +
+      '<section><div class="wrap"><h1 class="nm rv">' + esc(n[0] || "") + " " + esc(x("and")) + " " + esc(n[1] || "") + '</h1><div class="hl"></div>' + (C.greet ? '<div class="greet rv">' + esc(t(C.greet)) + "</div>" : "") + '<p class="p rv">' + esc(t(C.text)) + "</p>" + cal() + "</div></section>" +
       '<section class="cds"><div class="wrap"><h2 class="h2 rv" style="margin-bottom:24px">' + esc(x("left")) + '</h2><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) { return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>" +
       (C.gallery && C.gallery.length ? '<section class="gal"><div class="strip">' + C.gallery.map(function (g) { return '<div class="gi"><img src="' + esc(g) + '" alt="" loading="lazy"></div>'; }).join("") + '</div><div class="wrap"><div class="hl long"></div></div></section>' : "") +
       '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plan")) + '</h2><div class="hl"></div>' + ev.map(function (e) {
