@@ -59,42 +59,48 @@
 .fseal { width: 96px; margin: 0 auto 14px; }
 .fseal svg { width: 100%; height: auto; display: block; }
 
-/* ---------- բացում՝ սպիտակ դաջված ծրար, լույսի շողեր ---------- */
-.lve { background: transparent; perspective: 820px; perspective-origin: 50% 20%; overflow: hidden; transition: opacity .7s; }
-.lv-in { position: absolute; inset: 0; background: radial-gradient(70% 45% at 50% 62%, #fff8ea, #e6d5ba 45%, #b99e78); opacity: 0; transition: opacity .6s; }
-.lv-rays { position: absolute; left: 50%; top: 66%; width: 220vmax; height: 220vmax; transform: translate(-50%, -50%) scale(.6); opacity: 0;
-  background: repeating-conic-gradient(from 0deg, rgba(255,250,235,.55) 0deg 3deg, rgba(255,250,235,0) 3deg 11deg);
-  -webkit-mask: radial-gradient(closest-side, #000 8%, transparent 62%); mask: radial-gradient(closest-side, #000 8%, transparent 62%); transition: transform 1.6s ease-out, opacity .8s; }
-.lv-glow { position: absolute; left: 50%; top: 66%; width: 70vw; height: 70vw; transform: translate(-50%, -50%) scale(.4); border-radius: 50%; background: radial-gradient(circle, #fff 0, rgba(255,250,235,.9) 30%, rgba(255,240,210,0) 70%); opacity: 0; transition: transform 1.4s ease-out, opacity .8s; }
+/* ---------- բացում՝ սպիտակ դաջված ծրար (ռիլի նման).
+   1) ծաղիկները վառվում և փայլփլում են, 2) վերևի կափարիչը կնիքի հետ բարձրանում է ԴԵՊԻ դիտողը,
+   ներսը մուգ-տաք է, մեջտեղից պայծառ լույս և շողեր, 3) լույսը լցնում է էկրանը ---------- */
+.lve { background: transparent; perspective: 900px; perspective-origin: 50% 45%; overflow: hidden; transition: opacity .6s; }
+.lv-in { position: absolute; inset: 0; background: radial-gradient(48% 32% at 50% 60%, #fffefb 0, #f7efe2 26%, #ddcab0 55%, #a88d6c 85%, #85694b 100%); opacity: 0; transition: opacity .5s; }
+.lv-glow { position: absolute; left: 50%; top: 60%; width: 90vw; height: 60vw; transform: translate(-50%, -50%) scale(.5); border-radius: 50%; background: radial-gradient(closest-side, #fff, rgba(255,252,245,.85) 40%, rgba(255,245,225,0)); opacity: 0; transition: transform 1.6s ease-out, opacity .9s; }
+.lv-rays { position: absolute; left: 50%; top: 60%; width: 200vmax; height: 200vmax; transform: translate(-50%, -50%) scale(.55); opacity: 0;
+  background: repeating-conic-gradient(from 3deg, rgba(255,251,240,.6) 0deg 2.5deg, rgba(255,251,240,0) 2.5deg 9deg);
+  -webkit-mask: radial-gradient(closest-side, #000 5%, rgba(0,0,0,.6) 25%, transparent 55%); mask: radial-gradient(closest-side, #000 5%, rgba(0,0,0,.6) 25%, transparent 55%); transition: transform 2s ease-out, opacity .9s; }
 .lv-f { position: absolute; inset: 0; background: linear-gradient(170deg, #fdfcfa, #f1eee9); }
-.lv-art { position: absolute; inset: 0; width: 100%; height: 100%; }
-.lv-art .eD { fill: rgba(140,122,95,.34); stroke: none; }
-.lv-art .eL { fill: rgba(255,255,255,.95); }
-.lv-art .eM { fill: #f3f0eb; }
-.lv-art .st { fill: none; stroke-width: 1.4; stroke-linecap: round; }
-.lv-art .eD .st { stroke: rgba(140,122,95,.36); } .lv-art .eL .st { stroke: #fff; } .lv-art .eM .st { stroke: #ece8e1; }
-.lv-l { clip-path: polygon(0 0, 50% 57%, 0 100%); background: linear-gradient(95deg, #fbfaf7, #efebe5); }
-.lv-r { clip-path: polygon(100% 0, 50% 57%, 100% 100%); background: linear-gradient(265deg, #fbfaf7, #ece8e2); }
-.lv-b { clip-path: polygon(0 100%, 50% 57%, 100% 100%); background: linear-gradient(0deg, #f6f3ef, #fdfcfa); }
-.lv-b::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(120,100,70,.12), transparent 12%); clip-path: inherit; }
-.lv-tw { position: absolute; left: 0; right: 0; top: 0; height: 60%; transform-origin: 50% 0; transition: transform 1.25s cubic-bezier(.45,.05,.25,1); will-change: transform; z-index: 3; }
-.lv-tw::before { content: ""; position: absolute; inset: 0 0 -6px; clip-path: polygon(0 0, 100% 0, 50% 100%); background: rgba(110,90,60,.16); transform: translateY(5px); }
-.lv-t { clip-path: polygon(0 0, 100% 0, 50% 95%); background: linear-gradient(180deg, #fefdfb, #f2efea); }
-.lv-sw { position: absolute; left: 50%; top: 95%; width: min(30vw, 124px); transform: translate(-50%, -50%); }
+.lv-art, .lv-hl { position: absolute; inset: 0; background: center / cover no-repeat; }
+.lv-hl { opacity: 0; }
+.lv-l { clip-path: polygon(0 0, 50% 56%, 0 100%); background: linear-gradient(95deg, #fbfaf7, #eeeae4); }
+.lv-r { clip-path: polygon(100% 0, 50% 56%, 100% 100%); background: linear-gradient(265deg, #fbfaf7, #ebe7e1); }
+.lv-b { clip-path: polygon(0 100%, 50% 56%, 100% 100%); background: linear-gradient(0deg, #f7f4f0, #fdfcfa); }
+/* լույսի շողերը ներքևի կափարիչի վրա */
+.lv-spill { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: screen; transition: opacity 1s .2s;
+  background: radial-gradient(50% 30% at 50% 60%, rgba(255,250,238,.9), rgba(255,250,238,0) 70%), repeating-conic-gradient(from 93deg at 50% 60%, rgba(255,248,232,.5) 0deg 2deg, rgba(255,248,232,0) 2deg 10deg);
+  -webkit-mask: radial-gradient(60% 45% at 50% 60%, #000 20%, transparent 75%); mask: radial-gradient(60% 45% at 50% 60%, #000 20%, transparent 75%); }
+.lv-tw { position: absolute; left: 0; right: 0; top: 0; height: 58%; transform-origin: 50% 0; transition: transform 1.6s cubic-bezier(.42,0,.2,1); will-change: transform; z-index: 3; }
+.lv-tw::before { content: ""; position: absolute; inset: 0; clip-path: polygon(0 0, 100% 0, 50% 100%); background: rgba(110,90,60,.13); transform: translateY(4px); }
+.lv-t { clip-path: polygon(0 0, 100% 0, 50% 96.5%); background: linear-gradient(180deg, #fefdfb, #f2efea); }
+.lv-t .lv-art, .lv-t .lv-hl { inset: 0 0 -72.4%; }
+.lv-sw { position: absolute; left: 50%; top: 96.5%; width: min(31vw, 128px); transform: translate(-50%, -50%); }
 .lv-seal { width: 100%; height: auto; display: block; }
-.lv-shine { position: absolute; inset: 0; z-index: 4; pointer-events: none; opacity: 0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.95) 45%, rgba(255,246,220,.5) 50%, transparent 62%); background-size: 260% 260%; background-position: 120% 0; mix-blend-mode: screen; }
-.lv-bloom { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0; background: radial-gradient(60% 45% at 50% 62%, #fff, rgba(255,252,244,.95) 50%, rgba(255,250,240,.85)); transition: opacity .55s; }
+.lv-sp { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.lv-sp i { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; opacity: 0;
+  background: radial-gradient(circle, #fff 0 18%, transparent 20%), linear-gradient(transparent 46%, #fff 46% 54%, transparent 54%), linear-gradient(90deg, transparent 46%, #fff 46% 54%, transparent 54%); }
+.lv-bloom { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0; background: radial-gradient(60% 45% at 50% 58%, #fff, rgba(255,253,248,.97) 55%, rgba(253,250,244,.94)); transition: opacity .55s; }
 .lve .hint { color: #a39478; z-index: 6; }
-/* 1. ծաղիկները փայլում են */
-.lve.s1 .lv-shine { animation: lvShine .9s ease-in-out forwards; }
+/* 1. ծաղիկները վառվում են, աստղիկները փայլփլում */
+.lve.s1 .lv-hl { animation: lvHl 1.4s ease-out forwards; }
+.lve.s1 .lv-sp i { animation: lvSp 1.1s ease-in-out; }
 .lve.s1 .hint { opacity: 0; animation: none; }
-@keyframes lvShine { 0% { opacity: 1; background-position: 120% 0; } 100% { opacity: 1; background-position: -40% 0; } }
-/* 2. կափարիչը բարձրանում է, լույսը դուրս է գալիս */
-.lve.s2 .lv-tw { transform: rotateX(78deg); }
+@keyframes lvHl { 0% { opacity: 0; } 55% { opacity: 1; } 100% { opacity: .75; } }
+@keyframes lvSp { 0%, 100% { opacity: 0; transform: scale(.3) rotate(0); } 50% { opacity: 1; transform: scale(1) rotate(45deg); } }
+/* 2. կափարիչը բարձրանում է դեպի դիտողը, ներսից լույս */
+.lve.s2 .lv-tw { transform: rotateX(-46deg); }
 .lve.s2 .lv-in { opacity: 1; }
-.lve.s2 .lv-rays { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(8deg); }
-.lve.s2 .lv-glow { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+.lve.s2 .lv-glow { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+.lve.s2 .lv-rays { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(6deg); }
+.lve.s2 .lv-spill { opacity: 1; }
 /* 3. լույսը լցնում է էկրանը, 4. երևում է հրավիրատոմսը */
 .lve.s3 .lv-bloom { opacity: 1; }
 .lve.s4 { opacity: 0; }

@@ -15,12 +15,23 @@
 
   // ---------- դաջված ծաղկային նկարազարդ (սպիտակը սպիտակի վրա՝ լույս + ստվեր շերտերով, առանց filter-ի) ----------
   var s0 = 7; function r() { s0 = (s0 * 16807) % 2147483647; return s0 / 2147483647; }
-  function rose(x, y, R) { // շերտավոր վարդ
+  function rose(x, y, R) { // շերտավոր վարդ՝ ալիքաձև թերթիկներով (եզրերը երևում են որպես դաջված գծեր)
     var h = "";
-    for (var k = 3; k >= 1; k--) { var rr = R * k / 3, n = 5 + k; for (var i = 0; i < n; i++) { var a = i * 360 / n + k * 17; h += '<ellipse cx="' + x.toFixed(1) + '" cy="' + (y - rr * .55).toFixed(1) + '" rx="' + (rr * .42).toFixed(1) + '" ry="' + (rr * .62).toFixed(1) + '" transform="rotate(' + a.toFixed(0) + " " + x.toFixed(1) + " " + y.toFixed(1) + ')"/>'; } }
-    return h + '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (R * .22).toFixed(1) + '"/>';
+    for (var k = 3; k >= 1; k--) {
+      var rr = R * (k / 3 * .9 + .1), n = 4 + k, off = k * 23, d = "";
+      for (var i = 0; i <= n; i++) {
+        var a0 = (i * 360 / n + off) * Math.PI / 180, a1 = ((i + .5) * 360 / n + off) * Math.PI / 180;
+        var px = x + Math.cos(a0) * rr * .72, py = y + Math.sin(a0) * rr * .72, cx = x + Math.cos(a1) * rr * 1.18, cy = y + Math.sin(a1) * rr * 1.18;
+        d += (i ? " Q" + cx.toFixed(1) + " " + cy.toFixed(1) + " " : "M") + px.toFixed(1) + " " + py.toFixed(1);
+      }
+      h += '<path class="st2" d="' + d + 'Z"/>';
+    }
+    return h + '<path class="st" d="M' + (x - R * .12).toFixed(1) + " " + y.toFixed(1) + "a" + (R * .12).toFixed(1) + " " + (R * .12).toFixed(1) + " 0 1 1 " + (R * .2).toFixed(1) + " " + (R * .06).toFixed(1) + '"/>';
   }
-  function leaf(x, y, L, a) { return '<path transform="translate(' + x.toFixed(1) + " " + y.toFixed(1) + ") rotate(" + a.toFixed(0) + ')" d="M0 0C' + (L * .3).toFixed(1) + " -" + (L * .28).toFixed(1) + " " + (L * .75).toFixed(1) + " -" + (L * .26).toFixed(1) + " " + L.toFixed(1) + " 0C" + (L * .75).toFixed(1) + " " + (L * .26).toFixed(1) + " " + (L * .3).toFixed(1) + " " + (L * .28).toFixed(1) + ' 0 0Z"/>'; }
+  function leaf(x, y, L, a) {
+    var t = 'transform="translate(' + x.toFixed(1) + " " + y.toFixed(1) + ") rotate(" + a.toFixed(0) + ')"';
+    return '<path class="st2" ' + t + ' d="M0 0C' + (L * .3).toFixed(1) + " -" + (L * .3).toFixed(1) + " " + (L * .75).toFixed(1) + " -" + (L * .28).toFixed(1) + " " + L.toFixed(1) + " 0C" + (L * .75).toFixed(1) + " " + (L * .28).toFixed(1) + " " + (L * .3).toFixed(1) + " " + (L * .3).toFixed(1) + ' 0 0Z"/><path class="st" ' + t + ' d="M1 0L' + (L * .85).toFixed(1) + ' 0"/>';
+  }
   function sprig(x, y, len, a, n) { // ճյուղ՝ տերևներով
     var h = '<path class="st" d="M' + x + " " + y + "l" + (Math.cos(a * Math.PI / 180) * len).toFixed(1) + " " + (Math.sin(a * Math.PI / 180) * len).toFixed(1) + '"/>';
     for (var i = 1; i <= n; i++) { var px = x + Math.cos(a * Math.PI / 180) * len * i / (n + 1), py = y + Math.sin(a * Math.PI / 180) * len * i / (n + 1); h += leaf(px, py, 9 + r() * 4, a - 40) + leaf(px, py, 9 + r() * 4, a + 40); }
@@ -35,13 +46,28 @@
     }
     return h + rose(cx, cy, 19 * s);
   }
-  function art(kind) {
+  // նկարազարդը պատրաստվում է որպես պատկեր (data-URI), որ բացման ժամանակ հեռախոսը չծանրաբեռնվի.
+  // mode "full" — դաջված (ստվեր + լույս + հիմք), mode "hl" — միայն լուսավոր եզրերը՝ «վառվելու» էֆեկտի համար
+  function art(kind, mode) {
     s0 = 7; var g = "";
-    if (kind === "top") g = bouquet(200, 300, 1.55);
-    else if (kind === "bot") g = bouquet(200, 650, 1.2) + sprig(40, 520, 80, -60, 4) + sprig(360, 520, 80, 240, 4);
-    else g = sprig(kind === "l" ? 20 : 380, 160, 150, kind === "l" ? 70 : 110, 7) + sprig(kind === "l" ? 30 : 370, 420, 140, kind === "l" ? 60 : 120, 6) + rose(kind === "l" ? 46 : 354, 300, 10) + rose(kind === "l" ? 40 : 360, 560, 8);
-    var lay = function (cls, dx, dy) { return '<g class="' + cls + '" transform="translate(' + dx + " " + dy + ')">' + g + "</g>"; };
-    return '<svg class="lv-art" viewBox="0 0 400 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + lay("eD", 1.8, 2.2) + lay("eL", -1.3, -1.5) + lay("eM", 0, 0) + "</svg>";
+    if (kind === "top") g = bouquet(200, 250, 2.3) + bouquet(200, 105, 1.2);
+    else if (kind === "bot") g = bouquet(200, 640, 1.9) + sprig(60, 560, 110, -50, 5) + sprig(340, 560, 110, 230, 5);
+    else { var L0 = kind === "l"; g = sprig(L0 ? 14 : 386, 120, 210, L0 ? 72 : 108, 9) + sprig(L0 ? 24 : 376, 400, 200, L0 ? 64 : 116, 8) + rose(L0 ? 48 : 352, 260, 16) + rose(L0 ? 40 : 360, 520, 13) + rose(L0 ? 22 : 378, 660, 10) + sprig(L0 ? 60 : 340, 300, 90, L0 ? 20 : 160, 4); }
+    var lay = function (fill, stroke, dx, dy, extra) { return '<g fill="' + fill + '" stroke="none" transform="translate(' + dx + " " + dy + ')"' + (extra || "") + ">" + g.replace(/class="st"/g, 'fill="none" stroke="' + stroke + '" stroke-width="1.2" stroke-linecap="round"').replace(/class="st2"/g, 'stroke="' + stroke + '" stroke-width="1"') + "</g>"; };
+    var body = mode === "hl"
+      ? '<defs><filter id="b" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>' + lay("#ffffff", "#ffffff", -.6, -.8, ' filter="url(#b)"') + lay("#ffffff", "#ffffff", -1, -1.2)
+      : lay("rgba(140,122,95,.34)", "rgba(140,122,95,.36)", 1.8, 2.2) + lay("rgba(255,255,255,.95)", "#ffffff", -1.3, -1.5) + lay("#f4f1ec", "#ddd6ca", 0, 0);
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 760" preserveAspectRatio="xMidYMid slice">' + body + "</svg>";
+    return "url(&quot;data:image/svg+xml," + encodeURIComponent(svg) + "&quot;)";
+  }
+  function flap(kind, cls) {
+    return '<div class="lv-f ' + cls + '"><div class="lv-art" style="background-image:' + art(kind, "full") + '"></div><div class="lv-hl" style="background-image:' + art(kind, "hl") + '"></div></div>';
+  }
+  // փոքր փայլատակող աստղիկներ՝ ծաղիկների վրա
+  function sparks() {
+    var P0 = [[50, 22], [36, 26], [64, 26], [50, 14], [28, 33], [72, 33], [10, 30], [90, 30], [8, 62], [92, 62], [12, 78], [88, 78], [50, 86], [36, 84], [64, 84], [24, 90], [76, 90]], h = "";
+    P0.forEach(function (p, i) { h += '<i style="left:' + p[0] + "%;top:" + p[1] + "%;animation-delay:" + ((i * 0.13) % 0.9).toFixed(2) + 's"></i>'; });
+    return '<div class="lv-sp">' + h + "</div>";
   }
   // սպիտակ մոմե կնիք՝ դափնե պսակով և երկու սկզբնատառով (կենտրոնացված ըստ տառերի տեսքի)
   function seal() {
@@ -55,10 +81,10 @@
   function env() {
     var n = K.names();
     return '<div class="env lve" id="env" role="button" aria-label="' + esc(P.x("hint")) + '">' +
-      '<div class="lv-in"><div class="lv-rays"></div><div class="lv-glow"></div></div>' +
-      '<div class="lv-f lv-l">' + art("l") + '</div><div class="lv-f lv-r">' + art("r") + '</div><div class="lv-f lv-b">' + art("bot") + "</div>" +
-      '<div class="lv-tw"><div class="lv-f lv-t">' + art("top") + '</div><div class="lv-sw">' + seal() + "</div></div>" +
-      '<div class="lv-shine"></div><div class="lv-bloom"></div>' +
+      '<div class="lv-in"><div class="lv-glow"></div><div class="lv-rays"></div></div>' +
+      flap("l", "lv-l") + flap("r", "lv-r") + flap("bot", "lv-b") + '<div class="lv-spill"></div>' +
+      '<div class="lv-tw">' + flap("top", "lv-t") + '<div class="lv-sw">' + seal() + "</div></div>" +
+      sparks() + '<div class="lv-bloom"></div>' +
       (K.PREVIEW ? "" : '<div class="hint">' + esc(P.x("hint")) + "</div>") + "</div>";
   }
   // կամարաձև շրջանակ (ոսկեգույն գիծ)
@@ -89,5 +115,5 @@
       (C.rsvp ? P.sec("rsv", P.rsvp("h2")) : "") +
       P.sec("fin", '<div class="fseal rv">' + seal() + '</div><div class="caps rv">' + esc(P.x("fin")) + '</div><div class="fnm rv">' + esc(n.join(" & ")) + "</div>") + P.made();
   }
-  P.run({ env: env, main: main, steps: [[0, "s1"], [650, "s2"], [1850, "s3"], [2450, "s4"]], done: 2550 });
+  P.run({ env: env, main: main, steps: [[0, "s1"], [1250, "s2"], [2900, "s3"], [3450, "s4"]], done: 3550 });
 })();
