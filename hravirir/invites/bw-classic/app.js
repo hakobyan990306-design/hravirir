@@ -22,6 +22,7 @@
   function heart() { return '<svg class="hrt" viewBox="0 0 60 56" aria-hidden="true"><path d="M30 52C12 40 3 30 5 18C7 6 22 3 30 16C36 3 54 4 56 17C58 30 46 40 31 51C27 54 20 50 14 47" fill="none" stroke="#e01b24" stroke-width="2.6" stroke-linecap="round"/></svg>'; }
   function logo() { return '<svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="#fff" stroke="#f2c230" stroke-width="2.4"/><path d="M18 40C22 28 26 18 30 14C27 26 26 34 28 42M28 30C33 26 38 26 40 30C36 31 33 33 31 38" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/></svg>'; }
   function bar() {
+    if (!C.music) return "";
     return '<div class="topbar"><button class="play" type="button" data-music aria-label="music"><i></i></button></div>';
   }
   function cal() {
