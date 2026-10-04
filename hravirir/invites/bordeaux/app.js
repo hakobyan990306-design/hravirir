@@ -23,8 +23,8 @@
       '<circle cx="60" cy="60" r="39" fill="url(#' + h + ')"/><circle cx="60" cy="60" r="39" fill="none" stroke="#e66" stroke-opacity=".28"/><circle cx="60" cy="60" r="33.5" fill="none" stroke="#3d0309" stroke-opacity=".35" stroke-dasharray="1 2.2"/>' +
       '<path d="M30 44C38 30 52 25 64 26" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="3" stroke-linecap="round"/>' +
       // սկզբնատառերը և «&»-ը՝ առանձին, հավասար հեռավորությամբ (սիմետրիկ)
-      '<g fill="#4a040c" fill-opacity=".85" text-anchor="middle" style="font-family:var(--script)"><text x="36" y="71" font-size="29">' + esc(L[0]) + '</text>' +
-      '<text x="61" y="67" font-size="14">&amp;</text><text x="85" y="71" font-size="29">' + esc(L[1]) + "</text></g></svg>";
+      '<g fill="#4a040c" fill-opacity=".85" text-anchor="middle" style="font-family:var(--script)"><text x="31" y="71" font-size="29">' + esc(L[0]) + '</text>' +
+      '<text x="59" y="67" font-size="14">&amp;</text><text x="78" y="71" font-size="29">' + esc(L[1]) + "</text></g></svg>";
   }
   // դաջված ծաղկային նախշ (բաց ու մուգ շերտ՝ իրար նկատմամբ 1px տեղաշարժով)
   function emb() {
