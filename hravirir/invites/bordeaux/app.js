@@ -47,7 +47,7 @@
   // «Հարսանեկան լրագիր». 3 տարբերակ՝ INVITE.paper = "a" | "b" | "c" (կամ հղման մեջ ?paper=b)
   var EN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   function paper() {
-    var v = ((location.search.match(/paper=([abc])/) || [])[1]) || C.paper || "b";
+    var v = ((location.search.match(/paper=([abc])/) || [])[1]) || C.paper || "c";
     var n = K.names(), d = K.date, mon = u("months")[d.getMonth()].slice(0, 3).toUpperCase(), g = (C.gallery || [])[0] || C.photo;
     var art = esc(t(C.paperText || P.x("newsT")));
     var cols = function (k) { var h = ""; for (var i = 0; i < k; i++) h += "<i style=\"width:" + (70 + (i * 29) % 30) + '%"></i>'; return h; };
@@ -97,5 +97,5 @@
       (C.rsvp ? P.sec("wine rsv", P.rsvp("cap")) : "") +
       P.sec("fin wine", '<div class="fseal rv">' + seal() + '</div><div class="caps rv">' + esc(P.x("fin")) + '</div><div class="fnm rv">' + esc(n.join(" & ")) + "</div>") + P.made();
   }
-  P.run({ env: env, main: main, steps: [[0, "s1"], [1300, "s2"], [2000, "s3"]], done: 2100 });
+  P.run({ env: env, main: main, steps: [[0, "s1"], [1050, "s2"], [1700, "s3"]], done: 1800 });
 })();

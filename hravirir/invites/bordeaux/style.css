@@ -100,7 +100,7 @@ main { background: var(--paper); }
 
 /* ---------- բացում՝ ամբողջ էկրանով բորդո ծրար դաջված ծաղիկներով. 4 կողերը դուրս են ծալվում դեպի եզրերը, կնիքը գնում է ձախ կողի հետ ---------- */
 .bxe { background: #f4ece2; perspective: 900px; perspective-origin: 50% 50%; transition: opacity .8s, background-color .8s; overflow: hidden; }
-.fw { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 1.5s cubic-bezier(.55,.05,.25,1); will-change: transform; }
+.fw { position: absolute; inset: 0; transition: transform 1.2s cubic-bezier(.55,.05,.25,1); will-change: transform; backface-visibility: hidden; transform: translateZ(0); }
 .fw-l, .fw-s { transform-origin: 0 50%; }
 .fw-r { transform-origin: 100% 50%; }
 .fw-t { transform-origin: 50% 0; }
@@ -115,7 +115,7 @@ main { background: var(--paper); }
 .fw-t .fsh { clip-path: polygon(0 0, 100% 0, 50% 52%); background: linear-gradient(180deg, transparent 70%, rgba(20,0,5,.28)); }
 .fw-b .fsh { clip-path: polygon(0 100%, 50% 48%, 100% 100%); background: linear-gradient(0deg, transparent 70%, rgba(20,0,5,.22)); }
 .fw-r .fsh { clip-path: polygon(100% 0, 47% 50%, 100% 100%); background: linear-gradient(270deg, transparent 70%, rgba(20,0,5,.25)); }
-.fw-l { z-index: 1; } .fw-r { z-index: 2; } .fw-b { z-index: 3; filter: drop-shadow(0 -3px 5px rgba(20,0,5,.45)); } .fw-t { z-index: 4; filter: drop-shadow(0 4px 6px rgba(20,0,5,.55)); } .fw-s { z-index: 6; }
+.fw-l { z-index: 1; } .fw-r { z-index: 2; } .fw-b { z-index: 3; } .fw-t { z-index: 4; } .fw-s { z-index: 6; }
 .bx-sw { position: absolute; left: 50%; top: 50%; width: 104px; height: 104px; transform: translate(-50%, -50%); }
 .bx-sw svg { width: 100%; height: 100%; }
 .bx-nm { position: absolute; left: 0; right: 0; top: 14%; z-index: 5; text-align: center; font: 400 clamp(34px, 10vw, 46px)/1.2 var(--script); color: var(--cream); padding: 0 16px .1em; text-shadow: 0 2px 10px rgba(0,0,0,.35); transition: opacity .4s; }
@@ -124,12 +124,12 @@ main { background: var(--paper); }
 .bxe .hint { color: rgba(239,230,218,.85); z-index: 7; }
 .bxe.s1 .bx-nm, .bxe.s1 .hint { opacity: 0; animation: none; }
 .bxe.s1 .fw-l, .bxe.s1 .fw-s { transform: rotateY(84deg); }
-.bxe.s1 .fw-s { opacity: 0; transition: transform 1.5s cubic-bezier(.55,.05,.25,1), opacity .5s .9s; }
+.bxe.s1 .fw-s { opacity: 0; transition: transform 1.2s cubic-bezier(.55,.05,.25,1), opacity .4s .7s; }
 .bxe.s1 .fw-r { transform: rotateY(-84deg); transition-delay: .08s; }
 .bxe.s1 .fw-t { transform: rotateX(-82deg); transition-delay: .16s; }
 .bxe.s1 .fw-b { transform: rotateX(82deg); transition-delay: .16s; }
 .bxe.s2 { background-color: transparent; }
-.bxe.s2 .fw { opacity: 0; transition: transform 1.5s, opacity .6s; }
+.bxe.s2 .fw { opacity: 0; transition: transform 1.2s, opacity .5s; }
 .bxe.s3 { opacity: 0; }
 .wine .gz p.gz-c { color: #2e2627; }
 
@@ -164,3 +164,10 @@ main { background: var(--paper); }
 .gzc-d { display: flex; align-items: center; justify-content: center; gap: 12px; border-top: 1px solid #1d1819; padding-top: 10px; }
 .gzc-d b { font: 400 58px/.9 var(--title); color: var(--red); }
 .gzc-d span { font: 500 13px/1.3 var(--title); letter-spacing: .14em; text-transform: uppercase; }
+/* ծրարի կողերի եզրերի ստվեր՝ առանց filter-ի (արագ աշխատի հեռախոսում) */
+.fw-t .fsh { background: linear-gradient(180deg, transparent 0, transparent calc(100% - 26px), rgba(20,0,5,.35)), linear-gradient(transparent, transparent); }
+.fw-t .fe { box-shadow: none; }
+.fw-t::after { content: ""; position: absolute; inset: 0; clip-path: polygon(0 0, 100% 0, 50% 52%, 50% 54.5%, 0 1.5%); background: rgba(20,0,5,.35); }
+.fw-t::before { content: ""; position: absolute; inset: 0; clip-path: polygon(100% 0, 100% 1.5%, 50% 54.5%, 50% 52%); background: rgba(20,0,5,.35); }
+.fw-b::after { content: ""; position: absolute; inset: 0; clip-path: polygon(0 100%, 50% 48%, 50% 46.5%, 0 98.5%); background: rgba(20,0,5,.28); }
+.fw-b::before { content: ""; position: absolute; inset: 0; clip-path: polygon(100% 100%, 50% 48%, 50% 46.5%, 100% 98.5%); background: rgba(20,0,5,.28); }

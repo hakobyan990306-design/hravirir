@@ -189,8 +189,10 @@
       toggle: function () { this.on ? this.stop() : this.play(); },
       synth: function () { // օրինակների համար՝ փափուկ «երաժշտական տուփ»
         var AC = window.AudioContext || window.webkitAudioContext; if (!AC || this.ctx) return;
-        var ctx = this.ctx = new AC(), self = this, notes = [72, 76, 79, 84, 79, 76, 71, 74, 79, 83, 79, 74, 69, 72, 76, 81, 76, 72, 65, 69, 72, 77, 72, 69];
-        (function bar() {
+        // AudioContext-ը ստեղծվում է նախօրոք (էջը բացելիս), իսկ սեղմելիս միայն «արթնացվում» է՝ անիմացիան չի կախվում
+        var ctx = this.ctx = this.pre || new AC(), self = this, notes = [72, 76, 79, 84, 79, 76, 71, 74, 79, 83, 79, 74, 69, 72, 76, 81, 76, 72, 65, 69, 72, 77, 72, 69];
+        // նոտաները պլանավորվում են մի փոքր ուշ, որ ծրարի բացման անիմացիան չկախվի
+        function bar() {
           if (!self.ctx) return;
           var t0 = ctx.currentTime + 0.05;
           notes.forEach(function (n, i) {
@@ -200,7 +202,9 @@
             o.connect(g); g.connect(ctx.destination); o.start(s); o.stop(s + 1.7);
           });
           self.loop = setTimeout(bar, notes.length * 340);
-        })();
+        }
+        if (ctx.resume) ctx.resume();
+        self.loop = setTimeout(bar, 1400);
       }
     },
     // զույգի գլխավոր լուսանկարը (INVITE.photo)՝ կամարաձև շրջանակով
@@ -286,6 +290,7 @@
     }
   };
   window.K = K;
+  if (C.music && typeof C.music !== "string" && !PREVIEW) setTimeout(function () { var AC = window.AudioContext || window.webkitAudioContext; if (AC && !K.music.pre) try { K.music.pre = new AC(); } catch (e) {} }, 600);
   // Yandex Navigator. <a data-nav="lat,lon" href="վեբ-քարտեզ"> → հեռախոսում բացվում է հավելվածը (Android՝ intent, iPhone՝ yandexnavi://), չլինելու դեպքում՝ Yandex Maps վեբ
   K.navHref = function (ll) { return "https://yandex.com/maps/?rtext=~" + ll + "&rtt=auto"; };
   document.addEventListener("click", function (ev) {
