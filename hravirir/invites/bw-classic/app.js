@@ -23,7 +23,7 @@
   function logo() { return '<svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="#fff" stroke="#f2c230" stroke-width="2.4"/><path d="M18 40C22 28 26 18 30 14C27 26 26 34 28 42M28 30C33 26 38 26 40 30C36 31 33 33 31 38" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/></svg>'; }
   function bar() {
     if (!C.music) return "";
-    return '<div class="topbar"><button class="play" type="button" data-music aria-label="music"><i></i></button></div>';
+    return '<div class="topbar"><button class="play" type="button" data-music aria-label="music"><i></i><i></i><i></i><i></i></button></div>';
   }
   function cal() {
     var d0 = K.date, y = d0.getFullYear(), m = d0.getMonth(), first = (new Date(y, m, 1).getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate(), h = "";
@@ -65,5 +65,22 @@
     var sh = document.querySelector(".share");
     if (sh) sh.onclick = function () { if (navigator.share) navigator.share({ title: document.title, url: location.href }).catch(function () {}); else if (navigator.clipboard) navigator.clipboard.writeText(location.href); };
   }
+  function autoplay() {
+    if (typeof C.music !== "string") return;
+    K.music.play();
+    var p = K.music.audio && K.music.audio.play();
+    if (!p || !p.catch) return;
+    p.catch(function () {
+      K.music.on = false; K.music.sync();
+      var ev = ["pointerdown", "touchend", "click", "keydown"];
+      function go(e) {
+        ev.forEach(function (n) { document.removeEventListener(n, go, true); });
+        if (e.target.closest && e.target.closest("[data-music]")) return;
+        if (!K.music.on) K.music.play();
+      }
+      ev.forEach(function (n) { document.addEventListener(n, go, true); });
+    });
+  }
   render();
+  autoplay();
 })();
