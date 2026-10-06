@@ -7,17 +7,7 @@
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon-180.png">
-<meta name="robots" content="noindex">
-<meta name="hravirir-expires" content="2026-10-31">
-<title>Ռազմիկի, Դավթի և Նարեկի մկրտություն</title>
-<meta property="og:title" content="Ռազմիկի, Դավթի և Նարեկի մկրտություն">
-<meta property="og:description" content="Մկրտության հրավեր · 16.10.2026">
-<meta property="og:site_name" content="HRAVIRIR.AM">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://hravirir.pages.dev/razmik-davit-narek/og2.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<title>Արամի մկրտություն</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600;700&display=swap">
@@ -75,8 +65,8 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 <main>
   <img class="wreath" src="wreath.webp" alt="">
   <h1 class="script">Սիրելի հարազատներ<br>և ընկերներ</h1>
-  <p class="script lead">Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր որդիների՝ Ռազմիկի, Դավթի և Նարեկի մկրտության արարողությանը, որը տեղի կունենա</p>
-  <p class="script date">16.10.2026թ.</p>
+  <p class="script lead">Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր որդու՝ Արամի մկրտության արարողությանը, որը տեղի կունենա</p>
+  <p class="script date" id="dt">16.10.2026թ.</p>
   <img class="divider" src="divider.webp" alt="">
   <p class="script wish">Մենք սրտանց ցանկանում ենք, որ մեր կյանքի այս լուսավոր օրը կիսեք մեզ հետ։</p>
   <img class="euca" src="euca.webp" alt="">
@@ -84,20 +74,20 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
   <section class="ev">
     <div class="rows"><img class="side" src="br-side.webp" alt="">
     <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 2v5M13.5 4.5h5M10 14l6-7 6 7M9 14h14v15H9zM5 29h22M6 20l3-3M26 20l-3-3M6 20v9M26 20v9"/><path d="M14 29v-5a2 2 0 0 1 4 0v5"/><circle cx="16" cy="17.5" r="1.6"/></svg><span>Մկրտության արարողություն</span></div>
-    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>15:30</span></div>
-    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>Սուրբ Սարգիս եկեղեցի</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>14:00</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>Սուրբ Գայանե եկեղեցի</span></div>
     </div><img class="bottom" src="br-bottom.webp" alt="">
   </section>
-  <a class="pill" href="https://yandex.ru/navi?text=%D5%8D%D5%B8%D6%82%D6%80%D5%A2%20%D5%8D%D5%A1%D6%80%D5%A3%D5%AB%D5%BD%20%D5%A5%D5%AF%D5%A5%D5%B2%D5%A5%D6%81%D5%AB" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+  <a class="pill" href="https://yandex.ru/navi?text=%D5%8D%D5%B8%D6%82%D6%80%D5%A2%20%D4%B3%D5%A1%D5%B5%D5%A1%D5%B6%D5%A5%20%D5%A5%D5%AF%D5%A5%D5%B2%D5%A5%D6%81%D5%AB" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
 
   <section class="ev">
     <div class="rows"><img class="side" src="br-side.webp" alt="">
     <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h7l-1 8a3 3 0 0 1-5 0zM18 8h7l-1 8a3 3 0 0 1-5 0zM10.5 18v8M21.5 18v8M7.5 28h6M18.5 28h6"/><path d="M12 3l1 2M16 2v3M20 3l-1 2"/></svg><span>Տոնական խնջույք</span></div>
-    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>17:30</span></div>
-    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>«Ֆլորենս» ռեստորան, «Բենեդիկտ» սրահ</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>17:00</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>«Արարատ» ռեստորան</span></div>
     </div><img class="bottom" src="br-bottom.webp" alt="">
   </section>
-  <a class="pill" href="https://yandex.ru/navi?text=%D5%96%D5%AC%D5%B8%D6%80%D5%A5%D5%B6%D5%BD%20%D5%BC%D5%A5%D5%BD%D5%BF%D5%B8%D6%80%D5%A1%D5%B6" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+  <a class="pill" href="https://yandex.ru/navi?text=%D4%B1%D6%80%D5%A1%D6%80%D5%A1%D5%BF%20%D5%BC%D5%A5%D5%BD%D5%BF%D5%B8%D6%80%D5%A1%D5%B6" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
 
   <div class="cd" id="cd"><div><b id="cdD">0</b><span>ՕՐ</span></div><div><b id="cdH">0</b><span>ԺԱՄ</span></div><div><b id="cdM">0</b><span>ՐՈՊԵ</span></div><div><b id="cdS">0</b><span>ՎԱՅՐԿՅԱՆ</span></div></div>
 
@@ -108,7 +98,10 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 </main>
 <script>
 (function () {
-  var end = new Date("2026-10-16T15:30:00+04:00").getTime();
+  /* օրինակ. ամսաթիվը միշտ 37 օր հետո */
+  var t = new Date(); t.setDate(t.getDate() + 37); t.setHours(14, 0, 0, 0);
+  var end = t.getTime();
+  document.getElementById("dt").textContent = ("0" + t.getDate()).slice(-2) + "." + ("0" + (t.getMonth() + 1)).slice(-2) + "." + t.getFullYear() + "թ.";
   function pad(n) { return n < 10 ? "0" + n : String(n); }
   function tick() {
     var s = Math.max(0, Math.floor((end - Date.now()) / 1000));

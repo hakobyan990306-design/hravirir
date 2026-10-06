@@ -66,6 +66,7 @@
     { id: "baptism-silver", name: "Կապույտ-արծաթ", cat: "baptism", colors: ["#fdfeff", "#bcd6ee", "#8fb4dc", "#9aa6b6"], tag: "Նոր" },
     { id: "angel-wings", name: "Հրեշտակ", cat: "baptism", colors: ["#fdfaf8", "#f7e4e4", "#d99aa3", "#b8707c"], tag: "Նոր" },
     { id: "white-ribbon", name: "Ժապավեն", cat: "baptism", colors: ["#fbfcfd", "#cddcea", "#9dbad6", "#5f86ae"], tag: "Նոր" },
+    { id: "eucalyptus", name: "Էվկալիպտ", cat: "baptism", colors: ["#ffffff", "#a9bfa8", "#d6b46e", "#1b1b1b"], tag: "Նոր" },
     { id: "castle", name: "Արքայադուստր", cat: "birthday", colors: ["#f6e6f0", "#f4b6cf", "#b89ad8", "#f2c96b"], tag: "Նոր" },
     { id: "pocket-watch", name: "Ժամացույց", cat: "birthday", colors: ["#1f1510", "#8a5a33", "#c79a4e", "#efe4cf"], tag: "Նոր" },
     { id: "gift-rainbow", name: "Նվեր", cat: "birthday", colors: ["#fbf5ec", "#d98b6a", "#e8b85a", "#9db39a"], tag: "Նոր" },
@@ -83,14 +84,14 @@
       "night-magic": "Волшебство", "cinema": "Кино", "atamhatik": "Атамгатик", "doves": "Голуби", "vinyl": "Мелодия любви", "taraz": "Тараз", "stained-glass": "Витраж", "lavender": "Лаванда",
       "post-letter": "Почта", "white-seal": "Белый конверт", "chandelier": "Люстра", "monogram": "Монограмма", "noir-sunset": "Чёрно-золотой закат", "blush-garden": "Розовый сад", "olive-letter": "Письмо",
       "classic-green": "Classic", "gold-gate": "Золотые ворота", "red-rose": "Красная роза", "gold-letter": "Золотая печать", "ring-velvet": "Кольцо", "boho-arch": "Арка", "narot": "Нарот", "candle": "Свеча",
-      "baptism-silver": "Голубое серебро", "angel-wings": "Ангел", "white-ribbon": "Лента", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
+      "baptism-silver": "Голубое серебро", "angel-wings": "Ангел", "white-ribbon": "Лента", "eucalyptus": "Эвкалипт", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
       "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "bordeaux": "Бордо", "ivory": "Свет", "teddy": "Мишутка" },
     en: { "silk-bow": "Silk Ribbon", "olive-seal": "Olive Seal", "noir-rings": "Black & Gold", "polaroid": "Polaroid", "mono-walk": "Monochrome Walk", "editorial": "Editorial", "nur": "Pomegranate", "terra": "Terra",
       "doll-car": "The Doll", "lavash": "Plate for Luck", "boarding": "Boarding Pass", "scratch": "Scratch Card", "bw-classic": "Black & White", "bw-script": "Noir", "tuscany": "Tuscany", "peony": "Peony",
       "night-magic": "Night Magic", "cinema": "Cinema", "atamhatik": "First Tooth", "doves": "Doves", "vinyl": "Love Melody", "taraz": "Taraz", "stained-glass": "Stained Glass", "lavender": "Lavender",
       "post-letter": "Post Letter", "white-seal": "White Envelope", "chandelier": "Chandelier", "monogram": "Monogram", "noir-sunset": "Noir Sunset", "blush-garden": "Blush Garden", "olive-letter": "The Letter",
       "classic-green": "Classic", "gold-gate": "Golden Gate", "red-rose": "Red Rose", "gold-letter": "Gold Seal", "ring-velvet": "The Ring", "boho-arch": "Boho Arch", "narot": "Narot", "candle": "Candle",
-      "baptism-silver": "Blue Silver", "angel-wings": "Angel", "white-ribbon": "Ribbon", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
+      "baptism-silver": "Blue Silver", "angel-wings": "Angel", "white-ribbon": "Ribbon", "eucalyptus": "Eucalyptus", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
       "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "bordeaux": "Bordeaux", "ivory": "Ivory Light", "teddy": "Teddy" }
   };
   var UI = {
