@@ -51,3 +51,5 @@ html.preview { scrollbar-width: none; } html.preview::-webkit-scrollbar { displa
 /* հրավերի ներքևի հղում՝ HRAVIRIR լոգոյով */
 .k-brand { display: inline-flex; align-items: center; gap: .45em; text-decoration: none; }
 .k-logo { width: 2.1em; height: 2.1em; flex: none; }
+/* հեռախոսում կրկնակի հպումով չմեծանա */
+html, body { touch-action: manipulation; }

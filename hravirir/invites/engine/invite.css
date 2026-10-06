@@ -586,4 +586,5 @@ html.preview .rv { opacity: 1; transform: none; }
 .clinks svg { width: 24px; height: 24px; }
 .e-final { background: var(--bg2); }
 .e-fn { font-family: var(--f-script); font-size: clamp(46px, 13vw, 70px); color: var(--accent); line-height: 1.4; margin-top: 10px; }
-[data-layout="editorial"] .made { border-top: 0; background: var(--bg2); }
+[data-layout="editorial"] .made { border-top: 0; background: var(--bg2); }/* հեռախոսում կրկնակի հպումով չմեծանա */
+html, body { touch-action: manipulation; }
