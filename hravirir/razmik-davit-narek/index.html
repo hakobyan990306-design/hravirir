@@ -18,10 +18,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600;700&display=swap">
-<link rel="preload" href="/fonts/ArmCoronetU.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
 <style>
-@font-face { font-family: "Coronet"; src: url("/fonts/ArmCoronetU.woff2") format("woff2"); font-display: swap; }
-:root { --ink: #111; --soft: #8a8a8a; --line: #d9d9d9; --script: "Coronet", serif; --sans: "Noto Sans Armenian", system-ui, sans-serif; }
+@font-face { font-family: "SHK Dzeragir"; src: url("/fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; }
+:root { --ink: #111; --soft: #8a8a8a; --line: #d9d9d9; --script: "SHK Dzeragir", serif; --sans: "Noto Sans Armenian", system-ui, sans-serif; }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { margin: 0; background: #fff; color: var(--ink); overflow-x: hidden; }
 body { font-family: var(--sans); }
@@ -47,7 +47,7 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 .ev .rows::after { content: ""; display: block; height: 0; }
 .ev .rows { min-height: calc((min(100vw, 480px) - 40px) * .086 * 4.59); }
 .ev .bottom { display: block; width: 43%; margin: -4px 0 0 6.6%; }
-.row { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 10px; margin: 2px 0; font-size: clamp(22px, 6.6vw, 28px); line-height: 1.25; }
+.row { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 10px; margin: 2px 0; font-size: clamp(22px, 6.4vw, 28px); line-height: 1.25; }
 .row svg { width: 28px; height: 28px; justify-self: center; }
 .pill { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 30px; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); text-decoration: none; font: 600 12px var(--sans); letter-spacing: .12em; margin: 14px auto 40px; }
 .pill:active { background: #f3f3f3; }
@@ -63,6 +63,7 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 
 .made { display: block; width: 46%; margin: 16px auto 0; }
 .made img { width: 100%; }
+.credit { font: 10px var(--sans); color: #b5b5b5; margin: 10px 0 0; }
 @media (min-width: 700px) { main { padding-top: 90px; } }
 </style>
 </head>
@@ -100,6 +101,7 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
   <p class="script close">Ձեր ներկայությունը կարևոր է մեզ համար</p>
   <hr class="hr">
   <a class="made" href="https://hravirir.am/" target="_blank" rel="noopener"><img src="made.jpg" alt="Կայքը պատրաստել է Hravirir.am"></a>
+  <p class="credit">Տառատեսակ՝ SHK Dzeragir, հեղինակ՝ Սյուզի Հակոբյան</p>
 </main>
 <script>
 (function () {
