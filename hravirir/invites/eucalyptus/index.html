@@ -34,14 +34,12 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 .wish { font-size: clamp(21px, 6vw, 27px); margin: 0 auto 16px; }
 .euca { width: 66%; margin: 0 auto 34px; }
 
-.ev { position: relative; text-align: left; margin: 0 auto; }
-.ev .rows { position: relative; padding: 2px 0 0 10.5%; }
-.ev .side { position: absolute; left: 1.5%; top: 0; width: 8.6%; }
-.ev .rows::after { content: ""; display: block; height: 0; }
-.ev .rows { min-height: calc((min(100vw, 480px) - 40px) * .086 * 4.59); }
-.ev .bottom { display: block; width: 43%; margin: -4px 0 0 6.6%; }
-.row { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 10px; margin: 2px 0; font-size: clamp(22px, 6.4vw, 28px); line-height: 1.25; }
-.row svg { width: 28px; height: 28px; justify-self: center; }
+.ev { container-type: inline-size; position: relative; text-align: left; margin: 0 auto; }
+.ev .rows { position: relative; min-height: 35cqw; padding: .5cqw 0 1cqw 9cqw; }
+.ev .side { position: absolute; left: 0; top: 0; width: 8.13cqw; }
+.ev .bottom { display: block; width: 42.67cqw; margin: -5.5cqw 0 0 3.2cqw; }
+.row { display: grid; grid-template-columns: 6.4cqw 1fr; align-items: center; gap: 2.8cqw; margin: 0; font-size: 6.2cqw; line-height: 1.22; }
+.row svg { width: 5.6cqw; height: 5.6cqw; justify-self: center; }
 .pill { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 30px; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); text-decoration: none; font: 600 12px var(--sans); letter-spacing: .12em; margin: 14px auto 40px; }
 .pill:active { background: #f3f3f3; }
 
