@@ -62,6 +62,21 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 .close { font-size: clamp(22px, 6.4vw, 29px); margin: 0 0 22px; }
 .hr { width: 34%; height: 1px; background: var(--line); margin: 0 auto 22px; border: 0; }
 
+.play { position: fixed; z-index: 10; top: calc(10px + env(safe-area-inset-top, 0px)); right: 12px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.1); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.play i { width: 0; height: 0; border-left: 14px solid #111; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.play.on i { width: 14px; height: 16px; border: 0; margin: 0; background: linear-gradient(90deg, #111 0 4px, transparent 4px 10px, #111 10px 14px); }
+
+.rsvp { margin: 6px auto 36px; max-width: 380px; text-align: left; }
+.rsvp h2 { text-align: center; font-size: clamp(28px, 8vw, 36px); margin: 0 0 4px; }
+.rsvp .dl { text-align: center; font-size: clamp(19px, 5.4vw, 23px); margin: 0 0 18px; }
+.rsvp label.t { display: block; font: 600 11px var(--sans); letter-spacing: .14em; color: #555; margin: 14px 0 6px; }
+.rsvp input[type=text], .rsvp input[type=number], .rsvp textarea { width: 100%; height: 46px; border: 1px solid var(--line); border-radius: 12px; padding: 0 14px; font: 15px var(--sans); background: #fff; color: var(--ink); -webkit-appearance: none; appearance: none; }
+.rsvp textarea { height: 84px; padding: 10px 14px; resize: vertical; }
+.rsvp .ch { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: clamp(19px, 5.4vw, 23px); cursor: pointer; }
+.rsvp .ch input { width: 20px; height: 20px; accent-color: #111; margin: 0; flex: none; }
+.rsvp button { display: flex; margin: 22px auto 0; align-items: center; justify-content: center; height: 46px; padding: 0 34px; border: 1px solid var(--ink); border-radius: 999px; background: #fff; color: var(--ink); font: 600 12px var(--sans); letter-spacing: .12em; cursor: pointer; }
+.rsvp button:disabled { opacity: .5; }
+.thanks { text-align: center; font-size: clamp(22px, 6.4vw, 28px); margin: 10px 0 36px; }
 .made { display: block; width: 46%; margin: 16px auto 0; }
 .made img { width: 100%; }
 .credit { font: 10px var(--sans); color: #b5b5b5; margin: 10px 0 0; }
@@ -69,6 +84,7 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
 </style>
 </head>
 <body>
+<button type="button" class="play" id="play" aria-label="Երաժշտություն"><i></i></button>
 <a class="logo" href="https://hravirir.pages.dev/" aria-label="Hravirir.am"><img src="logo.png" alt=""></a>
 <main>
   <img class="wreath" src="wreath.webp" alt="">
@@ -91,13 +107,28 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
   <section class="ev">
     <div class="rows"><img class="side" src="br-side.webp" alt="">
     <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h7l-1 8a3 3 0 0 1-5 0zM18 8h7l-1 8a3 3 0 0 1-5 0zM10.5 18v8M21.5 18v8M7.5 28h6M18.5 28h6"/><path d="M12 3l1 2M16 2v3M20 3l-1 2"/></svg><span>Տոնական խնջույք</span></div>
-    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>17:30</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>17:00</span></div>
     <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>«Ֆլորենս» ռեստորան, «Բենեդիկտ» սրահ</span></div>
     </div><img class="bottom" src="br-bottom.webp" alt="">
   </section>
   <a class="pill" href="https://yandex.ru/navi/org/florens/46488697731?si=tqy1fhxrx331mah0tfrg33132w" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
 
   <div class="cd" id="cd"><div><b id="cdD">0</b><span>ՕՐ</span></div><div><b id="cdH">0</b><span>ԺԱՄ</span></div><div><b id="cdM">0</b><span>ՐՈՊԵ</span></div><div><b id="cdS">0</b><span>ՎԱՅՐԿՅԱՆ</span></div></div>
+
+  <form class="rsvp" id="rsvp">
+    <h2 class="script">Հարցաթերթիկ</h2>
+    <p class="script dl">Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև 12.10.2026թ.</p>
+    <label class="t" for="rName">ԱՆՈՒՆ, ԱԶԳԱՆՈՒՆ</label>
+    <input type="text" id="rName" name="name" required autocomplete="name">
+    <label class="t">ԿՆԵՐԿԱՅԱՆԱ՞Ք</label>
+    <label class="ch script"><input type="radio" name="attend" value="yes" required> Այո, սիրով կգամ</label>
+    <label class="ch script"><input type="radio" name="attend" value="no"> Ցավոք, չեմ կարող</label>
+    <label class="t" for="rGuests">ՔԱՆԻ ՀՈԳԻ</label>
+    <input type="number" id="rGuests" name="guests" min="1" max="20" value="1" inputmode="numeric">
+    <label class="t" for="rNote">ՆՇՈՒՄ</label>
+    <textarea id="rNote" name="note"></textarea>
+    <button type="submit">ՈՒՂԱՐԿԵԼ</button>
+  </form>
 
   <p class="script close">Ձեր ներկայությունը կարևոր է մեզ համար</p>
   <hr class="hr">
@@ -116,6 +147,32 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
     document.getElementById("cdS").textContent = pad(s % 60);
   }
   tick(); setInterval(tick, 1000);
+
+  // երաժշտություն. միանում է բացելիս (կամ առաջին հպումից, եթե բրաուզերը թույլ չի տալիս)
+  var a = new Audio("song.mp3"), pb = document.getElementById("play"); a.loop = true;
+  function sync() { pb.classList.toggle("on", !a.paused); }
+  a.addEventListener("play", sync); a.addEventListener("pause", sync);
+  pb.onclick = function () { if (a.paused) a.play().catch(function () {}); else a.pause(); };
+  a.play().catch(function () {
+    var ev = ["pointerdown", "touchend", "click", "keydown"];
+    function go(e) { ev.forEach(function (n) { document.removeEventListener(n, go, true); }); if (e.target.closest && e.target.closest("#play")) return; a.play().catch(function () {}); }
+    ev.forEach(function (n) { document.addEventListener(n, go, true); });
+  });
+
+  // հարցաթերթիկ → Google Sheets
+  var f = document.getElementById("rsvp");
+  f.querySelectorAll("input, textarea").forEach(function (i) {
+    i.addEventListener("invalid", function () { i.setCustomValidity(i.type === "radio" ? "Խնդրում ենք ընտրել տարբերակներից մեկը" : "Խնդրում ենք լրացնել այս դաշտը"); });
+    i.addEventListener("input", function () { f.querySelectorAll("[name='" + i.name + "']").forEach(function (j) { j.setCustomValidity(""); }); });
+    i.addEventListener("change", function () { f.querySelectorAll("[name='" + i.name + "']").forEach(function (j) { j.setCustomValidity(""); }); });
+  });
+  f.onsubmit = function (e) {
+    e.preventDefault();
+    var d = new URLSearchParams(new FormData(f)); d.set("kind", "rsvp"); d.set("lang", "hy"); d.set("key", "razmik-davit-narek"); d.set("invite", "Ռազմիկ, Դավիթ, Նարեկ (մկրտություն)");
+    f.querySelector("button").disabled = true;
+    var done = function () { f.outerHTML = '<p class="script thanks">Շնորհակալություն, Ձեր պատասխանը ստացվել է։</p>'; };
+    fetch("https://script.google.com/macros/s/AKfycbxwpQ4fQYogsMWe6JtavVDFtuv2jrBSEHksYU3XxNaxAaEufzuWk8xQHzP2aJhLrFKM/exec", { method: "POST", mode: "no-cors", body: d }).then(done, done);
+  };
 })();
 </script>
 </body>
