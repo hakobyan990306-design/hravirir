@@ -25,7 +25,7 @@
   function env() {
     var n = K.names();
     return '<div class="env" id="env" role="button" aria-label="' + esc(P.x("hint")) + '"><div class="back"></div><div class="card"></div><div class="pocket"></div><div class="flap"></div>' +
-      '<div class="enm"><span class="a">' + esc(n[0] || "") + '</span><span class="b">' + esc(n[1] || "") + '</span></div><div class="sealw">' + seal() + "</div>" +
+      '<div class="enm"><span class="a">' + esc(n[0] || "") + '</span><span class="amp">&amp;</span><span class="b">' + esc(n[1] || "") + '</span></div><div class="sealw">' + seal() + "</div>" +
       (K.PREVIEW ? "" : '<div class="hint">' + esc(P.x("hint")) + "</div>") + "</div>";
   }
   function hero() {
@@ -35,15 +35,22 @@
       '<div class="dl rv d2"><b>' + P.d2(d.getDate()) + "</b><i></i><b>" + P.d2(d.getMonth() + 1) + "</b><i></i><b>" + String(d.getFullYear()).slice(2) + "</b></div>" +
       '<div class="fl2 rv d3">' + olive(120) + olive(120, true) + "</div></section>";
   }
+  // ծրագիր՝ ամեն կետի համար իր պատկերակը (տուն, եկեղեցի, սրահ)
+  function prog() {
+    return '<div class="prg prg-list">' + (C.events || []).map(function (e) {
+      var b = e.map ? '<a class="btn" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(P.x("how")) + "</a>" : "";
+      return '<div class="ev rv"><div class="tm"><span class="ic">' + K.evIcon(e, "thin-b") + "</span>" + esc(e.time) + '</div><div class="bd"><div class="t">' + esc(t(e.title)) + "</div>" + (e.place ? '<div class="n">' + esc(t(e.place)) + "</div>" : "") + (t(e.address) ? '<div class="a">' + esc(t(e.address)) + "</div>" : "") + b + "</div></div>";
+    }).join("") + "</div>";
+  }
   function circ() { return '<svg class="hand" viewBox="0 0 50 44"><path d="M27 4C13 2 3 12 5 24C7 37 22 42 34 38C46 33 48 18 40 10C34 4 22 3 14 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" pathLength="1"/></svg>'; }
   function main() {
     return hero() +
       P.sec("txt", '<div class="caps rv">' + esc(P.x("dear")) + '</div><p class="p big rv">' + P.text() + "</p>" + '<div class="round rv">' + P.month("", circ()).replace(" rv", "") + "</div>") +
-      P.sec("prog", '<div class="ghost" aria-hidden="true">' + esc(P.x("ghost")) + '</div><h2 class="h2 rv">' + esc(P.x("program")) + "</h2>" + P.program("list")) +
+      P.sec("prog", '<div class="ghost" aria-hidden="true">' + esc(P.x("ghost")) + '</div><h2 class="h2 rv">' + esc(P.x("program")) + "</h2>" + prog()) +
       K.gallery("h2", "") +
       P.sec("cdsec", '<div class="caps rv">' + esc(P.x("left")) + "</div>" + P.cd()) +
-      P.sec("", P.dress()) +
-      P.sec("rsv", P.rsvp()) +
+      (C.dresscode ? P.sec("", P.dress()) : "") +
+      (C.rsvp ? P.sec("rsv", P.rsvp()) : "") +
       P.sec("fin", '<div class="sealf rv">' + seal() + '</div><div class="caps rv">' + esc(P.x("fin")) + '</div><div class="fnm rv">' + esc(K.names().join(" & ")) + "</div>") + P.made();
   }
   P.run({ env: env, main: main, steps: [[0, "s1"], [450, "s2"], [1350, "s3"]], done: 2100 });

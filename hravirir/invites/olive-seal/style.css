@@ -20,9 +20,10 @@ body, main { background: var(--linen), var(--bg); }
 .env .pocket::before { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, transparent 49.7%, rgba(90,70,40,.12) 50%, transparent 50.6%), linear-gradient(20deg, transparent 49.7%, rgba(90,70,40,.12) 50%, transparent 50.6%); }
 .env .flap { position: absolute; left: 0; right: 0; top: 0; height: 64%; background: var(--linen), #f0e9df; clip-path: polygon(0 0, 100% 0, 100% 52%, 50% 100%, 0 52%); transform-origin: top; transition: transform 1s cubic-bezier(.5,0,.3,1), background .3s .5s; z-index: 2;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.12)); }
-.enm { position: absolute; left: 0; right: 0; top: 13%; text-align: center; z-index: 3; color: var(--ink); transition: opacity .5s; }
-.enm .a { display: block; font: 400 clamp(26px, 8vw, 34px) var(--caps); letter-spacing: .14em; text-transform: uppercase; }
-.enm .b { display: block; font: 400 clamp(48px, 15vw, 66px)/1.1 var(--script); color: var(--acc); margin-top: -4px; }
+.enm { position: absolute; left: 0; right: 0; top: 9%; text-align: center; z-index: 3; color: var(--ink); transition: opacity .5s; }
+.enm .a { display: block; font: 400 clamp(46px, 14vw, 62px)/1.1 var(--script); color: var(--acc); }
+.enm .amp { display: block; font: 400 clamp(26px, 8vw, 34px)/1 var(--script); color: var(--acc); opacity: .8; margin: 2px 0; }
+.enm .b { display: block; font: 400 clamp(46px, 14vw, 62px)/1.1 var(--script); color: var(--acc); }
 .sealw { position: absolute; left: 50%; top: 64%; width: 120px; transform: translate(-50%, -50%); z-index: 4; transition: transform .7s cubic-bezier(.5,-.4,.4,1), opacity .5s .15s; }
 .seal { width: 100%; height: auto; }
 .env .hint { color: var(--acc); z-index: 5; }
@@ -47,8 +48,9 @@ body, main { background: var(--linen), var(--bg); }
 .txt .p.big { font-size: 17.5px; margin-top: 12px; }
 /* կլոր օրացույց՝ ձեռքով գծված շրջանակով */
 .round { width: min(88vw, 360px); aspect-ratio: 1; margin: 34px auto 0; border-radius: 50%; background: var(--card); display: grid; place-items: center; box-shadow: 0 24px 50px -30px rgba(70,50,25,.5); }
-.round .cal { margin: 0; width: 76%; }
-.round .cal-h { font-size: 32px; } .round .cal-g .cd { height: 31px; font-size: 14px; }
+.round .cal { margin: 0; width: 66%; }
+.round .cal-h { font-size: 26px; line-height: 1.1; } .round .cal-y { margin-top: 2px; font-size: 12px; } .round .cal-g { row-gap: 2px; } .round .cal-g .cw { font-size: 9px; } .round .cal-g .cd { height: 25px; font-size: 13px; }
+.round .hand { width: 36px; height: 32px; }
 .cal-g .cd.on { color: var(--acc); font-weight: 700; }
 .cal-g .cd.on::before { display: none; }
 .hand { position: absolute; width: 46px; height: 40px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-8deg); color: var(--acc); }
@@ -59,7 +61,8 @@ body, main { background: var(--linen), var(--bg); }
 .ghost { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); white-space: nowrap; font: 400 76px var(--caps); letter-spacing: .04em; color: transparent; -webkit-text-stroke: 1px rgba(143,111,67,.28); pointer-events: none; }
 .prog .h2 { position: relative; }
 .prg-list .tm { color: var(--acc); }
-.prg-list .tm::after { content: " ♥"; font-size: 12px; vertical-align: middle; }
+.prg-list .tm .ic { display: block; width: 34px; height: 34px; margin: 0 0 6px; color: var(--acc); }
+.prg-list .tm .ic svg { width: 100%; height: 100%; display: block; }
 .prg-list .btn { border-color: var(--line); color: var(--ink); }
 .cdsec { background: var(--bg2); }
 .rsv .rs { background: var(--card); }
