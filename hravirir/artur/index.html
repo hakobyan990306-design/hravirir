@@ -134,7 +134,7 @@ h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
   tick(); setInterval(tick, 1000);
 
   // երաժշտություն. միանում է բացելիս (կամ առաջին հպումից, եթե բրաուզերը թույլ չի տալիս)
-  var a = new Audio("hallelujah.mp3"), pb = document.getElementById("play"); a.loop = true;
+  var a = new Audio("song.mp3"), pb = document.getElementById("play"); a.loop = true;
   function sync() { pb.classList.toggle("on", !a.paused); }
   a.addEventListener("play", sync); a.addEventListener("pause", sync);
   pb.onclick = function () { if (a.paused) a.play().catch(function () {}); else a.pause(); };
