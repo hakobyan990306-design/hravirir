@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png">
+<meta name="robots" content="noindex">
+<meta name="hravirir-expires" content="2026-11-11">
+<title>Արթուրի մկրտություն</title>
+<meta property="og:title" content="Արթուրի մկրտություն">
+<meta property="og:description" content="Մկրտության հրավեր · 27.10.2026">
+<meta property="og:site_name" content="HRAVIRIR.AM">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hravirir.pages.dev/artur/og1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600;700&display=swap">
+<link rel="preload" href="/fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<style>
+@font-face { font-family: "SHK Dzeragir"; src: url("/fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; }
+:root { --ink: #111; --soft: #8a8a8a; --line: #d9d9d9; --script: "SHK Dzeragir", serif; --sans: "Noto Sans Armenian", system-ui, sans-serif; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { touch-action: manipulation; }
+html, body { margin: 0; background: #fff; color: var(--ink); overflow-x: hidden; }
+body { font-family: var(--sans); }
+img { display: block; max-width: 100%; }
+
+.logo { position: fixed; z-index: 10; top: calc(10px + env(safe-area-inset-top, 0px)); left: 12px; width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08); display: grid; place-items: center; }
+.logo img { width: 40px; }
+
+main { width: min(100%, 480px); margin: 0 auto; padding: 70px 20px 30px; text-align: center; }
+.script { font-family: var(--script); font-weight: normal; line-height: 1.3; }
+
+.wreath { width: 72%; margin: 0 auto 18px; }
+.wreath.hero { width: 78%; margin-bottom: 10px; }
+h1.script { font-size: clamp(30px, 8.6vw, 40px); margin: 0 0 16px; }
+.lead { font-size: clamp(21px, 6vw, 27px); margin: 0 auto; max-width: 25em; }
+.date { font-size: clamp(36px, 10.5vw, 50px); margin: 30px 0 4px; }
+.divider { width: 92%; margin: 0 auto 30px; }
+.wish { font-size: clamp(21px, 6vw, 27px); margin: 0 auto 16px; }
+.euca { width: 66%; margin: 0 auto 34px; }
+
+.ev { container-type: inline-size; position: relative; text-align: left; margin: 0 auto; }
+.ev .rows { position: relative; min-height: 35cqw; padding: .5cqw 0 1cqw 9cqw; }
+.ev .side { position: absolute; left: 0; top: 0; width: 8.13cqw; }
+.ev .bottom { display: block; width: 42.67cqw; margin: -5.5cqw 0 0 3.2cqw; }
+.row { display: grid; grid-template-columns: 6.4cqw 1fr; align-items: center; gap: 2.8cqw; margin: 0; font-size: 6.2cqw; line-height: 1.22; }
+.row svg { width: 5.6cqw; height: 5.6cqw; justify-self: center; }
+.pill { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 30px; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); text-decoration: none; font: 600 12px var(--sans); letter-spacing: .12em; margin: 14px auto 40px; }
+.pill:active { background: #f3f3f3; }
+
+.cd { display: grid; grid-template-columns: repeat(4, 1fr); margin: 10px auto 34px; max-width: 360px; }
+.cd div { display: grid; gap: 4px; justify-items: center; border-left: 1px solid var(--line); }
+.cd div:first-child { border-left: 0; }
+.cd b { font: 700 30px/1 var(--sans); font-variant-numeric: tabular-nums; }
+.cd span { font: 600 10px var(--sans); letter-spacing: .14em; color: var(--ink); }
+
+.close { font-size: clamp(22px, 6.4vw, 29px); margin: 0 0 22px; }
+.hr { width: 34%; height: 1px; background: var(--line); margin: 0 auto 22px; border: 0; }
+
+.play { position: fixed; z-index: 10; top: calc(10px + env(safe-area-inset-top, 0px)); right: 12px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.1); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.play i { width: 0; height: 0; border-left: 14px solid #111; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.play.on i { width: 14px; height: 16px; border: 0; margin: 0; background: linear-gradient(90deg, #111 0 4px, transparent 4px 10px, #111 10px 14px); }
+
+.gold { color: #b89b5e; }
+.htitle { font-size: clamp(32px, 9.4vw, 44px); margin: 0 0 28px; }
+.hdate { font-size: clamp(26px, 7.4vw, 34px); margin: 0 0 30px; letter-spacing: .02em; }
+.photo { width: 86%; margin: 6px auto 12px; border-radius: 999px 999px 18px 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(60,80,60,.18); border: 6px solid #fff; outline: 1px solid #d8cfb4; }
+.photo img { width: 100%; height: auto; }
+.name { font-size: clamp(44px, 13vw, 62px); margin: 4px 0 26px; color: #b89b5e; line-height: 1.1; }
+.made { display: block; width: 46%; margin: 16px auto 0; }
+.made img { width: 100%; }
+.credit { font: 10px var(--sans); color: #b5b5b5; margin: 10px 0 0; }
+@media (min-width: 700px) { main { padding-top: 90px; } }
+</style>
+</head>
+<body>
+<button type="button" class="play" id="play" aria-label="Երաժշտություն"><i></i></button>
+<a class="logo" href="https://hravirir.pages.dev/" aria-label="Hravirir.am"><img src="logo.png" alt=""></a>
+<main>
+  <img class="wreath hero" src="wreath.webp" alt="">
+  <p class="script gold htitle">Սուրբ Մկրտություն</p>
+  <h1 class="script">Սիրելի հարազատներ<br>և ընկերներ</h1>
+  <p class="script lead">Սիրով հրավիրում ենք Ձեզ՝ ներկա գտնվելու մեր սիրելի որդու՝ Արթուրի Սուրբ Մկրտության և 8-ամյակի տոնական արարողությանը, որը տեղի կունենա</p>
+  <p class="script date">27.10.2026թ.</p>
+  <img class="divider" src="divider.webp" alt="">
+  <div class="photo"><img src="photo.jpg" alt="Արթուր" width="1000" height="1512"></div>
+  <p class="script name">Արթուր</p>
+  <p class="script wish">Մեր սրտանց ցանկությունն է, որ մեր կյանքի այս լուսավոր ու երջանիկ օրը Ձեր ներկայությամբ կիսեք մեզ հետ։</p>
+  <img class="euca" src="euca.webp" alt="">
+
+  <section class="ev">
+    <div class="rows"><img class="side" src="br-side.webp" alt="">
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 2v5M13.5 4.5h5M10 14l6-7 6 7M9 14h14v15H9zM5 29h22M6 20l3-3M26 20l-3-3M6 20v9M26 20v9"/><path d="M14 29v-5a2 2 0 0 1 4 0v5"/><circle cx="16" cy="17.5" r="1.6"/></svg><span>Մկրտության արարողություն</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>16:00</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>Նոր Գյուղի Սուրբ Աստուածածին եկեղեցի</span></div>
+    </div><img class="bottom" src="br-bottom.webp" alt="">
+  </section>
+  <a class="pill" href="https://yandex.ru/navi/org/surb_astvatsatsin_yekeghetsi/151775782124?si=tqy1fhxrx331mah0tfrg33132w" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+
+  <section class="ev">
+    <div class="rows"><img class="side" src="br-side.webp" alt="">
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h7l-1 8a3 3 0 0 1-5 0zM18 8h7l-1 8a3 3 0 0 1-5 0zM10.5 18v8M21.5 18v8M7.5 28h6M18.5 28h6"/><path d="M12 3l1 2M16 2v3M20 3l-1 2"/></svg><span>Տոնական խնջույք</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 4"/></svg><span>17:30</span></div>
+    <div class="row script"><svg viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 23s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="16" cy="11" r="2.6"/><path d="M10.5 22.5C6.5 23.3 4 24.6 4 26c0 2 5.4 3.5 12 3.5S28 28 28 26c0-1.4-2.5-2.7-6.5-3.5"/></svg><span>«Love Garden» ռեստորան</span></div>
+    </div><img class="bottom" src="br-bottom.webp" alt="">
+  </section>
+  <a class="pill" href="https://yandex.ru/navi/org/siro_aygi/55193755324?si=tqy1fhxrx331mah0tfrg33132w" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+
+  <div class="cd" id="cd"><div><b id="cdD">0</b><span>ՕՐ</span></div><div><b id="cdH">0</b><span>ԺԱՄ</span></div><div><b id="cdM">0</b><span>ՐՈՊԵ</span></div><div><b id="cdS">0</b><span>ՎԱՅՐԿՅԱՆ</span></div></div>
+
+  <p class="script close">Սիրով սպասում ենք Ձեզ</p>
+  <hr class="hr">
+  <a class="made" href="https://hravirir.pages.dev/" target="_blank" rel="noopener"><img src="made.jpg" alt="Կայքը պատրաստել է Hravirir.am"></a>
+  <p class="credit">Տառատեսակ՝ SHK Dzeragir, հեղինակ՝ Սյուզի Հակոբյան</p>
+</main>
+<script>
+(function () {
+  var end = new Date("2026-10-27T16:00:00+04:00").getTime();
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+  function tick() {
+    var s = Math.max(0, Math.floor((end - Date.now()) / 1000));
+    document.getElementById("cdD").textContent = Math.floor(s / 86400);
+    document.getElementById("cdH").textContent = pad(Math.floor(s % 86400 / 3600));
+    document.getElementById("cdM").textContent = pad(Math.floor(s % 3600 / 60));
+    document.getElementById("cdS").textContent = pad(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // երաժշտություն. միանում է բացելիս (կամ առաջին հպումից, եթե բրաուզերը թույլ չի տալիս)
+  var a = new Audio("hallelujah.mp3"), pb = document.getElementById("play"); a.loop = true;
+  function sync() { pb.classList.toggle("on", !a.paused); }
+  a.addEventListener("play", sync); a.addEventListener("pause", sync);
+  pb.onclick = function () { if (a.paused) a.play().catch(function () {}); else a.pause(); };
+  a.play().catch(function () {
+    var ev = ["pointerdown", "touchend", "click", "keydown"];
+    function go(e) { ev.forEach(function (n) { document.removeEventListener(n, go, true); }); if (e.target.closest && e.target.closest("#play")) return; a.play().catch(function () {}); }
+    ev.forEach(function (n) { document.addEventListener(n, go, true); });
+  });
+
+})();
+</script>
+</body>
+</html>
