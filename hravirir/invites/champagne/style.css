@@ -73,6 +73,7 @@ html.preview .env .hint { animation: none; }
 .place img { width: 100%; display: block; opacity: 0; transition: opacity 1.4s; border-radius: 4px; } .place img.wc-on { opacity: .95; }
 .place .n { font-size: 22px; color: var(--gold-l); margin-top: 10px; }
 .place .a { color: var(--soft); font-size: 15px; }
+.place .tm { font: 600 30px/1.2 "Cinzel", serif; letter-spacing: .06em; margin: 6px 0 8px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; margin-top: 14px; padding: 0 26px; border: 1px solid var(--gold); background: transparent; color: var(--gold-l);
   text-decoration: none; font: 13px var(--serif); letter-spacing: .18em; text-transform: uppercase; cursor: pointer; }
 .btn.fill { background: linear-gradient(100deg, #9a7438, #e3c485, #9a7438); color: var(--navy); border: 0; }
