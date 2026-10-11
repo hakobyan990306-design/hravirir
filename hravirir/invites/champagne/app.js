@@ -64,7 +64,7 @@
       '<div class="fl"><label for="rn">' + esc(u("name")) + '</label><input id="rn" name="name" required autocomplete="name"></div>' +
       '<div class="fl"><label for="rg">' + esc(u("guests")) + '</label><select id="rg" name="guests">' + [1, 2, 3, 4, 5, 6].map(function (i) { return "<option>" + i + "</option>"; }).join("") + "</select></div>" +
       '<button class="btn fill" type="submit">' + esc(u("send")) + "</button></form></div></section>";
-    return s + '<section class="fin"><div class="wrap">' + glasses() + '<div class="caps rv" style="margin-top:14px">' + esc(x("fin")) + '</div><div class="nm foil rv">' + esc(K.names()[0] || "") + "</div></div></section>" +
+    return s + '<section class="fin"><div class="wrap">' + glasses() + '<div class="caps rv" style="margin-top:14px">' + esc(C.fin ? t(C.fin) : x("fin")) + '</div><div class="nm foil rv">' + esc(K.names()[0] || "") + "</div></div></section>" +
       '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
   }
 
