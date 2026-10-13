@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f3ec">
+<title>Հարսանյաց հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="../pro/pro.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ (demo-ն իրական հրավերում ջնջեք) ======== */
+window.INVITE = {
+  demo: { id: "ivory", name: "Լույս" },
+  langs: ["hy", "ru"],
+  names: { hy: ["Արամ", "Անի"], ru: ["Арам", "Ани"] },
+  date: "2026-08-22T16:00",
+  photo: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1400&q=85&auto=format&fit=crop",
+  gallery: [
+    "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1000&q=85&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1000&q=85&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=1000&q=85&auto=format&fit=crop"
+  ],
+  text: {
+    hy: "Այս կարևոր և երջանիկ օրը ցանկանում ենք անցկացնել մեզ ամենահարազատ մարդկանց հետ։ Սիրով հրավիրում ենք Ձեզ կիսելու մեր ուրախությունը։",
+    ru: "Этот важный и счастливый день мы хотим провести с самыми близкими людьми. С любовью приглашаем вас разделить нашу радость."
+  },
+  events: [
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, place: { hy: "Սուրբ Հռիփսիմե եկեղեցի", ru: "Церковь Св. Рипсиме" },
+      address: { hy: "Վաղարշապատ, Մաշտոցի փողոց", ru: "Вагаршапат, ул. Маштоца" }, map: "https://yandex.com/maps/?text=Saint%20Hripsime%20Church",
+      img: "https://images.unsplash.com/photo-1749736147282-54b606b2c393?w=1000&q=85&auto=format&fit=crop" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, place: { hy: "«Այվորի Հոլլ» ռեստորան", ru: "Ресторан «Айвори Холл»" },
+      address: { hy: "Երևան, Իսահակյան 28", ru: "Ереван, ул. Исаакяна 28" }, map: "https://yandex.com/maps/?text=Isahakyan%2028%20Yerevan",
+      img: "https://images.unsplash.com/photo-1780542900375-0cf459e38fbb?w=1000&q=85&auto=format&fit=crop" }
+  ],
+  plan: [
+    { time: "12:00", title: { hy: "Փեսայի տուն", ru: "Дом жениха" }, map: "https://yandex.com/maps/?text=Yerevan%20Avan", text: { hy: "Ավանդական դիմավորում և առաջին կենացներ", ru: "Традиционная встреча и первые тосты" } },
+    { time: "13:30", title: { hy: "Հարսի տուն", ru: "Дом невесты" }, map: "https://yandex.com/maps/?text=Yerevan%20Arabkir", text: { hy: "Հարսի ճանապարհումը հայրական տնից", ru: "Проводы невесты из родительского дома" } },
+    { time: "16:00", title: { hy: "Պսակադրություն", ru: "Венчание" }, text: { hy: "Երկու սրտերի միությունը սրբազան լռության մեջ", ru: "Союз двух сердец в торжественной тишине" } },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես", ru: "Свадебный банкет" }, text: { hy: "Տոնական ընթրիք, պար և երաժշտություն", ru: "Праздничный ужин, танцы и музыка" } }
+  ],
+  dresscode: { text: { hy: "Սպիտակ, կաթնագույն, բեժ և ոսկեգույն երանգներ", ru: "Белые, молочные, бежевые и золотые оттенки" }, colors: ["#ffffff", "#efe6d6", "#d8c3a2", "#b8955a"] },
+  rsvp: { deadline: "2026-08-08", whatsapp: "37499741574" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../pro/pro.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
