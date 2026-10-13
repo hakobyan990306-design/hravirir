@@ -69,7 +69,7 @@ main { position: relative; z-index: 1; width: min(100%, 480px); margin: 0 auto; 
 .hero .angel { width: auto; height: 300px; max-width: 80%; object-fit: contain; margin: 0 auto -34px; position: relative; z-index: 1; filter: drop-shadow(0 16px 22px rgba(93, 134, 173, .2)); }
 .ribbon { position: relative; z-index: 2; width: 100%; aspect-ratio: 400 / 92; margin: 0 auto; }
 .ribbon svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.ribbon .nm { position: absolute; inset: 0 14% 12%; display: grid; place-items: center; font-size: clamp(42px, 13vw, 58px); color: var(--gold); line-height: 1; padding-top: 2%; }
+.ribbon .nm { position: absolute; inset: 22% 16% 22%; display: grid; place-items: center; font: 600 clamp(30px, 9vw, 42px)/1 var(--serif); letter-spacing: .08em; text-indent: .08em; color: #a8823f; text-shadow: 0 1px 0 rgba(255,255,255,.7); }
 .sub { margin: 14px 0 0; font-size: 15px; letter-spacing: .14em; color: var(--blue-d); }
 
 .quote { margin: 30px auto 0; max-width: 23em; font-size: 15px; line-height: 1.75; font-style: italic; color: #5d6b7c; }
@@ -169,7 +169,7 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
         <path fill="url(#rb)" d="M58 22c48 10 236 10 284 0v48c-48 10-236 10-284 0z"/>
         <path fill="none" stroke="#fff" stroke-opacity=".6" d="M66 28c48 9 220 9 268 0M66 64c48 9 220 9 268 0"/>
       </svg>
-      <div class="nm script">Աշոտ</div>
+      <div class="nm">Աշոտ</div>
     </div>
     <p class="sub">Սուրբ Մկրտություն և 1-ամյակ</p>
   </section>
@@ -193,7 +193,7 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
     <div class="tm">16:00</div>
     <div class="ttl">ՄԿՐՏՈՒԹՅԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</div>
     <div class="pl">Սուրբ Մարիամ Աստվածածին եկեղեցի</div>
-    <a class="pill" id="mapChurch" href="https://yandex.ru/maps/?text=%D5%8D%D5%B8%D6%82%D6%80%D5%A2%20%D5%84%D5%A1%D6%80%D5%AB%D5%A1%D5%B4%20%D4%B1%D5%BD%D5%BF%D5%BE%D5%A1%D5%AE%D5%A1%D5%AE%D5%AB%D5%B6%20%D5%A5%D5%AF%D5%A5%D5%B2%D5%A5%D6%81%D5%AB" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+    <a class="pill" id="mapChurch" href="https://yandex.ru/navi/org/surb_mariam_astvatsatsin_yekeghetsi/15438436392?si=tqy1fhxrx331mah0tfrg33132w" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
   </div>
 
   <img class="mid rv" src="angel-bow.webp" alt="" width="600" height="913" loading="lazy">
@@ -204,7 +204,7 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
     <div class="ttl">ՏՈՆԱԿԱՆ ԽՆՋՈՒՅՔ</div>
     <div class="pl">«Աղաբաբյանց» ռեստորան</div>
     <div class="ad">Երևան, Նազարբեկյան 25/5</div>
-    <a class="pill" href="https://yandex.ru/maps/?text=Aghababyan%27s%20Yerevan%20Nazarbekyan%2025%2F5" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+    <a class="pill" href="https://yandex.ru/navi/org/aghababyans_restoran/186425949837?si=tqy1fhxrx331mah0tfrg33132w" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
   </div>
 
   <h2 class="t rv">ՄՆԱՑԵԼ Է</h2>
@@ -222,7 +222,7 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
 
   <p class="script fin rv">Սիրով կսպասենք Ձեզ</p>
   <svg class="rv" viewBox="0 0 64 48" width="44" height="33" style="color:#9bb9d6;margin:4px auto 0;display:block" aria-hidden="true"><use href="#dove"/></svg>
-  <a class="made" href="https://hravirir.pages.dev/" target="_blank" rel="noopener"><img src="made.jpg" alt="Կայքը պատրաստել է Hravirir.am"></a>
+  <a class="made" href="https://hravirir.pages.dev/" target="_blank" rel="noopener"><img src="made.png" alt="Կայքը պատրաստել է Hravirir.am"></a>
   <p class="credit">Տառատեսակ՝ SHK Dzeragir, հեղինակ՝ Սյուզի Հակոբյան</p>
 </main>
 
@@ -245,7 +245,7 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
   document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
 
   // երաժշտություն
-  var a = new Audio("hallelujah.mp3"), pb = document.getElementById("play"); a.loop = true; a.preload = "auto";
+  var a = new Audio("song.m4a"), pb = document.getElementById("play"); a.loop = true; a.preload = "auto";
   function sync() { pb.classList.toggle("on", !a.paused); }
   a.addEventListener("play", sync); a.addEventListener("pause", sync);
   pb.onclick = function () { if (a.paused) a.play().catch(function () {}); else a.pause(); };
