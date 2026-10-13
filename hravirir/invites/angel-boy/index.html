@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f1e7">
+<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png">
+
+<title>Փոքրիկ հրեշտակ · Մկրտության հրավեր</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;500;600&display=swap">
+<link rel="preload" href="/fonts/SHK_Dzeragir.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="angel-hero.webp" as="image">
+<style>
+@font-face { font-family: "SHK Dzeragir"; src: url("/fonts/SHK_Dzeragir.otf") format("opentype"); font-display: swap; }
+:root { --paper: #f8f4ec; --ink: #3c4a5c; --soft: #7b8796; --blue: #8fb0cf; --blue-d: #5d86ad; --gold: #b8955a; --line: #dfe6ee;
+  --script: "SHK Dzeragir", serif; --serif: "Noto Serif Armenian", Georgia, serif; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); overflow-x: hidden; touch-action: manipulation; }
+body { font-family: var(--serif); }
+body.locked { overflow: hidden; height: 100vh; }
+img { display: block; max-width: 100%; }
+
+/* երկինք և ամպեր (CSS-ով, առանց նկարների) */
+.sky { position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(120% 60% at 50% 0%, #dbe8f4 0%, rgba(219, 232, 244, 0) 70%), radial-gradient(90% 40% at 50% 100%, #e3edf6 0%, rgba(227, 237, 246, 0) 70%), var(--paper); }
+.cloud { position: absolute; border-radius: 999px; background: #fff; opacity: .9;
+  box-shadow: 0 10px 30px rgba(143, 176, 207, .18); }
+.cloud::before, .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+.cloud::before { width: 55%; height: 170%; left: 12%; bottom: 20%; }
+.cloud::after { width: 42%; height: 140%; right: 12%; bottom: 25%; }
+
+/* բացման էկրան */
+.intro { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(100% 70% at 50% 35%, #eef4fa 0%, #d6e5f2 60%, #c7dbee 100%); transition: opacity .9s ease .9s, visibility 0s 1.8s; }
+.intro .cl { position: absolute; transition: transform 1.6s cubic-bezier(.6, 0, .2, 1); }
+.intro .cl.l { left: -18%; } .intro .cl.r { right: -18%; }
+.intro.open { opacity: 0; visibility: hidden; }
+.intro.open .cl.l { transform: translateX(-120%); } .intro.open .cl.r { transform: translateX(120%); }
+.intro .in { position: relative; z-index: 2; text-align: center; padding: 0 24px; transition: opacity .6s; }
+.intro.open .in { opacity: 0; }
+.intro .cross { width: 104px; margin: 0 auto 12px; }
+.intro h1 { margin: 0; font: 500 clamp(19px, 5.6vw, 24px)/1.6 var(--serif); letter-spacing: .32em; color: #5f7d99; text-indent: .32em; }
+.intro .angel { width: auto; height: min(38vh, 300px); max-width: 70vw; object-fit: contain; margin: 18px auto 0; filter: drop-shadow(0 12px 18px rgba(93, 134, 173, .18)); }
+.intro button { margin-top: 18px; height: 50px; padding: 0 34px; border: 1px solid rgba(255, 255, 255, .9); border-radius: 999px; background: rgba(255, 255, 255, .55);
+  color: #4d6c8a; font: 500 13px var(--serif); letter-spacing: .26em; text-indent: .26em; cursor: pointer; box-shadow: 0 8px 24px rgba(93, 134, 173, .2); }
+.intro .hint { margin-top: 12px; font-size: 12px; color: #7d95ad; }
+
+/* բովանդակություն */
+main { position: relative; z-index: 1; width: min(100%, 480px); margin: 0 auto; padding: 64px 22px 40px; text-align: center; }
+.rv { opacity: 0; transform: translateY(18px); transition: opacity 1s ease, transform 1s ease; }
+.rv.in { opacity: 1; transform: none; }
+.script { font-family: var(--script); font-weight: normal; }
+.caps { font-size: 12px; letter-spacing: .34em; text-indent: .34em; color: var(--soft); text-transform: uppercase; }
+
+.hero { position: relative; }
+.hero .angel { width: auto; height: 300px; max-width: 80%; object-fit: contain; margin: 0 auto -34px; position: relative; z-index: 1; filter: drop-shadow(0 16px 22px rgba(93, 134, 173, .2)); }
+.ribbon { position: relative; z-index: 2; width: 100%; aspect-ratio: 400 / 92; margin: 0 auto; }
+.ribbon svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ribbon .nm { position: absolute; inset: 22% 16% 22%; display: grid; place-items: center; font: 600 clamp(30px, 9vw, 42px)/1 var(--serif); letter-spacing: .08em; text-indent: .08em; color: #a8823f; text-shadow: 0 1px 0 rgba(255,255,255,.7); }
+.sub { margin: 14px 0 0; font-size: 15px; letter-spacing: .14em; color: var(--blue-d); }
+
+.quote { margin: 30px auto 0; max-width: 23em; font-size: 15px; line-height: 1.75; font-style: italic; color: #5d6b7c; }
+.quote small { display: block; margin-top: 6px; font-style: normal; font-size: 12px; letter-spacing: .1em; color: var(--soft); }
+.orn { width: 64%; margin: 30px auto; }
+.std { margin-top: 6px; }
+.date { margin: 10px 0 6px; font: 500 clamp(30px, 9vw, 40px)/1 var(--serif); letter-spacing: .06em; white-space: nowrap; color: var(--blue-d); text-indent: .06em; }
+.wd { font-size: 14px; letter-spacing: .3em; text-indent: .3em; color: var(--soft); }
+.wish { margin: 26px auto 0; max-width: 24em; font-size: 16.5px; line-height: 1.8; }
+
+h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; text-indent: .38em; color: var(--blue-d); }
+.ev { position: relative; margin: 26px auto 0; padding: 30px 22px 26px; border-radius: 28px; background: rgba(255, 255, 255, .72); border: 1px solid #e6edf4; box-shadow: 0 18px 40px -26px rgba(93, 134, 173, .45); }
+.ev .ico { width: 54px; height: 54px; margin: 0 auto 10px; display: grid; place-items: center; border-radius: 50%; background: #eef4fa; color: var(--blue-d); }
+.ev .tm { font: 500 34px/1 var(--serif); letter-spacing: .1em; color: var(--blue-d); text-indent: .1em; }
+.ev .ttl { margin: 12px 0 4px; font-size: 13px; letter-spacing: .26em; text-indent: .26em; color: var(--soft); }
+.ev .pl { font-size: 19px; font-weight: 600; line-height: 1.4; }
+.ev .ad { margin-top: 4px; font-size: 14px; color: var(--soft); }
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; margin-top: 16px; padding: 0 26px; border: 1px solid var(--blue); border-radius: 999px;
+  color: var(--blue-d); text-decoration: none; font: 500 12.5px var(--serif); letter-spacing: .16em; background: #fff; }
+.mid { width: auto; height: 200px; max-width: 60%; object-fit: contain; margin: 34px auto -6px; filter: drop-shadow(0 12px 18px rgba(93, 134, 173, .18)); }
+
+.cd { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 340px; margin: 18px auto 0; }
+.cd div { display: grid; justify-items: center; gap: 8px; }
+.cd b { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--blue); background: rgba(255, 255, 255, .7); font: 500 22px var(--serif); color: var(--blue-d); font-variant-numeric: tabular-nums; }
+.cd span { font-size: 11px; letter-spacing: .14em; color: var(--soft); }
+
+.rs { margin: 26px auto 0; padding: 26px 20px; border-radius: 28px; background: rgba(255, 255, 255, .78); border: 1px solid #e6edf4; text-align: left; }
+.rs p { margin: 0 0 16px; text-align: center; font-size: 14.5px; color: var(--soft); line-height: 1.6; }
+.rs label.o { display: flex; align-items: center; gap: 10px; padding: 13px 16px; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 16px; background: #fff; font-size: 15px; cursor: pointer; }
+.rs label.o input { accent-color: var(--blue-d); width: 18px; height: 18px; }
+.rs .f { margin-top: 12px; } .rs .f span { display: block; margin: 0 4px 6px; font-size: 12px; letter-spacing: .14em; color: var(--soft); }
+.rs input[type=text], .rs select { width: 100%; height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 14px; background: #fff; font: 16px var(--serif); color: var(--ink); }
+.rs button { width: 100%; height: 50px; margin-top: 16px; border: 0; border-radius: 999px; background: var(--blue-d); color: #fff; font: 500 13px var(--serif); letter-spacing: .24em; cursor: pointer; }
+.rs .ok { text-align: center; padding: 10px 0; font-size: 16px; line-height: 1.6; }
+.rs .ok b { display: block; font-family: var(--script); font-weight: normal; font-size: 30px; color: var(--gold); margin-bottom: 6px; }
+
+.fin { margin: 46px 0 6px; font-size: clamp(32px, 10vw, 42px); color: var(--gold); }
+.made { display: block; width: 46%; margin: 30px auto 0; }
+.credit { font: 10px var(--serif); color: #b3bcc6; margin: 10px 0 0; }
+
+.logo { position: fixed; z-index: 10; top: calc(10px + env(safe-area-inset-top, 0px)); left: 12px; width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08); display: grid; place-items: center; }
+.logo img { width: 40px; }
+.play { position: fixed; z-index: 10; top: calc(10px + env(safe-area-inset-top, 0px)); right: 12px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.1); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.play i { width: 0; height: 0; border-left: 14px solid var(--blue-d); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.play.on i { width: 14px; height: 16px; border: 0; margin: 0; background: linear-gradient(90deg, var(--blue-d) 0 4px, transparent 4px 10px, var(--blue-d) 10px 14px); }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body class="locked">
+<div class="sky" aria-hidden="true">
+  <i class="cloud" style="width:180px;height:44px;left:-40px;top:14%"></i><i class="cloud" style="width:150px;height:38px;right:-30px;top:38%"></i>
+  <i class="cloud" style="width:210px;height:50px;left:-60px;top:66%"></i><i class="cloud" style="width:170px;height:42px;right:-50px;top:88%"></i>
+</div>
+
+<!-- բացման էկրան -->
+<div class="intro" id="intro" role="button" aria-label="Բացել հրավերը">
+  <i class="cloud cl l" style="width:300px;height:80px;top:8%"></i><i class="cloud cl r" style="width:260px;height:70px;top:22%"></i>
+  <i class="cloud cl l" style="width:320px;height:86px;top:58%"></i><i class="cloud cl r" style="width:300px;height:82px;top:74%"></i>
+  <i class="cloud cl l" style="width:260px;height:70px;top:90%"></i>
+  <div class="in">
+    <svg class="cross" viewBox="0 0 160 120" aria-hidden="true"><use href="#crossOlive"/></svg>
+    <h1>ՍՈՒՐԲ<br>ՄԿՐՏՈՒԹՅԱՆ<br>ՀՐԱՎԵՐ</h1>
+    <img class="angel" src="angel-roses.webp" alt="" width="700" height="1065">
+    <button type="button" id="open">ԲԱՑԵԼ</button>
+  </div>
+</div>
+
+<button type="button" class="play" id="play" aria-label="Երաժշտություն"><i></i></button>
+<a class="logo" href="https://hravirir.pages.dev/" aria-label="Hravirir.am"><img src="logo.png" alt=""></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#d9bd85"/><stop offset=".5" stop-color="#b8955a"/><stop offset="1" stop-color="#9c7a42"/></linearGradient>
+    <g id="leaf"><path d="M0 0c6-6 15-7 22-4-6 6-15 8-22 4z"/></g>
+    <symbol id="crossOlive" viewBox="0 0 160 120">
+      <g fill="none" stroke="#8aa58a" stroke-width="1.6" stroke-linecap="round"><path d="M80 104C62 100 44 88 30 70"/><path d="M80 104c18-4 36-16 50-34"/></g>
+      <g fill="#a9c1a2">
+        <use href="#leaf" transform="translate(66 99) rotate(200)"/><use href="#leaf" transform="translate(58 95) rotate(150)"/><use href="#leaf" transform="translate(50 89) rotate(205)"/><use href="#leaf" transform="translate(43 83) rotate(155)"/><use href="#leaf" transform="translate(37 76) rotate(210)"/><use href="#leaf" transform="translate(32 69) rotate(165)"/>
+        <use href="#leaf" transform="translate(94 99) rotate(-20) scale(-1 1)"/><use href="#leaf" transform="translate(102 95) rotate(30) scale(-1 1)"/><use href="#leaf" transform="translate(110 89) rotate(-25) scale(-1 1)"/><use href="#leaf" transform="translate(117 83) rotate(25) scale(-1 1)"/><use href="#leaf" transform="translate(123 76) rotate(-30) scale(-1 1)"/><use href="#leaf" transform="translate(128 69) rotate(15) scale(-1 1)"/>
+      </g>
+      <g fill="#6f8e6c"><circle cx="54" cy="93" r="2.6"/><circle cx="41" cy="80" r="2.4"/><circle cx="106" cy="93" r="2.6"/><circle cx="119" cy="80" r="2.4"/></g>
+      <path fill="url(#gold)" d="M76 10h8v24h20v8H84v54h-8V42H56v-8h20z"/>
+      <path fill="#fff" opacity=".35" d="M77 11h2v86h-2zM57 35h46v2H57z"/>
+    </symbol>
+    <symbol id="dove" viewBox="0 0 64 48"><path fill="currentColor" d="M6 30c8-1 14-4 19-9 2-8 8-15 16-17-3 5-3 10-1 14 6-7 14-10 22-9-5 3-9 8-11 14-2 8-9 14-18 15l-6 6-2-6c-6 0-12-2-19-8z"/></symbol>
+  </defs>
+</svg>
+
+<main>
+  <section class="hero rv">
+    <img class="angel" src="angel-hero.webp" alt="" width="760" height="1156">
+    <div class="ribbon">
+      <svg viewBox="0 0 400 92" aria-hidden="true">
+        <defs><linearGradient id="rb" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#cfe0ef"/><stop offset="1" stop-color="#a9c5df"/></linearGradient></defs>
+        <path fill="#9bb9d6" d="M18 34h52v44H18l14-22z"/><path fill="#9bb9d6" d="M382 34h-52v44h52l-14-22z"/>
+        <path fill="#86a8c8" d="M58 70l14 10V60zM342 70l-14 10V60z"/>
+        <path fill="url(#rb)" d="M58 22c48 10 236 10 284 0v48c-48 10-236 10-284 0z"/>
+        <path fill="none" stroke="#fff" stroke-opacity=".6" d="M66 28c48 9 220 9 268 0M66 64c48 9 220 9 268 0"/>
+      </svg>
+      <div class="nm">Դավիթ</div>
+    </div>
+    <p class="sub">Սուրբ Մկրտություն</p>
+  </section>
+
+  <p class="quote rv">«Գնացե՛ք այսուհետև, աշակերտ դարձրե՛ք բոլոր ազգերին, նրանց մկրտե՛ք Հոր, Որդու և Սուրբ Հոգու անունով»<small>Մատթ. 28:19</small></p>
+
+  <svg class="orn rv" viewBox="0 0 160 120" aria-hidden="true"><use href="#crossOlive"/></svg>
+
+  <div class="rv">
+    <div class="caps std">Պահպանեք օրը</div>
+    <div class="date">20 · 12 · 2026</div>
+    <div class="wd">ԿԻՐԱԿԻ</div>
+  </div>
+
+  <p class="wish rv">Սիրով հրավիրում ենք Ձեզ մեր փոքրիկի Սուրբ Մկրտության արարողությանը՝ կիսելու մեզ հետ այդ օրհնված և լուսավոր օրը։</p>
+
+  <h2 class="t rv">ՕՐՎԱ ԾՐԱԳԻՐ</h2>
+
+  <div class="ev rv">
+    <div class="ico"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 2v5M13.5 4.5h5M10 14l6-7 6 7M9 14h14v15H9zM5 29h22M6 20l3-3M26 20l-3-3M6 20v9M26 20v9"/><path d="M14 29v-5a2 2 0 0 1 4 0v5"/><circle cx="16" cy="17.5" r="1.6"/></svg></div>
+    <div class="tm">13:00</div>
+    <div class="ttl">ՄԿՐՏՈՒԹՅԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</div>
+    <div class="pl">Սուրբ Գայանե եկեղեցի</div><div class="ad">ք. Էջմիածին</div>
+    <a class="pill" id="mapChurch" href="https://yandex.ru/maps/?text=%D0%A1%D1%83%D1%80%D0%B1%20%D0%93%D0%B0%D1%8F%D0%BD%D0%B5%20%D0%AD%D1%87%D0%BC%D0%B8%D0%B0%D0%B4%D0%B7%D0%B8%D0%BD" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+  </div>
+
+  <img class="mid rv" src="angel-bow.webp" alt="" width="600" height="913" loading="lazy">
+
+  <div class="ev rv">
+    <div class="ico"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h7l-1 8a3 3 0 0 1-5 0zM18 8h7l-1 8a3 3 0 0 1-5 0zM10.5 18v8M21.5 18v8M7.5 28h6M18.5 28h6"/><path d="M12 3l1 2M16 2v3M20 3l-1 2"/></svg></div>
+    <div class="tm">15:00</div>
+    <div class="ttl">ՏՈՆԱԿԱՆ ԽՆՋՈՒՅՔ</div>
+    <div class="pl">«Արարատ» ռեստորան</div>
+    <div class="ad">Երևան</div>
+    <a class="pill" href="https://yandex.ru/maps/?text=%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD" target="_blank" rel="noopener">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+  </div>
+
+  <h2 class="t rv">ՄՆԱՑԵԼ Է</h2>
+  <div class="cd rv" id="cd"><div><b id="cdD">0</b><span>ՕՐ</span></div><div><b id="cdH">00</b><span>ԺԱՄ</span></div><div><b id="cdM">00</b><span>ՐՈՊԵ</span></div><div><b id="cdS">00</b><span>ՎԱՅՐԿ.</span></div></div>
+
+  <h2 class="t rv">ՄԱՍՆԱԿՑՈՒԹՅԱՆ ՀԱՍՏԱՏՈՒՄ</h2>
+  <form class="rs rv" id="rf">
+    <p>Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև դեկտեմբերի 10-ը</p>
+    <label class="o"><input type="radio" name="attend" value="yes" checked> Այո, սիրով կգամ</label>
+    <label class="o"><input type="radio" name="attend" value="no"> Ցավոք, չեմ կարող գալ</label>
+    <label class="f"><span>ԱՆՈՒՆ, ԱԶԳԱՆՈՒՆ</span><input type="text" name="name" required autocomplete="name"></label>
+    <label class="f"><span>ՀՅՈՒՐԵՐԻ ՔԱՆԱԿ</span><select name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+    <button type="submit">ՈՒՂԱՐԿԵԼ</button>
+  </form>
+
+  <p class="script fin rv">Սիրով կսպասենք Ձեզ</p>
+  <svg class="rv" viewBox="0 0 64 48" width="44" height="33" style="color:#9bb9d6;margin:4px auto 0;display:block" aria-hidden="true"><use href="#dove"/></svg>
+  <a class="made" href="https://hravirir.pages.dev/" target="_blank" rel="noopener"><img src="made.png" alt="Կայքը պատրաստել է Hravirir.am"></a>
+  <p class="credit">Տառատեսակ՝ SHK Dzeragir, հեղինակ՝ Սյուզի Հակոբյան</p>
+</main>
+
+<script>
+(function () {
+  // հետհաշվարկ
+  var end = new Date("2026-12-20T13:00:00+04:00").getTime();
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+  function tick() {
+    var s = Math.max(0, Math.floor((end - Date.now()) / 1000));
+    document.getElementById("cdD").textContent = Math.floor(s / 86400);
+    document.getElementById("cdH").textContent = pad(Math.floor(s % 86400 / 3600));
+    document.getElementById("cdM").textContent = pad(Math.floor(s % 3600 / 60));
+    document.getElementById("cdS").textContent = pad(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // հայտնվելու անիմացիա
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .12 });
+  document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+
+  // երաժշտություն
+  var a = new Audio("song.m4a"), pb = document.getElementById("play"); a.loop = true; a.preload = "auto";
+  function sync() { pb.classList.toggle("on", !a.paused); }
+  a.addEventListener("play", sync); a.addEventListener("pause", sync);
+  pb.onclick = function () { if (a.paused) a.play().catch(function () {}); else a.pause(); };
+
+  // բացում. ամպերը բացվում են, միանում է երգը
+  var intro = document.getElementById("intro");
+  function open() {
+    if (intro.classList.contains("open")) return;
+    a.play().catch(function () {});
+    intro.classList.add("open"); document.body.classList.remove("locked");
+    setTimeout(function () { intro.remove(); }, 2000);
+  }
+  intro.addEventListener("click", open);
+
+  // մասնակցության հաստատում → Google Sheets (նույնը, ինչ մյուս հրավերներում)
+  var URL = "https://script.google.com/macros/s/AKfycbxwpQ4fQYogsMWe6JtavVDFtuv2jrBSEHksYU3XxNaxAaEufzuWk8xQHzP2aJhLrFKM/exec";
+  var f = document.getElementById("rf");
+  f.onsubmit = function (ev) {
+    ev.preventDefault();
+    var d = new FormData(f), data = { kind: "rsvp", key: "ashot", invite: "Աշոտ", lang: "hy" };
+    d.forEach(function (v, k) { data[k] = v; });
+    if (!String(data.name || "").trim()) return;
+    f.querySelector("button").disabled = true;
+    var done = function () { f.innerHTML = '<div class="ok"><b>Շնորհակալություն</b>' + (data.attend === "yes" ? "Ուրախ ենք, որ կլինեք մեզ հետ։" : "Կկարոտենք Ձեզ։") + "</div>"; };
+    setTimeout(done, 400); // demo. ոչ մի տեղ չի ուղարկվում
+  };
+})();
+</script>
+</body>
+</html>
