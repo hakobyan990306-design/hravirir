@@ -75,7 +75,7 @@ html:not([lang="ru"]) [data-l="ru"], html[lang="ru"] [data-l="hy"] { display: no
 /* վայրեր. ձախում ուղղահայաց տեքստ, աջում կլոր նկար՝ եզրով կտրված */
 .venue { position: relative; aspect-ratio: 1280 / 2000; background: #111; color: #eee; overflow: hidden; }
 .vgap { display: block; height: 4px; background: #fff; }
-.vt { position: absolute; left: 3%; top: 9%; bottom: 27%; width: 21%; overflow: hidden; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font: 400 clamp(40px, 13vw, 60px)/1 var(--font); letter-spacing: .02em; white-space: nowrap; }
+.vt { position: absolute; left: 3%; top: 9%; bottom: 27%; width: 21%; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font: 400 clamp(40px, 13vw, 60px)/1.2 var(--font); letter-spacing: .02em; white-space: nowrap; }
 .vc { position: absolute; top: 15%; right: -16%; width: 82%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
 .vc img { width: 100%; height: 100%; object-fit: cover; }
 .va .go { display: inline-flex; margin-top: 14px; }
@@ -97,7 +97,7 @@ html:not([lang="ru"]) [data-l="ru"], html[lang="ru"] [data-l="hy"] { display: no
 .cd-w h2 { margin: 0 0 26px; font: 400 clamp(30px, 9vw, 38px)/1.3 var(--font); }
 .cd { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; max-width: 360px; margin: 0 auto; }
 .cd b { display: block; font: 300 clamp(30px, 9.5vw, 44px)/1 "Comfortaa", sans-serif; }
-.cd span { display: block; margin-top: 10px; font-size: 14px; letter-spacing: .06em; color: var(--soft); text-transform: uppercase; }
+.cd span { display: block; margin-top: 10px; font-size: 16px; letter-spacing: .02em; color: var(--soft); white-space: nowrap; }
 
 /* Save the Date */
 .std { display: grid; grid-template-columns: 64px 1fr; background: #fff; }
