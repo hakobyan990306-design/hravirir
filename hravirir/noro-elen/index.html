@@ -219,9 +219,9 @@ main { max-width: 560px; margin: 0 auto; background: #fff; }
   mark(); auto();
 
   // երաժշտություն. սկսվում է առաջին հպումից
-  var START = 42, a = new Audio("song.mp3"), pb = document.getElementById("play"); a.loop = false; a.preload = "auto"; a.onerror = function () { pb.style.display = "none"; };
+  var START = 42, a = new Audio("song.mp3#t=42"), pb = document.getElementById("play"); a.loop = false; a.preload = "auto"; a.onerror = function () { pb.style.display = "none"; };
   function sync() { pb.classList.toggle("on", !a.paused); }
-  a.addEventListener("loadedmetadata", function () { if (a.currentTime < START) a.currentTime = START; }); a.addEventListener("ended", function () { a.currentTime = START; a.play().catch(function () {}); }); a.addEventListener("play", sync); a.addEventListener("pause", sync);
+  a.addEventListener("loadedmetadata", function () { if (a.currentTime < START) a.currentTime = START; }); a.addEventListener("ended", function () { a.currentTime = START; a.play().catch(function () {}); }); a.addEventListener("play", function () { if (a.currentTime < START - 1) a.currentTime = START; sync(); }); a.addEventListener("playing", function () { if (a.currentTime < START - 1) a.currentTime = START; }); a.addEventListener("pause", sync);
   pb.onclick = function (e) { e.stopPropagation(); if (a.paused) a.play().catch(function () {}); else a.pause(); };
   function first(e) { if (e.target.closest(".k-fabs")) return; a.play().catch(function () {}); document.removeEventListener("click", first); }
   document.addEventListener("click", first);
