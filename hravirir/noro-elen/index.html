@@ -78,7 +78,8 @@ html:not([lang="ru"]) [data-l="ru"], html[lang="ru"] [data-l="hy"] { display: no
 .vt { position: absolute; left: 4%; top: 10%; bottom: 20%; width: 18%; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; transform: rotate(180deg); font: 400 clamp(40px, 13vw, 60px)/1 var(--font); letter-spacing: .02em; white-space: nowrap; }
 .vc { position: absolute; top: 15%; right: -16%; width: 82%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
 .vc img { width: 100%; height: 100%; object-fit: cover; }
-.va { position: absolute; left: 0; right: 0; bottom: 6%; text-align: center; font-size: 14px; line-height: 1.5; color: #bdbdbd; padding: 0 20px; }
+.va .go { display: inline-flex; margin-top: 14px; }
+.va { position: absolute; left: 0; right: 0; bottom: 5%; text-align: center; font-size: 14px; line-height: 1.5; color: #bdbdbd; padding: 0 20px; }
 
 /* սլայդեր */
 .gal { position: relative; background: #111; padding: 0 0 22px; }
@@ -146,6 +147,7 @@ main { max-width: 560px; margin: 0 auto; background: #fff; }
       <div class="tm">12:30</div>
       <div class="pl"><span data-l="hy">Հարսի տուն</span><span data-l="ru">Дом невесты</span></div>
       <div class="ad"><span data-l="hy">գ. Այնթապ, 15-րդ փ., 33 տուն</span><span data-l="ru">с. Айнтап, 15-я ул., дом 33</span></div>
+      <a class="go" href="https://yandex.ru/maps/?text=%D0%90%D0%B9%D0%BD%D1%82%D0%B0%D0%BF%2015-%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2033" target="_blank" rel="noopener"><span data-l="hy">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</span><span data-l="ru">КАК ДОБРАТЬСЯ</span></a>
     </div>
 
     <div class="ev rv">
@@ -161,16 +163,21 @@ main { max-width: 560px; margin: 0 auto; background: #fff; }
     </div>
   </section>
 
+  <section class="std rv">
+    <div class="v">Save the Date</div>
+    <img class="bw" src="p9.jpg" alt="" loading="lazy">
+  </section>
+
   <section class="venue rv">
     <div class="vt"><span data-l="hy">Պսակադրություն</span><span data-l="ru">Венчание</span></div>
     <div class="vc"><img class="bw" src="church.jpg" alt="" width="900" height="900" loading="lazy"></div>
-    <div class="va"><span data-l="hy">ք. Երևան<br>Սուրբ Գրիգոր Լուսավորիչ մայր տաճար</span><span data-l="ru">г. Ереван<br>Кафедральный собор Св. Григория Просветителя</span></div>
+    <div class="va"><span data-l="hy">ք. Երևան<br>Սուրբ Գրիգոր Լուսավորիչ մայր տաճար</span><span data-l="ru">г. Ереван<br>Кафедральный собор Св. Григория Просветителя</span><a class="go" href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BE%D0%B1%D0%BE%D1%80%20%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE%20%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%20%D0%9F%D1%80%D0%BE%D1%81%D0%B2%D0%B5%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD" target="_blank" rel="noopener"><span data-l="hy">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</span><span data-l="ru">КАК ДОБРАТЬСЯ</span></a></div>
   </section>
   <i class="vgap"></i>
   <section class="venue rv">
     <div class="vt"><span data-l="hy">Հարսանյաց հանդես</span><span data-l="ru">Свадебный банкет</span></div>
     <div class="vc"><img class="bw" src="hall.jpg" alt="" width="900" height="900" loading="lazy"></div>
-    <div class="va"><span data-l="hy">ք. Մասիս, Մխիթար Հերացու 7/8<br>«Մոռենա» ռեստորան</span><span data-l="ru">г. Масис, ул. Мхитара Гераци 7/8<br>Ресторан «Морена»</span></div>
+    <div class="va"><span data-l="hy">ք. Մասիս, Մխիթար Հերացու 7/8<br>«Մոռենա» ռեստորան</span><span data-l="ru">г. Масис, ул. Мхитара Гераци 7/8<br>Ресторан «Морена»</span><a class="go" href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%80%D0%B5%D0%BD%D0%B0%20%D0%9C%D0%B0%D1%81%D0%B8%D1%81%20%D0%9C%D1%85%D0%B8%D1%82%D0%B0%D1%80%D0%B0%20%D0%93%D0%B5%D1%80%D0%B0%D1%86%D0%B8%207%2F8" target="_blank" rel="noopener"><span data-l="hy">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</span><span data-l="ru">КАК ДОБРАТЬСЯ</span></a></div>
   </section>
 
   <section class="gal rv" aria-label="Gallery">
@@ -187,11 +194,6 @@ main { max-width: 560px; margin: 0 auto; background: #fff; }
       <div><b id="cdM">00</b><span data-l="hy">Րոպե</span><span data-l="ru">Минут</span></div>
       <div><b id="cdS">00</b><span data-l="hy">Վայրկյան</span><span data-l="ru">Секунд</span></div>
     </div>
-  </section>
-
-  <section class="std rv">
-    <div class="v">Save the Date</div>
-    <img class="bw" src="p9.jpg" alt="" loading="lazy">
   </section>
 
   <section class="fin">
