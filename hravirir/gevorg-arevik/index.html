@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Գևորգ և Արևիկ</title>
+<meta name="hravirir-expires" content="2026-11-26">
+<meta name="robots" content="noindex">
+<meta name="description" content="Հարսանյաց հրավեր · 11.11.2026">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hravirir.pages.dev/gevorg-arevik/">
+<meta property="og:title" content="Գևորգ & Արևիկ">
+<meta property="og:site_name" content="HRAVIRIR.AM">
+<meta property="og:description" content="Հարսանյաց հրավեր · 11 նոյեմբերի 2026">
+<meta property="og:image" content="https://hravirir.pages.dev/gevorg-arevik/og1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400;500;700&display=swap">
+<link rel="preload" href="/fonts/ArmCoronetU.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="cover.jpg" as="image">
+<link rel="stylesheet" href="/invites/core/core.css">
+<link rel="stylesheet" href="/invites/bw-script/style.css">
+<style>
+/* բացման էկրան՝ «Մոնոխրոմ քայլ»-ի պես (սև-սպիտակ լուսանկար, կինոյի սև շերտեր, բարակ մեծատառեր) */
+body.locked { overflow: hidden; height: 100svh; }
+.env { position: fixed; inset: 0; z-index: 90; overflow: hidden; cursor: pointer; background: #000; -webkit-tap-highlight-color: transparent; }
+.env .eph { position: absolute; inset: 0; background: #333 center / cover no-repeat; filter: grayscale(1) contrast(1.05); }
+.env .eph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)); }
+.env .bar { position: absolute; left: 0; right: 0; height: 15%; background: #000; transition: transform 1.2s cubic-bezier(.7,0,.2,1); z-index: 1; }
+.env .bar.t { top: 0; } .env .bar.b { bottom: 0; }
+.env .mid { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; z-index: 2; transition: opacity .5s; padding: 0 10px; }
+.env .caps { font: 400 12.5px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.75); }
+.env .ln { display: block; width: 0; height: 1px; margin: 18px auto; background: #fff; animation: grow 1.6s cubic-bezier(.5,0,.2,1) .3s forwards; }
+@keyframes grow { to { width: 70%; } }
+.env .en { font: 200 clamp(22px, 7vw, 34px) var(--sans); letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; color: #fff; white-space: nowrap; }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(5% + env(safe-area-inset-bottom, 0px)); text-align: center; z-index: 3; font: 400 11.5px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.65); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+.env.s1 .mid, .env.s1 .hint { opacity: 0; animation: none; }
+.env.s1 .eph::after { opacity: .5; transition: opacity .8s; }
+.env.s2 .bar.t { transform: translateY(-100%); }
+.env.s2 .bar.b { transform: translateY(100%); }
+.env.s3 { opacity: 0; transition: opacity .6s; }
+@media (prefers-reduced-motion: reduce) { .env .hint { animation: none; } }
+/* այս նկարում զույգը կենտրոնում է, դեմքերը՝ ~33%-ում. գրությունը վերևի մշուշոտ ֆոնի վրա */
+.env .eph { background-position: 50% 50%; }
+.env .mid { top: 25%; }
+/* հիմնական էջի լրացումներ */
+.hero img { object-position: 50% 40%; }
+.tx .s:first-child { margin-top: 0; }
+.ev .ad { font: 300 15px/1.5 var(--sans); color: var(--soft); margin-top: 8px; text-wrap: balance; }
+.note { display: flex; align-items: center; gap: 14px; margin-top: 56px; }
+.note i { flex: 1; height: 1px; background: #bbb; }
+.note p { font-family: var(--script); font-size: clamp(21px, 6vw, 26px); line-height: 1.4; max-width: 78%; text-wrap: balance; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* Գևորգ & Արևիկ — պատվեր 19.10.2026 (Instagram՝ _.____arevik____._), դիզայն՝ բացումը «Մոնոխրոմ քայլ», մնացածը «Նուար»
+   cover.jpg՝ հաճախորդի «գլխավոր» նկարը (01-glkhavor-IMG_7300), hero.jpg՝ IMG_7295, p1–p3՝ IMG_7298, 7299, 7296 */
+window.INVITE = {
+  langs: ["hy"],
+  names: { hy: ["Գևորգ", "Արևիկ"] },
+  date: "2026-11-11T14:00",
+  cover: "cover.jpg",
+  photo: "hero.jpg",
+  photos: ["p1.jpg", "p2.jpg", "p3.jpg", "cover.jpg"],
+  invite: { hy: "Մեր սիրո պատմությունը նոր էջ է բացում, և մենք ցանկանում ենք, որ այդ էջի առաջին տողերում լինեն նաև մեր սիրելի մարդիկ։" },
+  text: { hy: ["Սիրով հրավիրում ենք Ձեզ տոնելու մեր միությունը, կիսելու մեր երջանկությունն ու դառնալու մեր հարսանեկան տոնի մի մասը։", "Ձեր ներկայությունը կլինի մեր օրվա ամենաթանկ նվերներից մեկը։"] },
+  events: [
+    { time: "10:00", title: { hy: "Փեսայի տուն" }, address: { hy: "Նոր Խարբերդ, 11-րդ փողոց 23/6" },
+      map: "https://yandex.ru/navi?si=tqy1fhxrx331mah0tfrg33132w&text=40.095737,44.470432" },
+    { time: "12:30", title: { hy: "Հարսի տուն" }, address: { hy: "Երևան, Նիկողայոս Տիգրանյան 1-ին փակուղի, 9 շենք, բն. 29" },
+      map: "https://yandex.ru/navi?ol=geo&si=tqy1fhxrx331mah0tfrg33132w&sll=44.517110,40.211873&sspn=0.006295,0.008210&text=%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9D%D0%B8%D0%BA%D0%BE%D0%B3%D0%B0%D0%B9%D0%BE%D1%81%D0%B0%20%D0%A2%D0%B8%D0%B3%D1%80%D0%B0%D0%BD%D1%8F%D0%BD%D0%B0,%201-%D0%B9%20%D1%82%D1%83%D0%BF%D0%B8%D0%BA,%209" },
+    { time: "14:00", title: { hy: "Պսակադրություն" }, place: { hy: "Սուրբ Խաչ եկեղեցի" }, address: { hy: "Երևան, Կոմիտասի պողոտա 64" },
+      map: "https://yandex.ru/navi/org/surb_khach_yekeghetsi/181241766103?si=tqy1fhxrx331mah0tfrg33132w" },
+    { time: "18:00", title: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Մկրտչյան հոլլ»" },
+      map: "https://yandex.ru/navi/org/mkrtchyanneri_srah/139276208586?si=tqy1fhxrx331mah0tfrg33132w" }
+  ],
+  note: { hy: "Խնդրանք հյուրերին՝ չհագնել սպիտակ" },
+  rsvp: { deadline: "2026-11-01", key: "gevorg-arevik" }
+  // երգ հաճախորդը չի տվել. ավելացնելու դեպքում՝ music: "song.mp3" (Play կոճակը կհայտնվի ինքնաբերաբար)
+};
+</script>
+<script src="/invites/core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
