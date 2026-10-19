@@ -11,12 +11,13 @@
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   var pi = 0;
   function photo() { var p = (C.photos || [])[pi++]; return p ? '<div class="ph rv"><img src="' + esc(p) + '" alt="" loading="lazy"></div>' : ""; }
+  // մեծատառը ձեռքով՝ CSS uppercase-ը «և»-ն դարձնում է «ԵՒ» (ԳԵՒՈՐԳ), պետք է՝ ԳԵՎՈՐԳ
+  function caps(s) { return String(s || "").replace(/և/g, "եվ").toUpperCase(); }
   function paras(v) { return K.list(v).map(function (s) { return '<p class="s rv">' + esc(s) + "</p>"; }).join(""); }
 
   // ---------- բացման էկրան (mono-walk) ----------
   function env() {
-    // մեծատառը ձեռքով՝ CSS uppercase-ը «և»-ն դարձնում է «ԵՒ» (ԳԵՒՈՐԳ), պետք է՝ ԳԵՎՈՐԳ
-    var n = K.names().map(function (s) { return s.replace(/և/g, "եվ").toUpperCase(); });
+    var n = K.names().map(caps);
     return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="eph" style="background-image:url(\'' + esc(C.cover || C.photo) + '\')"></div>' +
       '<div class="bar t"></div><div class="bar b"></div>' +
       '<div class="mid"><div class="caps">' + esc(x("cover")) + '</div><i class="ln"></i><div class="en">' + esc(n[0] || "") + " · " + esc(n[1] || "") + "</div></div>" +
@@ -28,7 +29,8 @@
     var n = K.names(), d = K.date; pi = 0;
     return '<div class="col">' + (C.music ? '<div class="topbar"><button class="play" type="button" data-music aria-label="music"><i></i></button></div>' : "") +
       '<section class="hero"><img src="' + esc(C.photo) + '" alt="' + esc(n.join(" " + x("and") + " ")) + '">' +
-      '<div class="sh"></div><h1 class="nm"><span>' + esc(n[0] || "") + "</span><span>" + esc(n[1] || "") + '</span></h1><i class="chev"></i></section>' +
+      // անունները՝ բացման էկրանի պես (բարակ մեծատառեր), ոչ թե գեղագիր
+      '<div class="sh sh2"></div><div class="mid hmid"><div class="caps">' + esc(x("cover")) + '</div><i class="ln"></i><h1 class="en">' + esc(caps(n[0])) + " · " + esc(caps(n[1])) + '</h1></div><i class="chev"></i></section>' +
       '<section class="tx">' + paras(C.invite) + "</section>" + photo() +
       '<section class="tx"><div class="date rv">' + pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear() + esc(x("y")) + "</div>" + paras(C.text) + "</section>" + photo() +
       '<section class="tx"><h2 class="h2 rv">' + esc(x("plan")) + "</h2>" + (C.events || []).map(function (e) {
