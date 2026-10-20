@@ -104,7 +104,8 @@
         (o.top ? '<div class="we-top">' + o.top + "</div>" : "") + '<div class="we-sw">' + seal + "</div>" + (K.PREVIEW ? "" : '<div class="hint">' + esc(o.hint || "") + "</div>") + "</div>";
     },
     wenvSteps: [[0, "s1"], [500, "s2"], [1500, "s3"]], wenvDone: 2100,
-    sec: function (cls, inner) { return '<section class="' + (cls || "") + '"><div class="wrap">' + inner + "</div></section>"; },
+    // դատարկ բաժին (չպատվիրված դրեսկոդ, RSVP...) չի ցուցադրվում՝ որ իր լուսանցքները դատարկ տեղ չթողնեն
+    sec: function (cls, inner) { if (!inner) return ""; return '<section class="' + (cls || "") + '"><div class="wrap">' + inner + "</div></section>"; },
     made: function () { return '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>'; },
     // render/բացում. o.env() → բացման HTML, o.main() → բաժիններ, o.steps = [[ms, "class"], …], o.done = ms, o.after(env)
     run: function (o) {
