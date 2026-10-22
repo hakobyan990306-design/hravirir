@@ -51,6 +51,9 @@ body.locked { overflow: hidden; height: 100svh; }
 .hero .caps { font: 400 12.5px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.75); }
 .hero .ln { display: block; width: 70%; height: 1px; margin: 18px auto; background: #fff; }
 .hero .en { font: 200 clamp(22px, 7vw, 34px) var(--sans); letter-spacing: .2em; padding-left: .2em; color: #fff; white-space: nowrap; }
+/* քայլող զույգի նկարում դեմքերը ~45%-ում են. գրությունը վերևում, որ դեմքերը չծածկի (հաճախորդի խնդրանքով) */
+.env .mid { top: 26%; }
+.hero .hmid { top: 22%; }
 /* ներքևում՝ միայն HRAVIRIR լոգոն, մեկ տողով */
 .ft > div:last-child { white-space: nowrap; margin-top: 14px; }
 .ft .k-brand { vertical-align: middle; }
@@ -74,7 +77,7 @@ window.INVITE = {
   date: "2026-11-11T14:00",
   cover: "p1.jpg",
   photo: "p1.jpg",
-  photos: ["cover.jpg", "p2.jpg", "p3.jpg", "hero.jpg"],
+  photos: ["hero.jpg", "p2.jpg", "p3.jpg", "cover.jpg"],
   invite: { hy: "Մեր սիրո պատմությունը նոր էջ է բացում, և մենք ցանկանում ենք, որ այդ էջի առաջին տողերում լինեն նաև մեր սիրելի մարդիկ։" },
   text: { hy: ["Սիրով հրավիրում ենք Ձեզ տոնելու մեր միությունը, կիսելու մեր երջանկությունն ու դառնալու մեր հարսանեկան տոնի մի մասը։", "Ձեր ներկայությունը կլինի մեր օրվա ամենաթանկ նվերներից մեկը։"] },
   events: [
