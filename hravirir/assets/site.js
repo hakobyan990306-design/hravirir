@@ -73,7 +73,8 @@
     { id: "gift-rainbow", name: "Նվեր", cat: "birthday", colors: ["#fbf5ec", "#d98b6a", "#e8b85a", "#9db39a"], tag: "Նոր" },
     { id: "champagne", name: "Շամպայն", cat: "birthday", colors: ["#141b2d", "#1d2740", "#cfaa62", "#efe6d2"], tag: "Նոր" },
     { id: "space-rocket", name: "Տիեզերք", cat: "birthday", colors: ["#151a3a", "#ff9f5a", "#ffd66b", "#6fd3d0"], tag: "Նոր" },
-    { id: "balloon-sky", name: "Օդապարիկ", cat: "birthday", colors: ["#cfe4f2", "#f0a88e", "#9fcfbf", "#f3d27a"], tag: "Նոր" }
+    { id: "balloon-sky", name: "Օդապարիկ", cat: "birthday", colors: ["#cfe4f2", "#f0a88e", "#9fcfbf", "#f3d27a"], tag: "Նոր" },
+    { id: "teddy-hotel", name: "Արջուկների հյուրանոց", cat: "birthday", colors: ["#f6e1e4", "#e8a0b4", "#d4ae5c", "#2b2326"], tag: "Նոր" }
     // blush-floral, minimal-noir, sage-greenery, navy-night, burgundy-royal, lavender-jubilee —
     // հին նույնատիպ դասավորությամբ են, կատալոգից հանված են, մինչև նոր ձևով վերասարքվեն
   ];
