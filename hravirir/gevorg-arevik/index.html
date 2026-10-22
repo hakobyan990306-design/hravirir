@@ -13,7 +13,7 @@
 <meta property="og:title" content="Գևորգ & Արևիկ">
 <meta property="og:site_name" content="HRAVIRIR.AM">
 <meta property="og:description" content="Հարսանյաց հրավեր · 11 նոյեմբերի 2026">
-<meta property="og:image" content="https://hravirir.pages.dev/gevorg-arevik/og2.jpg">
+<meta property="og:image" content="https://hravirir.pages.dev/gevorg-arevik/og3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400;500;700&display=swap">
 <link rel="preload" href="/fonts/ArmCoronetU.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="cover.jpg" as="image">
+<link rel="preload" href="p1.jpg" as="image">
 <link rel="stylesheet" href="/invites/core/core.css">
 <link rel="stylesheet" href="/invites/bw-script/style.css">
 <style>
@@ -51,6 +51,9 @@ body.locked { overflow: hidden; height: 100svh; }
 .hero .caps { font: 400 12.5px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.75); }
 .hero .ln { display: block; width: 70%; height: 1px; margin: 18px auto; background: #fff; }
 .hero .en { font: 200 clamp(22px, 7vw, 34px) var(--sans); letter-spacing: .2em; padding-left: .2em; color: #fff; white-space: nowrap; }
+/* ներքևում՝ միայն HRAVIRIR լոգոն, մեկ տողով */
+.ft > div:last-child { white-space: nowrap; margin-top: 14px; }
+.ft .k-brand { vertical-align: middle; }
 /* հիմնական էջի լրացումներ */
 .hero img { object-position: 50% 40%; }
 .tx .s:first-child { margin-top: 0; }
@@ -64,14 +67,14 @@ body.locked { overflow: hidden; height: 100svh; }
 <div id="app"></div>
 <script>
 /* Գևորգ & Արևիկ — պատվեր 19.10.2026 (Instagram՝ _.____arevik____._), դիզայն՝ բացումը «Մոնոխրոմ քայլ», մնացածը «Նուար»
-   cover.jpg՝ հաճախորդի «գլխավոր» նկարը (01-glkhavor-IMG_7300)՝ բացման էկրանին և վերևի մեծ նկարում, hero.jpg՝ IMG_7295 (վերջում), p1–p3՝ IMG_7298, 7299, 7296 */
+   p1.jpg (IMG_7298, քայլող զույգ)՝ բացման էկրանին և վերևում (հաճախորդի խնդրանքով 23.10), cover.jpg՝ IMG_7300, p2–p3՝ IMG_7299, 7296, hero.jpg՝ IMG_7295 */
 window.INVITE = {
   langs: ["hy"],
   names: { hy: ["Գևորգ", "Արևիկ"] },
   date: "2026-11-11T14:00",
-  cover: "cover.jpg",
-  photo: "cover.jpg",
-  photos: ["p1.jpg", "p2.jpg", "p3.jpg", "hero.jpg"],
+  cover: "p1.jpg",
+  photo: "p1.jpg",
+  photos: ["cover.jpg", "p2.jpg", "p3.jpg", "hero.jpg"],
   invite: { hy: "Մեր սիրո պատմությունը նոր էջ է բացում, և մենք ցանկանում ենք, որ այդ էջի առաջին տողերում լինեն նաև մեր սիրելի մարդիկ։" },
   text: { hy: ["Սիրով հրավիրում ենք Ձեզ տոնելու մեր միությունը, կիսելու մեր երջանկությունն ու դառնալու մեր հարսանեկան տոնի մի մասը։", "Ձեր ներկայությունը կլինի մեր օրվա ամենաթանկ նվերներից մեկը։"] },
   events: [
@@ -84,9 +87,10 @@ window.INVITE = {
     { time: "18:00", title: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Մկրտչյան հոլլ»" },
       map: "https://yandex.ru/navi/org/mkrtchyanneri_srah/139276208586?si=tqy1fhxrx331mah0tfrg33132w" }
   ],
-  note: { hy: "Խնդրանք հյուրերին՝ չհագնել սպիտակ" },
-  rsvp: { deadline: "2026-11-01", key: "gevorg-arevik" }
-  // երգ հաճախորդը չի տվել. ավելացնելու դեպքում՝ music: "song.mp3" (Play կոճակը կհայտնվի ինքնաբերաբար)
+  note: { hy: "Ցանկալի է. հյուրերը չկրեն սպիտակ հագուստ" },
+  rsvp: { deadline: "2026-11-01", key: "gevorg-arevik" },
+  song: true,          // հարցաթերթիկում՝ «Ո՞ր երգը կցանկանայիք…» (Նշում սյունակ)
+  music: "song.mp3"    // Charles Aznavour — Hier Encore (հաճախորդի ընտրությամբ, 23.10.2026)
 };
 </script>
 <script src="/invites/core/core.js"></script>

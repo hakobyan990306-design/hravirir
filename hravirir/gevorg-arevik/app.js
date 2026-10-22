@@ -6,7 +6,9 @@
   var TXT = {
     hy: { inv: "Սիրով հրավիրում ենք Ձեզ՝", plan: "Օրվա ծրագիր", how: "Ինչպես հասնել", left: "Հարսանիքին մնացել է", love: "Սիրով՝", and: "և", y: "թ.",
       rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", share: "Կիսվել հղումով", made: "Հրավիրատոմսը ստեղծվել է", by: "-ի կողմից",
-      cover: "Հարսանյաց հրավեր", hint: "Սեղմեք էկրանին" }
+      cover: "Հարսանյաց հրավեր", hint: "Սեղմեք էկրանին",
+      // հարցաթերթիկի դաշտ. պատասխանը գնում է աղյուսակի «Նշում» սյունակ
+      songL: "Ո՞ր երգը կցանկանայիք, որ հնչի մեր հարսանիքին" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   var pi = 0;
@@ -46,11 +48,10 @@
         '<label class="radio"><input type="radio" name="attend" value="no">' + esc(u("no")) + "</label>" +
         '<div class="fl"><label for="rn">' + esc(u("name")) + '</label><input id="rn" name="name" required autocomplete="name"></div>' +
         '<div class="fl"><label for="rg">' + esc(u("guests")) + '</label><select id="rg" name="guests">' + [1, 2, 3, 4, 5, 6].map(function (i) { return "<option>" + i + "</option>"; }).join("") + "</select></div>" +
+        (C.song ? '<div class="fl"><label for="rsong">' + esc(x("songL")) + '</label><input id="rsong" name="note"></div>' : "") +
         '<button class="pill fill" type="submit">' + esc(u("send")) + "</button></form>" : "") +
       '<h2 class="h2 sig rv">' + esc(x("love")) + " " + esc(n[0] || "") + " " + esc(x("and")) + " " + esc(n[1] || "") + "</h2></section>" + photo() +
-      '<footer class="ft"><button class="share" type="button">↗ ' + esc(x("share")) + '</button><div class="soc"><a href="https://wa.me/?text=' + encodeURIComponent(location.href) + '" target="_blank" rel="noopener" aria-label="WhatsApp">' +
-      '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>' +
-      '<a href="https://t.me/share/url?url=' + encodeURIComponent(location.href) + '" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.8 6.8-1.6 7.7c-.1.6-.5.7-1 .4l-2.7-2-1.3 1.3c-.1.1-.3.3-.6.3l.2-2.8 5-4.6c.2-.2 0-.3-.3-.1l-6.2 3.9-2.7-.8c-.6-.2-.6-.6.1-.9l10.5-4c.5-.2.9.1.6 1z"/></svg></a></div>' +
+      '<footer class="ft"><button class="share" type="button">↗ ' + esc(x("share")) + '</button>' + /* WhatsApp/Telegram պատկերակները հանված են՝ վերջում միայն HRAVIRIR-ի լոգոն (հաճախորդի խնդրանքով) */
       "<div>" + esc(x("made")) + ' <a href="https://hravirir.am" target="_blank" rel="noopener">www.hravirir.am</a>' + esc(x("by")) + "</div></footer></div>";
   }
 
