@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armat Baby Book — ստեղծեք գրքի կազմը</title>
+<meta name="description" content="Անվանական գիրք-ալբոմ՝ 75 էջ, հղիությունից մինչև երեխայի 7 տարեկանը։ Ընտրեք կազմը, գրեք անունը և տեսեք արդյունքը անմիջապես։">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <img src="assets/logo.png" alt="Armat Baby Book" class="logo">
+  <a class="insta" href="https://www.instagram.com/armat_babybook" target="_blank" rel="noopener">Instagram</a>
+</header>
+
+<main class="maker">
+  <section class="stage" aria-label="Կազմի նախադիտում">
+    <div class="book">
+      <svg id="cover" viewBox="0 0 595.28 841.89" role="img" aria-label="Կազմի նախադիտում">
+        <defs><clipPath id="pclip"><path id="pclipPath"/></clipPath></defs>
+        <image id="bg" href="assets/boy-front.jpg" x="0" y="0" width="595.28" height="841.89" preserveAspectRatio="none"/>
+        <image id="aImg" preserveAspectRatio="xMidYMax meet" style="display:none"/>
+        <g id="photoG" style="display:none">
+          <path id="pEmpty" fill="#F6EADD" stroke="#D2A27E" stroke-width="2" stroke-dasharray="8 6"/>
+          <text id="pEmptyT" text-anchor="middle" fill="#A8754F" font-size="22">+ Ավելացրեք լուսանկար</text>
+          <g clip-path="url(#pclip)"><image id="pImg" preserveAspectRatio="none"/></g>
+          <path id="pRing" fill="none" stroke="#FFFFFF"/>
+          <image id="pCut" preserveAspectRatio="none"/>
+        </g>
+        <text id="tName" x="297.64" y="282" text-anchor="middle" fill="#FFF9F1"></text>
+        <text id="tSub" x="297.64" y="380.8" text-anchor="middle" fill="#4C2A00"></text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h1>Ստեղծեք Ձեր փոքրիկի գրքի կազմը</h1>
+    <p class="lead">Անվանական գիրք-ալբոմ՝ 75 էջ, հղիությունից մինչև 7 տարեկանը։ Փոփոխությունները երևում են կազմի վրա անմիջապես։</p>
+
+    <div class="field">
+      <span class="label">Ձեր երեխայի նկարով կազմ</span>
+      <input type="file" id="photoFile" accept="image/*" hidden>
+      <button type="button" class="upload" id="photoPick" aria-pressed="false">
+        <span class="upload-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        </span>
+        <span><b id="photoPickT">Վերբեռնել նկարը</b><small>Լուսանկարը կդրվի կազմի վրա</small></span>
+      </button>
+    </div>
+
+    <div class="field photo-ctl" id="photoCtl" hidden>
+      <div class="frames" role="radiogroup" aria-label="Շրջանակ">
+        <button type="button" class="frame-opt" data-frame="cut" role="radio">Առանց ֆոնի</button>
+        <button type="button" class="frame-opt" data-frame="circle" role="radio">Կլոր</button>
+        <button type="button" class="frame-opt" data-frame="arch" role="radio">Կամար</button>
+      </div>
+      <p class="hint cut-status" id="cutStatus" hidden></p>
+      <label class="zoom">
+        <span class="label">Մեծացնել <output id="zoomOut">100%</output></span>
+        <input id="zoom" type="range" min="100" max="300" step="1" value="100">
+      </label>
+      <p class="hint">Քաշեք նկարը կազմի վրա՝ տեղաշարժելու համար</p>
+      <button type="button" class="btn-sec" id="photoChange">Փոխել նկարը</button>
+    </div>
+
+    <div class="field">
+      <span class="label">Կամ ընտրեք կենդանի</span>
+      <div class="arts" id="arts" role="radiogroup" aria-label="Կենդանի կազմի վրա"></div>
+    </div>
+
+    <div class="field">
+      <span class="label">Երեխայի անունը</span>
+      <input id="name" type="text" maxlength="22" placeholder="Արամ" autocomplete="off" spellcheck="false">
+      <label class="check"><input type="checkbox" id="noName"> Առանց անվան</label>
+    </div>
+
+    <div id="nameFields">
+      <div class="field">
+        <span class="label">Տառատեսակ</span>
+        <div class="fonts" id="fonts" role="radiogroup" aria-label="Տառատեսակ"></div>
+      </div>
+
+      <label class="field">
+        <span class="label">Անվան չափը <output id="sizeOut">100%</output></span>
+        <input id="size" type="range" min="60" max="115" step="1" value="100">
+      </label>
+    </div>
+
+    <label class="field">
+      <span class="label">Անվան տակի տողը</span>
+      <input id="sub" type="text" maxlength="40" autocomplete="off">
+    </label>
+
+    <div class="actions">
+      <button type="button" id="pdf" class="btn">Ներբեռնել տպագրական PDF</button>
+      <p class="hint" id="pdfHint">A4 · CMYK · վեկտորային տեքստ, բացվում է Illustrator-ով</p>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
