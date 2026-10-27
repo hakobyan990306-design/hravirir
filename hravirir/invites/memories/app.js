@@ -49,14 +49,16 @@
     var tag = C.hashtag || "#" + n.join("").replace(/\s+/g, "");
     var rs = P.rsvp().replace('<button class="btn fill"', '<div class="fl"><label for="rsong">' + esc(P.x("songL")) + '</label><input id="rsong" name="note"></div><button class="btn fill"');
     return '<section class="hero"><div class="im"' + (C.photo ? ' style="background-image:url(\'' + esc(C.photo) + '\')"' : "") + '></div><div class="hc"><div class="caps rv">' + esc(P.x("wed")) + '</div><h1 class="nm rv d1">' + esc(n[0] || "") + ' <span class="amp">&amp;</span> ' + esc(n[1] || "") + '</h1><div class="dt rv d2">' + P.dots(".") + "</div></div>" + torn("bot", 11) + "</section>" +
+      // բարեմաղթանք՝ եթե տրված է (C.text)
+      (C.text ? P.sec("tx", '<div class="caps rv">' + esc(P.x("dear")).replace(/և/g, "եվ") /* մեծատառով «և»→«ԵՒ» չդառնա */ + '</div><p class="p rv">' + P.text() + "</p>") : "") +
       P.sec("cd", '<div class="caps rv">' + esc(P.x("left")) + "</div>" + P.cd("big") + '<p class="p wt rv">' + esc(P.x("wait")).replace(/\n/g, "<br>") + "</p>" + dateRow) +
       P.sec("vs", venues) +
       photo(g[0], "tall", 21) +
       P.sec("plan", '<h2 class="h2 rv">' + esc(P.x("program")) + "</h2>" + plan) +
       photo(g[1], "", 31) +
-      P.sec("ig", ic("camera") + '<h3 class="rv">' + esc(P.x("insta")) + '</h3><p class="p rv">' + esc(P.x("instaT")) + '</p><div class="tag rv">' + esc(tag) + "</div>" +
-        (C.instagram ? '<a class="pill rv" href="https://instagram.com/' + esc(String(C.instagram).replace("@", "")) + '" target="_blank" rel="noopener">' + esc(P.x("instaB")) + "</a>" : "")) +
-      P.sec("song", ic("music") + '<h3 class="rv">' + esc(P.x("song")) + '</h3><p class="p rv">' + esc(P.x("songT")) + '</p><a class="pill rv" href="#rf">' + esc(P.x("songB")) + "</a>") +
+      ((C.hashtag || C.instagram) ? P.sec("ig", ic("camera") + '<h3 class="rv">' + esc(P.x("insta")) + '</h3><p class="p rv">' + esc(P.x("instaT")) + '</p><div class="tag rv">' + esc(tag) + "</div>" +
+        (C.instagram ? '<a class="pill rv" href="https://instagram.com/' + esc(String(C.instagram).replace("@", "")) + '" target="_blank" rel="noopener">' + esc(P.x("instaB")) + "</a>" : "")) : "") +
+      (C.rsvp ? P.sec("song", ic("music") + '<h3 class="rv">' + esc(P.x("song")) + '</h3><p class="p rv">' + esc(P.x("songT")) + '</p><a class="pill rv" href="#rf">' + esc(P.x("songB")) + "</a>") : "") +
       photo(g[2], "", 41) +
       P.sec("", P.dress()) +
       P.sec("rsv", rs) +
