@@ -43,8 +43,9 @@
     var dateRow = '<div class="drow rv"><span>' + esc(P.x("wdl")[d.getDay()]) + "</span><b>" + d.getDate() + "</b><span>" + esc(u("monthsGen")[d.getMonth()]) + "</span></div>";
     // plan: false՝ առանձին ծրագիր չկա. «Օրվա ծրագիր» վերնագիրը վայրերի վերևում է, իսկ ժամը՝ մեծ, առանձին տողով
     var inl = C.plan === false;
-    var venues = (C.events || []).filter(function (e) { return e.place; }).map(function (e) {
-      return '<div class="vn">' + ic(icFor(e)) + '<h3 class="rv">' + esc(t(e.title)) + '</h3>' + (inl ? '<div class="vt rv">' + esc(e.time) + "</div>" : "") + '<p class="rv">' + (inl ? "" : esc(e.time) + " · ") + esc(t(e.place)) + "<br>" + esc(t(e.address)) + "</p>" +
+    var venues = (C.events || []).filter(function (e) { return e.place; }).map(function (e, i) {
+      // e.photo՝ վայրի լուսանկարը (եկեղեցի, ռեստորան) բլոկի վերևում
+      return '<div class="vn">' + photo(e.photo, "vp", 51 + i * 10) + ic(icFor(e)) + '<h3 class="rv">' + esc(t(e.title)) + '</h3>' + (inl ? '<div class="vt rv">' + esc(e.time) + "</div>" : "") + '<p class="rv">' + (inl ? "" : esc(e.time) + " · ") + esc(t(e.place)) + "<br>" + esc(t(e.address)) + "</p>" +
         (e.map ? '<a class="pill rv" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(P.x("how")) + "</a>" : "") + "</div>";
     }).join("");
     var plan = (C.plan || C.events || []).map(function (e) { return '<div class="pl">' + ic(e.icon || icFor(e)) + '<b class="rv">' + esc(e.time) + '</b><span class="rv">' + esc(t(e.title)) + "</span></div>"; }).join("");
