@@ -45,7 +45,7 @@ img { display: block; max-width: 100%; }
 .cloud::before { width: 55%; height: 170%; left: 12%; bottom: 20%; }
 .cloud::after { width: 42%; height: 140%; right: 12%; bottom: 25%; }
 
-/* Մարկ և Անահիտ — կնունք, պատվեր 26.10.2026 (Instagram՝ Krist97), դիզայն՝ «Փոքրիկ հրեշտակ» (invites/angel-boy), 8.000 ֏՝ առանց հարցաթերթիկի և երաժշտության */
+/* Մարկ և Անահիտ — կնունք, պատվեր 26.10.2026 (Instagram՝ Krist97), դիզայն՝ «Փոքրիկ հրեշտակ» (invites/angel-boy), 8.000 ֏՝ առանց հարցաթերթիկի. երգը (Դումիկյան «Կնունք») ավելացվել է հետո՝ հաճախորդի խնդրանքով */
 /* բացման էկրան */
 .intro { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; overflow: hidden;
   background: radial-gradient(100% 70% at 50% 35%, #eef4fa 0%, #d6e5f2 60%, #c7dbee 100%); transition: opacity .9s ease .9s, visibility 0s 1.8s; }
@@ -148,6 +148,7 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
   </div>
 </div>
 
+<button type="button" class="play" id="play" aria-label="Երաժշտություն"><i></i></button>
 <a class="logo" href="https://hravirir.pages.dev/" aria-label="Hravirir.am"><img src="/invites/angel-boy/logo.png" alt=""></a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -254,10 +255,17 @@ h2.t { margin: 50px 0 6px; font: 500 15px var(--serif); letter-spacing: .38em; t
   document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
 
 
+  // երաժշտություն՝ Արկադի Դումիկյան «Կնունք» (հաճախորդի խնդրանքով)
+  var a = new Audio("song.mp3"), pb = document.getElementById("play"); a.loop = true; a.preload = "auto";
+  function sync() { pb.classList.toggle("on", !a.paused); }
+  a.addEventListener("play", sync); a.addEventListener("pause", sync);
+  pb.onclick = function () { if (a.paused) a.play().catch(function () {}); else a.pause(); };
+
   // բացում. ամպերը բացվում են, միանում է երգը
   var intro = document.getElementById("intro");
   function open() {
     if (intro.classList.contains("open")) return;
+    a.play().catch(function () {});
     intro.classList.add("open"); document.body.classList.remove("locked");
     setTimeout(function () { intro.remove(); }, 2000);
   }
