@@ -41,8 +41,10 @@
   function main() {
     var n = K.names(), d = K.date, g = C.gallery || [];
     var dateRow = '<div class="drow rv"><span>' + esc(P.x("wdl")[d.getDay()]) + "</span><b>" + d.getDate() + "</b><span>" + esc(u("monthsGen")[d.getMonth()]) + "</span></div>";
+    // plan: false՝ առանձին ծրագիր չկա. «Օրվա ծրագիր» վերնագիրը վայրերի վերևում է, իսկ ժամը՝ մեծ, առանձին տողով
+    var inl = C.plan === false;
     var venues = (C.events || []).filter(function (e) { return e.place; }).map(function (e) {
-      return '<div class="vn">' + ic(icFor(e)) + '<h3 class="rv">' + esc(t(e.title)) + '</h3><p class="rv">' + esc(e.time) + " · " + esc(t(e.place)) + "<br>" + esc(t(e.address)) + "</p>" +
+      return '<div class="vn">' + ic(icFor(e)) + '<h3 class="rv">' + esc(t(e.title)) + '</h3>' + (inl ? '<div class="vt rv">' + esc(e.time) + "</div>" : "") + '<p class="rv">' + (inl ? "" : esc(e.time) + " · ") + esc(t(e.place)) + "<br>" + esc(t(e.address)) + "</p>" +
         (e.map ? '<a class="pill rv" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(P.x("how")) + "</a>" : "") + "</div>";
     }).join("");
     var plan = (C.plan || C.events || []).map(function (e) { return '<div class="pl">' + ic(e.icon || icFor(e)) + '<b class="rv">' + esc(e.time) + '</b><span class="rv">' + esc(t(e.title)) + "</span></div>"; }).join("");
@@ -52,9 +54,9 @@
       // բարեմաղթանք՝ եթե տրված է (C.text)
       (C.text ? P.sec("tx", '<div class="caps rv">' + esc(P.x("dear")).replace(/և/g, "եվ") /* մեծատառով «և»→«ԵՒ» չդառնա */ + '</div><p class="p rv">' + P.text() + "</p>") : "") +
       P.sec("cd", '<div class="caps rv">' + esc(P.x("left")) + "</div>" + P.cd("big") + '<p class="p wt rv">' + esc(P.x("wait")).replace(/\n/g, "<br>") + "</p>" + dateRow) +
-      P.sec("vs", venues) +
+      P.sec("vs", (inl ? '<h2 class="h2 rv">' + esc(P.x("program")) + "</h2>" : "") + venues) +
       photo(g[0], "tall", 21) +
-      P.sec("plan", '<h2 class="h2 rv">' + esc(P.x("program")) + "</h2>" + plan) +
+      (inl ? "" : P.sec("plan", '<h2 class="h2 rv">' + esc(P.x("program")) + "</h2>" + plan)) +
       photo(g[1], "", 31) +
       ((C.hashtag || C.instagram) ? P.sec("ig", ic("camera") + '<h3 class="rv">' + esc(P.x("insta")) + '</h3><p class="p rv">' + esc(P.x("instaT")) + '</p><div class="tag rv">' + esc(tag) + "</div>" +
         (C.instagram ? '<a class="pill rv" href="https://instagram.com/' + esc(String(C.instagram).replace("@", "")) + '" target="_blank" rel="noopener">' + esc(P.x("instaB")) + "</a>" : "")) : "") +
