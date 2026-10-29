@@ -10,7 +10,8 @@
     en: { hint: "Tap the watch", top: "Anniversary", years: "years", inv: "You are invited to my anniversary", our: "About time", program: "Schedule", dress: "Dress code", left: "Counting down",
       rsvp: "RSVP", rsvpLead: "Kindly reply by", fin: "Looking forward to seeing you", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] }
   };
-  function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
+  // C.x՝ տեքստերի փոխարինում (օր.՝ «եմ»→«ենք», երբ հրավիրում է ընտանիքը)
+  function x(k) { var o = C.x && C.x[K.lang]; return o && o[k] != null ? o[k] : (TXT[K.lang] || TXT.hy)[k]; }
   function f(v) { return Math.round(v * 10) / 10; }
   var ROM = ["XII", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"];
   function angles(hm) { var p = String(hm).split(":"), h = +p[0] % 12, m = +p[1] || 0; return [f(h * 30 + m / 2), m * 6]; }
