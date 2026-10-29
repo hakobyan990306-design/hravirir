@@ -47,14 +47,14 @@
   function envelope() {
     var n = K.names(), d = K.date;
     return '<div class="env" id="env" role="button" aria-label="' + esc(x("hint")) + '"><div class="leather"></div><div class="top"><div class="caps">' + esc(x("top")) + '</div><div class="nm">' + esc(n[0] || "") + "</div></div>" +
-      '<div class="watch" id="watch">' + caseSVG() + '<div class="face">' + dial(pad(d.getHours()) + ":" + pad(d.getMinutes()), true, C.age) + '</div><div class="lid"><div class="lf">' + lid() + '</div><div class="lb">' + lidBack() + "</div></div></div>" +
+      '<div class="watch" id="watch">' + caseSVG() + '<div class="face">' + dial(C.clock || pad(d.getHours()) + ":" + pad(d.getMinutes()), true, C.age) + '</div><div class="lid"><div class="lf">' + lid() + '</div><div class="lb">' + lidBack() + "</div></div></div>" +
       (K.PREVIEW ? "" : '<div class="hint">' + esc(x("hint")) + "</div>") + "</div>";
   }
   function hero() {
     var n = K.names(), d = K.date;
     return '<section class="hero"><div class="wrap"><div class="caps rv">' + esc(x("inv")) + '</div><div class="age rv d1">' + esc(C.age || "") + '</div><div class="ys rv d1">' + esc(x("years")) + "</div>" +
       '<h1 class="nm rv d2">' + esc(n[0] || "") + '</h1><div class="rule rv d2"></div><div class="dt rv d2">' + esc(x("wdl")[d.getDay()]) + " · " + d.getDate() + " " + esc(u("monthsGen")[d.getMonth()]) + " " + d.getFullYear() + "</div>" +
-      '<div class="mini rv d3">' + dial(pad(d.getHours()) + ":" + pad(d.getMinutes()), true) + "</div></div></section>";
+      '<div class="mini rv d3">' + dial(C.clock || pad(d.getHours()) + ":" + pad(d.getMinutes()), true) + "</div></div></section>";
   }
   function story() {
     return '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("our")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p></div></section>";

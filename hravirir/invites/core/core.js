@@ -318,6 +318,8 @@
   });
   // օրինակ-էջերում պատվերի պատուհանը բացվում է հենց այստեղ
   if (C.demo && !K.EMBED) { var os = document.createElement("script"); os.src = "../order.js"; document.head.appendChild(os); }
+  // «Կիսվել» կոճակ՝ ներքևում (share.js)
+  if (!C.demo && !PREVIEW) { var cs = document.querySelector('script[src*="core/core.js"]'); if (cs) { var sh = document.createElement("script"); sh.src = new URL("share.js", cs.src).href; document.head.appendChild(sh); } }
   // «Նշումների ռեժիմ»՝ հղման վերջում ?nshum
   if (/nshum/.test(location.search + location.hash) && !PREVIEW) { var rs = document.createElement("script"); rs.src = "../core/review.js?v=5"; document.head.appendChild(rs); }
 })();

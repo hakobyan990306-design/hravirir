@@ -13,7 +13,7 @@
 <meta property="og:title" content="Սերգեյ Մուսայելյան · 70">
 <meta property="og:site_name" content="HRAVIRIR.AM">
 <meta property="og:description" content="Հոբելյանի հրավեր · 8 նոյեմբերի 2026">
-<meta property="og:image" content="https://hravirir.pages.dev/sergey/og1.jpg">
+<meta property="og:image" content="https://hravirir.pages.dev/sergey/og2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,6 +22,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;500&family=Noto+Serif:wght@300;500&display=swap">
 <link rel="stylesheet" href="/invites/core/core.css">
 <link rel="stylesheet" href="/invites/pocket-watch/style.css">
+<style>
+/* անուն-ազգանունը՝ մեկ տողում (հաճախորդի խնդրանքով) */
+.nm { white-space: nowrap; }
+.hero .nm { font-size: clamp(20px, 7.2vw, 36px); letter-spacing: .03em; }
+.fin .nm { font-size: clamp(20px, 7vw, 34px); letter-spacing: .03em; }
+</style>
 </head>
 <body>
 <div id="app"></div>
@@ -32,16 +38,18 @@ window.INVITE = {
   langs: ["hy"],
   names: { hy: ["Սերգեյ Մուսայելյան"] },
   age: "70",
+  clock: "17:30",   // ժամացույցի սլաքները՝ ընթրիքի ժամին (հաճախորդի խնդրանքով)
   date: "2026-11-08T17:00",
   text: { hy: "70 տարի…\nՄի ամբողջ պատմություն…\nՍիրով հրավիրում ենք Ձեզ՝ միասին նշելու գեղեցիկ և նշանակալի հոբելյանը։" },
   // հրավիրողը ընտանիքն է՝ «եմ»-ի փոխարեն «ենք»
-  x: { hy: { inv: "Սիրով հրավիրում ենք Ձեզ հոբելյանին", fin: "Սիրով սպասում ենք Ձեզ" } },
+  x: { hy: { inv: "Սիրով հրավիրում ենք Ձեզ հոբելյանին", fin: "Սիրով սպասում ենք Ձեզ", rsvpLead: "Խնդրում ենք պատասխանել մինչև" } },
   events: [
     { time: "17:00", title: { hy: "Հյուրերի դիմավորում" }, place: { hy: "«Հարսնաքար» ռեստորանային համալիր" }, address: { hy: "Երևան, Աճառյան փողոց 37" },
       map: "https://yandex.ru/navi/org/harsnakar/105482218918?si=tqy1fhxrx331mah0tfrg33132w" },
     { time: "17:30", title: { hy: "Տոնական ընթրիք" }, place: { hy: "«Հարսնաքար» ռեստորանային համալիր" }, address: { hy: "Երևան, Աճառյան փողոց 37" },
       map: "https://yandex.ru/navi/org/harsnakar/105482218918?si=tqy1fhxrx331mah0tfrg33132w" }
   ],
+  rsvp: { deadline: "2026-11-04", key: "sergey" },
   music: "song.mp3"   // Արթուր Բուռնուչյան — Ով սիրուն, սիրուն
 };
 </script>
