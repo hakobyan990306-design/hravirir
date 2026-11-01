@@ -14,7 +14,8 @@
       the: "The", program: "Schedule", details: "Details", please: "please", by: "By", thx: "thank you",
       dear: "Dear", attend: "Your reply", wdl: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], dress: "Dress code" }
   };
-  function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
+  // C.x՝ տեքստերի փոխարինում (օր.՝ ոչ հարսանյաց միջոցառման համար)
+  function x(k) { var o = C.x && C.x[K.lang]; return o && o[k] != null ? o[k] : (TXT[K.lang] || TXT.hy)[k]; }
 
   var IC = {
     rings: '<svg class="ic" viewBox="0 0 40 40"><circle cx="15" cy="24" r="9"/><circle cx="25" cy="24" r="9"/><path d="M22 10l3-4 3 4-3 3z"/></svg>',
@@ -61,10 +62,15 @@
     return '<section class="hero' + (K.PREVIEW ? " go" : "") + '" id="hero"' + (C.photo ? ' style="background-image:url(\'' + esc(C.photo) + '\')"' : "") + ">" +
       (C.heroVideo ? '<video id="hv" src="' + esc(C.heroVideo) + '" muted loop playsinline preload="auto"' + (C.photo ? ' poster="' + esc(C.photo) + '"' : "") + "></video>" : "") +
       '<div class="hero-in"><div class="caps ani a1">' + esc(x("together")) + "</div>" +
-      '<div class="nms ani a2">' + (n.length === 2 ? "<span>" + esc(n[0]) + "</span><i>" + esc(x("and")) + "</i><span>" + esc(n[1]) + "</span>" : esc(n.join(" "))) + "</div>" +
+      '<div class="nms ani a2">' + (C.heroTitle ? esc(t(C.heroTitle)) : n.length === 2 ? "<span>" + esc(n[0]) + "</span><i>" + esc(x("and")) + "</i><span>" + esc(n[1]) + "</span>" : esc(n.join(" "))) + "</div>" +
       '<div class="caps ani a3">' + esc(t(C.request) || x("request")) + "</div>" +
       '<div class="dt ani a4"><div class="m">' + esc(u("months")[d.getMonth()]) + '</div><div class="side">' + esc(x("wdl")[d.getDay()]) + "</div><b>" + pad(d.getDate()) +
       '</b><div class="side">' + esc(x("at")) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + '</div><div class="y">' + d.getFullYear() + "</div></div></div></section>";
+  }
+  // բարեմաղթանք (C.text)՝ վերնագրային բաժնից հետո
+  function story() {
+    if (!C.text) return "";
+    return '<section class="det story"><div class="wrap"><div class="di rv"><p>' + esc(t(C.text)) + "</p></div></div></section>";
   }
   function head(word) { return '<h2 class="th rv"><span class="s">' + esc(x("the")) + '</span><span class="c">' + esc(word) + "</span></h2>"; }
   function program() {
@@ -103,7 +109,7 @@
   function fin() {
     var d = K.date;
     return '<section class="fin"' + (C.finalPhoto ? ' style="background-image:url(\'' + esc(C.finalPhoto) + '\')"' : "") + '><div class="fin-in">' +
-      '<div class="d1 rv">' + pad(d.getMonth() + 1) + "·" + pad(d.getDate()) + '</div><div class="d2 rv">' + d.getFullYear() + "</div>" +
+      '<div class="d1 rv">' + pad(d.getDate()) + "·" + pad(d.getMonth() + 1) + '</div><div class="d2 rv">' + d.getFullYear() + "</div>" +
       '<div class="nm rv">' + esc(K.names().join(" & ")) + '</div><div class="cd rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
         return '<div><b data-k="' + k + '">00</b>' + esc(u(k)) + "</div>";
       }).join("") + "</div></div></section>" +
@@ -115,7 +121,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + K.gallery() + program() + details() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + program() + details() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { shape(); var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; }
     else { document.getElementById("hero").classList.add("go"); playVideo(); K.reveal(); }
