@@ -54,6 +54,11 @@
     return '<section class="band"><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
       (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div></div></section>";
   }
+  // նշում (C.note = { title, text }), օր.՝ «Մեծահասակների երեկո»
+  function note() {
+    if (!C.note) return "";
+    return '<section class="note"><div class="wrap"><h2 class="h2 rv">' + esc(t(C.note.title)) + '</h2><p class="p rv">' + esc(t(C.note.text)) + "</p></div></section>";
+  }
   function rsvp() {
     if (!C.rsvp) return "";
     return '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("rsvp")) + '</h2><p class="rv">' + esc(x("rsvpLead")) + " " + esc(K.deadline()) + "</p>" +
@@ -72,7 +77,7 @@
   function render() {
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ");
-    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + countdown() + program() + dress() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : envelope()) + "<main>" + hero() + story() + K.gallery() + countdown() + program() + dress() + note() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (opened || K.PREVIEW) document.getElementById("hero").classList.add("go");
     if (!opened) { var e = document.getElementById("env"); if (e && !K.PREVIEW) e.onclick = open; } else K.reveal();
