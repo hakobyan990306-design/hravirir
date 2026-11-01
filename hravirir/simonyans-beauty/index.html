@@ -22,7 +22,8 @@
 <link rel="stylesheet" href="/invites/noir-sunset/style.css">
 <style>
 /* մայրամուտի տեսանյութի փոխարեն՝ սրահի ոսկե լոգոն սև ֆոնի վրա (հաճախորդի խնդրանքով) */
-.hero { background: #000 url("logo.jpg") center 16% / min(100%, 520px) auto no-repeat; }
+/* լոգոն՝ միշտ տեքստից վերև (չափը կախված է էկրանի բարձրությունից) */
+.hero { background: #000 url("logo.jpg") center top 36px / min(92vw, 520px, max(190px, calc((100svh - 540px) * 1.29))) auto no-repeat; }
 .hero::before { background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.6) 80%, rgba(0,0,0,.85) 100%); }
 .hero .nms { font-size: clamp(26px, 8vw, 38px); }
 /* ամբողջը՝ սև և ոսկեգույն (հաճախորդի խնդրանքով) */
@@ -35,8 +36,10 @@
 .pg { display: flex; flex-direction: column-reverse; align-items: center; gap: 12px; }
 .pg::before, .pg .dot { display: none; }
 .pg .tx { text-align: center !important; }
+.pg .ico, .pg .ico.r, .pg .ico.l { justify-content: center; padding: 0; width: 100%; }
+.pg .tx, .pg .tx.l, .pg .tx.r { padding: 0; width: 100%; }
 .pg .ds { white-space: pre-line; font-size: 14px; }
-.fin { background: #000 url("logo.jpg") center 14% / min(100%, 520px) auto no-repeat; color: var(--gold-l); }
+.fin { background: #000 url("logo.jpg") center top 36px / min(92vw, 520px, max(190px, calc((100svh - 540px) * 1.29))) auto no-repeat; color: var(--gold-l); }
 </style>
 </head>
 <body>
