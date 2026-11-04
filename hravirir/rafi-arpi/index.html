@@ -59,53 +59,47 @@ section { position: relative; padding: 72px 0; text-align: center; overflow: hid
 .env.open .top { transform: translateY(-100%); } .env.open .bot { transform: translateY(100%); }
 .env.open .ph { transform: scale(1.6); opacity: 0; }
 .env.open .ph::after { animation: none; opacity: 0; }
-/* կամար */
-.hero { padding: 54px 0 0; background: radial-gradient(120% 70% at 50% 0%, #fbf8f3, var(--cream) 60%, var(--paper)); }
-.arch { position: relative; width: min(80vw, 330px); margin: 0 auto; aspect-ratio: 3 / 4.15; background: var(--blue); color: #fff; border-radius: 999px 999px 6px 6px; padding: 16px; box-shadow: 0 22px 40px -26px rgba(30,50,85,.6); }
-.arch .in { height: 100%; border: 1px solid rgba(255,255,255,.55); border-radius: 999px 999px 4px 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 18px; }
-.arch .caps { color: #fff; font-size: 11px; letter-spacing: .34em; }
-.arch .nm { font-family: var(--script); font-size: clamp(40px, 12.5vw, 54px); line-height: 1.15; margin: 14px 0 6px; }
-.arch .nm i { display: block; font-style: normal; font-size: .62em; opacity: .85; }
-.arch .dt { font-size: 18px; letter-spacing: .24em; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.5); }
-.arch .star { color: rgba(255,255,255,.75); font-size: 13px; letter-spacing: .6em; margin-top: 10px; }
-.flow { display: block; width: min(92vw, 400px); margin: -46px auto 0; position: relative; z-index: 2; }
-.intro { padding: 30px 0 70px; }
-.intro .row { display: grid; grid-template-columns: 1fr 42%; gap: 16px; align-items: center; text-align: left; }
-.intro .tx { font-style: italic; font-size: 16px; line-height: 1.65; color: var(--blue-d); }
+/* բարակ կլոր գծեր ֆոնի վրա (ինչպես օրինակում) */
+.arc { position: absolute; border-radius: 50%; border: 1px solid var(--line); pointer-events: none; }
+.arc.a1 { width: 420px; height: 420px; left: -300px; top: 30px; } .arc.a2 { width: 380px; height: 380px; right: -270px; top: 160px; }
+.arc.a3 { width: 460px; height: 460px; right: -330px; top: -150px; } .arc.a4 { width: 360px; height: 360px; left: -250px; bottom: -150px; }
+section > .wrap { position: relative; z-index: 1; }
+/* վերնագիր և պատմություն */
+.hero { padding: 64px 0 40px; }
+.hero .nm { font-style: italic; font-size: clamp(40px, 12vw, 54px); line-height: 1.15; color: var(--ink); margin-top: 12px; }
+.hero .nm i { display: block; font-size: .6em; color: var(--blue); }
+.hero .dt { font-size: 15px; letter-spacing: .3em; color: var(--blue-d); margin-top: 6px; }
+.story { padding-top: 30px; }
 .pol { position: relative; background: #fff; padding: 8px 8px 26px; box-shadow: 0 14px 24px -14px rgba(30,40,60,.45); }
 .pol img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.pol::before { content: ""; position: absolute; left: 50%; top: -9px; width: 54px; height: 18px; margin-left: -27px; background: rgba(220,230,242,.85); transform: rotate(-4deg); }
-.t1 { transform: rotate(4deg); }
-/* պատմություն */
-.story { background: var(--paper); }
-.story::before, .story::after { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; border: 1px solid var(--line); }
-.story::before { left: -240px; top: 40px; } .story::after { right: -250px; bottom: -120px; }
 .pile { position: relative; height: 450px; margin-top: 30px; }
 .pile .pol { position: absolute; width: 56%; }
 .pile .a { left: 0; top: 0; transform: rotate(-6deg); } .pile .b { right: 0; top: 70px; transform: rotate(5deg); }
 .pile .c { left: 22%; top: 170px; width: 50%; transform: rotate(-2deg); }
-/* հետհաշվարկ */
-.band { background: var(--blue); color: #fff; }
-.band .caps { color: #fff; }
-.cdn { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
-.cdn div { width: 70px; padding: 12px 0; border: 1px solid rgba(255,255,255,.5); border-radius: 10px; }
-.cdn b { display: block; font-weight: 400; font-size: 30px; line-height: 1.1; }
-.cdn span { font-size: 11px; letter-spacing: .14em; opacity: .85; }
-.cal { margin: 36px auto 0; max-width: 300px; }
-.cal-h { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; margin-bottom: 12px; }
-.cal-g { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px 0; font-size: 14px; }
-.cal-g .cw { font-size: 11px; opacity: .7; }
-.cal-g .cd { position: relative; height: 32px; display: flex; align-items: center; justify-content: center; }
-.cal-g .cd.on span { position: relative; z-index: 1; color: var(--blue); font-weight: 700; }
-.cal-g .cd.on::before { content: "♥"; position: absolute; font-size: 34px; line-height: 1; color: #fff; }
-/* ծրագիր */
-.ev { background: #fbf9f5; border: 1px solid var(--line); border-radius: 14px; padding: 28px 20px 26px; margin-top: 18px; box-shadow: 0 10px 22px -18px rgba(30,40,60,.4); }
-.ev .evi { width: 42px; height: 42px; color: var(--blue); }
-.ev .caps { margin-top: 12px; font-size: 11px; }
-.ev h3 { font-weight: 400; font-size: 22px; line-height: 1.3; margin-top: 6px; }
-.ev .tm { font-size: 30px; color: var(--blue-d); margin-top: 6px; letter-spacing: .04em; }
-.ev .ad { font-size: 14px; color: var(--soft); }
-.ev a { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 9px 20px; border: 1px solid var(--blue); border-radius: 999px; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-d); text-decoration: none; }
+/* օրացույց և հետհաշվարկ */
+.cal { margin: 18px auto 0; max-width: 320px; }
+.cal-h { font-size: 15px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; }
+.cal-g { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px 0; font-size: 14px; color: var(--ink); }
+.cal-g .cw { font-size: 11px; font-weight: 700; letter-spacing: .05em; }
+.cal-g .cd { position: relative; height: 34px; display: flex; align-items: center; justify-content: center; }
+.cal-g .cd.on::before { content: ""; position: absolute; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--blue); }
+.cal-g .cd.on span { color: var(--blue-d); font-weight: 700; }
+.cdn { display: flex; justify-content: center; gap: 22px; margin-top: 34px; }
+.cdn b { display: block; font-weight: 400; font-style: italic; font-size: 34px; line-height: 1.1; color: var(--blue-d); }
+.cdn span { font-size: 11px; letter-spacing: .14em; color: var(--soft); }
+/* ծրագիր՝ ուղղահայաց գիծ սրտերով */
+.tl { position: relative; margin-top: 26px; text-align: left; }
+.tl::before { content: ""; position: absolute; left: 22px; top: 30px; bottom: 30px; width: 1px; background: var(--line); }
+.tr { display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; margin-top: 16px; }
+.tr .hc { position: relative; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: var(--cream); display: flex; align-items: center; justify-content: center; color: var(--blue); }
+.tr .hc svg { width: 18px; height: 18px; }
+.card { position: relative; background: #faf8f4; border-radius: 12px; padding: 16px 18px; box-shadow: 0 8px 20px -14px rgba(30,40,60,.35); }
+.card::after { content: ""; position: absolute; right: 14px; top: 14px; width: 4px; height: 4px; border-radius: 50%; background: var(--ink); }
+.card .tm { font-style: italic; font-size: 24px; line-height: 1.2; color: var(--ink); }
+.card .tt { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; margin-top: 4px; color: var(--ink); }
+.card .pl { display: inline-flex; align-items: flex-start; gap: 6px; font-size: 13px; color: var(--soft); margin-top: 6px; text-decoration: none; }
+.card a.pl { color: var(--blue-d); }
+.card .pl svg { flex: 0 0 13px; width: 13px; height: 13px; margin-top: 3px; }
 /* վերջ */
 .fin { background: var(--blue-d); color: #fff; padding-bottom: 80px; }
 .fin .cir { width: 170px; height: 170px; margin: 0 auto 26px; border-radius: 50%; border: 6px solid rgba(255,255,255,.9); background: center 22% / cover no-repeat; }
@@ -129,11 +123,11 @@ window.INVITE = {
   photos: ["p3.jpg", "p1.jpg", "p2.jpg"],
   text: { hy: "Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր կյանքի ամենակարևոր և հիշարժան օրը՝ մեր հարսանիքը։ Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։" },
   events: [
-    { time: "09:15", title: { hy: "Փեսայի տուն" }, place: { hy: "Փեսայի օջախ" }, address: { hy: "ք. Աշտարակ, Նոր Երզնկա" } },
-    { time: "12:30", title: { hy: "Հարսի տուն" }, place: { hy: "Հարսի օջախ" }, address: { hy: "ք. Գյումրի" } },
-    { time: "15:00", title: { hy: "Պսակադրություն" }, place: { hy: "Մուղնու Սուրբ Գևորգ եկեղեցի" }, address: { hy: "գ. Մուղնի, Արագածոտնի մարզ" },
+    { time: "09:15", title: { hy: "Փեսայի տուն" }, place: { hy: "ք. Աշտարակ, Նոր Երզնկա" } },
+    { time: "12:30", title: { hy: "Հարսի տուն" }, place: { hy: "ք. Գյումրի" } },
+    { time: "15:00", title: { hy: "Պսակադրություն" }, place: { hy: "Մուղնու Սուրբ Գևորգ եկեղեցի" },
       map: "https://yandex.ru/navi/org/surb_gevorg_yekeghetsi/189968352339?si=tqy1fhxrx331mah0tfrg33132w" },
-    { time: "17:00", title: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Նոր Դվին» ռեստորան" }, address: { hy: "ք. Վաղարշապատ, Աշտարակի խճուղի 1" },
+    { time: "17:00", title: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Նոր Դվին» ռեստորան, Վաղարշապատ" },
       map: "https://yandex.ru/navi/org/nor_dvin/215745175248?si=tqy1fhxrx331mah0tfrg33132w" }
   ]
 };
@@ -146,38 +140,33 @@ window.INVITE = {
   var n = K.names(), d = K.date, dd = pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear();
   var HEART = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>';
   function hr() { return '<div class="hr rv">' + HEART + "</div>"; }
-  // կապույտ վարդեր և տերևներ կամարի տակ
-  function flowers() {
-    function rose(x, y, r, c1, c2) {
-      return '<g transform="translate(' + x + " " + y + ')"><circle r="' + r + '" fill="' + c1 + '"/><path d="M' + (-r * .55) + " 0a" + r * .55 + " " + r * .55 + " 0 1 1 " + r * 1.1 + " 0a" + r * .4 + " " + r * .4 + " 0 1 1 " + (-r * .8) + " 0a" + r * .25 + " " + r * .25 + " 0 1 1 " + r * .5 + ' 0" fill="none" stroke="' + c2 + '" stroke-width="2"/><path d="M' + (-r * .9) + " " + r * .25 + "q" + r * .9 + " " + r * .9 + " " + r * 1.8 + ' 0" fill="none" stroke="' + c2 + '" stroke-width="1.6" opacity=".7"/></g>';
-    }
-    function leaf(x, y, a, s) { return '<path transform="translate(' + x + " " + y + ") rotate(" + a + ") scale(" + s + ')" d="M0 0q18-14 40 0q-22 14-40 0z" fill="#7f9a86"/>'; }
-    return '<svg class="flow" viewBox="0 0 400 110" aria-hidden="true">' + leaf(70, 70, 200, 1.2) + leaf(110, 84, 160, 1) + leaf(300, 72, -20, 1.2) + leaf(260, 88, 20, 1) + leaf(190, 92, 100, .9) +
-      rose(120, 62, 30, "#7d9cc6", "#3e5f8f") + rose(200, 54, 38, "#5f82b4", "#2c4a78") + rose(282, 64, 30, "#9db6d6", "#4d6c9b") + rose(160, 86, 20, "#c8d7ea", "#6f8bb3") + rose(244, 88, 20, "#c8d7ea", "#6f8bb3") + "</svg>";
-  }
+  var PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>';
+  function arcs(a, b) { return '<i class="arc ' + a + '"></i><i class="arc ' + b + '"></i>'; }
   function env() {
     return '<div class="env" id="env"><div class="half top"><div class="caps">Հարսանյաց հրավեր</div><div class="ttl">Our Wedding</div>' + hr().replace(" rv", "") + '<div class="sub">Սիրով հրավիրում ենք Ձեզ</div></div>' +
       '<div class="half bot"><p>Սեղմեք լուսանկարի վրա՝<br>հրավիրատոմսը բացելու համար</p>' + hr().replace(" rv", "") + "</div>" +
       '<button class="ph" id="ph" aria-label="Բացել հրավիրատոմսը" style="background-image:url(\'' + esc(C.photo) + '\')"><b>ԲԱՑԵԼ</b></button></div>';
   }
+  // անուններ, ամսաթիվ և բարեմաղթանք՝ առանց կամարի (ինչպես օրինակում)
   function hero() {
-    return '<section class="hero"><div class="arch rv"><div class="in"><div class="caps">Հրավիրում ենք Ձեզ</div><div class="nm">' + esc(n[0]) + "<i>&amp;</i>" + esc(n[1]) + '</div><div class="star">✦ ✦ ✦</div><div class="dt">' + dd + "</div></div></div>" + flowers() + "</section>" +
-      '<section class="intro"><div class="wrap"><div class="row"><div class="tx rv">' + esc(t(C.text)) + '</div><div class="pol t1 rv"><img src="' + esc(C.photos[0]) + '" alt=""></div></div></div></section>';
+    return '<section class="hero">' + arcs("a1", "a3") + '<div class="wrap"><div class="caps rv">Հարսանյաց հրավեր</div><div class="nm rv">' + esc(n[0]) + "<i>&amp;</i>" + esc(n[1]) + '</div><div class="dt rv">' + dd + "</div>" + hr() +
+      '<p class="p rv">' + esc(t(C.text)) + "</p></div></section>";
   }
   function story() {
     var p = C.photos;
-    return '<section class="story"><div class="wrap"><div class="caps rv">Մեր պատմությունը</div><h2 class="h2 rv">Երկու սիրտ,<br>մեկ պատմություն</h2>' + hr() +
-      '<div class="pile"><div class="pol a rv"><img src="' + esc(C.photo) + '" alt=""></div><div class="pol b rv"><img src="' + esc(p[1]) + '" alt=""></div><div class="pol c rv"><img src="' + esc(p[2]) + '" alt=""></div></div></div></section>';
+    return '<section class="story">' + arcs("a2", "a4") + '<div class="wrap"><div class="caps rv">Մեր պատմությունը</div><h2 class="h2 rv">Երկու սիրտ,<br>մեկ պատմություն</h2>' + hr() +
+      '<div class="pile"><div class="pol a rv"><img src="' + esc(C.photo) + '" alt=""></div><div class="pol b rv"><img src="' + esc(p[1]) + '" alt=""></div><div class="pol c rv"><img src="' + esc(p[0]) + '" alt=""></div></div></div></section>';
   }
   function countdown() {
-    return '<section class="band"><div class="wrap"><div class="caps rv">Մինչև հարսանիքը մնացել է</div><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
-      return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + '</div><div class="cal rv"><div class="cal-h">' + esc(u("months")[d.getMonth()]) + " " + d.getFullYear() + '</div><div class="cal-g">' + K.calendarCells() + "</div></div></div></section>";
+    return '<section>' + arcs("a1", "a3") + '<div class="wrap"><div class="cal rv"><div class="cal-h">' + esc(u("months")[d.getMonth()]) + " " + d.getFullYear() + '</div><div class="cal-g">' + K.calendarCells() + "</div></div>" +
+      '<div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) { return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div></div></section>";
   }
   function program() {
-    return '<section><div class="wrap"><div class="caps rv">' + esc(dd) + '</div><h2 class="h2 rv">Օրվա ծրագիր</h2>' + hr() + (C.events || []).map(function (e) {
-      return '<div class="ev rv">' + K.evIcon(e, "line-b") + '<div class="caps">' + esc(t(e.title)) + "</div><h3>" + esc(t(e.place)) + '</h3><div class="tm">' + esc(e.time) + '</div><div class="ad">' + esc(t(e.address)) + "</div>" +
-        (e.map ? '<a href="' + esc(e.map) + '" target="_blank" rel="noopener">Ինչպես հասնել ↗</a>' : "") + "</div>";
-    }).join("") + "</div></section>";
+    return '<section>' + arcs("a2", "a4") + '<div class="wrap">' + hr() + '<h2 class="h2 rv">Ծրագիր</h2><div class="tl">' + (C.events || []).map(function (e) {
+      var pl = PIN + "<span>" + esc(t(e.place)) + (e.address ? ", " + esc(t(e.address)) : "") + "</span>";
+      return '<div class="tr rv"><div class="hc">' + HEART + '</div><div class="card"><div class="tm">' + esc(e.time) + '</div><div class="tt">' + esc(t(e.title)) + "</div>" +
+        (e.map ? '<a class="pl" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + pl + "</a>" : '<div class="pl">' + pl + "</div>") + "</div></div>";
+    }).join("") + "</div></div></section>";
   }
   function fin() {
     return '<section class="fin"><div class="wrap"><div class="cir rv" style="background-image:url(\'' + esc(C.photos[0]) + '\')"></div><h2 class="h2 rv">Սիրով սպասում ենք Ձեզ</h2><div class="nm rv">' + esc(n.join(" & ")) + '</div><div class="dt rv">' + dd + "</div></div></section>" +
