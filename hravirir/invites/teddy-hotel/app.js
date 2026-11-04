@@ -136,8 +136,10 @@
   }
   function dress() {
     if (!C.dresscode) return "";
-    return '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + '</p><div class="dots rv">' +
-      (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div></div></section>";
+    // C.dresscode.image՝ հաճախորդի նկարը գույներով (կլոր նմուշների փոխարեն)
+    return '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("dress")) + '</h2><p class="rv">' + esc(t(C.dresscode.text)) + "</p>" +
+      (C.dresscode.image ? '<img class="dimg rv" src="' + esc(C.dresscode.image) + '" alt="">' : '<div class="dots rv">' +
+      (C.dresscode.colors || []).map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>") + "</div></section>";
   }
   function rsvp() {
     if (!C.rsvp) return "";
