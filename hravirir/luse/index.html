@@ -22,9 +22,10 @@
 <link rel="stylesheet" href="/invites/core/core.css">
 <link rel="stylesheet" href="/invites/teddy-hotel/style.css">
 <style>
-/* անունը՝ գեղագիր տառատեսակով. ձեռագիր գլխատառերում «ՈՒ»-ն և «Է»-ն սխալ էին կարդացվում */
-@font-face { font-family: "ArmAllegro"; src: url("/fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; }
-.nm { font-family: "ArmAllegro", serif !important; text-transform: none !important; }
+/* անունը՝ Adamathuz տառատեսակով. դիզայնի ձեռագիր տառերում «ՈՒ»-ն և «Է»-ն սխալ էին կարդացվում */
+@font-face { font-family: "Adamathuz"; src: url("/fonts/Adamathuz-Bold.woff2") format("woff2"); font-display: swap; }
+.nm { font-family: "Adamathuz", sans-serif !important; text-transform: uppercase !important; letter-spacing: .02em; }
+.dimg { box-shadow: none; border-radius: 0; max-width: 340px; }  /* սրտիկներ՝ թափանցիկ ֆոնով */
 </style>
 </head>
 <body>
@@ -43,7 +44,7 @@ window.INVITE = {
     { time: "17:30", title: { hy: "Տոնական երեկո" }, place: { hy: "«Աղբյուրակ» ռեստորանային համալիր" }, address: { hy: "Կոտայքի մարզ, ք. Հրազդան, Բանավան թաղամաս" },
       map: "https://yandex.ru/navi/org/aghbyurak/93704738607?si=tqy1fhxrx331mah0tfrg33132w" }
   ],
-  dresscode: { text: { hy: "Նուրբ վարդագույն, մարմնագույն, սպիտակ, շագանակագույն" }, colors: ["#f2b6c1", "#ead6b4", "#ffffff", "#8b5235"], image: "hearts.jpg" },
+  dresscode: { text: { hy: "Նուրբ վարդագույն, մարմնագույն, սպիտակ, շագանակագույն" }, colors: ["#f2b6c1", "#ead6b4", "#ffffff", "#8b5235"], image: "hearts.svg" },
   rsvp: { deadline: "2026-11-15", key: "luse" },
   music: "song.mp3"   // Nesrality — Happy Birthday (Music Box Version), Pixabay (անվճար լիցենզիա)
 };
