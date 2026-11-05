@@ -106,6 +106,18 @@ section > .wrap { position: relative; z-index: 1; }
 .fin .h2 { color: #fff; }
 .fin .nm { font-family: var(--script); font-size: 46px; line-height: 1.2; margin-top: 10px; }
 .fin .dt { letter-spacing: .26em; font-size: 14px; opacity: .85; margin-top: 8px; }
+/* հարցաթերթիկ */
+.rs { margin-top: 26px; text-align: left; }
+.rs .lb { display: block; font-size: 14px; color: var(--ink); margin: 20px 0 8px; }
+.rs input[type=text], .rs input:not([type]), .rs select { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--line); border-radius: 12px; background: #fbf9f5; font: 15px var(--serif); color: var(--ink); }
+.rs input::placeholder { color: #9aa3b2; font-style: italic; }
+.pills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pills label { position: relative; }
+.pills input { position: absolute; opacity: 0; }
+.pills span { display: flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; color: var(--ink); text-align: center; cursor: pointer; transition: .2s; }
+.pills input:checked + span { background: var(--blue); border-color: var(--blue); color: #fff; }
+.rs .send { display: block; width: 100%; height: 52px; margin-top: 26px; border: 0; border-radius: 999px; background: var(--blue-d); color: #fff; font: 14px var(--serif); letter-spacing: .18em; text-transform: uppercase; cursor: pointer; }
+.rsv .thanks { margin-top: 24px; } .rsv .thanks-t { font-style: italic; font-size: 26px; color: var(--blue-d); }
 .made { text-align: center; font-size: 11.5px; letter-spacing: .26em; padding: 18px 16px calc(80px + env(safe-area-inset-bottom, 0px)); color: var(--soft); background: var(--cream); }
 .made a { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .rv { transition: none; } .env .ph::after { animation: none; } }
@@ -123,13 +135,16 @@ window.INVITE = {
   photos: ["p3.jpg", "p1.jpg", "p2.jpg"],
   text: { hy: "Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր կյանքի ամենակարևոր և հիշարժան օրը՝ մեր հարսանիքը։ Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։" },
   events: [
-    { time: "09:15", title: { hy: "Փեսայի տուն" }, place: { hy: "ք. Աշտարակ, Նոր Երզնկա" } },
-    { time: "12:30", title: { hy: "Հարսի տուն" }, place: { hy: "ք. Գյումրի" } },
+    { time: "09:15", title: { hy: "Փեսայի տուն" }, place: { hy: "ք. Աշտարակ, Նոր Երզնկա" },
+      map: "https://yandex.ru/navi?whatshere%5Bzoom%5D=19&whatshere%5Bpoint%5D=44.386812,40.297696&si=vjkk6h3249dv1hcmz4mzkdxcam" },
+    { time: "12:30", title: { hy: "Հարսի տուն" }, place: { hy: "ք. Գյումրի" }, map: "https://yandex.ru/maps/-/CXrDq88N" },
     { time: "15:00", title: { hy: "Պսակադրություն" }, place: { hy: "Մուղնու Սուրբ Գևորգ եկեղեցի" },
       map: "https://yandex.ru/navi/org/surb_gevorg_yekeghetsi/189968352339?si=tqy1fhxrx331mah0tfrg33132w" },
     { time: "17:00", title: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Նոր Դվին» ռեստորան, Վաղարշապատ" },
       map: "https://yandex.ru/navi/org/nor_dvin/215745175248?si=tqy1fhxrx331mah0tfrg33132w" }
-  ]
+  ],
+  rsvp: { deadline: "2026-12-10", key: "rafi-arpi" },
+  music: "song.m4a"   // հաճախորդի ուղարկած ռիլսից (instagram.com/reel/DcQYJX6I9IV)
 };
 </script>
 <script src="/invites/core/core.js"></script>
@@ -168,15 +183,25 @@ window.INVITE = {
         (e.map ? '<a class="pl" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + pl + "</a>" : '<div class="pl">' + pl + "</div>") + "</div></div>";
     }).join("") + "</div></div></section>";
   }
+  // հարցաթերթիկ՝ օրինակի ոճով (կլոր կոճակներ՝ կողմ և մասնակցություն)
+  function rsvp() {
+    function pills(name, opts) { return '<div class="pills">' + opts.map(function (o, i) { return '<label><input type="radio" name="' + name + '" value="' + o[0] + '"' + (i ? "" : " checked") + "><span>" + o[1] + "</span></label>"; }).join("") + "</div>"; }
+    return '<section class="rsv">' + arcs("a1", "a4") + '<div class="wrap">' + hr() + '<h2 class="h2 rv">Սիրով սպասում ենք Ձեզ</h2><p class="p rv">Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև ' + esc(K.deadline()) + "</p>" +
+      '<form class="rs rv" id="rf"><label class="lb" for="rn">Անուն Ազգանուն *</label><input id="rn" name="name" required autocomplete="name" placeholder="Մուտքագրեք Ձեր անունն ու ազգանունը">' +
+      '<div class="lb">Ում կողմից եք հրավիրված *</div>' + pills("side", [["Հարսի կողմից", "Հարսի կողմից"], ["Փեսայի կողմից", "Փեսայի կողմից"]]) +
+      '<div class="lb">Հաստատեք Ձեր մասնակցությունը *</div>' + pills("attend", [["yes", "Այո, կմասնակցեմ"], ["no", "Ոչ, չեմ մասնակցի"]]) +
+      '<label class="lb" for="rg">Հյուրերի քանակ</label><select id="rg" name="guests">' + [1, 2, 3, 4, 5, 6].map(function (i) { return "<option>" + i + "</option>"; }).join("") + "</select>" +
+      '<button class="send" type="submit">Ուղարկել</button></form></div></section>';
+  }
   function fin() {
-    return '<section class="fin"><div class="wrap"><div class="cir rv" style="background-image:url(\'' + esc(C.photos[0]) + '\')"></div><h2 class="h2 rv">Սիրով սպասում ենք Ձեզ</h2><div class="nm rv">' + esc(n.join(" & ")) + '</div><div class="dt rv">' + dd + "</div></div></section>" +
+    return '<section class="fin"><div class="wrap"><div class="cir rv" style="background-image:url(\'' + esc(C.photos[0]) + '\')"></div><h2 class="h2 rv">Մինչ հանդիպում</h2><div class="nm rv">' + esc(n.join(" & ")) + '</div><div class="dt rv">' + dd + "</div></div></section>" +
       '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
   }
   var opened = false;
   function render() {
-    document.getElementById("app").innerHTML = (opened ? "" : env()) + "<main>" + hero() + story() + countdown() + program() + fin() + "</main>" + (opened ? K.chrome() : "");
+    document.getElementById("app").innerHTML = (opened ? "" : env()) + "<main>" + hero() + story() + countdown() + program() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     if (!opened) document.getElementById("ph").onclick = open; else K.reveal();
-    K.countdown(true); K.bindChrome(render);
+    K.countdown(true); K.rsvp(document.getElementById("rf")); K.bindChrome(render);
   }
   function open() {
     var e = document.getElementById("env"); if (e.classList.contains("open")) return;
