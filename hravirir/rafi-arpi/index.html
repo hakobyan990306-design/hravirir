@@ -144,7 +144,8 @@ window.INVITE = {
       map: "https://yandex.ru/navi/org/nor_dvin/215745175248?si=tqy1fhxrx331mah0tfrg33132w" }
   ],
   rsvp: { deadline: "2026-12-10", key: "rafi-arpi" },
-  music: "song.m4a"   // հաճախորդի ուղարկած ռիլսից (instagram.com/reel/DcQYJX6I9IV)
+  music: "song.m4a",  // հաճախորդի ուղարկած ռիլսից (instagram.com/reel/DcQYJX6I9IV)
+  musicStart: 5.8,     // ներածությունը բաց է թողնվում (հաճախորդի խնդրանքով)
 };
 </script>
 <script src="/invites/core/core.js"></script>
@@ -206,6 +207,12 @@ window.INVITE = {
   function open() {
     var e = document.getElementById("env"); if (e.classList.contains("open")) return;
     K.music.play(); e.classList.add("open"); document.body.classList.remove("locked"); opened = true;
+    // երգը սկսվում է ներածությունից հետո (C.musicStart վրկ), կրկնվելիս էլ՝ նույն տեղից
+    var au = K.music.audio, st = C.musicStart || 0;
+    if (au && st) {
+      var seek = function () { if (au.currentTime < st - .3) au.currentTime = st; };
+      ["loadedmetadata", "playing", "timeupdate"].forEach(function (ev) { au.addEventListener(ev, seek); }); seek();
+    }
     setTimeout(K.reveal, 500);
     document.getElementById("app").insertAdjacentHTML("beforeend", K.chrome()); K.bindChrome(render);
     setTimeout(function () { e.remove(); }, 1300);
