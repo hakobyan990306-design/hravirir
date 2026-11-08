@@ -5,13 +5,13 @@
   var TXT = {
     hy: { hint: "Սեղմեք տոմսին", hall: "Կինոդահլիճ «Սեր»", ticket: "Հրավիրատոմս", premiere: "Պրեմիերա", row: "Շարք 1 · Տեղ ♥", admit: "Մուտք երկուսի համար",
       story: "Սիրո պատմություն", starring: "Գլխավոր դերերում", director: "Ռեժիսոր", fate: "Ճակատագիր", musicBy: "Երաժշտություն", hearts: "Մեր սրտերը",
-      plot: "Սյուժե", left: "Հարսանիքին մնացել է", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", end: "Վերջ", fin: "Սա միայն սկիզբն է" },
+      plot: "Սյուժե", left: "Հարսանիքին մնացել է", program: "Օրվա ծրագիր", dress: "Դրեսկոդ", rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", end: "Վերջ", fin: "Սա միայն սկիզբն է", scroll: "ԹԵՐԹԵՔ ՆԵՐՔԵՎ" },   // արդեն մեծատառ՝ CSS uppercase-ը «և»-ն դարձնում է «ԵՒ»
     ru: { hint: "Нажмите на билет", hall: "Кинозал «Любовь»", ticket: "Пригласительный билет", premiere: "Премьера", row: "Ряд 1 · Место ♥", admit: "Вход для двоих",
       story: "История любви", starring: "В главных ролях", director: "Режиссёр", fate: "Судьба", musicBy: "Музыка", hearts: "Наши сердца",
-      plot: "Сюжет", left: "До свадьбы осталось", program: "Программа дня", dress: "Дресс-код", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", end: "Конец", fin: "Это только начало" },
+      plot: "Сюжет", left: "До свадьбы осталось", program: "Программа дня", dress: "Дресс-код", rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", end: "Конец", fin: "Это только начало", scroll: "Листайте вниз" },
     en: { hint: "Tap the ticket", hall: "Cinema «Love»", ticket: "Invitation ticket", premiere: "Premiere", row: "Row 1 · Seat ♥", admit: "Admit two",
       story: "A love story", starring: "Starring", director: "Directed by", fate: "Fate", musicBy: "Music by", hearts: "Our hearts",
-      plot: "The plot", left: "Counting down", program: "Schedule", dress: "Dress code", rsvp: "RSVP", rsvpLead: "Kindly reply by", end: "The end", fin: "It's only the beginning" }
+      plot: "The plot", left: "Counting down", program: "Schedule", dress: "Dress code", rsvp: "RSVP", rsvpLead: "Kindly reply by", end: "The end", fin: "It's only the beginning", scroll: "Scroll down" }
   };
   function x(k) { return (TXT[K.lang] || TXT.hy)[k]; }
   function dd() { var d = K.date; return pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear(); }
@@ -32,10 +32,12 @@
     return '<section class="hero" id="hero"><div class="ph"' + (C.photo ? ' style="background-image:url(\'' + esc(C.photo) + '\')"' : "") + '></div><div class="shade"></div><i class="bar t"></i><i class="bar b"></i>' +
       '<div class="wrap"><div class="tag">' + esc(x("story")) + '</div><h1 class="nm"><span>' + esc(n[0] || "") + '</span><em>&amp;</em><span>' + esc(n[1] || "") + "</span></h1>" +
       '<div class="prem">' + esc(x("premiere")) + " · " + dd() + "</div>" +
-      '<div class="credits"><span><small>' + esc(x("starring")) + "</small>" + esc(n.join(" · ")) + "</span><span><small>" + esc(x("director")) + "</small>" + esc(x("fate")) + "</span><span><small>" + esc(x("musicBy")) + "</small>" + esc(x("hearts")) + "</span></div></div></section>";
+      '<div class="credits"><span><small>' + esc(x("starring")) + "</small>" + esc(n.join(" · ")) + "</span><span><small>" + esc(x("director")) + "</small>" + esc(x("fate")) + "</span><span><small>" + esc(x("musicBy")) + "</small>" + esc(x("hearts")) + "</span></div></div>" +
+      // «Թերթեք ներքև»՝ որ հյուրը հասկանա, որ պաստառից ներքև դեռ կա
+      '<a class="scr" href="#plot" onclick="document.getElementById(\'plot\').scrollIntoView({behavior:\'smooth\'});return false"><span>' + esc(x("scroll")) + "</span><i></i></a></section>";
   }
   function story() {
-    return '<section><div class="wrap"><h2 class="h2 rv">' + esc(x("plot")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
+    return '<section id="plot"><div class="wrap"><h2 class="h2 rv">' + esc(x("plot")) + '</h2><p class="p rv">' + esc(t(C.text)) + "</p>" +
       '<div class="cal rv"><div class="cal-h">' + esc(u("months")[K.date.getMonth()]) + " " + K.date.getFullYear() + '</div><div class="cal-g">' + K.calendarCells() + "</div></div></div></section>";
   }
   function countdown() {
