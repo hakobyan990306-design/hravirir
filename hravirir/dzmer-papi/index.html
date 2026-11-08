@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ձմեռ Պապի ուղերձ</title>
+<meta name="description" content="Ձմեռ Պապի անհատական վիդեո-շնորհավորանք ձեր երեխայի համար՝ հայերեն, անունով։">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🎅 Ձմեռ Պապը կխոսի ձեր երեխայի հետ՝ անունով">
+<meta property="og:description" content="Անհատական վիդեո-ուղերձ հայերենով։ 4 000 ֏, երեխայի լուսանկարով՝ 5 000 ֏։">
+<meta property="og:image" content="https://hravirir.pages.dev/dzmer-papi/og.jpg">
+<meta property="og:url" content="https://hravirir.pages.dev/dzmer-papi/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --night:#0b1626; --night2:#13243b; --card:#ffffff; --ink:#1d2433; --muted:#5f6b7d;
+    --red:#c8323a; --red2:#a8262d; --gold:#f2c14e; --snow:#eef4fb; --line:#dde3ec;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font:17px/1.6 "Segoe UI", "Noto Sans Armenian", Arial, sans-serif; color:var(--ink); background:var(--snow); }
+  a { color:inherit; }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 16px; }
+
+  /* hero */
+  .hero { position:relative; overflow:hidden; color:#fff; text-align:center;
+    background:radial-gradient(ellipse at 50% 120%, #234a7a 0%, var(--night2) 45%, var(--night) 100%); padding:72px 0 96px; }
+  .hero h1 { font-size:clamp(32px, 6vw, 56px); line-height:1.15; margin:0 0 16px; }
+  .hero h1 span { color:var(--gold); }
+  .hero p { font-size:clamp(17px, 2.4vw, 21px); max-width:640px; margin:0 auto 28px; color:#d5e1f0; }
+  .santa { font-size:84px; line-height:1; margin-bottom:12px; filter:drop-shadow(0 6px 18px rgba(0,0,0,.4)); }
+  .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:700;
+    padding:15px 30px; border-radius:999px; border:0; font-size:18px; cursor:pointer; box-shadow:0 8px 24px rgba(200,50,58,.35); }
+  .btn:hover { background:var(--red2); }
+  .price-tag { margin-top:18px; color:var(--gold); font-weight:600; }
+  .snow { position:absolute; inset:0; pointer-events:none; }
+  .flake { position:absolute; top:-10px; color:#fff; opacity:.8; animation:fall linear infinite; }
+  @keyframes fall { to { transform:translateY(110vh) translateX(20px); } }
+  @media (prefers-reduced-motion: reduce) { .flake { display:none; } }
+
+  section { padding:64px 0; }
+  h2 { font-size:clamp(26px, 4vw, 34px); text-align:center; margin:0 0 32px; }
+  .steps { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+  .step { background:var(--card); border-radius:18px; padding:24px; box-shadow:0 4px 18px rgba(20,40,80,.07); }
+  .step .n { width:40px; height:40px; border-radius:50%; background:var(--red); color:#fff; display:grid; place-items:center; font-weight:700; margin-bottom:12px; }
+  .step h3 { margin:0 0 6px; font-size:19px; }
+  .step p { margin:0; color:var(--muted); font-size:16px; }
+  @media (max-width: 760px) { .steps { grid-template-columns:1fr; } }
+
+  .sample { background:var(--night2); color:#fff; }
+  .video-box { max-width:720px; margin:0 auto; aspect-ratio:16/9; border-radius:18px; overflow:hidden; background:#0a1220;
+    display:grid; place-items:center; text-align:center; color:#9fb0c8; border:2px solid rgba(242,193,78,.4); }
+  .video-box video { width:100%; height:100%; display:block; }
+
+  /* form */
+  .form-card { background:var(--card); border-radius:22px; padding:32px; box-shadow:0 10px 40px rgba(20,40,80,.1); max-width:720px; margin:0 auto; }
+  fieldset { border:0; margin:0 0 8px; padding:0; }
+  legend { font-weight:700; font-size:20px; margin-bottom:6px; color:var(--red); }
+  label { display:block; font-weight:600; margin:16px 0 6px; }
+  label small { display:block; font-weight:400; color:var(--muted); font-size:14px; }
+  .lead { color:var(--muted); font-weight:400; }
+  input[type=text], input[type=tel], select, textarea {
+    width:100%; padding:13px 14px; border:1.5px solid var(--line); border-radius:12px; font:inherit; background:#fbfcfe; color:var(--ink); }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--red); background:#fff; }
+  .prefix { display:flex; align-items:stretch; border:1.5px solid var(--line); border-radius:12px; overflow:hidden; background:#fbfcfe; }
+  .prefix span { background:#f1f4f9; padding:13px 12px; color:var(--muted); white-space:nowrap; font-size:16px; }
+  .prefix input { border:0 !important; border-radius:0 !important; }
+  .prefix:focus-within { border-color:var(--red); }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:0 16px; }
+  @media (max-width: 600px) { .two { grid-template-columns:1fr; } .form-card { padding:22px 16px; } .prefix { flex-direction:column; } }
+  .choices { display:flex; flex-wrap:wrap; gap:10px; }
+  .choices label { display:flex; align-items:center; gap:8px; margin:0; font-weight:500; padding:10px 14px; border:1.5px solid var(--line); border-radius:12px; cursor:pointer; }
+  .choices input { accent-color:var(--red); }
+  .consent { display:flex; gap:10px; align-items:flex-start; font-weight:400; font-size:15px; color:var(--muted); }
+  .consent input { margin-top:5px; accent-color:var(--red); }
+  .submit { width:100%; margin-top:24px; }
+  .msg { margin-top:18px; padding:16px; border-radius:12px; display:none; }
+  .msg.ok { display:block; background:#e9f7ee; color:#1d6b3a; }
+  .msg.err { display:block; background:#fdecec; color:#9b1c22; }
+
+  .faq { max-width:720px; margin:0 auto; }
+  details { background:var(--card); border-radius:14px; padding:16px 20px; margin-bottom:12px; box-shadow:0 2px 10px rgba(20,40,80,.05); }
+  summary { font-weight:600; cursor:pointer; }
+  details p { color:var(--muted); margin:10px 0 0; }
+  footer { text-align:center; color:var(--muted); padding:32px 16px 48px; font-size:15px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="snow" id="snow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="santa">🎅</div>
+    <h1>Ձմեռ Պապը կխոսի <span>ձեր երեխայի հետ</span>՝ անունով</h1>
+    <p>Անհատական վիդեո-շնորհավորանք հայերենով։ Ձմեռ Պապը կիմանա երեխայի անունը, տարիքը, թե ինչ է սիրում և ինչով է աչքի ընկել այս տարի։</p>
+    <a class="btn" href="#order">Պատվիրել ուղերձ</a>
+    <div class="price-tag" id="priceTop"></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Ինչպես է աշխատում</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Լրացնում եք ձևը</h3><p>Երեխայի անունը, տարիքը և մի քանի փաստ նրա մասին։ Ընդամենը 3 րոպե։</p></div>
+      <div class="step"><div class="n">2</div><h3>Մենք պատրաստում ենք</h3><p>Ձմեռ Պապը գրում է անհատական ուղերձ և ձայնագրում այն վիդեոյով։</p></div>
+      <div class="step"><div class="n">3</div><h3>Ստանում եք վիդեոն</h3><p>Ուղարկում ենք WhatsApp-ով, Viber-ով կամ Telegram-ով <span id="daysText">1–2 օրվա ընթացքում</span>։</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sample">
+  <div class="wrap">
+    <h2>Օրինակ</h2>
+    <div class="video-box" id="sampleBox">Այստեղ կլինի օրինակ վիդեոն 🎄</div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <h2>Պատվերի ձև</h2>
+    <form class="form-card" id="form" novalidate>
+      <fieldset>
+        <legend>🎁 Երեխայի մասին</legend>
+        <div class="two">
+          <div>
+            <label for="name">Երեխայի անունը *<small>հայերեն տառերով, ինչպես տանն են դիմում</small></label>
+            <input type="text" id="name" name="name" required maxlength="40" placeholder="Արամ">
+          </div>
+          <div>
+            <label for="age">Տարիքը *<small>Նոր տարվա պահին</small></label>
+            <select id="age" name="age" required></select>
+          </div>
+        </div>
+
+        <p class="lead" style="margin:22px 0 0">Գրեք այնպես, կարծես Ձմեռ Պապը ինքն է ասում երեխային. շարունակեք նախադասությունը։</p>
+
+        <label for="interests">Ինչ է սիրում<small>օր.՝ «նկարել և դինոզավրեր», «ֆուտբոլ խաղալ»</small></label>
+        <div class="prefix"><span>Դու սիրում ես …</span><input type="text" id="interests" name="interests" maxlength="120" placeholder="նկարել և դինոզավրեր"></div>
+
+        <label for="achievement">Ինչով է աչքի ընկել այս տարի<small>օր.՝ «սովորեցիր կարդալ», «գնացիր առաջին դասարան»</small></label>
+        <div class="prefix"><span>Այս տարի դու …</span><input type="text" id="achievement" name="achievement" maxlength="120" placeholder="սովորեցիր կարդալ"></div>
+
+        <label for="gift">Ինչ նվեր է ուզում<small>օր.՝ «կարմիր հեծանիվ», «մեծ Լեգո»</small></label>
+        <div class="prefix"><span>Դու ուզում ես …</span><input type="text" id="gift" name="gift" maxlength="80" placeholder="կարմիր հեծանիվ"></div>
+
+        <label>Ձմեռ Պապը խոստանա՞ այդ նվերը</label>
+        <div class="choices">
+          <label><input type="radio" name="giftPromise" value="Այո" checked> Այո, խոստանա</label>
+          <label><input type="radio" name="giftPromise" value="Ոչ"> Ոչ, թող գաղտնի մնա</label>
+        </div>
+
+        <label for="advice">Ինչ խնդրի Ձմեռ Պապը<small>օր.՝ «ժամանակին քնես», «չվիճես եղբորդ հետ»</small></label>
+        <div class="prefix"><span>Խնդրում եմ, որ դու …</span><input type="text" id="advice" name="advice" maxlength="120" placeholder="ժամանակին քնես"></div>
+
+        <label for="family">Ում բարևի<small>օր.՝ «մայրիկին ու տատիկին»</small></label>
+        <div class="prefix"><span>Բարևներս փոխանցիր …</span><input type="text" id="family" name="family" maxlength="80" placeholder="մայրիկին ու հայրիկին"></div>
+
+        <label for="letterFile">Երեխայի լուսանկարը 📷<small>Ձմեռ Պապը այն կպահի ձեռքում՝ ոսկե շրջանակի մեջ։ Լավագույնը՝ լավ լուսավորված, դեմքը պարզ երևում է, քառակուսի կադր (ըստ ցանկության)</small></label>
+        <input type="file" id="letterFile" accept="image/*">
+        <input type="hidden" name="letterType" value="photo">
+        <img id="letterPreview" alt="" style="display:none;max-width:180px;max-height:180px;margin-top:10px;border-radius:10px;border:1.5px solid var(--line)">
+
+        <label for="notes">Այլ ցանկություններ<small>ինչ-որ հատուկ բան, որ Ձմեռ Պապն ասի (ազատ ձևով)</small></label>
+        <textarea id="notes" name="notes" rows="3" maxlength="500"></textarea>
+      </fieldset>
+
+      <fieldset style="margin-top:28px">
+        <legend>📞 Ձեր տվյալները</legend>
+        <div class="two">
+          <div>
+            <label for="parent">Ձեր անունը *</label>
+            <input type="text" id="parent" name="parent" required maxlength="60">
+          </div>
+          <div>
+            <label for="phone">Հեռախոս *</label>
+            <input type="tel" id="phone" name="phone" required maxlength="30" placeholder="+374 ...">
+          </div>
+        </div>
+        <label>Որտեղ ուղարկել վիդեոն</label>
+        <div class="choices">
+          <label><input type="radio" name="channel" value="WhatsApp" checked> WhatsApp</label>
+          <label><input type="radio" name="channel" value="Viber"> Viber</label>
+          <label><input type="radio" name="channel" value="Telegram"> Telegram</label>
+          <label><input type="radio" name="channel" value="Instagram"> Instagram</label>
+        </div>
+        <label class="consent"><input type="checkbox" id="consent" required>
+          Համաձայն եմ, որ երեխայի մասին տվյալները օգտագործվեն միայն այս վիդեոն պատրաստելու համար։</label>
+      </fieldset>
+
+      <button class="btn submit" type="submit" id="send">Ուղարկել պատվերը 🎄</button>
+      <div class="msg" id="msg"></div>
+    </form>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Հաճախ տրվող հարցեր</h2>
+    <div class="faq">
+      <details><summary>Որքա՞ն է տևում վիդեոն։</summary><p>Մոտ 1 րոպե։ Ձմեռ Պապը դիմում է երեխային անունով և խոսում հենց նրա մասին։</p></details>
+      <details><summary>Ինչպե՞ս վճարել։</summary><p id="payFaq"></p></details>
+      <details><summary>Ի՞նչ կլինի տվյալների հետ։</summary><p>Տվյալները օգտագործվում են միայն վիդեոն պատրաստելու համար և չեն փոխանցվում երրորդ անձանց։</p></details>
+      <details><summary>Կարո՞ղ եմ փոփոխություն խնդրել։</summary><p>Այո, եթե ինչ-որ բան ճիշտ չէ (օրինակ՝ անվան արտասանությունը), մենք անվճար կուղղենք։</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div id="contactLine"></div>
+  © <span id="year"></span> Ձմեռ Պապի ուղերձ
+</footer>
+
+<script>
+  /* ====== ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ — փոխեք միայն այստեղ ====== */
+  var CONFIG = {
+    // Google Apps Script-ի «Web app» հղումը (տես ՈՒՂԵՑՈՒՅՑ.md, քայլ 4)
+    // դատարկ է → պատվերը բացվում է WhatsApp-ում՝ պատրաստի հաղորդագրությամբ
+    ORDER_ENDPOINT: '',
+    WHATSAPP: '37499741574',
+    PRICE: '4 000 ֏',
+    PRICE_PHOTO: '5 000 ֏',
+    DAYS: '1–2 օրվա ընթացքում',
+    PAYMENT: 'Պատվերից հետո WhatsApp-ով կուղարկենք վճարման տվյալները։',
+    CONTACT: 'WhatsApp / Viber / զանգ՝ +374 99 741 574',
+    SAMPLE_VIDEO: '' // օր.՝ 'sample.mp4' (դրեք site թղթապանակում)
+  };
+  /* ================================================= */
+
+  var $ = function (id) { return document.getElementById(id); };
+  $('priceTop').textContent = 'Գինը՝ ' + CONFIG.PRICE + ' · երեխայի լուսանկարով՝ ' + CONFIG.PRICE_PHOTO;
+  $('daysText').textContent = CONFIG.DAYS;
+  $('payFaq').textContent = CONFIG.PAYMENT;
+  $('contactLine').textContent = CONFIG.CONTACT;
+  $('year').textContent = new Date().getFullYear();
+  if (CONFIG.SAMPLE_VIDEO) {
+    $('sampleBox').innerHTML = '<video controls playsinline preload="metadata" src="' + CONFIG.SAMPLE_VIDEO + '"></video>';
+  }
+  var ageSel = $('age');
+  ageSel.innerHTML = '<option value="">Ընտրեք</option>';
+  for (var i = 1; i <= 14; i++) ageSel.innerHTML += '<option>' + i + '</option>';
+
+  // ձյուն
+  (function () {
+    var box = $('snow');
+    for (var i = 0; i < 40; i++) {
+      var f = document.createElement('span');
+      f.className = 'flake'; f.textContent = '❄';
+      f.style.left = Math.random() * 100 + '%';
+      f.style.fontSize = (8 + Math.random() * 14) + 'px';
+      f.style.animationDuration = (8 + Math.random() * 12) + 's';
+      f.style.animationDelay = (-Math.random() * 20) + 's';
+      box.appendChild(f);
+    }
+  })();
+
+  // նկարը փոքրացնում ենք (մինչև 1600px, JPEG), որ արագ ուղարկվի
+  var letterData = '';
+  $('letterFile').addEventListener('change', function () {
+    var f = this.files[0]; letterData = '';
+    $('letterPreview').style.display = 'none';
+    if (!f) return;
+    var img = new Image();
+    img.onload = function () {
+      var r = Math.min(1, 1600 / Math.max(img.width, img.height));
+      var c = document.createElement('canvas');
+      c.width = Math.round(img.width * r); c.height = Math.round(img.height * r);
+      var g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height);
+      g.drawImage(img, 0, 0, c.width, c.height);
+      letterData = c.toDataURL('image/jpeg', 0.85);
+      $('letterPreview').src = letterData; $('letterPreview').style.display = 'block';
+    };
+    img.src = URL.createObjectURL(f);
+  });
+
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = $('msg');
+    msg.className = 'msg';
+    var data = {};
+    new FormData(e.target).forEach(function (v, k) { if (typeof v === 'string') data[k] = v.trim(); });
+    if (letterData) data.letterImage = letterData; else delete data.letterType;
+    if (!data.name || !data.age || !data.parent || !data.phone) {
+      msg.className = 'msg err'; msg.textContent = 'Խնդրում ենք լրացնել * նշված դաշտերը։'; return;
+    }
+    if (!$('consent').checked) {
+      msg.className = 'msg err'; msg.textContent = 'Խնդրում ենք նշել համաձայնության վանդակը։'; return;
+    }
+    data.sentAt = new Date().toISOString();
+    var btn = $('send'); btn.disabled = true; btn.textContent = 'Ուղարկվում է…';
+
+    var price = letterData ? CONFIG.PRICE_PHOTO : CONFIG.PRICE;
+    var done = function (viaWa) {
+      msg.className = 'msg ok';
+      msg.innerHTML = '<b>Շնորհակալություն 🎄</b><br>' +
+        (viaWa ? 'Բացվեց WhatsApp-ը՝ պատրաստի հաղորդագրությամբ։ Սեղմեք «Ուղարկել»' +
+          (letterData ? ' և նույն չաթում ուղարկեք երեխայի լուսանկարը։' : '։') + '<br>' : 'Պատվերն ընդունված է։<br>') +
+        'Գինը՝ ' + price + '։ ' + CONFIG.PAYMENT;
+      btn.disabled = false; btn.textContent = 'Ուղարկել պատվերը 🎄';
+    };
+
+    if (!CONFIG.ORDER_ENDPOINT) {
+      var L = function (k, v) { return v ? k + ': ' + v + '\n' : ''; };
+      var text = '🎅 Նոր պատվեր՝ Ձմեռ Պապի ուղերձ\n\n' +
+        L('Երեխա', data.name) + L('Տարիք', data.age) +
+        L('Սիրում է', data.interests) + L('Այս տարի', data.achievement) +
+        L('Նվեր', data.gift) + L('Խոստանալ նվերը', data.giftPromise) +
+        L('Խնդրանք', data.advice) + L('Բարևներ', data.family) +
+        L('Այլ ցանկություններ', data.notes) +
+        L('Լուսանկար', letterData ? 'այո, կուղարկեմ այս չաթում' : 'ոչ') +
+        '\n' + L('Ծնող', data.parent) + L('Հեռախոս', data.phone) + L('Ստանալ', data.channel) +
+        L('Գին', price);
+      var url = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(text);
+      (window.__go || function (u) { location.href = u; })(url);
+      done(true);
+      return;
+    }
+
+    fetch(CONFIG.ORDER_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data)
+    }).then(function () { done(false); e.target.reset(); letterData = ''; $('letterPreview').style.display = 'none'; }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Ուղարկել պատվերը 🎄';
+      msg.className = 'msg err';
+      msg.textContent = 'Չհաջողվեց ուղարկել։ Ստուգեք ինտերնետը և փորձեք նորից, կամ զանգահարեք մեզ։';
+    });
+  });
+</script>
+</body>
+</html>
