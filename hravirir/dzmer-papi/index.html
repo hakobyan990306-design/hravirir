@@ -309,7 +309,7 @@
   <div class="wrap center">
     <span class="eyebrow">Պատվերի ձև</span>
     <h2>Պատմեք մեզ ձեր փոքրիկի մասին</h2>
-    <p class="lead">Լրացրեք ձևը, և պատվերը կբացվի WhatsApp-ում՝ պատրաստի հաղորդագրությամբ։</p>
+    <p class="lead">Լրացրեք ձևը, և մենք կկապվենք ձեզ հետ։</p>
 
     <form class="form-card" id="form" novalidate style="text-align:left">
       <fieldset>
@@ -432,13 +432,13 @@
 <script>
   /* ====== ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ — փոխեք միայն այստեղ ====== */
   var CONFIG = {
-    // Google Apps Script-ի «Web app» հղումը. դատարկ է → պատվերը բացվում է WhatsApp-ում
-    ORDER_ENDPOINT: '',
+    // Google Apps Script-ի «Web app» հղումը (պատվերները գնում են «Ձմեռ Պապի պատվերներ» աղյուսակ)
+    ORDER_ENDPOINT: 'https://script.google.com/macros/s/AKfycbwuo7ajka4QADPpnIbuP89XQqq5x6eMXC5bkopchMqCqTjFKjMYmjY77vVgeIUo1s14/exec',
     WHATSAPP: '37499741574',
     PRICE: '4 000 ֏',
     PRICE_PHOTO: '5 000 ֏',
     DAYS: '1–2 օրվա ընթացքում',
-    PAYMENT: 'Պատվերից հետո WhatsApp-ով կուղարկենք վճարման տվյալները։',
+    PAYMENT: 'Պատվերից հետո կկապվենք ձեզ հետ և կուղարկենք վճարման տվյալները։',
     CONTACT: 'WhatsApp / Telegram / զանգ՝ +374 99 741 574'
   };
   /* ================================================= */
@@ -534,41 +534,28 @@
     var btn = $('send'); btn.disabled = true; btn.textContent = 'Ուղարկվում է…';
 
     var price = letterData ? CONFIG.PRICE_PHOTO : CONFIG.PRICE;
-    var done = function (viaWa) {
-      msg.className = 'msg ok';
-      msg.innerHTML = '<b>Շնորհակալություն 🎄</b><br>' +
-        (viaWa ? 'Բացվեց WhatsApp-ը՝ պատրաստի հաղորդագրությամբ։ Սեղմեք «Ուղարկել»' +
-          (letterData ? ' և նույն չաթում ուղարկեք երեխայի լուսանկարը։' : '։') + '<br>' : 'Պատվերն ընդունված է։<br>') +
-        'Գինը՝ ' + price + '։ ' + CONFIG.PAYMENT;
-      btn.disabled = false; btn.textContent = 'Ուղարկել պատվերը 🎄';
+    var reset = function () { btn.disabled = false; btn.textContent = 'Ուղարկել պատվերը 🎄'; };
+    var fail = function () {
+      reset();
+      msg.className = 'msg err';
+      msg.textContent = 'Չհաջողվեց ուղարկել։ Ստուգեք ինտերնետը և փորձեք նորից, կամ զանգահարեք մեզ՝ +374 99 741 574։';
     };
-
-    if (!CONFIG.ORDER_ENDPOINT) {
-      var L = function (k, v) { return v ? k + ': ' + v + '\n' : ''; };
-      var text = '🎅 Նոր պատվեր՝ Ձմեռ Պապի ուղերձ\n\n' +
-        L('Երեխա', data.name) + L('Տարիք', data.age) +
-        L('Սիրում է', data.interests) + L('Այս տարի', data.achievement) +
-        L('Նվեր', data.gift) + L('Խոստանալ նվերը', data.giftPromise) +
-        L('Խնդրանք', data.advice) + L('Բարևներ', data.family) +
-        L('Այլ ցանկություններ', data.notes) +
-        L('Լուսանկար', letterData ? 'այո, կուղարկեմ այս չաթում' : 'ոչ') +
-        '\n' + L('Ծնող', data.parent) + L('Հեռախոս', data.phone) + L('Ստանալ', data.channel) +
-        L('Գին', price);
-      var url = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(text);
-      (window.__go || function (u) { location.href = u; })(url);
-      done(true);
-      return;
-    }
+    if (!CONFIG.ORDER_ENDPOINT) { fail(); return; }
 
     fetch(CONFIG.ORDER_ENDPOINT, {
-      method: 'POST', mode: 'no-cors',
+      method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(data)
-    }).then(function () { done(false); e.target.reset(); letterData = ''; $('ph').innerHTML = '📷'; setTotal(); }).catch(function () {
-      btn.disabled = false; btn.textContent = 'Ուղարկել պատվերը 🎄';
-      msg.className = 'msg err';
-      msg.textContent = 'Չհաջողվեց ուղարկել։ Ստուգեք ինտերնետը և փորձեք նորից, կամ գրեք մեզ WhatsApp-ով։';
-    });
+    }).then(function (r) { return r.json(); }).then(function (res) {
+      if (!res || !res.ok) throw new Error(res && res.error);
+      reset();
+      msg.className = 'msg ok';
+      msg.innerHTML = '<b>Շնորհակալություն, պատվերն ընդունված է 🎄</b><br>' +
+        'Շուտով կկապվենք ձեզ հետ ' + (data.phone ? 'այս համարով՝ ' + data.phone : '') + '։<br>' +
+        'Գինը՝ ' + price + '։ ' + CONFIG.PAYMENT;
+      e.target.reset(); letterData = ''; $('ph').innerHTML = '📷'; $('upTitle').textContent = 'Ընտրել լուսանկար'; setTotal();
+      msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).catch(fail);
   });
 </script>
 </body>

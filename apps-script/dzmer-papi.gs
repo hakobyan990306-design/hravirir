@@ -433,7 +433,7 @@ function setupSheet() {
     .requireValueInList([ST.NEW, ST.VOICE, ST.RENDER, ST.DONE, ST.SENT, ST.ERR], true).build();
   sh.getRange(2, COL.status, 999, 1).setDataValidation(rule);
   folder_();
-  SpreadsheetApp.getUi().alert('Աղյուսակը պատրաստ է ✅\nՎիդեոները կպահվեն Google Drive-ի «Ձմեռ Պապ — ֆայլեր» թղթապանակում։');
+  try { SpreadsheetApp.getUi().alert('Աղյուսակը պատրաստ է ✅\nՎիդեոները կպահվեն Google Drive-ի «Ձմեռ Պապ — ֆայլեր» թղթապանակում։'); } catch (e) { /* web app-ից կանչելիս UI չկա */ }
 }
 
 function setupEleven() {
