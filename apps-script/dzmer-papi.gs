@@ -250,8 +250,9 @@ function doPost(e) {
     };
     var text = SantaText.generate(order, { tags: true });
     sh.appendRow([new Date(), ST.NEW, d.name, d.age, d.interests, d.achievement, d.gift,
-      d.giftPromise, d.advice, d.family, d.notes, d.parent, d.phone, d.channel, text,
+      d.giftPromise, d.advice, d.family, d.notes, d.parent, d.phone ? "'" + d.phone : '', d.channel, text,
       '', '', '', '', letterUrl, letterType]);
+    sh.getRange(sh.getLastRow(), COL.text).setWrapStrategy(SpreadsheetApp.WrapStrategy.CLIP);
     telegram_('🎅 Նոր պատվեր\n' + d.name + ', ' + d.age + ' տարեկան' +
       (letterUrl ? '\n✉ Կա նամակ/նկար՝ ' + letterUrl : '') + '\n' +
       'Ծնող՝ ' + d.parent + ' ' + d.phone + ' (' + d.channel + ')' +
@@ -428,7 +429,7 @@ function setupSheet() {
     .setFontWeight('bold').setBackground('#c8323a').setFontColor('#ffffff');
   sh.setFrozenRows(1);
   sh.setColumnWidth(COL.text, 420);
-  sh.getRange(2, COL.text, 999, 1).setWrap(true).setVerticalAlignment('top');
+  sh.getRange(2, COL.text, 999, 1).setWrapStrategy(SpreadsheetApp.WrapStrategy.CLIP);
   var rule = SpreadsheetApp.newDataValidation()
     .requireValueInList([ST.NEW, ST.VOICE, ST.RENDER, ST.DONE, ST.SENT, ST.ERR], true).build();
   sh.getRange(2, COL.status, 999, 1).setDataValidation(rule);
