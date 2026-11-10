@@ -24,9 +24,9 @@
 <style>
 /* Տարբերակ 3 · «Կեսգիշեր» — ոսկե ժամացույց 23:55-ին, սլաքները հասնում են 12-ին, հրավառություն և «2027».
    Էջը՝ շամպայնի/փղոսկրի գույնով, բորդո բաժիններով (գլխավոր, հետհաշվարկ, ավարտ) */
-:root { --bg: #f7efe2; --bg2: #3a0711; --ink: #3a0711; --soft: rgba(58,7,17,.72); --line: rgba(150,105,40,.38); --gold: #9c6a26; --card: #fffaf0;
-  --gold-grad: linear-gradient(100deg, #7a4c18 0%, #c08a3a 30%, #7f5019 55%, #c99a4c 75%, #7a4c18 100%); }
-.dark { --ink: #f8ecd6; --soft: rgba(248,236,214,.72); --line: rgba(226,186,112,.45); --gold: #e2ba70; --card: rgba(255,240,210,.05);
+/* բաց ֆոնի վրա ոսկին մուգ է՝ որ տառերը լավ կարդացվեն (բաց երանգները փղոսկրի վրա «կորչում» էին) */
+:root { --bg: #f7efe2; --bg2: #3a0711; --ink: #3a0711; --soft: rgba(58,7,17,.75); --line: rgba(150,105,40,.38); --gold: #7f5019; --card: #fffaf0;
+  --gold-grad: linear-gradient(100deg, #5e360d 0%, #8f5f22 35%, #6b3f12 60%, #93652a 82%, #5e360d 100%); }.dark { --ink: #f8ecd6; --soft: rgba(248,236,214,.72); --line: rgba(226,186,112,.45); --gold: #e2ba70; --card: rgba(255,240,210,.05);
   --gold-grad: linear-gradient(100deg, #b9853a 0%, #f9e3a6 28%, #d4a04c 52%, #fff1c9 72%, #b9853a 100%);
   background: radial-gradient(100% 70% at 50% 30%, #5a0c1c, #3a0711 60%, #24040b) ; color: var(--ink); }
 body { color: var(--ink); }
