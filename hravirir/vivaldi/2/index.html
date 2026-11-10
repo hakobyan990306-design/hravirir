@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14030a">
+<title>Vivaldi Hall · Ամանորյա գալա ընթրիք 2027</title>
+<meta name="hravirir-expires" content="2027-01-15">
+<meta name="robots" content="noindex">
+<meta name="description" content="Ամանորյա գալա ընթրիք · 31.12.2026, 22:00 · Վիվալդի Հոլլ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hravirir.pages.dev/vivaldi/2/">
+<meta property="og:title" content="Vivaldi Hall · New Year Gala 2027">
+<meta property="og:site_name" content="HRAVIRIR.AM">
+<meta property="og:description" content="Ամանորյա գալա ընթրիք · 31 դեկտեմբերի, 22:00">
+<meta property="og:image" content="https://hravirir.pages.dev/vivaldi/og1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Noto+Sans+Armenian:wght@300;400;500;600&display=swap">
+<link rel="preload" href="../hall2.jpg" as="image">
+<link rel="stylesheet" href="../gala.css">
+<style>
+/* Տարբերակ 2 · «Վարագույր» — թատերական բորդո թավշյա վարագույր ոսկե ծոպերով, բացվում է, բեմի լուսարձակներ, շոուի տրամադրություն */
+:root { --bg: #1d050b; --bg2: #0f0205; --card: rgba(255,230,190,.045); }
+.env { position: fixed; inset: 0; z-index: 50; cursor: pointer; -webkit-tap-highlight-color: transparent; overflow: hidden; }
+.cur { position: absolute; top: 0; bottom: 0; width: 51%; z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35), transparent 22%, transparent 70%, rgba(0,0,0,.45)),
+    repeating-linear-gradient(90deg, #4a0612 0, #8e1428 5%, #b51f35 8%, #7a0f20 12%, #3c040d 16.66%);
+  box-shadow: inset 0 0 60px rgba(0,0,0,.6); transition: transform 1.9s cubic-bezier(.7,0,.25,1); }
+.cur.l { left: 0; transform-origin: 0 50%; } .cur.r { right: 0; transform-origin: 100% 50%; }
+.cur::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 26px;
+  background: repeating-linear-gradient(90deg, #f3d58f 0 2px, #b9853a 2px 4px, transparent 4px 6px), linear-gradient(#d6a24e, #8a5a20);
+  -webkit-mask: linear-gradient(#000 30%, transparent); mask: linear-gradient(#000 30%, transparent); }
+.cur.l { box-shadow: inset -20px 0 40px rgba(0,0,0,.55); } .cur.r { box-shadow: inset 20px 0 40px rgba(0,0,0,.55); }
+.val { position: absolute; left: -4%; right: -4%; top: 0; height: 21svh; z-index: 3; transition: transform 1.6s cubic-bezier(.7,0,.25,1) .5s;
+  background: repeating-linear-gradient(90deg, #5a0815 0, #a11a2f 3%, #6a0a1a 6%);
+  -webkit-mask: radial-gradient(60% 100% at 25% 0, #000 98%, transparent 100%) 0 0 / 50% 100% repeat-x; mask: radial-gradient(60% 100% at 25% 0, #000 98%, transparent 100%) 0 0 / 50% 100% repeat-x;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.6)); }
+.trim { position: absolute; left: 0; right: 0; top: 0; height: 21svh; z-index: 4; pointer-events: none; transition: transform 1.6s cubic-bezier(.7,0,.25,1) .5s; }
+.trim .lg { position: absolute; left: 50%; top: 2.6svh; width: min(46vw, 200px); transform: translateX(-50%); filter: drop-shadow(0 3px 10px rgba(0,0,0,.7)); }
+.plq { position: absolute; left: 50%; top: 50%; z-index: 5; width: min(80vw, 330px); transform: translate(-50%, -42%); text-align: center; padding: 30px 22px 26px;
+  background: linear-gradient(160deg, #2a0510, #14030a); border: 1px solid #d6a24e; border-radius: 16px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.9), inset 0 0 0 5px #14030a, inset 0 0 0 6px rgba(214,162,78,.5); transition: opacity .6s, transform .8s; }
+.plq .y { font: 500 13px var(--latin); letter-spacing: .44em; padding-left: .44em; color: var(--gold); }
+.plq .n { font: 600 64px/1 var(--latin); margin: 8px 0 4px; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.plq .t { font: 400 clamp(24px, 7vw, 31px)/1.2 var(--script); white-space: nowrap; color: var(--g1); }
+.plq .d { margin-top: 12px; font: 500 12.5px var(--sans); letter-spacing: .28em; color: var(--ink); }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(6svh + env(safe-area-inset-bottom, 0px)); z-index: 5; text-align: center; font: 500 11px var(--sans); letter-spacing: .3em; color: var(--g1); text-shadow: 0 2px 8px #000; animation: hint 2.2s ease-in-out infinite; transition: opacity .4s; }
+@keyframes hint { 50% { opacity: .35; } }
+.env .tie { position: absolute; top: 56%; width: 30px; height: 14px; z-index: 2; border-radius: 7px; background: var(--gold-grad); box-shadow: 0 4px 10px rgba(0,0,0,.5); }
+.env .tie.l { left: 4%; } .env .tie.r { right: 4%; }
+.env.go .cur.l { transform: translateX(-88%) scaleX(.55); } .env.go .cur.r { transform: translateX(88%) scaleX(.55); }
+.env.go .val, .env.go .trim { transform: translateY(-110%); }
+.env.go .plq { opacity: 0; transform: translate(-50%, -42%) scale(.92); }
+.env.go .hint, .env.go .tie { opacity: 0; animation: none; }
+.env.out { opacity: 0; transition: opacity .6s; pointer-events: none; }
+
+/* գլխավոր՝ բեմ, լուսարձակներ */
+.hero .bgp { position: absolute; inset: 0; background: url("../hall2.jpg") center 40% / cover; filter: saturate(1.1); }
+.hero .bgp::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,2,5,.75), rgba(29,5,11,.78) 50%, #1d050b 100%); }
+.hero .spot { position: absolute; top: -10%; width: 70%; height: 120%; z-index: 1; pointer-events: none; mix-blend-mode: screen; opacity: .55;
+  background: linear-gradient(180deg, rgba(255,228,170,.55), rgba(255,228,170,0) 75%); clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); animation: sp 7s ease-in-out infinite alternate; }
+.hero .spot.a { left: -18%; transform-origin: 50% 0; transform: rotate(-16deg); }
+.hero .spot.b { right: -18%; transform-origin: 50% 0; transform: rotate(16deg); animation-delay: -3.5s; }
+@keyframes sp { from { opacity: .3; } to { opacity: .6; } }
+.lead, .show, .menu, .book { background: radial-gradient(90% 60% at 50% 0, rgba(181,31,53,.25), transparent 70%), var(--bg); }
+.show .a .ph { box-shadow: 0 0 40px rgba(243,197,107,.18); }
+.fin { background: var(--bg2); } .made { background: var(--bg2); }
+@media (prefers-reduced-motion: reduce) { .hero .spot { animation: none; } }
+</style>
+</head>
+<body class="locked">
+<canvas class="fx" id="fx" style="z-index:60"></canvas>
+<main id="main"></main>
+<div class="env" id="env" role="button" aria-label="Սեղմեք՝ վարագույրը բացելու համար">
+  <div class="cur l"></div><div class="cur r"></div>
+  <i class="tie l"></i><i class="tie r"></i>
+  <div class="val"></div>
+  <div class="trim"><img class="lg" src="../logo.png" alt="Vivaldi Hall"></div>
+  <div class="plq"><div class="y">NEW YEAR</div><div class="n">2027</div><div class="t">Ամանորյա գալա ընթրիք</div><div class="d">31.12.2026 · 22:00</div></div>
+  <div class="hint">ՍԵՂՄԵՔ՝ ՎԱՐԱԳՈՒՅՐԸ ԲԱՑԵԼՈՒ ՀԱՄԱՐ</div>
+</div>
+<script src="../gala.js"></script>
+<script>
+(function () {
+  document.getElementById("main").innerHTML = G.page({ heroBg: '<div class="bgp"></div><i class="spot a"></i><i class="spot b"></i>' });
+  var env = document.getElementById("env"), busy = false;
+  env.onclick = function () {
+    if (busy) return; busy = true;
+    env.classList.add("go");
+    var W = innerWidth;
+    G.burst(document.getElementById("fx"), 0, 0, { n: 70, speed: 8, lift: 3, life: 2800, points: [[W * .2, innerHeight * .2, 500], [W * .8, innerHeight * .2, 650], [W * .5, innerHeight * .12, 900]] });
+    setTimeout(function () { G.start(); }, 900);
+    setTimeout(function () { env.classList.add("out"); }, 1900);
+    setTimeout(function () { env.remove(); }, 2600);
+  };
+  var c = document.createElement("canvas"); c.className = "fx"; c.style.zIndex = 1; document.body.appendChild(c);
+  G.sparkle(c, { n: 35, max: 1.8 });
+})();
+</script>
+</body>
+</html>

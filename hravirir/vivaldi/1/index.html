@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#24040b">
+<title>Vivaldi Hall · Ամանորյա գալա ընթրիք 2027</title>
+<meta name="hravirir-expires" content="2027-01-15">
+<meta name="robots" content="noindex">
+<meta name="description" content="Ամանորյա գալա ընթրիք · 31.12.2026, 22:00 · Վիվալդի Հոլլ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hravirir.pages.dev/vivaldi/1/">
+<meta property="og:title" content="Vivaldi Hall · New Year Gala 2027">
+<meta property="og:site_name" content="HRAVIRIR.AM">
+<meta property="og:description" content="Ամանորյա գալա ընթրիք · 31 դեկտեմբերի, 22:00">
+<meta property="og:image" content="https://hravirir.pages.dev/vivaldi/og1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Noto+Sans+Armenian:wght@300;400;500;600&display=swap">
+<link rel="preload" href="../hall1.jpg" as="image">
+<link rel="stylesheet" href="../gala.css">
+<style>
+/* Տարբերակ 1 · «Ոսկե գունդ» — բորդո թավիշ, ճոճվող ոսկե գունդ կարմիր ժապավենով, գնդի մեջ՝ դահլիճը (ինչպես իրենց գովազդում) */
+.env { position: fixed; inset: 0; z-index: 50; overflow: hidden; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  background: radial-gradient(120% 70% at 50% 38%, #6d0f20 0%, #3d0712 45%, #1c0307 100%); transition: opacity .9s ease; }
+.env .bk { position: absolute; border-radius: 50%; filter: blur(14px); opacity: .55; animation: bk 7s ease-in-out infinite alternate; }
+@keyframes bk { to { transform: translate(10px, -14px) scale(1.12); opacity: .3; } }
+.env .fx { position: absolute; z-index: 1; }
+.env .rope { position: absolute; left: 50%; top: 0; z-index: 2; transform-origin: 50% 0; animation: swing 4.2s ease-in-out infinite; }
+@keyframes swing { 0%, 100% { transform: translateX(-50%) rotate(3.2deg); } 50% { transform: translateX(-50%) rotate(-3.2deg); } }
+.env .str { width: 2px; height: calc(19svh - 10px); margin: 0 auto; background: linear-gradient(#a5712a, #f3d58f); }
+.env .bow { display: block; position: relative; width: 150px; margin: -10px auto -38px; z-index: 3; filter: drop-shadow(0 6px 10px rgba(0,0,0,.45)); }
+.env .cap { position: relative; z-index: 2; width: 46px; height: 30px; margin: 0 auto -6px; border-radius: 6px 6px 3px 3px;
+  background: repeating-linear-gradient(90deg, #a5712a 0 4px, #f9e3a6 4px 7px, #c8913a 7px 10px); box-shadow: inset 0 -3px 0 rgba(0,0,0,.25); }
+.env .ball { position: relative; width: min(74vw, 330px); aspect-ratio: 1; border-radius: 50%; padding: 7px; background: var(--gold-grad);
+  box-shadow: 0 30px 70px -20px rgba(0,0,0,.85), 0 0 60px rgba(249,227,166,.18); transition: transform 1.3s cubic-bezier(.6,0,.2,1), opacity 1s ease .5s; }
+.env .ball .ph { width: 100%; height: 100%; border-radius: 50%; background: #2a0508 url("../hall1.jpg") center 55% / cover; overflow: hidden; position: relative; }
+.env .ball .ph::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(40,4,10,.5) 0%, rgba(40,4,10,.35) 45%, rgba(40,4,10,.75) 100%); }
+.env .ball .ph::after { content: ""; position: absolute; left: 14%; top: 8%; width: 42%; height: 26%; border-radius: 50%; background: radial-gradient(ellipse at 40% 40%, rgba(255,255,255,.55), rgba(255,255,255,0) 70%); transform: rotate(-24deg); }
+.env .ball .lg { position: absolute; left: 50%; top: 50%; width: 62%; transform: translate(-50%, -50%); z-index: 1; filter: drop-shadow(0 3px 12px rgba(0,0,0,.8)); }
+.env .txt { position: absolute; left: 0; right: 0; bottom: calc(14svh + env(safe-area-inset-bottom, 0px)); z-index: 2; text-align: center; padding: 0 20px; transition: opacity .5s; }
+.env .txt .y { font: 500 14px var(--latin); letter-spacing: .4em; padding-left: .4em; color: var(--gold); margin-bottom: 6px; }
+.env .txt .y b { font-weight: 600; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.env .txt .t { font: 400 clamp(32px, 9.4vw, 42px)/1.2 var(--script); color: var(--g1); text-shadow: 0 4px 20px rgba(0,0,0,.6); }
+.env .txt .d { margin-top: 10px; font: 500 13px var(--sans); letter-spacing: .3em; padding-left: .3em; color: var(--ink); }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(5svh + env(safe-area-inset-bottom, 0px)); z-index: 2; text-align: center; font: 500 11px var(--sans); letter-spacing: .32em; color: var(--gold); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+.env.go .rope { animation: none; transform: translateX(-50%); }
+.env.go .txt, .env.go .hint { opacity: 0; animation: none; }
+.env.go .ball { transform: scale(4.2); opacity: 0; }
+.env.go .bow, .env.go .str, .env.go .cap { opacity: 0; transition: opacity .4s; }
+.env.out { opacity: 0; pointer-events: none; }
+
+/* գլխավորի ֆոնը՝ դահլիճը բորդո քողի տակ */
+.hero .bgp { position: absolute; inset: 0; background: url("../hall1.jpg") center / cover; transform: scale(1.08); animation: kb 18s ease-out forwards; }
+@keyframes kb { to { transform: scale(1); } }
+.hero .bgp::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(36,4,11,.72) 0%, rgba(58,7,17,.82) 50%, #3a0711 100%); }
+.lead { background: linear-gradient(#3a0711, #2c050d); }
+.wait { background: #2c050d; }
+.show { background: linear-gradient(#2c050d, #3a0711); }
+.hall { background: #3a0711; }
+.menu { background: linear-gradient(#3a0711, #4a0a17 50%, #3a0711); }
+.cd { background: #3a0711; }
+.book { background: linear-gradient(#3a0711, #24040b); }
+.fin, .made { background: #24040b; }
+</style>
+</head>
+<body class="locked">
+<canvas class="fx" id="fx" style="z-index:60"></canvas>
+<div class="env" id="env" role="button" aria-label="Սեղմեք գնդին">
+  <i class="bk" style="left:6%;top:22%;width:70px;height:70px;background:#f3c56b"></i>
+  <i class="bk" style="right:8%;top:12%;width:46px;height:46px;background:#ffe3a3;animation-delay:-2s"></i>
+  <i class="bk" style="left:14%;bottom:30%;width:38px;height:38px;background:#d6a24e;animation-delay:-4s"></i>
+  <i class="bk" style="right:12%;bottom:36%;width:84px;height:84px;background:#b3162f;opacity:.4"></i>
+  <i class="bk" style="left:42%;top:4%;width:26px;height:26px;background:#fff1c9;animation-delay:-1s"></i>
+  <canvas class="fx" id="efx"></canvas>
+  <div class="rope">
+    <div class="str"></div>
+    <svg class="bow" viewBox="0 0 200 110" aria-hidden="true">
+      <defs>
+        <linearGradient id="rv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d42a43"/><stop offset=".55" stop-color="#9c1027"/><stop offset="1" stop-color="#5e0614"/></linearGradient>
+        <linearGradient id="rv2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8182f"/><stop offset="1" stop-color="#5e0614"/></linearGradient>
+      </defs>
+      <path d="M92 50 C70 20 22 6 14 30 C8 50 50 62 92 56Z" fill="url(#rv)"/>
+      <path d="M108 50 C130 20 178 6 186 30 C192 50 150 62 108 56Z" fill="url(#rv)"/>
+      <path d="M92 50 C72 34 36 26 30 34" fill="none" stroke="#ff8a9b" stroke-opacity=".35" stroke-width="2"/>
+      <path d="M108 50 C128 34 164 26 170 34" fill="none" stroke="#ff8a9b" stroke-opacity=".35" stroke-width="2"/>
+      <path d="M94 58 L64 106 L78 100 L86 108 L102 60Z" fill="url(#rv2)"/>
+      <path d="M106 58 L136 106 L122 100 L114 108 L98 60Z" fill="url(#rv2)"/>
+      <rect x="88" y="42" width="24" height="20" rx="7" fill="url(#rv)" stroke="#e8b960" stroke-width="1.2"/>
+    </svg>
+    <div class="cap"></div>
+    <div class="ball"><div class="ph"></div><img class="lg" src="../logo.png" alt=""></div>
+  </div>
+  <div class="txt"><div class="y">NEW YEAR <b>2027</b></div><div class="t">Ամանորյա գալա ընթրիք</div><div class="d">31.12.2026 · 22:00</div></div>
+  <div class="hint">ՍԵՂՄԵՔ ԳՆԴԻՆ</div>
+</div>
+<main id="main"></main>
+<script src="../gala.js"></script>
+<script>
+(function () {
+  document.getElementById("main").innerHTML = G.page({ heroBg: '<div class="bgp"></div>' });
+  G.sparkle(document.getElementById("efx"), { n: 60 });
+  var env = document.getElementById("env"), busy = false;
+  env.onclick = function () {
+    if (busy) return; busy = true;
+    var b = env.querySelector(".ball").getBoundingClientRect();
+    env.classList.add("go");
+    G.burst(document.getElementById("fx"), b.left + b.width / 2, b.top + b.height / 2, { n: 160, speed: 9, life: 2600 });
+    setTimeout(function () { env.classList.add("out"); G.start(); G.sparkle(document.getElementById("fx2"), { n: 45 }); }, 1100);
+    setTimeout(function () { env.remove(); }, 2100);
+  };
+  // էջի ֆոնի փայլերը՝ բացումից հետո
+  var c = document.createElement("canvas"); c.className = "fx"; c.id = "fx2"; c.style.zIndex = 1; document.body.appendChild(c);
+})();
+</script>
+</body>
+</html>
