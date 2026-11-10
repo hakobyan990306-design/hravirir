@@ -170,7 +170,81 @@
     })(t0);
   }
 
-  window.G = { D: D, page: page, reveal: reveal, countdown: countdown, carousel: carousel, sparkle: sparkle, burst: burst,
+  // «Jingle Bells» (Ջ. Փիերփոնթ, 1857, հանրային սեփականություն)՝ նվագում է հենց էջը Web Audio-ով.
+  // ցելեստա (մեղեդի), բաս, ակորդներ և սահնակի զանգակներ, ֆայլ չի պահանջվում
+  var music = (function () {
+    var ac, master, on = false, timer, next = 0, idx = 0, SEQ = [];
+    var BPM = 132, Q = 60 / BPM;
+    function f(n) { var m = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }, s = n.length > 2 ? 1 : 0, o = +n[n.length - 1]; return 440 * Math.pow(2, (m[n[0]] + s + (o - 4) * 12 - 9) / 12); }
+    // մեղեդի. [նոտա, տևողություն քառորդներով], "-"՝ դադար
+    var verse = "D4 1,B4 1,A4 1,G4 1,D4 3,D4 .5,D4 .5,D4 1,B4 1,A4 1,G4 1,E4 4,E4 1,C5 1,B4 1,A4 1,F#4 4,D5 1,D5 1,C5 1,A4 1,B4 4," +
+      "D4 1,B4 1,A4 1,G4 1,D4 4,D4 1,B4 1,A4 1,G4 1,E4 3,E4 1,E4 1,C5 1,B4 1,A4 1,D5 1,D5 1,D5 1,D5 1,E5 1,D5 1,C5 1,A4 1,G4 2,D5 2";
+    var ch1 = "B4 1,B4 1,B4 2,B4 1,B4 1,B4 2,B4 1,D5 1,G4 1.5,A4 .5,B4 4,C5 1,C5 1,C5 1.5,C5 .5,C5 1,B4 1,B4 1,B4 .5,B4 .5,B4 1,A4 1,A4 1,B4 1,A4 2,D5 2";
+    var ch2 = "B4 1,B4 1,B4 2,B4 1,B4 1,B4 2,B4 1,D5 1,G4 1.5,A4 .5,B4 4,C5 1,C5 1,C5 1.5,C5 .5,C5 1,B4 1,B4 1,B4 .5,B4 .5,D5 1,D5 1,C5 1,A4 1,G4 4";
+    // ակորդներ՝ ամեն տակտին (4 քառորդ)
+    var CH = { G: ["G2", "B3", "D4"], C: ["C3", "E4", "G3"], D: ["D3", "F#3", "A3"], E: ["E3", "G3", "B3"], A: ["A2", "C#4", "E4"] };
+    var chords = "G G G C C D D G G G G C C G D G  G G G G C G D D  G G G G C D G".split(/\s+/);   // 16 + 8 + 7 տակտ
+    function parse(s) { return s.split(",").map(function (x) { var p = x.split(" "); return [p[0], +p[1]]; }); }
+    SEQ = parse(verse).concat(parse(ch1), parse(ch2));
+    var total = SEQ.reduce(function (a, n) { return a + n[1]; }, 0);
+    function celesta(t, fr, dur, v) {
+      [1, 2, 3.01, 4.2].forEach(function (h, k) {
+        var o = ac.createOscillator(), g = ac.createGain(); o.type = "sine"; o.frequency.value = fr * h;
+        var a = v * [1, .35, .12, .06][k]; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(a, t + .006); g.gain.exponentialRampToValueAtTime(.0001, t + Math.min(1.6, dur * Q + .7) / (1 + k * .6));
+        o.connect(g); g.connect(master); o.start(t); o.stop(t + 2);
+      });
+    }
+    function pad(t, fr, dur, v, type) {
+      var o = ac.createOscillator(), g = ac.createGain(), lp = ac.createBiquadFilter(); o.type = type || "triangle"; o.frequency.value = fr; lp.type = "lowpass"; lp.frequency.value = 1200;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .03); g.gain.setTargetAtTime(0, t + dur * .8, .15);
+      o.connect(lp); lp.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 1);
+    }
+    var noise;
+    function bells(t, v) {
+      var s = ac.createBufferSource(), hp = ac.createBiquadFilter(), bp = ac.createBiquadFilter(), g = ac.createGain();
+      s.buffer = noise; hp.type = "highpass"; hp.frequency.value = 6500; bp.type = "peaking"; bp.frequency.value = 9000; bp.gain.value = 8;
+      g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + .16);
+      s.connect(hp); hp.connect(bp); bp.connect(g); g.connect(master); s.start(t); s.stop(t + .2);
+    }
+    function schedule() {
+      while (next < ac.currentTime + .4) {
+        var n = SEQ[idx], beat = SEQ.slice(0, idx).reduce(function (a, x) { return a + x[1]; }, 0);
+        if (n[0] !== "-") celesta(next, f(n[0]), n[1], .16);
+        // ակորդ և բաս տակտի սկզբին
+        if (beat % 4 === 0) { var c = CH[chords[(beat / 4) % chords.length]] || CH.G; pad(next, f(c[0]) / 2, 4 * Q, .14, "triangle"); c.forEach(function (x) { pad(next, f(x), 4 * Q, .025, "sine"); }); }
+        // զանգակներ ութերորդականներով, 2-րդ և 4-րդ զարկին՝ ուժեղ
+        for (var e = 0; e < n[1] * 2; e++) { var bt = beat + e / 2; if (bt % 1 === 0 || Math.random() < .9) bells(next + e * Q / 2, bt % 2 === 1 ? .22 : .09); }
+        next += n[1] * Q; idx = (idx + 1) % SEQ.length;
+        if (idx === 0) next += 2 * Q;   // կարճ դադար կրկնությունից առաջ
+      }
+    }
+    function sync() { document.querySelectorAll(".mus").forEach(function (b) { b.classList.toggle("on", on); }); }
+    return {
+      start: function () {
+        try {
+          if (!ac) {
+            ac = new (window.AudioContext || window.webkitAudioContext)(); master = ac.createGain(); master.gain.value = .55;
+            var comp = ac.createDynamicsCompressor(); master.connect(comp); comp.connect(ac.destination);
+            noise = ac.createBuffer(1, ac.sampleRate * .25, ac.sampleRate); var d = noise.getChannelData(0); for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+          }
+          ac.resume(); if (on) return; on = true; next = ac.currentTime + .15; timer = setInterval(schedule, 100); sync();
+        } catch (e) {}
+      },
+      stop: function () { on = false; clearInterval(timer); if (ac) ac.suspend(); sync(); },
+      toggle: function () { on ? this.stop() : this.start(); },
+      isOn: function () { return on; }
+    };
+  })();
+  // երաժշտության կոճակը՝ վերևի աջ անկյունում
+  function musBtn() {
+    var b = document.createElement("button"); b.className = "mus"; b.type = "button"; b.setAttribute("aria-label", "Երաժշտություն");
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 3.5c-3 0-5 2.3-5 5.2v4.1L5 16h14l-2-3.2V8.7c0-2.9-2-5.2-5-5.2zM10 18.5a2 2 0 0 0 4 0"/></svg><i></i>';
+    b.onclick = function () { music.toggle(); }; b.classList.toggle("on", music.isOn()); document.body.appendChild(b);
+  }
+
+  window.G = { D: D, page: page, music: music, reveal: reveal, countdown: countdown, carousel: carousel, sparkle: sparkle, burst: burst,
     // բացման էկրանից հետո՝ էջը միացնել
-    start: function () { document.body.classList.remove("locked"); reveal(); countdown(); carousel(); } };
+    start: function () { document.body.classList.remove("locked"); reveal(); countdown(); carousel(); musBtn(); } };
+  // երաժշտությունը միանում է բացման էկրանի սեղմումով (բրաուզերները ձայն թույլ են տալիս միայն սեղմումից հետո)
+  document.addEventListener("click", function h(e) { if (e.target.closest && e.target.closest("#env")) { music.start(); document.removeEventListener("click", h, true); } }, true);
 })();

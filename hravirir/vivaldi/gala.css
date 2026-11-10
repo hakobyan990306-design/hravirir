@@ -104,4 +104,13 @@ section { position: relative; padding: 76px 0; text-align: center; }
 .fin .logo { width: min(56%, 220px); margin: 34px auto 0; }
 .made { padding: 26px 0 34px; text-align: center; font: 500 11px var(--latin); letter-spacing: .3em; color: var(--soft); }
 
+/* երաժշտության կոճակ (զանգակ), միացված՝ ճոճվում է */
+.mus { position: fixed; top: calc(14px + env(safe-area-inset-top, 0px)); right: max(14px, calc(50% - 246px)); z-index: 40; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #e2ba70;
+  background: rgba(36,4,11,.72); color: #f9e3a6; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); box-shadow: 0 6px 16px rgba(0,0,0,.35); }
+.mus svg { width: 22px; height: 22px; transform-origin: 50% 15%; }
+.mus.on svg { animation: ring 1.1s ease-in-out infinite; }
+.mus i { position: absolute; width: 26px; height: 1.5px; background: currentColor; transform: rotate(-45deg); border-radius: 2px; }
+.mus.on i { display: none; }
+@keyframes ring { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(14deg); } 75% { transform: rotate(-14deg); } }
+@media (prefers-reduced-motion: reduce) { .mus.on svg { animation: none; } }
 @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } .scroll i { animation: none; } }
