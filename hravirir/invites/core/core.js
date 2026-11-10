@@ -112,7 +112,7 @@
       var n = K.names(), main = document.querySelector("main"); if (n.length < 2 || !main) return;
       var first = main.querySelector("section");
       main.querySelectorAll("*").forEach(function (el) {
-        if ([].some.call(el.children, function (c) { return !/amp/.test(c.className); }) || (first && first.contains(el))) return;
+        if ([].some.call(el.children, function (c) { return !/amp/.test(c.className); }) || (first && first.contains(el)) || el.closest("[data-nofit]")) return;   // data-nofit՝ անունները իրար տակ թողնելու համար (օր.՝ ռամկայի մեջ)
         [].forEach.call(el.children, function (c) { c.style.display = "inline"; });
         var tx = el.textContent; if (tx.indexOf(n[0]) < 0 || tx.indexOf(n[1]) < 0 || tx.length > n[0].length + n[1].length + 14) return;
         el.style.whiteSpace = "nowrap"; el.style.fontSize = "";

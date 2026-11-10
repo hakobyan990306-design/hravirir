@@ -86,7 +86,7 @@
   }
   function namesBlock() {
     var n = K.names(), d = K.date;
-    return '<section><div class="cart rv">' + cartouche() + '<div class="cart-in"><div class="names">' +
+    return '<section><div class="cart rv">' + cartouche() + '<div class="cart-in"><div class="names" data-nofit>' +
       (n.length === 2 ? esc(n[0]) + '<span class="amp">&amp;</span>' + esc(n[1]) : n.map(esc).join("<br>")) + "</div>" +
       '<p class="p">' + esc(t(C.announce) || x("announce")) + '</p><div class="vdate">' + pad(d.getDate()) + "<i>·</i>" + pad(d.getMonth() + 1) + "<i>·</i>" + String(d.getFullYear()).slice(2) + "</div></div></div></section>";
   }
