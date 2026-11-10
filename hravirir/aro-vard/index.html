@@ -36,16 +36,15 @@ window.INVITE = {
   greeting: { hy: "Սիրելի՛ հյուրեր" },
   gallery: ["g1.jpg", "g2.jpg", "g3.jpg"],
   text: { hy: "Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր կյանքի ամենակարևոր և հիշարժան օրը՝ մեր հարսանիքը։\nՁեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։" },
-  venue: {
-    title: { hy: "Մեր դեկտեմբերյան երեկոն" },
-    place: { hy: "«Մորենա» ռեստորանային համալիր" },
-    address: { hy: "ք. Մասիս, Մխիթար Հերացու փ. 7/8" },
-    map: "https://yandex.ru/navi/org/morena_restoranayin_hamalir/222913353582?si=tqy1fhxrx331mah0tfrg33132w"
-  },
+  // ծրագրում՝ միայն ժամն ու անվանումը, իսկ վայրերը (նկար, անուն, հասցե, քարտեզ)՝ ծրագրից հետո (հաճախորդի խնդրանքով)
   timing: [
-    { time: "13:45", icon: "rings", text: { hy: "Պսակադրություն" }, place: { hy: "Սուրբ Գայանե եկեղեցի, ք. Էջմիածին" },
+    { time: "13:45", icon: "rings", text: { hy: "Պսակադրություն" } },
+    { time: "17:30", icon: "plate", text: { hy: "Հարսանյաց հանդես" } }
+  ],
+  venues: [
+    { art: "building", title: { hy: "Պսակադրություն" }, place: { hy: "Սուրբ Գայանե եկեղեցի" }, address: { hy: "ք. Էջմիածին" },
       map: "https://yandex.ru/navi/org/surb_gayane_yekeghetsi/225773844967?si=tqy1fhxrx331mah0tfrg33132w" },
-    { time: "17:30", icon: "plate", text: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Մորենա» ռեստորանային համալիր" },
+    { art: "restaurant", title: { hy: "Հարսանյաց հանդես" }, place: { hy: "«Մորենա» ռեստորանային համալիր" }, address: { hy: "ք. Մասիս, Մխիթար Հերացու փ. 7/8" },
       map: "https://yandex.ru/navi/org/morena_restoranayin_hamalir/222913353582?si=tqy1fhxrx331mah0tfrg33132w" }
   ],
   rsvp: { deadline: "2026-11-25", key: "aro-vard" },

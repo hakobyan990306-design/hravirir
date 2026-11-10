@@ -23,6 +23,13 @@
       [42, 64, 86, 160, 182, 204].map(function (xx) { return '<path d="M' + xx + " 128V100q0-12 7-17q7 5 7 17V128ZM" + (xx + 7) + ' 84V128"/>'; }).join("") +
       '<path d="M116 146V112a14 14 0 0 1 28 0V146M130 98V146"/><path d="M30 134H230" stroke-dasharray="2 4"/>' +
       '<path d="M8 146V86H30M252 146V86H230M4 86L19 70L34 86M256 86L241 70L226 86M19 70V60M241 70V60"/><path d="M14 128v-18a5 5 0 0 1 10 0v18M236 128v-18a5 5 0 0 1 10 0v18"/></svg>',
+    restaurant: '<svg class="art" viewBox="0 0 260 150"><path d="M4 146H256"/><path d="M34 146V60H226V146"/><path d="M26 60H234M30 54H230V60"/>' +
+      '<path d="M86 30H174V50H86Z"/><path d="M98 40H162" stroke-dasharray="3 4"/><path d="M130 30V22M118 24L130 14L142 24"/>' +
+      '<path d="M34 66H226M34 66q11 12 22 0q11 12 22 0q11 12 22 0q11 12 22 0q11 12 22 0q11 12 22 0q11 12 22 0q11 12 22 0q11 12 22 0"/>' +
+      '<path d="M112 146V100a18 18 0 0 1 36 0V146M130 82V146"/>' +
+      [48, 168].map(function (xx) { return '<path d="M' + xx + " 132V94H" + (xx + 44) + "V132ZM" + xx + " 113H" + (xx + 44) + "M" + (xx + 22) + ' 94V132"/>'; }).join("") +
+      '<path d="M44 140H96M164 140H216" stroke-dasharray="2 4"/>' +
+      '<path d="M14 146V112M10 112h8l-4-14zM246 146V112M242 112h8l-4-14z"/></svg>',
     glasses: '<svg class="art" viewBox="0 0 100 100"><path d="M18 26h26c0 12-5 20-13 21-8-1-13-9-13-21zM31 47v30M22 78h18"/><path d="M56 30l25-7c3 12 0 21-7 24-8 2-15-4-18-17zM68 50l8 29M62 82l18-5"/><path d="M44 16l4-8M50 18l7-6M40 14l-2-8"/><path d="M52 58c8 2 14 8 12 14"/></svg>',
     rings: '<svg class="art" viewBox="0 0 100 100"><circle cx="38" cy="58" r="20"/><circle cx="60" cy="58" r="20"/><path d="M52 24l8-10 8 10-8 8zM52 24h16M60 14v18"/></svg>',
     plate: '<svg class="art" viewBox="0 0 100 100"><circle cx="50" cy="52" r="24"/><circle cx="50" cy="52" r="16"/><path d="M16 26v14a4 4 0 0 0 8 0V26M20 26v52M84 26c-6 4-6 20 0 24v28"/></svg>',
@@ -93,6 +100,14 @@
       '<div class="place rv d1">' + esc(t(v.place)) + '</div><div class="addr rv d1">' + esc(t(v.address)) + "</div>" +
       (v.map ? '<a class="btn rv d2" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div></section>";
   }
+  // մի քանի վայր՝ ծրագրից հետո (C.venues = [{ art: "building"|"restaurant", title, place, address, map }])
+  function venues() {
+    return (C.venues || []).map(function (v) {
+      return '<section class="venue"><div class="wrap"><h2 class="st rv">' + esc(t(v.title)) + '</h2><div class="rv d1">' + (A[v.art] || A.building) + "</div>" +
+        '<div class="place rv d1">' + esc(t(v.place)) + '</div><div class="addr rv d1">' + esc(t(v.address)) + "</div>" +
+        (v.map ? '<a class="btn rv d2" href="' + esc(v.map) + '" target="_blank" rel="noopener">' + esc(u("map")) + "</a>" : "") + "</div></section>";
+    }).join("");
+  }
   function timeline() {
     var tm = C.timing || []; if (!tm.length) return "";
     var items = tm.map(function (r, i) {
@@ -139,7 +154,7 @@
     document.documentElement.lang = K.lang;
     document.title = K.names().join(" & ") + " — " + x("invited");
     document.getElementById("app").innerHTML = (opened ? "" : envelope()) +
-      "<main>" + hero() + namesBlock() + letter() + K.gallery() + venue() + timeline() + dress() + countdown() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
+      "<main>" + hero() + namesBlock() + letter() + K.gallery() + venue() + timeline() + venues() + dress() + countdown() + rsvp() + fin() + "</main>" + (opened ? K.chrome() : "");
     document.body.classList.toggle("locked", !opened);
     if (!opened) { shapeFlaps(); var s = document.getElementById("seal"); if (s && !K.PREVIEW) s.onclick = open; }
     K.countdown(false); K.rsvp(document.getElementById("rf")); K.bindChrome(render);
