@@ -13,16 +13,17 @@
       ["mic", "Կենդանի երաժշտություն և տպավորիչ շոու-ծրագիր"],
       ["dish", "Շքեղ ամանորյա հյուրասիրություն"],
       ["gift", "Հեքիաթային անակնկալներ ու նվերներ"],
+      ["ticket", "Մեծ խաղարկություն"],   // հաճախորդի խնդրանքով, 12.11.2026
       ["glass", "Կեսգիշերի կախարդական դիմավորում"],
       ["note", "Պարային խելահեղ ռիթմեր մինչև ուշ գիշեր"],
       ["fire", "Հրավառությու՜ն"]
     ],
     artists: [
-      { name: "Տաթև Ասատրյան", role: "Երգչուհի", photo: "../tatev.jpg" },
-      { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: "../ernest.jpg" },
-      { name: "Վիվալդի բենդ", role: "Կենդանի երաժշտություն", photo: "../hall2.jpg", band: true }
+      { name: "Տաթև Ասատրյան", role: "Երգչուհի", photo: "/vivaldi/tatev.jpg" },
+      { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: "/vivaldi/ernest.jpg" },
+      { name: "Վիվալդի բենդ", role: "Կենդանի երաժշտություն", photo: "/vivaldi/hall2.jpg", band: true }
     ],
-    halls: ["../hall1.jpg", "../hall2.jpg", "../hall3.jpg", "../hall4.jpg", "../hall5.jpg"],
+    halls: ["/vivaldi/hall1.jpg", "/vivaldi/hall2.jpg", "/vivaldi/hall3.jpg", "/vivaldi/hall4.jpg", "/vivaldi/hall5.jpg"],
     menu: [
       ["Սառը նախուտեստներ", ["Ձկան տեսականի", "Մսի տեսականի", "Պանրի տեսականի", "Բանջարեղենի ափսե", "Ձիթապտուղ, կիտրոն", "Քամած մածուն", "Թթվի տեսականի"]],
       ["Աղցաններ", ["Ասիական", "Շեֆ", "Գուրման"]],
@@ -44,6 +45,7 @@
     glass: '<path d="M6 2.5h5l-.4 6a2.1 2.1 0 0 1-4.2 0zM13 2.5h5l-.4 6a2.1 2.1 0 0 1-4.2 0zM8.5 10.6v8.4M15.5 10.6v8.4M6 19.5h5M13 19.5h5"/><path d="M11.5 1l1-1M12 3.5l1.5-.5" opacity=".7"/>',
     note: '<path d="M9 18.5V5l11-2v13"/><circle cx="6.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/><path d="M9 9l11-2"/>',
     fire: '<path d="M12 12V2M12 12l7-6M12 12l-7-6M12 12l9 1M12 12l-9 1M12 12l6 7M12 12l-6 7M12 12v9"/><circle cx="12" cy="12" r="1.3"/>',
+    ticket: '<path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h15A1.5 1.5 0 0 1 21 7.5v2.2a2.3 2.3 0 0 0 0 4.6v2.2a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5v-2.2a2.3 2.3 0 0 0 0-4.6z"/><path d="M15 6v12" stroke-dasharray="1.6 1.8"/><path d="M9 9.3l.8 1.6 1.8.3-1.3 1.3.3 1.8-1.6-.9-1.6.9.3-1.8-1.3-1.3 1.8-.3z"/>',
     tel: '<path d="M5 3.5h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 6.5 6.5l1.4-2.3 4.6 1.8V19a1.8 1.8 0 0 1-1.9 1.8C10.4 20.3 3.7 13.6 3.2 5.4A1.8 1.8 0 0 1 5 3.5z"/>',
     pin: '<path d="M12 21.5s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.5"/>',
     ig: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/>'
@@ -57,7 +59,7 @@
     var h = "";
     // գլխավոր
     h += '<section class="hero" id="hero">' + (o.heroBg || "") +
-      '<div class="in"><img class="logo" src="../logo.png" alt="Vivaldi Hall">' +
+      '<div class="in"><img class="logo" src="/vivaldi/logo.png" alt="Vivaldi Hall">' +
       '<div class="eye">NEW YEAR GALA</div><h1 class="ny"><span>ՆՈՐ ՏԱՐԻ</span><b>2027</b></h1>' +
       '<div class="scr-t">Ամանորյա գալա ընթրիք</div>' +
       '<div class="when"><span>31 ԴԵԿՏԵՄԲԵՐԻ</span><i></i><span>22:00</span></div></div>' +
@@ -70,11 +72,11 @@
     // շոու
     h += '<section class="show"><div class="w"><div class="eye rv">LIVE SHOW</div><h2 class="h2 rv">Շոու-ծրագիր</h2><div class="art">' +
       D.artists.map(function (a) {
-        return '<figure class="a rv' + (a.band ? " band" : "") + '"><div class="ph"><img src="' + a.photo + '" alt="' + a.name + '" loading="lazy">' + (a.band ? '<img class="bl" src="../logo.png" alt="">' : "") + "</div>" +
+        return '<figure class="a rv' + (a.band ? " band" : "") + '"><div class="ph"><img src="' + a.photo + '" alt="' + a.name + '" loading="lazy">' + (a.band ? '<img class="bl" src="/vivaldi/logo.png" alt="">' : "") + "</div>" +
           '<figcaption><b>' + a.name + "</b><small>" + a.role + "</small></figcaption></figure>";
       }).join("") + "</div></div></section>";
-    // դահլիճ
-    h += '<section class="hall"><div class="w"><div class="eye rv">OUR HALL</div><h2 class="h2 rv">Տոնական դահլիճը</h2></div>' +
+    // դահլիճ (o.noHall՝ առանց այս բաժնի. վերջնական տարբերակում հաճախորդը խնդրեց հանել)
+    if (!o.noHall) h += '<section class="hall"><div class="w"><div class="eye rv">OUR HALL</div><h2 class="h2 rv">Տոնական դահլիճը</h2></div>' +
       '<div class="car rv" id="car">' + D.halls.map(function (p) { return '<div class="sl"><img src="' + p + '" alt="" loading="lazy"></div>'; }).join("") + "</div>" +
       '<div class="dots" id="dots">' + D.halls.map(function (_, i) { return "<i" + (i ? "" : ' class="on"') + "></i>"; }).join("") + "</div></section>";
     // մենյու
@@ -92,7 +94,7 @@
       '<a class="btn ghost" href="' + D.map + '" target="_blank" rel="noopener">Ինչպես հասնել</a>' +
       '<a class="ig" href="' + D.insta + '" target="_blank" rel="noopener">' + ic("ig") + "<span>@vivaldihall</span></a></div></div></section>";
     // ավարտ
-    h += '<section class="fin"><div class="w">' + orn + '<p class="big rv">' + D.fin + '</p><img class="logo rv" src="../logo.png" alt="Vivaldi Hall"></div></section>' +
+    h += '<section class="fin"><div class="w">' + orn + '<p class="big rv">' + D.fin + '</p><img class="logo rv" src="/vivaldi/logo.png" alt="Vivaldi Hall"></div></section>' +
       '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
     return h;
   }
@@ -219,8 +221,14 @@
       }
     }
     function sync() { document.querySelectorAll(".mus").forEach(function (b) { b.classList.toggle("on", on); }); }
+    // window.GALA_SONG = "song.mp3"՝ սինթեզի փոխարեն նվագում է այդ ֆայլը
+    var au;
     return {
       start: function () {
+        if (window.GALA_SONG) {
+          au = au || new Audio(window.GALA_SONG); au.loop = true; au.volume = .8;
+          au.play().then(function () { on = true; sync(); }).catch(function () {}); on = true; sync(); return;
+        }
         try {
           if (!ac) {
             ac = new (window.AudioContext || window.webkitAudioContext)(); master = ac.createGain(); master.gain.value = .55;
@@ -230,7 +238,7 @@
           ac.resume(); if (on) return; on = true; next = ac.currentTime + .15; timer = setInterval(schedule, 100); sync();
         } catch (e) {}
       },
-      stop: function () { on = false; clearInterval(timer); if (ac) ac.suspend(); sync(); },
+      stop: function () { on = false; clearInterval(timer); if (ac) ac.suspend(); if (au) au.pause(); sync(); },
       toggle: function () { on ? this.stop() : this.start(); },
       isOn: function () { return on; }
     };
