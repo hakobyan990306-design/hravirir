@@ -1,0 +1,28 @@
+/* «Ձյունե գունդ» — սառցե կապույտ, արծաթ, սպիտակ. ձյուն ամենուր */
+:root {
+  --bg: #f5f8fc; --bg2: #e8eff7; --ink: #1b2c45; --soft: #5a6b84; --acc: #2e5b8f; --acc2: #cfe0f3; --line: rgba(46,91,143,.2); --card: #ffffff;
+  --dk: #0e2340; --dk-ink: #f2f7fd; --dk-soft: rgba(242,247,253,.72);
+  --grad: linear-gradient(100deg, #b9c6d6, #ffffff 40%, #9fb2c9 65%, #f2f6fb);
+  --k-bg: #0e2340; --k-ink: #f2f7fd; --k-accent: #cfe0f3;
+}
+.hero { background: radial-gradient(90% 60% at 50% 25%, #2b5287 0%, #142f57 55%, #0b1c36 100%); }
+.hero .moon { position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(255,250,230,.35), transparent 65%); }
+.cdw, .fin, .made { background: #0e2340; }
+
+/* բացում */
+.env { background: radial-gradient(90% 65% at 50% 45%, #2b5287 0%, #142f57 55%, #081429 100%); color: #f2f7fd; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4svh; }
+.env .top { position: relative; z-index: 2; text-align: center; transition: opacity .5s; }
+.env .co { color: rgba(242,247,253,.75); }
+.env .tt { margin-top: 8px; font: 400 clamp(36px, 10.5vw, 46px)/1.15 var(--script); }
+.gwrap { position: relative; z-index: 2; width: min(78vw, 320px); aspect-ratio: 300 / 360; transform-origin: 50% 42%; filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); transition: transform 1s cubic-bezier(.6,0,.3,1), opacity .8s; }
+.gwrap .gl { width: 100%; height: 100%; display: block; }
+.gwrap .inner { position: absolute; left: 7.33%; top: 5.56%; width: 85.33%; height: 71.1%; clip-path: circle(50% at 50% 50%); }
+.gwrap .win { animation: win 3s ease-in-out infinite; }
+@keyframes win { 50% { fill: #ffb84a; } }
+.env .dt { position: relative; z-index: 2; font: 600 13px var(--sans); letter-spacing: .3em; color: #cfe0f3; transition: opacity .5s; }
+.env .hint { color: #cfe0f3; }
+.env.go .gwrap { animation: shake .5s ease-in-out 3; }
+@keyframes shake { 25% { transform: rotate(-9deg) translateX(-8px); } 75% { transform: rotate(9deg) translateX(8px); } }
+.env.go .top, .env.go .dt { opacity: 0; }
+.env.zoom .gwrap { animation: none; transform: scale(3.4); opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .env.go .gwrap { animation: none; } .gwrap .win { animation: none; } }

@@ -1,0 +1,31 @@
+/* «Հրավառություն» — կեսգիշերային կապույտ-մանուշակագույն երկինք, Արարատ, ոսկի և գունավոր կայծեր */
+:root {
+  --bg: #f7f4fc; --bg2: #ede7f7; --ink: #1d1638; --soft: #5f5780; --acc: #5b3aa6; --acc2: #e8c46a; --line: rgba(91,58,166,.18); --card: #ffffff;
+  --dk: #0a0f2e; --dk-ink: #f5f1ff; --dk-soft: rgba(245,241,255,.72);
+  --grad: linear-gradient(100deg, #c9963c, #ffe9a8 35%, #e8c46a 60%, #fff6d8 80%, #c9963c);
+  --k-bg: #0a0f2e; --k-ink: #f5f1ff; --k-accent: #e8c46a;
+}
+.sky-bg, .hero, .env { background: linear-gradient(180deg, #070b26 0%, #121845 40%, #2d1a5c 72%, #5a2a66 100%); }
+.hero { padding-bottom: 210px; }
+.hero .ar, .env .ar { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 42%; z-index: 1; }
+.hero .ar { height: 34%; }
+.hero .stars, .env .stars { animation: tw 4s ease-in-out infinite alternate; }
+@keyframes tw { from { opacity: .7; } to { opacity: 1; } }
+.cdw, .fin, .made { background: #0a0f2e; }
+.fin { background: linear-gradient(180deg, #0a0f2e, #2d1a5c); }
+.h2 { color: var(--acc); }
+.btn.fill { background: linear-gradient(100deg, #5b3aa6, #8e5bd6); color: #fff; }
+
+/* բացում */
+.env { color: #f5f1ff; }
+.env .fx { z-index: 2; }
+.env .stars { z-index: 0; }
+.env .sky { position: absolute; left: 0; right: 0; top: 14svh; z-index: 3; text-align: center; padding: 0 20px; transition: opacity .6s, transform .8s; }
+.env .co { color: rgba(245,241,255,.7); }
+.env .tt { margin-top: 10px; font: 400 clamp(40px, 12vw, 54px)/1.15 var(--script); text-shadow: 0 4px 20px rgba(0,0,0,.5); }
+.env .dt { margin-top: 20px; font: 600 13px var(--sans); letter-spacing: .3em; color: #e8c46a; }
+.env .big { position: absolute; left: 0; right: 0; top: 30svh; z-index: 3; text-align: center; font: 600 clamp(96px, 30vw, 140px)/1 var(--latin);
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 24px rgba(255,214,120,.55)); opacity: 0; transform: scale(.6); transition: opacity 1s, transform 1.2s cubic-bezier(.2,1.4,.4,1); }
+.env .hint { color: #e8c46a; }
+.env.go .sky { opacity: 0; transform: translateY(-20px); }
+.env.yr .big { opacity: 1; transform: none; }

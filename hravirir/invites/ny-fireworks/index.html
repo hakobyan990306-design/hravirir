@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f2e">
+<title>Ամանորյա երեկույթ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Noto+Sans+Armenian:wght@400;600&family=Noto+Serif:wght@300;400&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="../ny/ny.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ (demo-ն իրական հրավերում ջնջեք) ======== */
+window.INVITE = {
+  demo: { id: "ny-fireworks", name: "Հրավառություն" },
+  langs: ["hy", "ru"],
+  company: "NOVA GROUP",
+  title: { hy: "Ամանորյա երեկույթ", ru: "Новогодняя вечеринка" },
+  year: "2027",
+  date: "2026-12-27T19:30",
+  text: {
+    hy: "Հին տարին ճանապարհում ենք լույսերով, իսկ նորը դիմավորում՝ մեր մեծ ընտանիքի հետ։ Սիրով հրավիրում ենք Ձեզ տարվա ամենավառ երեկոյին։",
+    ru: "Провожаем старый год огнями, а новый встречаем всей нашей большой семьёй. Приглашаем вас на самый яркий вечер года."
+  },
+  events: [
+    { time: "19:30", title: { hy: "Հավաք և ողջույնի կոկտեյլ", ru: "Сбор гостей и коктейль" } },
+    { time: "20:00", title: { hy: "Տոնական ընթրիք", ru: "Праздничный ужин" } },
+    { time: "21:00", title: { hy: "Շոու-ծրագիր", ru: "Шоу-программа" } },
+    { time: "22:30", title: { hy: "Հրավառություն", ru: "Фейерверк" } },
+    { time: "23:00", title: { hy: "DJ և պարեր", ru: "DJ и танцы" } }
+  ],
+  venue: {
+    place: { hy: "«Սքայ» տանիքի սրահ", ru: "Зал на крыше «Скай»" },
+    address: { hy: "Երևան, Հյուսիսային պողոտա 1", ru: "Ереван, Северный проспект 1" },
+    map: "https://yandex.ru/maps/?text=%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD%2C%20%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%201"
+  },
+  dresscode: { text: { hy: "Փայլուն երեկո՝ սև, ոսկեգույն, մանուշակագույն", ru: "Сияющий вечер: чёрный, золото, фиолетовый" }, colors: ["#0a0f2e", "#3a1d6e", "#8e5bd6", "#e8c46a", "#ffffff"] },
+  rsvp: { deadline: "2026-12-20" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="../ny/ny.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -22,6 +22,9 @@
     { id: "gala-midnight", name: "Կեսգիշեր", cat: "corporate", colors: ["#3a0711", "#6d0f20", "#e2ba70", "#f8ecd6"], tag: "Նոր" },
     { id: "corp-forum", name: "Ֆորում", cat: "corporate", colors: ["#0b1530", "#1a2a5c", "#d9b878", "#f6f4ef"], tag: "Նոր" },
     { id: "corp-jubilee", name: "Տարեդարձ", cat: "corporate", colors: ["#0c2b25", "#145244", "#c9a45c", "#f7f2e7"], tag: "Նոր" },
+    { id: "ny-globe", name: "Ձյունե գունդ", cat: "corporate", colors: ["#0e2340", "#2e5b8f", "#cfe0f3", "#ffffff"], tag: "Նոր" },
+    { id: "ny-fireworks", name: "Հրավառություն", cat: "corporate", colors: ["#0a0f2e", "#3a1d6e", "#8e5bd6", "#e8c46a"], tag: "Նոր" },
+    { id: "ny-tree", name: "Տոնածառ", cat: "corporate", colors: ["#0f2a1e", "#1f5a3a", "#a3192b", "#e9c46a"], tag: "Նոր" },
     { id: "memories", name: "Հուշեր", cat: "wedding", colors: ["#f7f5f1", "#d6d3cd", "#6e6c68", "#111111"], tag: "Նոր" },
     { id: "ivory", name: "Լույս", cat: "wedding", colors: ["#ffffff", "#efe6d6", "#d8c3a2", "#b8955a"], tag: "Նոր" },
     { id: "bordeaux", name: "Բորդո", cat: "wedding", colors: ["#5c0d1a", "#9e1424", "#111111", "#efe6da"], tag: "Նոր" },
@@ -90,14 +93,14 @@
       "post-letter": "Почта", "white-seal": "Белый конверт", "chandelier": "Люстра", "monogram": "Монограмма", "noir-sunset": "Чёрно-золотой закат", "blush-garden": "Розовый сад", "olive-letter": "Письмо",
       "classic-green": "Classic", "gold-gate": "Золотые ворота", "red-rose": "Красная роза", "gold-letter": "Золотая печать", "ring-velvet": "Кольцо", "boho-arch": "Арка", "narot": "Нарот", "candle": "Свеча",
       "baptism-silver": "Голубое серебро", "angel-boy": "Маленький ангел", "angel-wings": "Ангел", "white-ribbon": "Лента", "eucalyptus": "Эвкалипт", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
-      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "bordeaux": "Бордо", "ivory": "Свет", "teddy": "Мишутка", "gala-midnight": "Полночь", "corp-forum": "Форум", "corp-jubilee": "Юбилей", "teddy-hotel": "Отель мишек" },
+      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "bordeaux": "Бордо", "ivory": "Свет", "teddy": "Мишутка", "gala-midnight": "Полночь", "corp-forum": "Форум", "corp-jubilee": "Юбилей", "ny-globe": "Снежный шар", "ny-fireworks": "Фейерверк", "ny-tree": "Ёлка", "teddy-hotel": "Отель мишек" },
     en: { "silk-bow": "Silk Ribbon", "olive-seal": "Olive Seal", "noir-rings": "Black & Gold", "polaroid": "Polaroid", "mono-walk": "Monochrome Walk", "editorial": "Editorial", "nur": "Pomegranate", "terra": "Terra",
       "doll-car": "The Doll", "lavash": "Plate for Luck", "boarding": "Boarding Pass", "scratch": "Scratch Card", "bw-classic": "Black & White", "bw-script": "Noir", "tuscany": "Tuscany", "peony": "Peony",
       "night-magic": "Night Magic", "cinema": "Cinema", "atamhatik": "First Tooth", "doves": "Doves", "vinyl": "Love Melody", "taraz": "Taraz", "stained-glass": "Stained Glass", "lavender": "Lavender",
       "post-letter": "Post Letter", "white-seal": "White Envelope", "chandelier": "Chandelier", "monogram": "Monogram", "noir-sunset": "Noir Sunset", "blush-garden": "Blush Garden", "olive-letter": "The Letter",
       "classic-green": "Classic", "gold-gate": "Golden Gate", "red-rose": "Red Rose", "gold-letter": "Gold Seal", "ring-velvet": "The Ring", "boho-arch": "Boho Arch", "narot": "Narot", "candle": "Candle",
       "baptism-silver": "Blue Silver", "angel-boy": "Little Angel", "angel-wings": "Angel", "white-ribbon": "Ribbon", "eucalyptus": "Eucalyptus", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
-      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "bordeaux": "Bordeaux", "ivory": "Ivory Light", "teddy": "Teddy", "teddy-hotel": "Teddy Hotel", "gala-midnight": "Midnight", "corp-forum": "Forum", "corp-jubilee": "Anniversary" }
+      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "bordeaux": "Bordeaux", "ivory": "Ivory Light", "teddy": "Teddy", "teddy-hotel": "Teddy Hotel", "gala-midnight": "Midnight", "corp-forum": "Forum", "corp-jubilee": "Anniversary", "ny-globe": "Snow Globe", "ny-fireworks": "Fireworks", "ny-tree": "Christmas Tree" }
   };
   var UI = {
     hy: { view: "Դիտել", pick: "Ընտրել", tag: "Նոր", cats: CATS_HY(), ex: null },

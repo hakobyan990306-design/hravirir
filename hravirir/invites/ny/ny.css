@@ -1,0 +1,91 @@
+/* Ամանորյա դիզայնների ընդհանուր հիմքը. գույները՝ փոփոխականներով (ամեն թեմա իր style.css-ում փոխում է) */
+@font-face { font-family: "Cinzel"; src: url("../../fonts/Cinzel-VariableFont_wght.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "Allegro"; src: url("../../fonts/ArmAllegroU.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-03FF, U+0500-FFFF; }
+@font-face { font-family: "Marck"; src: url("../../fonts/MarckScript-Regular.woff2") format("woff2"); font-display: swap; unicode-range: U+0400-04FF; }
+:root {
+  --bg: #fff; --bg2: #f3f3f3; --ink: #222; --soft: #666; --acc: #b8924c; --line: rgba(0,0,0,.15); --card: #fff;
+  --dk: #111; --dk-ink: #fff; --dk-soft: rgba(255,255,255,.7); --grad: linear-gradient(100deg, #b8924c, #f3dfaf 45%, #b8924c);
+  --serif: "Noto Serif Armenian", "Noto Serif", Georgia, serif; --sans: "Noto Sans Armenian", system-ui, sans-serif; --script: "Allegro", "Marck", serif; --latin: "Cinzel", serif;
+  --k-font: "Noto Serif Armenian", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--dk); color: var(--ink); font: 300 16px/1.7 var(--serif); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body.locked { overflow: hidden; height: 100svh; }
+a { color: inherit; text-decoration: none; }
+main { max-width: 480px; margin: 0 auto; background: var(--bg); overflow: hidden; }
+.wrap { position: relative; z-index: 2; max-width: 420px; margin: 0 auto; padding: 0 26px; }
+section { position: relative; padding: 76px 0; text-align: center; }
+section.alt { background: var(--bg2); }
+.h2 { font: 400 clamp(36px, 10.5vw, 46px)/1.2 var(--script); color: var(--acc); margin-bottom: 22px; padding: .1em 0; }
+.p { color: var(--soft); text-wrap: balance; font-size: 16.5px; }
+.caps { font: 600 11.5px var(--sans); letter-spacing: .32em; text-transform: uppercase; }
+.co { font: 600 13px var(--latin); letter-spacing: .42em; padding-left: .42em; }
+.st { width: 14px; height: 14px; }
+.orn { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--acc); margin-bottom: 18px; }
+.orn i { width: 60px; height: 1px; background: currentColor; opacity: .6; }
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .9s ease var(--d, 0ms), transform .9s ease var(--d, 0ms); }
+.rv.in { opacity: 1; transform: none; }
+.fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* գլխավոր */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 70px 0 130px; overflow: hidden; background: var(--dk); color: var(--dk-ink); }
+.hero .co { color: var(--dk-soft); }
+.hero .eye { margin-top: 30px; font: 600 11.5px var(--sans); letter-spacing: .36em; text-transform: uppercase; color: var(--acc2, var(--acc)); }
+.hero .nm { margin-top: 12px; font: 400 clamp(40px, 12vw, 54px)/1.15 var(--script); text-wrap: balance; }
+.hero .yr { margin-top: 6px; font: 600 clamp(76px, 25vw, 110px)/1 var(--latin); background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 6px 22px rgba(0,0,0,.35)); }
+.hero .when { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 18px; font: 600 14px var(--sans); letter-spacing: .24em; color: var(--dk-ink); }
+.hero .when .st { color: var(--acc2, var(--acc)); width: 12px; height: 12px; }
+.hero .rv { transition-delay: .3s; }
+.scr { position: absolute; left: 0; right: 0; bottom: calc(74px + env(safe-area-inset-bottom, 0px)); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 9px; font: 600 10.5px var(--sans); letter-spacing: .32em; color: var(--acc2, var(--acc)); }
+.scr i { width: 11px; height: 11px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); animation: bob 1.8s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(6px) rotate(45deg); } }
+
+/* ծրագիր */
+.pg .e { display: flex; align-items: center; gap: 18px; padding: 18px 20px; margin-top: 12px; text-align: left; border-radius: 16px; background: var(--card); box-shadow: 0 14px 30px -24px rgba(0,0,0,.6); border: 1px solid var(--line); }
+.pg .tm { flex: 0 0 auto; font: 600 22px/1 var(--latin); color: var(--acc); min-width: 74px; }
+.pg .t { font-size: 16.5px; line-height: 1.4; color: var(--ink); }
+
+/* հետհաշվարկ */
+.cdw { background: var(--dk); color: var(--dk-ink); padding: 60px 0; }
+.cdw .caps { color: var(--acc2, var(--acc)); }
+.cdn { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.cdn div { flex: 1; max-width: 86px; padding: 16px 0 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: rgba(255,255,255,.04); }
+.cdn b { display: block; font: 500 36px/1 var(--latin); background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cdn span { display: block; margin-top: 8px; font: 600 10px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dk-soft); }
+
+/* դրեսկոդ */
+.dots { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
+.dots i { width: 42px; height: 42px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line), 0 6px 14px -6px rgba(0,0,0,.4); }
+
+/* RSVP */
+.rs { margin-top: 24px; padding: 24px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); text-align: left; }
+.radio { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 16px; cursor: pointer; }
+.radio input { width: 18px; height: 18px; accent-color: var(--acc); }
+.fl { margin-top: 14px; }
+.fl label { display: block; margin-bottom: 6px; font: 600 11px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--acc); }
+.fl input, .fl select { width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font: 400 16px var(--serif); }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 20px; padding: 0 28px; border: 1px solid var(--acc); border-radius: 999px; color: var(--acc); font: 600 12px var(--sans); letter-spacing: .22em; text-transform: uppercase; cursor: pointer; background: transparent; }
+.btn.fill { width: 100%; border: 0; background: var(--acc); color: var(--bg); }
+.thanks { margin-top: 24px; padding: 30px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.thanks-t { font: 400 34px var(--script); color: var(--acc); }
+
+/* վայր */
+.vn { padding: 30px 22px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 20px 44px -30px rgba(0,0,0,.6); }
+.vt { font: 400 21px/1.3 var(--serif); color: var(--ink); }
+.va { margin-top: 6px; color: var(--soft); }
+
+/* ավարտ */
+.fin { background: var(--dk); color: var(--dk-ink); overflow: hidden; padding: 90px 0; }
+.fin .orn { color: var(--acc2, var(--acc)); }
+.fin .ft { font: 400 clamp(40px, 12vw, 52px)/1.2 var(--script); }
+.fin .co { margin-top: 16px; color: var(--dk-soft); }
+.made { padding: 24px 0 90px; text-align: center; background: var(--dk); font: 600 11px var(--latin); letter-spacing: .3em; color: var(--dk-soft); }
+
+/* բացման էկրանի ընդհանուրը */
+.env { position: fixed; inset: 0; z-index: 50; overflow: hidden; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: opacity .9s ease; }
+.env.out { opacity: 0; pointer-events: none; }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(6svh + env(safe-area-inset-bottom, 0px)); z-index: 5; text-align: center; font: 600 11px var(--sans); letter-spacing: .3em; text-transform: uppercase; animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+.env.go .hint { opacity: 0; animation: none; transition: opacity .3s; }
+@media (prefers-reduced-motion: reduce) { .scr i, .env .hint { animation: none !important; } .rv { opacity: 1; transform: none; } }
