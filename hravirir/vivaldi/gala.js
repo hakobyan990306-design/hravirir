@@ -4,6 +4,8 @@
    Արտիստների լուսանկարները՝ tatev.jpg (կին երգչուհի), ernest.jpg (տղամարդ երգիչ). */
 (function () {
   "use strict";
+  // նկարների թղթապանակը. հաճախորդի էջում՝ /vivaldi/, կատալոգի օրինակներում՝ /invites/gala/ (window.GALA_BASE)
+  var B = window.GALA_BASE || "/vivaldi/";
   var D = {
     date: "2026-12-31T22:00",
     midnight: "2027-01-01T00:00",
@@ -19,11 +21,11 @@
       ["fire", "Հրավառությու՜ն"]
     ],
     artists: [
-      { name: "Տաթև Ասատրյան", role: "Երգչուհի", photo: "/vivaldi/tatev.jpg" },
-      { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: "/vivaldi/ernest.jpg" },
-      { name: "Վիվալդի բենդ", role: "Կենդանի երաժշտություն", photo: "/vivaldi/hall2.jpg", band: true }
+      { name: "Տաթև Ասատրյան", role: "Երգչուհի", photo: B + "tatev.jpg" },
+      { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: B + "ernest.jpg" },
+      { name: "Վիվալդի բենդ", role: "Կենդանի երաժշտություն", photo: B + "hall2.jpg", band: true }
     ],
-    halls: ["/vivaldi/hall1.jpg", "/vivaldi/hall2.jpg", "/vivaldi/hall3.jpg", "/vivaldi/hall4.jpg", "/vivaldi/hall5.jpg"],
+    halls: [B + "hall1.jpg", B + "hall2.jpg", B + "hall3.jpg", B + "hall4.jpg", B + "hall5.jpg"],
     menu: [
       ["Սառը նախուտեստներ", ["Ձկան տեսականի", "Մսի տեսականի", "Պանրի տեսականի", "Բանջարեղենի ափսե", "Ձիթապտուղ, կիտրոն", "Քամած մածուն", "Թթվի տեսականի"]],
       ["Աղցաններ", ["Ասիական", "Շեֆ", "Գուրման"]],
@@ -59,7 +61,7 @@
     var h = "";
     // գլխավոր
     h += '<section class="hero" id="hero">' + (o.heroBg || "") +
-      '<div class="in"><img class="logo" src="/vivaldi/logo.png" alt="Vivaldi Hall">' +
+      '<div class="in"><img class="logo" src="' + B + 'logo.png" alt="Vivaldi Hall">' +
       '<div class="eye">NEW YEAR GALA</div><h1 class="ny"><span>ՆՈՐ ՏԱՐԻ</span><b>2027</b></h1>' +
       '<div class="scr-t">Ամանորյա գալա ընթրիք</div>' +
       '<div class="when"><span>31 ԴԵԿՏԵՄԲԵՐԻ</span><i></i><span>22:00</span></div></div>' +
@@ -72,7 +74,7 @@
     // շոու
     h += '<section class="show"><div class="w"><div class="eye rv">LIVE SHOW</div><h2 class="h2 rv">Շոու-ծրագիր</h2><div class="art">' +
       D.artists.map(function (a) {
-        return '<figure class="a rv' + (a.band ? " band" : "") + '"><div class="ph"><img src="' + a.photo + '" alt="' + a.name + '" loading="lazy">' + (a.band ? '<img class="bl" src="/vivaldi/logo.png" alt="">' : "") + "</div>" +
+        return '<figure class="a rv' + (a.band ? " band" : "") + '"><div class="ph"><img src="' + a.photo + '" alt="' + a.name + '" loading="lazy">' + (a.band ? '<img class="bl" src="' + B + 'logo.png" alt="">' : "") + "</div>" +
           '<figcaption><b>' + a.name + "</b><small>" + a.role + "</small></figcaption></figure>";
       }).join("") + "</div></div></section>";
     // դահլիճ (o.noHall՝ առանց այս բաժնի. վերջնական տարբերակում հաճախորդը խնդրեց հանել)
@@ -94,7 +96,7 @@
       '<a class="btn ghost" href="' + D.map + '" target="_blank" rel="noopener">Ինչպես հասնել</a>' +
       '<a class="ig" href="' + D.insta + '" target="_blank" rel="noopener">' + ic("ig") + "<span>@vivaldihall</span></a></div></div></section>";
     // ավարտ
-    h += '<section class="fin"><div class="w">' + orn + '<p class="big rv">' + D.fin + '</p><img class="logo rv" src="/vivaldi/logo.png" alt="Vivaldi Hall"></div></section>' +
+    h += '<section class="fin"><div class="w">' + orn + '<p class="big rv">' + D.fin + '</p><img class="logo rv" src="' + B + 'logo.png" alt="Vivaldi Hall"></div></section>' +
       '<div class="made"><a href="https://hravirir.am" target="_blank" rel="noopener">HRAVIRIR.AM</a></div>';
     return h;
   }

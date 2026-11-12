@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#24040b">
+<title>Կեսգիշեր · Ամանորյա գալա</title>
+<meta name="description" content="Ամանորյա գալա ընթրիք · 31.12.2026, 22:00 · Վիվալդի Հոլլ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hravirir.pages.dev/invites/gala-midnight/">
+<meta property="og:title" content="Vivaldi Hall · New Year Gala 2027">
+<meta property="og:site_name" content="HRAVIRIR.AM">
+<meta property="og:description" content="Ամանորյա գալա ընթրիք · 31 դեկտեմբերի, 22:00">
+<meta property="og:image" content="https://hravirir.pages.dev/invites/gala/og1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Noto+Sans+Armenian:wght@300;400;500;600&display=swap">
+<link rel="preload" href="../gala/hall1.jpg" as="image">
+<link rel="stylesheet" href="../gala/gala.css">
+<style>
+/* ԿԱՏԱԼՈԳԻ ՕՐԻՆԱԿ «Կեսգիշեր» (ժամացույց + բորդո-ոսկի), Vivaldi Hall-ի ամանորյա հրավերի (vivaldi/) հիման վրա.
+   ՎԵՐՋՆԱԿԱՆ (12.11.2026, հաճախորդի ընտրությամբ). բացումը՝ 3-րդ տարբերակի «Կեսգիշեր» ժամացույցը,
+   էջը՝ 1-ին տարբերակի «Ոսկե գունդ» գույներով և ոճով. առանց դահլիճի նկարների բաժնի, + «Մեծ խաղարկություն» */
+
+/* ---------- ժամացույց (բացում) ---------- */
+.env { position: fixed; inset: 0; z-index: 50; overflow: hidden; cursor: pointer; -webkit-tap-highlight-color: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3svh;
+  background: radial-gradient(110% 70% at 50% 45%, #6d0f20 0%, #3d0712 50%, #1a0307 100%); transition: opacity .9s; }
+.env .bk { position: absolute; border-radius: 50%; filter: blur(14px); opacity: .5; animation: bk 7s ease-in-out infinite alternate; }
+@keyframes bk { to { transform: translate(10px, -14px) scale(1.12); opacity: .28; } }
+.env .fx { position: absolute; z-index: 0; }
+.env .lg { position: relative; z-index: 2; width: min(46vw, 190px); filter: drop-shadow(0 4px 12px rgba(0,0,0,.6)); transition: opacity .5s; }
+.clk { position: relative; z-index: 2; width: min(78vw, 330px); aspect-ratio: 1; }
+.clk svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 26px 40px rgba(0,0,0,.6)); }
+.clk .hand { transform-origin: 150px 150px; transition: transform 2.1s cubic-bezier(.65,0,.25,1); }
+.clk .sec { transform-origin: 150px 150px; animation: tick 60s steps(60) infinite; }
+@keyframes tick { to { transform: rotate(360deg); } }
+.clk .yr { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 600 clamp(64px, 20vw, 90px)/1 var(--latin);
+  background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+  opacity: 0; transform: scale(.4); transition: opacity .8s ease, transform 1s cubic-bezier(.2,1.4,.4,1); filter: drop-shadow(0 0 22px rgba(249,227,166,.6)); }
+.env .txt { position: relative; z-index: 2; text-align: center; padding: 0 20px; transition: opacity .5s; }
+.env .txt .t { font: 400 clamp(30px, 9vw, 40px)/1.2 var(--script); color: var(--g1); }
+.env .txt .d { margin-top: 8px; font: 500 12.5px var(--sans); letter-spacing: .3em; padding-left: .3em; color: var(--ink); }
+.env .hint { position: absolute; left: 0; right: 0; bottom: calc(4.5svh + env(safe-area-inset-bottom, 0px)); z-index: 2; text-align: center; font: 500 11px var(--sans); letter-spacing: .3em; color: var(--gold); animation: hint 2.2s ease-in-out infinite; }
+@keyframes hint { 50% { opacity: .35; } }
+.env .flash { position: absolute; inset: 0; z-index: 3; background: radial-gradient(circle at 50% 50%, rgba(255,241,201,.9), rgba(255,241,201,0) 60%); opacity: 0; pointer-events: none; }
+.env.go .hint, .env.go .txt, .env.go .lg { opacity: 0; animation: none; }
+.env.go .sec { animation: none; transform: rotate(360deg); transition: transform 2.1s cubic-bezier(.65,0,.25,1); }
+.env.go .hand.m, .env.go .hand.h { transform: rotate(360deg) !important; }
+.env.mid .flash { animation: fl 1.2s ease-out; }
+@keyframes fl { 15% { opacity: 1; } 100% { opacity: 0; } }
+.env.mid .clk svg { filter: drop-shadow(0 0 30px rgba(249,227,166,.5)) brightness(.55); transition: filter .6s; }
+.env.mid .yr { opacity: 1; transform: scale(1); }
+.env.out { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .env .bk, .clk .sec { animation: none; } }
+
+/* ---------- էջը՝ «Ոսկե գունդ»-ի ոճով ---------- */
+.hero .bgp { position: absolute; inset: 0; background: url("../gala/hall1.jpg") center / cover; transform: scale(1.08); animation: kb 18s ease-out forwards; }
+@keyframes kb { to { transform: scale(1); } }
+.hero .bgp::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(36,4,11,.72) 0%, rgba(58,7,17,.82) 50%, #3a0711 100%); }
+.lead { background: linear-gradient(#3a0711, #2c050d); }
+.wait { background: #2c050d; }
+.show { background: linear-gradient(#2c050d, #3a0711); }
+.menu { background: linear-gradient(#3a0711, #4a0a17 50%, #3a0711); }
+.cd { background: #3a0711; }
+.book { background: linear-gradient(#3a0711, #24040b); }
+.fin, .made { background: #24040b; }
+</style>
+</head>
+<body class="locked">
+<canvas class="fx" id="fx" style="z-index:60"></canvas>
+<div class="env" id="env" role="button" aria-label="Սեղմեք ժամացույցին">
+  <i class="bk" style="left:6%;top:16%;width:70px;height:70px;background:#f3c56b"></i>
+  <i class="bk" style="right:8%;top:8%;width:46px;height:46px;background:#ffe3a3;animation-delay:-2s"></i>
+  <i class="bk" style="left:10%;bottom:22%;width:38px;height:38px;background:#d6a24e;animation-delay:-4s"></i>
+  <i class="bk" style="right:10%;bottom:28%;width:84px;height:84px;background:#b3162f;opacity:.4"></i>
+  <canvas class="fx" id="efx"></canvas>
+  <img class="lg" src="../gala/logo.png" alt="Vivaldi Hall">
+  <div class="clk" id="clk"></div>
+  <div class="txt"><div class="t">Ամանորյա գալա ընթրիք</div><div class="d">31.12.2026 · 22:00</div></div>
+  <div class="hint">ՍԵՂՄԵՔ ԺԱՄԱՑՈՒՅՑԻՆ</div>
+  <i class="flash"></i>
+</div>
+<main id="main"></main>
+<script>window.GALA_BASE = "/invites/gala/";</script>
+<script src="../gala/gala.js"></script>
+<script>
+(function () {
+  // ժամացույցի SVG՝ հռոմեական թվեր, րոպեի գծեր, սլաքներ 23:55-ին
+  var R = ["XII", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"], s = "";
+  s += '<svg viewBox="0 0 300 300" aria-hidden="true"><defs>' +
+    '<linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9853a"/><stop offset=".3" stop-color="#f9e3a6"/><stop offset=".55" stop-color="#c8913a"/><stop offset=".8" stop-color="#fff1c9"/><stop offset="1" stop-color="#a5712a"/></linearGradient>' +
+    '<radialGradient id="face" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#5a0c1c"/><stop offset=".75" stop-color="#2d050d"/><stop offset="1" stop-color="#1a0307"/></radialGradient></defs>' +
+    '<circle cx="150" cy="150" r="146" fill="url(#gg)"/><circle cx="150" cy="150" r="137" fill="url(#face)"/>' +
+    '<circle cx="150" cy="150" r="130" fill="none" stroke="url(#gg)" stroke-width=".8" opacity=".8"/><circle cx="150" cy="150" r="96" fill="none" stroke="url(#gg)" stroke-width=".5" opacity=".45"/>';
+  for (var i = 0; i < 60; i++) { var big = i % 5 === 0; s += '<line x1="150" y1="' + (big ? 22 : 24) + '" x2="150" y2="' + (big ? 34 : 29) + '" stroke="url(#gg)" stroke-width="' + (big ? 2.2 : 1) + '" transform="rotate(' + (i * 6) + ' 150 150)"/>'; }
+  R.forEach(function (n, k) { var a = k * 30 * Math.PI / 180, x = 150 + Math.sin(a) * 106, y = 150 - Math.cos(a) * 106 + 6;
+    s += '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" text-anchor="middle" font-family="Cinzel, serif" font-size="' + (k % 3 ? 15 : 19) + '" font-weight="600" fill="url(#gg)">' + n + "</text>"; });
+  s += '<text x="150" y="208" text-anchor="middle" font-family="Cinzel, serif" font-size="9" letter-spacing="3" fill="#e2ba70" opacity=".8">VIVALDI HALL</text>' +
+    '<g class="hand h" style="transform:rotate(357.5deg)"><path d="M150 150 L146 140 L150 78 L154 140 Z" fill="url(#gg)"/></g>' +
+    '<g class="hand m" style="transform:rotate(330deg)"><path d="M150 158 L147.5 140 L150 40 L152.5 140 Z" fill="url(#gg)"/></g>' +
+    '<g class="sec"><line x1="150" y1="170" x2="150" y2="34" stroke="#d42a43" stroke-width="1.2"/></g>' +
+    '<circle cx="150" cy="150" r="6" fill="url(#gg)"/><circle cx="150" cy="150" r="2" fill="#3a0711"/></svg><div class="yr">2027</div>';
+  document.getElementById("clk").innerHTML = s;
+
+  document.getElementById("main").innerHTML = G.page({ heroBg: '<div class="bgp"></div>', noHall: true });
+  G.sparkle(document.getElementById("efx"), { n: 50 });
+
+  var env = document.getElementById("env"), busy = false;
+  env.onclick = function () {
+    if (busy) return; busy = true;
+    env.classList.add("go");
+    setTimeout(function () {
+      env.classList.add("mid");
+      var W = innerWidth, H = innerHeight;
+      G.burst(document.getElementById("fx"), 0, 0, { n: 80, speed: 7, life: 2400, points: [[W * .5, H * .45, 0], [W * .2, H * .25, 350], [W * .8, H * .3, 550], [W * .35, H * .7, 800], [W * .7, H * .68, 1000]] });
+    }, 2100);
+    setTimeout(function () { env.classList.add("out"); G.start(); }, 3900);
+    setTimeout(function () { env.remove(); }, 4900);
+  };
+  // էջի ֆոնի ոսկե փայլերը (ինչպես «Ոսկե գունդ»-ում)
+  var c = document.createElement("canvas"); c.className = "fx"; c.style.zIndex = 1; document.body.appendChild(c);
+  G.sparkle(c, { n: 45 });
+})();
+</script>
+<style>.k-demo { position: fixed; left: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 45; display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,248,234,.92); box-shadow: 0 6px 20px rgba(0,0,0,.35); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.k-demo a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; color: #3a0711; font: 500 13px/1 var(--sans); }
+.k-demo a.go { background: #3a0711; color: #f3dc9e; }
+.scroll { bottom: calc(74px + env(safe-area-inset-bottom, 0px)); }   /* որ «Պատվիրել» կոճակը չծածկի */</style>
+<div class="k-demo" id="kdemo" style="display:none"><a href="../../index.html#corporate" aria-label="Դիզայններ">←</a><a class="go" href="#">Պատվիրել</a></div>
+<script>
+/* կատալոգի օրինակ. «Պատվիրել»՝ պատվերի ձևը (../order.js), կոճակները երևում են բացումից հետո */
+(function () {
+  var s = document.createElement("script"); s.src = "../order.js"; document.head.appendChild(s);
+  var d = document.getElementById("kdemo");
+  d.querySelector(".go").onclick = function (e) { e.preventDefault(); if (window.HravirirOrder) HravirirOrder.open("gala-midnight", "Կեսգիշեր", "Կորպորատիվ"); };
+  var st = G.start; G.start = function () { st.apply(G, arguments); d.style.display = ""; };
+})();
+</script></body>
+</html>

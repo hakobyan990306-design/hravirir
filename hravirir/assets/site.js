@@ -17,8 +17,11 @@
     { id: "2", name: "Երկլեզու", desc: "օր.՝ հայերեն + ռուսերեն", price: 5000 },
     { id: "3", name: "Եռալեզու", desc: "հայերեն + ռուսերեն + անգլերեն", price: 9000 }
   ];
-  var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում" };
+  var CATS = { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում", corporate: "Կորպորատիվ" };
   var DESIGNS = [
+    { id: "gala-midnight", name: "Կեսգիշեր", cat: "corporate", colors: ["#3a0711", "#6d0f20", "#e2ba70", "#f8ecd6"], tag: "Նոր" },
+    { id: "corp-forum", name: "Ֆորում", cat: "corporate", colors: ["#0b1530", "#1a2a5c", "#d9b878", "#f6f4ef"], tag: "Նոր" },
+    { id: "corp-jubilee", name: "Տարեդարձ", cat: "corporate", colors: ["#0c2b25", "#145244", "#c9a45c", "#f7f2e7"], tag: "Նոր" },
     { id: "memories", name: "Հուշեր", cat: "wedding", colors: ["#f7f5f1", "#d6d3cd", "#6e6c68", "#111111"], tag: "Նոր" },
     { id: "ivory", name: "Լույս", cat: "wedding", colors: ["#ffffff", "#efe6d6", "#d8c3a2", "#b8955a"], tag: "Նոր" },
     { id: "bordeaux", name: "Բորդո", cat: "wedding", colors: ["#5c0d1a", "#9e1424", "#111111", "#efe6da"], tag: "Նոր" },
@@ -87,25 +90,25 @@
       "post-letter": "Почта", "white-seal": "Белый конверт", "chandelier": "Люстра", "monogram": "Монограмма", "noir-sunset": "Чёрно-золотой закат", "blush-garden": "Розовый сад", "olive-letter": "Письмо",
       "classic-green": "Classic", "gold-gate": "Золотые ворота", "red-rose": "Красная роза", "gold-letter": "Золотая печать", "ring-velvet": "Кольцо", "boho-arch": "Арка", "narot": "Нарот", "candle": "Свеча",
       "baptism-silver": "Голубое серебро", "angel-boy": "Маленький ангел", "angel-wings": "Ангел", "white-ribbon": "Лента", "eucalyptus": "Эвкалипт", "castle": "Принцесса", "pocket-watch": "Часы", "gift-rainbow": "Подарок", "champagne": "Шампанское",
-      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "bordeaux": "Бордо", "ivory": "Свет", "teddy": "Мишутка", "teddy-hotel": "Отель мишек" },
+      "space-rocket": "Космос", "balloon-sky": "Воздушный шар", "memories": "Воспоминания", "elegance": "Элеганс", "bordeaux": "Бордо", "ivory": "Свет", "teddy": "Мишутка", "gala-midnight": "Полночь", "corp-forum": "Форум", "corp-jubilee": "Юбилей", "teddy-hotel": "Отель мишек" },
     en: { "silk-bow": "Silk Ribbon", "olive-seal": "Olive Seal", "noir-rings": "Black & Gold", "polaroid": "Polaroid", "mono-walk": "Monochrome Walk", "editorial": "Editorial", "nur": "Pomegranate", "terra": "Terra",
       "doll-car": "The Doll", "lavash": "Plate for Luck", "boarding": "Boarding Pass", "scratch": "Scratch Card", "bw-classic": "Black & White", "bw-script": "Noir", "tuscany": "Tuscany", "peony": "Peony",
       "night-magic": "Night Magic", "cinema": "Cinema", "atamhatik": "First Tooth", "doves": "Doves", "vinyl": "Love Melody", "taraz": "Taraz", "stained-glass": "Stained Glass", "lavender": "Lavender",
       "post-letter": "Post Letter", "white-seal": "White Envelope", "chandelier": "Chandelier", "monogram": "Monogram", "noir-sunset": "Noir Sunset", "blush-garden": "Blush Garden", "olive-letter": "The Letter",
       "classic-green": "Classic", "gold-gate": "Golden Gate", "red-rose": "Red Rose", "gold-letter": "Gold Seal", "ring-velvet": "The Ring", "boho-arch": "Boho Arch", "narot": "Narot", "candle": "Candle",
       "baptism-silver": "Blue Silver", "angel-boy": "Little Angel", "angel-wings": "Angel", "white-ribbon": "Ribbon", "eucalyptus": "Eucalyptus", "castle": "Princess", "pocket-watch": "Pocket Watch", "gift-rainbow": "Gift", "champagne": "Champagne",
-      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "bordeaux": "Bordeaux", "ivory": "Ivory Light", "teddy": "Teddy", "teddy-hotel": "Teddy Hotel" }
+      "space-rocket": "Space", "balloon-sky": "Hot-Air Balloon", "memories": "Memories", "elegance": "Elegance", "bordeaux": "Bordeaux", "ivory": "Ivory Light", "teddy": "Teddy", "teddy-hotel": "Teddy Hotel", "gala-midnight": "Midnight", "corp-forum": "Forum", "corp-jubilee": "Anniversary" }
   };
   var UI = {
     hy: { view: "Դիտել", pick: "Ընտրել", tag: "Նոր", cats: CATS_HY(), ex: null },
-    ru: { view: "Смотреть", pick: "Выбрать", tag: "Новинка", cats: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения", baby: "Гендер-пати" },
+    ru: { view: "Смотреть", pick: "Выбрать", tag: "Новинка", cats: { wedding: "Свадьба", engagement: "Помолвка", baptism: "Крестины", birthday: "День рождения", baby: "Гендер-пати", corporate: "Корпоратив" },
       ex: [["Готовность за 24 часа", "Приглашение будет готово за один день"], ["Дресс-код", "Палитра цветов и описание"], ["Подтверждение присутствия", "Гости отвечают прямо на сайте"],
         ["Список гостей по столам", "Гость вводит имя и находит свой стол"], ["Своя музыка", "Выбранная вами песня на фоне приглашения"], ["Два языка", "напр.: армянский + русский"], ["Три языка", "армянский + русский + английский"]] },
-    en: { view: "View", pick: "Choose", tag: "New", cats: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday", baby: "Gender reveal" },
+    en: { view: "View", pick: "Choose", tag: "New", cats: { wedding: "Wedding", engagement: "Engagement", baptism: "Baptism", birthday: "Birthday", baby: "Gender reveal", corporate: "Corporate" },
       ex: [["Ready in 24 hours", "Your invitation is ready in one day"], ["Dress code", "Color palette and description"], ["RSVP", "Guests reply right on the website"],
         ["Seating list", "The guest types a name and finds their table"], ["Your own music", "The song of your choice in the background"], ["Two languages", "e.g. Armenian + Russian"], ["Three languages", "Armenian + Russian + English"]] }
   };
-  function CATS_HY() { return { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում" }; }
+  function CATS_HY() { return { wedding: "Հարսանիք", engagement: "Նշանդրեք", baptism: "Կնունք", birthday: "Ծնունդ", baby: "Սեռի բացահայտում", corporate: "Կորպորատիվ" }; }
   function lang() { return window.SiteLang ? window.SiteLang.get() : "hy"; }
   function dname(d) { var l = lang(); return (NAMES[l] && NAMES[l][d.id]) || d.name; }
   function $(s, r) { return (r || document).querySelector(s); }
@@ -174,7 +177,7 @@
   }).join("");
 
   /* ---------- Պատվեր՝ invites/order.js-ի «խելացի» ձևով (դաշտերը փոխվում են ըստ միջոցառման տեսակի) ---------- */
-  var TYPE_BY_CAT = { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ", baby: "Այլ" };
+  var TYPE_BY_CAT = { wedding: "Հարսանիք", engagement: "Նշանադրություն", baptism: "Մկրտություն", birthday: "Ծնունդ", baby: "Այլ", corporate: "Կորպորատիվ" };
   var orderForm = window.HravirirOrder.mount($("#orderMount"), {
     title: false, designs: DESIGNS, lang: lang(), design: new URLSearchParams(location.search).get("design") || ""
   });

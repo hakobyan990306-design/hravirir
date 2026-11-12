@@ -360,7 +360,7 @@
     ov.innerHTML = '<div class="ho" role="dialog" aria-modal="true" aria-label="' + L.order + '"><button class="x" aria-label="' + L.close + '">✕</button><div class="body"></div></div>';
     document.body.appendChild(ov);
     // եթե տեսակը չի փոխանցվել, գուշակում ենք դիզայնի id-ից
-    if (!type) type = /baptism/.test(id) ? "baptism" : /engage|ring/.test(id) ? "engagement" : /kids|birthday|gift|jubilee/.test(id) ? "birthday" : "wedding";
+    if (!type) type = /baptism/.test(id) ? "baptism" : /engage|ring/.test(id) ? "engagement" : /kids|birthday|gift|jubilee/.test(id) ? "birthday" : /gala|corp/.test(id) ? "corporate" : "wedding";
     mount(ov.querySelector(".body"), { design: id, designName: name, type: type });
     function close() { ov.classList.remove("on"); setTimeout(function () { ov.remove(); }, 300); document.removeEventListener("keydown", onKey); }
     function onKey(e) { if (e.key === "Escape") close(); }

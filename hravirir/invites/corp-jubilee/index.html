@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c2b25">
+<title>Ընկերության տարեդարձ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@300;400;500&family=Noto+Sans+Armenian:wght@300;400;600&family=Noto+Serif:wght@300;400&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ (demo-ն իրական հրավերում ջնջեք) ======== */
+window.INVITE = {
+  demo: { id: "corp-jubilee", name: "Տարեդարձ" },
+  langs: ["hy", "ru"],
+  company: "NOVA GROUP",
+  years: 10,
+  title: { hy: "Տարեդարձի երեկո", ru: "Юбилейный вечер" },
+  date: "2027-05-21T19:00",
+  text: {
+    hy: "Տասը տարի առաջ մենք սկսեցինք մի փոքր գաղափարով, իսկ այսօր մեր պատմությունը գրվում է Ձեզ հետ միասին։ Սիրով հրավիրում ենք Ձեզ նշելու մեր առաջին տասնամյակը։",
+    ru: "Десять лет назад мы начинали с небольшой идеи, а сегодня наша история пишется вместе с вами. Приглашаем вас отметить наше первое десятилетие."
+  },
+  milestones: [
+    ["2017", { hy: "Հիմնադրում", ru: "Основание" }],
+    ["2020", { hy: "Առաջին միջազգային նախագիծը", ru: "Первый международный проект" }],
+    ["2023", { hy: "100 աշխատակից", ru: "100 сотрудников" }],
+    ["2027", { hy: "10 տարի Ձեզ հետ", ru: "10 лет вместе с вами" }]
+  ],
+  events: [
+    { time: "19:00", title: { hy: "Ողջույնի կոկտեյլ", ru: "Приветственный коктейль" } },
+    { time: "20:00", title: { hy: "Պաշտոնական մաս և պարգևատրում", ru: "Официальная часть и награждение" } },
+    { time: "21:00", title: { hy: "Գալա ընթրիք և շոու", ru: "Гала-ужин и шоу" } },
+    { time: "23:00", title: { hy: "DJ և պարեր", ru: "DJ и танцы" } }
+  ],
+  venue: {
+    place: { hy: "«Էմերալդ» բալային սրահ", ru: "Бальный зал «Эмеральд»" },
+    address: { hy: "Երևան, Աբովյան փողոց 1", ru: "Ереван, ул. Абовяна 1" },
+    map: "https://yandex.ru/maps/?text=%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD%2C%20%D1%83%D0%BB.%20%D0%90%D0%B1%D0%BE%D0%B2%D1%8F%D0%BD%D0%B0%201"
+  },
+  dresscode: { text: { hy: "Black tie՝ զմրուխտ, սև, ոսկեգույն", ru: "Black tie: изумрудный, чёрный, золотой" }, colors: ["#0c2b25", "#145244", "#111111", "#c9a45c", "#f3e7cf"] },
+  rsvp: { deadline: "2027-05-10" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

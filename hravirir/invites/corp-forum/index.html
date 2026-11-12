@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1530">
+<title>Բիզնես ֆորում</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400;600;700&family=Noto+Sans:wght@200;300;400;600;700&display=swap">
+<link rel="stylesheet" href="../core/core.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ======== ԱՅՍՏԵՂ ԼՐԱՑՐԵՔ ՀԱՃԱԽՈՐԴԻ ՏՎՅԱԼՆԵՐԸ (demo-ն իրական հրավերում ջնջեք) ======== */
+window.INVITE = {
+  demo: { id: "corp-forum", name: "Ֆորում" },
+  langs: ["hy", "ru"],
+  company: "NOVA GROUP",
+  title: { hy: "Տարեկան բիզնես ֆորում", ru: "Ежегодный бизнес-форум" },
+  date: "2027-03-18T09:30",
+  text: {
+    hy: "Սիրով հրավիրում ենք Ձեզ մեր տարեկան բիզնես ֆորումին՝ մեկ օր, երբ կհանդիպեն ոլորտի առաջատարները, կքննարկվեն նոր գաղափարներ և կծնվեն նոր գործընկերություններ։",
+    ru: "Приглашаем вас на наш ежегодный бизнес-форум — день, когда встречаются лидеры отрасли, рождаются новые идеи и новые партнёрства."
+  },
+  stats: [["300+", { hy: "մասնակից", ru: "участников" }], ["12", { hy: "բանախոս", ru: "спикеров" }], ["6", { hy: "պանել", ru: "панелей" }]],
+  events: [
+    { time: "09:30", title: { hy: "Գրանցում և առավոտյան սուրճ", ru: "Регистрация и утренний кофе" } },
+    { time: "10:00", title: { hy: "Բացման խոսք", ru: "Открытие форума" } },
+    { time: "11:00", title: { hy: "Պանելային քննարկում", ru: "Панельная дискуссия" }, note: { hy: "Թվային տնտեսությունը 2030-ին", ru: "Цифровая экономика 2030" } },
+    { time: "13:00", title: { hy: "Գործնական ճաշ", ru: "Деловой обед" } },
+    { time: "14:30", title: { hy: "Վարպետաց դասեր", ru: "Мастер-классы" } },
+    { time: "19:00", title: { hy: "Գալա ընթրիք", ru: "Гала-ужин" } }
+  ],
+  speakers: [
+    { name: { hy: "Արամ Պետրոսյան", ru: "Арам Петросян" }, role: { hy: "Գործադիր տնօրեն", ru: "Генеральный директор" } },
+    { name: { hy: "Լիլիթ Սարգսյան", ru: "Лилит Саргсян" }, role: { hy: "Ֆինանսական տնօրեն", ru: "Финансовый директор" } },
+    { name: { hy: "Դավիթ Հակոբյան", ru: "Давид Акопян" }, role: { hy: "Նորարարությունների ղեկավար", ru: "Директор по инновациям" } },
+    { name: { hy: "Անի Մարտիրոսյան", ru: "Ани Мартиросян" }, role: { hy: "Մարքեթինգի տնօրեն", ru: "Директор по маркетингу" } }
+  ],
+  venue: {
+    place: { hy: "«Գրանդ» կոնֆերանս սրահ", ru: "Конференц-зал «Гранд»" },
+    address: { hy: "Երևան, Հյուսիսային պողոտա 1", ru: "Ереван, Северный проспект 1" },
+    map: "https://yandex.ru/maps/?text=%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD%2C%20%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%201"
+  },
+  dresscode: { text: { hy: "Business formal՝ մուգ կապույտ, մոխրագույն, սպիտակ", ru: "Business formal: тёмно-синий, серый, белый" }, colors: ["#0b1530", "#3b4566", "#9aa3b8", "#ffffff", "#d9b878"] },
+  rsvp: { deadline: "2027-03-08" },
+  music: true
+};
+</script>
+<script src="../core/core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
