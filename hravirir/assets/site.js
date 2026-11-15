@@ -10,7 +10,7 @@
     { id: "dress", name: "Դրեսկոդ", desc: "Գույների գունապնակ և նկարագրություն", price: 2000 },
     { id: "rsvp", name: "Մասնակցության հաստատում", desc: "Հյուրերը պատասխանում են անմիջապես կայքից", price: 3000 },
     { id: "tables", name: "Հյուրերի ցուցակը ըստ սեղանների", desc: "Հյուրը գրում է անունը և գտնում իր սեղանը", price: 5000 },
-    { id: "music", name: "Նախընտրած երաժշտություն", desc: "Ձեր ընտրած երգը հրավերի ֆոնին", price: 2000 }
+    { id: "music", name: "Նախընտրած երաժշտություն", desc: "Ձեր ընտրած երգը հրավերի ֆոնին", price: 0 }   // անվճար (2026-11-15)
   ];
   var LANG_OPTS = [
     { id: "1", name: "Միայն հայերեն", price: 0 },
@@ -176,7 +176,7 @@
   /* ---------- Գներ ---------- */
   $("#basePrice").textContent = money(BASE_PRICE).replace(" ֏", "");
   $("#extrasList").innerHTML = EXTRAS.concat(LANG_OPTS.slice(1)).map(function (x) {
-    return '<div class="extra"><div><b data-ex="' + x.id + '">' + esc(x.name) + "</b><span>" + esc(x.desc || "") + '</span></div><div class="p">+' + money(x.price) + "</div></div>";
+    return '<div class="extra"><div><b data-ex="' + x.id + '">' + esc(x.name) + "</b><span>" + esc(x.desc || "") + '</span></div><div class="p">' + (x.price ? "+" + money(x.price) : "Անվճար") + "</div></div>";
   }).join("");
 
   /* ---------- Պատվեր՝ invites/order.js-ի «խելացի» ձևով (դաշտերը փոխվում են ըստ միջոցառման տեսակի) ---------- */
