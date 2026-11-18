@@ -24,6 +24,8 @@
     // band.jpg՝ բենդի նկարը հաճախորդից (16.11). real՝ նկարը ցույց է տրվում առանց մգացման և լոգոյի
     artists: [
       { name: "Վիվալդի բենդ", role: "Կենդանի երաժշտություն", photo: B + "band.jpg", band: true, real: true },
+      // շոումենը՝ բենդից հետո, մեջտեղում (հաճախորդի խնդրանքով, 17.11)
+      { name: "Արամ Գևորգյան", role: "Շոումեն", photo: B + "aram.jpg", host: true },
       { name: "Տաթև Ասատրյան", role: "Երգչուհի", photo: B + "tatev.jpg" },
       { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: B + "ernest.jpg" }
     ],
@@ -76,7 +78,7 @@
     // շոու
     h += '<section class="show"><div class="w"><div class="eye rv">LIVE SHOW</div><h2 class="h2 rv">Շոու-ծրագիր</h2><div class="art">' +
       D.artists.map(function (a) {
-        return '<figure class="a rv' + (a.band ? " band" : "") + (a.real ? " real" : "") + '"><div class="ph"><img src="' + a.photo + '" alt="' + a.name + '" loading="lazy">' + (a.band && !a.real ? '<img class="bl" src="' + B + 'logo.png" alt="">' : "") + "</div>" +
+        return '<figure class="a rv' + (a.band ? " band" : "") + (a.real ? " real" : "") + (a.host ? " host" : "") + '"><div class="ph"><img src="' + a.photo + '" alt="' + a.name + '" loading="lazy">' + (a.band && !a.real ? '<img class="bl" src="' + B + 'logo.png" alt="">' : "") + "</div>" +
           '<figcaption><b>' + a.name + "</b><small>" + a.role + "</small></figcaption></figure>";
       }).join("") + "</div></div></section>";
     // դահլիճ (o.noHall՝ առանց այս բաժնի. վերջնական տարբերակում հաճախորդը խնդրեց հանել)
