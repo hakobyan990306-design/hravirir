@@ -24,10 +24,10 @@
     // band.jpg՝ բենդի նկարը հաճախորդից (16.11). real՝ նկարը ցույց է տրվում առանց մգացման և լոգոյի
     artists: [
       { name: "Վիվալդի բենդ", role: "Կենդանի երաժշտություն", photo: B + "band.jpg", band: true, real: true },
-      // շոումենը՝ բենդից հետո, մեջտեղում (հաճախորդի խնդրանքով, 17.11)
-      { name: "Արամ Գևորգյան", role: "Շոումեն", photo: B + "aram.jpg", host: true },
       { name: "Տաթև Ասատրյան", role: "Երգչուհի", photo: B + "tatev.jpg" },
-      { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: B + "ernest.jpg" }
+      { name: "Էռնեստ Հովհաննիսյան", role: "Երգիչ", photo: B + "ernest.jpg" },
+      // շոումենը՝ վերջում, Տաթևից ու Էռնեստից փոքր (հաճախորդի խնդրանքով, 18.11)
+      { name: "Արամ Գևորգյան", role: "Շոումեն", photo: B + "aram.jpg", host: true }
     ],
     halls: [B + "hall1.jpg", B + "hall2.jpg", B + "hall3.jpg", B + "hall4.jpg", B + "hall5.jpg"],
     menu: [
