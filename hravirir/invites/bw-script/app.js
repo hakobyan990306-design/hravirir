@@ -25,6 +25,7 @@
       '<section class="tx"><div class="date rv">' + pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear() + esc(x("y")) + '</div><p class="s rv">' + esc(t(C.text)) + "</p></section>" + photo() +
       '<section class="tx"><h2 class="h2 rv">' + esc(x("plan")) + "</h2>" + (C.events || []).map(function (e) {
         return '<div class="ev rv"><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) + "</div>" + (e.place ? '<div class="pl">' + esc(t(e.place)) + "</div>" : "") +
+          (e.photo ? '<div class="evp"><img src="' + esc(e.photo) + '" alt="" loading="lazy"></div>' : "") +   // վայրի նկար (ըստ ցանկության)
           (e.map ? '<a class="pill" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(x("how")) + "</a>" : "") + "</div>";
       }).join("") + "</section>" + photo() +
       // դրեսկոդ (C.dresscode = { text, colors })՝ ըստ ցանկության
