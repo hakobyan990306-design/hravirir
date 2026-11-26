@@ -30,6 +30,10 @@
       [48, 168].map(function (xx) { return '<path d="M' + xx + " 132V94H" + (xx + 44) + "V132ZM" + xx + " 113H" + (xx + 44) + "M" + (xx + 22) + ' 94V132"/>'; }).join("") +
       '<path d="M44 140H96M164 140H216" stroke-dasharray="2 4"/>' +
       '<path d="M14 146V112M10 112h8l-4-14zM246 146V112M242 112h8l-4-14z"/></svg>',
+    // տուն (փեսայի/հարսի տուն)
+    house: '<svg class="art" viewBox="0 0 260 150"><path d="M4 146H256"/><path d="M60 146V70H200V146"/><path d="M48 74L130 22L212 74"/><path d="M164 48V30H180V58"/>' +
+      '<path d="M114 146V104a16 16 0 0 1 32 0V146M130 88V146"/><path d="M74 84H104V114H74ZM74 99H104M89 84V114M156 84H186V114H156ZM156 99H186M171 84V114"/>' +
+      '<path d="M122 60a8 8 0 0 1 16 0v6h-16z"/><path d="M20 146V120c-8-2-10-14-2-18 0-8 12-10 14-2 8 0 10 12 2 16V146M226 146V122c-7-2-9-12-1-16 1-7 11-8 13-1 7 1 8 11 1 14V146" opacity=".85"/></svg>',
     glasses: '<svg class="art" viewBox="0 0 100 100"><path d="M18 26h26c0 12-5 20-13 21-8-1-13-9-13-21zM31 47v30M22 78h18"/><path d="M56 30l25-7c3 12 0 21-7 24-8 2-15-4-18-17zM68 50l8 29M62 82l18-5"/><path d="M44 16l4-8M50 18l7-6M40 14l-2-8"/><path d="M52 58c8 2 14 8 12 14"/></svg>',
     rings: '<svg class="art" viewBox="0 0 100 100"><circle cx="38" cy="58" r="20"/><circle cx="60" cy="58" r="20"/><path d="M52 24l8-10 8 10-8 8zM52 24h16M60 14v18"/></svg>',
     plate: '<svg class="art" viewBox="0 0 100 100"><circle cx="50" cy="52" r="24"/><circle cx="50" cy="52" r="16"/><path d="M16 26v14a4 4 0 0 0 8 0V26M20 26v52M84 26c-6 4-6 20 0 24v28"/></svg>',
