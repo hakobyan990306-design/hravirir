@@ -26,6 +26,17 @@
 <style>
 /* գլխավոր նկարը՝ դեմքերը վերևում */
 .hero img { object-position: center 22%; }
+/* ներքևում՝ միայն HRAVIRIR.AM լոգոն (WhatsApp/Telegram պատկերակները՝ հանված, 26.11) */
+.ft .soc { display: none; }
+.ft .share { margin-bottom: 14px; }
+/* գլխավոր նկարի սլաքի փոխարեն՝ պարզ կոճակ, որը սեղմելիս իջնում է հրավերի սկիզբ */
+.hero .chev { display: none; }
+.hero .go { position: absolute; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 3; border: 0; background: none; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; color: #fff; font: 500 12px var(--sans); letter-spacing: .28em; padding: 8px 14px 0 calc(14px + .28em); text-shadow: 0 1px 8px rgba(0,0,0,.6); -webkit-tap-highlight-color: transparent; }
+.hero .go i { width: 46px; height: 46px; border: 1.5px solid rgba(255,255,255,.9); border-radius: 50%; position: relative; animation: gobob 1.8s ease-in-out infinite; }
+.hero .go i::after { content: ""; position: absolute; left: 50%; top: 45%; width: 12px; height: 12px; margin: -8px 0 0 -6px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); }
+@keyframes gobob { 50% { transform: translateY(7px); } }
+@media (prefers-reduced-motion: reduce) { .hero .go i { animation: none; } }
 </style>
 </head>
 <body>
@@ -39,9 +50,8 @@ window.INVITE = {
   names: { hy: ["Սամվել", "Օֆելյա"] },
   date: "2026-12-12T09:30",
   photo: "photo.jpg",
-  // տեքստերի միջև մեծ նկարները (հերթով), մնացածը՝ ներքևի պատկերասրահում
+  // տեքստերի միջև մեծ նկարները (հերթով). «Մեր պահերը» բաժինը՝ հանված (26.11, տիրոջ խնդրանքով)
   photos: ["g3.jpg", "g5.jpg", "g1.jpg", "g6.jpg", "g7.jpg"],
-  gallery: ["g4.jpg", "g2.jpg"],
   invite: { hy: "կիսելու մեզ հետ մեր կյանքի ամենակարևոր և հիշարժան օրը՝ մեր հարսանիքը։" },
   text: { hy: "Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի։" },
   events: [
@@ -63,5 +73,15 @@ window.INVITE = {
 </script>
 <script src="/invites/core/core.js"></script>
 <script src="/invites/bw-script/app.js"></script>
+<script>
+// «ԹԵՐԹԵՔ ՆԵՐՔԵՎ» կոճակ՝ սեղմելիս սահուն իջնում է հրավերի առաջին բաժին
+(function () {
+  var hero = document.querySelector(".hero"); if (!hero || hero.querySelector(".go")) return;
+  var b = document.createElement("button"); b.type = "button"; b.className = "go"; b.setAttribute("aria-label", "Թերթել ներքև");
+  b.innerHTML = "ԹԵՐԹԵՔ ՆԵՐՔԵՎ<i></i>";
+  b.onclick = function () { var n = hero.nextElementSibling; if (n) n.scrollIntoView({ behavior: "smooth" }); };
+  hero.appendChild(b);
+})();
+</script>
 </body>
 </html>
