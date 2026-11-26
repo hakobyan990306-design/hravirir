@@ -4,7 +4,7 @@
   "use strict";
   var K = window.K, C = K.C, esc = K.esc, t = K.t, u = K.u, pad = K.pad;
   var TXT = {
-    hy: { inv: "Սիրով հրավիրում ենք Ձեզ՝", plan: "Օրվա ծրագիր", how: "Ինչպես հասնել", left: "Հարսանիքին մնացել է", love: "Սիրով՝", and: "և", y: "թ.",
+    hy: { dress: "Դրեսկոդ", inv: "Սիրով հրավիրում ենք Ձեզ՝", plan: "Օրվա ծրագիր", how: "Ինչպես հասնել", left: "Հարսանիքին մնացել է", love: "Սիրով՝", and: "և", y: "թ.",
       rsvp: "Հարցաթերթիկ", rsvpLead: "Խնդրում ենք պատասխանել մինչև", share: "Կիսվել հղումով", made: "Հրավիրատոմսը ստեղծվել է", by: "-ի կողմից" },
     ru: { inv: "С любовью приглашаем вас", plan: "Программа дня", how: "Как добраться", left: "До свадьбы осталось", love: "С любовью,", and: "и", y: "г.",
       rsvp: "Анкета", rsvpLead: "Пожалуйста, ответьте до", share: "Поделиться ссылкой", made: "Приглашение создано", by: "" },
@@ -27,6 +27,9 @@
         return '<div class="ev rv"><div class="tm">' + esc(e.time) + '</div><div class="t">' + esc(t(e.title)) + "</div>" + (e.place ? '<div class="pl">' + esc(t(e.place)) + "</div>" : "") +
           (e.map ? '<a class="pill" href="' + esc(e.map) + '" target="_blank" rel="noopener">' + esc(x("how")) + "</a>" : "") + "</div>";
       }).join("") + "</section>" + photo() +
+      // դրեսկոդ (C.dresscode = { text, colors })՝ ըստ ցանկության
+      (C.dresscode ? '<section class="tx"><h2 class="h2 rv">' + esc(x("dress") || "Dress code") + '</h2><p class="s rv">' + esc(t(C.dresscode.text)) + "</p>" +
+        ((C.dresscode.colors || []).length ? '<div class="dc rv">' + C.dresscode.colors.map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</section>" + photo() : "") +
       '<section class="tx"><h2 class="h2 rv">' + esc(x("left")) + '</h2><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
         return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div>" +
       (C.rsvp ? '<h2 class="h2 rv" style="margin-top:56px">' + esc(x("rsvp")) + '</h2><p class="s rv">' + esc(x("rsvpLead")) + " " + esc(K.deadline()) + "</p>" +
@@ -36,6 +39,7 @@
         '<div class="fl"><label for="rg">' + esc(u("guests")) + '</label><select id="rg" name="guests">' + [1, 2, 3, 4, 5, 6].map(function (i) { return "<option>" + i + "</option>"; }).join("") + "</select></div>" +
         '<button class="pill fill" type="submit">' + esc(u("send")) + "</button></form>" : "") +
       '<h2 class="h2 sig rv">' + esc(x("love")) + " " + esc(n[0] || "") + " " + esc(x("and")) + " " + esc(n[1] || "") + "</h2></section>" + photo() +
+      (C.gallery && C.gallery.length ? K.gallery("h2") : "") +   // մնացած նկարները՝ սահող շարքով
       '<footer class="ft"><button class="share" type="button">↗ ' + esc(x("share")) + '</button><div class="soc"><a href="https://wa.me/?text=' + encodeURIComponent(location.href) + '" target="_blank" rel="noopener" aria-label="WhatsApp">' +
       '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>' +
       '<a href="https://t.me/share/url?url=' + encodeURIComponent(location.href) + '" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.8 6.8-1.6 7.7c-.1.6-.5.7-1 .4l-2.7-2-1.3 1.3c-.1.1-.3.3-.6.3l.2-2.8 5-4.6c.2-.2 0-.3-.3-.1l-6.2 3.9-2.7-.8c-.6-.2-.6-.6.1-.9l10.5-4c.5-.2.9.1.6 1z"/></svg></a></div>' +
