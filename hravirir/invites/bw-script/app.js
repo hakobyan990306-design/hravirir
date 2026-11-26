@@ -31,6 +31,8 @@
       // դրեսկոդ (C.dresscode = { text, colors })՝ ըստ ցանկության
       (C.dresscode ? '<section class="tx"><h2 class="h2 rv">' + esc(x("dress") || "Dress code") + '</h2><p class="s rv">' + esc(t(C.dresscode.text)) + "</p>" +
         ((C.dresscode.colors || []).length ? '<div class="dc rv">' + C.dresscode.colors.map(function (c) { return '<i style="background:' + esc(c) + '"></i>'; }).join("") + "</div>" : "") + "</section>" + photo() : "") +
+      // նշում (C.note = { title, text })՝ ըստ ցանկության, օր.՝ խնդրանք ծնողներին
+      (C.note ? '<section class="tx">' + (C.note.title ? '<h2 class="h2 rv">' + esc(t(C.note.title)) + "</h2>" : "") + '<p class="s rv">' + esc(t(C.note.text)) + "</p></section>" : "") +
       '<section class="tx"><h2 class="h2 rv">' + esc(x("left")) + '</h2><div class="cdn rv" data-cd>' + ["days", "hours", "minutes", "seconds"].map(function (k) {
         return '<div><b data-k="' + k + '">00</b><span>' + esc(u(k)) + "</span></div>"; }).join("") + "</div>" +
       (C.rsvp ? '<h2 class="h2 rv" style="margin-top:56px">' + esc(x("rsvp")) + '</h2><p class="s rv">' + esc(x("rsvpLead")) + " " + esc(K.deadline()) + "</p>" +
